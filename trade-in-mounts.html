@@ -184,6 +184,9 @@ footer li{margin:5px 0}
     <label class="ctl">Prices for
       <select id="dcSelect"></select>
     </label>
+    <label class="ctl" title="Mounts can only be sold on your home world. When set, the mats-vs-mount comparison prices the finished mount on that world and shows its sales volume.">Sell on
+      <select id="sellWorld"><option value="">Same as prices</option></select>
+    </label>
     <button type="button" id="refreshPrices" class="chip">Refresh prices</button>
   </div>
   <p class="price-progress" id="priceProgress" role="status" aria-live="polite" hidden></p>
@@ -1113,7 +1116,13 @@ const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<":
 // Region comes from market-region.js — shared across every tool on this site
 // that prices things, so picking a DC here also applies on e.g. the Hunt for
 // Astronomy guide, rather than each page remembering its own separately.
-const state = { view: "mats", filter: "all", sort: "shop", region: MarketRegion.load() };
+// sellWorld is optional: "" keeps everything priced on the selected region/DC.
+// When set, it's the one world the finished mount can be sold on, so the
+// mats-vs-mount comparison prices the mount (and shows its volume) there.
+const SELL_KEY = "tim-sell-world";
+function loadSellWorld() { try { return localStorage.getItem(SELL_KEY) || ""; } catch (e) { return ""; } }
+function saveSellWorld(w) { try { w ? localStorage.setItem(SELL_KEY, w) : localStorage.removeItem(SELL_KEY); } catch (e) {} }
+const state = { view: "mats", filter: "all", sort: "shop", region: MarketRegion.load(), sellWorld: loadSellWorld() };
 const REGION_LABEL = MarketRegion.LABELS;
 
 const VIEWS = {
@@ -1202,13 +1211,22 @@ function relativeTime(ts) {
   return `${Math.round(h / 24)}d ago`;
 }
 
-function priceIdsNeeded() {
-  const ids = new Set();
+// Where the finished mount is priced. Only the mats-vs-mount comparison (both
+// sides marketable) uses the sell world; mount-only entries are about buying,
+// which can happen anywhere in the selected region.
+function itemScope(it) {
+  return state.sellWorld && it.cost.marketable && it.itemMarketable ? state.sellWorld : state.region;
+}
+
+// One job per distinct (scope, id) price lookup.
+function priceJobs() {
+  const jobs = new Map();
+  const add = (scope, id) => jobs.set(cacheKey(scope, id), { scope, id });
   ITEMS.forEach(it => {
-    if (it.cost.marketable) ids.add(it.cost.currencyId);
-    if (it.itemMarketable) ids.add(it.id);
+    if (it.cost.marketable) add(state.region, it.cost.currencyId);
+    if (it.itemMarketable) add(itemScope(it), it.id);
   });
-  return [...ids];
+  return [...jobs.values()];
 }
 
 // Up to 5 attempts with a short backoff between them, since single failed
@@ -1245,10 +1263,9 @@ async function fetchLivePrice(id, region, attempts = 5) {
 }
 
 function seedPriceState() {
-  const region = state.region;
-  priceIdsNeeded().forEach(id => {
-    const key = cacheKey(region, id);
-    const cached = loadCachedPrice(region, id);
+  priceJobs().forEach(({ scope, id }) => {
+    const key = cacheKey(scope, id);
+    const cached = loadCachedPrice(scope, id);
     if (cached !== undefined) priceCache[key] = cached;
     priceLoading.add(key);
     priceFailed.delete(key);
@@ -1275,8 +1292,7 @@ function setProgress(done, total) {
 const PRICE_CONCURRENCY = 5;
 
 async function loadPrices() {
-  const region = state.region;
-  const ids = priceIdsNeeded();
+  const ids = priceJobs();
   let done = 0;
   setProgress(0, ids.length);
 
@@ -1284,14 +1300,14 @@ async function loadPrices() {
   async function worker(startDelay) {
     if (startDelay) await new Promise(r => setTimeout(r, startDelay));
     while (next < ids.length) {
-      const id = ids[next++];
-      const key = cacheKey(region, id);
-      const result = await fetchLivePrice(id, region);
+      const { scope, id } = ids[next++];
+      const key = cacheKey(scope, id);
+      const result = await fetchLivePrice(id, scope);
       priceLoading.delete(key);
       if (result.price) {
         priceCache[key] = result.price;
         priceFailed.delete(key);
-        saveCachedPrice(region, id, result.price);
+        saveCachedPrice(scope, id, result.price);
       } else if (result.noData) {
         priceCache[key] = null;
         priceFailed.delete(key);
@@ -1329,9 +1345,9 @@ function costForQty(listings, qty) {
   return { total, short: remaining > 0 };
 }
 
-function priceBlock(label, id, qty) {
-  const region = state.region;
+function priceBlock(label, id, qty, region = state.region) {
   const key = cacheKey(region, id);
+  const where = REGION_LABEL[region] || region;
   const links = `<span class="lk"><a href="${ULT(id, region)}" target="_blank" rel="noopener noreferrer">Ultros</a><a href="${UNI(id)}" target="_blank" rel="noopener noreferrer">Universalis</a></span>`;
   const price = priceCache[key];
   const loading = priceLoading.has(key);
@@ -1347,17 +1363,17 @@ function priceBlock(label, id, qty) {
       totalFrag = ` (${fmt(cost.total)}${short ? "+" : ""} for ${qty})`;
     }
     const note = failed ? "Stale, refresh failed" : (loading ? "Refreshing…" : `Updated ${relativeTime(price.fetchedAt)}`);
-    const tip = `Lowest on ${price.world} (${REGION_LABEL[region]}). Average sale ${fmt(price.avg)}${price.perDay ? `, ~${price.perDay}/day` : ""}.${short ? " “+” means fewer than " + qty + " are currently listed, so the total is a lower bound." : ""} ${note}.`;
+    const tip = `Lowest on ${price.world} (${where}). Average sale ${fmt(price.avg)}${price.perDay ? `, ~${price.perDay}/day` : ""}.${short ? " “+” means fewer than " + qty + " are currently listed, so the total is a lower bound." : ""} ${note}.`;
     return `<div class="price-block">
       ${head}
-      <span class="pb-price"><span class="big" title="${escapeHtml(tip)}">${fmt(price.low)} gil</span><span class="pb-meta">${totalFrag ? totalFrag + " &middot; " : ""}avg ${fmt(price.avg)}${loading ? ` <span class="spinner" role="status" aria-label="Refreshing price"></span>` : ""}</span></span>
+      <span class="pb-price"><span class="big" title="${escapeHtml(tip)}">${fmt(price.low)} gil</span><span class="pb-meta">${totalFrag ? totalFrag + " &middot; " : ""}avg ${fmt(price.avg)}${REGION_LABEL[region] ? "" : ` &middot; ${price.perDay ? "~" + price.perDay : "&lt;1"}/day sold`}${loading ? ` <span class="spinner" role="status" aria-label="Refreshing price"></span>` : ""}</span></span>
     </div>`;
   }
   if (loading) {
     return `<div class="price-block">${head}<span class="price-loading"><span class="spinner" role="status" aria-label="Loading price"></span>Checking live price…</span></div>`;
   }
   if (price === null) {
-    return `<div class="price-block">${head}<span class="na">No active listings on ${REGION_LABEL[region]}</span></div>`;
+    return `<div class="price-block">${head}<span class="na">No active listings on ${where}</span></div>`;
   }
   return `<div class="price-block">${head}<span class="price-error"><span class="warn" aria-hidden="true">⚠</span>Couldn't load live price</span></div>`;
 }
@@ -1370,7 +1386,7 @@ function priceCell(it) {
       ? `<span class="na">Flat cost: ${fmt(it.cost.qty)} gil</span>`
       : `<span class="na">${it.cost.currency}: not marketboardable</span>`);
   parts.push(it.itemMarketable
-    ? priceBlock(it.itemName, it.id)
+    ? priceBlock(it.itemName + (itemScope(it) !== state.region ? ` (sell: ${itemScope(it)})` : ""), it.id, undefined, itemScope(it))
     : `<span class="na">${it.itemName}: untradeable</span>`);
   parts.push(savingsBlock(it));
   return `<div class="price">${parts.join("")}</div>`;
@@ -1384,9 +1400,8 @@ function computeVerdict(it) {
   if (!it.cost.marketable && !it.itemMarketable) return "grind";
   if (it.cost.marketable && !it.itemMarketable) return "buyMats";
   if (!it.cost.marketable && it.itemMarketable) return "buyMount";
-  const region = state.region;
-  const matsPrice = priceCache[cacheKey(region, it.cost.currencyId)];
-  const itemPrice = priceCache[cacheKey(region, it.id)];
+  const matsPrice = priceCache[cacheKey(state.region, it.cost.currencyId)];
+  const itemPrice = priceCache[cacheKey(itemScope(it), it.id)];
   if (!matsPrice || !itemPrice || !matsPrice.listings) return "checking";
   const totalMats = costForQty(matsPrice.listings, it.cost.qty).total;
   return totalMats <= itemPrice.low ? "buyMats" : "buyMount";
@@ -1399,9 +1414,8 @@ function computeVerdict(it) {
 // rarely has the full quantity a trade-in needs sitting in one stack.
 function computeSavings(it) {
   if (!it.cost.marketable || !it.itemMarketable) return null;
-  const region = state.region;
-  const matsPrice = priceCache[cacheKey(region, it.cost.currencyId)];
-  const itemPrice = priceCache[cacheKey(region, it.id)];
+  const matsPrice = priceCache[cacheKey(state.region, it.cost.currencyId)];
+  const itemPrice = priceCache[cacheKey(itemScope(it), it.id)];
   if (!matsPrice || !itemPrice || !matsPrice.listings) return null;
   const matsCost = costForQty(matsPrice.listings, it.cost.qty);
   const totalMats = matsCost.total;
@@ -1422,7 +1436,8 @@ function computeSavings(it) {
 function savingsBlock(it) {
   const s = computeSavings(it);
   if (!s || s.gil <= 0) return "";
-  const whichCheaper = s.cheaper === "mats" ? "Buying the mats" : "Buying the mount";
+  const sellNote = itemScope(it) !== state.region ? ` (mount priced on ${escapeHtml(itemScope(it))})` : "";
+  const whichCheaper = (s.cheaper === "mats" ? "Buying the mats" : "Buying the mount") + sellNote;
   const shortNote = s.short
     ? `<span class="na" title="Fewer than ${fmt(it.cost.qty)} ${it.cost.currency} are currently listed in this region, so the mats total (and this comparison) is a lower bound.">fewer than ${fmt(it.cost.qty)} listed &mdash; estimate</span>`
     : "";
@@ -1472,6 +1487,43 @@ $("#dcSelect").addEventListener("change", e => {
   loadPrices();
 });
 
+$("#sellWorld").addEventListener("change", e => {
+  state.sellWorld = e.target.value;
+  saveSellWorld(state.sellWorld);
+  seedPriceState();
+  render();
+  loadPrices();
+});
+
+// World list for the sell-world picker, grouped by data center. Cached so the
+// picker still works offline; a saved world is always kept as an option even
+// if the list hasn't loaded.
+async function loadWorlds() {
+  const sel = $("#sellWorld");
+  const draw = groups => {
+    sel.innerHTML = '<option value="">Same as prices</option>' + groups.map(g =>
+      `<optgroup label="${escapeHtml(g.name)}">${g.worlds.map(w => `<option value="${escapeHtml(w)}">${escapeHtml(w)}</option>`).join("")}</optgroup>`).join("");
+    if (state.sellWorld && ![...sel.options].some(o => o.value === state.sellWorld)) {
+      sel.insertAdjacentHTML("beforeend", `<option value="${escapeHtml(state.sellWorld)}">${escapeHtml(state.sellWorld)}</option>`);
+    }
+    sel.value = state.sellWorld;
+  };
+  let groups = null;
+  try { groups = JSON.parse(localStorage.getItem("tim-worlds")); } catch (e) {}
+  if (groups) draw(groups);
+  try {
+    const [wr, dr] = await Promise.all([fetch("https://universalis.app/api/v2/worlds"), fetch("https://universalis.app/api/v2/data-centers")]);
+    if (!wr.ok || !dr.ok) throw new Error("worlds");
+    const names = Object.fromEntries((await wr.json()).map(w => [w.id, w.name]));
+    groups = (await dr.json())
+      .map(dc => ({ name: `${dc.name} (${dc.region})`, worlds: dc.worlds.map(id => names[id]).filter(Boolean).sort() }))
+      .filter(g => g.worlds.length)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    try { localStorage.setItem("tim-worlds", JSON.stringify(groups)); } catch (e) {}
+    draw(groups);
+  } catch (e) { if (!groups) draw([]); }
+}
+
 let refreshing = false;
 async function refreshPrices() {
   if (refreshing) return;
@@ -1479,7 +1531,7 @@ async function refreshPrices() {
   const btn = $("#refreshPrices");
   btn.disabled = true;
   btn.textContent = "Refreshing…";
-  priceIdsNeeded().forEach(id => { priceLoading.add(cacheKey(state.region, id)); priceFailed.delete(cacheKey(state.region, id)); });
+  priceJobs().forEach(({ scope, id }) => { priceLoading.add(cacheKey(scope, id)); priceFailed.delete(cacheKey(scope, id)); });
   render();
   await loadPrices();
   btn.disabled = false;
@@ -1490,6 +1542,7 @@ $("#refreshPrices").addEventListener("click", refreshPrices);
 
 MarketRegion.populate($("#dcSelect"));
 $("#dcSelect").value = state.region;
+loadWorlds();
 seedPriceState();
 render();
 loadPrices();
