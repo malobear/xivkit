@@ -23,10 +23,15 @@
 <meta property="og:title" content="Inventory & Retainer Decluttering | XIVKit">
 <meta property="og:description" content="What to actually keep, bank, or discard in FFXIV, plus the short list of items that never come back once discarded.">
 <meta property="og:url" content="https://xivkit.com/inventory-decluttering.html">
+<meta property="og:image" content="https://xivkit.com/og-inventory-decluttering.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Inventory & Retainer Decluttering">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Inventory & Retainer Decluttering | XIVKit">
 <meta name="twitter:description" content="What to actually keep, bank, or discard in FFXIV, plus the short list of items that never come back once discarded.">
+<meta name="twitter:image" content="https://xivkit.com/og-inventory-decluttering.png">
 
 <style>
 :root{--bg:#12151c;--bg2:#0d0f14;--card:#1b1f2a;--card2:#161a23;--border:#2a2f3d;--text:#e8e9ed;--muted:#9aa1b2;--accent:#7db8ff;--warn:#e0a45c;--opine:#c99bf0;--good:#7ed6a5;--cyan:#6fd1e8;--amber:#e0b35c;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
@@ -491,7 +496,7 @@ const FAQ = [
   { topic: "sinks", q: "Is there a better place to sell junk gear than a vendor? (The Doman Enclave)", tldr: "Yes. 120% to 200% of vendor price up to a weekly cap. Resets Tuesday.", a: ["The Doman Enclave in Kugane has a Donation Basket that acts like a vendor who pays more. It starts at 120% of vendor price and climbs as you donate: 150% after roughly 40,000 gil, 180% after 85,000, and 200% after about 160,000 gil total.", "The weekly bonus cap stays at 20,000 gil through most of that climb, then bumps to 25,000 once you've donated 160,000 gil total, 30,000 at 210,000, and 40,000 at 270,000. It resets every Tuesday at 8am GMT. Past the cap, donations pay normal vendor price, so spread big sell-offs across weeks.", "To unlock: clear \"Elation and Trepidation,\" \"Short Arms of the Law,\" and \"A Thousand and One Farewells,\" then start \"Precious Reclamation.\" Your last 100 donated items can be reclaimed for a small fee."], src: ["cgwDoman", "geDoman"], figs: [[IMG.domanBasket, "The Shazenkai in the Doman Enclave, home of the Donation Basket", "Doman_Enclave_Reconstruction"]] },
   { topic: "sinks", q: "Should I turn old gear in to my Grand Company for seals instead?", tldr: "Only if you want seals. No undo, and seals cap by rank.", a: ["At Sergeant Second Class or higher, the Personnel Officer runs Expert Deliveries: trade green, blue, and pink gear for seals scaled to item level. Old max-level dungeon gear from a past expansion is a genuinely good source.", "No undo and no buy-back. Seals cap from around 10,000 at low rank to 90,000 at Captain, so near the cap you're just wasting the difference."], src: ["cgwGC", "ltpfgc"] },
   { topic: "quests", q: "Can I just discard quest reward items once I'm done?", tldr: "Almost always. The Calamity Salvager sells them back.", a: ["Most quest-related items you discard can be repurchased from the Calamity Salvager in Limsa Lominsa, Gridania, or Ul'dah. That NPC exists so new players don't ruin their game clearing bag space. The exceptions are rare enough to list explicitly."], src: ["cgwSalv", "se497773"] },
-  { topic: "quests", q: "What about tomestones, scrips, and event currencies piling up?", tldr: "Several cap or rotate out on a patch cycle. Spend them down.", a: ["Several currencies have a hard cap or rotate out on a patch cycle, silently converting or vanishing if you don't spend them first. The longer answer deserves its own page."], src: ["tgtome"] }
+  { topic: "quests", q: "What about tomestones, scrips, and event currencies piling up?", tldr: "Several cap or rotate out on a patch cycle. Spend them down.", a: ["Several currencies have a hard cap or rotate out on a patch cycle, silently converting or vanishing if you don't spend them first. Open the Currency window now and then, spend anything near its cap on something you'd actually use, and don't buy things just to burn a balance."], src: ["tgtome"] }
 ];
 </script>
 <script>
@@ -614,7 +619,7 @@ document.querySelectorAll("main section").forEach(s => io.observe(s));
     { "@type": "Question", "name": "Is there a better place to sell junk gear than a vendor? (The Doman Enclave)", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the Donation Basket at the Doman Enclave's Shazenkai in Kugane, which pays a multiple of normal vendor sell price, from 120% up to 200% as your own cumulative donations hit milestones, up to a weekly gil cap (20,000 rising to 25,000, 30,000, then 40,000 at higher donation totals) that resets every Tuesday." } },
     { "@type": "Question", "name": "Should I turn old gear in to my Grand Company for seals instead?", "acceptedAnswer": { "@type": "Answer", "text": "Sometimes, if you actually want seals: at Sergeant Second Class rank or higher, the Personnel Officer trades pink, green, or blue rarity gear (not current endgame loot) for seals scaled to item level. There is no undo on this turn-in, and seals cap between 10,000 and 90,000 depending on Grand Company rank." } },
     { "@type": "Question", "name": "Can I just discard quest reward items once I'm done?", "acceptedAnswer": { "@type": "Answer", "text": "Almost always yes. Most quest-related items can be repurchased later from the Calamity Salvager in Limsa Lominsa, Gridania, or Ul'dah." } },
-    { "@type": "Question", "name": "What about tomestones, scrips, and event currencies piling up?", "acceptedAnswer": { "@type": "Answer", "text": "Several currencies have a hard cap or rotate out entirely on a patch cycle, silently converting or vanishing if you don't spend them down first." } }
+    { "@type": "Question", "name": "What about tomestones, scrips, and event currencies piling up?", "acceptedAnswer": { "@type": "Answer", "text": "Several currencies have a hard cap or rotate out entirely on a patch cycle, silently converting or vanishing if you don't spend them down first. Check the Currency window now and then and spend anything near its cap on something you'd actually use." } }
   ]
 }
 </script>

@@ -22,6 +22,7 @@ const CARDS = [
   { name: "watchlist", title: "FFXIV Watchlist", description: "Tools I've heard about or seen recommended but haven't tried myself yet.", tags: ["theorycrafting", "gear", "checklist"] },
   { name: "jump-puzzle-macros", title: "Jump Puzzle Macros", description: "Timed macro-and-hotbar technique for jumping exact, repeatable distances, with copyable macros and a calibration spot.", tags: ["guide", "macro"] },
   { name: "trade-in-mounts", title: "Trade-in mounts: grind vs. buy the mats", description: "Every trade-in mount, with live market prices and a straight verdict: grind it out, or buy your way there.", tags: ["guide", "mounts", "market"] },
+  { name: "inventory-decluttering", title: "Inventory & retainer decluttering", description: "A decision tree for what to keep, bank, or discard, plus the short list of items that never come back.", tags: ["guide", "inventory"] },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 

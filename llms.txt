@@ -9,6 +9,7 @@ The site is static and every page is plain HTML. Market board prices on the guid
 - [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html): Timed macro-and-hotbar technique for jumping exact, repeatable distances in FFXIV jumping puzzles, with copyable macros and a calibration spot.
 - [Hunt for Astronomy: What's Worth the Tomes](https://xivkit.com/hunt-for-astronomy.html): Every reward in the Hunt for Astronomy trove, its alternate sources, market board prices, and a verdict on whether it's worth the tomestones.
 - [Trade-In Mounts: Grind vs. Buy the Mats](https://xivkit.com/trade-in-mounts.html): Every FFXIV mount unlocked by trading in items or currency, with live market board prices and a verdict on grinding versus buying.
+- [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html): A keep, bank, or discard decision tree for a full bag or retainer, with storage tips, ways to sell or desynthesize, and the short list of items that never come back once discarded.
 
 ## Lists
 
