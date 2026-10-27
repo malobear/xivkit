@@ -16,7 +16,8 @@
 <meta name="description" content="What to actually keep, bank, or discard in FFXIV: a quick decision tree, rules of thumb, Armoire and Glamour Dresser tips, desynthesis and Doman Enclave donations, and the short list of items that never come back once discarded.">
 <link rel="canonical" href="https://xivkit.com/inventory-decluttering.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="theme-color" content="#12151c">
+<meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f5f8" media="(prefers-color-scheme: light)">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="XIVKit">
@@ -38,7 +39,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%) fixed;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;font-size:15px}
-a{color:var(--accent);text-underline-offset:3px}a:hover{color:#a9d0ff}
+a{color:var(--accent);text-underline-offset:3px}a:hover{color:var(--text)}
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 p{margin:0}
@@ -58,7 +59,7 @@ h1{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.1;margin:0;letter-spacing:
 .rail{position:sticky;top:20px;display:flex;flex-direction:column;gap:2px}
 .rail-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px 10px}
 .rail a{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:.85rem;border:1px solid transparent}
-.rail a:hover{color:var(--text);background:rgba(255,255,255,.03)}
+.rail a:hover{color:var(--text);background:color-mix(in srgb,var(--text) 3%,transparent)}
 .rail a.on{color:var(--text);background:var(--card);border-color:var(--border)}
 .rail a img,.rail a .rail-dot{width:22px;height:22px;flex:none}
 .rail a .rail-dot{display:grid;place-items:center;font-size:.7rem;font-weight:700;color:var(--accent);border:1px solid var(--border);border-radius:50%}
@@ -97,8 +98,8 @@ h3{font-size:1rem;margin:0}
 .tri-hint{color:var(--muted);font-size:.9rem;margin-top:6px}
 .tri-btns{display:flex;gap:10px;margin-top:auto}
 .btn{display:inline-flex;align-items:center;gap:8px;border-radius:8px;padding:10px 18px;border:1px solid var(--border);background:transparent;font-weight:600;font-size:.92rem;text-decoration:none;color:var(--text)}
-.btn:hover{background:rgba(255,255,255,.04);color:var(--text)}
-.btn-yes{border-color:var(--accent);color:var(--accent)}.btn-yes:hover{background:rgba(125,184,255,.1);color:var(--accent)}
+.btn:hover{background:color-mix(in srgb,var(--text) 4%,transparent);color:var(--text)}
+.btn-yes{border-color:var(--accent);color:var(--accent)}.btn-yes:hover{background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent)}
 .btn kbd{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:0 5px}
 .btn-sm{padding:6px 12px;font-size:.82rem}
 .verdict{border-radius:12px;padding:18px 20px;border:1px solid var(--vc);background:color-mix(in srgb,var(--vc) 9%,transparent);display:grid;gap:6px}
@@ -108,7 +109,7 @@ h3{font-size:1rem;margin:0}
 .tri-side{background:var(--card2);border-left:1px solid var(--border);padding:22px 24px;display:flex;flex-direction:column;gap:4px}
 .tri-side h4{margin:0 0 8px;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .trail{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
-.trail li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:start;padding:7px 0;font-size:.84rem;color:var(--muted);border-bottom:1px solid rgba(255,255,255,.04)}
+.trail li{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:8px;align-items:start;padding:7px 0;font-size:.84rem;color:var(--muted);border-bottom:1px solid color-mix(in srgb,var(--text) 4%,transparent)}
 .trail li b{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600}
 .trail li.cur{color:var(--text)}.trail li.cur b{color:var(--accent)}
 .trail li.future{opacity:.45}
@@ -151,8 +152,8 @@ h3{font-size:1rem;margin:0}
 .gil-seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--border)}
 .gil-seg button{background:transparent;border:0;border-right:1px solid var(--border);padding:12px 8px;font-weight:600;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .gil-seg button:last-child{border-right:0}
-.gil-seg button:hover{color:var(--text);background:rgba(255,255,255,.02)}
-.gil-seg button[aria-pressed="true"]{color:var(--opine);box-shadow:inset 0 -2px 0 var(--opine);background:rgba(201,155,240,.06)}
+.gil-seg button:hover{color:var(--text);background:color-mix(in srgb,var(--text) 2%,transparent)}
+.gil-seg button[aria-pressed="true"]{color:var(--opine);box-shadow:inset 0 -2px 0 var(--opine);background:color-mix(in srgb,var(--opine) 6%,transparent)}
 .gil-body{padding:18px 20px;display:grid;gap:4px;min-height:96px}
 .gil-body h3{font-size:1.1rem}.gil-body p{color:var(--muted);max-width:640px}
 /* never */
@@ -171,7 +172,7 @@ h3{font-size:1rem;margin:0}
 .chip img{width:18px;height:18px}
 .chip.all{padding-left:11px}
 .chip:hover{color:var(--text)}
-.chip[aria-pressed="true"]{color:var(--text);border-color:var(--accent);background:rgba(125,184,255,.08)}
+.chip[aria-pressed="true"]{color:var(--text);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
 .faq{display:flex;flex-direction:column;gap:8px}
 .qa{background:var(--card);border:1px solid var(--border);border-radius:10px}
 .qa summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:28px minmax(0,1fr) 20px;gap:12px;align-items:start;padding:12px 14px}
@@ -183,8 +184,8 @@ h3{font-size:1rem;margin:0}
 .qa[open] .pm{transform:rotate(45deg)}
 .qa[open] .tl{color:var(--good)}
 .qa .body{padding:0 14px 16px 54px;display:grid;gap:10px;font-size:.92rem;text-wrap:pretty}
-.qa:hover{border-color:#394054}
-mark{background:rgba(125,184,255,.25);color:inherit;border-radius:2px}
+.qa:hover{border-color:var(--border-strong)}
+mark{background:color-mix(in srgb,var(--accent) 25%,transparent);color:inherit;border-radius:2px}
 .empty{color:var(--muted);padding:20px;text-align:center;border:1px dashed var(--border);border-radius:10px}
 /* donts */
 .donts{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
@@ -197,7 +198,7 @@ mark{background:rgba(125,184,255,.25);color:inherit;border-radius:2px}
 .tl-list{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .tl-list a{display:grid;gap:2px;padding:12px 16px;text-decoration:none;color:var(--text);border-bottom:1px solid var(--border);background:var(--card)}
 .tl-list a:last-child{border-bottom:0}
-.tl-list a:hover{background:#20253214}
+.tl-list a:hover{background:color-mix(in srgb,var(--text) 6%,transparent)}
 .tl-list a:hover b{color:var(--accent)}
 .tl-list b{font-size:.92rem}.tl-list span{font-size:.82rem;color:var(--muted)}
 .src-list{margin:0;padding-left:22px;display:grid;gap:6px;font-size:.88rem;color:var(--muted);columns:2;column-gap:32px;display:block}
@@ -222,10 +223,15 @@ footer .legal{font-size:.75rem;opacity:.7}
 .tiers{grid-template-columns:repeat(2,minmax(0,1fr))}.doman-body{grid-template-columns:minmax(0,1fr)}
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Instrument+Sans:wght@400..700&family=Instrument+Serif&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="brand-guide.css">
 </head>
 <body>
 <div class="wrap">
-<nav class="topnav"><a href="./" data-i18n="shared.nav.tools">Tools I use</a><a href="watchlist.html" data-i18n="shared.nav.watchlist">Watchlist</a><a href="plugins.html" data-i18n="shared.nav.plugins">Plugins</a><a href="venues.html" data-i18n="shared.nav.venues">Venues</a></nav>
+<nav class="topnav"><a class="wordmark" href="./" aria-label="XIVKit home">XIV<b>KIT</b></a><a href="./" data-i18n="shared.nav.tools">Tools I use</a><a href="watchlist.html" data-i18n="shared.nav.watchlist">Watchlist</a><a href="plugins.html" data-i18n="shared.nav.plugins">Plugins</a><a href="venues.html" data-i18n="shared.nav.venues">Venues</a></nav>
 <div id="lang-bar"></div>
 <header class="hero">
 <span class="kicker">Guide</span>

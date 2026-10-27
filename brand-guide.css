@@ -1,0 +1,28 @@
+/* Guide pages that use the shared --bg/--card/--text variable names (inventory decluttering).
+   Loaded after brand.css. Semantic colours stay hued but are tuned per theme. */
+:root {
+  --bg2: var(--bg);
+  --card2: var(--card);
+  --warn: #f0a85a;
+  --opine: #c99bf0;
+  --good: #7ed6a5;
+  --cyan: #6fd1e8;
+  --amber: #e8bb62;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --warn: #8a4f00;
+    --opine: #6b3fa0;
+    --good: #1d6b43;
+    --cyan: #0a6a80;
+    --amber: #7a5200;
+  }
+}
+body { background: var(--bg); }
+a:hover { color: var(--text); }
+.kicker { font-family: var(--font-mono); font-weight: 600; letter-spacing: 1.2px; }
+.topnav { align-items: center; }
+.topnav .wordmark { margin: 0 12px 0 0; font-size: 22px; color: var(--text); }
+.topnav .wordmark:hover { color: var(--text); }
+.rail a.on { border-color: var(--border-strong); }
+h2, .sec-head h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.7rem; letter-spacing: -0.01em; }

@@ -124,12 +124,12 @@ branch = `main`, folder = `/ (root)`. Save, then the site will start working. Cu
 ## Look and feel
 
 The brand is a wordmark, `XIV` in ink and `KIT` in red, set in Cinzel, with two themes:
-Noir (dark, the default) and Silk (light, via `prefers-color-scheme`). The five directory
-pages (home, plugins, watchlist, venues, jump puzzle macros) load `brand.css` after their
-own inline styles, and that file holds the palette, fonts, section labels, cards, pills
-and wordmark. To change a colour or font for those pages, edit `brand.css`. The three
-long guides (hunt for astronomy, inventory decluttering, trade-in mounts) keep their own
-styling for now. Fonts come from Google Fonts: Cinzel, Instrument Serif, Instrument Sans
+Noir (dark, the default) and Silk (light, via `prefers-color-scheme`). `brand.css` holds the shared palette, fonts and wordmark and loads after each page's own
+inline styles. The five directory pages (home, plugins, watchlist, venues, jump puzzle
+macros) also load `brand-directory.css` (section labels, cards, pills, nav), and the
+inventory decluttering guide loads `brand-guide.css`. To change a colour or font, edit
+`brand.css`. The hunt for astronomy and trade-in mounts guides keep their own styling
+for now. Fonts come from Google Fonts: Cinzel, Instrument Serif, Instrument Sans
 and JetBrains Mono. `favicon.svg` is the XIV letters with a red rule, converted to
 outlines, so it needs no font.
 
