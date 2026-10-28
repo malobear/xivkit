@@ -147,3 +147,12 @@ outlines, so it needs no font.
   `pnpm og` (all cards) or `pnpm og plugins` (just one). Commit the updated PNGs.
 - The region setting is stored in `localStorage` as `xivkit-region` (older keys are
   migrated automatically by `market-region.js`).
+
+### Retainer ventures data
+
+`retainer-ventures.html` reads two generated files. After a patch that adds ventures, run
+`pnpm ventures` to rebuild `ventures.json` (venture list, yields, stat breakpoints, and item
+icon paths, all from XIVAPI). The "Leveling and gear" tab shows example prices from
+`guide-snapshot.json` until the visitor's own world has loaded, then swaps to live prices.
+Refresh the snapshot now and then with `pnpm snapshot` (Excalibur) or
+`pnpm snapshot <world>`, and commit it: the file carries its own date, which the page shows.

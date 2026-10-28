@@ -104,6 +104,26 @@ input[type="number"]{width:5.5em}
 .cost small{display:block;font:12px var(--body);color:var(--muted);margin-top:3px;font-weight:400}
 .main h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0;line-height:1.25}
 .main h3 a{color:var(--ink);text-decoration:none}
+.guide-intro{margin:18px 0 6px;padding:0;list-style:none;display:grid;gap:8px;max-width:76ch}
+.guide-intro li{padding-left:14px;border-left:2px solid var(--rule)}
+.guide-snap{margin:14px 0 0;padding:8px 12px;border:1px solid var(--rule);border-left:3px solid var(--gold);border-radius:4px;font-size:14px;max-width:76ch}
+#guideBody.is-snapshot .gcard{opacity:.7}
+.guide-assume{color:var(--muted);font-size:14px;max-width:76ch;margin:10px 0 0}
+.gcard{border-top:1px solid var(--rule);margin-top:22px;padding-top:6px}
+.gcard h3{font-family:var(--display);font-weight:600;font-size:24px;margin:10px 0 4px}
+.gcard .stat-note{color:var(--muted);font-size:14px;max-width:76ch;margin:0 0 8px}
+.gcard .takeaway{max-width:76ch;margin:0 0 10px}
+.gcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:6px 28px}
+.gcols h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:14px 0 6px}
+.gtable{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+.gtable th{font-weight:600;font-size:13px;color:var(--muted);text-align:right;padding:4px 8px;border-bottom:1px solid var(--rule)}
+.gtable th:first-child,.gtable td:first-child{text-align:left;padding-left:0}
+.gtable td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--rule)}
+.gtable tr.knee td{font-weight:700}
+.gtable .bar{display:block;height:4px;border-radius:2px;background:var(--cyan);margin-top:3px;opacity:.7}
+.gtop{list-style:none;margin:0;padding:0}
+.gtop li{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--rule)}
+.gtop .muted{margin-left:auto;text-align:right}
 .main h3.with-icon{display:flex;align-items:center;gap:10px}
 .item-icon{width:32px;height:32px;border-radius:5px;flex:none;background:var(--surface);border:1px solid var(--rule)}
 .assign li{display:flex;align-items:center;gap:8px}
@@ -185,6 +205,7 @@ footer li{margin:5px 0}
   <div class="view-tabs" role="tablist" id="viewTabs">
     <button type="button" class="view-tab" role="tab" data-view="plan">Plan all retainers</button>
     <button type="button" class="view-tab" role="tab" data-view="explore">Explore one retainer</button>
+    <button type="button" class="view-tab" role="tab" data-view="guide">Leveling and gear</button>
   </div>
 
   <div class="controls" role="region" aria-label="Market settings">
@@ -242,6 +263,10 @@ footer li{margin:5px 0}
     <p class="more" id="more" hidden><button type="button" class="chip" id="showMore">Show more</button></p>
     <p class="empty" id="empty" hidden>No ventures match. Try a lower minimum sales rate or a longer sell window.</p>
   </div>
+
+  <div id="guideView" hidden>
+    <div id="guideBody"></div>
+  </div>
 </section>
 
 <footer>
@@ -266,6 +291,7 @@ const UNI = id => `https://universalis.app/market/${id}`;
 // Game icon for a venture item (path from XIVAPI, saved as v.c by scripts/ventures.mjs).
 const iconImg = v => v.c ? `<img class="item-icon" src="https://beta.xivapi.com/api/1/asset?path=ui/icon/${v.c}.tex&format=png" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">` : "";
 const TAX = 0.05;
+const PRICE_WORKERS = 5;   // price batches fetched at once
 const PAGE_SIZE = 40;
 const STORE_KEY = "xivkit-venture";
 const WORLDS_KEY = "xivkit-worlds";
@@ -281,10 +307,12 @@ const jobMeta = id => JOBS.find(j => j.id === id) || JOBS[0];
 const DEFAULTS = { job: "BTN", level: 100, stat: "", world: "", sort: "hour", minVel: 1, maxDays: 3, runs: 4, share: 50, profiles: [], selected: "", view: "" };
 const state = Object.assign({}, DEFAULTS, loadSaved(), { shown: PAGE_SIZE });
 if (!Array.isArray(state.profiles)) state.profiles = [];
-if (state.view !== "plan" && state.view !== "explore") state.view = state.profiles.length ? "plan" : "explore";
+if (!["plan", "explore", "guide"].includes(state.view)) state.view = state.profiles.length ? "plan" : "explore";
 
 let ventures = null;
 const prices = new Map();   // "world:itemId" -> { price, avg, listing, perDay } | { none: true }
+let snapshot = null;      // { world, generated, p: Map(itemId -> { price, perDay }) } from guide-snapshot.json
+let useSnapshot = false;  // true while the guide is drawn from example prices instead of the visitor's world
 let loadToken = 0;
 
 function loadSaved() {
@@ -323,11 +351,12 @@ function yieldFor(v, stat) {
 function optionsFor(r) {
   const stat = num(r.stat);
   const minVel = num(state.minVel) ?? 0;
+  const yieldStat = r.perc != null ? r.perc : stat;   // the guide drives yield and eligibility separately
   const out = [];
   for (const v of eligibleFor(r)) {
-    const p = prices.get(`${state.world}:${v.i}`);
+    const p = useSnapshot ? snapshot.p.get(v.i) : prices.get(`${state.world}:${v.i}`);
     if (!p || p.none || !(p.perDay >= minVel)) continue;
-    const qty = yieldFor(v, stat);
+    const qty = yieldFor(v, yieldStat);
     const perRun = Math.floor(qty * p.price * (1 - TAX));
     out.push({ v, p, qty, perRun, perHour: Math.floor(perRun * 60 / v.m), days: p.perDay > 0 ? qty / p.perDay : Infinity });
   }
@@ -348,16 +377,16 @@ function exploreRows() {
 // Builds a daily rotation for every retainer. An item only sells so many units a day,
 // and you can only take a share of that, so the best items fill up first and the rest
 // of each retainer's runs move down the list. Runs are handed out best gil per run first.
-function buildPlan() {
+function planFor(retainers) {
   const runs = Math.max(0, Math.floor(num(state.runs) ?? 0));
   const share = Math.min(100, Math.max(0, num(state.share) ?? 0)) / 100;
   const pairs = [];
-  state.profiles.forEach((r, ri) => optionsFor(r).forEach(o => pairs.push({ ri, ...o })));
+  retainers.forEach((r, ri) => optionsFor(r).forEach(o => pairs.push({ ri, ...o })));
   pairs.sort((a, b) => b.perRun - a.perRun);
 
-  const runsLeft = state.profiles.map(() => runs);
+  const runsLeft = retainers.map(() => runs);
   const capLeft = new Map();   // itemId -> units the market can still take per day
-  const plans = state.profiles.map(() => []);
+  const plans = retainers.map(() => []);
   for (const pair of pairs) {
     if (runsLeft[pair.ri] <= 0) continue;
     const cap = capLeft.has(pair.v.i) ? capLeft.get(pair.v.i) : pair.p.perDay * share;
@@ -370,6 +399,7 @@ function buildPlan() {
   }
   return plans.map((list, ri) => ({ list, idle: runsLeft[ri], day: list.reduce((t, x) => t + x.day, 0) }));
 }
+const buildPlan = () => planFor(state.profiles);
 
 function verdict(days) {
   if (days <= 1) return { cls: "v-quick", tag: "Sells fast", text: `The whole haul clears in about ${days * 24 < 2 ? "an hour or two" : Math.round(days * 24) + " hours"} at the current pace.` };
@@ -431,6 +461,7 @@ function setNotice(text, err) {
 }
 
 function itemIdsNeeded() {
+  if (state.view === "guide") return [...new Set((ventures || []).map(v => v.i))];
   const retainers = state.view === "plan" ? state.profiles : [cur()];
   return [...new Set(retainers.flatMap(r => eligibleFor(r).map(v => v.i)))];
 }
@@ -499,13 +530,111 @@ function render(withEditor) {
   document.querySelectorAll(".view-tab").forEach(b => b.setAttribute("aria-selected", b.dataset.view === state.view));
   $("#planView").hidden = state.view !== "plan";
   $("#exploreView").hidden = state.view !== "explore";
+  $("#guideView").hidden = state.view !== "guide";
   $("#maxDaysCtl").hidden = state.view !== "explore";
   if (state.view === "plan") {
     if (withEditor !== false) renderRetainerList();
     renderPlan();
+  } else if (state.view === "guide") {
+    renderGuide();
   } else {
     renderExplore();
   }
+}
+
+// ---- Leveling and gear guide
+// Each class gets the same three tables, all priced live and run through the same planner as the Plan tab:
+// income by retainer level, income by gear step at level 100, and the best sellers with their unlock level.
+const GUIDE = [
+  { job: "BTN", name: "Botanist", yieldStat: "Perception", note: "Gathering decides which ventures a retainer can run. Perception decides how many items each run brings back, so that is what the gear table follows. It assumes your retainer already meets each venture's requirement." },
+  { job: "MIN", name: "Miner", yieldStat: "Perception", note: "Gathering decides which ventures a retainer can run. Perception decides how many items each run brings back, so that is what the gear table follows. It assumes your retainer already meets each venture's requirement." },
+  { job: "FSH", name: "Fisher", yieldStat: "Perception", note: "The gear table follows Perception, which sets how many fish each run brings back. It assumes your retainer already meets each venture's requirement." },
+  { job: "COMBAT", name: "Combat", yieldStat: "Item level", note: "Item level is the only stat that matters. Ventures need a minimum item level, and the yield steps up as it rises, so spare job gear you have outgrown is the cheap way to raise it." }
+];
+const GUIDE_LEVELS = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+function guideCard(g) {
+  const combat = g.job === "COMBAT";
+  const mine = ventures.filter(v => v.j === g.job);
+  // Gatherers: eligibility is assumed met and only the yield stat varies. Combat uses one stat for both.
+  // Every class starts from the stat a retainer needs to run the top ventures at all, since a geared level 100 sits at or above it.
+  const asRetainer = (level, s) => combat ? { job: g.job, level, stat: s } : { job: g.job, level, stat: 1e6, perc: s };
+  const dayAt = (level, s) => planFor([asRetainer(level, s)])[0].day;
+  const baseStat = Math.max(...mine.map(v => v.r));
+
+  const levels = GUIDE_LEVELS.filter(L => mine.some(v => v.l <= L)).map(L => ({ L, d: dayAt(L, baseStat) }));
+  const top = levels[levels.length - 1];
+  if (!top || top.d <= 0) {
+    return `<section class="gcard"><h3>${g.name}</h3><p class="stat-note">Nothing sellable matches this class on ${escapeHtml(state.world)} right now.</p></section>`;
+  }
+  const knee = levels.find(x => x.d >= top.d * 0.9);
+
+  // Gear steps at level 100: every yield breakpoint, keeping the ones that move income by 3% or more.
+  const cuts = [...new Set(mine.flatMap(v => v.t))].filter(t => t > baseStat).sort((a, b) => a - b);
+  const steps = [];
+  let prev = top.d;
+  for (const t of cuts) {
+    const d = dayAt(100, t);
+    if (d >= prev * 1.03) { steps.push({ t, add: d - prev, d }); prev = d; }
+  }
+  const best = steps.length ? steps[steps.length - 1] : { t: baseStat, d: top.d };
+
+  const sellers = optionsFor(asRetainer(100, best.t)).sort((a, b) => b.perRun - a.perRun).slice(0, 3);
+  const sellerHtml = sellers.map(o => `<li>${iconImg(o.v)}<span>${escapeHtml(o.v.n)}</span><span class="muted">level ${o.v.l}+ &middot; ${o.qty} per run &middot; ${gil(o.perRun)} gil</span></li>`).join("");
+
+  const lvlRows = levels.map(x => `<tr${x === knee ? ' class="knee"' : ""}><td>Level ${x.L}</td><td>${gil(x.d)}<span class="bar" style="width:${Math.round(x.d / top.d * 100)}%"></span></td></tr>`).join("");
+  const gearRows = steps.length
+    ? steps.map(s => `<tr><td>${gil(s.t)}</td><td>+${gil(s.add)}</td><td>${gil(s.add * 90)}</td></tr>`).join("")
+    : `<tr><td colspan="3" class="muted">No gear step changes income by 3% or more here.</td></tr>`;
+
+  const share100 = knee.d / top.d;
+  const levelLine = knee.L >= top.L
+    ? `This class needs level ${top.L} to earn its best. Level ${levels[levels.length - 2].L} reaches ${Math.round(levels[levels.length - 2].d / top.d * 100)}% of it.`
+    : share100 >= 0.995
+      ? `A level ${knee.L} retainer already earns as much as a level ${top.L} one (${gil(top.d)} gil a day).`
+      : `A level ${knee.L} retainer already earns ${Math.round(share100 * 100)}% of what a level ${top.L} one does (${gil(knee.d)} against ${gil(top.d)} gil a day).`;
+  const gearLine = steps.length
+    ? ` Gear above ${gil(baseStat)} ${g.yieldStat.toLowerCase()} can add up to ${gil(best.d - top.d)} gil a day (${Math.round((best.d / top.d - 1) * 100)}%).`
+    : "";
+  return `<section class="gcard">
+    <h3>${g.name}</h3>
+    <p class="stat-note">${g.note}</p>
+    <p class="takeaway">${levelLine}${gearLine}</p>
+    <div class="gcols">
+      <div><h4>Gil per day by retainer level, at ${gil(baseStat)} ${g.yieldStat.toLowerCase()}</h4><table class="gtable"><thead><tr><th></th><th>Gil per day</th></tr></thead><tbody>${lvlRows}</tbody></table></div>
+      <div><h4>Gear steps at level 100, above ${gil(baseStat)}</h4><table class="gtable"><thead><tr><th>${g.yieldStat} to reach</th><th>Adds per day</th><th>Worth paying up to</th></tr></thead><tbody>${gearRows}</tbody></table></div>
+      <div><h4>Best sellers at the top step</h4><ul class="gtop">${sellerHtml}</ul></div>
+    </div>
+  </section>`;
+}
+
+function renderGuide() {
+  const el = $("#guideBody");
+  if (!ventures) return;
+  // Live prices when the visitor's world has finished loading, otherwise the bundled example prices.
+  const live = !!state.world && !priceJobPending();
+  if (!live && !snapshot) {
+    el.innerHTML = "";
+    setNotice(state.world ? "" : "Pick your world to price the ventures.");
+    return;
+  }
+  setNotice("");
+  useSnapshot = !live;
+  const runs = num(state.runs) ?? 0, share = num(state.share) ?? 0, minVel = num(state.minVel) ?? 0;
+  const banner = live ? "" : `<p class="guide-snap" role="status">Example prices from ${escapeHtml(snapshot.world)} on ${escapeHtml(snapshot.generated)}. ${state.world ? `Loading live prices for ${escapeHtml(state.world)}, this updates when they arrive.` : "Pick your world above for live numbers."}</p>`;
+  const priced = live ? state.world : snapshot.world;
+  try {
+    el.innerHTML = banner + `<ul class="guide-intro">
+      <li>A retainer's level only unlocks ventures, and it cannot pass your own level on that class. Most of the best sellers unlock well before level 100.</li>
+      <li>What a venture returns steps up at fixed stat breakpoints. Nothing between two breakpoints counts, so only gear that crosses one is worth buying.</li>
+      <li>A gear step pays for itself in its price divided by the extra gil per day. The last column is the most each step is worth paying to get the money back within 90 days.</li>
+    </ul>
+    <p class="guide-assume">Priced on ${escapeHtml(priced)} with ${runs} ventures a day per retainer, ${share}% of each item's daily sales, and at least ${minVel} sold a day. Change the first two in the Plan tab. These are ${live ? "live" : "example"} prices for one world, so treat the totals as a guide and not a promise.</p>` +
+      GUIDE.map(guideCard).join("");
+  } finally {
+    useSnapshot = false;
+  }
+  el.classList.toggle("is-snapshot", !live);
 }
 
 async function fetchBatch(world, ids, attempts = 4) {
@@ -533,24 +662,36 @@ async function loadPrices(force) {
   const progress = $("#priceProgress");
   progress.hidden = false;
   let failed = false;
-  for (let i = 0; i < ids.length; i += 100) {
-    progress.textContent = `Pricing ventures on ${world}: ${Math.min(i + 100, ids.length)} of ${ids.length}`;
-    const batch = ids.slice(i, i + 100);
-    const results = await fetchBatch(world, batch);
-    if (token !== loadToken) return;
-    if (!results) { failed = true; continue; }
-    const byId = new Map(results.map(r => [r.itemId, r]));
-    for (const id of batch) {
-      const nq = (byId.get(id) || {}).nq || {};
-      const avg = nq.averageSalePrice && nq.averageSalePrice.world && nq.averageSalePrice.world.price;
-      const listing = nq.minListing && nq.minListing.world && nq.minListing.world.price;
-      const perDay = nq.dailySaleVelocity && nq.dailySaleVelocity.world && nq.dailySaleVelocity.world.quantity;
-      // No average sale on this world means nobody buys it here, so there is nothing real to count.
-      prices.set(`${world}:${id}`, avg > 0
-        ? { avg: Math.floor(avg), listing: listing || 0, price: Math.floor(listing > 0 ? Math.min(listing, avg) : avg), perDay: perDay || 0 }
-        : { none: true });
+  // Batches of 100 run a few at a time: one after another this took about 2 seconds a batch.
+  const batches = [];
+  for (let i = 0; i < ids.length; i += 100) batches.push(ids.slice(i, i + 100));
+  let done = 0;
+  const showProgress = () => { progress.textContent = `Pricing ventures on ${world}: ${Math.min(done * 100, ids.length)} of ${ids.length}`; };
+  showProgress();
+  const queue = [...batches];
+  const worker = async () => {
+    while (queue.length && token === loadToken) {
+      const batch = queue.shift();
+      const results = await fetchBatch(world, batch);
+      if (token !== loadToken) return;
+      done++;
+      showProgress();
+      if (!results) { failed = true; continue; }
+      const byId = new Map(results.map(r => [r.itemId, r]));
+      for (const id of batch) {
+        const nq = (byId.get(id) || {}).nq || {};
+        const avg = nq.averageSalePrice && nq.averageSalePrice.world && nq.averageSalePrice.world.price;
+        const listing = nq.minListing && nq.minListing.world && nq.minListing.world.price;
+        const perDay = nq.dailySaleVelocity && nq.dailySaleVelocity.world && nq.dailySaleVelocity.world.quantity;
+        // No average sale on this world means nobody buys it here, so there is nothing real to count.
+        prices.set(`${world}:${id}`, avg > 0
+          ? { avg: Math.floor(avg), listing: listing || 0, price: Math.floor(listing > 0 ? Math.min(listing, avg) : avg), perDay: perDay || 0 }
+          : { none: true });
+      }
     }
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(PRICE_WORKERS, batches.length) }, worker));
+  if (token !== loadToken) return;
   progress.hidden = true;
   if (failed) setNotice("Some prices could not be loaded. Try Refresh prices.", true);
   render(false);
@@ -696,9 +837,14 @@ $("#refreshPrices").addEventListener("click", async () => {
 });
 
 loadWorlds();
+// Example prices for the guide tab. Optional: without them the tab waits for the visitor's own world.
+const snapshotLoad = fetch("guide-snapshot.json")
+  .then(r => r.ok ? r.json() : null)
+  .then(d => { if (d && d.p) snapshot = { world: d.world, generated: d.generated, p: new Map(Object.entries(d.p).map(([id, x]) => [Number(id), { price: x[0], perDay: x[1] }])) }; })
+  .catch(() => {});
 fetch("ventures.json")
   .then(r => { if (!r.ok) throw new Error("ventures"); return r.json(); })
-  .then(d => { ventures = d.ventures; render(); loadPrices(); })
+  .then(async d => { ventures = d.ventures; await snapshotLoad; render(); loadPrices(); })
   .catch(() => setNotice("Could not load the venture list. Reload the page to try again.", true));
 render();
 </script>
