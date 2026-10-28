@@ -53,7 +53,7 @@ li a:hover { color: var(--text); }
 li a:hover .link-body { color: var(--accent); }
 li .favicon { background: var(--raised); border-radius: 6px; }
 .featured-guides li { border-radius: 16px; }
-.featured-guides li .link-body { font-family: var(--font-display); font-weight: 400; font-size: 1.45rem; line-height: 1.15; }
+.featured-guides li .link-body { font-weight: 600; font-size: 1.1rem; line-height: 1.25; letter-spacing: -0.01em; }
 .featured-guides li .desc { font-family: var(--font-sans); font-size: 0.85rem; line-height: 1.4; }
 
 footer a, #empty-state button { color: var(--accent); }

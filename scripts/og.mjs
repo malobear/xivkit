@@ -33,7 +33,7 @@ const font = (family, file, weight) =>
   `@font-face{font-family:"${family}";font-weight:${weight};src:url(data:font/ttf;base64,${readFileSync(FONT_DIR + file).toString("base64")})}`;
 const FONTS = [
   font("Cinzel", "Cinzel-SemiBold.ttf", 600),
-  font("Instrument Serif", "InstrumentSerif-Regular.ttf", 400),
+  font("Instrument Sans", "InstrumentSans-SemiBold.ttf", 600),
   font("Instrument Sans", "InstrumentSans-Regular.ttf", 400),
   font("JetBrains Mono", "JetBrainsMono-Medium.ttf", 500),
 ].join("");
@@ -47,7 +47,7 @@ body{width:1200px;height:630px;background:#0c0b0e;font-family:"Instrument Sans",
 .wm{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.1em;color:#f5f3f6}
 .wm b{font-weight:600;color:#ff5a50}
 .top{position:absolute;left:80px;top:72px;font-size:40px}
-h1{position:absolute;left:80px;top:170px;width:1040px;font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:92px;line-height:1.02;letter-spacing:-.01em}
+h1{position:absolute;left:80px;top:170px;width:1040px;font-weight:600;font-size:80px;line-height:1.05;letter-spacing:-.025em}
 h1.home{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.1em;font-size:128px}
 h1.home b{font-weight:600;color:#ff5a50}
 p{position:absolute;left:80px;width:900px;font-size:30px;line-height:1.35;color:#aaa5b0}

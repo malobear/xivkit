@@ -14,7 +14,6 @@
   --accent-solid: #d92b25;
   --on-accent: #ffffff;
   --shadow-lift: 0 8px 24px rgba(0, 0, 0, 0.6);
-  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --font-caps: "Cinzel", "Trajan Pro", Georgia, serif;
   --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -55,7 +54,7 @@ body {
 .is-home .wordmark { font-size: 40px; }
 
 h1 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
