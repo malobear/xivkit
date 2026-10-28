@@ -10,7 +10,7 @@ A curated, hand-picked list of FFXIV tools I actually use. Kept small on purpose
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins I actually use, with a note on which ones need a custom repo.
 - [Venues](https://xivkit.com/venues.html): player-run venues with open hours converted to your local time and a one-click Lifestream address.
 - [Watchlist](https://xivkit.com/watchlist.html): tools I haven't tried yet, kept separate from the ones I vouch for.
-- Guides: [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html), [Hunt for Astronomy](https://xivkit.com/hunt-for-astronomy.html), [Trade-In Mounts](https://xivkit.com/trade-in-mounts.html), and [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html), with live market prices where it helps.
+- Guides: [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html), [Hunt for Astronomy](https://xivkit.com/hunt-for-astronomy.html), [Trade-In Mounts](https://xivkit.com/trade-in-mounts.html), and [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html), and [Retainer Ventures](https://xivkit.com/retainer-ventures.html), with live market prices where it helps.
 
 ## Suggest a tool
 
@@ -36,8 +36,8 @@ Four list pages share the exact same structure, styling, and search/tag script:
   address. See "Venue entries" below for the extra attributes this page uses.
 
 Guides are standalone pages hosted on the site and listed under "Curated Guides" on
-the home page: `jump-puzzle-macros.html`, `hunt-for-astronomy.html`, `trade-in-mounts.html`, and
-`inventory-decluttering.html`.
+the home page: `jump-puzzle-macros.html`, `hunt-for-astronomy.html`, `trade-in-mounts.html`,
+`inventory-decluttering.html`, and `retainer-ventures.html`.
 
 All pages share the branding: titles read `Page name | XIVKit` (the home page is
 `XIVKit: FFXIV Tools & Links`), `og:site_name` is `XIVKit`, and URLs use
