@@ -1,0 +1,33 @@
+/* Guides that keep their own variable names (trade-in mounts, hunt for astronomy).
+   Loaded after brand.css: maps their variables onto the brand palette and fonts.
+   Verdict colours (--gold, --moss, --rose, --slate) stay as each page defines them. */
+:root:root {
+  --paper: var(--bg);
+  --surface: var(--card);
+  --ink: var(--text);
+  --rule: var(--border);
+  --chip: var(--raised);
+  --cyan: var(--accent);
+  --focus: var(--accent);
+  --display: var(--font-sans);
+  --body: var(--font-sans);
+}
+body { font-family: var(--font-sans); }
+a:hover { color: var(--text); }
+.hero h1, h1 { font-weight: 600; letter-spacing: -0.02em; }
+h2, h3, .cost, .price .big { font-weight: 600; letter-spacing: -0.015em; }
+.cost, .price .big { font-weight: 700; }
+.site-nav { gap: 10px 20px; }
+.site-nav .wordmark {
+  margin: 0 12px 0 0;
+  padding: 0;
+  border: 0;
+  font-size: 22px;
+  color: var(--text);
+}
+.site-nav .wordmark:hover { color: var(--text); }
+.site-nav a:not(.wordmark):hover { color: var(--accent); }
+.chip, select, .view-tab { font-family: var(--font-sans); }
+.hero h1 { font-size: clamp(32px, 5vw, 44px); line-height: 1.08; }
+.nofomo { border: 1px solid var(--border); border-radius: 10px; }
+.nofomo h3 { color: var(--gold); }

@@ -1,7 +1,7 @@
 /* XIVKit brand layer: Noir (dark, default) and Silk (light).
    Shared by every page. Loaded after each page's inline <style>, so it overrides the old palette.
    Tokens mirror the XIVKit design system; fonts load from Google Fonts in each page head. */
-:root {
+:root:root {
   color-scheme: dark light;
   --bg: #0c0b0e;
   --card: #151418;
@@ -19,7 +19,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:root {
     --bg: #f7f5f8;
     --card: #ffffff;
     --raised: #ece9ee;

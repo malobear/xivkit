@@ -128,8 +128,8 @@ Noir (dark, the default) and Silk (light, via `prefers-color-scheme`). `brand.cs
 inline styles. The five directory pages (home, plugins, watchlist, venues, jump puzzle
 macros) also load `brand-directory.css` (section labels, cards, pills, nav), and the
 inventory decluttering guide loads `brand-guide.css`. To change a colour or font, edit
-`brand.css`. The hunt for astronomy and trade-in mounts guides keep their own styling
-for now. Fonts come from Google Fonts: Cinzel (wordmark only), Instrument Sans
+`brand.css`. The hunt for astronomy and trade-in mounts guides keep their own variable
+names and load `brand-guide-vars.css`, which maps them onto the brand palette. Fonts come from Google Fonts: Cinzel (wordmark only), Instrument Sans
 and JetBrains Mono. `favicon.svg` is the XIV letters with a red rule, converted to
 outlines, so it needs no font.
 
