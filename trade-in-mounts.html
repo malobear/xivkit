@@ -13,7 +13,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trade-In Mounts: Grind vs. Buy the Mats | XIVKit</title>
-<meta name="description" content="Every FFXIV mount unlocked by trading in items or currency &mdash; tribal quests, Bozja, Cosmic Exploration, Island Sanctuary, hunts, and more &mdash; with live market board prices and a straight verdict on grinding it out versus buying your way there.">
+<meta name="description" content="Every FFXIV mount unlocked by trading in items or currency (tribal quests, Bozja, Cosmic Exploration, Island Sanctuary, hunts, and more) with live market board prices and a straight verdict on grinding it out versus buying your way there.">
 <link rel="canonical" href="https://xivkit.com/trade-in-mounts.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
@@ -376,10 +376,10 @@ const MOUNT_ICON = id => MOUNT_ICON_PATHS[id] ? `https://beta.xivapi.com/api/1/a
 // shift as live prices move, so that case is decided fresh on every render
 // from whatever's currently in priceCache, not hardcoded at research time.
 const VERDICTS = {
-  grind: { label: "Grind it out", blurb: "No market shortcut exists for the trade-in currency or the mount itself — reputation and dailies only." },
-  buyMats: { label: "Buy the mats", blurb: "The trade-in materials are marketboardable — skip the grind and buy your way to the turn-in." },
+  grind: { label: "Grind it out", blurb: "No market shortcut exists for the trade-in currency or the mount itself. Reputation and dailies only." },
+  buyMats: { label: "Buy the mats", blurb: "The trade-in materials are marketboardable. Skip the grind and buy your way to the turn-in." },
   buyMount: { label: "Just buy the mount", blurb: "The mount item itself is resellable. Rare, but worth checking before you grind for it." },
-  checking: { label: "Comparing prices…", blurb: "Both sides are marketable — working out which is actually cheaper right now." }
+  checking: { label: "Comparing prices…", blurb: "Both sides are marketable. Working out which is actually cheaper right now." }
 };
 const ORDER = ["grind", "buyMats", "buyMount", "checking"];
 
@@ -398,7 +398,7 @@ const ITEMS = [
     vendor: { name: "Amalj'aa Vendor", zone: "Southern Thanalan", coords: "X:23.3 Y:14.1" },
     cost: { currency: "Gil", currencyId: null, qty: 120000, marketable: false },
     itemMarketable: false,
-    take: "Bound item, flat Gil cost — nothing to price-shop here. Grind Amalj'aa dailies to Trusted rank and buy it outright for 120,000 gil."
+    take: "Bound item, flat Gil cost, nothing to price-shop here. Grind Amalj'aa dailies to Trusted rank and buy it outright for 120,000 gil."
   },
   {
     id: 7554, name: "Cavalry Elbst", itemName: "Elbst Horn", category: "tribal",
@@ -406,7 +406,7 @@ const ITEMS = [
     vendor: { name: "Sahagin Vendor", zone: "Western La Noscea", coords: "X:16.0 Y:22.0" },
     cost: { currency: "Gil", currencyId: null, qty: 120000, marketable: false },
     itemMarketable: false,
-    take: "Bound item, flat Gil cost — nothing to compare prices on. Grind Sahagin dailies to Trusted rank and buy it outright for 120,000 gil."
+    take: "Bound item, flat Gil cost, nothing to compare prices on. Grind Sahagin dailies to Trusted rank and buy it outright for 120,000 gil."
   },
   {
     id: 6992, name: "Laurel Goobbue", itemName: "Laurel Goobbue Horn", category: "tribal",
@@ -414,7 +414,7 @@ const ITEMS = [
     vendor: { name: "Sylphic Vendor", zone: "East Shroud", coords: "X:22.3 Y:26.3" },
     cost: { currency: "Gil", currencyId: null, qty: 120000, marketable: false },
     itemMarketable: false,
-    take: "Bound item, flat Gil cost — no grind-vs-buy comparison to make. Reach Trusted rank with the Sylph and buy it outright for 120,000 gil."
+    take: "Bound item, flat Gil cost, no grind-vs-buy comparison to make. Reach Trusted rank with the Sylph and buy it outright for 120,000 gil."
   },
   {
     id: 7555, name: "Bomb Palanquin", itemName: "Bomb Palanquin Horn", category: "tribal",
@@ -422,7 +422,7 @@ const ITEMS = [
     vendor: { name: "Kobold Vendor", zone: "Outer La Noscea", coords: "X:21.6 Y:17.8" },
     cost: { currency: "Gil", currencyId: null, qty: 120000, marketable: false },
     itemMarketable: false,
-    take: "No market shortcut exists — the horn is bound, and 120,000 gil is just money. Reach Trusted rank with the Kobold (a relatively low, early bar) and buy it outright."
+    take: "No market shortcut exists, the horn is bound, and 120,000 gil is just money. Reach Trusted rank with the Kobold (a relatively low, early bar) and buy it outright."
   },
   {
     id: 8208, name: "Direwolf", itemName: "Direwolf Whistle", category: "tribal",
@@ -430,7 +430,7 @@ const ITEMS = [
     vendor: { name: "Ixali Vendor", zone: "North Shroud", coords: "X:24.9 Y:22.7" },
     cost: { currency: "Gil", currencyId: null, qty: 120000, marketable: false },
     itemMarketable: false,
-    take: "There's no market angle here at all — the Direwolf Whistle is bound and Gil isn't something to price-check. Grind Ixali dailies to Sworn rank, then pay 120,000 gil outright."
+    take: "There's no market angle here at all, the Direwolf Whistle is bound and Gil isn't something to price-check. Grind Ixali dailies to Sworn rank, then pay 120,000 gil outright."
   },
   {
     id: 12071, name: "Sanuwa", itemName: "Sanuwa Whistle", category: "tribal",
@@ -454,7 +454,7 @@ const ITEMS = [
     vendor: { name: "Mogmul Mogbelly", zone: "The Churning Mists", coords: "X:15.9 Y:28.5" },
     cost: { currency: "Gil", currencyId: null, qty: 200000, marketable: false },
     itemMarketable: false,
-    take: "No market angle at all here — the cost is a flat 200,000 gil, not a farmable item, so there's nothing to compare prices on. Reach Sworn rank with the Moogles and pay outright; the only \"grind\" is the reputation, not the gil."
+    take: "No market angle at all here, the cost is a flat 200,000 gil, not a farmable item, so there's nothing to compare prices on. Reach Sworn rank with the Moogles and pay outright; the only \"grind\" is the reputation, not the gil."
   },
   {
     id: 22459, name: "True Griffin", itemName: "True Griffin Whistle", category: "tribal",
@@ -462,7 +462,7 @@ const ITEMS = [
     vendor: { name: "Madhura", zone: "The Fringes", coords: "X:20.9 Y:26.2" },
     cost: { currency: "Ananta Dreamstaff", currencyId: 21935, qty: 18, marketable: false },
     itemMarketable: false,
-    take: "Same vendor and currency as the Marid, one tribal rank higher (Bloodsworn instead of Sworn). Both the Ananta Dreamstaff currency and the True Griffin Whistle are bound, so there's no shortcut here either — push to Rank 8 and buy it outright for 18 Dreamstaff."
+    take: "Same vendor and currency as the Marid, one tribal rank higher (Bloodsworn instead of Sworn). Both the Ananta Dreamstaff currency and the True Griffin Whistle are bound, so there's no shortcut here either. Push to Rank 8 and buy it outright for 18 Dreamstaff."
   },
   {
     id: 21048, name: "Striped Ray", itemName: "Striped Ray Whistle", category: "tribal",
@@ -558,7 +558,7 @@ const ITEMS = [
     vendor: { name: "Resident Caretaker / Spoils Collector", zone: "any housing ward", coords: "" },
     cost: { currency: "Iron Voyage Spoil", currencyId: 15112, qty: 1, marketable: false },
     itemMarketable: true,
-    take: "Iron Voyage Spoil only drops as RNG loot from FC airship voyages, and it isn't marketboardable itself — but the Zu Horn it turns into is one of only a small handful of mount items that can be resold. Skip the voyage grind entirely and just buy it outright."
+    take: "Iron Voyage Spoil only drops as RNG loot from FC airship voyages, and it isn't marketboardable itself, but the Zu Horn it turns into is one of only a small handful of mount items that can be resold. Skip the voyage grind entirely and just buy it outright."
   },
   {
     id: 41650, name: "Island Adenium", itemName: "Island Adenium Whistle", category: "island",
@@ -566,7 +566,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Vegetal Voucher", currencyId: 41709, qty: 200, marketable: true },
     itemMarketable: true,
-    take: "Both the Vegetal Voucher currency and the finished whistle are tradeable, so Island Sanctuary is fully optional here. Buying 200 Vegetal Vouchers has historically run well under the price of buying the Island Adenium Whistle outright — check the live numbers below, but mats are usually the better deal."
+    take: "Both the Vegetal Voucher currency and the finished whistle are tradeable, so Island Sanctuary is fully optional here. Buying 200 Vegetal Vouchers has historically run well under the price of buying the Island Adenium Whistle outright. Check the live numbers below, but mats are usually the better deal."
   },
   {
     id: 30102, name: "Construct 14", itemName: "Construct 14 Identification Key", category: "bozja",
@@ -574,7 +574,7 @@ const ITEMS = [
     vendor: { name: "Resistance Quartermaster", zone: "The Bozjan Southern Front", coords: "X:14.2 Y:29.6" },
     cost: { currency: "Bozjan Cluster", currencyId: 31135, qty: 180, marketable: false },
     itemMarketable: true,
-    take: "Bozjan Clusters are bound the moment you earn them, but the Construct 14 Identification Key itself can be resold — skip the Bozja grind entirely and just buy it outright."
+    take: "Bozjan Clusters are bound the moment you earn them, but the Construct 14 Identification Key itself can be resold. Skip the Bozja grind entirely and just buy it outright."
   },
   {
     id: 52266, name: "Duck-billed Porter", itemName: "Duck-billed Porter Whistle", category: "occult",
@@ -582,7 +582,7 @@ const ITEMS = [
     vendor: { name: "Expedition Antiquarian", zone: "The Occult Crescent: North Horn", coords: "X:39.4 Y:38.7" },
     cost: { currency: "Arcane Amulet", currencyId: 51977, qty: 500, marketable: false },
     itemMarketable: true,
-    take: "Arcane Amulets are bound, but the Duck-billed Porter Whistle itself is marketboardable — skip 500 Amulets of farming and just buy it outright."
+    take: "Arcane Amulets are bound, but the Duck-billed Porter Whistle itself is marketboardable. Skip 500 Amulets of farming and just buy it outright."
   },
   {
     id: 47979, name: "Petalodus", itemName: "Petalodus Whistle", category: "occult",
@@ -590,7 +590,7 @@ const ITEMS = [
     vendor: { name: "Expedition Antiquarian", zone: "The Occult Crescent: South Horn", coords: "X:38.1 Y:7.0" },
     cost: { currency: "Sanguinite", currencyId: 47868, qty: 99, marketable: false },
     itemMarketable: true,
-    take: "Sanguinite is bound, but the Petalodus Whistle is marketboardable and usually cheap — the wiki itself notes this mount drops often enough from South Horn's overworld coffers that farming 99 Sanguinite for it isn't worth the trouble. Buy it outright."
+    take: "Sanguinite is bound, but the Petalodus Whistle is marketboardable and usually cheap, the wiki itself notes this mount drops often enough from South Horn's overworld coffers that farming 99 Sanguinite for it isn't worth the trouble. Buy it outright."
   },
   {
     id: 47975, name: "Ancient Airship", itemName: "Ancient Airship Identification Key", category: "occult",
@@ -598,7 +598,7 @@ const ITEMS = [
     vendor: { name: "Expedition Antiquarian", zone: "The Occult Crescent: South Horn", coords: "X:38.1 Y:7.0" },
     cost: { currency: "Enlightenment Silver Piece", currencyId: 45043, qty: 5000, marketable: false },
     itemMarketable: false,
-    take: "Both the Enlightenment Silver Piece currency and the Ancient Airship Identification Key are bound, so there's no shortcut here — grind out 5,000 Silver Pieces in the Occult Crescent and buy it outright."
+    take: "Both the Enlightenment Silver Piece currency and the Ancient Airship Identification Key are bound, so there's no shortcut here. Grind out 5,000 Silver Pieces in the Occult Crescent and buy it outright."
   },
   {
     id: 52272, name: "Carbide Grey Warp Loader", itemName: "Carbide Grey Warp Loader Identification Key", category: "cosmic",
@@ -622,7 +622,7 @@ const ITEMS = [
     vendor: { name: "Mesouaidonque", zone: "Oizys", coords: "X:17.4 Y:24.5" },
     cost: { currency: "Cosmocredit", currencyId: 45690, qty: 20000, marketable: false },
     itemMarketable: true,
-    take: "Just a recolor of the standard Warp Loader, but priced the same in Cosmocredits. Bound currency, resellable mount — buy it outright."
+    take: "Just a recolor of the standard Warp Loader, but priced the same in Cosmocredits. Bound currency, resellable mount. Buy it outright."
   },
   {
     id: 50445, name: "Rapid-fab Vacuum Suit", itemName: "Rapid-fab Vacuum Suit Identification Key", category: "cosmic",
@@ -646,7 +646,7 @@ const ITEMS = [
     vendor: { name: "Mesouaidonque", zone: "Auxesia", coords: "X:27.8 Y:29.0" },
     cost: { currency: "Auxesia Token Booklet", currencyId: 52091, qty: 60, marketable: true },
     itemMarketable: true,
-    take: "Both the Auxesia Token Booklet currency and the Cosmic Predator Identification Key are tradeable, so this one's a genuine price comparison, not a fixed answer — check the live numbers below to see which side is actually cheaper right now."
+    take: "Both the Auxesia Token Booklet currency and the Cosmic Predator Identification Key are tradeable, so this one's a genuine price comparison, not a fixed answer. Check the live numbers below to see which side is actually cheaper right now."
   },
   {
     id: 50442, name: "Cosmic Armored Weapon", itemName: "Cosmic Armored Weapon Identification Key", category: "cosmic",
@@ -654,7 +654,7 @@ const ITEMS = [
     vendor: { name: "Mesouaidonque", zone: "Oizys", coords: "X:17.4 Y:24.5" },
     cost: { currency: "Oizys Token Booklet", currencyId: 50829, qty: 60, marketable: true },
     itemMarketable: true,
-    take: "Both the Oizys Token Booklet currency and the Cosmic Armored Weapon Identification Key are tradeable, so it's worth comparing live prices rather than assuming — check the numbers below before grinding either side."
+    take: "Both the Oizys Token Booklet currency and the Cosmic Armored Weapon Identification Key are tradeable, so it's worth comparing live prices rather than assuming. Check the numbers below before grinding either side."
   },
   {
     id: 47336, name: "Cosmoboard", itemName: "Cosmoboard", category: "cosmic",
@@ -662,7 +662,7 @@ const ITEMS = [
     vendor: { name: "Mesouaidonque", zone: "Phaenna", coords: "X:28.6 Y:13.5" },
     cost: { currency: "Phaenna Token Booklet", currencyId: 47343, qty: 60, marketable: true },
     itemMarketable: true,
-    take: "Both the Phaenna Token Booklet currency and the Cosmoboard itself are tradeable, so this is a live comparison rather than a fixed call — check the numbers below to see which side actually wins right now."
+    take: "Both the Phaenna Token Booklet currency and the Cosmoboard itself are tradeable, so this is a live comparison rather than a fixed call. Check the numbers below to see which side actually wins right now."
   },
   {
     id: 33674, name: "Antelope Doe", itemName: "Antelope Doe Horn", category: "skybuilders",
@@ -694,7 +694,7 @@ const ITEMS = [
     vendor: { name: "Enie", zone: "The Firmament", coords: "X:12.0 Y:14.0" },
     cost: { currency: "Skybuilders' Scrip", currencyId: 28063, qty: 8400, marketable: false },
     itemMarketable: true,
-    take: "Bound scrips, resellable horn — buy the Albino Karakul Horn outright rather than farming 8,400 scrips."
+    take: "Bound scrips, resellable horn. Buy the Albino Karakul Horn outright rather than farming 8,400 scrips."
   },
   {
     id: 28917, name: "Ufiti", itemName: "Ufiti Whistle", category: "skybuilders",
@@ -710,7 +710,7 @@ const ITEMS = [
     vendor: { name: "Enie", zone: "The Firmament", coords: "X:12.0 Y:14.0" },
     cost: { currency: "Skybuilders' Scrip", currencyId: 28063, qty: 4200, marketable: false },
     itemMarketable: false,
-    take: "Unlike its Skybuilders' Scrip siblings, the Pegasus Whistle is bound, not resellable — so this one really is grind-only. At least the scrip cost is half the others (4,200 vs. 8,400)."
+    take: "Unlike its Skybuilders' Scrip siblings, the Pegasus Whistle is bound, not resellable, so this one really is grind-only. At least the scrip cost is half the others (4,200 vs. 8,400)."
   },
   {
     id: 33675, name: "Antelope Stag", itemName: "Antelope Stag Horn", category: "skybuilders",
@@ -718,7 +718,7 @@ const ITEMS = [
     vendor: { name: "Enie", zone: "The Firmament", coords: "X:12.0 Y:14.0" },
     cost: { currency: "Fête Token", currencyId: 33870, qty: 30, marketable: false },
     itemMarketable: true,
-    take: "Fête Tokens only come from playing the Firmament's recurring Fête minigames and are bound, but the Antelope Stag Horn itself is resellable — buy it outright instead of waiting on the next Fête cycle."
+    take: "Fête Tokens only come from playing the Firmament's recurring Fête minigames and are bound, but the Antelope Stag Horn itself is resellable. Buy it outright instead of waiting on the next Fête cycle."
   },
   {
     id: 45071, name: "Brachiosaur", itemName: "Brachiosaur Horn", category: "hunts",
@@ -734,7 +734,7 @@ const ITEMS = [
     vendor: { name: "Ryubool Ja", zone: "Tuliyollal", coords: "X:13.9 Y:13.5" },
     cost: { currency: "Sack of Nuts", currencyId: 26533, qty: 3200, marketable: false },
     itemMarketable: false,
-    take: "Same vendor and currency as the Brachiosaur — both sides bound, so it's hunt-train grinding to 3,200 Sacks with no way to buy around it."
+    take: "Same vendor and currency as the Brachiosaur, both sides bound, so it's hunt-train grinding to 3,200 Sacks with no way to buy around it."
   },
   {
     id: 36909, name: "Vinegaroon", itemName: "Vinegaroon Horn", category: "hunts",
@@ -742,7 +742,7 @@ const ITEMS = [
     vendor: { name: "J'lakshai", zone: "Old Sharlayan", coords: "X:11.8 Y:13.2" },
     cost: { currency: "Sack of Nuts", currencyId: 26533, qty: 3200, marketable: false },
     itemMarketable: false,
-    take: "Bound currency, bound mount — grind hunt trains to 3,200 Sacks of Nuts and buy it outright. (Wilmetta in Radz-at-Han sells the same thing at the same price, if that vendor's closer.)"
+    take: "Bound currency, bound mount. Grind hunt trains to 3,200 Sacks of Nuts and buy it outright. (Wilmetta in Radz-at-Han sells the same thing at the same price, if that vendor's closer.)"
   },
   {
     id: 28123, name: "Forgiven Reticence", itemName: "Forgiven Reticence Horn", category: "hunts",
@@ -750,7 +750,7 @@ const ITEMS = [
     vendor: { name: "Xylle", zone: "The Crystarium", coords: "X:9.4 Y:9.5" },
     cost: { currency: "Sack of Nuts", currencyId: 26533, qty: 3200, marketable: false },
     itemMarketable: false,
-    take: "No market angle here either — grind to 3,200 Sacks of Nuts and buy it outright. (Ilfroy in Eulmore is the equivalent vendor if that's more convenient.)"
+    take: "No market angle here either. Grind to 3,200 Sacks of Nuts and buy it outright. (Ilfroy in Eulmore is the equivalent vendor if that's more convenient.)"
   },
   {
     id: 13288, name: "Wyvern", itemName: "Wyvern Horn", category: "hunts",
@@ -766,7 +766,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Seafarer's Cowrie", currencyId: 37549, qty: 12000, marketable: false },
     itemMarketable: false,
-    take: "Both the Seafarer's Cowrie currency and the Island Mandragora itself are bound, so there's no shortcut here — earn 12,000 Cowries on your island and buy it outright."
+    take: "Both the Seafarer's Cowrie currency and the Island Mandragora itself are bound, so there's no shortcut here. Earn 12,000 Cowries on your island and buy it outright."
   },
   {
     id: 33679, name: "Island Onion Prince", itemName: "Island Onion Prince", category: "island",
@@ -782,7 +782,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Seafarer's Cowrie", currencyId: 37549, qty: 12000, marketable: false },
     itemMarketable: false,
-    take: "Bound currency, bound mount — grind out 12,000 Cowries on your island and buy it outright."
+    take: "Bound currency, bound mount. Grind out 12,000 Cowries on your island and buy it outright."
   },
   {
     id: 33681, name: "Island Garlic Jester", itemName: "Island Garlic Jester", category: "island",
@@ -790,7 +790,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Seafarer's Cowrie", currencyId: 37549, qty: 18000, marketable: false },
     itemMarketable: false,
-    take: "No market angle either side — 18,000 Cowries from island activities is the only path to this one."
+    take: "No market angle either side, 18,000 Cowries from island activities is the only path to this one."
   },
   {
     id: 33682, name: "Island Tomato King", itemName: "Island Tomato King", category: "island",
@@ -814,7 +814,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Seafarer's Cowrie", currencyId: 37549, qty: 24000, marketable: false },
     itemMarketable: false,
-    take: "Bound currency, bound mount, and gated behind Sanctuary Rank 10 on top — 24,000 Cowries with no market shortcut."
+    take: "Bound currency, bound mount, and gated behind Sanctuary Rank 10 on top, 24,000 Cowries with no market shortcut."
   },
   {
     id: 39495, name: "Island Alligator", itemName: "Island Alligator Horn", category: "island",
@@ -822,7 +822,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Seafarer's Cowrie", currencyId: 37549, qty: 35000, marketable: false },
     itemMarketable: false,
-    take: "Rank 12 plus 35,000 Cowries, both bound — no way to buy your way past this one."
+    take: "Rank 12 plus 35,000 Cowries, both bound, no way to buy your way past this one."
   },
   {
     id: 40382, name: "Island Buffalo", itemName: "Island Buffalo Horn", category: "island",
@@ -830,7 +830,7 @@ const ITEMS = [
     vendor: { name: "The Horrendous Hoarder", zone: "Unnamed Island", coords: "X:12.6 Y:28.3" },
     cost: { currency: "Seafarer's Cowrie", currencyId: 37549, qty: 50000, marketable: false },
     itemMarketable: false,
-    take: "Rank 16 and 50,000 Cowries, both bound — a long grind with no market shortcut."
+    take: "Rank 16 and 50,000 Cowries, both bound, a long grind with no market shortcut."
   },
   {
     id: 41496, name: "Garlond GL-IIT", itemName: "Garlond GL-IIT Ignition Key", category: "island",
@@ -846,7 +846,7 @@ const ITEMS = [
     vendor: { name: "Uah'shepya", zone: "Solution Nine", coords: "X:8.6 Y:13.5" },
     cost: { currency: "Twilight Gemstone", currencyId: 41805, qty: 3, marketable: true },
     itemMarketable: true,
-    take: "Both the Twilight Gemstone currency and the Qeziigural Horn are tradeable, so this is a real price comparison rather than a fixed call — check the live numbers below to see which side is actually cheaper right now."
+    take: "Both the Twilight Gemstone currency and the Qeziigural Horn are tradeable, so this is a real price comparison rather than a fixed call. Check the live numbers below to see which side is actually cheaper right now."
   },
   {
     id: 36906, name: "Alkonost", itemName: "Alkonost Whistle", category: "variant",
@@ -854,7 +854,7 @@ const ITEMS = [
     vendor: { name: "Nesvaaz", zone: "Radz-at-Han", coords: "X:10.6 Y:10.0" },
     cost: { currency: "Resplendent Feather", currencyId: 37491, qty: 3, marketable: true },
     itemMarketable: true,
-    take: "Both the Resplendent Feather currency and the Alkonost Whistle are tradeable, so it's worth comparing live prices rather than assuming — check the numbers below before farming either side."
+    take: "Both the Resplendent Feather currency and the Alkonost Whistle are tradeable, so it's worth comparing live prices rather than assuming. Check the numbers below before farming either side."
   },
   {
     id: 43591, name: "Air-wheeler A9", itemName: "Air-wheeler A9 Identification Key", category: "purchase",
@@ -862,7 +862,7 @@ const ITEMS = [
     vendor: { name: "Neon", zone: "Solution Nine", coords: "X:8.3 Y:13.3" },
     cost: { currency: "Gil", currencyId: null, qty: 7500000, marketable: false },
     itemMarketable: true,
-    take: "There's no grind here at all — Neon just sells it for 7,500,000 gil outright. The only real question is whether the vendor price beats what it's currently reselling for on the marketboard."
+    take: "There's no grind here at all, Neon just sells it for 7,500,000 gil outright. The only real question is whether the vendor price beats what it's currently reselling for on the marketboard."
   },
   {
     id: 39494, name: "Chrysomallos", itemName: "Chrysomallos Horn", category: "purchase",
@@ -870,7 +870,7 @@ const ITEMS = [
     vendor: { name: "Edelina", zone: "Mor Dhona", coords: "X:22.1 Y:4.9" },
     cost: { currency: "Gil", currencyId: null, qty: 50000000, marketable: false },
     itemMarketable: true,
-    take: "50,000,000 gil straight from Edelina's shop, no grind or currency involved. Worth checking the marketboard first — resold copies have historically undercut the vendor price."
+    take: "50,000,000 gil straight from Edelina's shop, no grind or currency involved. Worth checking the marketboard first, resold copies have historically undercut the vendor price."
   },
   {
     id: 39493, name: "Magitek Avenger G1", itemName: "Magitek Avenger G1 Identification Key", category: "purchase",
@@ -886,7 +886,7 @@ const ITEMS = [
     vendor: { name: "Tabeth", zone: "Eulmore", coords: "X:10.0 Y:11.3" },
     cost: { currency: "Gil", currencyId: null, qty: 25000000, marketable: false },
     itemMarketable: true,
-    take: "A shinier version of the tribal Great Vessel of Ronka, sold outright for 25,000,000 gil with no other requirement. Check the marketboard — it's often cheaper than paying Tabeth direct."
+    take: "A shinier version of the tribal Great Vessel of Ronka, sold outright for 25,000,000 gil with no other requirement. Check the marketboard, it's often cheaper than paying Tabeth direct."
   },
   {
     id: 33687, name: "Gilded Mikoshi", itemName: "Gilded Mikoshi Flute", category: "purchase",
@@ -894,7 +894,7 @@ const ITEMS = [
     vendor: { name: "Edelina", zone: "Mor Dhona", coords: "X:22.1 Y:4.9" },
     cost: { currency: "Gil", currencyId: null, qty: 50000000, marketable: false },
     itemMarketable: true,
-    take: "A gilded reskin of the tribal Mikoshi, unrelated to it in acquisition — just 50,000,000 gil at Edelina's counter. Worth a marketboard check before buying outright."
+    take: "A gilded reskin of the tribal Mikoshi, unrelated to it in acquisition, just 50,000,000 gil at Edelina's counter. Worth a marketboard check before buying outright."
   },
   {
     id: 44504, name: "Alexandrian Axe Beak", itemName: "Alexandrian Axe Beak Horn", category: "fauxhollows",
@@ -902,7 +902,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf is bound the moment you earn it from Faux Hollows, but the Alexandrian Axe Beak Horn itself is marketboardable — skip the grind and buy it outright."
+    take: "Faux Leaf is bound the moment you earn it from Faux Hollows, but the Alexandrian Axe Beak Horn itself is marketboardable. Skip the grind and buy it outright."
   },
   {
     id: 50437, name: "Dynamite", itemName: "Dynamite Whistle", category: "fauxhollows",
@@ -910,7 +910,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Same shape as the other Faux Hollows exchanges: Faux Leaf is bound, but the Dynamite Whistle is resellable — buy it outright instead of grinding 600 Leaves."
+    take: "Same shape as the other Faux Hollows exchanges: Faux Leaf is bound, but the Dynamite Whistle is resellable. Buy it outright instead of grinding 600 Leaves."
   },
   {
     id: 44503, name: "Eggeater", itemName: "Eggeater Horn", category: "fauxhollows",
@@ -918,7 +918,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf can't be bought or sold, but the Eggeater Horn can — skip the minigame grind and buy it off the marketboard."
+    take: "Faux Leaf can't be bought or sold, but the Eggeater Horn can. Skip the minigame grind and buy it off the marketboard."
   },
   {
     id: 36003, name: "Calydontis", itemName: "Calydontis Horn", category: "fauxhollows",
@@ -926,7 +926,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf is bound, but the Calydontis Horn is marketboardable — buy it outright rather than grinding 600 Leaves through Faux Hollows."
+    take: "Faux Leaf is bound, but the Calydontis Horn is marketboardable. Buy it outright rather than grinding 600 Leaves through Faux Hollows."
   },
   {
     id: 33145, name: "Construct VI-S", itemName: "Construct VI-S Core", category: "fauxhollows",
@@ -934,7 +934,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 250, marketable: false },
     itemMarketable: true,
-    take: "The cheapest of the Faux Hollows exchanges at 250 Leaves, though Faux Leaf itself still can't be traded — the Construct VI-S Core can be, so buying it outright is the easier route."
+    take: "The cheapest of the Faux Hollows exchanges at 250 Leaves, though Faux Leaf itself still can't be traded, the Construct VI-S Core can be, so buying it outright is the easier route."
   },
   {
     id: 30865, name: "Incitatus", itemName: "Incitatus Whistle", category: "fauxhollows",
@@ -942,7 +942,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 250, marketable: false },
     itemMarketable: true,
-    take: "Same 250-Leaf price as Construct VI-S. Faux Leaf is bound, but the Incitatus Whistle is resellable — buy it outright."
+    take: "Same 250-Leaf price as Construct VI-S. Faux Leaf is bound, but the Incitatus Whistle is resellable. Buy it outright."
   },
   {
     id: 40390, name: "Magicked Children's Bed", itemName: "Magicked Children's Bed", category: "fauxhollows",
@@ -950,7 +950,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf is bound, but the Magicked Children's Bed itself is marketboardable — buy it outright instead of grinding 600 Leaves."
+    take: "Faux Leaf is bound, but the Magicked Children's Bed itself is marketboardable. Buy it outright instead of grinding 600 Leaves."
   },
   {
     id: 41494, name: "Sabotender De La Luna", itemName: "Sabotender de la Luna Whistle", category: "fauxhollows",
@@ -958,7 +958,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf can't be traded, but the Sabotender de la Luna Whistle can — buy it outright rather than farming 600 Leaves."
+    take: "Faux Leaf can't be traded, but the Sabotender de la Luna Whistle can. Buy it outright rather than farming 600 Leaves."
   },
   {
     id: 36904, name: "Troll", itemName: "Troll Horn", category: "fauxhollows",
@@ -966,7 +966,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf is bound, but the Troll Horn is resellable — buy it outright instead of grinding through Faux Hollows."
+    take: "Faux Leaf is bound, but the Troll Horn is resellable. Buy it outright instead of grinding through Faux Hollows."
   },
   {
     id: 44958, name: "Venturous Kamuy", itemName: "Venturous Kamuy Flute", category: "fauxhollows",
@@ -974,7 +974,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf can't be bought or sold, but the Venturous Kamuy Flute can — skip the minigame grind and buy it outright."
+    take: "Faux Leaf can't be bought or sold, but the Venturous Kamuy Flute can. Skip the minigame grind and buy it outright."
   },
   {
     id: 38457, name: "Wondrous Lanner", itemName: "Wondrous Lanner Whistle", category: "fauxhollows",
@@ -982,7 +982,7 @@ const ITEMS = [
     vendor: { name: "Faux Commander", zone: "Idyllshire", coords: "X:5.7 Y:6.1" },
     cost: { currency: "Faux Leaf", currencyId: 30341, qty: 600, marketable: false },
     itemMarketable: true,
-    take: "Faux Leaf is bound, but the Wondrous Lanner Whistle is marketboardable — buy it outright rather than grinding 600 Leaves."
+    take: "Faux Leaf is bound, but the Wondrous Lanner Whistle is marketboardable. Buy it outright rather than grinding 600 Leaves."
   },
   {
     id: 50438, name: "Genie of the Lamp", itemName: "Genie Lamp", category: "vcdungeon",
@@ -990,7 +990,7 @@ const ITEMS = [
     vendor: { name: "Trisassant", zone: "Old Sharlayan", coords: "X:12.0 Y:13.3" },
     cost: { currency: "Corvosi Manuscript", currencyId: 49125, qty: 100, marketable: false },
     itemMarketable: true,
-    take: "Corvosi Manuscripts are bound, but the Genie Lamp itself is resellable — buy it outright instead of farming Another Merchant's Tale."
+    take: "Corvosi Manuscripts are bound, but the Genie Lamp itself is resellable. Buy it outright instead of farming Another Merchant's Tale."
   },
   {
     id: 41499, name: "Quaqua", itemName: "Quaqua Horn", category: "vcdungeon",
@@ -998,7 +998,7 @@ const ITEMS = [
     vendor: { name: "Trisassant", zone: "Old Sharlayan", coords: "X:12.0 Y:13.3" },
     cost: { currency: "Aloalo Coin", currencyId: 41079, qty: 100, marketable: false },
     itemMarketable: true,
-    take: "Aloalo Coins are bound, but the Quaqua Horn can be resold — buy it outright instead of farming Another Aloalo Island."
+    take: "Aloalo Coins are bound, but the Quaqua Horn can be resold. Buy it outright instead of farming Another Aloalo Island."
   },
   {
     id: 50447, name: "Royal Magicked Carpet", itemName: "Royal Magicked Carpet", category: "vcdungeon",
@@ -1006,7 +1006,7 @@ const ITEMS = [
     vendor: { name: "Trisassant", zone: "Old Sharlayan", coords: "X:12.0 Y:13.3" },
     cost: { currency: "Corvosi Brass", currencyId: 50847, qty: 100, marketable: false },
     itemMarketable: true,
-    take: "Corvosi Brass is bound, but the Royal Magicked Carpet is marketboardable — buy it outright rather than farming the Advanced Merchant's Tale."
+    take: "Corvosi Brass is bound, but the Royal Magicked Carpet is marketboardable. Buy it outright rather than farming the Advanced Merchant's Tale."
   },
   {
     id: 40388, name: "Shishioji", itemName: "Shishioji Flute", category: "vcdungeon",
@@ -1014,7 +1014,7 @@ const ITEMS = [
     vendor: { name: "Trisassant", zone: "Old Sharlayan", coords: "X:12.0 Y:13.3" },
     cost: { currency: "Shishu Coin", currencyId: 39885, qty: 100, marketable: false },
     itemMarketable: true,
-    take: "Shishu Coins are bound, but the Shishioji Flute can be resold — buy it outright instead of farming Another Mount Rokkon."
+    take: "Shishu Coins are bound, but the Shishioji Flute can be resold. Buy it outright instead of farming Another Mount Rokkon."
   },
   {
     id: 38461, name: "Sil'dihn Throne", itemName: "Sil'dihn Throne", category: "vcdungeon",
@@ -1022,7 +1022,7 @@ const ITEMS = [
     vendor: { name: "Trisassant", zone: "Old Sharlayan", coords: "X:12.0 Y:13.3" },
     cost: { currency: "Sil'dihn Silver", currencyId: 38534, qty: 100, marketable: false },
     itemMarketable: true,
-    take: "Sil'dihn Silver is bound, but the Sil'dihn Throne is marketboardable — buy it outright rather than farming Another Sil'dihn Subterrane."
+    take: "Sil'dihn Silver is bound, but the Sil'dihn Throne is marketboardable. Buy it outright rather than farming Another Sil'dihn Subterrane."
   },
   {
     id: 39490, name: "Phaethon", itemName: "Phaethon Horn", category: "variant",
@@ -1030,7 +1030,7 @@ const ITEMS = [
     vendor: { name: "Nesvaaz", zone: "Radz-at-Han", coords: "X:10.6 Y:10.0" },
     cost: { currency: "Burning Horn", currencyId: 39592, qty: 3, marketable: true },
     itemMarketable: true,
-    take: "Both the Burning Horn currency and the Phaethon Horn are tradeable, so this is a real price comparison rather than a fixed call — check the live numbers below to see which side is actually cheaper right now."
+    take: "Both the Burning Horn currency and the Phaethon Horn are tradeable, so this is a real price comparison rather than a fixed call. Check the live numbers below to see which side is actually cheaper right now."
   },
   {
     id: 39491, name: "Pinky", itemName: "Pinky Identification Key", category: "variant",
@@ -1038,7 +1038,7 @@ const ITEMS = [
     vendor: { name: "Nesvaaz", zone: "Radz-at-Han", coords: "X:10.6 Y:10.0" },
     cost: { currency: "Exciting Tonic", currencyId: 39590, qty: 3, marketable: true },
     itemMarketable: true,
-    take: "Both the Exciting Tonic currency and the Pinky Identification Key are tradeable, so it's worth comparing live prices rather than assuming — check the numbers below before farming either side."
+    take: "Both the Exciting Tonic currency and the Pinky Identification Key are tradeable, so it's worth comparing live prices rather than assuming. Check the numbers below before farming either side."
   },
   {
     id: 44500, name: "Dais of Darkness", itemName: "Dais of Darkness", category: "solution9",
@@ -1046,7 +1046,7 @@ const ITEMS = [
     vendor: { name: "Uah'shepya", zone: "Solution Nine", coords: "X:8.6 Y:13.5" },
     cost: { currency: "Clouddark Demimateria II", currencyId: 44869, qty: 75, marketable: false },
     itemMarketable: true,
-    take: "Clouddark Demimateria II is bound, but the Dais of Darkness itself is marketboardable — buy it outright instead of farming 75 Demimateria."
+    take: "Clouddark Demimateria II is bound, but the Dais of Darkness itself is marketboardable. Buy it outright instead of farming 75 Demimateria."
   },
   {
     id: 44502, name: "Barreltender", itemName: "Barreltender Whistle", category: "solution9",
@@ -1078,7 +1078,7 @@ const ITEMS = [
     vendor: { name: "Edelina", zone: "Mor Dhona", coords: "X:22.1 Y:4.9" },
     cost: { currency: "Bicolor Gemstone Voucher", currencyId: 35833, qty: 500, marketable: true },
     itemMarketable: true,
-    take: "Both the Bicolor Gemstone Voucher currency and the Wivre Horn are tradeable, so this is a live comparison rather than a fixed call — check the numbers below."
+    take: "Both the Bicolor Gemstone Voucher currency and the Wivre Horn are tradeable, so this is a live comparison rather than a fixed call. Check the numbers below."
   },
   {
     id: 46831, name: "Forgiven Mimicry", itemName: "Forgiven Mimicry Resonator", category: "pilgrim",
@@ -1086,7 +1086,7 @@ const ITEMS = [
     vendor: { name: "Ose Wyd", zone: "Il Mheg", coords: "X:29.9 Y:5.9" },
     cost: { currency: "First Light Relic", currencyId: 46263, qty: 99, marketable: false },
     itemMarketable: true,
-    take: "First Light Relics are bound, but the Forgiven Mimicry Resonator is marketboardable — buy it outright instead of farming 99 Relics."
+    take: "First Light Relics are bound, but the Forgiven Mimicry Resonator is marketboardable. Buy it outright instead of farming 99 Relics."
   },
   {
     id: 47334, name: "Pilgrim's Protector", itemName: "Pilgrim's Protector Horn", category: "pilgrim",
@@ -1094,7 +1094,7 @@ const ITEMS = [
     vendor: { name: "Ose Wyd", zone: "Il Mheg", coords: "X:29.9 Y:5.9" },
     cost: { currency: "First Light Relic", currencyId: 46263, qty: 99, marketable: false },
     itemMarketable: true,
-    take: "Same exchange as Forgiven Mimicry: First Light Relics are bound, but the Pilgrim's Protector Horn can be resold — buy it outright."
+    take: "Same exchange as Forgiven Mimicry: First Light Relics are bound, but the Pilgrim's Protector Horn can be resold. Buy it outright."
   },
   {
     id: 46834, name: "Felyne Support Team Cart", itemName: "Felyne Support Team Cart Horn", category: "trial",
@@ -1102,7 +1102,7 @@ const ITEMS = [
     vendor: { name: "Smithy", zone: "Tuliyollal", coords: "X:13.3 Y:13.1" },
     cost: { currency: "Guardian Arkveld Certificate", currencyId: 47101, qty: 99, marketable: false },
     itemMarketable: true,
-    take: "Guardian Arkveld Certificates are bound, but the Felyne Support Team Cart Horn is marketboardable — buy it outright instead of farming The Windward Wilds."
+    take: "Guardian Arkveld Certificates are bound, but the Felyne Support Team Cart Horn is marketboardable. Buy it outright instead of farming The Windward Wilds."
   }
 ];
 
@@ -1130,9 +1130,9 @@ const state = { view: "mats", filter: "all", sort: "shop", region: MarketRegion.
 const REGION_LABEL = MarketRegion.LABELS;
 
 const VIEWS = {
-  mats: { label: "Buy the mats", heading: "Buy the mats", sub: "The trade-in currency itself is marketable — skip earning it and buy your way to the turn-in." },
-  buyMount: { label: "Buy the mount instead", heading: "Buy the mount instead", sub: "Currency's bound, but the finished mount can be resold — buy it outright instead." },
-  grind: { label: "Grind only", heading: "Grind only", sub: "No market angle either side. Reputation grinding only — listed for reference, not comparison." }
+  mats: { label: "Buy the mats", heading: "Buy the mats", sub: "The trade-in currency itself is marketable. Skip earning it and buy your way to the turn-in." },
+  buyMount: { label: "Buy the mount instead", heading: "Buy the mount instead", sub: "Currency's bound, but the finished mount can be resold. Buy it outright instead." },
+  grind: { label: "Grind only", heading: "Grind only", sub: "No market angle either side. Reputation grinding only. Listed for reference, not comparison." }
 };
 
 // Which tab a mount belongs in: buyable mats, buyable-mount-only, or a pure
@@ -1443,7 +1443,7 @@ function savingsBlock(it) {
   const sellNote = itemScope(it) !== state.region ? ` (mount priced on ${escapeHtml(itemScope(it))})` : "";
   const whichCheaper = (s.cheaper === "mats" ? "Buying the mats" : "Buying the mount") + sellNote;
   const shortNote = s.short
-    ? `<span class="na" title="Fewer than ${fmt(it.cost.qty)} ${it.cost.currency} are currently listed in this region, so the mats total (and this comparison) is a lower bound.">fewer than ${fmt(it.cost.qty)} listed &mdash; estimate</span>`
+    ? `<span class="na" title="Fewer than ${fmt(it.cost.qty)} ${it.cost.currency} are currently listed in this region, so the mats total (and this comparison) is a lower bound.">fewer than ${fmt(it.cost.qty)} listed (estimate)</span>`
     : "";
   return `<div class="price-block">
     <span class="pb-row"><span class="lbl">Savings</span></span>
