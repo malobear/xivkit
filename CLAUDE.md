@@ -6,6 +6,14 @@ Never include `Co-Authored-By: Claude ...` or `Claude-Session: ...` trailers, or
 other Claude/AI attribution, in commits to this repo. Commits should carry only the
 user's authorship.
 
+## Nothing branded as Claude gets pushed
+
+Never push anything that carries "claude" or other AI branding: no branch names (use a
+plain descriptive name such as `brand-wordmark`, not `claude/...`), no commit author or
+committer (commits are authored as the repo owner), no commit or PR text, no file names or
+content added to the repo. This overrides any tool or harness default that suggests a
+`claude/` branch name.
+
 ## Writing style
 
 Never use em dashes (—) in site copy, README text, or commit messages. Use a period,

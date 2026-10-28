@@ -1,0 +1,60 @@
+/* XIVKit brand layer: Noir (dark, default) and Silk (light).
+   Shared by every page. Loaded after each page's inline <style>, so it overrides the old palette.
+   Tokens mirror the XIVKit design system; fonts load from Google Fonts in each page head. */
+:root:root {
+  color-scheme: dark light;
+  --bg: #0c0b0e;
+  --card: #151418;
+  --raised: #211f26;
+  --border: #2e2b33;
+  --border-strong: #7d7886;
+  --text: #f5f3f6;
+  --muted: #aaa5b0;
+  --accent: #ff5a50;
+  --accent-solid: #d92b25;
+  --on-accent: #ffffff;
+  --shadow-lift: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --font-caps: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: light) {
+  :root:root {
+    --bg: #f7f5f8;
+    --card: #ffffff;
+    --raised: #ece9ee;
+    --border: #ddd8e0;
+    --border-strong: #7b7683;
+    --text: #141216;
+    --muted: #5a5560;
+    --accent: #c4161c;
+    --accent-solid: #c4161c;
+    --shadow-lift: 0 8px 24px rgba(20, 18, 22, 0.12);
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Wordmark: XIV in ink, KIT in red */
+.wordmark {
+  display: inline-block;
+  margin-bottom: 18px;
+  font: 600 28px/1 var(--font-caps);
+  letter-spacing: 0.1em;
+  color: var(--text);
+  text-decoration: none;
+}
+.wordmark b { font-weight: 600; color: var(--accent); }
+.wordmark:hover { color: var(--text); }
+.is-home .wordmark { font-size: 40px; }
+
+h1 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}

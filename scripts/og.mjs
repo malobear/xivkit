@@ -10,11 +10,12 @@
 // Set CHROMIUM_PATH to use an existing Chromium binary instead of Playwright's.
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
 
 const OUT_DIR = fileURLToPath(new URL("..", import.meta.url));
 const DOMAIN = "xivkit.com";
 
-// name -> og-<name>.png. The "XIVKit" title on the home card replaces the wordmark.
+// name -> og-<name>.png. The "XIVKit" title on the home card is set as the big wordmark; other cards carry a small one top left.
 const CARDS = [
   { name: "tools", title: "XIVKit", description: "Curated FFXIV tools, calculators, and reference sites. Updated whenever something new is worth keeping.", tags: ["market", "crafting", "checklist", "glamour", "guides"] },
   { name: "plugins", title: "FFXIV Plugins", description: "Dalamud plugins I actually use, client-side tools for housing, chat, glamour, and more.", tags: ["housing", "chat", "glamour", "ui"] },
@@ -27,25 +28,40 @@ const CARDS = [
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 
+const FONT_DIR = fileURLToPath(new URL("./fonts/", import.meta.url));
+const font = (family, file, weight) =>
+  `@font-face{font-family:"${family}";font-weight:${weight};src:url(data:font/ttf;base64,${readFileSync(FONT_DIR + file).toString("base64")})}`;
+const FONTS = [
+  font("Cinzel", "Cinzel-SemiBold.ttf", 600),
+  font("Instrument Sans", "InstrumentSans-SemiBold.ttf", 600),
+  font("Instrument Sans", "InstrumentSans-Regular.ttf", 400),
+  font("JetBrains Mono", "JetBrainsMono-Medium.ttf", 500),
+].join("");
+
+const wordmark = `XIV<b>KIT</b>`;
+
 const page = ({ title, description, tags }) => `<!doctype html><meta charset="utf-8"><style>
+${FONTS}
 *{box-sizing:border-box;margin:0}
-body{width:1200px;height:630px;background:linear-gradient(135deg,#10131a,#0d0e12);font-family:"Liberation Sans",Arial,Helvetica,sans-serif;color:#eceef3;position:relative;overflow:hidden}
-.top{position:absolute;left:80px;top:80px;display:flex;align-items:center;gap:20px}
-.badge{width:72px;height:72px;border-radius:16px;background:#1b1f2a;border:3px solid #7db8ff;display:flex;align-items:center;justify-content:center;color:#7db8ff;font-weight:700;font-size:25px}
-.word{font-size:34px;font-weight:700;color:#7db8ff;letter-spacing:.5px}
-h1{position:absolute;left:80px;top:190px;width:1040px;font-size:72px;line-height:1.1;font-weight:700}
-p{position:absolute;left:80px;width:900px;font-size:30px;line-height:1.35;color:#9aa1b2}
+body{width:1200px;height:630px;background:#0c0b0e;font-family:"Instrument Sans",Arial,Helvetica,sans-serif;color:#f5f3f6;position:relative;overflow:hidden}
+.wm{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.1em;color:#f5f3f6}
+.wm b{font-weight:600;color:#ff5a50}
+.top{position:absolute;left:80px;top:72px;font-size:40px}
+h1{position:absolute;left:80px;top:170px;width:1040px;font-weight:600;font-size:80px;line-height:1.05;letter-spacing:-.025em}
+h1.home{font-family:Cinzel,Georgia,serif;font-weight:600;letter-spacing:.1em;font-size:128px}
+h1.home b{font-weight:600;color:#ff5a50}
+p{position:absolute;left:80px;width:900px;font-size:30px;line-height:1.35;color:#aaa5b0}
 .tags{position:absolute;left:80px;bottom:80px;display:flex;gap:12px}
-.tags span{padding:10px 21px;border-radius:999px;background:#1b1f2a;border:1px solid #2a2f3d;color:#9aa1b2;font-size:21px}
-.url{position:absolute;right:80px;bottom:84px;font-size:26px;color:#7db8ff}
+.tags span{padding:9px 20px;border-radius:999px;background:#211f26;color:#aaa5b0;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:20px}
+.url{position:absolute;right:80px;bottom:84px;font-family:"JetBrains Mono",monospace;font-weight:500;font-size:24px;color:#ff5a50}
 </style>
-<div class="top"><div class="badge">XIV</div>${title === "XIVKit" ? "" : '<div class="word">XIVKit</div>'}</div>
-<h1>${esc(title)}</h1><p>${esc(description)}</p>
+${title === "XIVKit" ? "" : `<div class="top wm">${wordmark}</div>`}
+${title === "XIVKit" ? `<h1 class="home">${wordmark}</h1>` : `<h1>${esc(title)}</h1>`}<p>${esc(description)}</p>
 <div class="tags">${tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
 <div class="url">${DOMAIN}</div>
 <script>
   var h = document.querySelector("h1"), p = document.querySelector("p");
-  p.style.top = (h.offsetTop + h.offsetHeight + 22) + "px";
+  p.style.top = (h.offsetTop + h.offsetHeight + 24) + "px";
 </script>`;
 
 const wanted = process.argv.slice(2);
