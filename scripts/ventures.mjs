@@ -3,6 +3,7 @@
 //   pnpm ventures
 //
 // Pulls every normal (non-exploration) venture from XIVAPI's RetainerTask sheet.
+// c is the item's icon path under ui/icon/ (served by XIVAPI's asset endpoint).
 // Venture data only changes on patches, so re-run this after a patch that adds
 // ventures and commit the result. Field Exploration ventures are skipped: their
 // loot pool is not in the sheet.
@@ -24,6 +25,7 @@ const FIELDS = [
   "RetainerTaskParameter.PerceptionDoL",
   "RetainerTaskParameter.PerceptionFSH",
   "Task.Item.Name",
+  "Task.Item.Icon",
   "Task.Quantity",
 ].join(",");
 
@@ -54,6 +56,7 @@ for (const r of rows) {
   ventures.push({
     i: item,
     n: task.Item.fields?.Name ?? `Item ${item}`,
+    c: (task.Item.fields?.Icon?.path ?? "").replace(/^ui\/icon\//, "").replace(/\.tex$/, ""),
     j: gatherer ? cat : "COMBAT",
     l: f.RetainerLevel ?? 0,
     m: f.MaxTimemin ?? 60,

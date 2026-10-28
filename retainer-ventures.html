@@ -104,6 +104,10 @@ input[type="number"]{width:5.5em}
 .cost small{display:block;font:12px var(--body);color:var(--muted);margin-top:3px;font-weight:400}
 .main h3{font-family:var(--display);font-weight:600;font-size:19px;margin:0;line-height:1.25}
 .main h3 a{color:var(--ink);text-decoration:none}
+.main h3.with-icon{display:flex;align-items:center;gap:10px}
+.item-icon{width:32px;height:32px;border-radius:5px;flex:none;background:var(--surface);border:1px solid var(--rule)}
+.assign li{display:flex;align-items:center;gap:8px}
+.assign .item-icon{width:24px;height:24px;border-radius:4px}
 .main h3 a:hover{text-decoration:underline}
 .meta{font-size:14px;color:var(--muted);margin:2px 0 6px}
 .tag{display:inline-block;font-size:13px;font-weight:700;color:var(--v);border:1px solid var(--v);border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px}
@@ -243,7 +247,7 @@ footer li{margin:5px 0}
 <footer>
   <h2>Sources and how this works</h2>
   <ul>
-    <li>Venture list, item yields, and stat breakpoints: the RetainerTask sheets from <a href="https://xivapi.com/" target="_blank" rel="noopener noreferrer">XIVAPI</a>, saved as <code>ventures.json</code> and refreshed after patches. A venture's yield steps up each time your retainer's gathering (or item level for combat classes) passes a breakpoint, so enter the stat shown on the retainer's own sheet.</li>
+    <li>Venture list, item yields, stat breakpoints, and item icons: the RetainerTask sheets and game icons from <a href="https://xivapi.com/" target="_blank" rel="noopener noreferrer">XIVAPI</a>, saved as <code>ventures.json</code> and refreshed after patches. A venture's yield steps up each time your retainer's gathering (or item level for combat classes) passes a breakpoint, so enter the stat shown on the retainer's own sheet.</li>
     <li>Market prices and sales speed: pulled live from the <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> API for the world you pick. Gil per hour assumes you resend the retainer the moment it returns.</li>
     <li>Gil per hour is the rate while a retainer runs that venture. It cannot be kept up for items with few sales: a world only buys so many Lime Basil a day, however many retainers you send. The plan tab accounts for this by capping each item at a share of its daily sales, and shows gil per day instead.</li>
   </ul>
@@ -259,6 +263,8 @@ footer li{margin:5px 0}
 <script>
 const $ = s => document.querySelector(s);
 const UNI = id => `https://universalis.app/market/${id}`;
+// Game icon for a venture item (path from XIVAPI, saved as v.c by scripts/ventures.mjs).
+const iconImg = v => v.c ? `<img class="item-icon" src="https://beta.xivapi.com/api/1/asset?path=ui/icon/${v.c}.tex&format=png" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">` : "";
 const TAX = 0.05;
 const PAGE_SIZE = 40;
 const STORE_KEY = "xivkit-venture";
@@ -388,7 +394,7 @@ function exploreRowHtml(o) {
   return `<li class="item">
     <div class="cost">${gil(o.perHour)}<small>gil per hour</small></div>
     <div class="main">
-      <h3><a href="${UNI(o.v.i)}" target="_blank" rel="noopener noreferrer">${escapeHtml(o.v.n)}</a></h3>
+      <h3 class="with-icon">${iconImg(o.v)}<a href="${UNI(o.v.i)}" target="_blank" rel="noopener noreferrer">${escapeHtml(o.v.n)}</a></h3>
       <div class="meta">${o.qty} per run &middot; ${o.v.m} min &middot; ${gil(o.perRun)} gil per venture &middot; level ${o.v.l}+</div>
       <p class="take"><span class="tag ${vd.cls}">${vd.tag}</span>${vd.text}</p>
     </div>
@@ -404,7 +410,7 @@ function planRowHtml(r, plan) {
       <div class="main"><h3>${name}</h3><div class="meta">${meta}</div>
       <p class="take">${num(r.stat) == null ? `Add this retainer's ${jobMeta(r.job).stat.toLowerCase()} to plan it.` : "Nothing sellable matches this retainer on your world right now."}</p></div></li>`;
   }
-  const lines = plan.list.map(x => `<li><strong>${x.runs}&times;</strong> <a href="${UNI(x.v.i)}" target="_blank" rel="noopener noreferrer">${escapeHtml(x.v.n)}</a> <span class="muted">(${x.qty} each, ${gil(x.perRun)} per run)</span></li>`).join("");
+  const lines = plan.list.map(x => `<li>${iconImg(x.v)}<span><strong>${x.runs}&times;</strong> <a href="${UNI(x.v.i)}" target="_blank" rel="noopener noreferrer">${escapeHtml(x.v.n)}</a> <span class="muted">(${x.qty} each, ${gil(x.perRun)} per run)</span></span></li>`).join("");
   const idle = plan.idle > 0 ? `<p class="take idle">${plan.idle} of this retainer's runs have nothing left that the market can take. Raise the market share, or give it a higher stat or level.</p>` : "";
   return `<li class="item plan">
     <div class="cost">${gil(plan.day)}<small>gil per day</small></div>
