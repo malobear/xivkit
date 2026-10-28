@@ -54,3 +54,22 @@ given plugin without asking the user:
   search the exact plugin name to find/install it.
 - `data.json`'s `adoptable`/`stale`/`discontinued`/`obsolete` arrays are also useful
   context if a plugin looks abandoned.
+
+## Item icons
+
+Every list of in-game items (guides, calculators, and tools alike) shows each item's game
+icon next to its name. A bare text list of items is not done. Follow the convention the
+existing pages use:
+
+- Look up each item's icon path in XIVAPI's Item sheet (`Icon` field, e.g.
+  `026000/026038`) and serve it from
+  `https://beta.xivapi.com/api/1/asset?path=ui/icon/<path>.tex&format=png`. Keep the
+  paths in a small `ICON_PATHS` map keyed by item id, as `hunt-for-astronomy.html` and
+  `trade-in-mounts.html` do.
+- Use `alt=""` (the name is already next to it), explicit `width`/`height`, and
+  `loading="lazy"`. Hide the image on error
+  (`onerror="this.style.visibility='hidden'"`) so a missing icon never shows a broken
+  image.
+- Credit XIVAPI in the page's sources or footer if it isn't credited already.
+- If a data script builds the item list (like `scripts/ventures.mjs`), have it capture
+  the icon path too, rather than hand-maintaining it in the page.
