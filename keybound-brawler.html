@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ3SSXDSFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQ3SSXDSFK');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keybound Brawler: The Grind Math | XIVKit</title>
+<meta name="description" content="What every Keybound Brawler reward costs in MGC, how many runs it takes to afford them all, and how long the Magitype Magister title grind really is. Gold Saucer x FFVII Remake event.">
+<link rel="canonical" href="https://xivkit.com/keybound-brawler.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#120d24">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="XIVKit">
+<meta property="og:title" content="Keybound Brawler: The Grind Math | XIVKit">
+<meta property="og:description" content="What every Keybound Brawler reward costs in MGC, how many runs it takes, and how long the title grind really is.">
+<meta property="og:url" content="https://xivkit.com/keybound-brawler.html">
+<meta property="og:image" content="https://xivkit.com/og-keybound-brawler.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Keybound Brawler: The Grind Math">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keybound Brawler: The Grind Math | XIVKit">
+<meta name="twitter:description" content="What every Keybound Brawler reward costs in MGC, how many runs it takes, and how long the title grind really is.">
+<meta name="twitter:image" content="https://xivkit.com/og-keybound-brawler.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@400;500;600;700&family=Cinzel:wght@600&display=swap">
+<style>
+:root{
+  --bg:#120d24; --card:#1d1636; --raised:#2a2050; --rule:#3a2d62; --rule-soft:#2a2050; --rule-icon:#4a3a7a; --tile:#241a45;
+  --ink:#f3eefc; --soft:#d9d0f2; --muted:#c9bfe6; --dim:#b3a7d6; --faint:#9d90c4;
+  --gold:#f5c542; --gold-hi:#ffe08a; --cyan:#4fd8ff; --pink:#ff4fa3; --pink-hi:#ff8cc4;
+  --display:Bungee, "Segoe UI", system-ui, sans-serif;
+  --body:"Chakra Petch", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.45}
+a{color:var(--gold);text-underline-offset:2px}
+a:hover{color:var(--gold-hi)}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:3px}
+img{max-width:100%}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 56px;display:flex;flex-direction:column;gap:32px}
+
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:18px 0 0;font-size:14px}
+.site-nav a{color:var(--dim);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.site-nav a:hover{color:var(--ink)}
+.site-nav .wordmark{font-family:Cinzel, Georgia, serif;font-weight:600;font-size:20px;letter-spacing:.1em;color:var(--ink);border-bottom:0}
+.site-nav .wordmark b{font-weight:600;color:#ff5a50}
+#lang-bar{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+#lang-bar button{font:12px var(--body);border:1px solid var(--rule);background:var(--card);color:var(--dim);padding:3px 10px;border-radius:999px;cursor:pointer}
+#lang-bar button.active{color:var(--ink);border-color:var(--gold)}
+
+.head{display:flex;align-items:center;gap:24px}
+.logo{position:relative;width:84px;height:84px;flex:none;border-radius:18px;background:var(--tile);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.logo span{font-family:var(--display);font-size:34px;color:var(--gold)}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--tile)}
+.head-main{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.kicker{font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
+h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,60px);line-height:1;color:var(--gold)}
+.lede{font-size:20px;color:var(--muted);margin:0}
+.head-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:none}
+.badge{padding:8px 14px;border-radius:999px;border:2px solid var(--pink);color:var(--pink-hi);font-weight:700;font-size:16px;letter-spacing:1px}
+.dates{font-size:15px;color:var(--muted)}
+
+.art{position:relative;aspect-ratio:720/188;border-radius:20px;overflow:hidden;background:var(--tile);border:2px solid var(--rule)}
+.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.stat{background:var(--card);border:2px solid var(--c);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:6px}
+.stat.gold{--c:var(--gold)} .stat.cyan{--c:var(--cyan)} .stat.pink{--c:var(--pink)}
+.stat .label{font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.stat .num{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:clamp(36px,5vw,52px);line-height:1}
+.stat.gold .num{color:var(--gold)} .stat.cyan .num{color:var(--cyan)} .stat.pink .num{color:var(--pink-hi)}
+.stat .num img{width:40px;height:40px;object-fit:contain}
+.stat .note{font-size:17px;color:var(--muted)}
+
+h2{margin:0;font-family:var(--display);font-weight:400;font-size:28px;color:var(--ink)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;margin-bottom:16px}
+.sec-head .where{font-size:15px;color:var(--muted)}
+.groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.group{background:var(--card);border:2px solid var(--rule);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.group-head{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.group-head h3{margin:0;font-size:19px;font-weight:700}
+.group-head .sub{font-size:13px;color:var(--dim)}
+.group-head .total{font-size:20px;font-weight:700;color:var(--gold);white-space:nowrap}
+.rewards{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.reward{display:flex;align-items:center;gap:12px;min-height:44px}
+.icon{position:relative;width:40px;height:40px;flex:none;border-radius:8px;background:var(--raised);border:1px solid var(--rule-icon);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.icon span{font-weight:700;font-size:16px;color:var(--gold)}
+.icon img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--raised)}
+.reward .name{flex:1;min-width:0;display:flex;flex-direction:column}
+.reward .name b{font-size:16px;font-weight:500;line-height:1.2}
+.reward .name small{font-size:13px;color:var(--dim)}
+.reward .cost{font-size:17px;font-weight:700;color:var(--gold);white-space:nowrap}
+
+.two{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:20px}
+.panel{background:var(--card);border:2px solid var(--rule);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.panel.title{border-color:var(--pink)}
+.panel-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px}
+.panel-head h2{font-size:24px}
+.pace{font-size:14px;color:var(--dim);display:flex;align-items:center;gap:6px}
+.pace select{font:14px var(--body);background:var(--raised);color:var(--ink);border:1px solid var(--rule-icon);border-radius:6px;padding:3px 6px}
+.trow{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);align-items:center;gap:0 8px}
+.thead{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--dim);padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.thead span:not(:first-child),.trow .r{text-align:right}
+.tbody{font-size:17px;padding:6px 0;border-bottom:1px solid var(--rule-soft)}
+.tbody .what{display:flex;flex-direction:column}
+.tbody .what b{font-weight:600}
+.tbody .what small{font-size:13px;color:var(--dim)}
+.tbody .rate{color:var(--muted)}
+.tbody .runs{font-weight:700;color:var(--cyan)}
+.tbody .time{font-weight:700;color:var(--gold)}
+.fine{font-size:14px;line-height:1.45;color:var(--dim);margin:0}
+.title-id{display:flex;align-items:center;gap:14px}
+.title-id .icon{width:56px;height:56px;border-radius:12px}
+.title-id .icon span{font-family:var(--display);font-size:20px;color:var(--pink-hi)}
+.title-id .eyebrow{display:block;font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--pink-hi)}
+.title-id .tname{display:block;font-family:var(--display);font-size:22px}
+.panel p.body{font-size:16px;line-height:1.45;color:var(--soft);margin:0}
+.panel p.body strong{color:var(--ink)}
+.trates{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.trates li{display:flex;justify-content:space-between;gap:12px;font-size:16px;padding:6px 0;border-bottom:1px solid var(--rule-soft)}
+.trates li span:first-child{color:var(--muted)}
+.trates li span:last-child{font-weight:700;color:var(--gold);text-align:right}
+
+.tips{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tips li{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:16px 18px}
+.tips svg{flex:none;margin-top:2px}
+.tips b{display:block;font-size:17px;font-weight:700}
+.tips span{display:block;font-size:15px;line-height:1.4;color:var(--muted);margin-top:2px}
+
+.sources{font-size:14px;color:var(--faint);border-top:1px solid var(--rule);padding-top:16px;display:flex;flex-direction:column;gap:6px}
+.sources p{margin:0}
+.sources .legal{font-size:13px;opacity:.8;margin-top:6px}
+
+@media (max-width:900px){
+  .head{flex-wrap:wrap}
+  .head-side{flex-direction:row;align-items:center;flex-wrap:wrap;width:100%}
+  .stats,.groups,.two,.tips{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .logo{width:64px;height:64px;border-radius:14px}
+  .lede{font-size:17px}
+  .kicker{font-size:13px;letter-spacing:2px}
+  .trow{grid-template-columns:minmax(0,1.8fr) repeat(3,minmax(0,1fr));font-size:15px}
+  .tbody{font-size:15px}
+  #lang-bar{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="site-nav">
+  <a class="wordmark" href="./" aria-label="XIVKit home">XIV<b>KIT</b></a>
+  <a href="./" data-i18n="shared.nav.tools">Tools I use</a>
+  <a href="watchlist.html" data-i18n="shared.nav.watchlist">Watchlist</a>
+  <a href="plugins.html" data-i18n="shared.nav.plugins">Plugins</a>
+  <a href="venues.html" data-i18n="shared.nav.venues">Venues</a>
+  <div id="lang-bar"></div>
+</nav>
+
+<header class="head">
+  <div class="logo">
+    <span aria-hidden="true">KB</span>
+    <img src="img/keybound-brawler-logo.png" alt="" width="84" height="84" loading="lazy" onerror="this.style.visibility='hidden'">
+  </div>
+  <div class="head-main">
+    <div class="kicker">Manderville Gold Saucer × FFVII Remake</div>
+    <h1>Keybound Brawler</h1>
+    <p class="lede">The grind math: what it costs, how many runs, how long.</p>
+  </div>
+  <div class="head-side">
+    <div class="badge">LIMITED EVENT</div>
+    <div class="dates">Oct 28 to Patch 8.0 (Jan '27)</div>
+  </div>
+</header>
+
+<div class="art">
+  <img src="img/keybound-brawler-key-art.png" alt="Keybound Brawler event key art" width="720" height="188" loading="lazy" onerror="this.style.visibility='hidden'">
+</div>
+
+<section class="stats" aria-label="The totals">
+  <div class="stat gold">
+    <div class="label">Everything (no coffer)</div>
+    <div class="num"><img src="img/keybound-brawler-mgc.png" alt="MGC" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"><span>5,470</span></div>
+    <div class="note">19 rewards · both outfits, mount, minion, emote, rolls, kit</div>
+  </div>
+  <div class="stat cyan">
+    <div class="label">Runs for all rewards</div>
+    <div class="num"><span>16–55</span></div>
+    <div class="note">16 if you max every run · 55 if you lose every run</div>
+  </div>
+  <div class="stat pink">
+    <div class="label">Runs for the title</div>
+    <div class="num"><span>100</span></div>
+    <div class="note">clears for “Magitype Magister”. This is the real grind.</div>
+  </div>
+</section>
+
+<section aria-labelledby="shop-h">
+  <div class="sec-head">
+    <h2 id="shop-h">The shopping list</h2>
+    <div class="where">MGC Trader · Keybound Square (6.2, 6.0)</div>
+  </div>
+  <div class="groups">
+    <div class="group">
+      <div class="group-head">
+        <div><h3>Avalanche Brawler’s</h3><div class="sub">Outfit · reportedly female-only</div></div>
+        <div class="total">1,570</div>
+      </div>
+      <ul class="rewards">
+        <li class="reward"><span class="icon"><span aria-hidden="true">T</span><img src="img/keybound-brawler-brawler-top.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Top</b></span><span class="cost">430</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">H</span><img src="img/keybound-brawler-brawler-halfgloves.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Halfgloves</b></span><span class="cost">260</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">B</span><img src="img/keybound-brawler-brawler-bottoms.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Bottoms</b></span><span class="cost">430</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">B</span><img src="img/keybound-brawler-brawler-boots.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Boots</b></span><span class="cost">260</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">E</span><img src="img/keybound-brawler-brawler-earring.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Earring</b></span><span class="cost">190</span></li>
+      </ul>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <div><h3>Avalanche Leader’s</h3><div class="sub">Outfit · reportedly male-only</div></div>
+        <div class="total">1,760</div>
+      </div>
+      <ul class="rewards">
+        <li class="reward"><span class="icon"><span aria-hidden="true">S</span><img src="img/keybound-brawler-leader-sunglasses.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Sunglasses</b></span><span class="cost">190</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">V</span><img src="img/keybound-brawler-leader-vest.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Vest</b></span><span class="cost">430</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">H</span><img src="img/keybound-brawler-leader-halfgloves.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Halfgloves</b></span><span class="cost">260</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">C</span><img src="img/keybound-brawler-leader-cargo.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Cargo Trousers</b></span><span class="cost">430</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">B</span><img src="img/keybound-brawler-leader-boots.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Boots</b></span><span class="cost">260</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">E</span><img src="img/keybound-brawler-leader-earring.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Earring</b></span><span class="cost">190</span></li>
+      </ul>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <div><h3>Collectibles</h3><div class="sub">Mount, minion, emote &amp; more</div></div>
+        <div class="total">2,140</div>
+      </div>
+      <ul class="rewards">
+        <li class="reward"><span class="icon"><span aria-hidden="true">M</span><img src="img/keybound-brawler-scorpion.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Magitek Scorpion</b><small>Mount</small></span><span class="cost">430</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">W</span><img src="img/keybound-brawler-barret.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Wind-up Barret</b><small>Minion</small></span><span class="cost">260</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">M</span><img src="img/keybound-brawler-magitype.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Magitype</b><small>Emote</small></span><span class="cost">260</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">A</span><img src="img/keybound-brawler-gatling.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Avalanche Gatling Gun</b><small>Fashion accessory</small></span><span class="cost">430</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">O</span><img src="img/keybound-brawler-rolls.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Orchestrion Rolls ×3</b><small>190 each</small></span><span class="cost">570</span></li>
+        <li class="reward"><span class="icon"><span aria-hidden="true">F</span><img src="img/keybound-brawler-framers-kit.png" alt="" width="40" height="40" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="name"><b>Framer’s Kit</b><small>Adventurer plate</small></span><span class="cost">190</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="two">
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Runs &amp; time</h2>
+      <label class="pace">@ ~<select id="pace" aria-label="Minutes per run">
+        <option>5</option><option>6</option><option>7</option><option selected>8</option><option>9</option><option>10</option><option>11</option><option>12</option>
+      </select> min per run</label>
+    </div>
+    <div class="trow thead"><span>Goal / how you play</span><span>MGC/run</span><span>Runs</span><span>Time</span></div>
+    <div class="trow tbody"><div class="what"><b>All rewards: cracked it</b><small>60k+ score every run</small></div><span class="r rate">350</span><span class="r runs">16</span><span class="r time" data-runs="16">2h 08m</span></div>
+    <div class="trow tbody"><div class="what"><b>All rewards: mixed bag</b><small>about half wins, half losses</small></div><span class="r rate">~225</span><span class="r runs">25</span><span class="r time" data-runs="25">3h 20m</span></div>
+    <div class="trow tbody"><div class="what"><b>All rewards: barrier broke</b><small>lose every run</small></div><span class="r rate">100</span><span class="r runs">55</span><span class="r time" data-runs="55">7h 20m</span></div>
+    <div class="trow tbody"><div class="what"><b>Title (100 clears)</b><small>every run a clear</small></div><span class="r rate">350</span><span class="r runs">100</span><span class="r time" data-runs="100">13h 20m</span></div>
+    <p class="fine">Per-run estimate: ~1–2 min queue + 3 waves (~5 min) + results &amp; re-register (~1 min). Max reward is 350 MGC at 60,000+ score; lower scores pay proportionally less.</p>
+  </div>
+
+  <div class="panel title">
+    <div class="title-id">
+      <span class="icon"><span aria-hidden="true">IV</span><img src="img/keybound-brawler-title.png" alt="" width="56" height="56" loading="lazy" onerror="this.style.visibility='hidden'"></span>
+      <div><span class="eyebrow">Masterstroke IV</span><span class="tname">Magitype Magister</span></div>
+    </div>
+    <p class="body">Title for <strong>100 clears</strong>. Losses don’t count, so it’s 100 runs at a perfect clear rate.</p>
+    <ul class="trates">
+      <li><span>100% clear rate</span><span>100 runs · <span data-runs="100">13h 20m</span></span></li>
+      <li><span>80% clear rate</span><span>125 runs · <span data-runs="125">16h 40m</span></span></li>
+      <li><span>60% clear rate</span><span>167 runs · <span data-runs="167">22h 16m</span></span></li>
+    </ul>
+    <p class="fine">By clear #16 you can already afford every reward. The rest is for the title.</p>
+  </div>
+</section>
+
+<ul class="tips">
+  <li><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5c542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg><div><b>Never buy the Keybound Coffer</b><span>It drops free with every clear. Skip the 910 MGC price tag.</span></div></li>
+  <li><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5c542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg><div><b>Spend before 10,000 MGC</b><span>Credits cap at 10k. The title grind earns ~35k, so shop as you go.</span></div></li>
+  <li><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5c542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg><div><b>Barrier HP = score</b><span>Each wave pays a bonus for barrier HP left. Prioritize magic pots for the score buff.</span></div></li>
+  <li><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f5c542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"></path></svg><div><b>Queue as a party</b><span>Up to 4 can register together. Undersized runs scale enemy HP down.</span></div></li>
+</ul>
+
+<footer class="sources">
+  <p>Costs &amp; rewards: <a href="https://ffxiv.consolegameswiki.com/" target="_blank" rel="noopener noreferrer">FFXIV Console Games Wiki</a> (Oct 29, 2026). Run times are estimates. Keyboard required · Gold Saucer, W’zazanh.</p>
+  <p>Item icons: <a href="https://xivapi.com/" target="_blank" rel="noopener noreferrer">XIVAPI</a>.</p>
+  <p>See the <a href="./">main list</a> for the rest of the tools I use. Source on <a href="https://github.com/malobear/xivkit" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+  <p class="legal" data-i18n="shared.legal">FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made list, not affiliated with or endorsed by Square Enix.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var sel = document.getElementById('pace');
+  function fmt(runs, m){
+    var mins = Math.round(runs * m), h = Math.floor(mins / 60), r = mins % 60;
+    return h > 0 ? h + 'h ' + (r < 10 ? '0' : '') + r + 'm' : r + 'm';
+  }
+  sel.addEventListener('change', function(){
+    var m = +sel.value;
+    document.querySelectorAll('[data-runs]').forEach(function(el){
+      el.textContent = fmt(+el.dataset.runs, m);
+    });
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+<script src="i18n.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Keybound Brawler: The Grind Math",
+  "name": "Keybound Brawler: The Grind Math",
+  "description": "What every Keybound Brawler reward costs in MGC, how many runs it takes to afford them all, and how long the Magitype Magister title grind is.",
+  "url": "https://xivkit.com/keybound-brawler.html",
+  "image": "https://xivkit.com/og-keybound-brawler.png",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "XIVKit",
+    "url": "https://xivkit.com/"
+  }
+}
+</script>
+</body>
+</html>

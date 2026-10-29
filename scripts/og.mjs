@@ -25,6 +25,7 @@ const CARDS = [
   { name: "trade-in-mounts", title: "Trade-in mounts: grind vs. buy the mats", description: "Every trade-in mount, with live market prices and a straight verdict: grind it out, or buy your way there.", tags: ["guide", "mounts", "market"] },
   { name: "inventory-decluttering", title: "Inventory & retainer decluttering", description: "A decision tree for what to keep, bank, or discard, plus the short list of items that never come back.", tags: ["guide", "inventory"] },
   { name: "retainer-ventures", title: "Retainer ventures: what to send them for", description: "Every venture ranked by what it earns on the market board for your retainer, with live prices and how fast it sells.", tags: ["market", "retainer"] },
+  { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"] },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 
