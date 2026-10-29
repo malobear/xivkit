@@ -25,7 +25,7 @@ const CARDS = [
   { name: "trade-in-mounts", title: "Trade-in mounts: grind vs. buy the mats", description: "Every trade-in mount, with live market prices and a straight verdict: grind it out, or buy your way there.", tags: ["guide", "mounts", "market"] },
   { name: "inventory-decluttering", title: "Inventory & retainer decluttering", description: "A decision tree for what to keep, bank, or discard, plus the short list of items that never come back.", tags: ["guide", "inventory"] },
   { name: "retainer-ventures", title: "Retainer ventures: what to send them for", description: "Every venture ranked by what it earns on the market board for your retainer, with live prices and how fast it sells.", tags: ["market", "retainer"] },
-  { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"] },
+  { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"], theme: "keybound" },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 
@@ -42,6 +42,38 @@ const FONTS = [
 ].join("");
 
 const wordmark = `XIV<b>KIT</b>`;
+
+// Keybound Brawler keeps its own purple event look on its card, matching the page.
+const KB_FONTS = [
+  font("Bungee", "Bungee-Regular.ttf", 400),
+  font("Chakra Petch", "ChakraPetch-SemiBold.ttf", 600),
+  font("Chakra Petch", "ChakraPetch-Regular.ttf", 400),
+].join("");
+const kbLogo = readFileSync(fileURLToPath(new URL("../img/keybound-brawler-logo.png", import.meta.url))).toString("base64");
+const kbPage = ({ title, description, tags }) => `<!doctype html><meta charset="utf-8"><style>
+${KB_FONTS}
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;background:#120d24;font-family:"Chakra Petch",Arial,sans-serif;color:#f3eefc;position:relative;overflow:hidden}
+.frame{position:absolute;inset:28px;border:2px solid #3a2d62;border-radius:28px}
+.logo{position:absolute;right:80px;top:72px;width:150px;height:150px;border-radius:28px;background:#241a45;border:3px solid #f5c542;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:contain}
+.kicker{position:absolute;left:80px;top:78px;font-weight:600;font-size:24px;letter-spacing:5px;text-transform:uppercase;color:#4fd8ff}
+h1{position:absolute;left:80px;top:130px;width:900px;font-family:Bungee,sans-serif;font-weight:400;font-size:104px;line-height:1.02;color:#f5c542}
+p{position:absolute;left:80px;width:880px;font-size:32px;line-height:1.35;color:#c9bfe6}
+.tags{position:absolute;left:80px;bottom:80px;display:flex;gap:12px}
+.tags span{padding:9px 20px;border-radius:999px;border:2px solid #ff4fa3;color:#ff8cc4;font-weight:600;font-size:22px;letter-spacing:1px}
+.url{position:absolute;right:80px;bottom:84px;font-weight:600;font-size:26px;color:#f5c542}
+</style>
+<div class="frame"></div>
+<div class="logo"><img src="data:image/png;base64,${kbLogo}"></div>
+<div class="kicker">Gold Saucer × FFVII Remake</div>
+<h1>Keybound<br>Brawler</h1><p>${esc(description)}</p>
+<div class="tags">${tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
+<div class="url">${DOMAIN}</div>
+<script>
+  var h = document.querySelector("h1"), p = document.querySelector("p");
+  p.style.top = (h.offsetTop + h.offsetHeight + 20) + "px";
+</script>`;
 
 const page = ({ title, description, tags }) => `<!doctype html><meta charset="utf-8"><style>
 ${FONTS}
@@ -78,7 +110,7 @@ if (unknown.length) {
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const tab = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 for (const card of cards) {
-  await tab.setContent(page(card));
+  await tab.setContent((card.theme === "keybound" ? kbPage : page)(card));
   await tab.screenshot({ path: `${OUT_DIR}og-${card.name}.png` });
   console.log(`og-${card.name}.png`);
 }
