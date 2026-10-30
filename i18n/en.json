@@ -3,8 +3,7 @@
     "nav": {
       "tools": "Tools I use",
       "watchlist": "Watchlist",
-      "plugins": "Plugins",
-      "venues": "Venues"
+      "plugins": "Plugins"
     },
     "clearSearchTitle": "Clear",
     "emptyClear": "Clear it",
@@ -231,21 +230,6 @@
         "progress": "Progress & Checklists",
         "plugins": "Plugins",
         "macos": "macOS Tools"
-      }
-    },
-    "venues": {
-      "h1": "FFXIV Venues",
-      "tagline": "Player-run venues I actually visit. Hours are converted to your local time automatically.",
-      "note": "Hours are posted by each venue in Eastern Time and shown here converted to your device's local time and weekday. Use the address button to copy a ready-to-paste {lifestream} travel command.",
-      "lifestreamLinkLabel": "Lifestream",
-      "searchPlaceholder": "Search venues by name, description, or tag...",
-      "emptyStateText": "No venues match that search.",
-      "copyAddress": "Copy Lifestream Command",
-      "footerLine1": "See the {main} or the {plugins}.",
-      "mainLinkLabel": "main list",
-      "pluginsLinkLabel": "plugins page",
-      "sections": {
-        "nightlife": "Bars & Lounges"
       }
     }
   },

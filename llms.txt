@@ -1,6 +1,6 @@
 # XIVKit
 
-> XIVKit is a curated, unofficial list of Final Fantasy XIV (FFXIV) tools, Dalamud plugins, and player-run venues that the maintainer actually uses, plus original guides hosted on the site. Every entry is hand-picked and annotated with why it's useful, rather than an exhaustive directory.
+> XIVKit is a curated, unofficial list of Final Fantasy XIV (FFXIV) tools and Dalamud plugins that the maintainer actually uses, plus original guides hosted on the site. Every entry is hand-picked and annotated with why it's useful, rather than an exhaustive directory.
 
 The site is static and every page is plain HTML. Market board prices on the guides are fetched live from Universalis. FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. XIVKit is fan-made and not affiliated with or endorsed by Square Enix.
 
@@ -18,7 +18,6 @@ The site is static and every page is plain HTML. Market board prices on the guid
 
 - [Tools & Links](https://xivkit.com/): Curated FFXIV tools grouped by use: market and economy, progress trackers, glamour, housing, reference databases, and community sites.
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins in active use, tagged by whether they're in the default plugin directory or need a custom (experimental) repo.
-- [Venues](https://xivkit.com/venues.html): Player-run FFXIV venues with open hours converted to your local time and a Lifestream address.
 
 ## Optional
 

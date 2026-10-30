@@ -8,19 +8,18 @@ A curated, hand-picked list of FFXIV tools I actually use. Kept small on purpose
 
 - [Tools](https://xivkit.com/): market board data, crafting trackers, theorycrafting calculators, progress checklists, glamour and mod sources, and other reference sites.
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins I actually use, with a note on which ones need a custom repo.
-- [Venues](https://xivkit.com/venues.html): player-run venues with open hours converted to your local time and a one-click Lifestream address.
 - [Watchlist](https://xivkit.com/watchlist.html): tools I haven't tried yet, kept separate from the ones I vouch for.
 - Guides: [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html), [Hunt for Astronomy](https://xivkit.com/hunt-for-astronomy.html), [Keybound Brawler](https://xivkit.com/keybound-brawler.html), [Fan Fest Bingo Maker](https://xivkit.com/fanfest-bingo.html), [Trade-In Mounts](https://xivkit.com/trade-in-mounts.html), and [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html), and [Retainer Ventures](https://xivkit.com/retainer-ventures.html), with live market prices where it helps.
 
 ## Suggest a tool
 
-Know a tool, plugin, or venue that belongs here? [Open an issue](https://github.com/malobear/xivkit/issues/new) with the link and a line on what it does, or send a pull request following the entry format under "Updating the list" below.
+Know a tool or plugin that belongs here? [Open an issue](https://github.com/malobear/xivkit/issues/new) with the link and a line on what it does, or send a pull request following the entry format under "Updating the list" below.
 
 FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This project is an unofficial, fan-made list, not affiliated with or endorsed by Square Enix. Each page carries the same notice in its footer.
 
 ## Pages
 
-Four list pages share the exact same structure, styling, and search/tag script:
+Three list pages share the exact same structure, styling, and search/tag script:
 
 - `index.html`: tools I actually use. This is the one worth sharing/linking.
 - `watchlist.html`: tools I've heard about or seen recommended but haven't tried
@@ -32,8 +31,6 @@ Four list pages share the exact same structure, styling, and search/tag script:
   a note about that. Tag any plugin that isn't in Dalamud's default plugin directory
   (i.e. needs a custom repo added under Dalamud Settings → Experimental) with
   `experimental`.
-- `venues.html`: player-run venues I actually visit, with hours and an in-game
-  address. See "Venue entries" below for the extra attributes this page uses.
 
 Guides are standalone pages hosted on the site and listed under "Curated Guides" on
 the home page: `jump-puzzle-macros.html`, `hunt-for-astronomy.html`, `keybound-brawler.html`, `fanfest-bingo.html`, `trade-in-mounts.html`,
@@ -85,31 +82,6 @@ files where it's needed. Adding the same key to `i18n/ja.json`, `de.json`, and
 `fr.json` is optional: a missing key falls back to the English text automatically,
 so the site never breaks, it just shows English for that one entry until translated.
 
-### Venue entries
-
-`venues.html` `<li>` elements carry extra attributes beyond `data-tags`:
-
-```html
-<li data-tags="tavern, lounge" data-day="mon" data-start="22:30" data-end="00:17"
-    data-tz="America/New_York" data-li-command="/li Malboro Lavender Beds 23 11">
-```
-
-- `data-day`/`data-start`/`data-end`/`data-tz`: the venue's own posted open hours, as
-  written (in whatever timezone the venue posts, given as an IANA zone name like
-  `America/New_York`). The page's own script converts this to each visitor's local
-  time and weekday client-side, so don't pre-convert it yourself. `data-end` earlier
-  than `data-start` is treated as crossing midnight into the next day.
-- `data-li-command`: the exact command copied by the address button, for the
-  [Lifestream](https://github.com/NightmareXIV/Lifestream) plugin's `/li` travel
-  command, in the form `/li <World> <District> <Ward> <Plot>` (data center and the
-  `W`/`P` prefixes are omitted). Get the address from the venue's own site; don't
-  guess at ward/plot numbers.
-
-Inside `.venue-meta`, also add a plain-text `<span class="address">` with the same
-address written out for humans to read (e.g. `Malboro - Lavender Beds - Ward 23 Plot
-11`), so it's visible without clicking anything. Not translated across languages,
-same as item names, since it's real place names/numbers.
-
 ### Searching / sharing a filtered view
 
 Typing in the search box filters by name, description, or tag, and updates the URL
@@ -125,7 +97,7 @@ branch = `main`, folder = `/ (root)`. Save, then the site will start working. Cu
 
 The brand is a wordmark, `XIV` in ink and `KIT` in red, set in Cinzel, with two themes:
 Noir (dark, the default) and Silk (light, via `prefers-color-scheme`). `brand.css` holds the shared palette, fonts and wordmark and loads after each page's own
-inline styles. The five directory pages (home, plugins, watchlist, venues, jump puzzle
+inline styles. The four directory pages (home, plugins, watchlist, jump puzzle
 macros) also load `brand-directory.css` (section labels, cards, pills, nav), and the
 inventory decluttering guide loads `brand-guide.css`. To change a colour or font, edit
 `brand.css`. The hunt for astronomy and trade-in mounts guides keep their own variable

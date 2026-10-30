@@ -3,8 +3,7 @@
     "nav": {
       "tools": "Meine Tools",
       "watchlist": "Watchlist",
-      "plugins": "Plugins",
-      "venues": "Venues"
+      "plugins": "Plugins"
     },
     "clearSearchTitle": "Leeren",
     "emptyClear": "Zurücksetzen",
@@ -231,21 +230,6 @@
         "progress": "Fortschritt & Checklisten",
         "plugins": "Plugins",
         "macos": "macOS-Tools"
-      }
-    },
-    "venues": {
-      "h1": "FFXIV Venues",
-      "tagline": "Spielergeführte Venues, die ich tatsächlich besuche. Öffnungszeiten werden automatisch in deine lokale Zeit umgerechnet.",
-      "note": "Öffnungszeiten werden von jeder Venue in Eastern Time angegeben und hier in die lokale Zeit und den Wochentag deines Geräts umgerechnet. Über die Adress-Schaltfläche kannst du einen einsatzbereiten {lifestream}-Reisebefehl kopieren.",
-      "lifestreamLinkLabel": "Lifestream",
-      "searchPlaceholder": "Venues nach Name, Beschreibung oder Tag durchsuchen...",
-      "emptyStateText": "Keine Venues passen zu dieser Suche.",
-      "copyAddress": "Lifestream-Befehl kopieren",
-      "footerLine1": "Sieh dir die {main} oder die {plugins} an.",
-      "mainLinkLabel": "Hauptliste",
-      "pluginsLinkLabel": "Plugin-Seite",
-      "sections": {
-        "nightlife": "Bars & Lounges"
       }
     }
   },

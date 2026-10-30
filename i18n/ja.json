@@ -3,8 +3,7 @@
     "nav": {
       "tools": "使っているツール",
       "watchlist": "ウォッチリスト",
-      "plugins": "プラグイン",
-      "venues": "会場"
+      "plugins": "プラグイン"
     },
     "clearSearchTitle": "クリア",
     "emptyClear": "クリア",
@@ -231,21 +230,6 @@
         "progress": "進行状況&チェックリスト",
         "plugins": "プラグイン",
         "macos": "macOSツール"
-      }
-    },
-    "venues": {
-      "h1": "FFXIV 会場",
-      "tagline": "実際に足を運んでいるプレイヤー運営の会場です。営業時間は自動的にあなたの現地時間に変換されます。",
-      "note": "各会場の営業時間は東部時間(ET)で掲載されており、ここではお使いの端末の現地時間・曜日に変換して表示しています。アドレスボタンから、そのまま貼り付けられる{lifestream}の移動コマンドをコピーできます。",
-      "lifestreamLinkLabel": "Lifestream",
-      "searchPlaceholder": "名前・説明・タグで会場を検索...",
-      "emptyStateText": "該当する会場が見つかりません。",
-      "copyAddress": "Lifestreamコマンドをコピー",
-      "footerLine1": "{main}または{plugins}もご覧ください。",
-      "mainLinkLabel": "メインリスト",
-      "pluginsLinkLabel": "プラグインページ",
-      "sections": {
-        "nightlife": "バー&ラウンジ"
       }
     }
   },
