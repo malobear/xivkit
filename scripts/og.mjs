@@ -26,7 +26,7 @@ const CARDS = [
   { name: "inventory-decluttering", title: "Inventory & retainer decluttering", description: "A decision tree for what to keep, bank, or discard, plus the short list of items that never come back.", tags: ["guide", "inventory"] },
   { name: "retainer-ventures", title: "Retainer ventures: what to send them for", description: "Every venture ranked by what it earns on the market board for your retainer, with live prices and how fast it sells.", tags: ["market", "retainer"] },
   { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"], theme: "event", kicker: "Gold Saucer \u00d7 FFVII Remake", heading: "Keybound<br>Brawler", logo: "keybound-brawler-logo.png" },
-  { name: "fanfest-bingo", title: "Fan Fest keynote bingo maker", description: "Build a card, randomize it, play along live, and export a PNG to share.", tags: ["tool", "events"], theme: "event", kicker: "Fan Fest keynote", heading: "Bingo<br>Card Maker" },
+  { name: "fanfest-bingo", title: "Fan Fest keynote bingo maker", description: "Build a card, randomize it, play along live, and export a PNG to share.", tags: ["tool", "events"], theme: "evercold", kicker: "Fan Fest \u00b7 Evercold keynote", heading: "Keynote<br>Bingo", bg: "fanfest-bingo-bg.jpg" },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 
@@ -75,6 +75,40 @@ ${logo ? `<div class="logo"><img src="data:image/png;base64,${readFileSync(fileU
   p.style.top = (h.offsetTop + h.offsetHeight + 20) + "px";
 </script>`;
 
+// The bingo maker card: Evercold key art behind a gold-framed, FFXIV-window look, matching the page.
+const EV_FONTS = [
+  font("Cinzel", "Cinzel-Black.ttf", 900),
+  font("Cinzel", "Cinzel-SemiBold.ttf", 600),
+  font("Instrument Sans", "InstrumentSans-SemiBold.ttf", 600),
+  font("Instrument Sans", "InstrumentSans-Regular.ttf", 400),
+].join("");
+const evBg = (file) => readFileSync(fileURLToPath(new URL("../img/" + file, import.meta.url))).toString("base64");
+const evPage = ({ description, tags, kicker, heading, bg }) => `<!doctype html><meta charset="utf-8"><style>
+${EV_FONTS}
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;background:#0a1428 url(data:image/jpeg;base64,${evBg(bg)}) center/cover;font-family:"Instrument Sans",Arial,sans-serif;color:#ecf2fb;position:relative;overflow:hidden}
+.scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,18,40,.9) 0%,rgba(8,18,40,.78) 55%,rgba(8,18,40,.3) 100%)}
+.frame{position:absolute;inset:24px;border:3px solid #b79b5c;border-radius:20px}
+.frame2{position:absolute;inset:34px;border:2px solid #3b5a8f;border-radius:14px}
+.kicker{position:absolute;left:84px;top:80px;font-weight:600;font-size:23px;letter-spacing:5px;text-transform:uppercase;color:#8fd3ff}
+h1{position:absolute;left:84px;top:128px;width:900px;font-family:Cinzel,Georgia,serif;font-weight:900;font-size:112px;line-height:1.02;color:#f4e9cc}
+p{position:absolute;left:84px;width:700px;font-size:32px;line-height:1.35;color:#bccbe4}
+.tags{position:absolute;left:84px;bottom:84px;display:flex;gap:12px}
+.tags span{padding:9px 20px;border-radius:4px;border:2px solid #e8cf94;color:#e8cf94;font-weight:600;font-size:22px;letter-spacing:1px}
+.url{position:absolute;right:84px;bottom:88px;font-weight:600;font-size:26px;color:#e8cf94}
+.seal{position:absolute;right:84px;top:76px;width:84px;height:84px;display:flex;align-items:center;justify-content:center;background:#b3262d;color:#fff;border-radius:8px;font-family:serif;font-weight:900;font-size:30px;line-height:1.05;text-align:center;transform:rotate(6deg);border:3px solid #ffd0cc}
+</style>
+<div class="scrim"></div><div class="frame"></div><div class="frame2"></div>
+<div class="seal">\u6771<br>\u4eac</div>
+<div class="kicker">${esc(kicker)}</div>
+<h1>${heading}</h1><p>${esc(description)}</p>
+<div class="tags">${tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
+<div class="url">${DOMAIN}</div>
+<script>
+  var h = document.querySelector("h1"), p = document.querySelector("p");
+  p.style.top = (h.offsetTop + h.offsetHeight + 20) + "px";
+</script>`;
+
 const page = ({ title, description, tags }) => `<!doctype html><meta charset="utf-8"><style>
 ${FONTS}
 *{box-sizing:border-box;margin:0}
@@ -110,7 +144,7 @@ if (unknown.length) {
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const tab = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 for (const card of cards) {
-  await tab.setContent((card.theme === "event" ? kbPage : page)(card));
+  await tab.setContent(({ event: kbPage, evercold: evPage }[card.theme] || page)(card));
   await tab.screenshot({ path: `${OUT_DIR}og-${card.name}.png` });
   console.log(`og-${card.name}.png`);
 }
