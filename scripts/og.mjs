@@ -25,7 +25,8 @@ const CARDS = [
   { name: "trade-in-mounts", title: "Trade-in mounts: grind vs. buy the mats", description: "Every trade-in mount, with live market prices and a straight verdict: grind it out, or buy your way there.", tags: ["guide", "mounts", "market"] },
   { name: "inventory-decluttering", title: "Inventory & retainer decluttering", description: "A decision tree for what to keep, bank, or discard, plus the short list of items that never come back.", tags: ["guide", "inventory"] },
   { name: "retainer-ventures", title: "Retainer ventures: what to send them for", description: "Every venture ranked by what it earns on the market board for your retainer, with live prices and how fast it sells.", tags: ["market", "retainer"] },
-  { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"], theme: "keybound" },
+  { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"], theme: "event", kicker: "Gold Saucer \u00d7 FFVII Remake", heading: "Keybound<br>Brawler", logo: "keybound-brawler-logo.png" },
+  { name: "fanfest-bingo", title: "Fan Fest keynote bingo maker", description: "Build a card, randomize it, play along live, and export a PNG to share.", tags: ["tool", "events"], theme: "event", kicker: "Fan Fest keynote", heading: "Bingo<br>Card Maker" },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 
@@ -43,14 +44,13 @@ const FONTS = [
 
 const wordmark = `XIV<b>KIT</b>`;
 
-// Keybound Brawler keeps its own purple event look on its card, matching the page.
+// Event pages (Keybound Brawler, bingo) keep their own purple look on their cards, matching the pages.
 const KB_FONTS = [
   font("Bungee", "Bungee-Regular.ttf", 400),
   font("Chakra Petch", "ChakraPetch-SemiBold.ttf", 600),
   font("Chakra Petch", "ChakraPetch-Regular.ttf", 400),
 ].join("");
-const kbLogo = readFileSync(fileURLToPath(new URL("../img/keybound-brawler-logo.png", import.meta.url))).toString("base64");
-const kbPage = ({ title, description, tags }) => `<!doctype html><meta charset="utf-8"><style>
+const kbPage = ({ description, tags, kicker, heading, logo }) => `<!doctype html><meta charset="utf-8"><style>
 ${KB_FONTS}
 *{box-sizing:border-box;margin:0}
 body{width:1200px;height:630px;background:#120d24;font-family:"Chakra Petch",Arial,sans-serif;color:#f3eefc;position:relative;overflow:hidden}
@@ -65,9 +65,9 @@ p{position:absolute;left:80px;width:880px;font-size:32px;line-height:1.35;color:
 .url{position:absolute;right:80px;bottom:84px;font-weight:600;font-size:26px;color:#f5c542}
 </style>
 <div class="frame"></div>
-<div class="logo"><img src="data:image/png;base64,${kbLogo}"></div>
-<div class="kicker">Gold Saucer × FFVII Remake</div>
-<h1>Keybound<br>Brawler</h1><p>${esc(description)}</p>
+${logo ? `<div class="logo"><img src="data:image/png;base64,${readFileSync(fileURLToPath(new URL("../img/" + logo, import.meta.url))).toString("base64")}"></div>` : ""}
+<div class="kicker">${esc(kicker)}</div>
+<h1>${heading}</h1><p>${esc(description)}</p>
 <div class="tags">${tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
 <div class="url">${DOMAIN}</div>
 <script>
@@ -110,7 +110,7 @@ if (unknown.length) {
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const tab = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 for (const card of cards) {
-  await tab.setContent((card.theme === "keybound" ? kbPage : page)(card));
+  await tab.setContent((card.theme === "event" ? kbPage : page)(card));
   await tab.screenshot({ path: `${OUT_DIR}og-${card.name}.png` });
   console.log(`og-${card.name}.png`);
 }

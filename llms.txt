@@ -12,6 +12,7 @@ The site is static and every page is plain HTML. Market board prices on the guid
 - [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html): A keep, bank, or discard decision tree for a full bag or retainer, with storage tips, ways to sell or desynthesize, and the short list of items that never come back once discarded.
 - [Retainer Ventures: What to Send Them For](https://xivkit.com/retainer-ventures.html): Ranks every retainer venture by what it earns on the market board for your retainer's class, level, and stats, with live prices and sales speed.
 - [Keybound Brawler: The Grind Math](https://xivkit.com/keybound-brawler.html): What every Keybound Brawler reward costs in MGC, how many runs it takes to afford them all, and how long the Magitype Magister title grind is.
+- [Fan Fest Keynote Bingo Maker](https://xivkit.com/fanfest-bingo.html): Build, randomize, play and export an FFXIV Fan Fest keynote bingo card as a shareable PNG, with suggested predictions and community jokes.
 
 ## Lists
 

@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ3SSXDSFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQ3SSXDSFK');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fan Fest Keynote Bingo Maker | XIVKit</title>
+<meta name="description" content="Build your own FFXIV Fan Fest keynote bingo card. Drag in predictions and running jokes, randomize a card, play along live, and export a shareable PNG.">
+<link rel="canonical" href="https://xivkit.com/fanfest-bingo.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#120d24">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="XIVKit">
+<meta property="og:title" content="Fan Fest Keynote Bingo Maker | XIVKit">
+<meta property="og:description" content="Build your own FFXIV Fan Fest keynote bingo card, randomize it, and export a PNG to share.">
+<meta property="og:url" content="https://xivkit.com/fanfest-bingo.html">
+<meta property="og:image" content="https://xivkit.com/og-fanfest-bingo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fan Fest Keynote Bingo Maker">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fan Fest Keynote Bingo Maker | XIVKit">
+<meta name="twitter:description" content="Build your own FFXIV Fan Fest keynote bingo card, randomize it, and export a PNG to share.">
+<meta name="twitter:image" content="https://xivkit.com/og-fanfest-bingo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@400;500;600;700&family=Cinzel:wght@600&display=swap">
+<style>
+:root{
+  --bg:#120d24; --card:#1d1636; --raised:#2a2050; --rule:#3a2d62; --rule-icon:#4a3a7a; --tile:#241a45;
+  --ink:#f3eefc; --soft:#d9d0f2; --muted:#c9bfe6; --dim:#b3a7d6; --faint:#9d90c4;
+  --gold:#f5c542; --gold-hi:#ffe08a; --cyan:#4fd8ff; --pink:#ff4fa3; --pink-hi:#ff8cc4;
+  --display:Bungee, "Segoe UI", system-ui, sans-serif;
+  --body:"Chakra Petch", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.45}
+a{color:var(--gold);text-underline-offset:2px}
+a:hover{color:var(--gold-hi)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 56px;display:flex;flex-direction:column;gap:24px}
+
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:18px 0 0;font-size:14px}
+.site-nav a{color:var(--dim);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.site-nav a:hover{color:var(--ink)}
+.site-nav .wordmark{font-family:Cinzel, Georgia, serif;font-weight:600;font-size:20px;letter-spacing:.1em;color:var(--ink);border-bottom:0}
+.site-nav .wordmark b{font-weight:600;color:#ff5a50}
+#lang-bar{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+#lang-bar button{font:12px var(--body);border:1px solid var(--rule);background:var(--card);color:var(--dim);padding:3px 10px;border-radius:999px;cursor:pointer}
+#lang-bar button.active{color:var(--ink);border-color:var(--gold)}
+
+.kicker{font-size:16px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
+h1{margin:6px 0 8px;font-family:var(--display);font-weight:400;font-size:clamp(32px,5.5vw,56px);line-height:1.02;color:var(--gold)}
+.lede{font-size:19px;color:var(--muted);margin:0;max-width:62ch}
+.when{margin:10px 0 0;font-size:14px;color:var(--dim)}
+
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:700 15px var(--body);min-height:44px;padding:0 18px;border-radius:999px;border:2px solid var(--rule-icon);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--gold)}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#120d24}
+.btn.primary:hover{background:var(--gold-hi);border-color:var(--gold-hi)}
+.btn[aria-pressed="true"]{border-color:var(--pink);color:var(--pink-hi)}
+.toolbar .grow{flex:1}
+.status{min-height:24px;font-weight:700;color:var(--gold);font-size:16px}
+
+.builder{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.card-col{display:flex;flex-direction:column;gap:14px}
+.meta{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+.field{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--dim)}
+.field input{font:500 17px var(--body);letter-spacing:0;text-transform:none;background:var(--card);color:var(--ink);border:2px solid var(--rule);border-radius:10px;padding:8px 12px;min-height:44px}
+
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;background:var(--card);border:2px solid var(--rule);border-radius:18px;padding:12px}
+.cell{position:relative;aspect-ratio:1;min-width:0;border-radius:12px;border:2px solid var(--rule-icon);background:var(--tile);color:var(--ink);font:600 clamp(11px,1.7vw,16px)/1.2 var(--body);padding:6px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;overflow-wrap:anywhere;hyphens:auto}
+.cell:hover{border-color:var(--cyan)}
+.cell.empty{color:var(--faint);font-weight:400;border-style:dashed;background:transparent}
+.cell.free{border-color:var(--gold);color:var(--gold)}
+.cell.sel{outline:3px solid var(--cyan);outline-offset:1px}
+.cell.over{border-color:var(--gold);background:var(--raised)}
+.cell.drag{opacity:.4}
+.cell.marked{background:#4a1d3d;border-color:var(--pink);color:var(--pink-hi)}
+.cell.marked::after{content:"";position:absolute;right:6px;top:6px;width:14px;height:14px;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff8cc4' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12l5 5L20 6'/%3E%3C/svg%3E")}
+.cell.win{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.cell input{width:100%;font:inherit;text-align:center;background:var(--bg);color:var(--ink);border:0;border-radius:6px;padding:4px 2px}
+.hint{font-size:14px;color:var(--dim);margin:0}
+
+.side{background:var(--card);border:2px solid var(--rule);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;position:sticky;top:12px;max-height:calc(100vh - 24px)}
+.side h2{margin:0;font-family:var(--display);font-weight:400;font-size:20px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:600 13px var(--body);border:1px solid var(--rule-icon);background:var(--raised);color:var(--muted);padding:5px 11px;border-radius:999px;cursor:pointer;min-height:32px}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.sug-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0}
+.sug{width:100%;text-align:left;font:500 15px/1.25 var(--body);background:var(--raised);color:var(--ink);border:1px solid var(--rule-icon);border-radius:10px;padding:9px 12px;min-height:44px;cursor:grab;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.sug:hover{border-color:var(--cyan)}
+.sug small{font-size:11px;color:var(--dim);white-space:nowrap;letter-spacing:.5px;text-transform:uppercase}
+.sug.used{opacity:.4;text-decoration:line-through}
+.add{display:flex;gap:6px}
+.add input{flex:1;min-width:0;font:500 15px var(--body);background:var(--bg);color:var(--ink);border:2px solid var(--rule);border-radius:10px;padding:6px 10px;min-height:44px}
+.add .btn{padding:0 14px}
+
+.sources{font-size:14px;color:var(--faint);border-top:1px solid var(--rule);padding-top:16px;display:flex;flex-direction:column;gap:6px}
+.sources p{margin:0}
+.sources .legal{font-size:13px;opacity:.8;margin-top:6px}
+
+@media (max-width:900px){
+  .builder{grid-template-columns:1fr}
+  .side{position:static;max-height:none}
+  .sug-list{max-height:360px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .meta{grid-template-columns:1fr}
+  .board{gap:5px;padding:8px}
+  .cell{padding:3px;border-radius:8px}
+  #lang-bar{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="site-nav">
+  <a class="wordmark" href="./" aria-label="XIVKit home">XIV<b>KIT</b></a>
+  <a href="./" data-i18n="shared.nav.tools">Tools I use</a>
+  <a href="watchlist.html" data-i18n="shared.nav.watchlist">Watchlist</a>
+  <a href="plugins.html" data-i18n="shared.nav.plugins">Plugins</a>
+  <a href="venues.html" data-i18n="shared.nav.venues">Venues</a>
+  <div id="lang-bar"></div>
+</nav>
+
+<header>
+  <div class="kicker">Fan Fest keynote</div>
+  <h1>Bingo card maker</h1>
+  <p class="lede">Fill in your predictions and running jokes, drag in ideas from the side, or hit randomize. Export a PNG to share, or mark squares live while the keynote plays.</p>
+  <p class="when" id="when">Tokyo Fan Fest keynote: Fri Oct 30, 7:00 pm PDT (Sat Oct 31, 11:00 JST).</p>
+</header>
+
+<div class="toolbar" role="toolbar" aria-label="Card actions">
+  <button type="button" class="btn" id="randomize">Randomize</button>
+  <button type="button" class="btn" id="clear">Clear</button>
+  <button type="button" class="btn" id="play" aria-pressed="false">Play mode</button>
+  <span class="grow"></span>
+  <button type="button" class="btn primary" id="export">Download PNG</button>
+</div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+
+<div class="builder">
+  <div class="card-col">
+    <div class="meta">
+      <label class="field">Card title<input id="title" maxlength="40" value="My Fan Fest Bingo" autocomplete="off"></label>
+      <label class="field">Your name (optional)<input id="by" maxlength="24" placeholder="e.g. Warrior of Light" autocomplete="off"></label>
+    </div>
+    <div class="board" id="board" role="grid" aria-label="Bingo card"></div>
+    <p class="hint" id="hint">Click a square to type in it. Click a suggestion to drop it into the selected (or next empty) square. Drag squares to swap them. On touch screens, tap instead of dragging.</p>
+  </div>
+
+  <aside class="side" aria-label="Suggestions">
+    <h2>Ideas</h2>
+    <div class="chips" id="chips" role="group" aria-label="Filter suggestions"></div>
+    <ul class="sug-list" id="sugs"></ul>
+    <form class="add" id="addForm">
+      <input id="addInput" maxlength="40" placeholder="Add your own idea" aria-label="Add your own idea" autocomplete="off">
+      <button class="btn" type="submit">Add</button>
+    </form>
+  </aside>
+</div>
+
+<footer class="sources">
+  <p>Squares are predictions and community in-jokes, not leaks. Event facts come from Square Enix's announcements as covered by <a href="https://www.gematsu.com/2026/04/final-fantasy-xiv-evercold-expansion-switch-2-version-and-evangelion-collaboration-announced" target="_blank" rel="noopener noreferrer">Gematsu</a>, <a href="https://www.icy-veins.com/ffxiv/news/ffxiv-tokyo-fan-fest-schedule-is-now-available/" target="_blank" rel="noopener noreferrer">Icy Veins</a>, and <a href="https://www.rpgfan.com/feature/final-fantasy-xiv-fan-fest-2026-anaheim/" target="_blank" rel="noopener noreferrer">RPGFan</a>.</p>
+  <p>Your card is saved in this browser only. See the <a href="./">main list</a> for the rest of the tools I use. Source on <a href="https://github.com/malobear/xivkit" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+  <p class="legal" data-i18n="shared.legal">FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made list, not affiliated with or endorsed by Square Enix.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var CENTER = 12;
+  var SUGGESTIONS = [
+    // Evercold wish list and jokes
+    ["More glamour plates","Evercold"],
+    ["Glamour dressers in houses","Evercold"],
+    ["Custom character statues","Evercold"],
+    ["New hunt currency","Evercold"],
+    ["Cross data center dates","Evercold"],
+    ["New housing zone","Evercold"],
+    ["Instanced housing","Evercold"],
+    ["TARDIS housing","Evercold"],
+    ["Capes!","Evercold"],
+    ["Free Fantasia","Evercold"],
+    ["Four Lords Ultimate","Evercold"],
+    ["FFXVI event returns","Evercold"],
+    ["The twins finally age up","Evercold"],
+    ["Zenos is still dead","Evercold"],
+    ["Yoshi-P brings a real bird on stage","Evercold"],
+    ["Murouchi wears a silly costume","Evercold"],
+    ["Another MIA Ascian revealed","Evercold"],
+    ["Goodbye, summoner raise","Evercold"],
+    // Reveals and announcements
+    ["Second new job revealed","Reveal"],
+    ["Physical ranged job gets a name","Reveal"],
+    ["Exact Evercold release date","Reveal"],
+    ["New alliance raid teased","Reveal"],
+    ["Evangelion collab details","Reveal"],
+    ["Ultimate raid shown","Reveal"],
+    ["Trailer gets a crowd gasp","Reveal"],
+    ["New hairstyles and customization","Reveal"],
+    ["Housing improvements","Reveal"],
+    ["A new playable race","Reveal"],
+    ["Gold Saucer update","Reveal"],
+    ["Switch 2 news","Reveal"],
+    ["Another collab announced","Reveal"],
+    ["Island Sanctuary update","Reveal"],
+    ["Benchmark or free trial news","Reveal"],
+    ["Job rework surprise","Reveal"],
+    ["Next expansion after Evercold teased","Reveal"],
+    ["Wuk Lamat gets a mention","Reveal"],
+    // Yoshi-P
+    ["Yoshi-P wears a meaningful shirt","Yoshi-P"],
+    ["Yoshi-P gets emotional","Yoshi-P"],
+    ["Yoshi-P wears a suit","Yoshi-P"],
+    ["“We will consider it”","Yoshi-P"],
+    ["“Please look forward to it”","Yoshi-P"],
+    ["Yoshi-P apologizes for something","Yoshi-P"],
+    ["Yoshi-P jokes about overwork","Yoshi-P"],
+    ["Interpreter has a rough moment","Yoshi-P"],
+    ["“More details at a later date”","Yoshi-P"],
+    // Music and stage
+    ["Soken teases a new sound","Stage"],
+    ["Live band plays a banger","Stage"],
+    ["Crowd sings along","Stage"],
+    ["Surprise guest on stage","Stage"],
+    ["Mascot or cosplayer appears","Stage"],
+    // Community
+    ["Someone shouts “Housing!”","Community"],
+    ["Crowd yells weapon ideas","Community"],
+    ["Crossbow job requested again","Community"],
+    ["Stream chat spams an emote","Community"],
+    ["Stream lag or audio hiccup","Community"],
+    ["Lalafell joke","Community"],
+    ["Data center travel jokes","Community"],
+    ["You pre-order immediately","Community"]
+  ];
+  var CATS = ["All","Evercold","Reveal","Yoshi-P","Stage","Community"];
+  var KEY = "xivkit-bingo-v1";
+
+  var state = { cells: new Array(25).fill(""), marks: new Array(25).fill(false), title: "My Fan Fest Bingo", by: "", extra: [] };
+  state.cells[CENTER] = "FREE SPACE";
+  var sel = -1, play = false, filter = "All", dragFrom = null;
+
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY));
+    if (saved && Array.isArray(saved.cells) && saved.cells.length === 25) {
+      state.cells = saved.cells.map(String);
+      state.marks = (saved.marks || []).slice(0, 25).concat(new Array(25).fill(false)).slice(0, 25).map(Boolean);
+      state.title = String(saved.title || state.title);
+      state.by = String(saved.by || "");
+      state.extra = Array.isArray(saved.extra) ? saved.extra.map(String).slice(0, 30) : [];
+    }
+  } catch (e) {}
+
+  var $ = function (id) { return document.getElementById(id); };
+  var board = $("board"), sugs = $("sugs"), statusEl = $("status");
+
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function say(msg) { statusEl.textContent = msg; }
+
+  var LINES = [];
+  for (var i = 0; i < 5; i++) {
+    LINES.push([0,1,2,3,4].map(function (c) { return i * 5 + c; }));
+    LINES.push([0,1,2,3,4].map(function (r) { return r * 5 + i; }));
+  }
+  LINES.push([0,6,12,18,24], [4,8,12,16,20]);
+
+  function winners() {
+    var w = {}, n = 0;
+    LINES.forEach(function (l) {
+      var ok = l.every(function (i) { return i === CENTER ? true : state.marks[i] && state.cells[i]; });
+      if (ok) { n++; l.forEach(function (i) { w[i] = true; }); }
+    });
+    return { set: w, count: n };
+  }
+
+  function nextEmpty() {
+    for (var i = 0; i < 25; i++) if (!state.cells[i]) return i;
+    return -1;
+  }
+
+  function renderBoard() {
+    var win = play ? winners() : { set: {}, count: 0 };
+    board.textContent = "";
+    state.cells.forEach(function (text, i) {
+      var b = document.createElement("div");
+      b.className = "cell" + (text ? "" : " empty") + (i === CENTER ? " free" : "") + (i === sel && !play ? " sel" : "") + (state.marks[i] && play ? " marked" : "") + (win.set[i] ? " win" : "");
+      b.setAttribute("role", "gridcell");
+      b.tabIndex = 0;
+      b.dataset.i = i;
+      b.draggable = !play;
+      b.textContent = text || (play ? "" : "Empty");
+      b.setAttribute("aria-label", (text || "Empty square") + (play ? (state.marks[i] ? ", marked" : ", not marked") : ""));
+      board.appendChild(b);
+    });
+    if (play) say(win.count ? "BINGO! " + win.count + (win.count > 1 ? " lines" : " line") : "");
+  }
+
+  function editCell(i) {
+    var el = board.children[i];
+    var input = document.createElement("input");
+    input.value = state.cells[i];
+    input.maxLength = 48;
+    input.setAttribute("aria-label", "Square text");
+    el.draggable = false;
+    el.textContent = "";
+    el.appendChild(input);
+    input.focus();
+    input.select();
+    var done = false;
+    function commit() {
+      if (done) return; done = true;
+      state.cells[i] = input.value.trim();
+      save(); renderBoard(); renderSugs();
+    }
+    input.addEventListener("blur", commit);
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); commit(); board.children[i].focus(); }
+      if (e.key === "Escape") { done = true; renderBoard(); board.children[i].focus(); }
+    });
+  }
+
+  board.addEventListener("click", function (e) {
+    var c = e.target.closest(".cell"); if (!c || e.target.tagName === "INPUT") return;
+    var i = +c.dataset.i;
+    if (play) {
+      if (!state.cells[i] && i !== CENTER) return;
+      state.marks[i] = !state.marks[i]; save(); renderBoard();
+    } else if (sel === i) {
+      editCell(i);
+    } else {
+      sel = i; renderBoard();
+    }
+  });
+  board.addEventListener("dblclick", function (e) {
+    var c = e.target.closest(".cell"); if (c && !play && e.target.tagName !== "INPUT") editCell(+c.dataset.i);
+  });
+  board.addEventListener("keydown", function (e) {
+    var c = e.target.closest(".cell"); if (!c || e.target.tagName === "INPUT") return;
+    var i = +c.dataset.i;
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (play) c.click(); else { sel = i; renderBoard(); editCell(i); }
+    }
+    var d = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -5, ArrowDown: 5 }[e.key];
+    if (d !== undefined && i + d >= 0 && i + d < 25 && !(Math.abs(d) === 1 && Math.floor((i + d) / 5) !== Math.floor(i / 5))) {
+      e.preventDefault(); board.children[i + d].focus();
+    }
+    if ((e.key === "Delete" || e.key === "Backspace") && !play) { state.cells[i] = ""; save(); renderBoard(); renderSugs(); board.children[i].focus(); }
+  });
+
+  // Drag and drop: squares swap, suggestions drop in.
+  board.addEventListener("dragstart", function (e) {
+    var c = e.target.closest(".cell"); if (!c) return;
+    dragFrom = +c.dataset.i;
+    e.dataTransfer.setData("text/plain", "cell:" + dragFrom);
+    e.dataTransfer.effectAllowed = "move";
+    c.classList.add("drag");
+  });
+  board.addEventListener("dragend", function () { dragFrom = null; renderBoard(); });
+  board.addEventListener("dragover", function (e) {
+    var c = e.target.closest(".cell"); if (!c || play) return;
+    e.preventDefault();
+    Array.prototype.forEach.call(board.children, function (x) { x.classList.toggle("over", x === c); });
+  });
+  board.addEventListener("drop", function (e) {
+    var c = e.target.closest(".cell"); if (!c || play) return;
+    e.preventDefault();
+    var to = +c.dataset.i, data = e.dataTransfer.getData("text/plain");
+    if (data.indexOf("cell:") === 0) {
+      var from = +data.slice(5);
+      if (from !== to) { var t = state.cells[to]; state.cells[to] = state.cells[from]; state.cells[from] = t; }
+    } else if (data.indexOf("sug:") === 0) {
+      state.cells[to] = data.slice(4);
+    }
+    sel = to; save(); renderBoard(); renderSugs();
+  });
+
+  function pool() {
+    return SUGGESTIONS.concat(state.extra.map(function (t) { return [t, "Mine"]; }));
+  }
+
+  function renderChips() {
+    var chips = $("chips"); chips.textContent = "";
+    (state.extra.length ? CATS.concat(["Mine"]) : CATS).forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.textContent = c;
+      b.setAttribute("aria-pressed", String(c === filter));
+      b.addEventListener("click", function () { filter = c; renderChips(); renderSugs(); });
+      chips.appendChild(b);
+    });
+  }
+
+  function renderSugs() {
+    sugs.textContent = "";
+    pool().forEach(function (s) {
+      if (filter !== "All" && s[1] !== filter) return;
+      var li = document.createElement("li");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "sug" + (state.cells.indexOf(s[0]) !== -1 ? " used" : "");
+      b.draggable = true;
+      var span = document.createElement("span"); span.textContent = s[0];
+      var sm = document.createElement("small"); sm.textContent = s[1];
+      b.appendChild(span); b.appendChild(sm);
+      b.addEventListener("dragstart", function (e) {
+        e.dataTransfer.setData("text/plain", "sug:" + s[0]);
+        e.dataTransfer.effectAllowed = "copy";
+      });
+      b.addEventListener("click", function () {
+        var target = (sel >= 0 && !state.cells[sel]) ? sel : nextEmpty();
+        if (sel >= 0 && state.cells[sel] && nextEmpty() === -1) target = sel;
+        if (target < 0) { say("Card is full. Select a square to replace it first."); return; }
+        state.cells[target] = s[0];
+        sel = -1; var n = nextEmpty(); if (n >= 0) sel = n;
+        save(); renderBoard(); renderSugs();
+        say("");
+      });
+      li.appendChild(b); sugs.appendChild(li);
+    });
+  }
+
+  $("addForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = $("addInput").value.trim();
+    if (!v) return;
+    if (pool().every(function (s) { return s[0].toLowerCase() !== v.toLowerCase(); })) state.extra.push(v);
+    $("addInput").value = "";
+    save(); renderChips(); renderSugs();
+  });
+
+  $("randomize").addEventListener("click", function () {
+    var items = SUGGESTIONS.concat(state.extra.map(function (t) { return [t, "Mine"]; })).map(function (s) { return s[0]; });
+    for (var i = items.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = items[i]; items[i] = items[j]; items[j] = t; }
+    var k = 0;
+    for (var c = 0; c < 25; c++) {
+      if (c === CENTER) continue;
+      state.cells[c] = items[k++];
+    }
+    state.marks = new Array(25).fill(false);
+    sel = -1; save(); renderBoard(); renderSugs();
+    say("Randomized. Swap anything you don't like.");
+  });
+
+  $("clear").addEventListener("click", function () {
+    state.cells = new Array(25).fill(""); state.cells[CENTER] = "FREE SPACE";
+    state.marks = new Array(25).fill(false);
+    sel = -1; save(); renderBoard(); renderSugs(); say("Cleared.");
+  });
+
+  $("play").addEventListener("click", function () {
+    play = !play;
+    this.setAttribute("aria-pressed", String(play));
+    this.textContent = play ? "Edit mode" : "Play mode";
+    $("hint").textContent = play ? "Click squares as they happen on stream. Marked squares and any bingo lines show up in the export." : $("hint").dataset.edit;
+    say(""); renderBoard();
+  });
+  $("hint").dataset.edit = $("hint").textContent;
+
+  $("title").value = state.title; $("by").value = state.by;
+  $("title").addEventListener("input", function () { state.title = this.value; save(); });
+  $("by").addEventListener("input", function () { state.by = this.value; save(); });
+
+  // PNG export, drawn straight to a canvas so it needs no library.
+  function wrap(ctx, text, maxW) {
+    var words = text.split(/\s+/), lines = [], cur = "";
+    words.forEach(function (w) {
+      var test = cur ? cur + " " + w : w;
+      if (ctx.measureText(test).width <= maxW || !cur) cur = test; else { lines.push(cur); cur = w; }
+    });
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  function rr(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+
+  function draw() {
+    var W = 1080, H = 1400, P = 60, gap = 12;
+    var cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    var ctx = cv.getContext("2d");
+    ctx.fillStyle = "#120d24"; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = "#3a2d62"; ctx.lineWidth = 3; rr(ctx, 20, 20, W - 40, H - 40, 32); ctx.stroke();
+
+    ctx.textBaseline = "alphabetic"; ctx.textAlign = "left";
+    ctx.fillStyle = "#4fd8ff"; ctx.font = "600 24px 'Chakra Petch', sans-serif";
+    if (ctx.letterSpacing !== undefined) ctx.letterSpacing = "5px";
+    ctx.fillText("FFXIV FAN FEST KEYNOTE BINGO", P, 96);
+    if (ctx.letterSpacing !== undefined) ctx.letterSpacing = "0px";
+
+    var title = (state.title || "My Fan Fest Bingo").toUpperCase();
+    var size = 76;
+    ctx.font = size + "px Bungee, sans-serif";
+    while (ctx.measureText(title).width > W - P * 2 && size > 30) { size -= 2; ctx.font = size + "px Bungee, sans-serif"; }
+    ctx.fillStyle = "#f5c542"; ctx.fillText(title, P, 190);
+    if (state.by) {
+      ctx.fillStyle = "#c9bfe6"; ctx.font = "500 26px 'Chakra Petch', sans-serif";
+      ctx.fillText("by " + state.by, P, 236);
+    }
+
+    var gx = P, gy = 270, cs = (W - P * 2 - gap * 4) / 5;
+    var win = winners();
+    state.cells.forEach(function (text, i) {
+      var x = gx + (i % 5) * (cs + gap), y = gy + Math.floor(i / 5) * (cs + gap);
+      var marked = state.marks[i] && (text || i === CENTER);
+      var free = i === CENTER;
+      ctx.fillStyle = marked ? "#4a1d3d" : (text ? "#241a45" : "#1d1636");
+      rr(ctx, x, y, cs, cs, 18); ctx.fill();
+      ctx.lineWidth = win.set[i] ? 5 : 3;
+      ctx.strokeStyle = win.set[i] ? "#f5c542" : marked ? "#ff4fa3" : free ? "#f5c542" : "#4a3a7a";
+      rr(ctx, x, y, cs, cs, 18); ctx.stroke();
+      if (!text) return;
+      ctx.fillStyle = marked ? "#ff8cc4" : free ? "#f5c542" : "#f3eefc";
+      ctx.textAlign = "center";
+      var fs = 28, lines;
+      for (; fs >= 14; fs -= 1) {
+        ctx.font = "600 " + fs + "px 'Chakra Petch', sans-serif";
+        lines = wrap(ctx, text, cs - 28);
+        if (lines.length * fs * 1.2 <= cs - 28 && lines.every(function (l) { return ctx.measureText(l).width <= cs - 28; })) break;
+      }
+      var top = y + cs / 2 - (lines.length * fs * 1.2) / 2 + fs * 0.95;
+      lines.forEach(function (l, n) { ctx.fillText(l, x + cs / 2, top + n * fs * 1.2); });
+      ctx.textAlign = "left";
+    });
+
+    var fy = gy + 5 * cs + 4 * gap + 40;
+    ctx.fillStyle = "#3a2d62"; ctx.fillRect(P, fy, W - P * 2, 2);
+    ctx.fillStyle = "#c9bfe6"; ctx.font = "500 24px 'Chakra Petch', sans-serif";
+    ctx.fillText("Make your own bingo card at", P, fy + 54);
+    ctx.fillStyle = "#f5c542"; ctx.font = "600 38px 'Chakra Petch', sans-serif"; ctx.textAlign = "right";
+    ctx.fillText("xivkit.com/fanfest-bingo", W - P, fy + 56);
+    ctx.textAlign = "left";
+    return cv;
+  }
+
+  $("export").addEventListener("click", function () {
+    var go = function () {
+      draw().toBlob(function (blob) {
+        if (!blob) { say("Couldn't build the image in this browser."); return; }
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "fanfest-bingo.png";
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
+        say("Saved fanfest-bingo.png");
+      }, "image/png");
+    };
+    if (document.fonts && document.fonts.load) {
+      Promise.all([document.fonts.load("76px Bungee"), document.fonts.load("600 28px 'Chakra Petch'"), document.fonts.load("500 24px 'Chakra Petch'")]).then(go, go);
+    } else go();
+  });
+
+  // Show the keynote time in the visitor's own timezone.
+  try {
+    var k = new Date("2026-10-31T02:00:00Z");
+    $("when").textContent = "Tokyo Fan Fest keynote: " + k.toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }) + " (your time).";
+  } catch (e) {}
+
+  renderChips(); renderSugs(); renderBoard();
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+<script src="i18n.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fan Fest Keynote Bingo Maker",
+  "description": "Build, randomize, play and export an FFXIV Fan Fest keynote bingo card as a shareable PNG.",
+  "url": "https://xivkit.com/fanfest-bingo.html",
+  "image": "https://xivkit.com/og-fanfest-bingo.png",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "XIVKit",
+    "url": "https://xivkit.com/"
+  }
+}
+</script>
+</body>
+</html>
