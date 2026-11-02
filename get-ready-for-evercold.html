@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ3SSXDSFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQ3SSXDSFK');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>FFXIV Evercold Prep Checklist: What to Do Before 8.0 | XIVKit</title>
+<meta name="description" content="A work-in-progress checklist of what to finish, spend, and clear before FFXIV Evercold early access on February 19, 2027.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f5f8" media="(prefers-color-scheme: light)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --paper:#EDF0F3; --surface:#F8F9FB; --ink:#18233B; --muted:#56617A; --rule:#C8D0DB;
+  --cyan:#1B7C93; --moss:#4E6A2C; --gold:#94640E; --rose:#9A3F55; --slate:#6B7385;
+  --chip:#E1E6EC; --focus:#1B7C93;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131A29; --surface:#1A2336; --ink:#E4E9F1; --muted:#9BA6B9; --rule:#2E3A52;
+    --cyan:#63C3D8; --moss:#A5C674; --gold:#E3B45E; --rose:#E08AA0; --slate:#A3ABBD;
+    --chip:#243049; --focus:#63C3D8;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131A29; --surface:#1A2336; --ink:#E4E9F1; --muted:#9BA6B9; --rule:#2E3A52;
+  --cyan:#63C3D8; --moss:#A5C674; --gold:#E3B45E; --rose:#E08AA0; --slate:#A3ABBD;
+  --chip:#243049; --focus:#63C3D8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:var(--cyan);text-underline-offset:2px}
+a:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:18px 0 0;font-size:14px}
+.site-nav a{color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.site-nav a:hover{color:var(--ink)}
+.site-footer{border-top:1px solid var(--rule);margin-top:32px;padding-top:20px;font-size:14px;color:var(--muted)}
+.site-footer p{margin:6px 0}
+.site-footer .legal{margin-top:10px;font-size:13px;opacity:.75}
+
+.wip-banner{margin:16px 0 0;padding:10px 14px;border:1px solid var(--gold);border-left-width:4px;border-radius:6px;background:var(--surface);font-size:15px}
+.wip-banner b{color:var(--gold)}
+
+header.hero{padding:20px 0 4px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;max-width:18ch}
+.hero .lede{max-width:68ch;color:var(--muted);margin:0 0 12px}
+
+.legend{display:grid;gap:6px;margin:14px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:70ch;font-size:14px;list-style:none}
+.legend li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.03em;border:1px solid var(--v);color:var(--v);border-radius:999px;padding:1px 10px;white-space:nowrap}
+.pill.confirmed{--v:var(--moss)} .pill.expected{--v:var(--gold)} .pill.tba{--v:var(--slate)}
+
+.toc{margin:18px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;max-width:70ch}
+.toc h2{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:var(--body)}
+.toc ol{margin:0;padding-left:22px;columns:2;column-gap:28px;font-size:15px}
+.toc li{margin:3px 0;break-inside:avoid}
+
+main section{padding:26px 0 8px;border-top:1px solid var(--rule);margin-top:26px;scroll-margin-top:12px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 6px}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;margin:0;display:flex;align-items:baseline;gap:10px}
+.sec-head .num{font:600 14px var(--font-mono,monospace);color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+h3.mini{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-family:var(--body)}
+ul.check{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-width:76ch}
+ul.check label{display:flex;gap:10px;align-items:flex-start;cursor:default}
+ul.check input{margin-top:6px;flex:none;width:16px;height:16px;accent-color:var(--cyan)}
+ul.links{margin:0;padding-left:20px;max-width:76ch}
+ul.links li{margin:5px 0}
+
+.tool-ph{margin:16px 0 0;padding:12px 14px;border:2px dashed var(--rule);border-radius:10px;color:var(--muted);max-width:76ch}
+.tool-ph b{display:block;color:var(--ink);font-family:var(--display);font-size:18px}
+.tool-ph p{margin:4px 0 8px}
+.tool-ph .soon{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule);border-radius:999px;padding:1px 10px}
+
+footer{padding:34px 0 60px;color:var(--muted);font-size:15px}
+footer h2{color:var(--ink);font-family:var(--display);font-size:24px;margin:0 0 6px}
+footer ul{padding-left:18px;max-width:78ch}
+footer li{margin:5px 0}
+
+@media (max-width:760px){
+  body{font-size:16px}
+  .toc ol{columns:1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="brand-guide-vars.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="site-nav">
+  <a class="wordmark" href="./" aria-label="XIVKit home">XIV<b>KIT</b></a>
+  <a href="./">Tools I use</a>
+  <a href="watchlist.html">Watchlist</a>
+  <a href="plugins.html">Plugins</a>
+  <a href="./#guides">Guides</a>
+</nav>
+
+<p class="wip-banner" role="note"><b>Work in progress.</b> Sections, tools, and links are placeholders.</p>
+
+<header class="hero">
+  <h1>Get Ready for Evercold</h1>
+  <p class="lede">Evercold early access starts February 19, 2027 and full release is February 23, 2027. This checklist covers what to finish, spend, and clear before then, tagged by how confirmed each item is.</p>
+  <ul class="legend" aria-label="Status tags">
+    <li><span class="pill confirmed">Confirmed</span> Announced by Square Enix</li>
+    <li><span class="pill expected">Expected</span> Based on what happened at past expansion launches (7.0)</li>
+    <li><span class="pill tba">TBA</span> Not announced yet</li>
+  </ul>
+  <nav class="toc" aria-label="Sections">
+    <h2>On this page</h2>
+    <ol><li><a href="#dates">Dates and access</a></li><li><a href="#story">Story and unlocks</a></li><li><a href="#currencies">Currencies: spend before they change</a></li><li><a href="#gear">Gear and jobs</a></li><li><a href="#crafting">Crafters and gatherers</a></li><li><a href="#inventory">Inventory and glamour</a></li><li><a href="#gil">Gil plan</a></li><li><a href="#retainers">Retainers</a></li><li><a href="#housing">Housing</a></li><li><a href="#evolved">Learn Evolved Mode</a></li><li><a href="#events">Limited-time content</a></li></ol>
+  </nav>
+</header>
+
+<main>
+  <section id="dates">
+    <div class="sec-head"><h2><span class="num">1</span>Dates and access</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Pre-orders open November 4, 2026. The pre-order bonus Halone&#x27;s Earring (+30% EXP from enemies, up to level 100) is delivered right away, so pre-ordering early helps if you&#x27;re leveling alts</span></label></li>
+        <li><label><input type="checkbox"> <span>Early access starts February 19, 2027. It needs a full (non-trial) account, an active subscription, and Dawntrail registered. Specific quest requirements: TBA</span></label></li>
+        <li><label><input type="checkbox"> <span>Full release is February 23, 2027</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://na.finalfantasyxiv.com/evercold/" target="_blank" rel="noopener noreferrer">Official Evercold site</a>: The announced dates, editions, and pre-order details straight from Square Enix.</li>
+    </ul>
+  </section>
+
+  <section id="story">
+    <div class="sec-head"><h2><span class="num">2</span>Story and unlocks</h2><span class="pills"><span class="pill expected">Expected</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Finish the MSQ through the final 7.5x quest (likely the early access requirement)</span></label></li>
+        <li><label><input type="checkbox"> <span>Unlock flying in every Dawntrail zone</span></label></li>
+        <li><label><input type="checkbox"> <span>Have at least one combat job at level 100</span></label></li>
+        <li><label><input type="checkbox"> <span>Unlock dungeons and trials so roulettes have more options</span></label></li>
+        <li><label><input type="checkbox"> <span>Optional: catch up on Hildibrand, allied societies, and relic weapons</span></label></li>
+    </ul>
+    <div class="tool-ph"><b>MSQ Catch-Up Planner</b><p>Pick the quest you&#x27;re on, see how many quests and roughly how many hours are left, and the weekly pace needed to finish by February 19.</p><span class="soon">Coming soon</span></div>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://msqtracker.com/" target="_blank" rel="noopener noreferrer">MSQTracker</a>: Tick off quests as you go and see what&#x27;s left in the main story.</li>
+        <li><a href="https://ffxiv.consolegameswiki.com/wiki/Main_Scenario_Quests" target="_blank" rel="noopener noreferrer">Console Games Wiki: Main Scenario Quests</a>: The full quest list in order, by expansion.</li>
+        <li><a href="https://ffxiv.consolegameswiki.com/wiki/Aether_Currents" target="_blank" rel="noopener noreferrer">Console Games Wiki: Aether Currents</a>: Where every Aether Current is, for unlocking flying.</li>
+    </ul>
+  </section>
+
+  <section id="currencies">
+    <div class="sec-head"><h2><span class="num">3</span>Currencies: spend before they change</h2><span class="pills"><span class="pill expected">Expected</span><span class="pill tba">TBA</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Allagan Tomestones are likely being replaced by the weekly Adventurer Activity system. What happens to existing tomestones is not announced yet</span></label></li>
+        <li><label><input type="checkbox"> <span>At the 7.0 launch, both current tomestones and the old scrip tier were retired, so Mathematics, Mnemonics, and Purple Scrips are at risk. Spend down rather than stockpile</span></label></li>
+        <li><label><input type="checkbox"> <span>Bicolor Gemstones: spend if near the cap</span></label></li>
+    </ul>
+    <div class="tool-ph"><b>Currency Spend-Down</b><p>Pick a currency and your world, see what to buy for gil you can realistically sell, capped by how many actually sold in the last week.</p><span class="soon">Coming soon</span></div>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://ffxivteamcraft.com/currency-spending" target="_blank" rel="noopener noreferrer">Teamcraft Currency Spending</a>: Compares what each currency buys, to spend it on the best returns.</li>
+        <li><a href="https://www.icy-veins.com/ffxiv/evercold-progression-changes" target="_blank" rel="noopener noreferrer">Icy Veins: Evercold progression changes</a>: What&#x27;s known so far about the Adventurer Activity system and the tomestone replacement.</li>
+        <li><a href="https://ffxiv.consolegameswiki.com/wiki/Allagan_Tomestones" target="_blank" rel="noopener noreferrer">Console Games Wiki: Allagan Tomestones</a>: Every tomestone, when it was introduced, and which are obsolete.</li>
+    </ul>
+  </section>
+
+  <section id="gear">
+    <div class="sec-head"><h2><span class="num">4</span>Gear and jobs</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Don&#x27;t buy current-tier gear now; it&#x27;s replaced quickly at launch</span></label></li>
+        <li><label><input type="checkbox"> <span>The Armoury will sync your highest item level to all your jobs, so you only need to gear one</span></label></li>
+        <li><label><input type="checkbox"> <span>Materia melds don&#x27;t carry over, so don&#x27;t overmeld alts</span></label></li>
+        <li><label><input type="checkbox"> <span>New tank Bastion starts at level 90 and needs a level 90 Disciple of War or Magic to unlock. New physical ranged Zephyr: unlock details TBA</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://na.finalfantasyxiv.com/evercold/" target="_blank" rel="noopener noreferrer">Official Evercold site</a>: Job reveals for Bastion and Zephyr, and the Armoury update.</li>
+        <li><a href="https://www.icy-veins.com/ffxiv/evercold-progression-changes" target="_blank" rel="noopener noreferrer">Icy Veins: Evercold progression changes</a>: How gearing and item level are changing.</li>
+    </ul>
+  </section>
+
+  <section id="crafting">
+    <div class="sec-head"><h2><span class="num">5</span>Crafters and gatherers</h2><span class="pills"><span class="pill expected">Expected</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Level crafters and gatherers to 100 so you can supply launch-week demand</span></label></li>
+        <li><label><input type="checkbox"> <span>Spend scrips (see Currencies)</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://ffxivteamcraft.com/" target="_blank" rel="noopener noreferrer">Teamcraft</a>: Crafting lists, gathering locations, and what&#x27;s needed for each recipe.</li>
+    </ul>
+  </section>
+
+  <section id="inventory">
+    <div class="sec-head"><h2><span class="num">6</span>Inventory and glamour</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Run the Dye Exchange at the Calamity Salvager</span></label></li>
+        <li><label><input type="checkbox"> <span>Move eligible gear into the expanded Armoire</span></label></li>
+        <li><label><input type="checkbox"> <span>Clear bags and retainers before launch-week material hoarding</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="inventory-decluttering.html">Inventory &amp; Retainer Decluttering</a>: What to keep, bank, or discard, including the dye exchange.</li>
+    </ul>
+  </section>
+
+  <section id="gil">
+    <div class="sec-head"><h2><span class="num">7</span>Gil plan</h2><span class="pills"><span class="pill expected">Expected</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>What to sell now vs hold</span></label></li>
+        <li><label><input type="checkbox"> <span>Launch-week demand for food, potions, and leveling gear</span></label></li>
+    </ul>
+    <div class="tool-ph"><b>Launch Market Watch</b><p>Which new-expansion materials spike and settle in the first two weeks, with live prices. Arrives at launch.</p><span class="soon">Coming soon</span></div>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a>: Live market board prices and sales history for any item.</li>
+    </ul>
+  </section>
+
+  <section id="retainers">
+    <div class="sec-head"><h2><span class="num">8</span>Retainers</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Re-plan ventures for launch-week demand</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="retainer-ventures.html">Retainer Ventures</a>: Every venture ranked by what it earns on your world.</li>
+    </ul>
+  </section>
+
+  <section id="housing">
+    <div class="sec-head"><h2><span class="num">9</span>Housing</h2><span class="pills"><span class="pill confirmed">Confirmed for 8.x</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Interior size choices and a new furnishing interface arrive across 8.x patches, so there&#x27;s no need to rush a move now</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://na.finalfantasyxiv.com/evercold/" target="_blank" rel="noopener noreferrer">Official Evercold site</a>: The housing changes planned for the 8.x patches.</li>
+    </ul>
+  </section>
+
+  <section id="evolved">
+    <div class="sec-head"><h2><span class="num">10</span>Learn Evolved Mode</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Every existing job (except limited jobs) can switch between Reborn Mode (current combat) and Evolved Mode. Bastion and Zephyr are Evolved Mode only</span></label></li>
+        <li><label><input type="checkbox"> <span>Optional before launch; worth reading up on your main</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="https://www.icy-veins.com/ffxiv/evercolds-combat-overhaul-explained" target="_blank" rel="noopener noreferrer">Icy Veins: Evercold&#x27;s combat overhaul explained</a>: How Evolved Mode differs from Reborn Mode.</li>
+    </ul>
+  </section>
+
+  <section id="events">
+    <div class="sec-head"><h2><span class="num">11</span>Limited-time content</h2><span class="pills"><span class="pill tba">TBA per event</span></span></div>
+    <h3 class="mini">What this section will cover</h3>
+    <ul class="check">
+        <li><label><input type="checkbox"> <span>Finish events and rewards that end before launch</span></label></li>
+    </ul>
+    <h3 class="mini">For now</h3>
+    <ul class="links">
+        <li><a href="keybound-brawler.html">Keybound Brawler</a>: What every reward costs and how long the grind is.</li>
+        <li><a href="hunt-for-astronomy.html">Hunt for Astronomy</a>: The event has ended, but the guide shows what was worth the tomes.</li>
+        <li><a href="https://na.finalfantasyxiv.com/lodestone/" target="_blank" rel="noopener noreferrer">Lodestone news</a>: Official announcements for events and their end dates.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <h2>Sources</h2>
+  <ul>
+    <li><a href="https://na.finalfantasyxiv.com/evercold/" target="_blank" rel="noopener noreferrer">Official Evercold site</a></li>
+    <li><a href="https://www.icy-veins.com/ffxiv/evercold-progression-changes" target="_blank" rel="noopener noreferrer">Icy Veins: Evercold progression changes</a></li>
+    <li><a href="https://www.icy-veins.com/ffxiv/dawntrail-currency-changes" target="_blank" rel="noopener noreferrer">Icy Veins: Dawntrail currency changes</a></li>
+    <li><a href="https://www.gematsu.com/2026/10/final-fantasy-xiv-evercold-expansion-delayed-to-february-23-2027" target="_blank" rel="noopener noreferrer">Gematsu: Evercold delayed to February 23, 2027</a></li>
+  </ul>
+
+  <div class="site-footer">
+    <p>See the <a href="./">main list</a> for the rest of the tools I use.</p>
+    <p>Source on <a href="https://github.com/malobear/xivkit" target="_blank" rel="noopener noreferrer">GitHub</a>. See something missing? Open a PR or ping me.</p>
+    <p class="legal">FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made list, not affiliated with or endorsed by Square Enix.</p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
