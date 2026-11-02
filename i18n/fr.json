@@ -3,13 +3,48 @@
     "nav": {
       "tools": "Mes outils",
       "watchlist": "Watchlist",
-      "plugins": "Plugins"
+      "plugins": "Plugins",
+      "guides": "Guides"
     },
     "clearSearchTitle": "Effacer",
     "emptyClear": "Effacer",
     "legal": "FINAL FANTASY XIV est une marque déposée de Square Enix Holdings Co., Ltd. Ceci est une liste de fans non officielle, non affiliée à Square Enix et non approuvée par elle.",
     "footerGithubLine": "Code source sur {github}. Quelque chose manque ? Ouvrez une PR ou contactez-moi.",
-    "githubLinkLabel": "GitHub"
+    "githubLinkLabel": "GitHub",
+    "related": {
+      "heading": "Guides associés",
+      "desc": {
+        "retainerVentures": {
+          "inventoryDecluttering": "Les servants remplissent vite vos sacs. Triez ce que vous gardez, stockez ou jetez avant que le butin ne s'accumule.",
+          "tradeInMounts": "Transformez les gils des missions en monture : quelles montures d'échange valent le farm, et lesquelles acheter directement."
+        },
+        "inventoryDecluttering": {
+          "retainerVentures": "Mettez vos servants au travail : chaque mission classée selon ce qu'elle rapporte à l'Hôtel des ventes.",
+          "tradeInMounts": "Des monnaies et jetons s'accumulent ? Voyez contre quelles montures les échanger, et s'il vaut mieux farmer ou acheter."
+        },
+        "tradeInMounts": {
+          "huntForAstronomy": "Une autre boutique d'événement avec une monture, et un avis tranché sur ce qui vaut vraiment le coup.",
+          "retainerVentures": "Besoin de gils pour acheter les matériaux ? Voyez quelles missions de servant rapportent le plus sur votre monde.",
+          "keyboundBrawler": "Une autre boutique d'événement avec une monture : le coût de chaque récompense en MGC et le nombre de parties nécessaires."
+        },
+        "huntForAstronomy": {
+          "tradeInMounts": "Vous hésitez pour la monture d'ici ? Comparez-la à toutes les autres montures obtenues par échange.",
+          "keyboundBrawler": "L'autre boutique d'événement du moment : le coût de chaque récompense en MGC et la durée du grind."
+        },
+        "keyboundBrawler": {
+          "huntForAstronomy": "L'autre boutique d'événement du moment : toutes les récompenses, leurs autres sources et leur prix de vente.",
+          "tradeInMounts": "D'autres montures à obtenir contre de la monnaie, avec un avis tranché : farmer ou acheter."
+        },
+        "jumpPuzzleMacros": {
+          "inventoryDecluttering": "Un autre guide de confort : libérez de la place dans vos sacs et chez vos servants avant votre prochaine sortie.",
+          "retainerVentures": "Mettez vos servants au travail pendant que vous vous entraînez : chaque mission classée selon son gain à l'Hôtel des ventes."
+        },
+        "fanfestBingo": {
+          "huntForAstronomy": "Un autre événement à préparer : toutes les récompenses de Hunt for Astronomy, et si elles valent leurs mémoquartz.",
+          "keyboundBrawler": "Un autre événement à préparer : le coût de chaque récompense de Keybound Brawler en MGC et le nombre de parties nécessaires."
+        }
+      }
+    }
   },
   "tags": {
     "browser": "navigateur",

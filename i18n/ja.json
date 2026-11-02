@@ -3,13 +3,48 @@
     "nav": {
       "tools": "使っているツール",
       "watchlist": "ウォッチリスト",
-      "plugins": "プラグイン"
+      "plugins": "プラグイン",
+      "guides": "ガイド"
     },
     "clearSearchTitle": "クリア",
     "emptyClear": "クリア",
     "legal": "FINAL FANTASY XIVはSquare Enix Holdings Co., Ltd.の登録商標です。本サイトは非公式のファン制作リストであり、Square Enixとは関係なく、その承認を受けたものでもありません。",
     "footerGithubLine": "ソースは{github}で公開。何か抜けていたら、PRを送るか連絡してください。",
-    "githubLinkLabel": "GitHub"
+    "githubLinkLabel": "GitHub",
+    "related": {
+      "heading": "関連ガイド",
+      "desc": {
+        "retainerVentures": {
+          "inventoryDecluttering": "リテイナーはすぐバッグを圧迫します。成果物が溜まる前に、残す・預ける・捨てるを整理しましょう。",
+          "tradeInMounts": "ベンチャーで稼いだギルでマウントを狙おう。交換で入手できるマウントのうち、地道に集めるべきものと買ってしまうべきものがわかります。"
+        },
+        "inventoryDecluttering": {
+          "retainerVentures": "リテイナーの枠を活用しよう。すべてのベンチャーを、マーケットボードでの稼ぎ順に並べています。",
+          "tradeInMounts": "通貨やトークンが溜まっていませんか? 何のマウントと交換できるか、集めるか買うかの判定とあわせて確認できます。"
+        },
+        "tradeInMounts": {
+          "huntForAstronomy": "マウントも並ぶもうひとつのイベント交換ショップ。何がトームストーンに見合うかを率直に判定します。",
+          "retainerVentures": "素材を買うギルが必要ですか? あなたのワールドで稼ぎの大きいリテイナーベンチャーがわかります。",
+          "keyboundBrawler": "マウントも並ぶもうひとつのイベント交換ショップ。各報酬に必要なMGCと、必要な周回数をまとめています。"
+        },
+        "huntForAstronomy": {
+          "tradeInMounts": "ここのマウントを検討中なら、交換で入手できるほかのすべてのマウントと比べてみましょう。",
+          "keyboundBrawler": "現在開催中のもうひとつのイベント交換ショップ。各報酬に必要なMGCと、周回の長さがわかります。"
+        },
+        "keyboundBrawler": {
+          "huntForAstronomy": "現在開催中のもうひとつのイベント交換ショップ。全報酬、ほかの入手手段、相場をまとめています。",
+          "tradeInMounts": "通貨と交換できるマウントをさらに網羅し、地道に集めるか買うかを判定します。"
+        },
+        "jumpPuzzleMacros": {
+          "inventoryDecluttering": "もうひとつの快適化ガイド。次の冒険に出る前に、バッグとリテイナーの空きを確保しましょう。",
+          "retainerVentures": "練習している間にリテイナーを働かせよう。すべてのベンチャーを、マーケットボードでの稼ぎ順に並べています。"
+        },
+        "fanfestBingo": {
+          "huntForAstronomy": "チェックしておきたいもうひとつのイベント。『天文に至る路』の全報酬と、トームストーンに見合うかどうかをまとめています。",
+          "keyboundBrawler": "チェックしておきたいもうひとつのイベント。『Keybound Brawler』の各報酬に必要なMGCと、必要な周回数がわかります。"
+        }
+      }
+    }
   },
   "tags": {
     "browser": "ブラウザ",

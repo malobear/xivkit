@@ -3,13 +3,48 @@
     "nav": {
       "tools": "Meine Tools",
       "watchlist": "Watchlist",
-      "plugins": "Plugins"
+      "plugins": "Plugins",
+      "guides": "Guides"
     },
     "clearSearchTitle": "Leeren",
     "emptyClear": "Zurücksetzen",
     "legal": "FINAL FANTASY XIV ist eine eingetragene Marke der Square Enix Holdings Co., Ltd. Dies ist eine inoffizielle Fan-Liste, die nicht mit Square Enix verbunden ist oder von ihr unterstützt wird.",
     "footerGithubLine": "Quelle auf {github}. Etwas fehlt? Erstelle einen PR oder schreib mir.",
-    "githubLinkLabel": "GitHub"
+    "githubLinkLabel": "GitHub",
+    "related": {
+      "heading": "Verwandte Guides",
+      "desc": {
+        "retainerVentures": {
+          "inventoryDecluttering": "Gehilfen füllen deine Taschen schnell. Sortiere vorab, was du behältst, einlagerst oder wegwirfst.",
+          "tradeInMounts": "Mach aus Auftrags-Gil ein Reittier: Welche Tausch-Reittiere sich zum Erfarmen lohnen und welche du besser direkt kaufst."
+        },
+        "inventoryDecluttering": {
+          "retainerVentures": "Lass deine Gehilfen für dich arbeiten: Alle Aufträge nach ihrem Marktbrett-Ertrag sortiert.",
+          "tradeInMounts": "Stapeln sich Währungen und Marken? Sieh nach, gegen welche Reittiere du sie tauschen kannst und ob sich Farmen oder Kaufen lohnt."
+        },
+        "tradeInMounts": {
+          "huntForAstronomy": "Ein weiterer Event-Shop mit einem Reittier, und eine klare Einschätzung, was sich wirklich lohnt.",
+          "retainerVentures": "Brauchst du Gil für die Materialien? Sieh nach, welche Gehilfen-Aufträge auf deiner Welt am meisten einbringen.",
+          "keyboundBrawler": "Ein weiterer Event-Shop mit einem Reittier: was jede Belohnung in MGC kostet und wie viele Runden du dafür brauchst."
+        },
+        "huntForAstronomy": {
+          "tradeInMounts": "Überlegst du, das Reittier hier zu holen? Vergleiche es mit allen anderen Reittieren, die du eintauschen kannst.",
+          "keyboundBrawler": "Der andere aktuelle Event-Shop: was jede Belohnung in MGC kostet und wie lang der Grind ist."
+        },
+        "keyboundBrawler": {
+          "huntForAstronomy": "Der andere aktuelle Event-Shop: alle Belohnungen, wo sie sonst droppen und für wie viel sie sich verkaufen.",
+          "tradeInMounts": "Weitere Reittiere, die du gegen Währung eintauschen kannst, mit einer Einschätzung: erfarmen oder kaufen."
+        },
+        "jumpPuzzleMacros": {
+          "inventoryDecluttering": "Noch ein Komfort-Guide: Schaffe Platz in Taschen und bei deinen Gehilfen, bevor du wieder losziehst.",
+          "retainerVentures": "Lass deine Gehilfen arbeiten, während du übst: Alle Aufträge nach ihrem Marktbrett-Ertrag sortiert."
+        },
+        "fanfestBingo": {
+          "huntForAstronomy": "Ein weiteres Event, das du im Blick haben solltest: alle Belohnungen von Hunt for Astronomy und ob sie ihre Steine wert sind.",
+          "keyboundBrawler": "Ein weiteres Event, das du im Blick haben solltest: was jede Belohnung von Keybound Brawler in MGC kostet und wie viele Runden du brauchst."
+        }
+      }
+    }
   },
   "tags": {
     "browser": "Browser",
