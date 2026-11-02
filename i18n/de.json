@@ -6,6 +6,11 @@
       "plugins": "Plugins",
       "guides": "Guides"
     },
+    "updated": {
+      "withPatch": "Aktualisiert für Patch {{patch}} · {{date}}",
+      "dateOnly": "Aktualisiert am {{date}}",
+      "eventEnded": "Event beendet"
+    },
     "clearSearchTitle": "Leeren",
     "emptyClear": "Zurücksetzen",
     "legal": "FINAL FANTASY XIV ist eine eingetragene Marke der Square Enix Holdings Co., Ltd. Dies ist eine inoffizielle Fan-Liste, die nicht mit Square Enix verbunden ist oder von ihr unterstützt wird.",
@@ -225,9 +230,11 @@
         "community": "Allgemein & Community",
         "guides": "Guides & Referenz",
         "unicode": "Unicode & Sonderzeichen",
-        "featured": "Kuratierte Guides"
+        "featured": "Kuratierte Guides",
+        "pastEvents": "Guides zu beendeten Events"
       },
-      "featuredNote": "Vollständige Guides, die ich kuratiert habe und direkt auf dieser Seite hoste, nicht nur ein Link nach außen."
+      "featuredNote": "Vollständige Guides, die ich kuratiert habe und direkt auf dieser Seite hoste, nicht nur ein Link nach außen.",
+      "pastEventsNote": "Diese Events sind vorbei. Zur Referenz bleiben die Guides hier."
     },
     "plugins": {
       "h1": "FFXIV Plugins",

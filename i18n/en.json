@@ -6,6 +6,11 @@
       "plugins": "Plugins",
       "guides": "Guides"
     },
+    "updated": {
+      "withPatch": "Updated for patch {{patch}} · {{date}}",
+      "dateOnly": "Updated {{date}}",
+      "eventEnded": "Event ended"
+    },
     "clearSearchTitle": "Clear",
     "emptyClear": "Clear it",
     "legal": "FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made list, not affiliated with or endorsed by Square Enix.",
@@ -225,9 +230,11 @@
         "community": "General & Community",
         "guides": "Guides & Reference",
         "unicode": "Unicode & Special Characters",
-        "featured": "Curated Guides"
+        "featured": "Curated Guides",
+        "pastEvents": "Past Event Guides"
       },
-      "featuredNote": "Full guides I've curated and host directly on this site, not just a link out."
+      "featuredNote": "Full guides I've curated and host directly on this site, not just a link out.",
+      "pastEventsNote": "Events that have ended. Kept here for reference."
     },
     "plugins": {
       "h1": "FFXIV Plugins",

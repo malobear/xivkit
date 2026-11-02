@@ -6,6 +6,11 @@
       "plugins": "プラグイン",
       "guides": "ガイド"
     },
+    "updated": {
+      "withPatch": "パッチ{{patch}}対応 · {{date}}更新",
+      "dateOnly": "{{date}}更新",
+      "eventEnded": "イベント終了"
+    },
     "clearSearchTitle": "クリア",
     "emptyClear": "クリア",
     "legal": "FINAL FANTASY XIVはSquare Enix Holdings Co., Ltd.の登録商標です。本サイトは非公式のファン制作リストであり、Square Enixとは関係なく、その承認を受けたものでもありません。",
@@ -225,9 +230,11 @@
         "community": "一般&コミュニティ",
         "guides": "ガイド&リファレンス",
         "unicode": "Unicode&特殊文字",
-        "featured": "厳選ガイド"
+        "featured": "厳選ガイド",
+        "pastEvents": "終了したイベントのガイド"
       },
-      "featuredNote": "リンクを貼るだけでなく、このサイトで直接公開している厳選ガイド。"
+      "featuredNote": "リンクを貼るだけでなく、このサイトで直接公開している厳選ガイド。",
+      "pastEventsNote": "終了したイベントのガイドです。参考用に残しています。"
     },
     "plugins": {
       "h1": "FFXIV プラグイン",

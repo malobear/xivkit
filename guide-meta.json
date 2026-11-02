@@ -1,0 +1,9 @@
+{
+  "inventory-decluttering": { "patch": "7.57", "updated": "2026-11-01" },
+  "keybound-brawler": { "patch": "7.57", "updated": "2026-10-29" },
+  "retainer-ventures": { "patch": "7.57", "updated": "2026-10-28" },
+  "trade-in-mounts": { "patch": null, "updated": "2026-10-25" },
+  "hunt-for-astronomy": { "patch": null, "updated": "2026-09-26", "ended": true },
+  "jump-puzzle-macros": { "patch": null, "updated": "2026-09-17" },
+  "fanfest-bingo": { "patch": "7.57", "updated": "2026-10-30", "ended": true }
+}

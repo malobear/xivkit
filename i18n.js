@@ -43,6 +43,19 @@
       applyRich(el, i18next.t(el.getAttribute('data-i18n-rich')));
     });
 
+    // "Updated for patch X · date" lines on guide pages: template per language, date per locale.
+    document.querySelectorAll('[data-updated]').forEach(function (el) {
+      var out = el.querySelector('.gu-text');
+      if (!out) return;
+      var lang = i18next.resolvedLanguage;
+      var date = new Date(el.getAttribute('data-updated') + 'T00:00:00Z');
+      var shown = new Intl.DateTimeFormat(lang, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }).format(date);
+      var patch = el.getAttribute('data-patch');
+      out.textContent = i18next.t(patch ? 'shared.updated.withPatch' : 'shared.updated.dateOnly', {
+        patch: patch, date: shown, interpolation: { escapeValue: false }
+      });
+    });
+
     document.querySelectorAll('#tag-bar .tag-pill').forEach(function (pill) {
       pill.textContent = i18next.t('tags.' + pill.dataset.tagKey);
     });

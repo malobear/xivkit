@@ -229,6 +229,7 @@ footer .legal{font-size:.75rem;opacity:.7}
 <link rel="stylesheet" href="brand.css">
 <link rel="stylesheet" href="brand-guide.css">
 <link rel="stylesheet" href="related-guides.css">
+<link rel="stylesheet" href="guide-updated.css">
 </head>
 <body>
 <div class="wrap">
@@ -238,6 +239,9 @@ footer .legal{font-size:.75rem;opacity:.7}
 <span class="kicker">Guide</span>
 <h1>Inventory & Retainer Decluttering</h1>
 <p>Staring at a full bag? Run an item through the triage below, then check the storage map and selling options. Tap any question further down for the sourced reasoning.</p>
+<!-- guide-updated:start -->
+<p class="guide-updated" data-updated="2026-11-01" data-patch="7.57"><span class="gu-text">Updated for patch 7.57 · Nov 1, 2026</span></p>
+<!-- guide-updated:end -->
 <div class="legend"><span><i style="background:var(--opine)"></i>My opinion</span><span><i style="background:var(--warn)"></i>Permanent or no undo</span><span><i style="background:var(--good)"></i>Safe answer</span></div>
 </header>
 <div class="layout">
@@ -384,7 +388,10 @@ const SRC = {
   cgwDesynth: ["CGW: Desynthesis", "https://ffxiv.consolegameswiki.com/wiki/Desynthesis"],
   cgwSalv: ["CGW: Calamity Salvager", "https://ffxiv.consolegameswiki.com/wiki/Calamity_Salvager"],
   thonky: ["Thonky: materia", "https://www.thonky.com/final-fantasy-xiv/materia"],
-  cgwArmoire: ["CGW: Armoire", "https://ffxiv.consolegameswiki.com/wiki/Armoire"]
+  cgwArmoire: ["CGW: Armoire", "https://ffxiv.consolegameswiki.com/wiki/Armoire"],
+  cgwDye: ["CGW: Dye", "https://ffxiv.consolegameswiki.com/wiki/Dye"],
+  cgwSalvLimsa: ["CGW: Calamity Salvager (Limsa Lominsa)", "https://ffxiv.consolegameswiki.com/wiki/Calamity_Salvager_(Limsa_Lominsa)"],
+  cgwP75: ["CGW: Patch 7.5", "https://ffxiv.consolegameswiki.com/wiki/Patch_7.5"]
 };
 
 // Full reference list, in the order and wording of the original page.
@@ -396,6 +403,9 @@ const SOURCES = [
   ["p60", "Official patch 6.0 notes", "Armory Chest Main Hand/Rings capacity increase and Waist tab removal"],
   ["se497773", "SE Forum: \"Items that can never be acquired again after they are discarded\""],
   ["cgwSalv", "Calamity Salvager, Console Games Wiki"],
+  ["cgwSalvLimsa", "Calamity Salvager (Limsa Lominsa), Console Games Wiki", "Dye Exchange, 1:1"],
+  ["cgwDye", "Dye, Console Games Wiki", "which old dyes became Standard, Wide Spectrum 1 and Wide Spectrum 2"],
+  ["cgwP75", "Patch 7.5, Console Games Wiki", "dye consolidation"],
   ["cgwDesynth", "Desynthesis, Console Games Wiki"],
   ["cgwDoman", "Doman Enclave Reconstruction, Console Games Wiki"],
   ["geDoman", "Doman Reconstruction, Gamer Escape"],
@@ -441,7 +451,7 @@ const RULES = [
 const STORAGE = [
   { name: "Main inventory", icon: ICON("052000/052478"), cap: "140", unit: "slots", note: "Fixed, can't be upgraded.", holds: "Only what you'd need mid-duty: food, potions, current job's gear, active quest items." },
   { name: "Armory Chest", icon: ICON("052000/052536"), cap: "35", unit: "per tab", extra: "50 for Main Hand & Rings", note: "Weapons are the bottleneck: ~33 for a completionist. No way to buy more.", holds: "Current BiS per role you actually play. Nothing benched just in case." },
-  { name: "Chocobo Saddlebag", icon: ICON("052000/052513"), cap: "70", unit: "slots", extra: "140 with Companion sub", note: "Usable almost everywhere outside duties. Holds a second copy of some uniques.", holds: "Currencies, dyes, relic and event materials you're actively working toward." },
+  { name: "Chocobo Saddlebag", icon: ICON("052000/052513"), cap: "70", unit: "slots", extra: "140 with Companion sub", note: "Usable almost everywhere outside duties. Holds a second copy of some uniques.", holds: "Currencies, relic and event materials you're actively working toward." },
   { name: "Armoire", icon: IMG.armoire, cap: "∞", unit: "no limit", note: "Allowlist only: job gear (much more since patch 7.5), event costumes, achievement rewards, and 7.0+ dungeon gear. Look for the lit icon.", holds: "Check here first, every time. Free and permanent." },
   { name: "Glamour Dresser", icon: IMG.prism, cap: "800", unit: "slots", extra: "+20 plates", note: "Needs a Glamour Prism, full durability, materia extracted.", holds: "Cosmetic keepers only. Batch the chores once a month." },
   { name: "Retainers", icon: IMG.bell, cap: "175", unit: "each", extra: "2 free + up to 7 paid (~$2/mo)", note: "Extras are real money, not gil.", holds: "Everything else worth keeping. With 2 or 3, split by function: selling vs banking." }
@@ -480,6 +490,7 @@ const DONTS = [
   ["Speculative hoarding", "Keeping stuff \"in case the price goes up\" with no target price and no plan. If you're not tracking it on Universalis, sell it this week."],
   ["Half-building someone else's system", "Copying a 9-retainer split with only 2 or 3 retainers leaves a worse mess than a simple split that fits."],
   ["Leaving \"store all newly obtained items\" on", "That one setting turns the Armory Chest into a graveyard."],
+  ["Discarding old dye bottles", "If you still have pre-7.5 dyes, run the Dye Exchange at a Calamity Salvager instead of throwing them out. Most convert to the new consolidated dyes."],
   ["Panic-discarding", "Clearing so hard you toss something permanent. Check the list above first."],
   ["Melding gear you might replace", "Overmeld fodder already fails a lot. Confirm it's a keeper first."],
   ["Letting currencies cap", "You don't lose them all at once, you just quietly stop earning more."]
@@ -501,7 +512,7 @@ const PLUGINS = [
 const FAQ = [
   { topic: "storage", q: "What's the Armoire actually for, and why do people ignore it?", tldr: "No slot limit, but only an allowlist of gear. Look for the lit icon.", a: ["It has no slot limit, which sounds amazing, but it only accepts specific gear, not just anything. Patch 7.5 significantly expanded what qualifies: far more class and job-specific gear now fits, plus dungeon gear from patch 7.0 onward (older dungeons are being added over time). It also takes seasonal event costumes, achievement rewards, and a handful of bonus items. Check for the small lit icon in the item's corner to confirm a piece qualifies before assuming it belongs there. That restriction, not laziness, is why most players under-use it."], src: ["armoire", "cgwArmoire", "decor"], figs: [[IMG.armoireTag, "The icon that marks an item as Armoire-eligible", "Armoire", "tag"], [IMG.armoireHud, "The Armoire window, found in any inn room", "Armoire"]] },
   { topic: "storage", q: "Armory Chest or Glamour Dresser for my old gear?", tldr: "Armory for gear you'd re-equip. Dresser for cosmetic keepers.", a: ["Armory Chest is for gear you might actually re-equip: current BiS per role, or gear you're actively using in a rotation. Turn off \"store all newly obtained items\" so it doesn't fill up with garbage automatically.", "The Glamour Dresser (800 slots) is for cosmetic keepers only, and it has real friction: you need a Glamour Prism per item, the piece must be at full durability, and materia has to be extracted first. Do that once, deliberately, rather than letting the Armory Chest become a graveyard of half-remembered gear."], src: ["ltpf", "ba"] },
-  { topic: "storage", q: "What goes in the Chocobo Saddlebag instead of my main bags?", tldr: "Relic mats, dyes, tokens, currencies, gardening supplies.", a: ["The saddlebag is usable almost everywhere outside of instanced duties, and it's effectively a separate inventory (it'll even hold a second copy of some unique items your main bags won't). Good candidates: relic weapon materials, dye stacks, tribal and event tokens and other currencies, and gardening supplies if you garden seriously. You get 70 slots free, or 140 with the Companion App subscription."], src: ["ba", "ltpf"] },
+  { topic: "storage", q: "What goes in the Chocobo Saddlebag instead of my main bags?", tldr: "Relic mats, tokens, currencies, gardening supplies.", a: ["The saddlebag is usable almost everywhere outside of instanced duties, and it's effectively a separate inventory (it'll even hold a second copy of some unique items your main bags won't). Good candidates: relic weapon materials, tribal and event tokens and other currencies, and gardening supplies if you garden seriously. Dyes no longer need a stack of slots since patch 7.5: run the Dye Exchange at a Calamity Salvager once and most old dyes become one of three consolidated types, so they take a few slots at most. Only Pure White and Jet Black still come as separate items. You get 70 slots free, or 140 with the Companion App subscription."], src: ["ba", "ltpf", "cgwDye", "cgwSalvLimsa"] },
   { topic: "storage", q: "I'm leveling multiple jobs. How do I keep the Armory Chest from running out?", tldr: "Weapons are the bottleneck. Glamour weapons via Dresser, align ring slots across gearsets.", a: ["Weapons are the real bottleneck. Every job and class has its own unique weapon, and there's no way around needing one Main Hand slot per job you keep geared. As of Dawntrail that's 21 standard combat jobs plus Blue Mage, plus 8 crafters and 3 gatherers, roughly 33 weapons for a true completionist. Patch 6.0 bumped Main Hand and Rings from 35 to 50 slots (and removed the Waist tab). Every other tab is still 35, and there's no way to buy or unlock more.", "Crafters and gatherers have it easier: current-tier crafting/gathering armor is generally usable by all 8 Disciples of the Hand at once, so you're mostly paying for one weapon per job. The exception is class-specific Artifact Armor at 50/60/70/80. Accessories are stat-based rather than job-locked, so one often covers every job sharing that stat spread.", "Two tricks: don't keep a second copy of a weapon purely for glamour, put it in the Glamour Dresser and apply it per job. And when a gearset says you don't have room for a ring even though the tab isn't full, put the same ring type in the same gearset slot across every job and the false error goes away."], src: ["p60", "se436215", "ba"] },
   { topic: "retainers", q: "How many retainers do I actually need, and what should each one do?", tldr: "2 free, up to 7 more for real money. Assign each a clear category.", a: ["You start with 2 free. Up to 7 more are available, but that's a real-money Mogstation subscription (about $2/month each), not gil. Each retainer holds 175 slots.", "One practical split from a veteran with a full 9: three for crafting materials by class, one for finished goods to sell, one for materia and collectibles, four for glamour and equipment by role. Even 2 or 3 retainers assigned to clear categories beats one retainer holding a little of everything."], src: ["se364479", "tg", "ret"], mine: "With only 2 or 3, split by function, not class: one for \"actively selling,\" one for \"banking for later.\"" },
   { topic: "retainers", q: "Can I use an alt character as extra storage?", tldr: "Yes. A common, low-effort pattern.", a: ["Yes, and at least one veteran does exactly this: parking level 40+ materials on an alt specifically to keep the main character's bags clear. It's a real, low-effort pattern, not a workaround anyone will judge you for."], src: ["se364479"] },
@@ -621,10 +632,11 @@ document.querySelectorAll("main section").forEach(s => io.observe(s));
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "dateModified": "2026-11-01",
   "mainEntity": [
     { "@type": "Question", "name": "What's the Armoire actually for, and why do people ignore it?", "acceptedAnswer": { "@type": "Answer", "text": "It has no slot limit, but only accepts specific gear. Patch 7.5 significantly expanded what qualifies: far more job gear, plus dungeon gear from patch 7.0 onward. Check for the lit icon in the item's corner to confirm it qualifies." } },
     { "@type": "Question", "name": "Armory Chest or Glamour Dresser for my old gear?", "acceptedAnswer": { "@type": "Answer", "text": "Armory Chest is for gear you might actually re-equip. The Glamour Dresser (800 slots) is for cosmetic keepers only, and requires a Glamour Prism per item, full durability, and materia extracted first." } },
-    { "@type": "Question", "name": "What goes in the Chocobo Saddlebag instead of my main bags?", "acceptedAnswer": { "@type": "Answer", "text": "Relic weapon materials, dye stacks, tribal and event tokens, and gardening supplies. 70 slots free, 140 with the Companion App subscription." } },
+    { "@type": "Question", "name": "What goes in the Chocobo Saddlebag instead of my main bags?", "acceptedAnswer": { "@type": "Answer", "text": "The saddlebag is usable almost everywhere outside of instanced duties, and it's effectively a separate inventory (it'll even hold a second copy of some unique items your main bags won't). Good candidates: relic weapon materials, tribal and event tokens and other currencies, and gardening supplies if you garden seriously. Dyes no longer need a stack of slots since patch 7.5: run the Dye Exchange at a Calamity Salvager once and most old dyes become one of three consolidated types, so they take a few slots at most. Only Pure White and Jet Black still come as separate items. You get 70 slots free, or 140 with the Companion App subscription." } },
     { "@type": "Question", "name": "I'm leveling multiple jobs. How do I keep the Armory Chest from running out?", "acceptedAnswer": { "@type": "Answer", "text": "Weapons are the bottleneck: every job needs its own, never shared, and there's no way to buy more space unlike retainers. Patch 6.0 bumped Main Hand and Rings to 50 slots each. Crafting and gathering armor is usually shared across all 8 Disciples of the Hand." } },
     { "@type": "Question", "name": "How many retainers do I actually need, and what should each one do?", "acceptedAnswer": { "@type": "Answer", "text": "You start with 2 free retainers, with up to 7 more available as a real-money subscription, not a gil cost. Each holds 175 slots. A common split: crafting materials by class, finished goods for sale, materia and collectibles, and glamour by role." } },
     { "@type": "Question", "name": "Can I use an alt character as extra storage?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, parking mid-level materials on an alt to keep the main character's bags clear is a real, low-effort pattern." } },
