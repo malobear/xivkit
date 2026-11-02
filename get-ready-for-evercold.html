@@ -66,8 +66,31 @@ header.hero{padding:20px 0 4px}
 .countdowns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 0;padding:0;list-style:none;max-width:760px}
 .countdowns li{padding:12px 14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
 .cd-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.cd-time{display:block;font-family:var(--display);font-weight:800;font-size:22px;line-height:1.2;margin:4px 0 2px;font-variant-numeric:tabular-nums}
+.cd-time{display:block;font-family:var(--display);font-weight:800;font-size:26px;line-height:1.15;margin:4px 0 2px;font-variant-numeric:tabular-nums}
 .cd-when{font-size:13px;color:var(--muted)}
+
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.tl{margin:12px 0 18px}
+.tl-hint{font-size:13px;color:var(--muted);margin:0 0 6px}
+.tl-scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--surface);padding:0 0 8px;-webkit-overflow-scrolling:touch}
+.tl-track{position:relative;padding-left:0}
+.tl-head{position:relative;height:28px;border-bottom:1px solid var(--rule)}
+.tl-head .mo{position:absolute;top:6px;padding-left:6px;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tl-track .gl{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed var(--rule)}
+.lane{position:relative;padding:8px 0 2px}
+.lane-t{position:sticky;left:0;display:inline-block;margin:0 0 4px 8px;padding:0 6px;font:700 11px var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);z-index:3}
+.lane ol{list-style:none;margin:0;padding:0;position:relative}
+.ev{position:absolute;display:flex;align-items:center;height:22px;font-size:13px;line-height:1.2;white-space:nowrap;color:var(--ink)}
+.ev.confirmed{--v:var(--moss)} .ev.expected{--v:var(--gold)} .ev.tba{--v:var(--slate)} .ev.calendar{--v:var(--muted)}
+.ev.point .dot{flex:none;width:11px;height:11px;margin-left:-5px;border-radius:50%;background:var(--v);border:2px solid var(--surface);box-shadow:0 0 0 1px var(--v)}
+.ev.point.expected .dot,.ev.point.tba .dot{background:var(--surface);border-color:var(--v);box-shadow:none}
+.ev.point .lbl{padding-left:7px}
+.ev.span .bar{display:flex;align-items:center;height:22px;overflow:hidden;border:1px solid var(--v);border-radius:6px;background:color-mix(in srgb,var(--v) 22%,transparent)}
+.ev.span.expected .bar,.ev.span.tba .bar{border-style:dashed}
+.ev.span .bar .lbl{padding-left:7px}
+.ev.span > .lbl{padding-left:8px}
+.tl-track .today{position:absolute;top:0;bottom:0;width:2px;background:var(--rose);z-index:2}
+.tl-undated{font-size:13px;color:var(--muted);margin:8px 0 0}
 
 .legend{display:grid;gap:6px;margin:14px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:70ch;font-size:14px;list-style:none}
 .legend li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
@@ -90,6 +113,12 @@ ul.check label{display:flex;gap:10px;align-items:flex-start;cursor:default}
 ul.check input{margin-top:6px;flex:none;width:16px;height:16px;accent-color:var(--cyan)}
 ul.links{margin:0;padding-left:20px;max-width:76ch}
 ul.links li{margin:5px 0}
+
+.progress{display:flex;align-items:center;gap:10px;max-width:420px;margin:2px 0 0;font-size:13px;color:var(--muted)}
+.progress .bar{flex:1;height:8px;border-radius:999px;background:var(--chip);overflow:hidden}
+.progress .bar i{display:block;height:100%;width:0;background:var(--moss);border-radius:999px;transition:width .25s}
+.progress.done .bar i{background:var(--cyan)}
+.progress .count{font-variant-numeric:tabular-nums;white-space:nowrap}
 
 .tool-ph{margin:16px 0 0;padding:12px 14px;border:2px dashed var(--rule);border-radius:10px;color:var(--muted);max-width:76ch}
 .tool-ph b{display:block;color:var(--ink);font-family:var(--display);font-size:18px}
@@ -145,11 +174,19 @@ footer li{margin:5px 0}
 <main>
   <section id="dates">
     <div class="sec-head"><h2><span class="num">1</span>Dates and access</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    <div class="tl" aria-label="Timeline from now to Evercold's release">
+      <p class="tl-hint">The red line is today. Scroll sideways on small screens. Grey dots are fixed calendar dates. Dashed items are not announced yet; dates marked with ~ are based on past years.</p>
+      <div class="tl-scroll"><div class="tl-track" id="tl-track" data-day0="2026-11-01" data-px="7" style="width:1038px">
+        <div class="tl-head"><span class="mo" style="left:0px">Nov 2026</span><span class="mo" style="left:210px">Dec</span><span class="mo" style="left:427px">Jan 2027</span><span class="mo" style="left:644px">Feb</span></div><i class="gl" style="left:0px"></i><i class="gl" style="left:210px"></i><i class="gl" style="left:427px"></i><i class="gl" style="left:644px"></i><div class="lane"><h3 class="lane-t">Evercold</h3><ol style="height:66px"><li class="ev point confirmed" style="left:21px;top:0px" title="Pre-orders open worldwide on November 4, 2026 (Lodestone)."><i class="dot"></i><span class="lbl"><span class="vh">Confirmed: </span>Nov 4 · Pre-orders open</span></li><li class="ev point confirmed" style="left:770px;top:0px" title="Early access starts February 19, 2027 (Lodestone)."><i class="dot"></i><span class="lbl"><span class="vh">Confirmed: </span>Feb 19 · Early access</span></li><li class="ev point confirmed" style="left:798px;top:30px" title="Evercold releases February 23, 2027 (Lodestone)."><i class="dot"></i><span class="lbl"><span class="vh">Confirmed: </span>Feb 23 · Full release</span></li></ol></div><div class="lane"><h3 class="lane-t">In game</h3><ol style="height:156px"><li class="ev span confirmed" style="left:0px;top:0px" title="Started October 28, 2026 and runs until the release of Patch 8.0 (Lodestone)."><span class="bar" style="width:798px"><span class="lbl"><span class="vh">Confirmed: </span>Keybound Brawler, until Patch 8.0</span></span></li><li class="ev span tba" style="left:0px;top:30px" title="Runs until late November 2026. The exact end date and time are not announced yet (Lodestone)."><span class="bar" style="width:203px"></span><span class="lbl"><span class="vh">TBA: </span>Crucible Rankings Season 1, ends late Nov</span></li><li class="ev point confirmed" style="left:63px;top:60px" title="Patch 7.58 maintenance on November 10, 2026 (Lodestone)."><i class="dot"></i><span class="lbl"><span class="vh">Confirmed: </span>Nov 10 · Patch 7.58, Crystalline Conflict Season 21 ends</span></li><li class="ev span expected" style="left:322px;top:90px" title="Not announced yet. Ran December 17 to 31 in 2025 (Console Games Wiki)."><span class="bar" style="width:98px"></span><span class="lbl"><span class="vh">Expected: </span>Starlight Celebration, ~Dec 17 to 31</span></li><li class="ev span expected" style="left:420px;top:120px" title="Not announced yet. Ran December 31, 2025 to January 15, 2026 (Console Games Wiki)."><span class="bar" style="width:105px"></span><span class="lbl"><span class="vh">Expected: </span>Heavensturn, ~Dec 31 to Jan 15</span></li><li class="ev span expected" style="left:651px;top:30px" title="Not announced yet. Ran February 2 to 16 in 2026 (Console Games Wiki)."><span class="bar" style="width:98px"></span><span class="lbl"><span class="vh">Expected: </span>Valentione&#x27;s Day, ~Feb 2 to 16</span></li></ol></div><div class="lane"><h3 class="lane-t">Out of game</h3><ol style="height:66px"><li class="ev point confirmed" style="left:147px;top:0px" title="The Fan Festival 2026 in Tokyo stream archive is available until November 22, 2026 (Lodestone)."><i class="dot"></i><span class="lbl"><span class="vh">Confirmed: </span>Nov 22 · Fan Fest stream archive ends</span></li><li class="ev point calendar" style="left:175px;top:30px" title="Fourth Thursday of November."><i class="dot"></i><span class="lbl"><span class="vh">Calendar date: </span>Nov 26 · US Thanksgiving</span></li><li class="ev point calendar" style="left:378px;top:30px" title="Many players have time off over the holidays."><i class="dot"></i><span class="lbl"><span class="vh">Calendar date: </span>Dec 25 · Christmas</span></li><li class="ev point calendar" style="left:427px;top:0px" title="Many players have time off over the holidays."><i class="dot"></i><span class="lbl"><span class="vh">Calendar date: </span>Jan 1 · New Year&#x27;s Day</span></li><li class="ev point calendar" style="left:679px;top:0px" title="February 6, 2027."><i class="dot"></i><span class="lbl"><span class="vh">Calendar date: </span>Feb 6 · Lunar New Year</span></li><li class="ev point calendar" style="left:735px;top:30px" title="February 14, 2027."><i class="dot"></i><span class="lbl"><span class="vh">Calendar date: </span>Feb 14 · Valentine&#x27;s Day</span></li></ol></div>
+      </div></div>
+      <p class="tl-undated"><b>No date yet:</b> the exact end of Crucible Rankings Season 1, the Patch 8.0 date that ends Keybound Brawler, and the Second Hunt for Astronomy.</p>
+    </div>
+    <div class="progress" data-total="3"><div class="bar" role="progressbar" aria-label="Dates and access progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><i></i></div><span class="count">0 / 3</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Pre-orders open November 4, 2026. The pre-order bonus Halone&#x27;s Earring (+30% EXP from enemies, up to level 100) is delivered right away, so pre-ordering early helps if you&#x27;re leveling alts</span></label></li>
-        <li><label><input type="checkbox"> <span>Early access starts February 19, 2027. It needs a full (non-trial) account, an active subscription, and Dawntrail registered. Specific quest requirements: TBA</span></label></li>
-        <li><label><input type="checkbox"> <span>Full release is February 23, 2027</span></label></li>
+        <li><label><input type="checkbox" data-key="dates-0"> <span>Pre-orders open November 4, 2026. The pre-order bonus Halone&#x27;s Earring (+30% EXP from enemies, up to level 100) is delivered right away, so pre-ordering early helps if you&#x27;re leveling alts</span></label></li>
+        <li><label><input type="checkbox" data-key="dates-1"> <span>Early access starts February 19, 2027. It needs a full (non-trial) account, an active subscription, and Dawntrail registered. Specific quest requirements: TBA</span></label></li>
+        <li><label><input type="checkbox" data-key="dates-2"> <span>Full release is February 23, 2027</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -159,13 +196,15 @@ footer li{margin:5px 0}
 
   <section id="story">
     <div class="sec-head"><h2><span class="num">2</span>Story and unlocks</h2><span class="pills"><span class="pill expected">Expected</span></span></div>
+    
+    <div class="progress" data-total="5"><div class="bar" role="progressbar" aria-label="Story and unlocks progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><i></i></div><span class="count">0 / 5</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Finish the MSQ through the final 7.5x quest (likely the early access requirement)</span></label></li>
-        <li><label><input type="checkbox"> <span>Unlock flying in every Dawntrail zone</span></label></li>
-        <li><label><input type="checkbox"> <span>Have at least one combat job at level 100</span></label></li>
-        <li><label><input type="checkbox"> <span>Unlock dungeons and trials so roulettes have more options</span></label></li>
-        <li><label><input type="checkbox"> <span>Optional: catch up on Hildibrand, allied societies, and relic weapons</span></label></li>
+        <li><label><input type="checkbox" data-key="story-0"> <span>Finish the MSQ through the final 7.5x quest (likely the early access requirement)</span></label></li>
+        <li><label><input type="checkbox" data-key="story-1"> <span>Unlock flying in every Dawntrail zone</span></label></li>
+        <li><label><input type="checkbox" data-key="story-2"> <span>Have at least one combat job at level 100</span></label></li>
+        <li><label><input type="checkbox" data-key="story-3"> <span>Unlock dungeons and trials so roulettes have more options</span></label></li>
+        <li><label><input type="checkbox" data-key="story-4"> <span>Optional: catch up on Hildibrand, allied societies, and relic weapons</span></label></li>
     </ul>
     <div class="tool-ph"><b>MSQ Catch-Up Planner</b><p>Pick the quest you&#x27;re on, see how many quests and roughly how many hours are left, and the weekly pace needed to finish by February 19.</p><span class="soon">Coming soon</span></div>
     <h3 class="mini">For now</h3>
@@ -178,11 +217,13 @@ footer li{margin:5px 0}
 
   <section id="currencies">
     <div class="sec-head"><h2><span class="num">3</span>Currencies: spend before they change</h2><span class="pills"><span class="pill expected">Expected</span><span class="pill tba">TBA</span></span></div>
+    
+    <div class="progress" data-total="3"><div class="bar" role="progressbar" aria-label="Currencies: spend before they change progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><i></i></div><span class="count">0 / 3</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Allagan Tomestones are likely being replaced by the weekly Adventurer Activity system. What happens to existing tomestones is not announced yet</span></label></li>
-        <li><label><input type="checkbox"> <span>At the 7.0 launch, both current tomestones and the old scrip tier were retired, so Mathematics, Mnemonics, and Purple Scrips are at risk. Spend down rather than stockpile</span></label></li>
-        <li><label><input type="checkbox"> <span>Bicolor Gemstones: spend if near the cap</span></label></li>
+        <li><label><input type="checkbox" data-key="currencies-0"> <span>Allagan Tomestones are likely being replaced by the weekly Adventurer Activity system. What happens to existing tomestones is not announced yet</span></label></li>
+        <li><label><input type="checkbox" data-key="currencies-1"> <span>At the 7.0 launch, both current tomestones and the old scrip tier were retired, so Mathematics, Mnemonics, and Purple Scrips are at risk. Spend down rather than stockpile</span></label></li>
+        <li><label><input type="checkbox" data-key="currencies-2"> <span>Bicolor Gemstones: spend if near the cap</span></label></li>
     </ul>
     <div class="tool-ph"><b>Currency Spend-Down</b><p>Pick a currency and your world, see what to buy for gil you can realistically sell, capped by how many actually sold in the last week.</p><span class="soon">Coming soon</span></div>
     <h3 class="mini">For now</h3>
@@ -195,12 +236,14 @@ footer li{margin:5px 0}
 
   <section id="gear">
     <div class="sec-head"><h2><span class="num">4</span>Gear and jobs</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    
+    <div class="progress" data-total="4"><div class="bar" role="progressbar" aria-label="Gear and jobs progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"><i></i></div><span class="count">0 / 4</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Don&#x27;t buy current-tier gear now; it&#x27;s replaced quickly at launch</span></label></li>
-        <li><label><input type="checkbox"> <span>The Armoury will sync your highest item level to all your jobs, so you only need to gear one</span></label></li>
-        <li><label><input type="checkbox"> <span>Materia melds don&#x27;t carry over, so don&#x27;t overmeld alts</span></label></li>
-        <li><label><input type="checkbox"> <span>New tank Bastion starts at level 90 and needs a level 90 Disciple of War or Magic to unlock. New physical ranged Zephyr: unlock details TBA</span></label></li>
+        <li><label><input type="checkbox" data-key="gear-0"> <span>Don&#x27;t buy current-tier gear now; it&#x27;s replaced quickly at launch</span></label></li>
+        <li><label><input type="checkbox" data-key="gear-1"> <span>The Armoury will sync your highest item level to all your jobs, so you only need to gear one</span></label></li>
+        <li><label><input type="checkbox" data-key="gear-2"> <span>Materia melds don&#x27;t carry over, so don&#x27;t overmeld alts</span></label></li>
+        <li><label><input type="checkbox" data-key="gear-3"> <span>New tank Bastion starts at level 90 and needs a level 90 Disciple of War or Magic to unlock. New physical ranged Zephyr: unlock details TBA</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -211,10 +254,12 @@ footer li{margin:5px 0}
 
   <section id="crafting">
     <div class="sec-head"><h2><span class="num">5</span>Crafters and gatherers</h2><span class="pills"><span class="pill expected">Expected</span></span></div>
+    
+    <div class="progress" data-total="2"><div class="bar" role="progressbar" aria-label="Crafters and gatherers progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"><i></i></div><span class="count">0 / 2</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Level crafters and gatherers to 100 so you can supply launch-week demand</span></label></li>
-        <li><label><input type="checkbox"> <span>Spend scrips (see Currencies)</span></label></li>
+        <li><label><input type="checkbox" data-key="crafting-0"> <span>Level crafters and gatherers to 100 so you can supply launch-week demand</span></label></li>
+        <li><label><input type="checkbox" data-key="crafting-1"> <span>Spend scrips (see Currencies)</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -224,11 +269,13 @@ footer li{margin:5px 0}
 
   <section id="inventory">
     <div class="sec-head"><h2><span class="num">6</span>Inventory and glamour</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    
+    <div class="progress" data-total="3"><div class="bar" role="progressbar" aria-label="Inventory and glamour progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><i></i></div><span class="count">0 / 3</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Run the Dye Exchange at the Calamity Salvager</span></label></li>
-        <li><label><input type="checkbox"> <span>Move eligible gear into the expanded Armoire</span></label></li>
-        <li><label><input type="checkbox"> <span>Clear bags and retainers before launch-week material hoarding</span></label></li>
+        <li><label><input type="checkbox" data-key="inventory-0"> <span>Run the Dye Exchange at the Calamity Salvager</span></label></li>
+        <li><label><input type="checkbox" data-key="inventory-1"> <span>Move eligible gear into the expanded Armoire</span></label></li>
+        <li><label><input type="checkbox" data-key="inventory-2"> <span>Clear bags and retainers before launch-week material hoarding</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -238,10 +285,12 @@ footer li{margin:5px 0}
 
   <section id="gil">
     <div class="sec-head"><h2><span class="num">7</span>Gil plan</h2><span class="pills"><span class="pill expected">Expected</span></span></div>
+    
+    <div class="progress" data-total="2"><div class="bar" role="progressbar" aria-label="Gil plan progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"><i></i></div><span class="count">0 / 2</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>What to sell now vs hold</span></label></li>
-        <li><label><input type="checkbox"> <span>Launch-week demand for food, potions, and leveling gear</span></label></li>
+        <li><label><input type="checkbox" data-key="gil-0"> <span>What to sell now vs hold</span></label></li>
+        <li><label><input type="checkbox" data-key="gil-1"> <span>Launch-week demand for food, potions, and leveling gear</span></label></li>
     </ul>
     <div class="tool-ph"><b>Launch Market Watch</b><p>Which new-expansion materials spike and settle in the first two weeks, with live prices. Arrives at launch.</p><span class="soon">Coming soon</span></div>
     <h3 class="mini">For now</h3>
@@ -252,9 +301,11 @@ footer li{margin:5px 0}
 
   <section id="retainers">
     <div class="sec-head"><h2><span class="num">8</span>Retainers</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    
+    <div class="progress" data-total="1"><div class="bar" role="progressbar" aria-label="Retainers progress" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><i></i></div><span class="count">0 / 1</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Re-plan ventures for launch-week demand</span></label></li>
+        <li><label><input type="checkbox" data-key="retainers-0"> <span>Re-plan ventures for launch-week demand</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -264,9 +315,11 @@ footer li{margin:5px 0}
 
   <section id="housing">
     <div class="sec-head"><h2><span class="num">9</span>Housing</h2><span class="pills"><span class="pill confirmed">Confirmed for 8.x</span></span></div>
+    
+    <div class="progress" data-total="1"><div class="bar" role="progressbar" aria-label="Housing progress" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><i></i></div><span class="count">0 / 1</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Interior size choices and a new furnishing interface arrive across 8.x patches, so there&#x27;s no need to rush a move now</span></label></li>
+        <li><label><input type="checkbox" data-key="housing-0"> <span>Interior size choices and a new furnishing interface arrive across 8.x patches, so there&#x27;s no need to rush a move now</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -276,13 +329,15 @@ footer li{margin:5px 0}
 
   <section id="chocobo">
     <div class="sec-head"><h2><span class="num">10</span>Chocobo companion</h2><span class="pills"><span class="pill confirmed">Confirmed for 8.x</span></span></div>
+    
+    <div class="progress" data-total="5"><div class="bar" role="progressbar" aria-label="Chocobo companion progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><i></i></div><span class="count">0 / 5</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Companions can fill spots in dungeons from patch 8.1, and chocobo breeding is overhauled in 8.2. Basic commands are being reworked too</span></label></li>
-        <li><label><input type="checkbox"> <span>Existing progress should be safe: coverage of the keynote says players with a max-level companion won&#x27;t have their work compromised. Exactly what carries over (rank, skills, stats) is TBA</span></label></li>
-        <li><label><input type="checkbox"> <span>Level your companion up to Rank 20. Past Rank 10 each rank needs a Thavnairian Onion, used when the EXP bar is full and never in a major city. An onion takes 10 days to grow and needs watering every 48 hours (a house is needed for gardening), so start planting early</span></label></li>
-        <li><label><input type="checkbox"> <span>Plan your skill points before spending: 55 SP maxes one skill tree and Rank 20 gives 165 SP. A Reagan Pepper (48,000 Company Seals or 20 Allied Seals) refunds them, though that may change with the 8.1 rework</span></label></li>
-        <li><label><input type="checkbox"> <span>Know what stats you&#x27;re building: companion stats come from skill tree traits and food buffs. The wiki lists no separate stat cap</span></label></li>
+        <li><label><input type="checkbox" data-key="chocobo-0"> <span>Companions can fill spots in dungeons from patch 8.1, and chocobo breeding is overhauled in 8.2. Basic commands are being reworked too</span></label></li>
+        <li><label><input type="checkbox" data-key="chocobo-1"> <span>Existing progress should be safe: coverage of the keynote says players with a max-level companion won&#x27;t have their work compromised. Exactly what carries over (rank, skills, stats) is TBA</span></label></li>
+        <li><label><input type="checkbox" data-key="chocobo-2"> <span>Level your companion up to Rank 20. Past Rank 10 each rank needs a Thavnairian Onion, used when the EXP bar is full and never in a major city. An onion takes 10 days to grow and needs watering every 48 hours (a house is needed for gardening), so start planting early</span></label></li>
+        <li><label><input type="checkbox" data-key="chocobo-3"> <span>Plan your skill points before spending: 55 SP maxes one skill tree and Rank 20 gives 165 SP. A Reagan Pepper (48,000 Company Seals or 20 Allied Seals) refunds them, though that may change with the 8.1 rework</span></label></li>
+        <li><label><input type="checkbox" data-key="chocobo-4"> <span>Know what stats you&#x27;re building: companion stats come from skill tree traits and food buffs. The wiki lists no separate stat cap</span></label></li>
     </ul>
     <div class="tool-ph"><b>Chocobo Leveling Guide</b><p>Rank-by-rank EXP, how many Thavnairian Onions you need, and the fastest way to Rank 20.</p><span class="soon">Coming soon</span></div>
     <div class="tool-ph"><b>Chocobo Skill Point Planner</b><p>Which skill trees to buy first for your role, the SP cost of each skill, and how to max your companion&#x27;s stats.</p><span class="soon">Coming soon</span></div>
@@ -297,10 +352,12 @@ footer li{margin:5px 0}
 
   <section id="evolved">
     <div class="sec-head"><h2><span class="num">11</span>Learn Evolved Mode</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    
+    <div class="progress" data-total="2"><div class="bar" role="progressbar" aria-label="Learn Evolved Mode progress" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"><i></i></div><span class="count">0 / 2</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Every existing job (except limited jobs) can switch between Reborn Mode (current combat) and Evolved Mode. Bastion and Zephyr are Evolved Mode only</span></label></li>
-        <li><label><input type="checkbox"> <span>Optional before launch; worth reading up on your main</span></label></li>
+        <li><label><input type="checkbox" data-key="evolved-0"> <span>Every existing job (except limited jobs) can switch between Reborn Mode (current combat) and Evolved Mode. Bastion and Zephyr are Evolved Mode only</span></label></li>
+        <li><label><input type="checkbox" data-key="evolved-1"> <span>Optional before launch; worth reading up on your main</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -310,14 +367,16 @@ footer li{margin:5px 0}
 
   <section id="fanfest">
     <div class="sec-head"><h2><span class="num">12</span>Fan Fest announcements worth knowing</h2><span class="pills"><span class="pill confirmed">Confirmed</span></span></div>
+    
+    <div class="progress" data-total="6"><div class="bar" role="progressbar" aria-label="Fan Fest announcements worth knowing progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0"><i></i></div><span class="count">0 / 6</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Adventurer activity moves from daily to weekly rewards, and you can go back to previous weeks to collect points you missed, even after the weekly reset</span></label></li>
-        <li><label><input type="checkbox"> <span>A season is two major patches</span></label></li>
-        <li><label><input type="checkbox"> <span>Auto Content Balancing scales enemy difficulty to the character, not the world, in dungeons, FATEs, and instances</span></label></li>
-        <li><label><input type="checkbox"> <span>The story has three major areas, playable in any order after the same onboarding</span></label></li>
-        <li><label><input type="checkbox"> <span>The Armoury can copy your highest item level to your other max-level jobs</span></label></li>
-        <li><label><input type="checkbox"> <span>Bastion and Zephyr both start at level 90 (Bastion in Limsa Lominsa, Zephyr&#x27;s quest in Gridania)</span></label></li>
+        <li><label><input type="checkbox" data-key="fanfest-0"> <span>Adventurer activity moves from daily to weekly rewards, and you can go back to previous weeks to collect points you missed, even after the weekly reset</span></label></li>
+        <li><label><input type="checkbox" data-key="fanfest-1"> <span>A season is two major patches</span></label></li>
+        <li><label><input type="checkbox" data-key="fanfest-2"> <span>Auto Content Balancing scales enemy difficulty to the character, not the world, in dungeons, FATEs, and instances</span></label></li>
+        <li><label><input type="checkbox" data-key="fanfest-3"> <span>The story has three major areas, playable in any order after the same onboarding</span></label></li>
+        <li><label><input type="checkbox" data-key="fanfest-4"> <span>The Armoury can copy your highest item level to your other max-level jobs</span></label></li>
+        <li><label><input type="checkbox" data-key="fanfest-5"> <span>Bastion and Zephyr both start at level 90 (Bastion in Limsa Lominsa, Zephyr&#x27;s quest in Gridania)</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -328,9 +387,11 @@ footer li{margin:5px 0}
 
   <section id="events">
     <div class="sec-head"><h2><span class="num">13</span>Limited-time content</h2><span class="pills"><span class="pill tba">TBA per event</span></span></div>
+    
+    <div class="progress" data-total="1"><div class="bar" role="progressbar" aria-label="Limited-time content progress" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><i></i></div><span class="count">0 / 1</span></div>
     <h3 class="mini">What this section will cover</h3>
     <ul class="check">
-        <li><label><input type="checkbox"> <span>Finish events and rewards that end before launch</span></label></li>
+        <li><label><input type="checkbox" data-key="events-0"> <span>Finish events and rewards that end before launch</span></label></li>
     </ul>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -350,6 +411,11 @@ footer li{margin:5px 0}
     <li><a href="https://hardcoregamer.com/ffxiv-eu-fan-fest-2026-announcements/" target="_blank" rel="noopener noreferrer">Hardcore Gamer: EU Fan Fest 2026 announcements</a></li>
     <li><a href="https://www.mmorpg.com/features/all-the-details-from-ffxivs-fan-fest-tokyo-keynote-2000139232" target="_blank" rel="noopener noreferrer">MMORPG.com: all the details from the Tokyo keynote</a></li>
     <li><a href="https://ffxiv.consolegameswiki.com/wiki/Companions" target="_blank" rel="noopener noreferrer">Console Games Wiki: Companions</a></li>
+    <li><a href="https://ffxiv.consolegameswiki.com/wiki/Starlight_Celebration" target="_blank" rel="noopener noreferrer">Console Games Wiki: Starlight Celebration</a>, <a href="https://ffxiv.consolegameswiki.com/wiki/Heavensturn" target="_blank" rel="noopener noreferrer">Heavensturn</a>, and <a href="https://ffxiv.consolegameswiki.com/wiki/Valentione's_Day" target="_blank" rel="noopener noreferrer">Valentione&#x27;s Day</a> (past event dates)</li>
+    <li><a href="https://na.finalfantasyxiv.com/lodestone/topics/detail/06dfdcfad1969b507611e84ab83c700833e7dd79" target="_blank" rel="noopener noreferrer">Lodestone: Crystalline Conflict Season Twenty-one Ending Soon</a></li>
+    <li><a href="https://na.finalfantasyxiv.com/lodestone/topics/detail/e658d27622943f03f2162bee068e01ecc9efc0fd" target="_blank" rel="noopener noreferrer">Lodestone: Keybound Brawler Arrives October 28</a></li>
+    <li><a href="https://na.finalfantasyxiv.com/lodestone/topics/detail/07114b7accd04f00261f758357f898025ed8afe2" target="_blank" rel="noopener noreferrer">Lodestone: Crucible Rankings Season 1 Commences</a></li>
+    <li><a href="https://na.finalfantasyxiv.com/lodestone/topics/detail/771b41f4e4657dc831efb9885a83143a83736ec3" target="_blank" rel="noopener noreferrer">Lodestone: Fan Festival 2026 in Tokyo live performance stream tickets</a></li>
     <li><a href="https://www.gematsu.com/2026/10/final-fantasy-xiv-evercold-expansion-delayed-to-february-23-2027" target="_blank" rel="noopener noreferrer">Gematsu: Evercold delayed to February 23, 2027</a></li>
   </ul>
 
@@ -363,6 +429,44 @@ footer li{margin:5px 0}
 </div>
 <script>
 (function () {
+  var KEY = 'xivkit-evercold-checklist';
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} }
+  function update(section) {
+    var boxes = section.querySelectorAll('input[data-key]'), n = 0;
+    boxes.forEach(function (b) { if (b.checked) n++; });
+    var p = section.querySelector('.progress');
+    if (!p) return;
+    p.querySelector('.bar i').style.width = (boxes.length ? n / boxes.length * 100 : 0) + '%';
+    p.querySelector('.bar').setAttribute('aria-valuenow', n);
+    p.querySelector('.count').textContent = n + ' / ' + boxes.length;
+    p.classList.toggle('done', boxes.length > 0 && n === boxes.length);
+  }
+  document.querySelectorAll('input[data-key]').forEach(function (b) {
+    b.checked = !!saved[b.getAttribute('data-key')];
+    b.addEventListener('change', function () {
+      var k = b.getAttribute('data-key');
+      if (b.checked) saved[k] = 1; else delete saved[k];
+      save();
+      update(b.closest('section'));
+    });
+  });
+  document.querySelectorAll('main section').forEach(update);
+
+  var track = document.getElementById('tl-track');
+  if (track) {
+    var p = track.getAttribute('data-day0').split('-');
+    var now = new Date();
+    var day = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.UTC(+p[0], p[1] - 1, +p[2])) / 864e5);
+    if (day >= 0) {
+      var m = document.createElement('div');
+      m.className = 'today';
+      m.style.left = (day * +track.getAttribute('data-px')) + 'px';
+      track.appendChild(m);
+    }
+  }
+
   var els = document.querySelectorAll('[data-cd]');
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function tick() {
