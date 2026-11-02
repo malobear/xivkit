@@ -267,6 +267,16 @@
     color: inherit;
     border-bottom-color: var(--border);
   }
+  .wip-guides {
+    margin: 28px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .wip-guides summary { cursor: pointer; }
+  .wip-guides p { margin: 6px 0 0; }
+  .wip-guides span { margin-left: 6px; }
   .featured-note {
     color: var(--muted);
     font-size: 0.85rem;
@@ -577,6 +587,12 @@
       </li>
     </ul>
   </section>
+
+  <details class="wip-guides">
+    <summary data-i18n="pages.index.wipHeading">Work in progress</summary>
+    <p data-i18n="pages.index.wipNote">Drafts that aren't finished, and may change or disappear.</p>
+    <p><a href="get-ready-for-evercold.html">Get Ready for Evercold</a> <span data-i18n="pages.index.wipEvercold">Evercold prep checklist (draft)</span></p>
+  </details>
   </div>
   </div>
 

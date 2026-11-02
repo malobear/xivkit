@@ -234,7 +234,10 @@
         "pastEvents": "Guides d'événements terminés"
       },
       "featuredNote": "Des guides complets que j'ai sélectionnés et que j'héberge directement sur ce site, pas juste un lien externe.",
-      "pastEventsNote": "Ces événements sont terminés. Conservés ici pour référence."
+      "pastEventsNote": "Ces événements sont terminés. Conservés ici pour référence.",
+      "wipHeading": "En cours",
+      "wipNote": "Brouillons non terminés, qui peuvent changer ou disparaître.",
+      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

@@ -234,7 +234,10 @@
         "pastEvents": "Past Event Guides"
       },
       "featuredNote": "Full guides I've curated and host directly on this site, not just a link out.",
-      "pastEventsNote": "Events that have ended. Kept here for reference."
+      "pastEventsNote": "Events that have ended. Kept here for reference.",
+      "wipHeading": "Work in progress",
+      "wipNote": "Drafts that aren't finished, and may change or disappear.",
+      "wipEvercold": "Evercold prep checklist (draft)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",
