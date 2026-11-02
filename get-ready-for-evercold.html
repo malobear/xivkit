@@ -63,6 +63,12 @@ header.hero{padding:20px 0 4px}
 .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;max-width:18ch}
 .hero .lede{max-width:68ch;color:var(--muted);margin:0 0 12px}
 
+.countdowns{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 0;padding:0;list-style:none;max-width:760px}
+.countdowns li{padding:12px 14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+.cd-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.cd-time{display:block;font-family:var(--display);font-weight:800;font-size:22px;line-height:1.2;margin:4px 0 2px;font-variant-numeric:tabular-nums}
+.cd-when{font-size:13px;color:var(--muted)}
+
 .legend{display:grid;gap:6px;margin:14px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:70ch;font-size:14px;list-style:none}
 .legend li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
 .pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.03em;border:1px solid var(--v);color:var(--v);border-radius:999px;padding:1px 10px;white-space:nowrap}
@@ -120,6 +126,11 @@ footer li{margin:5px 0}
 <header class="hero">
   <h1>Get Ready for Evercold</h1>
   <p class="lede">Evercold early access starts February 19, 2027 and full release is February 23, 2027. This checklist covers what to finish, spend, and clear before then, tagged by how confirmed each item is.</p>
+  <ul class="countdowns" aria-label="Countdowns">
+    <li><span class="cd-label">Pre-orders open</span><time class="cd-time" data-cd="2026-11-04T18:00:00Z" data-done="Open now">November 4, 2026</time><span class="cd-when">Nov 4, 2026, 10:00 a.m. PT</span></li>
+    <li><span class="cd-label">Early access</span><time class="cd-time" data-cd="2027-02-19T09:00:00Z" data-done="Live now">February 19, 2027</time><span class="cd-when">Feb 19, 2027, 1:00 a.m. PT (tentative)</span></li>
+    <li><span class="cd-label">Full release</span><time class="cd-time" data-cd="2027-02-23T08:00:00Z" data-days data-done="Released">February 23, 2027</time><span class="cd-when">Feb 23, 2027. Launch time not announced, so this counts days to the start of that day in Pacific Time.</span></li>
+  </ul>
   <ul class="legend" aria-label="Status tags">
     <li><span class="pill confirmed">Confirmed</span> Announced by Square Enix</li>
     <li><span class="pill expected">Expected</span> Based on what happened at past expansion launches (7.0)</li>
@@ -350,5 +361,26 @@ footer li{margin:5px 0}
 </footer>
 
 </div>
+<script>
+(function () {
+  var els = document.querySelectorAll('[data-cd]');
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function tick() {
+    var now = Date.now();
+    els.forEach(function (el) {
+      var ms = new Date(el.getAttribute('data-cd')).getTime() - now;
+      if (ms <= 0) { el.textContent = el.getAttribute('data-done'); return; }
+      var s = Math.floor(ms / 1000), d = Math.floor(s / 86400);
+      if (el.hasAttribute('data-days')) {
+        el.textContent = d + (d === 1 ? ' day' : ' days');
+      } else {
+        el.textContent = d + 'd ' + pad(Math.floor(s % 86400 / 3600)) + 'h ' + pad(Math.floor(s % 3600 / 60)) + 'm ' + pad(s % 60) + 's';
+      }
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
 </body>
 </html>
