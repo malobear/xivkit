@@ -129,6 +129,15 @@ Follows the site conventions in `CLAUDE.md`:
 - Accessibility: slider and number inputs labelled, bars have text values, keyboard
   Prev/Next.
 
+## Status (2026-11-02)
+
+Milestones 1 to 5 are built as a draft page, `msq-tracker.html`, linked from the index
+work-in-progress block and marked `noindex` like the Evercold draft. Still to do before it
+ships: the OG card (`scripts/og.mjs`), sitemap, `llms.txt` and README entries, removing
+`noindex`, moving the index entry into Progress & Checklists, a review of the opening
+segment order, and native-speaker review of the ja/de/fr strings (expansion names use the
+official localized titles; quest titles and questline names stay in English).
+
 ## Milestones
 
 1. **Spike:** XIVAPI MSQ order and the three city branches. Decide the data source.

@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ3SSXDSFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQ3SSXDSFK');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FFXIV MSQ Tracker with a Shareable Link | XIVKit</title>
+<meta name="description" content="Track your FFXIV Main Scenario Quest progress from A Realm Reborn through Dawntrail. Your current quest lives in the page link so you can paste it to friends, and you can export a PNG progress card.">
+<link rel="canonical" href="https://xivkit.com/msq-tracker.html">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0a1428">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="XIVKit">
+<meta property="og:title" content="FFXIV MSQ Tracker with a Shareable Link | XIVKit">
+<meta property="og:description" content="Track your Main Scenario Quest progress, share it as a link with the quest name in it, and export a PNG progress card.">
+<meta property="og:url" content="https://xivkit.com/msq-tracker.html">
+<meta property="og:image" content="https://xivkit.com/og-msq-tracker.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XIVKit MSQ Tracker">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FFXIV MSQ Tracker with a Shareable Link | XIVKit">
+<meta name="twitter:description" content="Track your Main Scenario Quest progress, share it as a link with the quest name in it, and export a PNG progress card.">
+<meta name="twitter:image" content="https://xivkit.com/og-msq-tracker.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#0a1428; --panel:#0f1d3a; --cell:#14284d; --rule:#3b5a8f; --frame:#b79b5c;
+  --ink:#ecf2fb; --cream:#f4e9cc; --gold:#e8cf94; --gold-hi:#fff3d0; --ice:#8fd3ff; --muted:#a9bcdc; --soft:#bccbe4; --faint:#8fa3c7;
+  --serif:Cinzel, Georgia, serif;
+  --body:"Instrument Sans", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.45;overflow-x:hidden}
+a{color:var(--gold);text-underline-offset:2px}
+a:hover{color:var(--gold-hi)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ice);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 56px;display:flex;flex-direction:column;gap:22px}
+
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:18px 0 0;font-size:14px}
+.site-nav a{color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.site-nav a:hover{color:var(--ink)}
+.site-nav .wordmark{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.1em;color:var(--ink);border-bottom:0}
+.site-nav .wordmark b{font-weight:600;color:#ff5a50}
+#lang-bar{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+#lang-bar button{font:12px var(--body);border:1px solid var(--rule);background:var(--panel);color:var(--muted);padding:3px 10px;border-radius:999px;cursor:pointer}
+#lang-bar button.active{color:var(--ink);border-color:var(--gold)}
+
+.hero{display:flex;flex-direction:column;gap:8px;padding:8px 0 0}
+h1{margin:0;font-family:var(--serif);font-weight:900;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:.02em;color:var(--cream)}
+.lede{margin:0;font-size:18px;color:var(--soft);max-width:62ch}
+h2{margin:0 0 10px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--cream)}
+
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:20px}
+.banner{background:#1c2c52;border:1px solid var(--ice);border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.banner[hidden]{display:none}
+.banner p{margin:0;flex:1 1 320px}
+.notice{margin:0;color:var(--gold);font-size:15px}
+.notice[hidden]{display:none}
+
+.row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-end}
+.field{display:flex;flex-direction:column;gap:4px;flex:1 1 220px;min-width:0}
+.field label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+input[type=text],input[type=search],select{font:inherit;color:var(--ink);background:var(--cell);border:1px solid var(--rule);border-radius:8px;padding:9px 12px;width:100%}
+button.btn{font:inherit;font-weight:600;font-size:15px;color:var(--ink);background:var(--cell);border:1px solid var(--rule);border-radius:8px;padding:9px 16px;cursor:pointer}
+button.btn:hover:not(:disabled){border-color:var(--gold)}
+button.btn:disabled{opacity:.45;cursor:default}
+button.primary{background:var(--frame);border-color:var(--frame);color:#0a1428}
+button.primary:hover:not(:disabled){background:var(--gold);border-color:var(--gold)}
+
+.current .kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ice)}
+.current .quest{margin:4px 0 6px;font-family:var(--serif);font-weight:900;font-size:clamp(28px,5vw,44px);line-height:1.1;color:var(--cream);overflow-wrap:anywhere}
+.current .meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--soft);font-size:15px}
+.current .meta span+span::before{content:"\00b7";margin-right:14px;color:var(--faint)}
+.current .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.current .wiki{display:inline-block;margin-top:12px;font-size:14px}
+
+.bar{height:14px;background:var(--cell);border:1px solid var(--rule);border-radius:999px;overflow:hidden}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,#b79b5c,#fff3d0);border-radius:999px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
+.stat b{display:block;font-family:var(--serif);font-size:26px;color:var(--cream)}
+.stat span{font-size:13px;color:var(--muted)}
+
+.jump{position:relative}
+#results{list-style:none;margin:6px 0 0;padding:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--cell)}
+#results[hidden]{display:none}
+#results button{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--rule);padding:9px 12px;cursor:pointer}
+#results li:last-child button{border-bottom:0}
+#results button:hover,#results button:focus-visible{background:#1c3566}
+#results small{color:var(--muted);white-space:nowrap}
+
+.share .linkrow{display:flex;flex-wrap:wrap;gap:10px}
+.share .linkrow input{flex:1 1 320px;font-size:15px}
+.share .out{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.status{min-height:1.4em;margin:8px 0 0;font-size:14px;color:var(--gold)}
+
+.segs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.seg{background:var(--cell);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.seg.done{border-color:var(--frame)}
+.seg.here{border-color:var(--ice)}
+.seg .era{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.seg h3{margin:0;font-size:17px;color:var(--cream)}
+.seg .info{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.seg .acts{display:flex;gap:8px;margin-top:2px}
+.seg .acts button{font:inherit;font-size:13px;color:var(--soft);background:none;border:1px solid var(--rule);border-radius:6px;padding:3px 10px;cursor:pointer}
+.seg .acts button:hover{border-color:var(--gold);color:var(--ink)}
+
+footer.sources{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);padding-top:18px}
+footer.sources p{margin:8px 0;max-width:80ch}
+footer.sources .legal{font-size:13px;opacity:.75}
+@media (max-width:560px){#lang-bar{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="site-nav">
+  <a class="wordmark" href="./" aria-label="XIVKit home">XIV<b>KIT</b></a>
+  <a href="./" data-i18n="shared.nav.tools">Tools I use</a>
+  <a href="watchlist.html" data-i18n="shared.nav.watchlist">Watchlist</a>
+  <a href="plugins.html" data-i18n="shared.nav.plugins">Plugins</a>
+  <a href="./#guides" data-i18n="shared.nav.guides">Guides</a>
+  <div id="lang-bar"></div>
+</nav>
+
+<header class="hero">
+  <h1 data-i18n="pages.msqTracker.h1">MSQ Tracker</h1>
+  <p class="lede" data-i18n="pages.msqTracker.lede">Track your Main Scenario Quest progress from A Realm Reborn to today. Your place is saved in this browser and written into the page link with the quest name in it, so you can paste it to a friend. Export a PNG progress card to share too.</p>
+</header>
+
+<noscript><p class="card">This tracker needs JavaScript to run.</p></noscript>
+
+<div class="banner" id="viewBanner" hidden>
+  <p id="viewText"></p>
+  <button class="btn primary" type="button" id="adopt"></button>
+  <button class="btn" type="button" id="backToMine"></button>
+</div>
+<p class="notice" id="notice" hidden></p>
+
+<section class="card">
+  <div class="row">
+    <div class="field">
+      <label for="city" data-i18n="pages.msqTracker.cityLabel">Starting city</label>
+      <select id="city"></select>
+    </div>
+    <div class="field">
+      <label for="name" data-i18n="pages.msqTracker.nameLabel">Your name (optional)</label>
+      <input type="text" id="name" maxlength="24" autocomplete="off" data-i18n="pages.msqTracker.namePlaceholder" data-i18n-placeholder placeholder="Shown on the image and in the link">
+    </div>
+  </div>
+</section>
+
+<section class="card current" aria-live="polite">
+  <div class="kicker" id="curKicker"></div>
+  <p class="quest" id="curQuest">Loading...</p>
+  <div class="meta" id="curMeta"></div>
+  <a class="wiki" id="curWiki" target="_blank" rel="noopener noreferrer" hidden></a>
+  <div class="actions">
+    <button class="btn" type="button" id="prev"></button>
+    <button class="btn primary" type="button" id="next"></button>
+  </div>
+  <div class="jump" style="margin-top:18px">
+    <div class="field">
+      <label for="jumpInput" data-i18n="pages.msqTracker.jumpLabel">I'm on a different quest</label>
+      <input type="search" id="jumpInput" autocomplete="off" data-i18n="pages.msqTracker.jumpPlaceholder" data-i18n-placeholder placeholder="Search for a quest by name">
+    </div>
+    <ul id="results" hidden></ul>
+  </div>
+</section>
+
+<section class="card">
+  <h2 data-i18n="pages.msqTracker.progressHeading">Progress</h2>
+  <div class="bar" role="progressbar" id="overallBar" aria-valuemin="0" aria-valuemax="100"><i id="overallFill" style="width:0"></i></div>
+  <div class="stats">
+    <div class="stat"><b id="sPct">0%</b><span data-i18n="pages.msqTracker.statOverall">Overall</span></div>
+    <div class="stat"><b id="sDone">0</b><span id="sDoneLabel"></span></div>
+    <div class="stat"><b id="sLeft">0</b><span data-i18n="pages.msqTracker.statRemaining">Quests remaining</span></div>
+  </div>
+</section>
+
+<section class="card share">
+  <h2 data-i18n="pages.msqTracker.shareHeading">Share your progress</h2>
+  <div class="linkrow">
+    <input type="text" id="shareUrl" readonly aria-label="Shareable link" data-i18n="pages.msqTracker.shareLabel" data-i18n-title title="Shareable link">
+    <button class="btn primary" type="button" id="copyLink"></button>
+  </div>
+  <div class="out">
+    <button class="btn" type="button" id="dlPng"></button>
+    <button class="btn" type="button" id="copyPng"></button>
+  </div>
+  <p class="status" id="status" role="status"></p>
+</section>
+
+<section>
+  <h2 data-i18n="pages.msqTracker.segmentsHeading">Questlines</h2>
+  <div class="segs" id="segs"></div>
+</section>
+
+<section class="row" style="align-items:center">
+  <button class="btn" type="button" id="reset"></button>
+</section>
+
+<footer class="sources">
+  <p data-i18n-rich="pages.msqTracker.footerInspired">Inspired by <a href="https://msqtracker.com/" target="_blank" rel="noopener noreferrer" data-token="msqtracker">MSQTracker</a>, which does the same job but keeps your progress in one browser with no link to share. Go check it out too.</p>
+  <p data-i18n-rich="pages.msqTracker.footerData">Quest data comes from the game's own data via <a href="https://xivapi.com/" target="_blank" rel="noopener noreferrer" data-token="xivapi">XIVAPI</a>, with quest pages on <a href="https://ffxiv.consolegameswiki.com/" target="_blank" rel="noopener noreferrer" data-token="wiki">ConsoleGamesWiki</a>. Quest order and the 7.5 additions can lag a patch behind, so tell me if something is off.</p>
+  <p data-i18n-rich="pages.msqTracker.footerLinks">Your progress is saved in this browser only, and the link carries your place. See the <a href="./" data-token="home">main list</a> for the rest of the tools I use. Source on <a href="https://github.com/malobear/xivkit" target="_blank" rel="noopener noreferrer" data-token="github">GitHub</a>.</p>
+  <p class="legal" data-i18n="shared.legal">FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made list, not affiliated with or endorsed by Square Enix.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var KEY = "xivkit-msq-v1";
+  var CITY_SLUGS = ["gridania", "limsa-lominsa", "uldah"];
+  var CITY_NAMES = ["Gridania", "Limsa Lominsa", "Ul'dah"];
+  var DONE_SLUG = "all-done";
+  var $ = function (id) { return document.getElementById(id); };
+
+  var data = null, route = [], segStart = [], eraList = [];
+  var state = { city: 0, pos: 0, name: "" };
+  var viewing = null; // a shared state being looked at but not saved
+  var noticeText = "";
+
+  // ---- translation helper with English fallbacks ----
+  function T(key, fallback, vars) {
+    var out = fallback, ready = window.i18next && i18next.isInitialized;
+    if (ready) {
+      var opts = { defaultValue: fallback, interpolation: { escapeValue: false } };
+      for (var k in vars) opts[k] = vars[k];
+      out = i18next.t("pages.msqTracker." + key, opts);
+    }
+    return out.replace(/\{\{(\w+)\}\}/g, function (m, k) { return vars && vars[k] != null ? vars[k] : m; });
+  }
+  function eraName(era) { return T("eras." + slug(era), era); }
+  function cityName(i) { return T("cities." + CITY_SLUGS[i], CITY_NAMES[i]); }
+
+  function slug(s) {
+    return String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+  function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
+
+  // ---- route and derived numbers ----
+  function buildRoute(city) {
+    route = data.q.filter(function (x) { return (((x.c == null ? 7 : x.c) >> city) & 1) === 1; });
+    segStart = data.seg.map(function () { return -1; });
+    route.forEach(function (x, i) { if (segStart[x.g] < 0) segStart[x.g] = i; });
+    segStart.push(route.length);
+    for (var g = segStart.length - 2; g >= 0; g--) if (segStart[g] < 0) segStart[g] = segStart[g + 1];
+  }
+  function eraIndexOf(seg) { return eraList.indexOf(data.seg[seg].era); }
+  function segCount(g) { return segStart[g + 1] - segStart[g]; }
+
+  // ---- URL hash ----
+  function hashFor(s) {
+    var q = s.pos >= route.length ? null : route[s.pos];
+    var path = "#/" + CITY_SLUGS[s.city] + "/" + (q ? slug(data.seg[q.g].era) + "/" + q.s : "complete/" + DONE_SLUG);
+    return s.name ? path + "?n=" + encodeURIComponent(s.name) : path;
+  }
+  function parseHash() {
+    var m = /^#\/([^/]+)\/([^/]+)\/([^/?]+)(?:\?(.*))?$/.exec(location.hash);
+    if (!m) return null;
+    var city = CITY_SLUGS.indexOf(m[1]);
+    if (city < 0) return { error: true };
+    var name = "";
+    try { name = (new URLSearchParams(m[4] || "").get("n") || "").slice(0, 24); } catch (e) {}
+    return { city: city, slug: m[3], name: name };
+  }
+  function resolveShared(h) {
+    if (!h || h.error) return null;
+    buildRoute(h.city);
+    if (h.slug === DONE_SLUG) return { city: h.city, pos: route.length, name: h.name };
+    for (var i = 0; i < route.length; i++) if (route[i].s === h.slug) return { city: h.city, pos: i, name: h.name };
+    return { city: h.city, pos: 0, name: h.name, missing: true };
+  }
+  function absoluteUrl(s) { return location.origin + location.pathname + hashFor(s); }
+
+  // ---- persistence ----
+  function load() {
+    try {
+      var s = JSON.parse(localStorage.getItem(KEY) || "null");
+      if (s && typeof s.pos === "number") return { city: clamp(s.city | 0, 0, 2), pos: Math.max(0, s.pos | 0), name: String(s.name || "").slice(0, 24) };
+    } catch (e) {}
+    return null;
+  }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  // ---- commands ----
+  function setPos(p) {
+    state.pos = clamp(p, 0, route.length);
+    save(); render();
+  }
+  function setCity(c) {
+    // Keep the player on the same quest if it exists in the new route, else the start.
+    var cur = route[state.pos], keep = cur ? cur.s : null;
+    state.city = c; buildRoute(c);
+    var at = 0, found = false;
+    if (keep) for (var i = 0; i < route.length; i++) if (route[i].s === keep) { at = i; found = true; break; }
+    state.pos = found ? at : (state.pos >= route.length ? route.length : 0);
+    save(); render();
+  }
+
+  // ---- rendering ----
+  var shown = state; // what the page currently displays
+  function render() {
+    shown = viewing || state;
+    var s = shown;
+    var total = route.length, done = Math.min(s.pos, total);
+    var q = route[s.pos];
+    var pct = total ? (done >= total ? 100 : Math.floor(done * 100 / total)) : 0;
+
+    $("curKicker").textContent = viewing
+      ? (s.name ? T("viewKickerNamed", "{{name}} is on", { name: s.name }) : T("viewKicker", "They are on"))
+      : (q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up"));
+    $("curQuest").textContent = q ? q.t : T("allDone", "You've finished every Main Scenario Quest. Nicely done.");
+    var meta = $("curMeta"); meta.textContent = "";
+    if (q) {
+      var sg = data.seg[q.g];
+      [eraName(sg.era), sg.name !== sg.era ? sg.name : "", T("patch", "Patch {{n}}", { n: sg.patch }), T("level", "Level {{n}}", { n: q.l }), q.p].forEach(function (t) {
+        if (!t) return; var sp = document.createElement("span"); sp.textContent = t; meta.appendChild(sp);
+      });
+    }
+    var wiki = $("curWiki");
+    if (q) {
+      wiki.hidden = false;
+      wiki.href = "https://ffxiv.consolegameswiki.com/mediawiki/index.php?search=" + encodeURIComponent(q.t);
+      wiki.textContent = T("wiki", "View on ConsoleGamesWiki") + " ↗";
+    } else wiki.hidden = true;
+
+    var ro = !!viewing;
+    $("prev").disabled = ro || s.pos <= 0;
+    $("next").disabled = ro || s.pos >= total;
+    $("jumpInput").disabled = ro; $("city").disabled = ro; $("name").disabled = ro; $("reset").disabled = ro;
+    $("city").value = String(s.city);
+    if (document.activeElement !== $("name")) $("name").value = s.name || "";
+
+    $("overallFill").style.width = pct + "%";
+    $("overallBar").setAttribute("aria-valuenow", String(pct));
+    $("overallBar").setAttribute("aria-label", T("statOverall", "Overall"));
+    $("sPct").textContent = pct + "%";
+    $("sDone").textContent = done + " / " + total;
+    $("sDoneLabel").textContent = T("statDone", "Quests completed");
+    $("sLeft").textContent = String(total - done);
+
+    renderSegs(s);
+
+    $("shareUrl").value = absoluteUrl(s);
+    var ban = $("viewBanner");
+    ban.hidden = !viewing;
+    if (viewing) {
+      $("viewText").textContent = viewing.name
+        ? T("viewBannerNamed", "You're looking at {{name}}'s progress from a shared link. Yours is untouched.", { name: viewing.name })
+        : T("viewBanner", "You're looking at someone's progress from a shared link. Yours is untouched.");
+      $("adopt").textContent = T("adopt", "Track from here");
+      $("backToMine").textContent = T("backToMine", "Back to my progress");
+      $("backToMine").hidden = !hasSaved;
+    }
+    var nt = $("notice"); nt.hidden = !noticeText; nt.textContent = noticeText;
+
+    document.title = q
+      ? q.t + " | " + T("h1", "MSQ Tracker") + " | XIVKit"
+      : T("h1", "MSQ Tracker") + " | XIVKit";
+    if (!viewing) {
+      try { history.replaceState(null, "", location.pathname + location.search + hashFor(state)); } catch (e) {}
+    }
+    $("prev").textContent = T("prev", "Back one quest");
+    $("next").textContent = T("next", "Mark done, next quest");
+    $("copyLink").textContent = T("copyLink", "Copy link");
+    $("dlPng").textContent = T("downloadPng", "Download PNG");
+    $("copyPng").textContent = T("copyPng", "Copy image");
+    $("reset").textContent = resetArmed ? T("resetConfirm", "Click again to reset") : T("reset", "Reset progress");
+  }
+
+  function renderSegs(s) {
+    var host = $("segs"); host.textContent = "";
+    data.seg.forEach(function (sg, g) {
+      var n = segCount(g); if (!n) return;
+      var d = clamp(s.pos - segStart[g], 0, n);
+      var p = Math.floor(d * 100 / n);
+      var card = document.createElement("div");
+      card.className = "seg" + (d === n ? " done" : "") + (s.pos >= segStart[g] && s.pos < segStart[g + 1] ? " here" : "");
+      var era = document.createElement("div"); era.className = "era"; era.textContent = eraName(sg.era);
+      var h = document.createElement("h3"); h.textContent = sg.name;
+      var bar = document.createElement("div"); bar.className = "bar"; bar.setAttribute("role", "progressbar");
+      bar.setAttribute("aria-valuemin", "0"); bar.setAttribute("aria-valuemax", "100"); bar.setAttribute("aria-valuenow", String(p));
+      bar.setAttribute("aria-label", sg.name);
+      var fill = document.createElement("i"); fill.style.width = p + "%"; bar.appendChild(fill);
+      var info = document.createElement("div"); info.className = "info";
+      var a = document.createElement("span"); a.textContent = T("patch", "Patch {{n}}", { n: sg.patch });
+      var b = document.createElement("span"); b.textContent = d + " / " + n;
+      info.appendChild(a); info.appendChild(b);
+      card.appendChild(era); card.appendChild(h); card.appendChild(bar); card.appendChild(info);
+      if (!viewing) {
+        var acts = document.createElement("div"); acts.className = "acts";
+        var st = document.createElement("button"); st.type = "button"; st.textContent = T("segStart", "Start here");
+        st.addEventListener("click", function () { setPos(segStart[g]); });
+        var dn = document.createElement("button"); dn.type = "button"; dn.textContent = T("segDone", "Mark done");
+        dn.addEventListener("click", function () { setPos(segStart[g + 1]); });
+        acts.appendChild(st); acts.appendChild(dn); card.appendChild(acts);
+      }
+      host.appendChild(card);
+    });
+  }
+
+  var hasSaved = false, resetArmed = false;
+
+  // ---- jump search ----
+  function renderResults() {
+    var term = $("jumpInput").value.trim().toLowerCase(), ul = $("results");
+    ul.textContent = "";
+    if (term.length < 2) { ul.hidden = true; return; }
+    var hits = [];
+    for (var i = 0; i < route.length && hits.length < 8; i++) if (route[i].t.toLowerCase().indexOf(term) >= 0) hits.push(i);
+    ul.hidden = !hits.length;
+    hits.forEach(function (i) {
+      var li = document.createElement("li"), b = document.createElement("button"), n = document.createElement("span"), sm = document.createElement("small");
+      b.type = "button"; n.textContent = route[i].t; sm.textContent = data.seg[route[i].g].name + " · " + T("level", "Level {{n}}", { n: route[i].l });
+      b.appendChild(n); b.appendChild(sm);
+      b.addEventListener("click", function () { $("jumpInput").value = ""; ul.hidden = true; setPos(i); });
+      li.appendChild(b); ul.appendChild(li);
+    });
+  }
+
+  // ---- status line ----
+  var statusTimer = 0;
+  function say(msg) {
+    $("status").textContent = msg;
+    clearTimeout(statusTimer); statusTimer = setTimeout(function () { $("status").textContent = ""; }, 4000);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+    return new Promise(function (res, rej) {
+      var el = $("shareUrl"); el.select();
+      try { document.execCommand("copy") ? res() : rej(); } catch (e) { rej(e); }
+    });
+  }
+
+  // ---- PNG card ----
+  function wrapLines(ctx, text, maxW) {
+    var words = text.split(/\s+/), lines = [], cur = "";
+    words.forEach(function (w) {
+      var test = cur ? cur + " " + w : w;
+      if (ctx.measureText(test).width <= maxW || !cur) cur = test; else { lines.push(cur); cur = w; }
+    });
+    if (cur) lines.push(cur);
+    return lines;
+  }
+  function rr(ctx, x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+  function bar(ctx, x, y, w, h, frac) {
+    ctx.fillStyle = "#14284d"; rr(ctx, x, y, w, h, h / 2); ctx.fill();
+    ctx.strokeStyle = "#3b5a8f"; ctx.lineWidth = 2; ctx.stroke();
+    if (frac > 0) {
+      var fw = Math.max(h, w * frac), g = ctx.createLinearGradient(x, 0, x + w, 0);
+      g.addColorStop(0, "#b79b5c"); g.addColorStop(1, "#fff3d0");
+      ctx.fillStyle = g; rr(ctx, x, y, fw, h, h / 2); ctx.fill();
+    }
+  }
+  function drawCard() {
+    var s = shown, W = 1200, H = 630, PAD = 70;
+    var total = route.length, done = Math.min(s.pos, total), q = route[s.pos];
+    var cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    var ctx = cv.getContext("2d"), SERIF = "Cinzel, Georgia, serif", SANS = "'Instrument Sans', system-ui, sans-serif";
+    var bg = ctx.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, "#0a1428"); bg.addColorStop(1, "#122248");
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = "#b79b5c"; ctx.lineWidth = 2; ctx.strokeRect(18, 18, W - 36, H - 36);
+    ctx.textBaseline = "alphabetic";
+
+    ctx.font = "600 30px " + SERIF; ctx.fillStyle = "#ecf2fb"; ctx.textAlign = "left";
+    ctx.fillText("XIV", PAD, 78); var xw = ctx.measureText("XIV").width;
+    ctx.fillStyle = "#ff5a50"; ctx.fillText("KIT", PAD + xw, 78);
+    ctx.font = "600 20px " + SANS; ctx.fillStyle = "#8fd3ff"; ctx.textAlign = "right";
+    ctx.fillText((s.name ? s.name + " · " : "") + T("cardTitle", "MSQ progress").toUpperCase(), W - PAD, 76);
+
+    ctx.textAlign = "left"; ctx.font = "600 20px " + SANS; ctx.fillStyle = "#8fd3ff";
+    ctx.fillText((q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up")).toUpperCase(), PAD, 140);
+
+    var title = q ? q.t : T("cardDone", "Every MSQ quest done"), size = 64, lines;
+    for (; size >= 36; size -= 4) {
+      ctx.font = "900 " + size + "px " + SERIF; lines = wrapLines(ctx, title, W - PAD * 2);
+      if (lines.length <= 2) break;
+    }
+    ctx.fillStyle = "#f4e9cc";
+    lines.slice(0, 2).forEach(function (ln, i) { ctx.fillText(ln, PAD, 140 + 20 + size + i * (size + 6)); });
+    var afterTitle = 140 + 20 + size + (Math.min(lines.length, 2) - 1) * (size + 6);
+
+    if (q) {
+      var sg = data.seg[q.g];
+      ctx.font = "500 24px " + SANS; ctx.fillStyle = "#bccbe4";
+      ctx.fillText([sg.name, T("patch", "Patch {{n}}", { n: sg.patch }), T("level", "Level {{n}}", { n: q.l }), q.p].filter(Boolean).join("  ·  "), PAD, afterTitle + 42);
+    }
+
+    var pct = total ? (done >= total ? 100 : Math.floor(done * 100 / total)) : 0, by = 392;
+    ctx.font = "900 54px " + SERIF; ctx.fillStyle = "#fff3d0"; ctx.fillText(pct + "%", PAD, by);
+    ctx.font = "600 24px " + SANS; ctx.fillStyle = "#bccbe4"; ctx.textAlign = "right";
+    ctx.fillText(T("cardCount", "{{done}} of {{total}} quests", { done: done, total: total }), W - PAD, by - 4);
+    ctx.textAlign = "left"; bar(ctx, PAD, by + 18, W - PAD * 2, 30, total ? done / total : 0);
+
+    var cols = eraList.length, gap = 18, cw = (W - PAD * 2 - gap * (cols - 1)) / cols, ey = 492;
+    eraList.forEach(function (era, i) {
+      var first = -1, last = -1;
+      data.seg.forEach(function (sg, g) { if (sg.era === era && segCount(g)) { if (first < 0) first = segStart[g]; last = segStart[g + 1]; } });
+      var n = Math.max(0, last - first), d = clamp(s.pos - first, 0, n), x = PAD + i * (cw + gap);
+      ctx.font = "600 17px " + SANS; ctx.fillStyle = "#a9bcdc";
+      var label = eraName(era); while (ctx.measureText(label).width > cw && label.length > 3) label = label.slice(0, -1);
+      ctx.fillText(label, x, ey);
+      bar(ctx, x, ey + 12, cw, 16, n ? d / n : 0);
+      ctx.font = "600 16px " + SANS; ctx.fillStyle = "#8fa3c7"; ctx.fillText((n ? Math.floor(d * 100 / n) : 0) + "%", x, ey + 54);
+    });
+
+    ctx.font = "500 18px " + SANS; ctx.fillStyle = "#8fa3c7";
+    var url = absoluteUrl(s).replace(/^https?:\/\//, "");
+    while (ctx.measureText(url).width > W - PAD * 2 && url.length > 12) url = url.slice(0, -2);
+    if (url !== absoluteUrl(s).replace(/^https?:\/\//, "")) url += "…";
+    ctx.fillText(url, PAD, H - 44);
+    return cv;
+  }
+  function cardBlob() {
+    var fonts = (document.fonts && document.fonts.load)
+      ? Promise.all([document.fonts.load("900 64px Cinzel"), document.fonts.load("600 30px Cinzel"), document.fonts.load("600 20px 'Instrument Sans'"), document.fonts.load("500 24px 'Instrument Sans'")]).catch(function () {})
+      : Promise.resolve();
+    return fonts.then(function () {
+      return new Promise(function (res) { drawCard().toBlob(res, "image/png"); });
+    });
+  }
+  function fileName() {
+    var q = route[shown.pos];
+    return "msq-" + (q ? q.s : "complete") + ".png";
+  }
+  function download() {
+    cardBlob().then(function (blob) {
+      if (!blob) { say(T("pngFail", "Couldn't build the image in this browser.")); return; }
+      var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = fileName();
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
+      say(T("pngSaved", "Saved {{file}}", { file: fileName() }));
+    });
+  }
+  function copyImage() {
+    cardBlob().then(function (blob) {
+      if (!blob) { say(T("pngFail", "Couldn't build the image in this browser.")); return; }
+      if (navigator.clipboard && window.ClipboardItem) {
+        navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]).then(
+          function () { say(T("imageCopied", "Image copied.")); },
+          function () { download(); }
+        );
+      } else download();
+    });
+  }
+
+  // ---- wiring ----
+  function wire() {
+    $("next").addEventListener("click", function () { setPos(state.pos + 1); });
+    $("prev").addEventListener("click", function () { setPos(state.pos - 1); });
+    $("city").addEventListener("change", function () { setCity(+this.value); });
+    $("name").addEventListener("input", function () { state.name = this.value.slice(0, 24); save(); render(); });
+    $("jumpInput").addEventListener("input", renderResults);
+    $("jumpInput").addEventListener("keydown", function (e) { if (e.key === "Escape") { this.value = ""; renderResults(); } });
+    $("copyLink").addEventListener("click", function () {
+      copyText($("shareUrl").value).then(function () { say(T("linkCopied", "Link copied.")); }, function () { $("shareUrl").select(); say(T("linkSelect", "Press Ctrl+C to copy the selected link.")); });
+    });
+    $("shareUrl").addEventListener("focus", function () { this.select(); });
+    $("dlPng").addEventListener("click", download);
+    $("copyPng").addEventListener("click", copyImage);
+    $("reset").addEventListener("click", function () {
+      if (!resetArmed) { resetArmed = true; render(); setTimeout(function () { resetArmed = false; render(); }, 4000); return; }
+      resetArmed = false; state.pos = 0; save(); render();
+    });
+    $("adopt").addEventListener("click", function () {
+      state = { city: viewing.city, pos: viewing.pos, name: viewing.name }; viewing = null; noticeText = "";
+      buildRoute(state.city); hasSaved = true; save(); render();
+    });
+    $("backToMine").addEventListener("click", function () {
+      viewing = null; noticeText = ""; buildRoute(state.city); render();
+    });
+    window.addEventListener("hashchange", function () {
+      var cur = hashFor(viewing || state);
+      if (location.hash === cur || location.hash === "") return;
+      applyHash(); fillCities(); render();
+    });
+    document.addEventListener("click", function (e) { if (!e.target.closest(".jump")) $("results").hidden = true; });
+    document.addEventListener("i18nready", function () { fillCities(); render(); });
+    if (window.i18next) i18next.on("languageChanged", function () { fillCities(); render(); });
+  }
+
+  function fillCities() {
+    var sel = $("city"), v = sel.value; sel.textContent = "";
+    CITY_NAMES.forEach(function (n, i) { var o = document.createElement("option"); o.value = String(i); o.textContent = cityName(i); sel.appendChild(o); });
+    sel.value = v || String(shown.city);
+  }
+
+  function applyHash() {
+    var saved = load(), h = parseHash();
+    hasSaved = !!saved;
+    noticeText = "";
+    var shared = h ? resolveShared(h) : null;
+    if (h && h.error) noticeText = T("badLink", "That link didn't match any quest, so this is your own progress.");
+    if (shared) {
+      if (shared.missing) noticeText = T("missingQuest", "That link names a quest this tracker doesn't know, so it starts at the beginning. Quest names can change between patches.");
+      var same = saved && saved.city === shared.city && saved.pos === shared.pos && saved.name === shared.name;
+      if (!same) {
+        viewing = shared;
+        state = saved || { city: shared.city, pos: 0, name: "" };
+        buildRoute(shared.city);
+        return;
+      }
+    }
+    viewing = null;
+    state = saved || { city: 0, pos: 0, name: "" };
+    buildRoute(state.city);
+    state.pos = clamp(state.pos, 0, route.length);
+  }
+
+  fetch("msq.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
+    data = j;
+    j.seg.forEach(function (sg) { if (eraList.indexOf(sg.era) < 0) eraList.push(sg.era); });
+    applyHash(); fillCities(); wire(); render();
+  }).catch(function () {
+    $("curQuest").textContent = "Couldn't load the quest list. Refresh to try again.";
+  });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+<script src="i18n.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "dateModified": "2026-11-02",
+  "name": "FFXIV MSQ Tracker",
+  "description": "Track Main Scenario Quest progress, share it as a link with the quest name in it, and export a PNG progress card.",
+  "url": "https://xivkit.com/msq-tracker.html",
+  "image": "https://xivkit.com/og-msq-tracker.png",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "XIVKit",
+    "url": "https://xivkit.com/"
+  }
+}
+</script>
+</body>
+</html>

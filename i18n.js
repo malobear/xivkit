@@ -72,7 +72,7 @@
     var params = new URLSearchParams(location.search);
     if (lang === 'en') { params.delete('lang'); } else { params.set('lang', lang); }
     var qs = params.toString();
-    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash);
   }
 
   function buildLangBar() {
