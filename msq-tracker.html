@@ -268,24 +268,34 @@ footer.sources .legal{font-size:13px;opacity:.75}
   // ---- URL hash ----
   function hashFor(s) {
     var q = s.pos >= route.length ? null : route[s.pos];
-    var path = "#/" + CITY_SLUGS[s.city] + "/" + (q ? slug(data.seg[q.g].era) + "/" + q.s : "complete/" + DONE_SLUG);
+    var path = "#/" + (q ? slug(data.seg[q.g].era) + "/" + q.s : "complete/" + DONE_SLUG);
     return s.name ? path + "?n=" + encodeURIComponent(s.name) : path;
   }
   function parseHash() {
-    var m = /^#\/([^/]+)\/([^/]+)\/([^/?]+)(?:\?(.*))?$/.exec(location.hash);
+    // Current form is #/<era>/<quest>. An older #/<city>/<era>/<quest> is still read.
+    var m = /^#\/(?:([^/]+)\/)?([^/]+)\/([^/?]+)(?:\?(.*))?$/.exec(location.hash);
     if (!m) return null;
-    var city = CITY_SLUGS.indexOf(m[1]);
-    if (city < 0) return { error: true };
+    var city = null;
+    if (m[1]) { city = CITY_SLUGS.indexOf(m[1]); if (city < 0) return { error: true }; }
     var name = "";
     try { name = (new URLSearchParams(m[4] || "").get("n") || "").slice(0, 24); } catch (e) {}
     return { city: city, slug: m[3], name: name };
   }
-  function resolveShared(h) {
+  function lowestCity(mask) { return mask & 1 ? 0 : mask & 2 ? 1 : 2; }
+  // The city is not in the link. A quest only some cities do names its city; otherwise
+  // the link opens on the viewer's own saved city (Gridania if they have none).
+  function resolveShared(h, savedCity) {
     if (!h || h.error) return null;
-    buildRoute(h.city);
-    if (h.slug === DONE_SLUG) return { city: h.city, pos: route.length, name: h.name };
-    for (var i = 0; i < route.length; i++) if (route[i].s === h.slug) return { city: h.city, pos: i, name: h.name };
-    return { city: h.city, pos: 0, name: h.name, missing: true };
+    var city = h.city;
+    if (city == null) {
+      var hit = null;
+      for (var k = 0; k < data.q.length; k++) if (data.q[k].s === h.slug) { hit = data.q[k]; break; }
+      city = hit && hit.c != null ? lowestCity(hit.c) : (savedCity != null ? savedCity : 0);
+    }
+    buildRoute(city);
+    if (h.slug === DONE_SLUG) return { city: city, pos: route.length, name: h.name };
+    for (var i = 0; i < route.length; i++) if (route[i].s === h.slug) return { city: city, pos: i, name: h.name };
+    return { city: city, pos: 0, name: h.name, missing: true };
   }
   function absoluteUrl(s) { return location.origin + location.pathname + hashFor(s); }
 
@@ -538,7 +548,8 @@ footer.sources .legal{font-size:13px;opacity:.75}
   }
   function fileName() {
     var q = route[shown.pos];
-    return "msq-" + (q ? q.s : "complete") + ".png";
+    var base = (q ? q.t : T("cardDone", "Every MSQ quest done")).replace(/[\/:*?"<>|\u0000-\u001f]+/g, "").replace(/\s+/g, " ").trim();
+    return (base || "MSQ progress") + ".png";
   }
   function download() {
     cardBlob().then(function (blob) {
@@ -606,7 +617,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     var saved = load(), h = parseHash();
     hasSaved = !!saved;
     noticeText = "";
-    var shared = h ? resolveShared(h) : null;
+    var shared = h ? resolveShared(h, saved ? saved.city : null) : null;
     if (h && h.error) noticeText = T("badLink", "That link didn't match any quest, so this is your own progress.");
     if (shared) {
       if (shared.missing) noticeText = T("missingQuest", "That link names a quest this tracker doesn't know, so it starts at the beginning. Quest names can change between patches.");

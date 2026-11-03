@@ -46,12 +46,17 @@ Plain static site: `index.html`, `styles.css`, `app.js` (~28 KB), `msq-quests.js
 
 **Shareable URL.** Static GitHub Pages host, so no path routing. Use the hash:
 
-    msq-tracker.html#/gridania/dawntrail/the-wheel-of-fortune
+    msq-tracker.html#/dawntrail/a-city-of-stairs
 
 - `history.replaceState` on every progress change so the address bar is always
   copy-pasteable. No reload, no extra history entries.
-- Slug is built from the wiki page title (so duplicates like *Close to Home (Gridania)*
-  stay unique). City is in the URL because the ARR opening quests differ per city.
+- Slug is built from the quest title, with the place added for repeats (so *Close to Home*
+  stays unique per city). The starting city is not in the link: it only matters for the
+  first few levels. A city-only opening quest has its own slug, which names its city; a
+  later quest opens on the viewer's saved city (Gridania if none), so counts can differ by
+  a couple of quests between cities. The older `#/<city>/<era>/<quest>` form still opens.
+- The PNG downloads as `<Quest name>.png`. Browsers cannot name a clipboard image, so Copy
+  image pastes under whatever name the receiving app gives it.
 - Opening a link loads that position. If the visitor has saved progress of their own, show
   a banner "Viewing Tristan's link. Keep my own progress / Use this one" and never
   overwrite their saved state silently.
