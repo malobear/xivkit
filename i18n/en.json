@@ -281,9 +281,6 @@
     "msqTracker": {
       "h1": "MSQ Tracker",
       "lede": "Track your Main Scenario Quest progress. Your place lives in the page link, so you can paste it to a friend.",
-      "cityLabel": "Starting city",
-      "nameLabel": "Your name (optional)",
-      "namePlaceholder": "Shown on the image and in the link",
       "jumpLabel": "I'm on a different quest",
       "jumpPlaceholder": "Search for a quest by name",
       "progressHeading": "Progress",
@@ -299,13 +296,11 @@
       "kickerNow": "Current quest",
       "kickerDone": "All caught up",
       "viewKicker": "They are on",
-      "viewKickerNamed": "{{name}} is on",
       "allDone": "You've finished every Main Scenario Quest. Nicely done.",
       "patch": "Patch {{n}}",
       "level": "Level {{n}}",
       "wiki": "View on ConsoleGamesWiki",
       "viewBanner": "You're looking at someone's progress from a shared link. Yours is untouched.",
-      "viewBannerNamed": "You're looking at {{name}}'s progress from a shared link. Yours is untouched.",
       "adopt": "Track from here",
       "backToMine": "Back to my progress",
       "prev": "Back one quest",
@@ -334,11 +329,6 @@
         "shadowbringers": "Shadowbringers",
         "endwalker": "Endwalker",
         "dawntrail": "Dawntrail"
-      },
-      "cities": {
-        "gridania": "Gridania",
-        "limsa-lominsa": "Limsa Lominsa",
-        "uldah": "Ul'dah"
       }
     }
   },

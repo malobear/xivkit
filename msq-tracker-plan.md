@@ -159,10 +159,16 @@ official localized titles; quest titles and questline names stay in English).
 7. **Stretch:** import from MSQTracker JSON, optional "stats" view (levels, patches), a
    compact embed image.
 
+## Decisions
+
+- No starting-city picker and no name field. The route follows the quest instead: the jump
+  search lists every city's opening quests with their city, and picking one (for example
+  *Close to Home*, Ul'dah) switches the route. A new visitor starts on the Gridania route.
+  Old links with `?n=` still open, and the name is ignored.
+
 ## Open questions
 
-- Name on the PNG: show a character/display name field (optional, stored locally and put
-  in the URL as `?n=`)? Probably yes, off by default.
-- Do we sort finished expansions to the bottom like MSQTracker, or keep story order?
+- Do we sort finished expansions to the bottom like MSQTracker, or keep story order? (Kept
+  in story order for now.)
 - Include Seventh Astral Era / post-patch quests in the overall %, as MSQTracker does
   (yes, to match what players expect from the in-game MSQ list).

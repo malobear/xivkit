@@ -281,9 +281,6 @@
     "msqTracker": {
       "h1": "MSQトラッカー",
       "lede": "メインクエストの進行状況を記録します。現在位置はページのリンクに入るので、そのまま友達に貼って共有できます。",
-      "cityLabel": "開始都市",
-      "nameLabel": "名前(任意)",
-      "namePlaceholder": "画像とリンクに表示されます",
       "jumpLabel": "別のクエストを進行中",
       "jumpPlaceholder": "クエスト名で検索",
       "progressHeading": "進行状況",
@@ -299,13 +296,11 @@
       "kickerNow": "現在のクエスト",
       "kickerDone": "すべて完了",
       "viewKicker": "進行中のクエスト",
-      "viewKickerNamed": "{{name}}さんの進行中のクエスト",
       "allDone": "すべてのメインクエストをクリアしました。お疲れさまでした。",
       "patch": "パッチ{{n}}",
       "level": "レベル{{n}}",
       "wiki": "ConsoleGamesWikiで見る",
       "viewBanner": "共有リンクから誰かの進行状況を表示しています。あなたの記録は変更されません。",
-      "viewBannerNamed": "共有リンクから{{name}}さんの進行状況を表示しています。あなたの記録は変更されません。",
       "adopt": "ここから記録する",
       "backToMine": "自分の進行状況に戻る",
       "prev": "1つ前のクエスト",
@@ -334,11 +329,6 @@
         "shadowbringers": "漆黒のヴィランズ",
         "endwalker": "暁月のフィナーレ",
         "dawntrail": "黄金のレガシー"
-      },
-      "cities": {
-        "gridania": "グリダニア",
-        "limsa-lominsa": "リムサ・ロミンサ",
-        "uldah": "ウルダハ"
       }
     }
   },

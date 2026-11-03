@@ -149,19 +149,6 @@ footer.sources .legal{font-size:13px;opacity:.75}
 </div>
 <p class="notice" id="notice" hidden></p>
 
-<section class="card">
-  <div class="row">
-    <div class="field">
-      <label for="city" data-i18n="pages.msqTracker.cityLabel">Starting city</label>
-      <select id="city"></select>
-    </div>
-    <div class="field">
-      <label for="name" data-i18n="pages.msqTracker.nameLabel">Your name (optional)</label>
-      <input type="text" id="name" maxlength="24" autocomplete="off" data-i18n="pages.msqTracker.namePlaceholder" data-i18n-placeholder placeholder="Shown on the image and in the link">
-    </div>
-  </div>
-</section>
-
 <section class="card current" aria-live="polite">
   <div class="kicker" id="curKicker"></div>
   <p class="quest" id="curQuest">Loading...</p>
@@ -227,12 +214,11 @@ footer.sources .legal{font-size:13px;opacity:.75}
   "use strict";
   var KEY = "xivkit-msq-v1";
   var CITY_SLUGS = ["gridania", "limsa-lominsa", "uldah"];
-  var CITY_NAMES = ["Gridania", "Limsa Lominsa", "Ul'dah"];
   var DONE_SLUG = "all-done";
   var $ = function (id) { return document.getElementById(id); };
 
   var data = null, route = [], segStart = [], eraList = [];
-  var state = { city: 0, pos: 0, name: "" };
+  var state = { city: 0, pos: 0 };
   var viewing = null; // a shared state being looked at but not saved
   var noticeText = "";
 
@@ -247,7 +233,6 @@ footer.sources .legal{font-size:13px;opacity:.75}
     return out.replace(/\{\{(\w+)\}\}/g, function (m, k) { return vars && vars[k] != null ? vars[k] : m; });
   }
   function eraName(era) { return T("eras." + slug(era), era); }
-  function cityName(i) { return T("cities." + CITY_SLUGS[i], CITY_NAMES[i]); }
 
   function slug(s) {
     return String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -269,7 +254,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
   function hashFor(s) {
     var q = s.pos >= route.length ? null : route[s.pos];
     var path = "#/" + (q ? slug(data.seg[q.g].era) + "/" + q.s : "complete/" + DONE_SLUG);
-    return s.name ? path + "?n=" + encodeURIComponent(s.name) : path;
+    return path;
   }
   function parseHash() {
     // Current form is #/<era>/<quest>. An older #/<city>/<era>/<quest> is still read.
@@ -277,9 +262,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     if (!m) return null;
     var city = null;
     if (m[1]) { city = CITY_SLUGS.indexOf(m[1]); if (city < 0) return { error: true }; }
-    var name = "";
-    try { name = (new URLSearchParams(m[4] || "").get("n") || "").slice(0, 24); } catch (e) {}
-    return { city: city, slug: m[3], name: name };
+    return { city: city, slug: m[3] };
   }
   function lowestCity(mask) { return mask & 1 ? 0 : mask & 2 ? 1 : 2; }
   // The city is not in the link. A quest only some cities do names its city; otherwise
@@ -293,9 +276,9 @@ footer.sources .legal{font-size:13px;opacity:.75}
       city = hit && hit.c != null ? lowestCity(hit.c) : (savedCity != null ? savedCity : 0);
     }
     buildRoute(city);
-    if (h.slug === DONE_SLUG) return { city: city, pos: route.length, name: h.name };
-    for (var i = 0; i < route.length; i++) if (route[i].s === h.slug) return { city: city, pos: i, name: h.name };
-    return { city: city, pos: 0, name: h.name, missing: true };
+    if (h.slug === DONE_SLUG) return { city: city, pos: route.length };
+    for (var i = 0; i < route.length; i++) if (route[i].s === h.slug) return { city: city, pos: i };
+    return { city: city, pos: 0, missing: true };
   }
   function absoluteUrl(s) { return location.origin + location.pathname + hashFor(s); }
 
@@ -303,7 +286,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
   function load() {
     try {
       var s = JSON.parse(localStorage.getItem(KEY) || "null");
-      if (s && typeof s.pos === "number") return { city: clamp(s.city | 0, 0, 2), pos: Math.max(0, s.pos | 0), name: String(s.name || "").slice(0, 24) };
+      if (s && typeof s.pos === "number") return { city: clamp(s.city | 0, 0, 2), pos: Math.max(0, s.pos | 0) };
     } catch (e) {}
     return null;
   }
@@ -314,14 +297,10 @@ footer.sources .legal{font-size:13px;opacity:.75}
     state.pos = clamp(p, 0, route.length);
     save(); render();
   }
-  function setCity(c) {
-    // Keep the player on the same quest if it exists in the new route, else the start.
-    var cur = route[state.pos], keep = cur ? cur.s : null;
-    state.city = c; buildRoute(c);
-    var at = 0, found = false;
-    if (keep) for (var i = 0; i < route.length; i++) if (route[i].s === keep) { at = i; found = true; break; }
-    state.pos = found ? at : (state.pos >= route.length ? route.length : 0);
-    save(); render();
+  // Jump to a quest by slug. A quest only some cities do switches the route to one of them.
+  function jumpTo(hit) {
+    if (hit.c != null && !(((hit.c >> state.city) & 1) === 1)) { state.city = lowestCity(hit.c); buildRoute(state.city); }
+    for (var i = 0; i < route.length; i++) if (route[i].s === hit.s) { setPos(i); return; }
   }
 
   // ---- rendering ----
@@ -334,7 +313,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     var pct = total ? (done >= total ? 100 : Math.floor(done * 100 / total)) : 0;
 
     $("curKicker").textContent = viewing
-      ? (s.name ? T("viewKickerNamed", "{{name}} is on", { name: s.name }) : T("viewKicker", "They are on"))
+      ? T("viewKicker", "They are on")
       : (q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up"));
     $("curQuest").textContent = q ? q.t : T("allDone", "You've finished every Main Scenario Quest. Nicely done.");
     var meta = $("curMeta"); meta.textContent = "";
@@ -354,9 +333,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     var ro = !!viewing;
     $("prev").disabled = ro || s.pos <= 0;
     $("next").disabled = ro || s.pos >= total;
-    $("jumpInput").disabled = ro; $("city").disabled = ro; $("name").disabled = ro; $("reset").disabled = ro;
-    $("city").value = String(s.city);
-    if (document.activeElement !== $("name")) $("name").value = s.name || "";
+    $("jumpInput").disabled = ro; $("reset").disabled = ro;
 
     $("overallFill").style.width = pct + "%";
     $("overallBar").setAttribute("aria-valuenow", String(pct));
@@ -372,9 +349,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     var ban = $("viewBanner");
     ban.hidden = !viewing;
     if (viewing) {
-      $("viewText").textContent = viewing.name
-        ? T("viewBannerNamed", "You're looking at {{name}}'s progress from a shared link. Yours is untouched.", { name: viewing.name })
-        : T("viewBanner", "You're looking at someone's progress from a shared link. Yours is untouched.");
+      $("viewText").textContent = T("viewBanner", "You're looking at someone's progress from a shared link. Yours is untouched.");
       $("adopt").textContent = T("adopt", "Track from here");
       $("backToMine").textContent = T("backToMine", "Back to my progress");
       $("backToMine").hidden = !hasSaved;
@@ -434,13 +409,14 @@ footer.sources .legal{font-size:13px;opacity:.75}
     ul.textContent = "";
     if (term.length < 2) { ul.hidden = true; return; }
     var hits = [];
-    for (var i = 0; i < route.length && hits.length < 8; i++) if (route[i].t.toLowerCase().indexOf(term) >= 0) hits.push(i);
+    for (var i = 0; i < data.q.length && hits.length < 8; i++) if (data.q[i].t.toLowerCase().indexOf(term) >= 0) hits.push(data.q[i]);
     ul.hidden = !hits.length;
-    hits.forEach(function (i) {
+    hits.forEach(function (q) {
       var li = document.createElement("li"), b = document.createElement("button"), n = document.createElement("span"), sm = document.createElement("small");
-      b.type = "button"; n.textContent = route[i].t; sm.textContent = data.seg[route[i].g].name + " · " + T("level", "Level {{n}}", { n: route[i].l });
+      b.type = "button"; n.textContent = q.t;
+      sm.textContent = [data.seg[q.g].name, T("level", "Level {{n}}", { n: q.l }), q.c != null ? q.p : ""].filter(Boolean).join(" \u00b7 ");
       b.appendChild(n); b.appendChild(sm);
-      b.addEventListener("click", function () { $("jumpInput").value = ""; ul.hidden = true; setPos(i); });
+      b.addEventListener("click", function () { $("jumpInput").value = ""; ul.hidden = true; jumpTo(q); });
       li.appendChild(b); ul.appendChild(li);
     });
   }
@@ -492,7 +468,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     spaced("2.2px"); ctx.font = "600 22px " + CAPS; ctx.fillStyle = INK; ctx.fillText("XIV", PAD, 84);
     var xw = ctx.measureText("XIV").width; ctx.fillStyle = RED; ctx.fillText("KIT", PAD + xw, 84);
     spaced("1.2px"); ctx.font = "600 14px " + MONO; ctx.fillStyle = MUTED; ctx.textAlign = "right";
-    ctx.fillText(((s.name ? s.name + "  ·  " : "") + T("cardTitle", "MSQ progress")).toUpperCase(), W - PAD, 82);
+    ctx.fillText(T("cardTitle", "MSQ progress").toUpperCase(), W - PAD, 82);
 
     ctx.textAlign = "left"; ctx.fillStyle = RED; ctx.font = "600 14px " + MONO;
     ctx.fillText((q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up")).toUpperCase(), PAD, 156);
@@ -576,8 +552,6 @@ footer.sources .legal{font-size:13px;opacity:.75}
   function wire() {
     $("next").addEventListener("click", function () { setPos(state.pos + 1); });
     $("prev").addEventListener("click", function () { setPos(state.pos - 1); });
-    $("city").addEventListener("change", function () { setCity(+this.value); });
-    $("name").addEventListener("input", function () { state.name = this.value.slice(0, 24); save(); render(); });
     $("jumpInput").addEventListener("input", renderResults);
     $("jumpInput").addEventListener("keydown", function (e) { if (e.key === "Escape") { this.value = ""; renderResults(); } });
     $("copyLink").addEventListener("click", function () {
@@ -591,7 +565,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
       resetArmed = false; state.pos = 0; save(); render();
     });
     $("adopt").addEventListener("click", function () {
-      state = { city: viewing.city, pos: viewing.pos, name: viewing.name }; viewing = null; noticeText = "";
+      state = { city: viewing.city, pos: viewing.pos }; viewing = null; noticeText = "";
       buildRoute(state.city); hasSaved = true; save(); render();
     });
     $("backToMine").addEventListener("click", function () {
@@ -600,17 +574,11 @@ footer.sources .legal{font-size:13px;opacity:.75}
     window.addEventListener("hashchange", function () {
       var cur = hashFor(viewing || state);
       if (location.hash === cur || location.hash === "") return;
-      applyHash(); fillCities(); render();
+      applyHash(); render();
     });
     document.addEventListener("click", function (e) { if (!e.target.closest(".jump")) $("results").hidden = true; });
-    document.addEventListener("i18nready", function () { fillCities(); render(); });
-    if (window.i18next) i18next.on("languageChanged", function () { fillCities(); render(); });
-  }
-
-  function fillCities() {
-    var sel = $("city"), v = sel.value; sel.textContent = "";
-    CITY_NAMES.forEach(function (n, i) { var o = document.createElement("option"); o.value = String(i); o.textContent = cityName(i); sel.appendChild(o); });
-    sel.value = v || String(shown.city);
+    document.addEventListener("i18nready", render);
+    if (window.i18next) i18next.on("languageChanged", render);
   }
 
   function applyHash() {
@@ -621,16 +589,16 @@ footer.sources .legal{font-size:13px;opacity:.75}
     if (h && h.error) noticeText = T("badLink", "That link didn't match any quest, so this is your own progress.");
     if (shared) {
       if (shared.missing) noticeText = T("missingQuest", "That link names a quest this tracker doesn't know, so it starts at the beginning. Quest names can change between patches.");
-      var same = saved && saved.city === shared.city && saved.pos === shared.pos && saved.name === shared.name;
+      var same = saved && saved.city === shared.city && saved.pos === shared.pos;
       if (!same) {
         viewing = shared;
-        state = saved || { city: shared.city, pos: 0, name: "" };
+        state = saved || { city: shared.city, pos: 0 };
         buildRoute(shared.city);
         return;
       }
     }
     viewing = null;
-    state = saved || { city: 0, pos: 0, name: "" };
+    state = saved || { city: 0, pos: 0 };
     buildRoute(state.city);
     state.pos = clamp(state.pos, 0, route.length);
   }
@@ -638,7 +606,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
   fetch("msq.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
     data = j;
     j.seg.forEach(function (sg) { if (eraList.indexOf(sg.era) < 0) eraList.push(sg.era); });
-    applyHash(); fillCities(); wire(); render();
+    applyHash(); wire(); render();
   }).catch(function () {
     $("curQuest").textContent = "Couldn't load the quest list. Refresh to try again.";
   });
