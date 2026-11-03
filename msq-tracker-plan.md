@@ -129,8 +129,8 @@ Do not copy msqtracker.com's data files. Generate our own with `scripts/msq.mjs`
 
 ## Page build (`msq-tracker.html`)
 
-Follows the site conventions in `CLAUDE.md`:
-- **Styling follows the XIVKit design guide** (https://claude.ai/artifact/7XBshQSWtUw9km9nFoNa8K) through
+Follows the site's project conventions (translations, item icons, copy style):
+- **Styling follows the XIVKit design guide** through
   `brand.css`: Noir/Silk themes, one red, Instrument Sans titles, mono eyebrow labels, Cinzel only
   in the wordmark. The PNG card uses the Noir tokens and fonts, and is always dark like the OG cards.
 - Standard header/footer, brand CSS, language bar, four locales (en/ja/de/fr). Keys under
