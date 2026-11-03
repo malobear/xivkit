@@ -26,6 +26,7 @@ const CARDS = [
   { name: "retainer-ventures", title: "Retainer ventures: what to send them for", description: "Every venture ranked by what it earns on the market board for your retainer, with live prices and how fast it sells.", tags: ["market", "retainer"] },
   { name: "keybound-brawler", title: "Keybound Brawler: the grind math", description: "What every reward costs in MGC, how many runs it takes, and how long the title grind really is.", tags: ["guide", "events"], theme: "event", kicker: "Gold Saucer \u00d7 FFVII Remake", heading: "Keybound<br>Brawler", logo: "keybound-brawler-logo.png" },
   { name: "fanfest-bingo", title: "Fan Fest keynote bingo maker", description: "Build a card, randomize it, play along live, and export a PNG to share.", tags: ["tool", "events"], theme: "evercold", kicker: "Fan Fest \u00b7 Evercold keynote", heading: "Keynote<br>Bingo", bg: "fanfest-bingo-bg.jpg" },
+  { name: "msq-tracker", title: "MSQ tracker with a shareable link", description: "Track your Main Scenario Quest progress, with your current quest in a link you can paste and a PNG progress card to share.", tags: ["tool", "msq", "tracker"] },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 

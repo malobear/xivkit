@@ -97,6 +97,28 @@ for (const group of groups.values()) {
   for (const q of group) alias.set(q.id, rep.id);
   kept.push(rep);
 }
+
+// Alternatives with different names: the follow-up each Grand Company gets after
+// "The Company You Keep". A player does exactly one, and all three lead to the same next
+// quest, so they count once. Other parallel quests (the three Moogle trials, for example)
+// are all required and stay separate.
+const ALTERNATIVES = [
+  {
+    names: ["Wood's Will Be Done", "Till Sea Swallows All", "For Coin and Country"],
+    title: "Wood's Will Be Done / Till Sea Swallows All / For Coin and Country",
+    slug: "grand-company-quest",
+  },
+];
+for (const alt of ALTERNATIVES) {
+  const members = kept.filter((q) => alt.names.includes(q.name)).sort((a, b) => a.id - b.id);
+  if (members.length !== alt.names.length) throw new Error(`Alternatives not found: ${alt.names.join(", ")}`);
+  const rep = members[0];
+  rep.name = alt.title;
+  rep.slug = alt.slug;
+  rep.place = "";
+  for (const q of members) alias.set(q.id, rep.id);
+  for (const q of members.slice(1)) kept.splice(kept.indexOf(q), 1);
+}
 const byId = new Map(kept.map((q) => [q.id, q]));
 for (const q of kept) {
   q.prev = [...new Set(q.prev.map((p) => alias.get(p)).filter((p) => p && p !== q.id))];
@@ -148,9 +170,10 @@ const slugOf = (s) =>
 
 // Slugs must be unique within any one city's route. Repeats get the place appended.
 const used = new Map();
-for (const q of ordered) used.set(slugOf(q.name), (used.get(slugOf(q.name)) ?? 0) + 1);
+const slugFor = (q) => q.slug ?? slugOf(q.name);
+for (const q of ordered) used.set(slugFor(q), (used.get(slugFor(q)) ?? 0) + 1);
 const out = ordered.map((q) => {
-  let s = slugOf(q.name);
+  let s = slugFor(q);
   if (used.get(s) > 1) s += `-${slugOf(q.place)}`;
   const cities = reach.get(q.id);
   const row = { t: q.name, s, l: q.level, p: q.place, g: q.seg };

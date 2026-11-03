@@ -111,6 +111,14 @@ Do not copy msqtracker.com's data files. Generate our own with `scripts/msq.mjs`
   995 titles land in the same relative order. Known differences: 4 quests out of order in
   the opening segment, 1 in Stormblood, 1 renamed Endwalker quest, and our 4 extra 7.5
   quests. Worth a manual look at the opening segment before launch.
+- **Order check done (2026-11-02).** Compared route by route against the wiki-derived order.
+  The opening segment turned up a real bug: each Grand Company has its own follow-up to *The
+  Company You Keep* (*Wood's Will Be Done*, *Till Sea Swallows All*, *For Coin and Country*),
+  all leading to *Sylph-management*, and we counted all three. They now collapse into one
+  entry (`ALTERNATIVES` in `scripts/msq.mjs`), giving 1,041 quests and 995 to 996 per route.
+  The other differences are not errors: *The Last Voyage* sits two spots from the wiki (a tie
+  between parallel quests), and the wiki spells *A Test of Will* with one Greek letter where
+  the game data has two. Parallel quests that are all required (the Moogle trials) stay.
 - Query gotchas: use `@as(raw)` on reference fields (returned keys keep the suffix),
   omit `after` on the first page, and do not request `SortKey` (it is not a field).
 - Fallback / cross-check: ConsoleGamesWiki MSQ pages (CC BY-SA, credit required) for
