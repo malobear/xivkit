@@ -184,6 +184,14 @@ decision to push. After each patch, re-run `pnpm msq`.
   card. The wiki link is a small external-link icon after the title. Image endpoint sends
   `access-control-allow-origin: *`, so the canvas is not tainted.
 
+- Shared with the Evercold prep guide (2026-11-02): `msq-core.js` holds the saved progress
+  (`xivkit-msq-v1` in localStorage), the route per starting city, the `#/<expansion>/<quest>`
+  link format and the quest search, and both pages use it. The guide's section 2 has a compact
+  planner built on it (current quest, quests left, a rough hours estimate at 15 minutes a quest,
+  and the weekly pace needed for the February 19 early access). Changing the place in either page
+  updates the other, including live across open tabs, and finishing the story ticks the
+  checklist item.
+
 ## Open questions
 
 - Do we sort finished expansions to the bottom like MSQTracker, or keep story order? (Kept

@@ -123,6 +123,35 @@ ul.links li{margin:5px 0}
 .tool-ph{margin:16px 0 0;padding:12px 14px;border:2px dashed var(--rule);border-radius:10px;color:var(--muted);max-width:76ch}
 .tool-ph b{display:block;color:var(--ink);font-family:var(--display);font-size:18px}
 .tool-ph p{margin:4px 0 8px}
+.mp{margin:16px 0 0;padding:16px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);max-width:76ch}
+.mp-now{display:flex;align-items:center;gap:12px}
+.mp-now img{width:40px;height:40px;flex-shrink:0;object-fit:contain}
+.mp-label{display:block;font:600 12px/16px var(--font-mono,monospace);letter-spacing:1.2px;text-transform:uppercase;color:var(--cyan)}
+.mp-quest{display:block;font-family:var(--display);font-weight:800;font-size:22px;line-height:1.2;overflow-wrap:anywhere}
+.mp-meta{display:block;font-size:14px;line-height:20px;color:var(--muted)}
+.mp-bar{display:flex;align-items:center;gap:10px;margin:14px 0 0;font-size:13px;color:var(--muted)}
+.mp-bar .track{flex:1;height:8px;border-radius:999px;background:var(--chip);overflow:hidden}
+.mp-bar .track i{display:block;height:100%;width:0;background:var(--moss);border-radius:999px;transition:width .25s}
+.mp-bar.done .track i{background:var(--cyan)}
+.mp-bar .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.mp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 16px;margin:14px 0 0}
+.mp-stats b{display:block;font-family:var(--display);font-weight:800;font-size:22px;line-height:1.2;font-variant-numeric:tabular-nums}
+.mp-stats span{display:block;font-size:13px;line-height:18px;color:var(--muted)}
+.mp-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.mp button{font:600 14px/20px var(--body);color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:10px;padding:8px 14px;cursor:pointer}
+.mp button:hover:not(:disabled){border-color:var(--cyan)}
+.mp button:disabled{opacity:.45;cursor:default}
+.mp button.go{background:var(--accent-solid);border-color:var(--accent-solid);color:var(--on-accent)}
+.mp-find{margin:14px 0 0}
+.mp-find label{display:block;font:600 12px/16px var(--font-mono,monospace);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:0 0 4px}
+.mp-find input{width:100%;font:400 16px/24px var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:8px 12px}
+.mp-results{list-style:none;margin:6px 0 0;padding:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:var(--paper)}
+.mp-results[hidden]{display:none}
+.mp-results button{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--rule);border-radius:0;padding:8px 12px;font-weight:400}
+.mp-results li:last-child button{border-bottom:0}
+.mp-results small{color:var(--muted);white-space:nowrap}
+.mp-bar[hidden],.mp-stats[hidden],.mp-actions[hidden]{display:none}
+.mp-foot{margin:12px 0 0;font-size:13px;line-height:18px;color:var(--muted)}
 .tool-ph .soon{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:1px solid var(--rule);border-radius:999px;padding:1px 10px}
 
 footer{padding:34px 0 60px;color:var(--muted);font-size:15px}
@@ -206,9 +235,32 @@ footer li{margin:5px 0}
         <li><label><input type="checkbox" data-key="story-3"> <span>Unlock dungeons and trials so roulettes have more options</span></label></li>
         <li><label><input type="checkbox" data-key="story-4"> <span>Optional: catch up on Hildibrand, allied societies, and relic weapons</span></label></li>
     </ul>
-    <div class="tool-ph"><b>MSQ Catch-Up Planner</b><p>Pick the quest you&#x27;re on, see how many quests and roughly how many hours are left, and the weekly pace needed to finish by February 19.</p><span class="soon">Coming soon</span></div>
+    <h3 class="mini">MSQ catch-up planner</h3>
+    <div class="mp" id="msq-plan">
+      <div class="mp-now" aria-live="polite">
+        <img id="mp-marker" alt="" width="40" height="40" onerror="this.style.visibility='hidden'">
+        <div><span class="mp-label" id="mp-label">Loading</span><span class="mp-quest" id="mp-quest" lang="en"></span><span class="mp-meta" id="mp-meta"></span></div>
+      </div>
+      <div class="mp-bar" id="mp-bar" hidden><div class="track" role="progressbar" aria-label="Main Scenario Quest progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div><span class="num" id="mp-num"></span></div>
+      <div class="mp-stats" id="mp-stats" hidden>
+        <div><b id="mp-left"></b><span>Quests left</span></div>
+        <div><b id="mp-time"></b><span id="mp-time-note"></span></div>
+        <div><b id="mp-pace"></b><span id="mp-pace-note"></span></div>
+      </div>
+      <div class="mp-actions" id="mp-actions" hidden>
+        <button type="button" class="go" id="mp-next">Mark done, next quest</button>
+        <button type="button" id="mp-prev">Back one quest</button>
+      </div>
+      <div class="mp-find">
+        <label for="mp-search" id="mp-search-label">The quest I'm on</label>
+        <input type="search" id="mp-search" autocomplete="off" placeholder="Search for a quest by name">
+        <ul class="mp-results" id="mp-results" hidden></ul>
+      </div>
+      <p class="mp-foot">Shared with the <a href="msq-tracker.html" id="mp-open">MSQ tracker</a>: change your place in either and both update. The hours are a rough guess at 15 minutes a quest, counting travel and duties, so your pace will differ. Whether the story is required for early access is not confirmed.</p>
+    </div>
     <h3 class="mini">For now</h3>
     <ul class="links">
+        <li><a href="msq-tracker.html">XIVKit MSQ Tracker</a>: The full tracker. Your place lives in a link you can paste, and it is shared with the planner above.</li>
         <li><a href="https://msqtracker.com/" target="_blank" rel="noopener noreferrer">MSQTracker</a>: Tick off quests as you go and see what&#x27;s left in the main story.</li>
         <li><a href="https://ffxiv.consolegameswiki.com/wiki/Main_Scenario_Quests" target="_blank" rel="noopener noreferrer">Console Games Wiki: Main Scenario Quests</a>: The full quest list in order, by expansion.</li>
         <li><a href="https://ffxiv.consolegameswiki.com/wiki/Aether_Currents" target="_blank" rel="noopener noreferrer">Console Games Wiki: Aether Currents</a>: Where every Aether Current is, for unlocking flying.</li>
@@ -484,6 +536,104 @@ footer li{margin:5px 0}
   }
   tick();
   setInterval(tick, 1000);
+})();
+</script>
+<script src="msq-core.js"></script>
+<script>
+(function () {
+  var M = window.XIVKitMSQ, root = document.getElementById('msq-plan');
+  if (!M || !root) return;
+  var MIN_PER_QUEST = 15;
+  var earlyEl = document.querySelector('[data-cd^="2027-02-19"]');
+  var EARLY = earlyEl ? new Date(earlyEl.getAttribute('data-cd')).getTime() : 0;
+  var $ = function (id) { return document.getElementById(id); };
+  var data = null, state = null, route = [], segStart = [], autoChecked = false;
+
+  function hours(h) { return h < 1 ? 'under an hour' : 'about ' + Math.round(h) + (Math.round(h) === 1 ? ' hour' : ' hours'); }
+  function one(n) { return n < 10 ? (Math.round(n * 10) / 10) : Math.round(n); }
+
+  function render() {
+    var q = null, sum = null;
+    if (state) { sum = M.summary(route, state); q = sum.quest; }
+    $('mp-marker').src = M.iconUrl(M.MARKER, true);
+    $('mp-label').textContent = !state ? 'Pick your quest' : (q ? 'Current quest' : 'All caught up');
+    $('mp-quest').textContent = !state ? 'Where are you in the story?' : (q ? q.t : 'You have finished every Main Scenario Quest.');
+    var meta = '';
+    if (q) { var sg = data.seg[q.g]; meta = [sg.era, 'Patch ' + sg.patch, 'Level ' + q.l].join(' \u00b7 '); }
+    else if (!state) meta = 'Search for the quest you are on below.';
+    $('mp-meta').textContent = meta;
+
+    $('mp-bar').hidden = !sum; $('mp-stats').hidden = !sum;
+    $('mp-actions').hidden = !state;
+    $('mp-search-label').textContent = state ? "I'm on a different quest" : "The quest I'm on";
+    $('mp-next').disabled = !state || state.pos >= route.length;
+    $('mp-prev').disabled = !state || state.pos <= 0;
+    if (sum) {
+      $('mp-bar').classList.toggle('done', sum.left === 0);
+      var track = $('mp-bar').querySelector('.track');
+      track.querySelector('i').style.width = sum.pct + '%';
+      track.setAttribute('aria-valuenow', sum.pct);
+      $('mp-num').textContent = sum.done + ' / ' + sum.total + ' (' + sum.pct + '%)';
+      $('mp-left').textContent = sum.left;
+      $('mp-time').textContent = sum.left === 0 ? 'Done' : hours(sum.left * MIN_PER_QUEST / 60);
+      $('mp-time-note').textContent = sum.left === 0 ? 'Nothing left to play' : 'To finish the story';
+      var now = Date.now(), days = (EARLY - now) / 864e5;
+      if (sum.left === 0) { $('mp-pace').textContent = 'Caught up'; $('mp-pace-note').textContent = 'Nothing to catch up on'; }
+      else if (!EARLY || days <= 0) { $('mp-pace').textContent = 'Early access is on'; $('mp-pace-note').textContent = 'The Feb 19 target has passed'; }
+      else if (days < 7) { var d = Math.max(1, Math.ceil(days)); $('mp-pace').textContent = sum.left + ' in ' + d + (d === 1 ? ' day' : ' days'); $('mp-pace-note').textContent = 'To finish by Feb 19'; }
+      else { var w = days / 7; $('mp-pace').textContent = Math.ceil(sum.left / w) + ' quests a week'; $('mp-pace-note').textContent = 'About ' + one(sum.left * MIN_PER_QUEST / 60 / w) + ' hours a week, to finish by Feb 19'; }
+      // Finished the story: tick the checklist item once, but let people untick it.
+      var box = document.querySelector('input[data-key="story-0"]');
+      if (sum.left === 0 && box && !box.checked && !autoChecked) { autoChecked = true; box.checked = true; box.dispatchEvent(new Event('change', { bubbles: true })); }
+    }
+    $('mp-open').href = 'msq-tracker.html' + (state ? M.hashFor(data, route, state) : '');
+  }
+
+  function setState(s, r) {
+    state = { city: s.city, pos: M.clamp(s.pos, 0, r.length) }; route = r;
+    segStart = M.routeFor(data, state.city).segStart;
+    M.saveState(state); render();
+  }
+  function reload() {
+    var saved = M.loadState();
+    if (saved) { var r = M.routeFor(data, saved.city); state = { city: saved.city, pos: M.clamp(saved.pos, 0, r.route.length) }; route = r.route; segStart = r.segStart; }
+    else { state = null; route = []; }
+    render();
+  }
+
+  function results() {
+    var ul = $('mp-results'), hits = M.search(data, $('mp-search').value, 6);
+    ul.textContent = ''; ul.hidden = !hits.length;
+    hits.forEach(function (h) {
+      var li = document.createElement('li'), b = document.createElement('button'), n = document.createElement('span'), sm = document.createElement('small');
+      b.type = 'button'; n.textContent = h.t; n.lang = 'en';
+      sm.textContent = [data.seg[h.g].name, h.c != null ? h.p : ''].filter(Boolean).join(' \u00b7 ');
+      b.appendChild(n); b.appendChild(sm);
+      b.addEventListener('click', function () {
+        var j = M.jumpTo(data, state || { city: 0, pos: 0 }, h);
+        $('mp-search').value = ''; ul.hidden = true;
+        if (j) setState(j, j.route);
+      });
+      li.appendChild(b); ul.appendChild(li);
+    });
+  }
+
+  M.loadData().then(function (j) {
+    data = j; reload();
+    $('mp-next').addEventListener('click', function () { if (state) setState({ city: state.city, pos: state.pos + 1 }, route); });
+    $('mp-prev').addEventListener('click', function () { if (state) setState({ city: state.city, pos: state.pos - 1 }, route); });
+    $('mp-search').addEventListener('input', results);
+    $('mp-search').addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { this.value = ''; results(); }
+      else if (e.key === 'Enter') { var f = $('mp-results').querySelector('button'); if (f) { e.preventDefault(); f.click(); } }
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.mp-find')) $('mp-results').hidden = true; });
+    window.addEventListener('storage', function (e) { if (e.key === M.KEY) reload(); });
+  }).catch(function () {
+    $('mp-label').textContent = 'Unavailable';
+    $('mp-quest').textContent = 'Could not load the quest list.';
+    $('mp-meta').textContent = 'Refresh to try again, or use the MSQ tracker.';
+  });
 })();
 </script>
 </body>

@@ -231,12 +231,12 @@ footer.sources .legal{font-size:13px}
 </footer>
 </div>
 
+<script src="msq-core.js"></script>
 <script>
 (function () {
   "use strict";
-  var KEY = "xivkit-msq-v1";
-  var CITY_SLUGS = ["gridania", "limsa-lominsa", "uldah"];
-  var DONE_SLUG = "all-done";
+  var C = window.XIVKitMSQ; // msq-core.js: saved progress, routes and the link format, shared with the guide
+  var slug = C.slug, clamp = C.clamp, iconUrl = C.iconUrl, MARKER = C.MARKER, lowestCity = C.lowestCity;
   var $ = function (id) { return document.getElementById(id); };
 
   var data = null, route = [], segStart = [], eraList = [];
@@ -256,79 +256,33 @@ footer.sources .legal{font-size:13px}
   }
   function eraName(era) { return T("eras." + slug(era), era); }
 
-  function iconUrl(id, hr) {
-    var pad = function (n) { return String(n).padStart(6, "0"); };
-    return "https://beta.xivapi.com/api/1/asset?path=ui/icon/" + pad(Math.floor(id / 1000) * 1000) + "/" + pad(id) + (hr ? "_hr1" : "") + ".tex&format=png";
-  }
-  var MARKER = 61412; // the game's Main Scenario Quest journal icon
-
-  function slug(s) {
-    return String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-  }
-  function clamp(n, lo, hi) { return Math.max(lo, Math.min(hi, n)); }
-
   // ---- route and derived numbers ----
-  function buildRoute(city) {
-    route = data.q.filter(function (x) { return (((x.c == null ? 7 : x.c) >> city) & 1) === 1; });
-    segStart = data.seg.map(function () { return -1; });
-    route.forEach(function (x, i) { if (segStart[x.g] < 0) segStart[x.g] = i; });
-    segStart.push(route.length);
-    for (var g = segStart.length - 2; g >= 0; g--) if (segStart[g] < 0) segStart[g] = segStart[g + 1];
-  }
+  function buildRoute(city) { var r = C.routeFor(data, city); route = r.route; segStart = r.segStart; }
   function eraIndexOf(seg) { return eraList.indexOf(data.seg[seg].era); }
   function segCount(g) { return segStart[g + 1] - segStart[g]; }
 
-  // ---- URL hash ----
-  function hashFor(s) {
-    var q = s.pos >= route.length ? null : route[s.pos];
-    var path = "#/" + (q ? slug(data.seg[q.g].era) + "/" + q.s : "complete/" + DONE_SLUG);
-    return path;
-  }
-  function parseHash() {
-    // Current form is #/<era>/<quest>. An older #/<city>/<era>/<quest> is still read.
-    var m = /^#\/(?:([^/]+)\/)?([^/]+)\/([^/?]+)(?:\?(.*))?$/.exec(location.hash);
-    if (!m) return null;
-    var city = null;
-    if (m[1]) { city = CITY_SLUGS.indexOf(m[1]); if (city < 0) return { error: true }; }
-    return { city: city, slug: m[3] };
-  }
-  function lowestCity(mask) { return mask & 1 ? 0 : mask & 2 ? 1 : 2; }
-  // The city is not in the link. A quest only some cities do names its city; otherwise
-  // the link opens on the viewer's own saved city (Gridania if they have none).
+  // ---- URL hash and saved progress (formats live in msq-core.js) ----
+  function hashFor(s) { return C.hashFor(data, route, s); }
   function resolveShared(h, savedCity) {
-    if (!h || h.error) return null;
-    var city = h.city;
-    if (city == null) {
-      var hit = null;
-      for (var k = 0; k < data.q.length; k++) if (data.q[k].s === h.slug) { hit = data.q[k]; break; }
-      city = hit && hit.c != null ? lowestCity(hit.c) : (savedCity != null ? savedCity : 0);
-    }
-    buildRoute(city);
-    if (h.slug === DONE_SLUG) return { city: city, pos: route.length };
-    for (var i = 0; i < route.length; i++) if (route[i].s === h.slug) return { city: city, pos: i };
-    return { city: city, pos: 0, missing: true };
+    var r = C.resolve(data, h, savedCity);
+    if (r) { route = r.route; segStart = r.segStart; }
+    return r;
   }
   function absoluteUrl(s) { return location.origin + location.pathname + hashFor(s); }
-
-  // ---- persistence ----
-  function load() {
-    try {
-      var s = JSON.parse(localStorage.getItem(KEY) || "null");
-      if (s && typeof s.pos === "number") return { city: clamp(s.city | 0, 0, 2), pos: Math.max(0, s.pos | 0) };
-    } catch (e) {}
-    return null;
-  }
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var load = C.loadState;
+  function save() { C.saveState(state); }
 
   // ---- commands ----
   function setPos(p) {
     state.pos = clamp(p, 0, route.length);
     save(); render();
   }
-  // Jump to a quest by slug. A quest only some cities do switches the route to one of them.
+  // Jump to a quest. A quest only some cities do switches the route to one of them.
   function jumpTo(hit) {
-    if (hit.c != null && !(((hit.c >> state.city) & 1) === 1)) { state.city = lowestCity(hit.c); buildRoute(state.city); }
-    for (var i = 0; i < route.length; i++) if (route[i].s === hit.s) { setPos(i); return; }
+    var r = C.jumpTo(data, state, hit);
+    if (!r) return;
+    state.city = r.city; route = r.route; segStart = r.segStart;
+    setPos(r.pos);
   }
 
   // ---- rendering ----
@@ -443,8 +397,7 @@ footer.sources .legal{font-size:13px}
     var term = $("jumpInput").value.trim().toLowerCase(), ul = $("results");
     ul.textContent = "";
     if (term.length < 2) { ul.hidden = true; return; }
-    var hits = [];
-    for (var i = 0; i < data.q.length && hits.length < 8; i++) if (data.q[i].t.toLowerCase().indexOf(term) >= 0) hits.push(data.q[i]);
+    var hits = C.search(data, term, 8);
     ul.hidden = !hits.length;
     hits.forEach(function (q) {
       var li = document.createElement("li"), b = document.createElement("button"), n = document.createElement("span"), sm = document.createElement("small");
@@ -620,6 +573,11 @@ footer.sources .legal{font-size:13px}
     $("backToMine").addEventListener("click", function () {
       viewing = null; noticeText = ""; buildRoute(state.city); render();
     });
+    window.addEventListener("storage", function (e) {
+      if (e.key !== C.KEY || viewing) return;
+      var saved = load();
+      if (saved) { state = saved; buildRoute(state.city); state.pos = clamp(state.pos, 0, route.length); render(); }
+    });
     window.addEventListener("hashchange", function () {
       var cur = hashFor(viewing || state);
       if (location.hash === cur || location.hash === "") return;
@@ -631,7 +589,7 @@ footer.sources .legal{font-size:13px}
   }
 
   function applyHash() {
-    var saved = load(), h = parseHash();
+    var saved = load(), h = C.parseHash(location.hash);
     hasSaved = !!saved;
     noticeText = "";
     var shared = h ? resolveShared(h, saved ? saved.city : null) : null;
@@ -652,7 +610,7 @@ footer.sources .legal{font-size:13px}
     state.pos = clamp(state.pos, 0, route.length);
   }
 
-  fetch("msq.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (j) {
+  C.loadData().then(function (j) {
     data = j;
     j.seg.forEach(function (sg) { if (eraList.indexOf(sg.era) < 0) eraList.push(sg.era); });
     applyHash(); wire(); render();

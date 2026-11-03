@@ -140,3 +140,6 @@ quest), and collapses true alternatives (the per-Grand-Company quests) into one 
 banners come from the game's own journal icons (`i`) on XIVAPI. A player's place lives in the
 page link as `#/<expansion>/<quest>`, so renaming a quest slug breaks old links; the script
 fails rather than writing a duplicate slug. See `msq-tracker-plan.md` for how it was built.
+`msq-core.js` is the shared layer (saved progress, routes, link format, search) used by both
+`msq-tracker.html` and the MSQ planner in `get-ready-for-evercold.html`; change the link or save
+format there, not in either page.
