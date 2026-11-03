@@ -256,7 +256,7 @@ footer li{margin:5px 0}
         <input type="search" id="mp-search" autocomplete="off" placeholder="Search for a quest by name">
         <ul class="mp-results" id="mp-results" hidden></ul>
       </div>
-      <p class="mp-foot">Shared with the <a href="msq-tracker.html" id="mp-open">MSQ tracker</a>: change your place in either and both update. The hours are a rough guess at 15 minutes a quest, counting travel and duties, so your pace will differ. Whether the story is required for early access is not confirmed.</p>
+      <p class="mp-foot">Shared with the <a href="msq-tracker.html" id="mp-open">MSQ tracker</a>: change your place in either and both update. The hours are a rough range: about 12 to 18 minutes a quest in Dawntrail and 22 to 38 earlier (duties and level gaps included), so your pace will differ. Whether the story is required for early access is not confirmed.</p>
     </div>
     <h3 class="mini">For now</h3>
     <ul class="links">
@@ -542,13 +542,27 @@ footer li{margin:5px 0}
 (function () {
   var M = window.XIVKitMSQ, root = document.getElementById('msq-plan');
   if (!M || !root) return;
-  var MIN_PER_QUEST = 15;
+  // Minutes per quest, [low, high]. Dawntrail is a straight story run; earlier expansions
+  // include the duties and level gaps between quests. Rough, from public estimates.
+  var RATE = { 'Dawntrail': [12, 18] }, RATE_OLD = [22, 38];
   var earlyEl = document.querySelector('[data-cd^="2027-02-19"]');
   var EARLY = earlyEl ? new Date(earlyEl.getAttribute('data-cd')).getTime() : 0;
   var $ = function (id) { return document.getElementById(id); };
   var data = null, state = null, route = [], segStart = [], autoChecked = false;
 
-  function hours(h) { return h < 1 ? 'under an hour' : 'about ' + Math.round(h) + (Math.round(h) === 1 ? ' hour' : ' hours'); }
+  function span(lo, hi) {
+    if (hi < 1) return 'under an hour';
+    var a = Math.max(1, Math.round(lo)), b = Math.round(hi);
+    return a >= b ? 'about ' + b + (b === 1 ? ' hour' : ' hours') : 'about ' + a + ' to ' + b + ' hours';
+  }
+  // Hours [low, high] to play every quest from the current one onward.
+  function hoursLeft(sum) {
+    var lo = 0, hi = 0;
+    for (var i = state.pos; i < route.length; i++) {
+      var r = RATE[data.seg[route[i].g].era] || RATE_OLD; lo += r[0]; hi += r[1];
+    }
+    return [lo / 60, hi / 60];
+  }
   function one(n) { return n < 10 ? (Math.round(n * 10) / 10) : Math.round(n); }
 
   function render() {
@@ -574,13 +588,14 @@ footer li{margin:5px 0}
       track.setAttribute('aria-valuenow', sum.pct);
       $('mp-num').textContent = sum.done + ' / ' + sum.total + ' (' + sum.pct + '%)';
       $('mp-left').textContent = sum.left;
-      $('mp-time').textContent = sum.left === 0 ? 'Done' : hours(sum.left * MIN_PER_QUEST / 60);
+      var hl = sum.left === 0 ? [0, 0] : hoursLeft(sum);
+      $('mp-time').textContent = sum.left === 0 ? 'Done' : span(hl[0], hl[1]);
       $('mp-time-note').textContent = sum.left === 0 ? 'Nothing left to play' : 'To finish the story';
       var now = Date.now(), days = (EARLY - now) / 864e5;
       if (sum.left === 0) { $('mp-pace').textContent = 'Caught up'; $('mp-pace-note').textContent = 'Nothing to catch up on'; }
       else if (!EARLY || days <= 0) { $('mp-pace').textContent = 'Early access is on'; $('mp-pace-note').textContent = 'The Feb 19 target has passed'; }
       else if (days < 7) { var d = Math.max(1, Math.ceil(days)); $('mp-pace').textContent = sum.left + ' in ' + d + (d === 1 ? ' day' : ' days'); $('mp-pace-note').textContent = 'To finish by Feb 19'; }
-      else { var w = days / 7; $('mp-pace').textContent = Math.ceil(sum.left / w) + ' quests a week'; $('mp-pace-note').textContent = 'About ' + one(sum.left * MIN_PER_QUEST / 60 / w) + ' hours a week, to finish by Feb 19'; }
+      else { var w = days / 7; $('mp-pace').textContent = Math.ceil(sum.left / w) + ' quests a week'; $('mp-pace-note').textContent = 'About ' + one(hl[0] / w) + ' to ' + one(hl[1] / w) + ' hours a week, to finish by Feb 19'; }
       // Finished the story: tick the checklist item once, but let people untick it.
       var box = document.querySelector('input[data-key="story-0"]');
       if (sum.left === 0 && box && !box.checked && !autoChecked) { autoChecked = true; box.checked = true; box.dispatchEvent(new Event('change', { bubbles: true })); }
