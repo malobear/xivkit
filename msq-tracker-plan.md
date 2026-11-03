@@ -85,6 +85,22 @@ Do not copy msqtracker.com's data files. Generate our own with `scripts/msq.mjs`
   `PreviousQuest` gives the chain, so order can be derived, with `ExpansionDecoration`,
   level, place and icon available. Needs a spike to confirm the chain gives a clean
   linear order and handles the three city branches.
+- **Spike result (2026-11-02): XIVAPI works.** `JournalCategory` rows 1 to 15 map 1:1 to
+  MSQTracker's 15 segments. Pulling `Quest` rows whose `JournalGenre` belongs to those
+  categories gives 1,050 named quests, and the per-segment counts match MSQTracker's
+  totals exactly for categories 2 to 14 (80, 94, 25, 19, 122, 40, 106, 32, 19, 108, 47,
+  100, 25). Category 1 (Seventh Umbral Era) has 215 because it holds all three city
+  openings (161 per city path), and category 15 has 18 vs their 14 (newer 7.5 quests).
+  Useful fields: `Name`, `Id`, `PreviousQuest`, `ClassJobLevel`, `PlaceName`, `Icon`.
+- **Ordering:** the `PreviousQuest` graph is a DAG with 8 root "Close to Home" quests
+  (the three city starts plus duplicates) and one terminal quest. The longest chain is
+  948 deep out of 1,050, so it is almost linear. Branches are the city starts, the three
+  Grand Company variants of *The Company You Keep*, and a few parallel quests (e.g. the
+  three Moogle trials). Plan: longest-path layering with ties broken by quest row id,
+  then collapse each city/GC variant to the one for the chosen city. Needs a check against
+  ConsoleGamesWiki order before we trust it.
+- Query gotchas: use `@as(raw)` on reference fields (returned keys keep the suffix),
+  omit `after` on the first page, and do not request `SortKey` (it is not a field).
 - Fallback / cross-check: ConsoleGamesWiki MSQ pages (CC BY-SA, credit required) for
   ordering, descriptions and the per-quest wiki links.
 - Record the generation date in the file and in the page footer, like the other tools.
