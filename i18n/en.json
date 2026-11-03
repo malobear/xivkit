@@ -291,7 +291,7 @@
       "shareLabel": "Shareable link",
       "segmentsHeading": "Questlines",
       "footerInspired": "Inspired by {msqtracker}, which does the same job but keeps your progress in one browser with no link to share. Go check it out too.",
-      "footerData": "Quest data comes from the game's own data via {xivapi}, with quest pages on {wiki}. Quest order and the 7.5 additions can lag a patch behind, so tell me if something is off.",
+      "footerData": "Quest data and images come from the game's own data via {xivapi}, with quest pages on {wiki}. Quest order and the 7.5 additions can lag a patch behind, so tell me if something is off.",
       "footerLinks": "Your progress is saved in this browser only, and the link carries your place. See the {home} for the rest of the tools I use. Source on {github}.",
       "kickerNow": "Current quest",
       "kickerDone": "All caught up",

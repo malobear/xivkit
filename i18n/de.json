@@ -291,7 +291,7 @@
       "shareLabel": "Teilbarer Link",
       "segmentsHeading": "Questreihen",
       "footerInspired": "Inspiriert von {msqtracker}, das dasselbe tut, den Fortschritt aber nur in einem Browser speichert und keinen teilbaren Link bietet. Schau dort ruhig auch vorbei.",
-      "footerData": "Die Questdaten stammen aus den Spieldaten über {xivapi}, die Questseiten liegen im {wiki}. Questreihenfolge und die Neuerungen aus 7.5 können einen Patch hinterherhinken, sag Bescheid, wenn etwas nicht stimmt.",
+      "footerData": "Die Questdaten und Bilder stammen aus den Spieldaten über {xivapi}, die Questseiten liegen im {wiki}. Questreihenfolge und die Neuerungen aus 7.5 können einen Patch hinterherhinken, sag Bescheid, wenn etwas nicht stimmt.",
       "footerLinks": "Dein Fortschritt wird nur in diesem Browser gespeichert, und der Link enthält deinen Stand. Die übrigen Tools findest du auf der {home}. Quellcode auf {github}.",
       "kickerNow": "Aktuelle Quest",
       "kickerDone": "Alles erledigt",

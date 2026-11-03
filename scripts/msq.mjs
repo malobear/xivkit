@@ -11,10 +11,12 @@
 //
 // Output keys are short on purpose (the file is shipped to browsers):
 //   seg: [{ id, era, name, patch }]            story order
-//   q:   [{ t, s, l, p, g, c? }]               title, slug, level, place, segment index, city
+//   q:   [{ t, s, l, p, g, c?, i? }]            title, slug, level, place, segment index, city, banner icon
 // c is a bitmask of the starting cities that do the quest (1 Gridania, 2 Limsa Lominsa,
 // 4 Ul'dah) and is omitted for quests every player does. A city's route, with city
-// index 0 to 2, is q.filter(x => ((x.c ?? 7) >> city) & 1), in array order.
+// index 0 to 2, is q.filter(x => ((x.c ?? 7) >> city) & 1), in array order. i is the
+// quest's journal banner icon id (about 40% of quests have one), omitted when there is none;
+// the image is ui/icon/<id rounded down to thousands, 6 digits>/<id, 6 digits>.tex on XIVAPI.
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
@@ -63,7 +65,7 @@ const genreToCat = new Map(genres.map((r) => [r.row_id, r.fields[RAW("JournalCat
 const catIndex = new Map(SEGMENTS.map((s, i) => [s[0], i]));
 
 const quests = (
-  await sheet("Quest", `Name,${RAW("PreviousQuest")},${RAW("JournalGenre")},ClassJobLevel,PlaceName.Name`)
+  await sheet("Quest", `Name,${RAW("PreviousQuest")},${RAW("JournalGenre")},ClassJobLevel,PlaceName.Name,Icon`)
 )
   .map((r) => ({
     id: r.row_id,
@@ -72,6 +74,7 @@ const quests = (
     prev: r.fields[RAW("PreviousQuest")].filter(Boolean),
     level: r.fields.ClassJobLevel?.[0] ?? 0,
     place: r.fields.PlaceName?.fields?.Name ?? "",
+    icon: r.fields.Icon?.id ?? 0,
   }))
   .filter((q) => q.name && q.seg !== undefined);
 if (quests.length < 1000) throw new Error(`Only ${quests.length} MSQ quests came back, refusing to write`);
@@ -151,6 +154,7 @@ const out = ordered.map((q) => {
   if (used.get(s) > 1) s += `-${slugOf(q.place)}`;
   const cities = reach.get(q.id);
   const row = { t: q.name, s, l: q.level, p: q.place, g: q.seg };
+  if (q.icon) row.i = q.icon;
   if (cities && cities.size < 3) {
     row.c = [...cities].reduce((mask, city) => mask | (1 << city), 0);
   }

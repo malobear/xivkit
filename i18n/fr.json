@@ -291,7 +291,7 @@
       "shareLabel": "Lien partageable",
       "segmentsHeading": "Chaînes de quêtes",
       "footerInspired": "Inspiré de {msqtracker}, qui fait le même travail mais garde ta progression dans un seul navigateur, sans lien à partager. Va aussi y jeter un œil.",
-      "footerData": "Les données de quêtes viennent des données du jeu via {xivapi}, avec les pages de quêtes sur {wiki}. L'ordre des quêtes et les ajouts de la 7.5 peuvent avoir un patch de retard, dis-moi si quelque chose cloche.",
+      "footerData": "Les données et images des quêtes viennent des données du jeu via {xivapi}, avec les pages de quêtes sur {wiki}. L'ordre des quêtes et les ajouts de la 7.5 peuvent avoir un patch de retard, dis-moi si quelque chose cloche.",
       "footerLinks": "Ta progression n'est enregistrée que dans ce navigateur, et le lien contient ta position. Retrouve les autres outils sur la {home}. Code source sur {github}.",
       "kickerNow": "Quête actuelle",
       "kickerDone": "À jour",

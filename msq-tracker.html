@@ -80,11 +80,19 @@ button.primary{background:var(--accent-solid);border-color:var(--accent-solid);c
 button.primary:hover:not(:disabled){border-color:var(--text)}
 
 .eyebrow,.current .kicker{font:600 12px/16px var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)}
-.current .quest{margin:8px 0 8px;font:600 clamp(28px,4.5vw,40px)/1.1 var(--font-sans);letter-spacing:-0.02em;color:var(--text);overflow-wrap:anywhere}
-.current .meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);font-size:14px;line-height:20px}
+.current .quest{margin:0;font:600 clamp(28px,4.5vw,40px)/1.1 var(--font-sans);letter-spacing:-0.02em;color:var(--text);overflow-wrap:anywhere}
+.current .meta{margin-top:8px;display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);font-size:14px;line-height:20px}
 .current .meta span+span::before{content:"\00b7";margin-right:14px}
 .current .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.current .wiki{display:inline-block;margin-top:12px;font-size:14px}
+.curmain{display:grid;grid-template-columns:minmax(0,1fr);gap:16px 24px;align-items:start}
+.curmain.has-banner{grid-template-columns:minmax(0,1fr) 300px}
+.titlerow{display:flex;align-items:center;gap:12px}
+.marker{width:40px;height:40px;flex-shrink:0;object-fit:contain}
+.titlerow .quest{margin:0}
+.ext{display:inline-flex;vertical-align:middle;padding:4px;border-radius:6px;color:var(--muted);line-height:0}
+.ext:hover{color:var(--accent)}
+.banner-img{width:300px;max-width:100%;height:auto;aspect-ratio:376/120;border:1px solid var(--border);border-radius:10px;background:var(--raised);object-fit:cover}
+@media (max-width:768px){.curmain.has-banner{grid-template-columns:minmax(0,1fr)}.banner-img{order:-1;width:100%}}
 
 .bar{height:10px;background:var(--raised);border-radius:999px;overflow:hidden}
 .bar>i{display:block;height:100%;background:var(--accent-solid);border-radius:999px}
@@ -150,13 +158,20 @@ footer.sources .legal{font-size:13px;opacity:.75}
 <p class="notice" id="notice" hidden></p>
 
 <section class="card current" aria-live="polite">
-  <div class="kicker" id="curKicker"></div>
-  <p class="quest" id="curQuest">Loading...</p>
-  <div class="meta" id="curMeta"></div>
-  <a class="wiki" id="curWiki" target="_blank" rel="noopener noreferrer" hidden></a>
-  <div class="actions">
-    <button class="btn" type="button" id="prev"></button>
-    <button class="btn primary" type="button" id="next"></button>
+  <div class="curmain" id="curMain">
+    <div class="curtext">
+      <div class="kicker" id="curKicker"></div>
+      <div class="titlerow">
+        <img class="marker" id="curMarker" alt="" width="40" height="40" onerror="this.style.visibility='hidden'">
+        <p class="quest"><span id="curQuest">Loading...</span> <a class="ext" id="curWiki" target="_blank" rel="noopener noreferrer" hidden><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3"/></svg></a></p>
+      </div>
+      <div class="meta" id="curMeta"></div>
+      <div class="actions">
+        <button class="btn" type="button" id="prev"></button>
+        <button class="btn primary" type="button" id="next"></button>
+      </div>
+    </div>
+    <img class="banner-img" id="curBanner" alt="" width="376" height="120" hidden onerror="this.hidden=true;document.getElementById('curMain').classList.remove('has-banner')">
   </div>
   <div class="jump" style="margin-top:18px">
     <div class="field">
@@ -233,6 +248,12 @@ footer.sources .legal{font-size:13px;opacity:.75}
     return out.replace(/\{\{(\w+)\}\}/g, function (m, k) { return vars && vars[k] != null ? vars[k] : m; });
   }
   function eraName(era) { return T("eras." + slug(era), era); }
+
+  function iconUrl(id, hr) {
+    var pad = function (n) { return String(n).padStart(6, "0"); };
+    return "https://beta.xivapi.com/api/1/asset?path=ui/icon/" + pad(Math.floor(id / 1000) * 1000) + "/" + pad(id) + (hr ? "_hr1" : "") + ".tex&format=png";
+  }
+  var MARKER = 61412; // the game's Main Scenario Quest journal icon
 
   function slug(s) {
     return String(s).toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/['’]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -327,8 +348,15 @@ footer.sources .legal{font-size:13px;opacity:.75}
     if (q) {
       wiki.hidden = false;
       wiki.href = "https://ffxiv.consolegameswiki.com/mediawiki/index.php?search=" + encodeURIComponent(q.t);
-      wiki.textContent = T("wiki", "View on ConsoleGamesWiki");
+      wiki.title = T("wiki", "View on ConsoleGamesWiki");
+      wiki.setAttribute("aria-label", wiki.title);
     } else wiki.hidden = true;
+    var mk = $("curMarker"); if (!mk.getAttribute("src")) mk.src = iconUrl(MARKER, true);
+    var banner = $("curBanner"), main = $("curMain");
+    if (q && q.i) {
+      if (banner.getAttribute("src") !== iconUrl(q.i)) banner.src = iconUrl(q.i);
+      banner.hidden = false; main.classList.add("has-banner");
+    } else { banner.hidden = true; main.classList.remove("has-banner"); }
 
     var ro = !!viewing;
     $("prev").disabled = ro || s.pos <= 0;
@@ -454,7 +482,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     ctx.fillStyle = "#211f26"; rr(ctx, x, y, w, h, h / 2); ctx.fill();
     if (frac > 0) { ctx.fillStyle = quiet && frac >= 1 ? "#7d7886" : "#d92b25"; rr(ctx, x, y, Math.max(h, w * frac), h, h / 2); ctx.fill(); }
   }
-  function drawCard() {
+  function drawCard(banner) {
     var s = shown, W = 1200, H = 630, PAD = 72;
     var total = route.length, done = Math.min(s.pos, total), q = route[s.pos];
     var cv = document.createElement("canvas"); cv.width = W; cv.height = H;
@@ -474,9 +502,14 @@ footer.sources .legal{font-size:13px;opacity:.75}
     ctx.fillText((q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up")).toUpperCase(), PAD, 156);
     spaced("0px");
 
+    if (banner) {
+      var bx = W - PAD - 300, by0 = 120;
+      ctx.save(); rr(ctx, bx, by0, 300, 96, 10); ctx.clip(); ctx.drawImage(banner, bx, by0, 300, 96); ctx.restore();
+      ctx.strokeStyle = "#2e2b33"; ctx.lineWidth = 1; rr(ctx, bx + 0.5, by0 + 0.5, 299, 95, 10); ctx.stroke();
+    }
     var title = q ? q.t : T("cardDone", "Every MSQ quest done"), size = 64, lines;
     for (; size >= 36; size -= 4) {
-      ctx.font = "600 " + size + "px " + SANS; spaced(-(size * 0.02) + "px"); lines = wrapLines(ctx, title, W - PAD * 2);
+      ctx.font = "600 " + size + "px " + SANS; spaced(-(size * 0.02) + "px"); lines = wrapLines(ctx, title, W - PAD * 2 - (banner ? 340 : 0));
       if (lines.length <= 2) break;
     }
     ctx.fillStyle = INK;
@@ -518,8 +551,14 @@ footer.sources .legal{font-size:13px;opacity:.75}
     var fonts = (document.fonts && document.fonts.load)
       ? Promise.all([document.fonts.load("600 22px Cinzel"), document.fonts.load("600 64px 'Instrument Sans'"), document.fonts.load("400 22px 'Instrument Sans'"), document.fonts.load("500 15px 'JetBrains Mono'"), document.fonts.load("600 14px 'JetBrains Mono'")]).catch(function () {})
       : Promise.resolve();
-    return fonts.then(function () {
-      return new Promise(function (res) { drawCard().toBlob(res, "image/png"); });
+    var q = route[shown.pos];
+    var pic = q && q.i ? new Promise(function (res) {
+      var im = new Image(); im.crossOrigin = "anonymous";
+      im.onload = function () { res(im); }; im.onerror = function () { res(null); };
+      im.src = iconUrl(q.i);
+    }) : Promise.resolve(null);
+    return Promise.all([fonts, pic]).then(function (r) {
+      return new Promise(function (res) { drawCard(r[1]).toBlob(res, "image/png"); });
     });
   }
   function fileName() {

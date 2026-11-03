@@ -166,6 +166,12 @@ official localized titles; quest titles and questline names stay in English).
   *Close to Home*, Ul'dah) switches the route. A new visitor starts on the Gridania route.
   Old links with `?n=` still open, and the name is ignored.
 
+- Visuals come from XIVAPI, not the wiki: the game's Main Scenario Quest marker (icon 61412,
+  hi-res) beside the quest title, and the quest's own journal banner (`Quest.Icon`, 441 of
+  1,043 quests have one, stored as `i` in `msq.json`) on the right of the card and on the PNG
+  card. The wiki link is a small external-link icon after the title. Image endpoint sends
+  `access-control-allow-origin: *`, so the canvas is not tainted.
+
 ## Open questions
 
 - Do we sort finished expansions to the bottom like MSQTracker, or keep story order? (Kept
