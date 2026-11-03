@@ -237,7 +237,8 @@
       "pastEventsNote": "Events that have ended. Kept here for reference.",
       "wipHeading": "Work in progress",
       "wipNote": "Drafts that aren't finished, and may change or disappear.",
-      "wipEvercold": "Evercold prep checklist (draft)"
+      "wipEvercold": "Evercold prep checklist (draft)",
+      "wipMsq": "MSQ tracker with a shareable link and PNG progress card (planned)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

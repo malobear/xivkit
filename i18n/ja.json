@@ -237,7 +237,8 @@
       "pastEventsNote": "終了したイベントのガイドです。参考用に残しています。",
       "wipHeading": "制作中",
       "wipNote": "未完成の下書きです。内容は変わったり、なくなったりする可能性があります。",
-      "wipEvercold": "Evercoldの準備チェックリスト(下書き)"
+      "wipEvercold": "Evercoldの準備チェックリスト(下書き)",
+      "wipMsq": "共有リンクとPNG進行カード付きのMSQトラッカー(計画中)"
     },
     "plugins": {
       "h1": "FFXIV プラグイン",

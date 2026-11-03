@@ -237,7 +237,8 @@
       "pastEventsNote": "Ces événements sont terminés. Conservés ici pour référence.",
       "wipHeading": "En cours",
       "wipNote": "Brouillons non terminés, qui peuvent changer ou disparaître.",
-      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)"
+      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)",
+      "wipMsq": "Suivi du scénario principal avec lien partageable et carte de progression PNG (prévu)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

@@ -237,7 +237,8 @@
       "pastEventsNote": "Diese Events sind vorbei. Zur Referenz bleiben die Guides hier.",
       "wipHeading": "In Arbeit",
       "wipNote": "Entwürfe, die noch nicht fertig sind und sich ändern oder verschwinden können.",
-      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)"
+      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)",
+      "wipMsq": "Hauptszenario-Tracker mit teilbarem Link und PNG-Fortschrittskarte (geplant)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",
