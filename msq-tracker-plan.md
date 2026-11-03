@@ -99,6 +99,13 @@ Do not copy msqtracker.com's data files. Generate our own with `scripts/msq.mjs`
   three Moogle trials). Plan: longest-path layering with ties broken by quest row id,
   then collapse each city/GC variant to the one for the chosen city. Needs a check against
   ConsoleGamesWiki order before we trust it.
+- **Built (`scripts/msq.mjs`, `pnpm msq`, output `msq.json`).** 1,043 unique quests, 997 or
+  998 per starting city. True alternatives (per-Grand-Company and per-class repeats) are
+  collapsed. City is a bitmask `c` (1 Gridania, 2 Limsa, 4 Ul'dah), omitted for shared
+  quests. Checked against MSQTracker's wiki-derived order as a test oracle only: 989 of
+  995 titles land in the same relative order. Known differences: 4 quests out of order in
+  the opening segment, 1 in Stormblood, 1 renamed Endwalker quest, and our 4 extra 7.5
+  quests. Worth a manual look at the opening segment before launch.
 - Query gotchas: use `@as(raw)` on reference fields (returned keys keep the suffix),
   omit `after` on the first page, and do not request `SortKey` (it is not a field).
 - Fallback / cross-check: ConsoleGamesWiki MSQ pages (CC BY-SA, credit required) for
