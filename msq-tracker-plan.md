@@ -147,12 +147,16 @@ Follows the site conventions in `CLAUDE.md`:
 
 ## Status (2026-11-02)
 
-Milestones 1 to 5 are built as a draft page, `msq-tracker.html`, linked from the index
-work-in-progress block and marked `noindex` like the Evercold draft. Still to do before it
-ships: the OG card (`scripts/og.mjs`), sitemap, `llms.txt` and README entries, removing
-`noindex`, moving the index entry into Progress & Checklists, a review of the opening
-segment order, and native-speaker review of the ja/de/fr strings (expansion names use the
-official localized titles; quest titles and questline names stay in English).
+Built and prepared to ship. `msq-tracker.html` is indexable (no `noindex`), listed under
+Curated Guides on the index, in the sitemap, `llms.txt` and the README, with an OG card, an
+"Updated for patch" line (`guide-meta.json`), and the data refresh documented in the README
+(`pnpm msq`, then `pnpm updated`). Checked with axe in both themes (no violations), in all
+four languages at phone and desktop width (no overflow), and in a real browser for the link,
+view mode, jump search, PNG download and filename.
+
+Left for the owner: native-speaker review of the ja/de/fr strings (expansion names use the
+official localized titles, while quest titles and questline names stay in English), and the
+decision to push. After each patch, re-run `pnpm msq`.
 
 ## Milestones
 

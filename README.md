@@ -10,6 +10,7 @@ A curated, hand-picked list of FFXIV tools I actually use. Kept small on purpose
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins I actually use, with a note on which ones need a custom repo.
 - [Watchlist](https://xivkit.com/watchlist.html): tools I haven't tried yet, kept separate from the ones I vouch for.
 - Guides: [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html), [Hunt for Astronomy](https://xivkit.com/hunt-for-astronomy.html), [Keybound Brawler](https://xivkit.com/keybound-brawler.html), [Fan Fest Bingo Maker](https://xivkit.com/fanfest-bingo.html), [Trade-In Mounts](https://xivkit.com/trade-in-mounts.html), and [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html), and [Retainer Ventures](https://xivkit.com/retainer-ventures.html), with live market prices where it helps.
+- Tools: [MSQ Tracker](https://xivkit.com/msq-tracker.html), a Main Scenario Quest tracker whose link carries your current quest, with a PNG progress card to share.
 
 ## Suggest a tool
 
@@ -34,7 +35,7 @@ Three list pages share the exact same structure, styling, and search/tag script:
 
 Guides are standalone pages hosted on the site and listed under "Curated Guides" on
 the home page: `jump-puzzle-macros.html`, `hunt-for-astronomy.html`, `keybound-brawler.html`, `fanfest-bingo.html`, `trade-in-mounts.html`,
-`inventory-decluttering.html`, and `retainer-ventures.html`.
+`inventory-decluttering.html`, and `retainer-ventures.html`. `msq-tracker.html` is a hosted tool listed in the same place.
 
 All pages share the branding: titles read `Page name | XIVKit` (the home page is
 `XIVKit: FFXIV Tools & Links`), `og:site_name` is `XIVKit`, and URLs use
@@ -128,3 +129,14 @@ icon paths, all from XIVAPI). The "Leveling and gear" tab shows example prices f
 `guide-snapshot.json` until the visitor's own world has loaded, then swaps to live prices.
 Refresh the snapshot now and then with `pnpm snapshot` (Excalibur) or
 `pnpm snapshot <world>`, and commit it: the file carries its own date, which the page shows.
+
+### MSQ tracker data
+
+`msq-tracker.html` reads `msq.json`. After a patch that adds Main Scenario Quests, run
+`pnpm msq` to rebuild it from XIVAPI, then bump the page's entry in `guide-meta.json` and run
+`pnpm updated`. The script pulls the Main Scenario Quest journal categories, orders them by
+prerequisite, keeps the three starting cities' opening quests apart (a `c` bitmask on each
+quest), and collapses true alternatives (the per-Grand-Company quests) into one entry. Quest
+banners come from the game's own journal icons (`i`) on XIVAPI. A player's place lives in the
+page link as `#/<expansion>/<quest>`, so renaming a quest slug breaks old links; the script
+fails rather than writing a duplicate slug. See `msq-tracker-plan.md` for how it was built.

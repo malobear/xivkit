@@ -15,7 +15,6 @@
 <title>FFXIV MSQ Tracker with a Shareable Link | XIVKit</title>
 <meta name="description" content="Track your FFXIV Main Scenario Quest progress from A Realm Reborn through Dawntrail. Your current quest lives in the page link so you can paste it to friends, and you can export a PNG progress card.">
 <link rel="canonical" href="https://xivkit.com/msq-tracker.html">
-<meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f7f5f8" media="(prefers-color-scheme: light)">
@@ -55,6 +54,7 @@ a:hover{color:var(--text)}
 #lang-bar button:hover{color:var(--accent);border-color:var(--accent)}
 #lang-bar button.active{background:var(--accent-solid);color:var(--on-accent);font-weight:600}
 
+main{display:flex;flex-direction:column;gap:24px}
 .hero{display:flex;flex-direction:column;gap:8px;padding:16px 0 0}
 h1{margin:0;font:600 clamp(32px,5vw,40px)/1.1 var(--font-sans);letter-spacing:-0.02em;color:var(--text)}
 .lede{margin:0;max-width:60ch;color:var(--muted)}
@@ -125,11 +125,12 @@ button.primary:hover:not(:disabled){border-color:var(--text)}
 
 footer.sources{font-size:14px;line-height:20px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 footer.sources p{margin:8px 0;max-width:80ch}
-footer.sources .legal{font-size:13px;opacity:.75}
+footer.sources .legal{font-size:13px}
 @media (max-width:768px){.grid2{grid-template-columns:1fr}#lang-bar{margin-left:0;width:100%}}
 @media (prefers-reduced-motion:reduce){button.btn{transition:none}}
 </style>
 <link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="guide-updated.css">
 </head>
 <body>
 <div class="wrap">
@@ -146,8 +147,12 @@ footer.sources .legal{font-size:13px;opacity:.75}
 <header class="hero">
   <h1 data-i18n="pages.msqTracker.h1">MSQ Tracker</h1>
   <p class="lede" data-i18n="pages.msqTracker.lede">Track your Main Scenario Quest progress. Your place lives in the page link, so you can paste it to a friend.</p>
+  <!-- guide-updated:start -->
+  <p class="guide-updated" data-updated="2026-11-02" data-patch="7.57"><span class="gu-text">Updated for patch 7.57 · Nov 2, 2026</span></p>
+  <!-- guide-updated:end -->
 </header>
 
+<main>
 <noscript><p class="card">This tracker needs JavaScript to run.</p></noscript>
 
 <div class="banner" id="viewBanner" hidden>
@@ -157,13 +162,13 @@ footer.sources .legal{font-size:13px;opacity:.75}
 </div>
 <p class="notice" id="notice" hidden></p>
 
-<section class="card current" aria-live="polite">
+<section class="card current">
   <div class="curmain" id="curMain">
     <div class="curtext">
-      <div class="kicker" id="curKicker"></div>
-      <div class="titlerow">
+      <div class="kicker" id="curKicker" role="heading" aria-level="2"></div>
+      <div class="titlerow" aria-live="polite">
         <img class="marker" id="curMarker" alt="" width="40" height="40" onerror="this.style.visibility='hidden'">
-        <p class="quest"><span id="curQuest">Loading...</span> <a class="ext" id="curWiki" target="_blank" rel="noopener noreferrer" hidden><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3"/></svg></a></p>
+        <p class="quest"><span id="curQuest" lang="en">Loading...</span> <a class="ext" id="curWiki" target="_blank" rel="noopener noreferrer" hidden><svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2.5h4v4M13.5 2.5 7.5 8.5M12 9.5v3a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h3"/></svg></a></p>
       </div>
       <div class="meta" id="curMeta"></div>
       <div class="actions">
@@ -215,6 +220,8 @@ footer.sources .legal{font-size:13px;opacity:.75}
 <section class="row" style="align-items:center">
   <button class="btn" type="button" id="reset"></button>
 </section>
+
+</main>
 
 <footer class="sources">
   <p data-i18n-rich="pages.msqTracker.footerInspired">Inspired by <a href="https://msqtracker.com/" target="_blank" rel="noopener noreferrer" data-token="msqtracker">MSQTracker</a>, which does the same job but keeps your progress in one browser with no link to share. Go check it out too.</p>
@@ -441,7 +448,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     ul.hidden = !hits.length;
     hits.forEach(function (q) {
       var li = document.createElement("li"), b = document.createElement("button"), n = document.createElement("span"), sm = document.createElement("small");
-      b.type = "button"; n.textContent = q.t;
+      b.type = "button"; n.textContent = q.t; n.lang = "en";
       sm.textContent = [data.seg[q.g].name, T("level", "Level {{n}}", { n: q.l }), q.c != null ? q.p : ""].filter(Boolean).join(" \u00b7 ");
       b.appendChild(n); b.appendChild(sm);
       b.addEventListener("click", function () { $("jumpInput").value = ""; ul.hidden = true; jumpTo(q); });
@@ -592,7 +599,10 @@ footer.sources .legal{font-size:13px;opacity:.75}
     $("next").addEventListener("click", function () { setPos(state.pos + 1); });
     $("prev").addEventListener("click", function () { setPos(state.pos - 1); });
     $("jumpInput").addEventListener("input", renderResults);
-    $("jumpInput").addEventListener("keydown", function (e) { if (e.key === "Escape") { this.value = ""; renderResults(); } });
+    $("jumpInput").addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { this.value = ""; renderResults(); }
+      else if (e.key === "Enter") { var first = $("results").querySelector("button"); if (first) { e.preventDefault(); first.click(); } }
+    });
     $("copyLink").addEventListener("click", function () {
       copyText($("shareUrl").value).then(function () { say(T("linkCopied", "Link copied.")); }, function () { $("shareUrl").select(); say(T("linkSelect", "Press Ctrl+C to copy the selected link.")); });
     });

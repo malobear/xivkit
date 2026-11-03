@@ -27,6 +27,7 @@ const AFTER = {
   "keybound-brawler": /^\s*<p class="lede">The grind math.*<\/p>$/m,
   "jump-puzzle-macros": /^\s*<p>A macro-and-hotbar trick.*<\/p>$/m,
   "fanfest-bingo": /^\s*<p class="lede">Chart your predictions.*<\/p>$/m,
+  "msq-tracker": /^\s*<p class="lede" data-i18n="pages\.msqTracker\.lede">.*<\/p>$/m,
   "inventory-decluttering": /^<p>Staring at a full bag\?.*<\/p>$/m,
 };
 

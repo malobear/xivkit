@@ -141,7 +141,7 @@
     "teamcraft": "Handwerkslisten, Erinnerungen, Sammelrouten",
     "currencyspending": "Zu viel von einer Währung übrig? Währung, Menge und Server wählen und herausfinden, welcher Kauf am meisten Gil einbringt",
     "xivtodo": "Tracker für abgeschlossene Dungeons, Raids und Trials (für die tägliche Checkliste weniger geeignet)",
-    "msqtracker": "Fortschrittstracker für das Hauptszenario, aktuell bis Dawntrail (Fortschritt wird nur im Browser gespeichert; Export/Import zum Übertragen, kein teilbarer Link)",
+    "msqtracker": "Fortschrittstracker für das Hauptszenario, dessen Questliste aber im frühen Patch 7.5 endet (Fortschritt wird nur im Browser gespeichert; Export/Import zum Übertragen, kein teilbarer Link)",
     "ffxivprogress": "MSQ-Fortschrittstracker; erhält seit Endwalker keine Updates mehr, für alles danach lieber MSQTracker oben verwenden",
     "ffxivcollect": "Minions, Reittiere und andere Sammelobjekte nachschlagen und vergleichen",
     "eurekatracker": "Tracker für Eureka-NM-Spawnzeiten, der Community-Standard",
@@ -211,7 +211,8 @@
     "priceinsight": "Zeigt NQ/HQ-Marktbrettpreise und den letzten Verkauf direkt im Tooltip eines Gegenstands beim Überfahren mit der Maus an, abgerufen von Universalis. Im Standard-Plugin-Verzeichnis, aber beim Durchsuchen ausgeblendet, daher nach dem genauen Namen suchen, um es zu installieren",
     "stacksellprice": "Zeigt den Verkaufspreis eines ganzen Stapels im Tooltip an statt nur für ein einzelnes Stück, sodass man die Multiplikation nicht selbst machen muss, bevor man einen Stapel Materialien verkauft. Im Standard-Plugin-Verzeichnis, aber beim Durchsuchen ausgeblendet, daher nach dem genauen Namen suchen, um es zu installieren",
     "repairme": "Erinnert daran, wenn Ausrüstung repariert werden muss oder noch Materia enthält, die extrahiert werden sollte, bevor man sie loswird. Im Standard-Plugin-Verzeichnis, aber beim Durchsuchen ausgeblendet, daher nach dem genauen Namen suchen, um es zu installieren",
-    "simpletweaks": "Riesige Sammlung einzeln aktivierbarer Komfort-Anpassungen; mehrere betreffen direkt Inventar, Gehilfen und Tooltips. Im Standard-Plugin-Verzeichnis, aber beim Durchsuchen ausgeblendet, daher nach dem genauen Namen suchen, um es zu installieren"
+    "simpletweaks": "Riesige Sammlung einzeln aktivierbarer Komfort-Anpassungen; mehrere betreffen direkt Inventar, Gehilfen und Tooltips. Im Standard-Plugin-Verzeichnis, aber beim Durchsuchen ausgeblendet, daher nach dem genauen Namen suchen, um es zu installieren",
+    "xivkitmsq": "Verfolge deinen Fortschritt im Hauptszenario bis zum neuesten Patch, mit der aktuellen Quest in einem Link zum Einfügen und einer PNG-Fortschrittskarte zum Teilen"
   },
   "pages": {
     "index": {
@@ -237,8 +238,7 @@
       "pastEventsNote": "Diese Events sind vorbei. Zur Referenz bleiben die Guides hier.",
       "wipHeading": "In Arbeit",
       "wipNote": "Entwürfe, die noch nicht fertig sind und sich ändern oder verschwinden können.",
-      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)",
-      "wipMsq": "Hauptszenario-Tracker mit teilbarem Link und PNG-Fortschrittskarte (Entwurf)"
+      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

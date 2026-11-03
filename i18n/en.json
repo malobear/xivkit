@@ -141,7 +141,7 @@
     "teamcraft": "Crafting lists, alarms, gathering routes",
     "currencyspending": "Got too much of a currency? Pick the currency, amount, and server to find which item to buy with it for the most gil",
     "xivtodo": "Duty completion tracker for dungeons, raids, and trials (less useful for the dailies checklist)",
-    "msqtracker": "Main Scenario Quest progress tracker, kept current through Dawntrail (progress saves to your browser only; export/import to move it, no shareable link)",
+    "msqtracker": "Main Scenario Quest progress tracker, but its quest list stops in early patch 7.5 (progress saves to your browser only; export/import to move it, no shareable link)",
     "ffxivprogress": "MSQ progress tracker; stopped receiving updates after Endwalker, so use MSQTracker above for anything post-Endwalker",
     "ffxivcollect": "Look up and compare minions, mounts, and other collectibles you're tracking",
     "eurekatracker": "Eureka NM pop time tracker, the community standard",
@@ -211,7 +211,8 @@
     "priceinsight": "Shows NQ/HQ marketboard prices and the most recent sale directly on an item's tooltip on hover, pulled from Universalis. In the default plugin repo but hidden from browsing, so search the exact name to install",
     "stacksellprice": "Shows a full stack's vendor sell price on the tooltip instead of just one unit, so you don't have to do the multiplication yourself before deciding to vendor a pile of materials. In the default plugin repo but hidden from browsing, so search the exact name to install",
     "repairme": "Reminds you when gear needs repairing or still has materia to extract before you get rid of it. In the default plugin repo but hidden from browsing, so search the exact name to install",
-    "simpletweaks": "Huge, individually toggleable grab-bag of quality-of-life tweaks; several touch inventory, retainers, and tooltips directly. In the default plugin repo but hidden from browsing, so search the exact name to install"
+    "simpletweaks": "Huge, individually toggleable grab-bag of quality-of-life tweaks; several touch inventory, retainers, and tooltips directly. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "xivkitmsq": "Track your Main Scenario Quest progress through the latest patch, with your current quest in a link you can paste and a PNG progress card to share"
   },
   "pages": {
     "index": {
@@ -237,8 +238,7 @@
       "pastEventsNote": "Events that have ended. Kept here for reference.",
       "wipHeading": "Work in progress",
       "wipNote": "Drafts that aren't finished, and may change or disappear.",
-      "wipEvercold": "Evercold prep checklist (draft)",
-      "wipMsq": "MSQ tracker with a shareable link and PNG progress card (draft)"
+      "wipEvercold": "Evercold prep checklist (draft)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

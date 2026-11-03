@@ -141,7 +141,7 @@
     "teamcraft": "Listes d'artisanat, alarmes, itinéraires de récolte",
     "currencyspending": "Trop d'une monnaie ? Choisissez la monnaie, la quantité et le serveur pour trouver quel objet acheter afin d'obtenir le plus de gils",
     "xivtodo": "Suivi des donjons, raids et défis terminés (moins utile pour la liste des quotidiennes)",
-    "msqtracker": "Suivi de la progression du scénario principal, à jour jusqu'à Dawntrail (la progression n'est enregistrée que dans le navigateur ; export/import pour la transférer, pas de lien partageable)",
+    "msqtracker": "Suivi du scénario principal dont la liste de quêtes s'arrête au début du patch 7.5 (la progression n'est enregistrée que dans le navigateur ; export/import pour la transférer, pas de lien partageable)",
     "ffxivprogress": "Suivi de la progression du MSQ ; n'a plus été mis à jour depuis Endwalker, utilisez MSQTracker ci-dessus pour tout ce qui suit",
     "ffxivcollect": "Consulter et comparer les mascottes, montures et autres objets à collectionner que vous suivez",
     "eurekatracker": "Suivi des temps d'apparition des NM d'Eureka, la référence de la communauté",
@@ -211,7 +211,8 @@
     "priceinsight": "Affiche les prix du marché NQ/HQ et la vente la plus récente directement dans l'infobulle d'un objet au survol, récupérés depuis Universalis. Dans le dépôt de plugins par défaut mais masqué de la navigation, donc rechercher le nom exact pour l'installer",
     "stacksellprice": "Affiche le prix de vente au marchand de la pile entière dans l'infobulle au lieu d'une seule unité, pour éviter de faire la multiplication soi-même avant de vendre un tas de matériaux. Dans le dépôt de plugins par défaut mais masqué de la navigation, donc rechercher le nom exact pour l'installer",
     "repairme": "Rappelle quand un équipement a besoin d'être réparé ou contient encore de la matéria à extraire avant de s'en débarrasser. Dans le dépôt de plugins par défaut mais masqué de la navigation, donc rechercher le nom exact pour l'installer",
-    "simpletweaks": "Immense collection d'ajustements de confort activables individuellement ; plusieurs touchent directement l'inventaire, les gestionnaires et les infobulles. Dans le dépôt de plugins par défaut mais masqué de la navigation, donc rechercher le nom exact pour l'installer"
+    "simpletweaks": "Immense collection d'ajustements de confort activables individuellement ; plusieurs touchent directement l'inventaire, les gestionnaires et les infobulles. Dans le dépôt de plugins par défaut mais masqué de la navigation, donc rechercher le nom exact pour l'installer",
+    "xivkitmsq": "Suis ta progression dans le scénario principal jusqu'au dernier patch, avec ta quête actuelle dans un lien à coller et une carte de progression PNG à partager"
   },
   "pages": {
     "index": {
@@ -237,8 +238,7 @@
       "pastEventsNote": "Ces événements sont terminés. Conservés ici pour référence.",
       "wipHeading": "En cours",
       "wipNote": "Brouillons non terminés, qui peuvent changer ou disparaître.",
-      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)",
-      "wipMsq": "Suivi du scénario principal avec lien partageable et carte de progression PNG (brouillon)"
+      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",
