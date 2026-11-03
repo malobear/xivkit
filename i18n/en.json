@@ -280,7 +280,7 @@
     },
     "msqTracker": {
       "h1": "MSQ Tracker",
-      "lede": "Track your Main Scenario Quest progress from A Realm Reborn to today. Your place is saved in this browser and written into the page link with the quest name in it, so you can paste it to a friend. Export a PNG progress card to share too.",
+      "lede": "Track your Main Scenario Quest progress. Your place lives in the page link, so you can paste it to a friend.",
       "cityLabel": "Starting city",
       "nameLabel": "Your name (optional)",
       "namePlaceholder": "Shown on the image and in the link",

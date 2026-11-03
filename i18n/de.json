@@ -280,7 +280,7 @@
     },
     "msqTracker": {
       "h1": "Hauptszenario-Tracker",
-      "lede": "Verfolge deinen Fortschritt im Hauptszenario von A Realm Reborn bis heute. Dein Stand wird in diesem Browser gespeichert und samt Questname in den Seitenlink geschrieben, sodass du ihn einem Freund schicken kannst. Eine PNG-Fortschrittskarte zum Teilen lässt sich ebenfalls exportieren.",
+      "lede": "Verfolge deinen Fortschritt im Hauptszenario. Dein Stand steckt im Seitenlink, den du einem Freund schicken kannst.",
       "cityLabel": "Startstadt",
       "nameLabel": "Dein Name (optional)",
       "namePlaceholder": "Wird im Bild und im Link angezeigt",

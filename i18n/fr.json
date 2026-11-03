@@ -280,7 +280,7 @@
     },
     "msqTracker": {
       "h1": "Suivi du scénario principal",
-      "lede": "Suis ta progression dans le scénario principal, de A Realm Reborn à aujourd'hui. Ton avancée est enregistrée dans ce navigateur et écrite dans le lien de la page avec le nom de la quête, pour que tu puisses le coller à un ami. Tu peux aussi exporter une carte de progression en PNG.",
+      "lede": "Suis ta progression dans le scénario principal. Ta position est dans le lien de la page, que tu peux coller à un ami.",
       "cityLabel": "Ville de départ",
       "nameLabel": "Ton nom (facultatif)",
       "namePlaceholder": "Affiché sur l'image et dans le lien",

@@ -17,7 +17,8 @@
 <link rel="canonical" href="https://xivkit.com/msq-tracker.html">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="theme-color" content="#0a1428">
+<meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f5f8" media="(prefers-color-scheme: light)">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XIVKit">
@@ -36,95 +37,91 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;900&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
-:root{
-  --bg:#0a1428; --panel:#0f1d3a; --cell:#14284d; --rule:#3b5a8f; --frame:#b79b5c;
-  --ink:#ecf2fb; --cream:#f4e9cc; --gold:#e8cf94; --gold-hi:#fff3d0; --ice:#8fd3ff; --muted:#a9bcdc; --soft:#bccbe4; --faint:#8fa3c7;
-  --serif:Cinzel, Georgia, serif;
-  --body:"Instrument Sans", system-ui, sans-serif;
-}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;color-scheme:dark}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.45;overflow-x:hidden}
-a{color:var(--gold);text-underline-offset:2px}
-a:hover{color:var(--gold-hi)}
-a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ice);outline-offset:2px;border-radius:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px 56px;display:flex;flex-direction:column;gap:22px}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-size:16px;line-height:24px;overflow-x:hidden}
+a{color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--text)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 64px;display:flex;flex-direction:column;gap:24px}
 
-.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:18px 0 0;font-size:14px}
-.site-nav a{color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
-.site-nav a:hover{color:var(--ink)}
-.site-nav .wordmark{font-family:var(--serif);font-weight:600;font-size:20px;letter-spacing:.1em;color:var(--ink);border-bottom:0}
-.site-nav .wordmark b{font-weight:600;color:#ff5a50}
-#lang-bar{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
-#lang-bar button{font:12px var(--body);border:1px solid var(--rule);background:var(--panel);color:var(--muted);padding:3px 10px;border-radius:999px;cursor:pointer}
-#lang-bar button.active{color:var(--ink);border-color:var(--gold)}
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:18px 0 0;font-size:14px;line-height:20px}
+.site-nav a:not(.wordmark){color:var(--muted);text-decoration:none}
+.site-nav a:not(.wordmark):hover{color:var(--accent)}
+.site-nav .wordmark{margin:0 12px 0 0;font-size:22px}
+#lang-bar{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto}
+#lang-bar button{font:500 12px/16px var(--font-mono);background:var(--raised);color:var(--muted);border:1px solid transparent;border-radius:999px;padding:4px 10px;cursor:pointer}
+#lang-bar button:hover{color:var(--accent);border-color:var(--accent)}
+#lang-bar button.active{background:var(--accent-solid);color:var(--on-accent);font-weight:600}
 
-.hero{display:flex;flex-direction:column;gap:8px;padding:8px 0 0}
-h1{margin:0;font-family:var(--serif);font-weight:900;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:.02em;color:var(--cream)}
-.lede{margin:0;font-size:18px;color:var(--soft);max-width:62ch}
-h2{margin:0 0 10px;font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:.04em;color:var(--cream)}
+.hero{display:flex;flex-direction:column;gap:8px;padding:16px 0 0}
+h1{margin:0;font:600 clamp(32px,5vw,40px)/1.1 var(--font-sans);letter-spacing:-0.02em;color:var(--text)}
+.lede{margin:0;max-width:60ch;color:var(--muted)}
+h2{display:flex;align-items:center;gap:12px;margin:0 0 14px;font:600 12px/16px var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)}
+h2::after{content:"";flex:1;height:1px;background:var(--border)}
 
-.card{background:var(--panel);border:1px solid var(--rule);border-radius:12px;padding:20px}
-.banner{background:#1c2c52;border:1px solid var(--ice);border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
-.banner[hidden]{display:none}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px}
+.banner{background:var(--card);border:1px solid var(--border-strong);border-radius:10px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.banner[hidden],.notice[hidden],#results[hidden]{display:none}
 .banner p{margin:0;flex:1 1 320px}
-.notice{margin:0;color:var(--gold);font-size:15px}
-.notice[hidden]{display:none}
+.notice{margin:0;color:var(--muted);font-size:14px;line-height:20px}
 
 .row{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:flex-end}
-.field{display:flex;flex-direction:column;gap:4px;flex:1 1 220px;min-width:0}
-.field label{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
-input[type=text],input[type=search],select{font:inherit;color:var(--ink);background:var(--cell);border:1px solid var(--rule);border-radius:8px;padding:9px 12px;width:100%}
-button.btn{font:inherit;font-weight:600;font-size:15px;color:var(--ink);background:var(--cell);border:1px solid var(--rule);border-radius:8px;padding:9px 16px;cursor:pointer}
-button.btn:hover:not(:disabled){border-color:var(--gold)}
+.field{display:flex;flex-direction:column;gap:6px;flex:1 1 220px;min-width:0}
+.field label{font:600 12px/16px var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=search],select{font:400 16px/24px var(--font-sans);color:var(--text);background:var(--card);border:1px solid var(--border-strong);border-radius:10px;padding:10px 14px;width:100%}
+input::placeholder{color:var(--muted)}
+input:focus,select:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
+button.btn{font:600 14px/20px var(--font-sans);color:var(--text);background:transparent;border:1px solid var(--border-strong);border-radius:10px;padding:10px 16px;cursor:pointer;transition:border-color .15s ease}
+button.btn:hover:not(:disabled){border-color:var(--accent)}
 button.btn:disabled{opacity:.45;cursor:default}
-button.primary{background:var(--frame);border-color:var(--frame);color:#0a1428}
-button.primary:hover:not(:disabled){background:var(--gold);border-color:var(--gold)}
+button.primary{background:var(--accent-solid);border-color:var(--accent-solid);color:var(--on-accent)}
+button.primary:hover:not(:disabled){border-color:var(--text)}
 
-.current .kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ice)}
-.current .quest{margin:4px 0 6px;font-family:var(--serif);font-weight:900;font-size:clamp(28px,5vw,44px);line-height:1.1;color:var(--cream);overflow-wrap:anywhere}
-.current .meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--soft);font-size:15px}
-.current .meta span+span::before{content:"\00b7";margin-right:14px;color:var(--faint)}
+.eyebrow,.current .kicker{font:600 12px/16px var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--accent)}
+.current .quest{margin:8px 0 8px;font:600 clamp(28px,4.5vw,40px)/1.1 var(--font-sans);letter-spacing:-0.02em;color:var(--text);overflow-wrap:anywhere}
+.current .meta{display:flex;flex-wrap:wrap;gap:4px 14px;color:var(--muted);font-size:14px;line-height:20px}
+.current .meta span+span::before{content:"\00b7";margin-right:14px}
 .current .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .current .wiki{display:inline-block;margin-top:12px;font-size:14px}
 
-.bar{height:14px;background:var(--cell);border:1px solid var(--rule);border-radius:999px;overflow:hidden}
-.bar>i{display:block;height:100%;background:linear-gradient(90deg,#b79b5c,#fff3d0);border-radius:999px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
-.stat b{display:block;font-family:var(--serif);font-size:26px;color:var(--cream)}
-.stat span{font-size:13px;color:var(--muted)}
+.bar{height:10px;background:var(--raised);border-radius:999px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--accent-solid);border-radius:999px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:16px}
+.stat b{display:block;font:600 28px/32px var(--font-sans);letter-spacing:-0.02em;color:var(--text)}
+.stat span{font-size:14px;line-height:20px;color:var(--muted)}
 
-.jump{position:relative}
-#results{list-style:none;margin:6px 0 0;padding:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--cell)}
-#results[hidden]{display:none}
-#results button{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;font:inherit;color:var(--ink);background:none;border:0;border-bottom:1px solid var(--rule);padding:9px 12px;cursor:pointer}
+#results{list-style:none;margin:8px 0 0;padding:0;border:1px solid var(--border-strong);border-radius:10px;overflow:hidden;background:var(--card)}
+#results button{display:flex;justify-content:space-between;gap:12px;width:100%;text-align:left;font:inherit;color:var(--text);background:none;border:0;border-bottom:1px solid var(--border);padding:10px 14px;cursor:pointer}
 #results li:last-child button{border-bottom:0}
-#results button:hover,#results button:focus-visible{background:#1c3566}
-#results small{color:var(--muted);white-space:nowrap}
+#results button:hover,#results button:focus-visible{background:var(--raised)}
+#results small{font:500 12px/24px var(--font-mono);color:var(--muted);white-space:nowrap}
 
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .share .linkrow{display:flex;flex-wrap:wrap;gap:10px}
-.share .linkrow input{flex:1 1 320px;font-size:15px}
+.share .linkrow input{flex:1 1 260px;font:500 13px/20px var(--font-mono)}
 .share .out{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.status{min-height:1.4em;margin:8px 0 0;font-size:14px;color:var(--gold)}
+.status{min-height:24px;margin:8px 0 0;font-size:14px;line-height:20px;color:var(--muted)}
 
-.segs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.seg{background:var(--cell);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
-.seg.done{border-color:var(--frame)}
-.seg.here{border-color:var(--ice)}
-.seg .era{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-.seg h3{margin:0;font-size:17px;color:var(--cream)}
-.seg .info{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
-.seg .acts{display:flex;gap:8px;margin-top:2px}
-.seg .acts button{font:inherit;font-size:13px;color:var(--soft);background:none;border:1px solid var(--rule);border-radius:6px;padding:3px 10px;cursor:pointer}
-.seg .acts button:hover{border-color:var(--gold);color:var(--ink)}
+.segs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.seg{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.seg.here{border-color:var(--text)}
+.seg.done .bar>i{background:var(--border-strong)}
+.seg .era{font:600 12px/16px var(--font-mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.seg h3{margin:0;font:600 18px/24px var(--font-sans);letter-spacing:-0.01em;color:var(--text)}
+.seg .info{display:flex;justify-content:space-between;font:500 12px/16px var(--font-mono);color:var(--muted)}
+.seg .acts{display:flex;gap:8px}
+.seg .acts button{font:500 12px/16px var(--font-mono);color:var(--muted);background:var(--raised);border:1px solid transparent;border-radius:999px;padding:4px 10px;cursor:pointer}
+.seg .acts button:hover{color:var(--accent);border-color:var(--accent)}
 
-footer.sources{font-size:14px;color:var(--muted);border-top:1px solid var(--rule);padding-top:18px}
+footer.sources{font-size:14px;line-height:20px;color:var(--muted);border-top:1px solid var(--border);padding-top:20px}
 footer.sources p{margin:8px 0;max-width:80ch}
 footer.sources .legal{font-size:13px;opacity:.75}
-@media (max-width:560px){#lang-bar{margin-left:0;width:100%}}
+@media (max-width:768px){.grid2{grid-template-columns:1fr}#lang-bar{margin-left:0;width:100%}}
+@media (prefers-reduced-motion:reduce){button.btn{transition:none}}
 </style>
+<link rel="stylesheet" href="brand.css">
 </head>
 <body>
 <div class="wrap">
@@ -140,7 +137,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
 
 <header class="hero">
   <h1 data-i18n="pages.msqTracker.h1">MSQ Tracker</h1>
-  <p class="lede" data-i18n="pages.msqTracker.lede">Track your Main Scenario Quest progress from A Realm Reborn to today. Your place is saved in this browser and written into the page link with the quest name in it, so you can paste it to a friend. Export a PNG progress card to share too.</p>
+  <p class="lede" data-i18n="pages.msqTracker.lede">Track your Main Scenario Quest progress. Your place lives in the page link, so you can paste it to a friend.</p>
 </header>
 
 <noscript><p class="card">This tracker needs JavaScript to run.</p></noscript>
@@ -183,6 +180,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
   </div>
 </section>
 
+<div class="grid2">
 <section class="card">
   <h2 data-i18n="pages.msqTracker.progressHeading">Progress</h2>
   <div class="bar" role="progressbar" id="overallBar" aria-valuemin="0" aria-valuemax="100"><i id="overallFill" style="width:0"></i></div>
@@ -197,7 +195,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
   <h2 data-i18n="pages.msqTracker.shareHeading">Share your progress</h2>
   <div class="linkrow">
     <input type="text" id="shareUrl" readonly aria-label="Shareable link" data-i18n="pages.msqTracker.shareLabel" data-i18n-title title="Shareable link">
-    <button class="btn primary" type="button" id="copyLink"></button>
+    <button class="btn" type="button" id="copyLink"></button>
   </div>
   <div class="out">
     <button class="btn" type="button" id="dlPng"></button>
@@ -205,6 +203,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
   </div>
   <p class="status" id="status" role="status"></p>
 </section>
+</div>
 
 <section>
   <h2 data-i18n="pages.msqTracker.segmentsHeading">Questlines</h2>
@@ -339,7 +338,7 @@ footer.sources .legal{font-size:13px;opacity:.75}
     if (q) {
       wiki.hidden = false;
       wiki.href = "https://ffxiv.consolegameswiki.com/mediawiki/index.php?search=" + encodeURIComponent(q.t);
-      wiki.textContent = T("wiki", "View on ConsoleGamesWiki") + " ↗";
+      wiki.textContent = T("wiki", "View on ConsoleGamesWiki");
     } else wiki.hidden = true;
 
     var ro = !!viewing;
@@ -465,77 +464,73 @@ footer.sources .legal{font-size:13px;opacity:.75}
     ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
     ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
   }
-  function bar(ctx, x, y, w, h, frac) {
-    ctx.fillStyle = "#14284d"; rr(ctx, x, y, w, h, h / 2); ctx.fill();
-    ctx.strokeStyle = "#3b5a8f"; ctx.lineWidth = 2; ctx.stroke();
-    if (frac > 0) {
-      var fw = Math.max(h, w * frac), g = ctx.createLinearGradient(x, 0, x + w, 0);
-      g.addColorStop(0, "#b79b5c"); g.addColorStop(1, "#fff3d0");
-      ctx.fillStyle = g; rr(ctx, x, y, fw, h, h / 2); ctx.fill();
-    }
+  function bar(ctx, x, y, w, h, frac, quiet) {
+    ctx.fillStyle = "#211f26"; rr(ctx, x, y, w, h, h / 2); ctx.fill();
+    if (frac > 0) { ctx.fillStyle = quiet && frac >= 1 ? "#7d7886" : "#d92b25"; rr(ctx, x, y, Math.max(h, w * frac), h, h / 2); ctx.fill(); }
   }
   function drawCard() {
-    var s = shown, W = 1200, H = 630, PAD = 70;
+    var s = shown, W = 1200, H = 630, PAD = 72;
     var total = route.length, done = Math.min(s.pos, total), q = route[s.pos];
     var cv = document.createElement("canvas"); cv.width = W; cv.height = H;
-    var ctx = cv.getContext("2d"), SERIF = "Cinzel, Georgia, serif", SANS = "'Instrument Sans', system-ui, sans-serif";
-    var bg = ctx.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, "#0a1428"); bg.addColorStop(1, "#122248");
-    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
-    ctx.strokeStyle = "#b79b5c"; ctx.lineWidth = 2; ctx.strokeRect(18, 18, W - 36, H - 36);
-    ctx.textBaseline = "alphabetic";
+    var ctx = cv.getContext("2d");
+    var CAPS = "Cinzel, Georgia, serif", SANS = "'Instrument Sans', system-ui, sans-serif", MONO = "'JetBrains Mono', ui-monospace, Menlo, monospace";
+    var INK = "#f5f3f6", MUTED = "#aaa5b0", RED = "#ff5a50";
+    function spaced(v) { if ("letterSpacing" in ctx) ctx.letterSpacing = v; }
+    ctx.fillStyle = "#0c0b0e"; ctx.fillRect(0, 0, W, H);
+    ctx.textBaseline = "alphabetic"; ctx.textAlign = "left";
 
-    ctx.font = "600 30px " + SERIF; ctx.fillStyle = "#ecf2fb"; ctx.textAlign = "left";
-    ctx.fillText("XIV", PAD, 78); var xw = ctx.measureText("XIV").width;
-    ctx.fillStyle = "#ff5a50"; ctx.fillText("KIT", PAD + xw, 78);
-    ctx.font = "600 20px " + SANS; ctx.fillStyle = "#8fd3ff"; ctx.textAlign = "right";
-    ctx.fillText((s.name ? s.name + " · " : "") + T("cardTitle", "MSQ progress").toUpperCase(), W - PAD, 76);
+    spaced("2.2px"); ctx.font = "600 22px " + CAPS; ctx.fillStyle = INK; ctx.fillText("XIV", PAD, 84);
+    var xw = ctx.measureText("XIV").width; ctx.fillStyle = RED; ctx.fillText("KIT", PAD + xw, 84);
+    spaced("1.2px"); ctx.font = "600 14px " + MONO; ctx.fillStyle = MUTED; ctx.textAlign = "right";
+    ctx.fillText(((s.name ? s.name + "  ·  " : "") + T("cardTitle", "MSQ progress")).toUpperCase(), W - PAD, 82);
 
-    ctx.textAlign = "left"; ctx.font = "600 20px " + SANS; ctx.fillStyle = "#8fd3ff";
-    ctx.fillText((q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up")).toUpperCase(), PAD, 140);
+    ctx.textAlign = "left"; ctx.fillStyle = RED; ctx.font = "600 14px " + MONO;
+    ctx.fillText((q ? T("kickerNow", "Current quest") : T("kickerDone", "All caught up")).toUpperCase(), PAD, 156);
+    spaced("0px");
 
     var title = q ? q.t : T("cardDone", "Every MSQ quest done"), size = 64, lines;
     for (; size >= 36; size -= 4) {
-      ctx.font = "900 " + size + "px " + SERIF; lines = wrapLines(ctx, title, W - PAD * 2);
+      ctx.font = "600 " + size + "px " + SANS; spaced(-(size * 0.02) + "px"); lines = wrapLines(ctx, title, W - PAD * 2);
       if (lines.length <= 2) break;
     }
-    ctx.fillStyle = "#f4e9cc";
-    lines.slice(0, 2).forEach(function (ln, i) { ctx.fillText(ln, PAD, 140 + 20 + size + i * (size + 6)); });
-    var afterTitle = 140 + 20 + size + (Math.min(lines.length, 2) - 1) * (size + 6);
+    ctx.fillStyle = INK;
+    lines.slice(0, 2).forEach(function (ln, i) { ctx.fillText(ln, PAD, 156 + 18 + size + i * (size + 6)); });
+    var afterTitle = 156 + 18 + size + (Math.min(lines.length, 2) - 1) * (size + 6);
+    spaced("0px");
 
     if (q) {
       var sg = data.seg[q.g];
-      ctx.font = "500 24px " + SANS; ctx.fillStyle = "#bccbe4";
-      ctx.fillText([sg.name, T("patch", "Patch {{n}}", { n: sg.patch }), T("level", "Level {{n}}", { n: q.l }), q.p].filter(Boolean).join("  ·  "), PAD, afterTitle + 42);
+      ctx.font = "400 22px " + SANS; ctx.fillStyle = MUTED;
+      ctx.fillText([sg.name, T("patch", "Patch {{n}}", { n: sg.patch }), T("level", "Level {{n}}", { n: q.l }), q.p].filter(Boolean).join("  ·  "), PAD, afterTitle + 40);
     }
 
-    var pct = total ? (done >= total ? 100 : Math.floor(done * 100 / total)) : 0, by = 392;
-    ctx.font = "900 54px " + SERIF; ctx.fillStyle = "#fff3d0"; ctx.fillText(pct + "%", PAD, by);
-    ctx.font = "600 24px " + SANS; ctx.fillStyle = "#bccbe4"; ctx.textAlign = "right";
+    var pct = total ? (done >= total ? 100 : Math.floor(done * 100 / total)) : 0, by = 394;
+    ctx.font = "600 56px " + SANS; spaced("-1.1px"); ctx.fillStyle = INK; ctx.fillText(pct + "%", PAD, by); spaced("0px");
+    ctx.font = "500 20px " + MONO; ctx.fillStyle = MUTED; ctx.textAlign = "right";
     ctx.fillText(T("cardCount", "{{done}} of {{total}} quests", { done: done, total: total }), W - PAD, by - 4);
-    ctx.textAlign = "left"; bar(ctx, PAD, by + 18, W - PAD * 2, 30, total ? done / total : 0);
+    ctx.textAlign = "left"; bar(ctx, PAD, by + 20, W - PAD * 2, 14, total ? done / total : 0);
 
-    var cols = eraList.length, gap = 18, cw = (W - PAD * 2 - gap * (cols - 1)) / cols, ey = 492;
+    var cols = eraList.length, gap = 20, cw = (W - PAD * 2 - gap * (cols - 1)) / cols, ey = 494;
     eraList.forEach(function (era, i) {
       var first = -1, last = -1;
       data.seg.forEach(function (sg, g) { if (sg.era === era && segCount(g)) { if (first < 0) first = segStart[g]; last = segStart[g + 1]; } });
       var n = Math.max(0, last - first), d = clamp(s.pos - first, 0, n), x = PAD + i * (cw + gap);
-      ctx.font = "600 17px " + SANS; ctx.fillStyle = "#a9bcdc";
+      ctx.font = "600 16px " + SANS; ctx.fillStyle = MUTED;
       var label = eraName(era); while (ctx.measureText(label).width > cw && label.length > 3) label = label.slice(0, -1);
       ctx.fillText(label, x, ey);
-      bar(ctx, x, ey + 12, cw, 16, n ? d / n : 0);
-      ctx.font = "600 16px " + SANS; ctx.fillStyle = "#8fa3c7"; ctx.fillText((n ? Math.floor(d * 100 / n) : 0) + "%", x, ey + 54);
+      bar(ctx, x, ey + 12, cw, 8, n ? d / n : 0, true);
+      ctx.font = "500 14px " + MONO; ctx.fillStyle = MUTED; ctx.fillText((n ? Math.floor(d * 100 / n) : 0) + "%", x, ey + 46);
     });
 
-    ctx.font = "500 18px " + SANS; ctx.fillStyle = "#8fa3c7";
-    var url = absoluteUrl(s).replace(/^https?:\/\//, "");
+    ctx.font = "500 15px " + MONO; ctx.fillStyle = RED;
+    var full = absoluteUrl(s).replace(/^https?:\/\//, ""), url = full;
     while (ctx.measureText(url).width > W - PAD * 2 && url.length > 12) url = url.slice(0, -2);
-    if (url !== absoluteUrl(s).replace(/^https?:\/\//, "")) url += "…";
-    ctx.fillText(url, PAD, H - 44);
+    ctx.fillText(url === full ? url : url + "…", PAD, H - 44);
     return cv;
   }
   function cardBlob() {
     var fonts = (document.fonts && document.fonts.load)
-      ? Promise.all([document.fonts.load("900 64px Cinzel"), document.fonts.load("600 30px Cinzel"), document.fonts.load("600 20px 'Instrument Sans'"), document.fonts.load("500 24px 'Instrument Sans'")]).catch(function () {})
+      ? Promise.all([document.fonts.load("600 22px Cinzel"), document.fonts.load("600 64px 'Instrument Sans'"), document.fonts.load("400 22px 'Instrument Sans'"), document.fonts.load("500 15px 'JetBrains Mono'"), document.fonts.load("600 14px 'JetBrains Mono'")]).catch(function () {})
       : Promise.resolve();
     return fonts.then(function () {
       return new Promise(function (res) { drawCard().toBlob(res, "image/png"); });
