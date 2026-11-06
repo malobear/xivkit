@@ -53,8 +53,7 @@ eleventyComputed:
       <ol class="steps">
         <li>Install <a href="https://goatcorp.github.io/" target="_blank" rel="noopener noreferrer">XIVLauncher with Dalamud</a> and start the game through it.</li>
         <li>In game, type <code>/xlplugins</code> to open the plugin installer.</li>
-        {% if plugin.hidden and plugin.internalName %}<li>Open <strong>All Plugins</strong> and search for <code>{{ plugin.internalName }}</code>. This plugin is hidden from the installer's browse list, so it only shows up when you search its exact internal name.</li>
-        <li>Click Install.</li>{% else %}<li>Open <strong>All Plugins</strong>, search for <strong>{{ plugin.name }}</strong>, and click Install.</li>{% endif %}
+        <li>Open <strong>All Plugins</strong>, search for <strong>{{ plugin.name }}</strong>, and click Install.</li>
         {% if plugin.testingOnly %}<li>This one is currently testing-only: turn on testing builds for it in the installer before it will show up.</li>{% endif %}
       </ol>
       {% if plugin.automation %}<p class="warn">This plugin automates gameplay. Automation can break the game's Terms of Service, so think before you use it.</p>{% endif %}

@@ -97,7 +97,6 @@ for (const p of master) {
     repoUrl: p.RepoUrl || "",
     iconUrl: p.IconUrl || "",
     images: (p.ImageUrls ?? []).slice(0, 3),
-    hidden: Boolean(p.IsHide),
     testingOnly: Boolean(p.IsTestingExclusive),
     automation: AUTOMATION.test(hay),
     pick: pickKey ? { note: picks[pickKey].note } : null,

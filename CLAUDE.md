@@ -48,10 +48,11 @@ given plugin without asking the user:
 - Fetch that JSON directly (`curl -s https://kamori.goats.dev/Plugin/PluginMaster`)
   and search by `Name`/`InternalName`. A match with a real entry (has a `RepoUrl`,
   `DownloadLinkInstall`, etc.) means it's in the default repo, no `experimental` tag.
-- Watch for `"IsHide": true` on a matched entry: that plugin is hidden from in-game
-  browsing (won't show up scrolling the list) but is still in the default repo, so it
-  doesn't need `experimental`; just note in the description that the user needs to
-  search the exact plugin name to find/install it.
+- Ignore `"IsHide"` on official entries. Most have it set to `true`, but Dalamud forces
+  it to `false` for the official repo (`PluginRepository.cs`, the "API9 HACK"), so every
+  plugin in the official list shows up when browsing in game. Don't describe any of them
+  as hidden or tell people to search an exact name. The installer's search is fuzzy across
+  name, internal name, author, punchline, and tags, so searching the plain name works.
 - `data.json`'s `adoptable`/`stale`/`discontinued`/`obsolete` arrays are also useful
   context if a plugin looks abandoned.
 
