@@ -10,7 +10,7 @@ eleventyComputed:
 {% from "card.njk" import card, filters %}
 <header class="hero">
   <h1>FFXIV plugin directory</h1>
-  <p class="lede">Every plugin in Dalamud's official list, sorted into categories you can actually browse. {{ meta.count }} plugins, refreshed from the official data, and {{ meta.installable }} of them install on today's Dalamud. The ones I use are marked <span class="badge badge-pick">My pick</span>.</p>
+  <p class="lede">Every plugin in Dalamud's official list, sorted into categories you can actually browse. {{ meta.count }} plugins, refreshed from the official data, {{ meta.installable - meta.testing }} of them install straight from the in-game installer, and {{ meta.testing }} more once you turn on testing builds. The ones I use are marked <span class="badge badge-pick">My pick</span>.</p>
   <p class="note">Not sure how to install these? In game, type <code>/xlplugins</code>, open All Plugins, and search for the plugin.</p>
 </header>
 

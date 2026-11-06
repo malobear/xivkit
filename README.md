@@ -108,8 +108,9 @@ gets them (`goatcorp/PluginDistD17`), then the author's `IconUrl`, then `images/
 in the plugin's GitHub repo; the script keeps the first one that loads, and the page shows
 the plugin's first letter when none does. Each plugin also gets an install status using Dalamud's own rule: built for the
 current API level (read from the live Dalamud release) means installable, one level back is
-"outdated", and older is left out of the installer. Lists hide the ones you can't install
-unless the visitor ticks "Show not installable"; their pages stay up and say why. Sort and
+"outdated", and older is left out of the installer. Lists hide the ones you can't install, and
+the ones that need testing builds turned on, unless the visitor ticks "Show not installable"
+or "Show testing builds"; their pages stay up and say why or how. Sort and
 filter choices are kept in the URL (`?sort=updated&recent=1`, and so on). While the directory is a
 prototype, `directory/_data/site.json` sets `indexable: false`, which adds `noindex` to
 every page; flip it to `true` (and add the pages to `sitemap.xml`) to launch.
