@@ -3,8 +3,9 @@
 //   pnpm plugins:fetch    (data only: directory/_data/*.json)
 //   pnpm plugins:build    (data, then the Eleventy build into plugins/)
 //
-// Source: Dalamud's official live plugin master list. Plugins on Dalamud's banned
-// list are dropped. "My picks" notes come from directory/content/picks.json (kept in
+// Sources: Dalamud's official live plugin master list, plus the third-party repositories
+// listed in directory/content/repos.json (same manifest format). Plugins on Dalamud's
+// banned list are dropped. "My picks" notes come from directory/content/picks.json (kept in
 // the data but not shown on the pages for now), which
 // is hand-edited. Run this on a schedule (or by hand) and commit the result.
 import { writeFile, readFile, mkdir } from "node:fs/promises";
@@ -13,6 +14,7 @@ import { fileURLToPath } from "node:url";
 const DATA = fileURLToPath(new URL("../directory/_data/", import.meta.url));
 const PICKS = fileURLToPath(new URL("../directory/content/picks.json", import.meta.url));
 const OVERRIDES = fileURLToPath(new URL("../directory/content/categories.json", import.meta.url));
+const REPOS = fileURLToPath(new URL("../directory/content/repos.json", import.meta.url));
 const MASTER = "https://kamori.goats.dev/Plugin/PluginMaster";
 const BANNED = "https://raw.githubusercontent.com/goatcorp/DalamudAssets/master/UIRes/bannedplugin.json";
 const RELEASE = "https://kamori.goats.dev/Dalamud/Release/VersionInfo?track=release";
@@ -48,13 +50,42 @@ async function getJson(url) {
   return res.json();
 }
 
-const [master, banned, picks, overrides, release] = await Promise.all([
+const [rawMaster, banned, picks, overrides, release, repoList, previous] = await Promise.all([
   getJson(MASTER),
   getJson(BANNED).catch(() => []),
   readFile(PICKS, "utf8").then(JSON.parse).catch(() => ({})),
   readFile(OVERRIDES, "utf8").then(JSON.parse).then((o) => o.categories ?? {}),
   getJson(RELEASE).catch(() => null),
+  readFile(REPOS, "utf8").then(JSON.parse).then((o) => o.repos ?? []),
+  readFile(DATA + "plugins.json", "utf8").then(JSON.parse).catch(() => []),
 ]);
+
+// Third-party repos write numbers and booleans as strings ("15", "True"), so normalise
+// every manifest the same way before using it.
+const num = (v) => Number(v) || 0;
+const bool = (v) => v === true || String(v).toLowerCase() === "true";
+function norm(p) {
+  return { ...p, DalamudApiLevel: num(p.DalamudApiLevel), TestingDalamudApiLevel: num(p.TestingDalamudApiLevel),
+    DownloadCount: num(p.DownloadCount), LastUpdate: num(p.LastUpdate), IsHide: bool(p.IsHide),
+    IsTestingExclusive: bool(p.IsTestingExclusive), Tags: Array.isArray(p.Tags) ? p.Tags : [], ImageUrls: Array.isArray(p.ImageUrls) ? p.ImageUrls : [] };
+}
+const master = rawMaster.map(norm);
+
+// Third-party repos, fetched one at a time (some hosts are small). A repo that fails
+// this run keeps its plugins from the last successful run instead of vanishing.
+const thirdParty = [];
+const carried = [];
+for (const repo of repoList) {
+  try {
+    const list = await getJson(repo.url);
+    if (!Array.isArray(list)) throw new Error("not a plugin list");
+    for (const p of list) thirdParty.push({ ...norm(p), _source: repo.id });
+  } catch (e) {
+    const kept = previous.filter((p) => p.source === repo.id);
+    carried.push(...kept);
+    console.warn(`repo ${repo.id} failed (${e.message}); keeping ${kept.length} plugins from the last run`);
+  }
+}
 
 // GITHUB_TOKEN is optional locally (the API allows 60 calls an hour without one) and set
 // automatically in GitHub Actions.
@@ -73,11 +104,14 @@ const API = Number(String(release?.assemblyVersion ?? "").split(".")[0])
 function availability(p) {
   const stable = p.DalamudApiLevel || 0, testing = p.TestingDalamudApiLevel || 0;
   const best = Math.max(stable, testing);
-  const status = best >= API ? "ok" : best === API - 1 ? "outdated" : "unavailable";
+  // Dalamud forces IsHide off for the official repo but honours it for custom repos, where
+  // a hidden plugin doesn't show in the installer at all.
+  const hiddenByRepo = Boolean(p._source) && p.IsHide;
+  const status = hiddenByRepo ? "unavailable" : best >= API ? "ok" : best === API - 1 ? "outdated" : "unavailable";
   // Testing builds are needed when the plugin only ships there, or only its testing
   // build is on the current API level.
   const needsTesting = status === "ok" && (Boolean(p.IsTestingExclusive) || stable < API);
-  return { apiLevel: best, status, needsTesting };
+  return { apiLevel: best, status, needsTesting, ...(hiddenByRepo ? { hiddenByRepo } : {}) };
 }
 
 // Hand-set categories (directory/content/categories.json) win over keyword scoring.
@@ -141,7 +175,10 @@ async function loads(url) {
     try {
       const res = await fetch(url, { method: "HEAD", redirect: "follow", headers: { "user-agent": "xivkit-plugin-directory" }, signal: AbortSignal.timeout(15000) });
       if (res.status === 429 || res.status >= 500) { transient.count++; continue; }
-      return res.ok && /^image\//.test(res.headers.get("content-type") ?? "image/");
+      // Some hosts label real PNGs with the wrong type (puni.sh's S3 says
+      // application/x-www-form-urlencoded); browsers still show them, so only reject a
+      // response that is clearly a page or data, not an image.
+      return res.ok && !/^(text\/|application\/(json|xml|xhtml))/i.test(res.headers.get("content-type") ?? "");
     } catch { transient.count++; }
   }
   throw new Error(`${url}: still failing after 5 tries, stopping rather than dropping the image`);
@@ -152,10 +189,15 @@ async function pool(items, n, fn) {
 }
 
 const seen = new Set();
+const seenInternal = new Set();
 const plugins = [];
-for (const p of master) {
+for (const p of [...master, ...thirdParty]) {
   const name = clean(p.Name);
   if (!name || isBanned(p)) continue;
+  // Same plugin in several places: the official list wins, then repos in repos.json order.
+  const key = String(p.InternalName || name).toLowerCase();
+  if (seenInternal.has(key)) continue;
+  seenInternal.add(key);
   let slug = slugify(p.InternalName || name) || "plugin";
   if (seen.has(slug)) slug += "-" + slugify(clean(p.Author)).slice(0, 12);
   while (seen.has(slug)) slug += "-2";
@@ -192,7 +234,14 @@ for (const p of master) {
     testingOnly: Boolean(p.IsTestingExclusive),
     ...availability(p),
     pick: pickKey ? { note: picks[pickKey].note } : null,
+    source: p._source || "official",
   });
+}
+// Plugins carried over from a repo that failed this run (already fully resolved).
+for (const p of carried) {
+  if (seen.has(p.slug) || seenInternal.has(String(p.internalName || p.name).toLowerCase())) continue;
+  seen.add(p.slug);
+  plugins.push({ ...p, iconCandidates: p.iconUrl ? [p.iconUrl] : [], shotSets: [p.images] });
 }
 plugins.sort((a, b) => b.downloads - a.downloads);
 
@@ -222,6 +271,10 @@ const categories = [...CATEGORIES, OTHER].map((c) => ({
   count: plugins.filter((p) => p.category === c.slug).length,
 })).filter((c) => c.count);
 
+const sourceCounts = {
+  official: plugins.filter((p) => p.source === "official").length,
+  thirdParty: plugins.filter((p) => p.source !== "official").length,
+};
 const statusCounts = {
   installable: plugins.filter((p) => p.status === "ok").length,
   notInstallable: plugins.filter((p) => p.status !== "ok").length,
@@ -232,6 +285,10 @@ console.log(`API ${API}: ${statusCounts.installable} installable (${statusCounts
 await mkdir(DATA, { recursive: true });
 await writeFile(DATA + "plugins.json", JSON.stringify(plugins));
 await writeFile(DATA + "categories.json", JSON.stringify(categories, null, 2) + "\n");
-await writeFile(DATA + "meta.json", JSON.stringify({ fetched: new Date().toISOString().slice(0, 10), count: plugins.length, api: API, ...statusCounts }) + "\n");
-console.log(`${plugins.length} plugins (${master.length - plugins.length} skipped), ${categories.length} categories, ${plugins.filter((p) => p.pick).length} picks matched`);
+// The templates need each repo's name and install address; only list repos with plugins.
+const repoCounts = {};
+for (const p of plugins) repoCounts[p.source] = (repoCounts[p.source] || 0) + 1;
+await writeFile(DATA + "repos.json", JSON.stringify(repoList.filter((r) => repoCounts[r.id]).map((r) => ({ ...r, count: repoCounts[r.id] })), null, 2) + "\n");
+await writeFile(DATA + "meta.json", JSON.stringify({ fetched: new Date().toISOString().slice(0, 10), count: plugins.length, api: API, ...statusCounts, ...sourceCounts }) + "\n");
+console.log(`${plugins.length} plugins (${sourceCounts.official} official, ${sourceCounts.thirdParty} third-party from ${Object.keys(repoCounts).length - 1} repos), ${categories.length} categories, ${plugins.filter((p) => p.pick).length} picks matched`);
 console.log(categories.map((c) => `${c.name}: ${c.count}`).join(" | "));

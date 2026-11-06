@@ -1,0 +1,247 @@
+[
+  {
+    "id": "punish",
+    "name": "Puni.sh",
+    "site": "https://puni.sh/",
+    "url": "https://love.puni.sh/ment.json",
+    "count": 14
+  },
+  {
+    "id": "seaofstars",
+    "name": "Sea of Stars",
+    "site": "https://github.com/Ottermandias/SeaOfStars",
+    "url": "https://raw.githubusercontent.com/Ottermandias/SeaOfStars/main/repo.json",
+    "count": 9
+  },
+  {
+    "id": "nightmarexiv",
+    "name": "NightmareXIV",
+    "site": "https://github.com/NightmareXIV/MyDalamudPlugins",
+    "url": "https://raw.githubusercontent.com/NightmareXIV/MyDalamudPlugins/main/pluginmaster.json",
+    "count": 15
+  },
+  {
+    "id": "leonblade",
+    "name": "LeonBlade",
+    "site": "https://github.com/LeonBlade/DalamudPlugins",
+    "url": "https://raw.githubusercontent.com/LeonBlade/DalamudPlugins/main/repo.json",
+    "count": 1
+  },
+  {
+    "id": "punish-vali",
+    "name": "Puni.sh (vali)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/vali",
+    "count": 6
+  },
+  {
+    "id": "punish-aetherlove",
+    "name": "Puni.sh (aetherlove)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/aetherlove",
+    "count": 1
+  },
+  {
+    "id": "punish-justbees",
+    "name": "Puni.sh (justbees)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/justbees",
+    "count": 1
+  },
+  {
+    "id": "punish-erdelf",
+    "name": "Puni.sh (erdelf)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/erdelf",
+    "count": 2
+  },
+  {
+    "id": "punish-asuna",
+    "name": "Puni.sh (asuna)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/asuna",
+    "count": 4
+  },
+  {
+    "id": "punish-nainai",
+    "name": "Puni.sh (nainai)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/nainai",
+    "count": 5
+  },
+  {
+    "id": "punish-raya",
+    "name": "Puni.sh (raya)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/raya",
+    "count": 1
+  },
+  {
+    "id": "punish-veyn",
+    "name": "Puni.sh (veyn)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/veyn",
+    "count": 6
+  },
+  {
+    "id": "punish-wah",
+    "name": "Puni.sh (wah)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/wah",
+    "count": 8
+  },
+  {
+    "id": "punish-abe",
+    "name": "Puni.sh (abe)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/abe",
+    "count": 1
+  },
+  {
+    "id": "punish-croizat",
+    "name": "Puni.sh (croizat)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/croizat",
+    "count": 3
+  },
+  {
+    "id": "punish-spider",
+    "name": "Puni.sh (spider)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/spider",
+    "count": 1
+  },
+  {
+    "id": "punish-ice",
+    "name": "Puni.sh (ice)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/ice",
+    "count": 4
+  },
+  {
+    "id": "punish-oof-games",
+    "name": "Puni.sh (oof-games)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/oof-games",
+    "count": 4
+  },
+  {
+    "id": "punish-kawaii",
+    "name": "Puni.sh (kawaii)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/kawaii",
+    "count": 4
+  },
+  {
+    "id": "punish-akechi",
+    "name": "Puni.sh (akechi)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/akechi",
+    "count": 1
+  },
+  {
+    "id": "punish-xan",
+    "name": "Puni.sh (xan)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/xan",
+    "count": 1
+  },
+  {
+    "id": "punish-vera",
+    "name": "Puni.sh (vera)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/vera",
+    "count": 8
+  },
+  {
+    "id": "punish-nexai",
+    "name": "Puni.sh (nexai)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/nexai",
+    "count": 2
+  },
+  {
+    "id": "punish-sourpuh",
+    "name": "Puni.sh (sourpuh)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/sourpuh",
+    "count": 3
+  },
+  {
+    "id": "punish-aly",
+    "name": "Puni.sh (aly)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/aly",
+    "count": 2
+  },
+  {
+    "id": "punish-gid",
+    "name": "Puni.sh (gid)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/gid",
+    "count": 1
+  },
+  {
+    "id": "punish-knightmore",
+    "name": "Puni.sh (knightmore)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/knightmore",
+    "count": 2
+  },
+  {
+    "id": "punish-herc",
+    "name": "Puni.sh (herc)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/herc",
+    "count": 1
+  },
+  {
+    "id": "punish-nala",
+    "name": "Puni.sh (nala)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/nala",
+    "count": 2
+  },
+  {
+    "id": "punish-jukka",
+    "name": "Puni.sh (jukka)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/jukka",
+    "count": 2
+  },
+  {
+    "id": "punish-kage",
+    "name": "Puni.sh (kage)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/kage",
+    "count": 2
+  },
+  {
+    "id": "punish-taurenkey",
+    "name": "Puni.sh (taurenkey)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/taurenkey",
+    "count": 1
+  },
+  {
+    "id": "punish-glyceri",
+    "name": "Puni.sh (glyceri)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/glyceri",
+    "count": 1
+  },
+  {
+    "id": "punish-boxu",
+    "name": "Puni.sh (boxu)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/boxu",
+    "count": 1
+  },
+  {
+    "id": "punish-chika",
+    "name": "Puni.sh (chika)",
+    "site": "https://puni.sh/directory",
+    "url": "https://puni.sh/api/repository/chika",
+    "count": 1
+  }
+]

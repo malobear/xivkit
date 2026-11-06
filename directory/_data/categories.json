@@ -3,55 +3,55 @@
     "slug": "housing",
     "name": "Housing",
     "blurb": "Plugins for decorating, placing and managing houses, apartments and your Free Company estate.",
-    "count": 9
+    "count": 12
   },
   {
     "slug": "roleplay",
     "name": "Roleplay and venues",
     "blurb": "Character profiles, custom titles, RP event calendars, and tools for running or visiting player venues.",
-    "count": 13
+    "count": 16
   },
   {
     "slug": "games",
     "name": "Minigames and fun",
     "blurb": "Games to play while you wait or lie dead on the floor, plus dice, cards and other silly extras.",
-    "count": 20
+    "count": 25
   },
   {
     "slug": "glamour",
     "name": "Glamour and mods",
     "blurb": "Outfit, plate and appearance tools, camera and screenshot helpers, and tools for mod loaders and posing.",
-    "count": 19
+    "count": 30
   },
   {
     "slug": "market",
     "name": "Market and economy",
     "blurb": "Market board price checks, retainer helpers, and tools for selling and crafting for profit.",
-    "count": 25
+    "count": 29
   },
   {
     "slug": "crafting-gathering",
     "name": "Crafting and gathering",
     "blurb": "Crafting macros and solvers, gathering routes and node timers, fishing helpers, and Island Sanctuary planners.",
-    "count": 16
+    "count": 29
   },
   {
     "slug": "combat",
     "name": "Combat and duties",
     "blurb": "Job gauges, cooldown trackers, mechanic helpers, fly text, and tools for dungeons, roulettes, hunts and other duty content.",
-    "count": 95
+    "count": 119
   },
   {
     "slug": "ui",
     "name": "UI and HUD",
     "blurb": "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates, tooltips and menus.",
-    "count": 69
+    "count": 71
   },
   {
     "slug": "chat-social",
     "name": "Chat and social",
     "blurb": "Chat windows and filters, friend lists, linkshells, translation, and tools for staying in touch.",
-    "count": 65
+    "count": 73
   },
   {
     "slug": "audio-music",
@@ -69,12 +69,12 @@
     "slug": "quality-of-life",
     "name": "Quality of life",
     "blurb": "Small helpers that remove friction: tweaks, reminders, collection trackers, notifications and shortcuts.",
-    "count": 95
+    "count": 115
   },
   {
     "slug": "other",
     "name": "Other",
     "blurb": "Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.",
-    "count": 15
+    "count": 43
   }
 ]
