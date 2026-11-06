@@ -1,0 +1,45 @@
+---
+layout: base.njk
+permalink: /index.html
+eleventyComputed:
+  pageTitle: "FFXIV Dalamud Plugin Directory | XIVKit"
+  pageDescription: "Browse {{ meta.count }} FFXIV Dalamud plugins by category, with install counts, last-updated dates and short notes on the ones I actually use."
+  canonicalPath: ""
+  isIndex: true
+---
+{% from "card.njk" import card %}
+<header class="hero">
+  <h1>FFXIV plugin directory</h1>
+  <p class="lede">Every plugin in Dalamud's official list, sorted into categories you can actually browse. {{ meta.count }} plugins, refreshed from the official data. The ones I use are marked <span class="badge badge-pick">My pick</span>.</p>
+  <p class="note">Not sure how to install these? In game, type <code>/xlplugins</code>, open All Plugins, and search for the plugin. Many are hidden from the browse list, so each plugin page shows the exact name to search.</p>
+</header>
+
+<section class="controls" aria-label="Find a plugin">
+  <label class="search"><span class="sr">Search plugins</span>
+    <input id="q" type="search" placeholder="Search by name, author or tag" autocomplete="off">
+  </label>
+  <div class="cats" role="group" aria-label="Categories">
+    <a class="chip" href="/plugins/">All <span>{{ meta.count }}</span></a>
+    {% for c in categories %}<a class="chip" href="/plugins/category/{{ c.slug }}/">{{ c.name }} <span>{{ c.count }}</span></a>{% endfor %}
+  </div>
+</section>
+
+{% set mine = plugins | picks %}
+{% if mine.length %}
+<section aria-labelledby="picks-h">
+  <h2 id="picks-h">My picks</h2>
+  <p class="sub">Plugins from the official list that I use myself. The rest of what I run lives on the <a href="/plugins.html">plugins page</a>.</p>
+  <ul class="plug-list" data-filter-list>
+    {% for p in mine %}{{ card(p, categories) }}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<section aria-labelledby="all-h">
+  <h2 id="all-h">All plugins <span class="count" id="count">{{ meta.count }}</span></h2>
+  <p class="sub">Most installed first.</p>
+  <ul class="plug-list" data-filter-list>
+    {% for p in plugins %}{{ card(p, categories) }}{% endfor %}
+  </ul>
+  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+</section>

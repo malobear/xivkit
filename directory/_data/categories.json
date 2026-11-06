@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "housing",
+    "name": "Housing",
+    "blurb": "Plugins for decorating, placing and managing houses, apartments and your Free Company workshop.",
+    "count": 13
+  },
+  {
+    "slug": "glamour",
+    "name": "Glamour and mods",
+    "blurb": "Outfit, plate and appearance tools, plus helpers for mod loaders and posing.",
+    "count": 31
+  },
+  {
+    "slug": "market",
+    "name": "Market and economy",
+    "blurb": "Market board price checks, retainer helpers, and tools for selling and crafting for profit.",
+    "count": 27
+  },
+  {
+    "slug": "crafting-gathering",
+    "name": "Crafting and gathering",
+    "blurb": "Crafting macros and solvers, gathering routes and node timers, and fishing helpers.",
+    "count": 32
+  },
+  {
+    "slug": "combat",
+    "name": "Combat and jobs",
+    "blurb": "Job gauges, cooldown trackers, timeline and mechanic helpers for raids and trials.",
+    "count": 57
+  },
+  {
+    "slug": "ui",
+    "name": "UI and HUD",
+    "blurb": "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates and menus.",
+    "count": 85
+  },
+  {
+    "slug": "chat-social",
+    "name": "Chat and social",
+    "blurb": "Chat windows and filters, friend lists, translation, and tools for staying in touch.",
+    "count": 91
+  },
+  {
+    "slug": "audio-music",
+    "name": "Audio and music",
+    "blurb": "Orchestrion, bard and music helpers, plus sound and volume controls.",
+    "count": 26
+  },
+  {
+    "slug": "quality-of-life",
+    "name": "Quality of life",
+    "blurb": "Small helpers that remove friction: tweaks, reminders, trackers and shortcuts.",
+    "count": 35
+  },
+  {
+    "slug": "other",
+    "name": "Other",
+    "blurb": "Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.",
+    "count": 101
+  }
+]

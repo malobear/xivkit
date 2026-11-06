@@ -83,6 +83,27 @@ files where it's needed. Adding the same key to `i18n/ja.json`, `de.json`, and
 `fr.json` is optional: a missing key falls back to the English text automatically,
 so the site never breaks, it just shows English for that one entry until translated.
 
+### Plugin directory
+
+`xivkit.com/plugins/` is a generated directory of Dalamud's official plugin list, built with
+[Eleventy](https://www.11ty.dev/). Source lives in `directory/` (templates in `_includes/`,
+generated data in `_data/`, hand-written notes in `content/picks.json`); the output goes to
+`plugins/` and is committed, since the site deploys straight from the branch. Do not edit
+files in `plugins/` by hand.
+
+```
+pnpm plugins          # fetch the latest plugin data, then rebuild everything
+pnpm plugins:fetch    # data only (directory/_data/*.json)
+pnpm plugins:build    # rebuild plugins/ from the current data
+```
+
+`scripts/plugins-fetch.mjs` pulls the official plugin master list, drops anything on
+Dalamud's banned list (compared by version, since bans cover old releases only), sorts
+plugins into categories by keyword, and flags the ones listed in `content/picks.json` as
+"My pick". Adjust the category rules at the top of that script. While the directory is a
+prototype, `directory/_data/site.json` sets `indexable: false`, which adds `noindex` to
+every page; flip it to `true` (and add the pages to `sitemap.xml`) to launch.
+
 ### Searching / sharing a filtered view
 
 Typing in the search box filters by name, description, or tag, and updates the URL

@@ -1,0 +1,83 @@
+---
+layout: base.njk
+pagination:
+  data: plugins
+  size: 1
+  alias: plugin
+permalink: "/{{ plugin.slug }}/index.html"
+eleventyComputed:
+  pageTitle: "{{ plugin.name }}: FFXIV Dalamud plugin | XIVKit"
+  pageDescription: "{{ plugin.punchline | trunc(150) }} {{ plugin.name }} by {{ plugin.author }}: {{ plugin.downloads | num }} installs, updated {{ plugin.lastUpdate | isoDate }}."
+  canonicalPath: "{{ plugin.slug }}/"
+  isIndex: false
+---
+{% from "card.njk" import card %}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span>
+  <a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a>
+</nav>
+
+<header class="plugin-head">
+  {% if plugin.iconUrl %}<img class="plugin-icon" src="{{ plugin.iconUrl }}" alt="" width="72" height="72" onerror="this.style.visibility='hidden'">{% endif %}
+  <div>
+    <h1>{{ plugin.name }}{% if plugin.pick %} <span class="badge badge-pick">My pick</span>{% endif %}</h1>
+    <p class="lede">{{ plugin.punchline }}</p>
+  </div>
+</header>
+
+<div class="plugin-grid">
+  <div class="plugin-main">
+    {% if plugin.pick %}
+    <section class="callout" aria-labelledby="note-h">
+      <h2 id="note-h">Why it's on my list</h2>
+      <p>{{ plugin.pick.note }}</p>
+    </section>
+    {% endif %}
+
+    {% if plugin.description and plugin.description != plugin.punchline %}
+    <section aria-labelledby="about-h">
+      <h2 id="about-h">About {{ plugin.name }}</h2>
+      <p>{{ plugin.description }}</p>
+    </section>
+    {% endif %}
+
+    {% if plugin.images.length %}
+    <section aria-labelledby="shots-h">
+      <h2 id="shots-h">Screenshots</h2>
+      <div class="shots">{% for img in plugin.images %}<img src="{{ img }}" alt="{{ plugin.name }} screenshot {{ loop.index }}" loading="lazy">{% endfor %}</div>
+    </section>
+    {% endif %}
+
+    <section aria-labelledby="install-h">
+      <h2 id="install-h">How to install</h2>
+      <ol class="steps">
+        <li>Install <a href="https://goatcorp.github.io/" target="_blank" rel="noopener noreferrer">XIVLauncher with Dalamud</a> and start the game through it.</li>
+        <li>In game, type <code>/xlplugins</code> to open the plugin installer.</li>
+        {% if plugin.hidden and plugin.internalName %}<li>Open <strong>All Plugins</strong> and search for <code>{{ plugin.internalName }}</code>. This plugin is hidden from the installer's browse list, so it only shows up when you search its exact internal name.</li>
+        <li>Click Install.</li>{% else %}<li>Open <strong>All Plugins</strong>, search for <strong>{{ plugin.name }}</strong>, and click Install.</li>{% endif %}
+        {% if plugin.testingOnly %}<li>This one is currently testing-only: turn on testing builds for it in the installer before it will show up.</li>{% endif %}
+      </ol>
+      {% if plugin.automation %}<p class="warn">This plugin automates gameplay. Automation can break the game's Terms of Service, so think before you use it.</p>{% endif %}
+    </section>
+
+    {% set more = plugins | similar(plugin) %}
+    {% if more.length %}
+    <section aria-labelledby="similar-h">
+      <h2 id="similar-h">Similar plugins</h2>
+      <ul class="plug-list">{% for p in more %}{{ card(p, categories) }}{% endfor %}</ul>
+    </section>
+    {% endif %}
+  </div>
+
+  <aside class="facts" aria-label="Plugin facts">
+    <dl>
+      <div><dt>Author</dt><dd>{{ plugin.author or "Unknown" }}</dd></div>
+      <div><dt>Category</dt><dd><a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a></dd></div>
+      <div><dt>Installs</dt><dd>{{ plugin.downloads | num }}</dd></div>
+      {% if plugin.lastUpdate %}<div><dt>Last updated</dt><dd>{{ plugin.lastUpdate | isoDate }}</dd></div>{% endif %}
+      <div><dt>Repository</dt><dd>Dalamud official list</dd></div>
+      {% if plugin.repoUrl %}<div><dt>Source</dt><dd><a href="{{ plugin.repoUrl }}" target="_blank" rel="noopener noreferrer">{{ plugin.repoUrl | host }}</a></dd></div>{% endif %}
+    </dl>
+    {% if plugin.tags.length %}<p class="tags">{% for t in plugin.tags %}<span class="chip-static">{{ t }}</span>{% endfor %}</p>{% endif %}
+  </aside>
+</div>

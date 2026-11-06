@@ -1,0 +1,208 @@
+{
+  "dalamud": {
+    "name": "Dalamud",
+    "note": "Plugin framework for FFXIV client tools and mods. Install this first, everything else on this page runs through it",
+    "href": "https://dalamud.dev/",
+    "tags": [
+      "plugins",
+      "mods"
+    ]
+  },
+  "penumbra": {
+    "name": "Penumbra",
+    "note": "Runtime mod loader, applies texture/model mods without touching game files. Custom repo, not in the default plugin directory",
+    "href": "https://github.com/xivdev/Penumbra",
+    "tags": [
+      "mods",
+      "experimental"
+    ]
+  },
+  "glamourer": {
+    "name": "Glamourer",
+    "note": "Changes your character's outside appearance using Penumbra mods, what Glamaholic plates apply through. Custom repo, not in the default plugin directory",
+    "href": "https://github.com/Ottermandias/Glamourer",
+    "tags": [
+      "glamour",
+      "experimental"
+    ]
+  },
+  "the reni guide": {
+    "name": "The Reni Guide",
+    "note": "Beginner-friendly walkthrough for setting up Penumbra and Glamourer to mod your character's appearance",
+    "href": "https://reniguide.carrd.co/",
+    "tags": [
+      "guide"
+    ]
+  },
+  "burning down the house (bdth)": {
+    "name": "Burning Down The House (BDTH)",
+    "note": "Gizmo-based housing item positioning, far more precise than the in-game editor. Custom repo, not in the default plugin directory.",
+    "href": "https://github.com/LeonBlade/BDTHPlugin",
+    "tags": [
+      "housing",
+      "experimental"
+    ]
+  },
+  "lifestream": {
+    "name": "Lifestream",
+    "note": "Travel to another world, data center, or house with a single command. Custom repo, not in the default plugin directory",
+    "href": "https://github.com/NightmareXIV/Lifestream",
+    "tags": [
+      "travel",
+      "experimental"
+    ]
+  },
+  "glamaholic": {
+    "name": "Glamaholic",
+    "note": "Save and swap glamour plates. Import looks straight from Eorzea Collection or someone else's export, try them on, and apply via Glamourer. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://github.com/caitlyn-gg/Glamaholic",
+    "tags": [
+      "glamour",
+      "plates"
+    ]
+  },
+  "xiv mod archive": {
+    "name": "XIV Mod Archive",
+    "note": "Biggest free mod repository: glamour, gear, and animation mods, installed via Penumbra",
+    "href": "https://www.xivmodarchive.com/",
+    "tags": [
+      "mods",
+      "glamour",
+      "gear"
+    ]
+  },
+  "heliosphere": {
+    "name": "Heliosphere",
+    "note": "Second mod source/manager I check when Mod Archive doesn't have what I'm looking for",
+    "href": "https://heliosphere.app/",
+    "tags": [
+      "mods",
+      "glamour",
+      "gear"
+    ]
+  },
+  "glamour dresser": {
+    "name": "Glamour Dresser",
+    "note": "Paid mod marketplace. I don't usually pay, but a lot of creators unpaywall mods after a while, so I browse their Patreons for stuff that's gone free",
+    "href": "https://www.glamourdresser.com/",
+    "tags": [
+      "mods",
+      "glamour",
+      "paid"
+    ]
+  },
+  "compress yourself": {
+    "name": "Compress Yourself",
+    "note": "Step-by-step guide to compressing mod textures for Lightless/PlayerSync. Keeps synced mod sizes down",
+    "href": "https://compressyourself.carrd.co/",
+    "tags": [
+      "guide",
+      "mods",
+      "compression"
+    ]
+  },
+  "chat 2": {
+    "name": "Chat 2",
+    "note": "Complete in-game chat window rewrite: unlimited tabs, better filtering, RGB channel colors, unread counts. A must-have",
+    "href": "https://github.com/Infiziert90/ChatTwo",
+    "tags": [
+      "chat",
+      "ui",
+      "qol"
+    ]
+  },
+  "umbra xiv": {
+    "name": "Umbra XIV",
+    "note": "Fully customizable toolbars and 3D world markers. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://una-xiv.github.io/umbra-docs/",
+    "tags": [
+      "ui",
+      "toolbars",
+      "hud"
+    ]
+  },
+  "better friend list": {
+    "name": "Better Friend List",
+    "note": "Cross-server friend list with FC-style login/logout notifications. The other person needs it installed too for you to see theirs",
+    "href": "https://github.com/devckuw/BetterFriendList",
+    "tags": [
+      "social",
+      "friends",
+      "experimental"
+    ]
+  },
+  "allagan tools": {
+    "name": "Allagan Tools",
+    "note": "Cross-storage inventory search and filtering across characters, retainers, and the Free Company chest, plus craft planning and marketboard integration right in tooltips. In the default plugin repo but hidden from browsing, so search the exact name (InventoryTools) to install",
+    "href": "https://github.com/Critical-Impact/InventoryTools",
+    "tags": [
+      "inventory",
+      "retainer",
+      "items"
+    ]
+  },
+  "allagan market": {
+    "name": "Allagan Market",
+    "note": "Tracks retainer market listings, sales, and undercutting across every character at once. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://github.com/Critical-Impact/AllaganMarket",
+    "tags": [
+      "retainer",
+      "market",
+      "tracker"
+    ]
+  },
+  "price insight": {
+    "name": "Price Insight",
+    "note": "Shows NQ/HQ marketboard prices and the most recent sale directly on an item's tooltip on hover, pulled from Universalis. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://github.com/kouzukii/ffxiv-priceinsight",
+    "tags": [
+      "market",
+      "tracker",
+      "qol"
+    ]
+  },
+  "stacksellprice": {
+    "name": "StackSellPrice",
+    "note": "Shows a full stack's vendor sell price on the tooltip instead of just one unit, so you don't have to do the multiplication yourself before deciding to vendor a pile of materials. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://github.com/Infiziert90/StackSellPrice",
+    "tags": [
+      "market",
+      "qol"
+    ]
+  },
+  "repairme": {
+    "name": "RepairMe",
+    "note": "Reminds you when gear needs repairing or still has materia to extract before you get rid of it. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://github.com/chalkos/RepairMe",
+    "tags": [
+      "gear",
+      "qol"
+    ]
+  },
+  "simple tweaks": {
+    "name": "Simple Tweaks",
+    "note": "Huge, individually toggleable grab-bag of quality-of-life tweaks; several touch inventory, retainers, and tooltips directly. In the default plugin repo but hidden from browsing, so search the exact name to install",
+    "href": "https://github.com/Caraxi/SimpleTweaksPlugin",
+    "tags": [
+      "qol"
+    ]
+  },
+  "dalamud plugin browser": {
+    "name": "Dalamud Plugin Browser",
+    "note": "Better search/browse UI for what's available in the main plugin repo than Dalamud's own in-game list",
+    "href": "https://tommadness.github.io/Plugin-Browser/",
+    "tags": [
+      "browser",
+      "discovery"
+    ]
+  },
+  "puni.sh": {
+    "name": "Puni.sh",
+    "note": "Plugin studio/publisher I pull from a lot: Artisan, AutoRetainer, Pandora's Box, and more. Their repo goes under Dalamud's Experimental settings.",
+    "href": "https://puni.sh/",
+    "tags": [
+      "publisher",
+      "experimental"
+    ]
+  }
+}
