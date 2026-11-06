@@ -181,6 +181,66 @@ Pitch: a tight, current, curated FAQ page, not another sprawling wiki-style list
 
 ---
 
+## Plugin directory extensions
+
+Ideas for extending the generated directory at `xivkit.com/plugins/` (source in
+`directory/`, data from `scripts/plugins-fetch.mjs`). Parked, not scheduled.
+
+### Chat commands per plugin
+
+Show a "Chat commands" section on each plugin page (e.g. DailyDuty: `/dailyduty`,
+`/dd`), each with a short note. Useful at a glance, and "what's the command for X" is
+a common search, so it's real unique content for the thin-page concern before launch.
+
+Where commands actually live (checked against Dalamud's source):
+- Not in any data we fetch. The plugin master, manifests and PluginDistD17 have no
+  command field.
+- Plugins register them in code at startup (`ICommandManager.AddHandler("/cmd", new
+  CommandInfo(...) { HelpMessage = "..." })`). The in-game installer only lists them
+  for a plugin that's installed and loaded, by asking Dalamud's `CommandManager` what
+  that plugin registered (`PluginInstallerWindow.cs`, the `plugin.IsLoaded` block).
+- Some READMEs list them (DailyDuty does), but many big plugins have near-empty
+  READMEs (Allagan Tools, Simple Tweaks, GatherBuddy).
+
+Scanning the compiled DLL (in each plugin's `latest.zip` on PluginDistD17) for strings
+starting with `/` was tried on four plugins and is too noisy to publish directly:
+- GatherBuddy: mostly right (`/gather`, `/gatherfish`, `/gbc`), plus `/gatherdebug`.
+- Allagan Tools: right, but only in the attribute (UTF-8 blob) strings, plus noise
+  like `/week`.
+- DailyDuty: found `/dailyduty`, missed `/dd`.
+- Simple Tweaks: missed `/tweaks`, and returned game commands the plugin sends for you
+  (`/say`, `/party`, `/linkshell`) plus binary junk (`/bi9`).
+There's no way to tell from the file alone whether a string is a command the plugin
+adds or a game command it types. It also means downloading ~500 zips (Allagan Tools
+alone is 8MB).
+
+Plan if picked up:
+1. A one-off candidates script (not part of every fetch): scan each plugin's DLL
+   (both string tables) and README, filter out known game and Dalamud commands, and
+   write guesses to a review file.
+2. A hand-confirmed `directory/content/commands.json` keyed by plugin slug, starting
+   with the ~50 most-installed plugins. Confirm each against the in-game installer,
+   which shows the real list once the plugin is installed.
+3. Render the section only for confirmed plugins. Never publish unconfirmed guesses.
+
+### Smaller parked items
+
+- **"Docs and usage on GitHub" link**: make the source link a clear call to action on
+  each plugin page instead of the small "Source: github.com" line, since many authors
+  keep usage, commands and config docs in the README.
+- **My picks**: removed from the directory for now. The notes are still in
+  `directory/content/picks.json` and the fetch still matches them, so bringing them
+  back is template work only (section, badges, page note, filter toggle).
+- **Self-hosted icons**: before launch, have the fetch download icons, resize them to
+  ~88px WebP and serve them from the site (about 1.5MB total), instead of hotlinking
+  GitHub raw (icons range up to 1.2MB each, and GitHub can throttle).
+- **Extra screenshots by hand**: some repos have more images than the author lists for
+  Dalamud (Allagan Tools has a `screenshot5.png` it doesn't publish). If wanted, add a
+  small per-plugin override list rather than scanning repos, which are full of
+  unrelated images.
+
+---
+
 ## Ideas considered and ruled out
 
 Recorded so these don't get re-researched later:
@@ -217,6 +277,12 @@ Recorded so these don't get re-researched later:
   per-tribe pages.
 - **Weekly tomestone cap/augmented gear**: covered clearly by Icy Veins' Dawntrail
   gearing guide.
+- **Mirroring plugin READMEs on directory pages**: README quality varies wildly (a
+  full guide for DailyDuty, a few lines for Allagan Tools or GatherBuddy), the text and
+  images are the author's (code licenses vary and don't clearly cover republishing
+  docs), it would duplicate GitHub content across hundreds of pages, and it goes stale.
+  Link to the README instead and pull out only short facts like chat commands (see
+  "Plugin directory extensions").
 - **Free Company vs. static vs. raid group**: answered informally across many
   threads already, and it's too subjective/social a topic for a factual guide
   format to add much.
