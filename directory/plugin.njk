@@ -20,7 +20,7 @@ eleventyComputed:
 <header class="plugin-head">
   {% if plugin.iconUrl %}<img class="plugin-icon" src="{{ plugin.iconUrl }}" alt="" width="72" height="72" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plugin-icon plug-icon-blank plugin-icon-blank" aria-hidden="true"{% if plugin.iconUrl %} hidden{% endif %}>{{ plugin.name | first | upper }}</span>
   <div>
-    <h1>{{ plugin.name }}{% if plugin.pick %} <span class="badge badge-pick">My pick</span>{% endif %}</h1>
+    <h1>{{ plugin.name }}{% if plugin.pick %} <span class="badge badge-pick">My pick</span>{% endif %}{% if plugin.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif plugin.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif plugin.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</h1>
     <p class="lede">{{ plugin.punchline }}</p>
   </div>
 </header>
@@ -49,14 +49,18 @@ eleventyComputed:
     {% endif %}
 
     <section aria-labelledby="install-h">
+      {% if plugin.status == "ok" %}
       <h2 id="install-h">How to install</h2>
       <ol class="steps">
         <li>Install <a href="https://goatcorp.github.io/" target="_blank" rel="noopener noreferrer">XIVLauncher with Dalamud</a> and start the game through it.</li>
-        <li>In game, type <code>/xlplugins</code> to open the plugin installer.</li>
+        {% if plugin.needsTesting %}<li>Type <code>/xlsettings</code>, open the <strong>Experimental</strong> tab, and turn on <strong>Get plugin testing builds</strong>. {% if plugin.testingOnly %}This plugin is only released as a testing build{% else %}Only this plugin's testing build works on the current version of Dalamud{% endif %}, so it won't show up in the installer until that setting is on.</li>{% endif %}
+        <li>Type <code>/xlplugins</code> to open the plugin installer.</li>
         <li>Open <strong>All Plugins</strong>, search for <strong>{{ plugin.name }}</strong>, and click Install.</li>
-        {% if plugin.testingOnly %}<li>This one is currently testing-only: turn on testing builds for it in the installer before it will show up.</li>{% endif %}
       </ol>
-      {% if plugin.automation %}<p class="warn">This plugin automates gameplay. Automation can break the game's Terms of Service, so think before you use it.</p>{% endif %}
+      {% else %}
+      <h2 id="install-h">Can you install it?</h2>
+      <p class="warn">{% if plugin.status == "outdated" %}Not right now. {{ plugin.name }} was last built for Dalamud API {{ plugin.apiLevel }}, and current Dalamud is API {{ meta.api }}, so the installer lists it as outdated and won't install it until the author releases an update.{% else %}Not right now. {{ plugin.name }} was last built for Dalamud API {{ plugin.apiLevel }}, and current Dalamud is API {{ meta.api }}, so the installer doesn't list it at all. It will come back if the author updates it.{% endif %}{% set alt = plugins | similar(plugin) %}{% if alt.length %} In the meantime, the similar plugins below do work.{% endif %}</p>
+      {% endif %}
     </section>
 
     {% set more = plugins | similar(plugin) %}
@@ -74,6 +78,8 @@ eleventyComputed:
       <div><dt>Category</dt><dd><a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a></dd></div>
       <div><dt>Installs</dt><dd>{{ plugin.downloads | num }}</dd></div>
       {% if plugin.lastUpdate %}<div><dt>Last updated</dt><dd>{{ plugin.lastUpdate | isoDate }}</dd></div>{% endif %}
+      <div><dt>Status</dt><dd>{% if plugin.status == "ok" %}Installable{% if plugin.needsTesting %} (testing builds){% endif %}{% elif plugin.status == "outdated" %}Outdated, not installable{% else %}Not in the installer{% endif %}</dd></div>
+      <div><dt>Dalamud API</dt><dd>{{ plugin.apiLevel }}{% if plugin.apiLevel < meta.api %} (current is {{ meta.api }}){% endif %}</dd></div>
       <div><dt>Repository</dt><dd>Dalamud official list</dd></div>
       {% if plugin.repoUrl %}<div><dt>Source</dt><dd><a href="{{ plugin.repoUrl }}" target="_blank" rel="noopener noreferrer">{{ plugin.repoUrl | host }}</a></dd></div>{% endif %}
     </dl>

@@ -51,7 +51,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Audio and music</nav>
 <header class="hero">
   <h1>Audio and music plugins</h1>
-  <p class="lede">Orchestrion, bard and music helpers, plus sound and volume controls. 29 plugins, most installed first.</p>
+  <p class="lede">Orchestrion, bard and music helpers, plus sound and volume controls.</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -62,12 +62,31 @@
     <a class="chip" href="/plugins/">All <span>498</span></a>
     <a class="chip" href="/plugins/category/housing/">Housing <span>9</span></a><a class="chip" href="/plugins/category/roleplay/">Roleplay and venues <span>13</span></a><a class="chip" href="/plugins/category/games/">Minigames and fun <span>20</span></a><a class="chip" href="/plugins/category/glamour/">Glamour and mods <span>19</span></a><a class="chip" href="/plugins/category/market/">Market and economy <span>25</span></a><a class="chip" href="/plugins/category/crafting-gathering/">Crafting and gathering <span>16</span></a><a class="chip" href="/plugins/category/combat/">Combat and duties <span>95</span></a><a class="chip" href="/plugins/category/ui/">UI and HUD <span>69</span></a><a class="chip" href="/plugins/category/chat-social/">Chat and social <span>65</span></a><a class="chip" href="/plugins/category/audio-music/" aria-current="page">Audio and music <span>29</span></a><a class="chip" href="/plugins/category/graphics/">Graphics and performance <span>28</span></a><a class="chip" href="/plugins/category/quality-of-life/">Quality of life <span>95</span></a><a class="chip" href="/plugins/category/other/">Other <span>15</span></a>
   </div>
+  
+<details class="filter-panel" open>
+  <summary>Sort and filter <span class="filter-count" id="filter-count" hidden></span></summary>
+  <div class="filters">
+    <label class="sort"><span>Sort</span>
+      <select id="sort">
+        <option value="installs">Most installed</option>
+        <option value="updated">Recently updated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
+    <label class="toggle"><input type="checkbox" id="f-notesting"><span>Hide testing builds</span></label>
+    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
+    <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
+  </div>
+</details>
+
 </section>
 
 <section aria-label="Audio and music plugins">
+  <p class="sub" id="result-line">29 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="orchestrion plugin adds a simple front-end for browsing and changing the in-game bgm. perchbird (originally meli) bgm music">
+<li class="plug" data-q="orchestrion plugin adds a simple front-end for browsing and changing the in-game bgm. perchbird (originally meli) bgm music" data-name="orchestrion plugin" data-installs="1693422" data-updated="1780331654" data-status="ok">
   <a class="plug-link" href="/plugins/orchestrion/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/orchestrion/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>O</span>
     <span class="plug-body">
@@ -82,7 +101,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="weatherman allows precise control over time and weather per zone or globally. nightmarexiv ">
+<li class="plug" data-q="weatherman allows precise control over time and weather per zone or globally. nightmarexiv " data-name="weatherman" data-installs="360886" data-updated="1777543818" data-status="ok">
   <a class="plug-link" href="/plugins/weatherman/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Weatherman/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>W</span>
     <span class="plug-body">
@@ -97,7 +116,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="harp hero bard performance assistant mgal2o4 bard music performance midi harp">
+<li class="plug" data-q="harp hero bard performance assistant mgal2o4 bard music performance midi harp" data-name="harp hero" data-installs="160758" data-updated="1777508666" data-status="ok">
   <a class="plug-link" href="/plugins/harphero/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/HarpHero/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
@@ -112,7 +131,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="soundsetter a dalamud plugin that allows volume control from anywhere, including gpose and cutscenes. karashiiro tool sound volume control">
+<li class="plug" data-q="soundsetter a dalamud plugin that allows volume control from anywhere, including gpose and cutscenes. karashiiro tool sound volume control" data-name="soundsetter" data-installs="137757" data-updated="1777772281" data-status="ok">
   <a class="plug-link" href="/plugins/soundsetter/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/SoundSetter/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -127,7 +146,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="congratulations get aurally rewarded when you get commended on duties. berna, kai, kiri audio">
+<li class="plug" data-q="congratulations get aurally rewarded when you get commended on duties. berna, kai, kiri audio" data-name="congratulations" data-installs="133545" data-updated="1777543401" data-status="ok">
   <a class="plug-link" href="/plugins/congratulations/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Congratulations/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -142,7 +161,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="sound filter filter any game sound. cytraen, anna ">
+<li class="plug" data-q="sound filter filter any game sound. cytraen, anna " data-name="sound filter" data-installs="83997" data-updated="1777511540" data-status="ok">
   <a class="plug-link" href="/plugins/soundfilter/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/SoundFilter/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -157,7 +176,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="chatalerts play sounds and highlight text based on defined filters. caraxi &amp; ottermandias chat highlight alert alarm ping roleplay sound">
+<li class="plug" data-q="chatalerts play sounds and highlight text based on defined filters. caraxi &amp; ottermandias chat highlight alert alarm ping roleplay sound" data-name="chatalerts" data-installs="77408" data-updated="1777503034" data-status="ok">
   <a class="plug-link" href="/plugins/chatalerts/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/ChatAlerts/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -172,7 +191,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="oof! play oof! on fall and/or death. the only plugin you need! frogworks interactive oof fall damage death ping play jump alarm roblox">
+<li class="plug" data-q="oof! play oof! on fall and/or death. the only plugin you need! frogworks interactive oof fall damage death ping play jump alarm roblox" data-name="oof!" data-installs="57187" data-updated="1785876047" data-status="ok">
   <a class="plug-link" href="/plugins/oofplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/OofPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>O</span>
     <span class="plug-body">
@@ -187,7 +206,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="hit it, joe! (formerly tf2-ish critical hits plugin) configure sounds for critical and direct hits, plus some countdown music. berna, kai, kiri audio">
+<li class="plug" data-q="hit it, joe! (formerly tf2-ish critical hits plugin) configure sounds for critical and direct hits, plus some countdown music. berna, kai, kiri audio" data-name="hit it, joe! (formerly tf2-ish critical hits plugin)" data-installs="51673" data-updated="1777543393" data-status="ok">
   <a class="plug-link" href="/plugins/tf2criticalhitsplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Tf2CriticalHitsPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
@@ -202,7 +221,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="audible character status you like annoying low hp sounds? this is great for you! gotest audio player status">
+<li class="plug" data-q="audible character status you like annoying low hp sounds? this is great for you! gotest audio player status" data-name="audible character status" data-installs="50441" data-updated="1778438711" data-status="ok">
   <a class="plug-link" href="/plugins/audiblecharacterstatus/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AudibleCharacterStatus/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
@@ -217,7 +236,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="automountbgm automatically control mount bgm for individual mounts! variablevixen ">
+<li class="plug" data-q="automountbgm automatically control mount bgm for individual mounts! variablevixen " data-name="automountbgm" data-installs="46153" data-updated="1777695989" data-status="ok">
   <a class="plug-link" href="/plugins/automountbgm/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AutoMountBgm/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
@@ -232,7 +251,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="stanley parable xiv witty commentary to the brilliant things you do. rekyuu, gaypotatoemma narrator sound stanley parable">
+<li class="plug" data-q="stanley parable xiv witty commentary to the brilliant things you do. rekyuu, gaypotatoemma narrator sound stanley parable" data-name="stanley parable xiv" data-installs="41895" data-updated="1777497760" data-status="ok">
   <a class="plug-link" href="/plugins/stanleyparablexiv/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/StanleyParableXiv/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -247,7 +266,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="fantasy player like you&#39;d ever be sick of the in game music right? critical-impact ">
+<li class="plug" data-q="fantasy player like you&#39;d ever be sick of the in game music right? critical-impact " data-name="fantasy player" data-installs="38178" data-updated="1778954797" data-status="ok">
   <a class="plug-link" href="/plugins/fantasyplayer/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/FantasyPlayer/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>F</span>
     <span class="plug-body">
@@ -262,7 +281,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="nowplaying display what is playing in your server bar, and play/pause/skip. wompscode music background utility">
+<li class="plug" data-q="nowplaying display what is playing in your server bar, and play/pause/skip. wompscode music background utility" data-name="nowplaying" data-installs="16972" data-updated="1788377732" data-status="ok">
   <a class="plug-link" href="/plugins/nowplaying/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/NowPlaying/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>N</span>
     <span class="plug-body">
@@ -277,7 +296,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="auto bgm like /bgm but automatic meoiswa ui convenience command bgm switch">
+<li class="plug" data-q="auto bgm like /bgm but automatic meoiswa ui convenience command bgm switch" data-name="auto bgm" data-installs="13102" data-updated="1778104866" data-status="ok">
   <a class="plug-link" href="/plugins/autobgm/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/AutoBGM/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
@@ -292,7 +311,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="moonbase omega adds moonbase alpha tts when in cosmic exploration. aeiou! notnite moonbase alpha tts dectalk aeiou">
+<li class="plug" data-q="moonbase omega adds moonbase alpha tts when in cosmic exploration. aeiou! notnite moonbase alpha tts dectalk aeiou" data-name="moonbase omega" data-installs="4890" data-updated="1791588569" data-status="ok">
   <a class="plug-link" href="/plugins/moonbaseomega/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/MoonbaseOmega/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
@@ -307,7 +326,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="voice director changes your vo language on a per-duty basis noevain audio">
+<li class="plug" data-q="voice director changes your vo language on a per-duty basis noevain audio" data-name="voice director" data-installs="4804" data-updated="1783628927" data-status="ok">
   <a class="plug-link" href="/plugins/voicedirector/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/VoiceDirector/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>V</span>
     <span class="plug-body">
@@ -322,7 +341,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="ascian music player even the ascians needed some tunes. gaypotatoemma music, amp">
+<li class="plug" data-q="ascian music player even the ascians needed some tunes. gaypotatoemma music, amp" data-name="ascian music player" data-installs="4342" data-updated="1777498359" data-status="ok">
   <a class="plug-link" href="/plugins/ascianmusicplayer/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AscianMusicPlayer/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
@@ -337,11 +356,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="team fortress fantasy [requires tf2 installed for most features] the mann brothers just found a deposit of gravel in eorzea and hired you, mercenary of light, to help them fight for it. berna hud audio">
+<li class="plug" data-q="team fortress fantasy [requires tf2 installed for most features] the mann brothers just found a deposit of gravel in eorzea and hired you, mercenary of light, to help them fight for it. berna hud audio" data-name="team fortress fantasy" data-installs="3353" data-updated="1696442216" data-status="unavailable">
   <a class="plug-link" href="/plugins/tf2hud/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Tf2Hud/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
-      <span class="plug-name">Team Fortress Fantasy</span>
+      <span class="plug-name">Team Fortress Fantasy <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">[REQUIRES TF2 INSTALLED FOR MOST FEATURES] The Mann Brothers just found a deposit of gravel in Eorzea and hired YOU, Me…</span>
       <span class="plug-meta">
         <span class="chip-static">Audio and music</span>
@@ -352,7 +371,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="quiet the den stop yer ears bleedin&#39; in the wolves&#39; den xorelcodes bgm machinations">
+<li class="plug" data-q="quiet the den stop yer ears bleedin&#39; in the wolves&#39; den xorelcodes bgm machinations" data-name="quiet the den" data-installs="3112" data-updated="1777738195" data-status="ok">
   <a class="plug-link" href="/plugins/quietden/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/QuietDen/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>Q</span>
     <span class="plug-body">
@@ -367,7 +386,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="crystalradio stream internet radio stations while playing ffxiv saevath internet radio music in-game audio">
+<li class="plug" data-q="crystalradio stream internet radio stations while playing ffxiv saevath internet radio music in-game audio" data-name="crystalradio" data-installs="3028" data-updated="1778783753" data-status="ok">
   <a class="plug-link" href="/plugins/crystalradio/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/CrystalRadio/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -382,11 +401,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="aetherfm listen to radio in eorzea! salvatoredevelopment radio streaming music ffxiv audio">
+<li class="plug" data-q="aetherfm listen to radio in eorzea! salvatoredevelopment radio streaming music ffxiv audio" data-name="aetherfm" data-installs="2833" data-updated="1754811035" data-status="unavailable">
   <a class="plug-link" href="/plugins/aetherfm/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AetherFM/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
-      <span class="plug-name">AetherFM</span>
+      <span class="plug-name">AetherFM <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Listen to radio in Eorzea!</span>
       <span class="plug-meta">
         <span class="chip-static">Audio and music</span>
@@ -397,7 +416,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="soundeffectmuter quiets the gameplay experience. spide-r frontlines cc pvp sound effect se quick chat">
+<li class="plug" data-q="soundeffectmuter quiets the gameplay experience. spide-r frontlines cc pvp sound effect se quick chat" data-name="soundeffectmuter" data-installs="2691" data-updated="1789129314" data-status="ok">
   <a class="plug-link" href="/plugins/soundeffectmuter/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/SoundEffectMuter/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -412,11 +431,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="karaoke if it&#39;s not &#39;big fat tacos&#39;, what are they singing? lily music lyric karaoke song bgm track">
+<li class="plug" data-q="karaoke if it&#39;s not &#39;big fat tacos&#39;, what are they singing? lily music lyric karaoke song bgm track" data-name="karaoke" data-installs="2080" data-updated="1787610899" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/karaoke/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Karaoke/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>K</span>
     <span class="plug-body">
-      <span class="plug-name">Karaoke</span>
+      <span class="plug-name">Karaoke <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">If it&#39;s not &#39;big fat tacos&#39;, what ARE they singing?</span>
       <span class="plug-meta">
         <span class="chip-static">Audio and music</span>
@@ -427,11 +446,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="linkpearl an actually updated mumble positional audio plugin notnite, lostkagamine, guyven mumble positional audio">
+<li class="plug" data-q="linkpearl an actually updated mumble positional audio plugin notnite, lostkagamine, guyven mumble positional audio" data-name="linkpearl" data-installs="1260" data-updated="1731704664" data-status="unavailable">
   <a class="plug-link" href="/plugins/linkpearl/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Linkpearl/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>L</span>
     <span class="plug-body">
-      <span class="plug-name">Linkpearl</span>
+      <span class="plug-name">Linkpearl <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">An actually updated Mumble positional audio plugin</span>
       <span class="plug-meta">
         <span class="chip-static">Audio and music</span>
@@ -442,7 +461,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="customequalizer tweak the built-in 4-band eq with custom presets. 0x0ade eq equalizer audio sound music">
+<li class="plug" data-q="customequalizer tweak the built-in 4-band eq with custom presets. 0x0ade eq equalizer audio sound music" data-name="customequalizer" data-installs="756" data-updated="1777769849" data-status="ok">
   <a class="plug-link" href="/plugins/customequalizer2782/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/CustomEqualizer2782/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -457,7 +476,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="proxyplayer control what&#39;s playing on your computer within xiv! bronya rand music proxy player media windows smtc linux mpris">
+<li class="plug" data-q="proxyplayer control what&#39;s playing on your computer within xiv! bronya rand music proxy player media windows smtc linux mpris" data-name="proxyplayer" data-installs="537" data-updated="1793056203" data-status="ok">
   <a class="plug-link" href="/plugins/proxyplayer/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ProxyPlayer/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -472,11 +491,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="mount radio/mount music player url music player for your mounts! stream internet radio when on a mount or on foot. jen hyul radio music mounts mount">
+<li class="plug" data-q="mount radio/mount music player url music player for your mounts! stream internet radio when on a mount or on foot. jen hyul radio music mounts mount" data-name="mount radio/mount music player" data-installs="450" data-updated="1734736675" data-status="unavailable">
   <a class="plug-link" href="/plugins/mountradio/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/MountRadio/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
-      <span class="plug-name">Mount Radio/Mount Music Player</span>
+      <span class="plug-name">Mount Radio/Mount Music Player <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">URL music player for your mounts! Stream internet radio when on a mount or on foot.</span>
       <span class="plug-meta">
         <span class="chip-static">Audio and music</span>
@@ -487,11 +506,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="sammi webhook plugin obs automation based on game events via sammi webhooks hattu sammi webhook stream obs other">
+<li class="plug" data-q="sammi webhook plugin obs automation based on game events via sammi webhooks hattu sammi webhook stream obs other" data-name="sammi webhook plugin" data-installs="112" data-updated="1732057067" data-status="unavailable">
   <a class="plug-link" href="/plugins/sammiplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SammiPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">SAMMI Webhook Plugin</span>
+      <span class="plug-name">SAMMI Webhook Plugin <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">OBS automation based on game events via SAMMI webhooks</span>
       <span class="plug-meta">
         <span class="chip-static">Audio and music</span>
@@ -503,7 +522,7 @@
 </li>
 
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>
 
 

@@ -51,7 +51,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Housing</nav>
 <header class="hero">
   <h1>Housing plugins</h1>
-  <p class="lede">Plugins for decorating, placing and managing houses, apartments and your Free Company estate. 9 plugins, most installed first.</p>
+  <p class="lede">Plugins for decorating, placing and managing houses, apartments and your Free Company estate.</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -62,12 +62,31 @@
     <a class="chip" href="/plugins/">All <span>498</span></a>
     <a class="chip" href="/plugins/category/housing/" aria-current="page">Housing <span>9</span></a><a class="chip" href="/plugins/category/roleplay/">Roleplay and venues <span>13</span></a><a class="chip" href="/plugins/category/games/">Minigames and fun <span>20</span></a><a class="chip" href="/plugins/category/glamour/">Glamour and mods <span>19</span></a><a class="chip" href="/plugins/category/market/">Market and economy <span>25</span></a><a class="chip" href="/plugins/category/crafting-gathering/">Crafting and gathering <span>16</span></a><a class="chip" href="/plugins/category/combat/">Combat and duties <span>95</span></a><a class="chip" href="/plugins/category/ui/">UI and HUD <span>69</span></a><a class="chip" href="/plugins/category/chat-social/">Chat and social <span>65</span></a><a class="chip" href="/plugins/category/audio-music/">Audio and music <span>29</span></a><a class="chip" href="/plugins/category/graphics/">Graphics and performance <span>28</span></a><a class="chip" href="/plugins/category/quality-of-life/">Quality of life <span>95</span></a><a class="chip" href="/plugins/category/other/">Other <span>15</span></a>
   </div>
+  
+<details class="filter-panel" open>
+  <summary>Sort and filter <span class="filter-count" id="filter-count" hidden></span></summary>
+  <div class="filters">
+    <label class="sort"><span>Sort</span>
+      <select id="sort">
+        <option value="installs">Most installed</option>
+        <option value="updated">Recently updated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
+    <label class="toggle"><input type="checkbox" id="f-notesting"><span>Hide testing builds</span></label>
+    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
+    <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
+  </div>
+</details>
+
 </section>
 
 <section aria-label="Housing plugins">
+  <p class="sub" id="result-line">9 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="paissahouse crowdsourced housing alerts and lottery tracking for all. zhudotexe housing">
+<li class="plug" data-q="paissahouse crowdsourced housing alerts and lottery tracking for all. zhudotexe housing" data-name="paissahouse" data-installs="305357" data-updated="1777564158" data-status="ok">
   <a class="plug-link" href="/plugins/autosweep/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/zhudotexe/FFXIV_PaissaHouse/HEAD/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -82,7 +101,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="housemate displays information about housing fixtures and objects. perchbird ">
+<li class="plug" data-q="housemate displays information about housing fixtures and objects. perchbird " data-name="housemate" data-installs="217438" data-updated="1777613991" data-status="ok">
   <a class="plug-link" href="/plugins/housemate/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Housemate/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
@@ -97,7 +116,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="doorbell play a chime when someone comes into a house. aida enna doorbell house aida">
+<li class="plug" data-q="doorbell play a chime when someone comes into a house. aida enna doorbell house aida" data-name="doorbell" data-installs="213471" data-updated="1777906496" data-status="ok">
   <a class="plug-link" href="/plugins/doorbell/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Doorbell/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>D</span>
     <span class="plug-body">
@@ -112,7 +131,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="target furniture you can now select furnitures from the housing menu det casual housing">
+<li class="plug" data-q="target furniture you can now select furnitures from the housing menu det casual housing" data-name="target furniture" data-installs="101424" data-updated="1778194147" data-status="ok">
   <a class="plug-link" href="/plugins/targetfurniture/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/TargetFurniture/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
@@ -127,11 +146,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="better housing furniture selection that actually works properly sevii house housing furniture select utility">
+<li class="plug" data-q="better housing furniture selection that actually works properly sevii house housing furniture select utility" data-name="better housing" data-installs="25837" data-updated="1701803417" data-status="unavailable">
   <a class="plug-link" href="/plugins/properhousing/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ProperHousing/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>B</span>
     <span class="plug-body">
-      <span class="plug-name">Better Housing</span>
+      <span class="plug-name">Better Housing <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Furniture selection that actually works properly</span>
       <span class="plug-meta">
         <span class="chip-static">Housing</span>
@@ -142,7 +161,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="facade change your neighbours&#39; housing exterior appearance. keifufu facade housing exterior">
+<li class="plug" data-q="facade change your neighbours&#39; housing exterior appearance. keifufu facade housing exterior" data-name="facade" data-installs="4260" data-updated="1792016023" data-status="ok">
   <a class="plug-link" href="/plugins/facade/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Facade/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>F</span>
     <span class="plug-body">
@@ -157,11 +176,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="housing herald automatic house bidding reminders! fuwa aika house housing bid lottery reminder plot">
+<li class="plug" data-q="housing herald automatic house bidding reminders! fuwa aika house housing bid lottery reminder plot" data-name="housing herald" data-installs="3518" data-updated="1766207633" data-status="outdated">
   <a class="plug-link" href="/plugins/housingherald/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/HousingHerald/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
-      <span class="plug-name">Housing Herald</span>
+      <span class="plug-name">Housing Herald <span class="badge badge-off">Outdated</span></span>
       <span class="plug-desc">Automatic house bidding reminders!</span>
       <span class="plug-meta">
         <span class="chip-static">Housing</span>
@@ -172,7 +191,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="housing cull fix now with void lighting fixed! abyeon, karou housing cull fix utility">
+<li class="plug" data-q="housing cull fix now with void lighting fixed! abyeon, karou housing cull fix utility" data-name="housing cull fix" data-installs="1663" data-updated="1779475065" data-status="ok">
   <a class="plug-link" href="/plugins/housingcullfix/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/HousingCullFix/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
@@ -187,11 +206,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="housingway experience better housing! abyeon util housing tweak">
+<li class="plug" data-q="housingway experience better housing! abyeon util housing tweak" data-name="housingway" data-installs="40" data-updated="1793831682" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/housingway/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Housingway/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
-      <span class="plug-name">Housingway</span>
+      <span class="plug-name">Housingway <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Experience better housing!</span>
       <span class="plug-meta">
         <span class="chip-static">Housing</span>
@@ -203,7 +222,7 @@
 </li>
 
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>
 
 

@@ -51,7 +51,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Graphics and performance</nav>
 <header class="hero">
   <h1>Graphics and performance plugins</h1>
-  <p class="lede">Frame rate, resolution, shadow and render settings, crash and input fixes, and other tweaks to the game client itself. 28 plugins, most installed first.</p>
+  <p class="lede">Frame rate, resolution, shadow and render settings, crash and input fixes, and other tweaks to the game client itself.</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -62,12 +62,31 @@
     <a class="chip" href="/plugins/">All <span>498</span></a>
     <a class="chip" href="/plugins/category/housing/">Housing <span>9</span></a><a class="chip" href="/plugins/category/roleplay/">Roleplay and venues <span>13</span></a><a class="chip" href="/plugins/category/games/">Minigames and fun <span>20</span></a><a class="chip" href="/plugins/category/glamour/">Glamour and mods <span>19</span></a><a class="chip" href="/plugins/category/market/">Market and economy <span>25</span></a><a class="chip" href="/plugins/category/crafting-gathering/">Crafting and gathering <span>16</span></a><a class="chip" href="/plugins/category/combat/">Combat and duties <span>95</span></a><a class="chip" href="/plugins/category/ui/">UI and HUD <span>69</span></a><a class="chip" href="/plugins/category/chat-social/">Chat and social <span>65</span></a><a class="chip" href="/plugins/category/audio-music/">Audio and music <span>29</span></a><a class="chip" href="/plugins/category/graphics/" aria-current="page">Graphics and performance <span>28</span></a><a class="chip" href="/plugins/category/quality-of-life/">Quality of life <span>95</span></a><a class="chip" href="/plugins/category/other/">Other <span>15</span></a>
   </div>
+  
+<details class="filter-panel" open>
+  <summary>Sort and filter <span class="filter-count" id="filter-count" hidden></span></summary>
+  <div class="filters">
+    <label class="sort"><span>Sort</span>
+      <select id="sort">
+        <option value="installs">Most installed</option>
+        <option value="updated">Recently updated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
+    <label class="toggle"><input type="checkbox" id="f-notesting"><span>Hide testing builds</span></label>
+    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
+    <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
+  </div>
+</details>
+
 </section>
 
 <section aria-label="Graphics and performance plugins">
+  <p class="sub" id="result-line">28 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="pingplugin a ping display plugin for dalamud. karashiiro ping monitor utility tool">
+<li class="plug" data-q="pingplugin a ping display plugin for dalamud. karashiiro ping monitor utility tool" data-name="pingplugin" data-installs="1681875" data-updated="1778728799" data-status="ok">
   <a class="plug-link" href="/plugins/pingplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PingPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -82,7 +101,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="vfxeditor vfx editor and viewer ocealot vfx avfx">
+<li class="plug" data-q="vfxeditor vfx editor and viewer ocealot vfx avfx" data-name="vfxeditor" data-installs="1129285" data-updated="1793631422" data-status="ok">
   <a class="plug-link" href="/plugins/vfxeditor/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/VFXEditor/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>V</span>
     <span class="plug-body">
@@ -97,7 +116,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="fps plugin display game fps. caraxi ">
+<li class="plug" data-q="fps plugin display game fps. caraxi " data-name="fps plugin" data-installs="717739" data-updated="1777601203" data-status="ok">
   <a class="plug-link" href="/plugins/fpsplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/FPSPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>F</span>
     <span class="plug-body">
@@ -112,7 +131,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="visibility allows you to hide players, pets, chocobos and minions. sheepgomeh blacklist void voidlist ban hide visibility qol">
+<li class="plug" data-q="visibility allows you to hide players, pets, chocobos and minions. sheepgomeh blacklist void voidlist ban hide visibility qol" data-name="visibility" data-installs="697928" data-updated="1792193077" data-status="ok">
   <a class="plug-link" href="/plugins/visibility/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Visibility/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>V</span>
     <span class="plug-body">
@@ -127,7 +146,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="justbackup automatically backup your game and plugin configuration. nightmarexiv ">
+<li class="plug" data-q="justbackup automatically backup your game and plugin configuration. nightmarexiv " data-name="justbackup" data-installs="332294" data-updated="1777544282" data-status="ok">
   <a class="plug-link" href="/plugins/justbackup/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/JustBackup/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>J</span>
     <span class="plug-body">
@@ -142,7 +161,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="chill frames dynamic framerate limiter, changes fps limit depend on what you are doing midorikami fps chill limiter dtr">
+<li class="plug" data-q="chill frames dynamic framerate limiter, changes fps limit depend on what you are doing midorikami fps chill limiter dtr" data-name="chill frames" data-installs="309698" data-updated="1790030084" data-status="ok">
   <a class="plug-link" href="/plugins/chillframes/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ChillFrames/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -157,7 +176,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="high fps physics fix reduces the refresh rate of movement physics, &quot;fixing&quot; it at high fps. itslunayup jank graphics">
+<li class="plug" data-q="high fps physics fix reduces the refresh rate of movement physics, &quot;fixing&quot; it at high fps. itslunayup jank graphics" data-name="high fps physics fix" data-installs="187304" data-updated="1777738412" data-status="ok">
   <a class="plug-link" href="/plugins/highfpsphysicsplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/HighFpsPhysicsPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>H</span>
     <span class="plug-body">
@@ -172,7 +191,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="better shadows take control of your shadows! drahsid ">
+<li class="plug" data-q="better shadows take control of your shadows! drahsid " data-name="better shadows" data-installs="140667" data-updated="1777945069" data-status="ok">
   <a class="plug-link" href="/plugins/bettershadows/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/BetterShadows/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>B</span>
     <span class="plug-body">
@@ -187,7 +206,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="devicechangefix stops controller input from freezing randomly. nopjmp, jessidhia, pggb fix gamepad">
+<li class="plug" data-q="devicechangefix stops controller input from freezing randomly. nopjmp, jessidhia, pggb fix gamepad" data-name="devicechangefix" data-installs="129710" data-updated="1778449744" data-status="ok">
   <a class="plug-link" href="/plugins/devicechangefix/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/DeviceChangeFix/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>D</span>
     <span class="plug-body">
@@ -202,7 +221,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="no kill plugin don&#39;t kill game with lobby error. bluefissure ">
+<li class="plug" data-q="no kill plugin don&#39;t kill game with lobby error. bluefissure " data-name="no kill plugin" data-installs="115820" data-updated="1777789036" data-status="ok">
   <a class="plug-link" href="/plugins/nokillplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/NoKillPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>N</span>
     <span class="plug-body">
@@ -217,7 +236,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="easyeyes hide annoying or distracting vfxs ocealot vfx avfx">
+<li class="plug" data-q="easyeyes hide annoying or distracting vfxs ocealot vfx avfx" data-name="easyeyes" data-installs="102274" data-updated="1777769879" data-status="ok">
   <a class="plug-link" href="/plugins/easyeyes/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/EasyEyes/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>E</span>
     <span class="plug-body">
@@ -232,7 +251,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="mini adds a button and a command to minimize your game into taskbar nightmarexiv ">
+<li class="plug" data-q="mini adds a button and a command to minimize your game into taskbar nightmarexiv " data-name="mini" data-installs="90684" data-updated="1791254092" data-status="ok">
   <a class="plug-link" href="/plugins/mini/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Mini/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
@@ -247,7 +266,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="xivwindowresizer game window resizing plugin. ever wanted to take 8k screenshots on 144p screen? now you can. alexcsdev gpose posing utility">
+<li class="plug" data-q="xivwindowresizer game window resizing plugin. ever wanted to take 8k screenshots on 144p screen? now you can. alexcsdev gpose posing utility" data-name="xivwindowresizer" data-installs="69607" data-updated="1778984140" data-status="ok">
   <a class="plug-link" href="/plugins/xivwindowresizer/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/XIVWindowResizer/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>X</span>
     <span class="plug-body">
@@ -262,7 +281,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="better borderless window mode make borderless window mode work well with aero shortcuts veyn, sourpuh ">
+<li class="plug" data-q="better borderless window mode make borderless window mode work well with aero shortcuts veyn, sourpuh " data-name="better borderless window mode" data-installs="44788" data-updated="1777503026" data-status="ok">
   <a class="plug-link" href="/plugins/borderless-fix/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/borderless-fix/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>B</span>
     <span class="plug-body">
@@ -277,7 +296,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="customresolution enforces a custom resolution for the game, similar to nvidia dsr. 0x0ade dsr resolution dpi scale scaling">
+<li class="plug" data-q="customresolution enforces a custom resolution for the game, similar to nvidia dsr. 0x0ade dsr resolution dpi scale scaling" data-name="customresolution" data-installs="15940" data-updated="1777769896" data-status="ok">
   <a class="plug-link" href="/plugins/customresolution2782/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/CustomResolution2782/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -292,11 +311,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="xivjitterfix fixes squareenix&#39; botched antialiasing implementation darkarchon fix">
+<li class="plug" data-q="xivjitterfix fixes squareenix&#39; botched antialiasing implementation darkarchon fix" data-name="xivjitterfix" data-installs="14653" data-updated="1721147097" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/xivjitterfix/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/XIVJitterFix/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>X</span>
     <span class="plug-body">
-      <span class="plug-name">XIVJitterFix</span>
+      <span class="plug-name">XIVJitterFix <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Fixes SquareEnix&#39; botched antialiasing implementation</span>
       <span class="plug-meta">
         <span class="chip-static">Graphics and performance</span>
@@ -307,7 +326,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="graphics config save/load shareable graphics setting presets at any time or auto-load them during specified conditions like where you are or what content you are doing. aida enna graphics config fps graphic preset aida">
+<li class="plug" data-q="graphics config save/load shareable graphics setting presets at any time or auto-load them during specified conditions like where you are or what content you are doing. aida enna graphics config fps graphic preset aida" data-name="graphics config" data-installs="13318" data-updated="1777506004" data-status="ok">
   <a class="plug-link" href="/plugins/graphicsconfig/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/GraphicsConfig/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
@@ -322,11 +341,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="gentletouch create vibration patterns for the controller and specify triggers to make it vibrate. chivalrik ">
+<li class="plug" data-q="gentletouch create vibration patterns for the controller and specify triggers to make it vibrate. chivalrik " data-name="gentletouch" data-installs="11937" data-updated="1696626025" data-status="unavailable">
   <a class="plug-link" href="/plugins/gentletouch/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/GentleTouch/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
-      <span class="plug-name">GentleTouch</span>
+      <span class="plug-name">GentleTouch <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Create vibration patterns for the controller and specify triggers to make it vibrate.</span>
       <span class="plug-meta">
         <span class="chip-static">Graphics and performance</span>
@@ -337,7 +356,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="window title changer change your game window titie azure gem, herulume window title">
+<li class="plug" data-q="window title changer change your game window titie azure gem, herulume window title" data-name="window title changer" data-installs="10718" data-updated="1777583149" data-status="ok">
   <a class="plug-link" href="/plugins/wintitle/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/WinTitle/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>W</span>
     <span class="plug-body">
@@ -352,7 +371,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="the great controller hud switcher toggle controller / mouse mode automatically or with commands. callum carmicheal (with help from aida enna) controller keyboard hud aida">
+<li class="plug" data-q="the great controller hud switcher toggle controller / mouse mode automatically or with commands. callum carmicheal (with help from aida enna) controller keyboard hud aida" data-name="the great controller hud switcher" data-installs="9756" data-updated="1777505959" data-status="ok">
   <a class="plug-link" href="/plugins/xivcontrollertoggle/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/XIVControllerToggle/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
@@ -367,7 +386,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="magitek stratagem tobii and eyeware eye and opentrack tracker support for ffxiv meoiswa ui accessibility peripheral eye tracking head tracking tobii eyeware opentrack">
+<li class="plug" data-q="magitek stratagem tobii and eyeware eye and opentrack tracker support for ffxiv meoiswa ui accessibility peripheral eye tracking head tracking tobii eyeware opentrack" data-name="magitek stratagem" data-installs="7389" data-updated="1786746122" data-status="ok">
   <a class="plug-link" href="/plugins/magitekstratagem/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/MagitekStratagem/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
@@ -382,7 +401,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="beeg dinosaur eat window that sure is a beeg dinosaur eat window. arcanedisgea beeg dinosaur eat window">
+<li class="plug" data-q="beeg dinosaur eat window that sure is a beeg dinosaur eat window. arcanedisgea beeg dinosaur eat window" data-name="beeg dinosaur eat window" data-installs="6219" data-updated="1777563140" data-status="ok">
   <a class="plug-link" href="/plugins/beegwindow/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/BeegWindow/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>B</span>
     <span class="plug-body">
@@ -397,7 +416,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="rezo scale plugin lower 3d resolution scale azure gem graphics settings resolution scaling scale configuration">
+<li class="plug" data-q="rezo scale plugin lower 3d resolution scale azure gem graphics settings resolution scaling scale configuration" data-name="rezo scale plugin" data-installs="4853" data-updated="1777583113" data-status="ok">
   <a class="plug-link" href="/plugins/rezoplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/RezoPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
@@ -412,7 +431,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="realtorch set the world alight! yf torch light accessory roleplay">
+<li class="plug" data-q="realtorch set the world alight! yf torch light accessory roleplay" data-name="realtorch" data-installs="1184" data-updated="1782310338" data-status="ok">
   <a class="plug-link" href="/plugins/realtorch/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/RealTorch/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
@@ -427,7 +446,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="xivreflex integrates nvidia reflex low latency to reduce system latency. haselnussbomber ">
+<li class="plug" data-q="xivreflex integrates nvidia reflex low latency to reduce system latency. haselnussbomber " data-name="xivreflex" data-installs="1178" data-updated="1790972762" data-status="ok">
   <a class="plug-link" href="/plugins/xivreflex/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/XivReflex/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>X</span>
     <span class="plug-body">
@@ -442,7 +461,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="liteshade a little less green. zeffuro graphics colour color filters shaders presets gpose dof">
+<li class="plug" data-q="liteshade a little less green. zeffuro graphics colour color filters shaders presets gpose dof" data-name="liteshade" data-installs="767" data-updated="1793365404" data-status="ok">
   <a class="plug-link" href="/plugins/liteshade/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/LiteShade/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>L</span>
     <span class="plug-body">
@@ -457,11 +476,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="render adjust dynamically adjust your object rendering settings. karou utility">
+<li class="plug" data-q="render adjust dynamically adjust your object rendering settings. karou utility" data-name="render adjust" data-installs="598" data-updated="1745157349" data-status="unavailable">
   <a class="plug-link" href="/plugins/renderadjust/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/RenderAdjust/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
-      <span class="plug-name">Render Adjust</span>
+      <span class="plug-name">Render Adjust <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Dynamically adjust your object rendering settings.</span>
       <span class="plug-meta">
         <span class="chip-static">Graphics and performance</span>
@@ -472,11 +491,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="settings enhanced per-zone system and character configurations blooym ">
+<li class="plug" data-q="settings enhanced per-zone system and character configurations blooym " data-name="settings enhanced" data-installs="523" data-updated="1748423355" data-status="unavailable">
   <a class="plug-link" href="/plugins/settingsenhanced/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SettingsEnhanced/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">Settings Enhanced</span>
+      <span class="plug-name">Settings Enhanced <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Per-zone system and character configurations</span>
       <span class="plug-meta">
         <span class="chip-static">Graphics and performance</span>
@@ -488,7 +507,7 @@
 </li>
 
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>
 
 

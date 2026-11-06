@@ -11,11 +11,11 @@ eleventyComputed:
   canonicalPath: "category/{{ cat.slug }}/"
   isIndex: false
 ---
-{% from "card.njk" import card %}
+{% from "card.njk" import card, filters %}
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> {{ cat.name }}</nav>
 <header class="hero">
   <h1>{{ cat.name }} plugins</h1>
-  <p class="lede">{{ cat.blurb }} {{ cat.count }} plugins, most installed first.</p>
+  <p class="lede">{{ cat.blurb }}</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -26,11 +26,13 @@ eleventyComputed:
     <a class="chip" href="/plugins/">All <span>{{ meta.count }}</span></a>
     {% for c in categories %}<a class="chip" href="/plugins/category/{{ c.slug }}/"{% if c.slug == cat.slug %} aria-current="page"{% endif %}>{{ c.name }} <span>{{ c.count }}</span></a>{% endfor %}
   </div>
+  {{ filters(meta) }}
 </section>
 
 <section aria-label="{{ cat.name }} plugins">
+  <p class="sub" id="result-line">{{ cat.count }} plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     {% for p in plugins | inCategory(cat.slug) %}{{ card(p, categories) }}{% endfor %}
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>

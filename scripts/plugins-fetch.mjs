@@ -14,6 +14,7 @@ const PICKS = fileURLToPath(new URL("../directory/content/picks.json", import.me
 const OVERRIDES = fileURLToPath(new URL("../directory/content/categories.json", import.meta.url));
 const MASTER = "https://kamori.goats.dev/Plugin/PluginMaster";
 const BANNED = "https://raw.githubusercontent.com/goatcorp/DalamudAssets/master/UIRes/bannedplugin.json";
+const RELEASE = "https://kamori.goats.dev/Dalamud/Release/VersionInfo?track=release";
 
 // Each category scores keyword hits: name and punchline count triple, tags and the
 // description once. The best score wins; a tie goes to the earlier category.
@@ -34,9 +35,6 @@ const CATEGORIES = [
 const OTHER = { slug: "other", name: "Other", blurb: "Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.", re: null };
 const hits = (re, text) => (text.match(re) || []).length;
 
-// Plugins that play the game for you. Flagged so the page can warn about it.
-const AUTOMATION = /\b(autoduty|auto duty|autoretainer|rotation ?solver|auto ?rotation|botmaker)\b/i;
-
 const slugify = (s) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const clean = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
 
@@ -46,12 +44,30 @@ async function getJson(url) {
   return res.json();
 }
 
-const [master, banned, picks, overrides] = await Promise.all([
+const [master, banned, picks, overrides, release] = await Promise.all([
   getJson(MASTER),
   getJson(BANNED).catch(() => []),
   readFile(PICKS, "utf8").then(JSON.parse).catch(() => ({})),
   readFile(OVERRIDES, "utf8").then(JSON.parse).then((o) => o.categories ?? {}),
+  getJson(RELEASE).catch(() => null),
 ]);
+
+// Can it be installed on today's Dalamud? Same rule as IsManifestEligible in Dalamud's
+// PluginManager.cs: the current API level installs, one level back is listed as
+// "outdated" (not installable), and anything older is left out of the installer. The
+// current level is the major version of the live Dalamud release; if that endpoint is
+// down, fall back to the highest level any official plugin targets.
+const API = Number(String(release?.assemblyVersion ?? "").split(".")[0])
+  || Math.max(...master.map((p) => p.DalamudApiLevel || 0));
+function availability(p) {
+  const stable = p.DalamudApiLevel || 0, testing = p.TestingDalamudApiLevel || 0;
+  const best = Math.max(stable, testing);
+  const status = best >= API ? "ok" : best === API - 1 ? "outdated" : "unavailable";
+  // Testing builds are needed when the plugin only ships there, or only its testing
+  // build is on the current API level.
+  const needsTesting = status === "ok" && (Boolean(p.IsTestingExclusive) || stable < API);
+  return { apiLevel: best, status, needsTesting };
+}
 
 // Hand-set categories (directory/content/categories.json) win over keyword scoring.
 // A typo in a category slug is an error, not a silent new bucket.
@@ -116,7 +132,6 @@ for (const p of master) {
     if (score > top) { top = score; best = c; }
   }
   const category = overrides[slug] ?? best.slug;
-  const hay = strong + " " + weak;
 
   const lower = name.toLowerCase();
   const pickKey = pickNames.find((k) => lower === k || lower.startsWith(k + " "));
@@ -137,7 +152,7 @@ for (const p of master) {
     iconCandidates: iconCandidates(p),
     images: (p.ImageUrls ?? []).slice(0, 3),
     testingOnly: Boolean(p.IsTestingExclusive),
-    automation: AUTOMATION.test(hay),
+    ...availability(p),
     pick: pickKey ? { note: picks[pickKey].note } : null,
   });
 }
@@ -160,9 +175,16 @@ const categories = [...CATEGORIES, OTHER].map((c) => ({
   count: plugins.filter((p) => p.category === c.slug).length,
 })).filter((c) => c.count);
 
+const statusCounts = {
+  installable: plugins.filter((p) => p.status === "ok").length,
+  notInstallable: plugins.filter((p) => p.status !== "ok").length,
+  testing: plugins.filter((p) => p.needsTesting).length,
+};
+console.log(`API ${API}: ${statusCounts.installable} installable (${statusCounts.testing} need testing builds), ${statusCounts.notInstallable} not installable`);
+
 await mkdir(DATA, { recursive: true });
 await writeFile(DATA + "plugins.json", JSON.stringify(plugins));
 await writeFile(DATA + "categories.json", JSON.stringify(categories, null, 2) + "\n");
-await writeFile(DATA + "meta.json", JSON.stringify({ fetched: new Date().toISOString().slice(0, 10), count: plugins.length }) + "\n");
+await writeFile(DATA + "meta.json", JSON.stringify({ fetched: new Date().toISOString().slice(0, 10), count: plugins.length, api: API, ...statusCounts }) + "\n");
 console.log(`${plugins.length} plugins (${master.length - plugins.length} skipped), ${categories.length} categories, ${plugins.filter((p) => p.pick).length} picks matched`);
 console.log(categories.map((c) => `${c.name}: ${c.count}`).join(" | "));

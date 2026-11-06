@@ -51,7 +51,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Glamour and mods</nav>
 <header class="hero">
   <h1>Glamour and mods plugins</h1>
-  <p class="lede">Outfit, plate and appearance tools, camera and screenshot helpers, and tools for mod loaders and posing. 19 plugins, most installed first.</p>
+  <p class="lede">Outfit, plate and appearance tools, camera and screenshot helpers, and tools for mod loaders and posing.</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -62,12 +62,31 @@
     <a class="chip" href="/plugins/">All <span>498</span></a>
     <a class="chip" href="/plugins/category/housing/">Housing <span>9</span></a><a class="chip" href="/plugins/category/roleplay/">Roleplay and venues <span>13</span></a><a class="chip" href="/plugins/category/games/">Minigames and fun <span>20</span></a><a class="chip" href="/plugins/category/glamour/" aria-current="page">Glamour and mods <span>19</span></a><a class="chip" href="/plugins/category/market/">Market and economy <span>25</span></a><a class="chip" href="/plugins/category/crafting-gathering/">Crafting and gathering <span>16</span></a><a class="chip" href="/plugins/category/combat/">Combat and duties <span>95</span></a><a class="chip" href="/plugins/category/ui/">UI and HUD <span>69</span></a><a class="chip" href="/plugins/category/chat-social/">Chat and social <span>65</span></a><a class="chip" href="/plugins/category/audio-music/">Audio and music <span>29</span></a><a class="chip" href="/plugins/category/graphics/">Graphics and performance <span>28</span></a><a class="chip" href="/plugins/category/quality-of-life/">Quality of life <span>95</span></a><a class="chip" href="/plugins/category/other/">Other <span>15</span></a>
   </div>
+  
+<details class="filter-panel" open>
+  <summary>Sort and filter <span class="filter-count" id="filter-count" hidden></span></summary>
+  <div class="filters">
+    <label class="sort"><span>Sort</span>
+      <select id="sort">
+        <option value="installs">Most installed</option>
+        <option value="updated">Recently updated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
+    <label class="toggle"><input type="checkbox" id="f-notesting"><span>Hide testing builds</span></label>
+    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
+    <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
+  </div>
+</details>
+
 </section>
 
 <section aria-label="Glamour and mods plugins">
+  <p class="sub" id="result-line">19 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="glamaholic save and swap your glamour plates. anna, caitlyn ">
+<li class="plug" data-q="glamaholic save and swap your glamour plates. anna, caitlyn " data-name="glamaholic" data-installs="827457" data-updated="1778181105" data-status="ok" data-pick>
   <a class="plug-link" href="/plugins/glamaholic/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Glamaholic/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
@@ -82,7 +101,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="avant-garde displays a list of valid gear pieces beside hints in the fashion report minigame. neneppie fashion report glamour gold saucer">
+<li class="plug" data-q="avant-garde displays a list of valid gear pieces beside hints in the fashion report minigame. neneppie fashion report glamour gold saucer" data-name="avant-garde" data-installs="296674" data-updated="1790687907" data-status="ok">
   <a class="plug-link" href="/plugins/avantgarde/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AvantGarde/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
@@ -97,7 +116,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="tilted tilt the camera, not yourself. meoiswa ui tweak camera combat">
+<li class="plug" data-q="tilted tilt the camera, not yourself. meoiswa ui tweak camera combat" data-name="tilted" data-installs="47437" data-updated="1778104904" data-status="ok">
   <a class="plug-link" href="/plugins/tilted/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Tilted/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
@@ -112,7 +131,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="pet scale customize pet scale kurochi pet scale size summon">
+<li class="plug" data-q="pet scale customize pet scale kurochi pet scale size summon" data-name="pet scale" data-installs="33886" data-updated="1789380741" data-status="ok">
   <a class="plug-link" href="/plugins/petscale/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/PetScale/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -127,7 +146,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="lights, camera, action! save and load unlimited camera and lighting presets in group pose neneppie utility ui gpose group pose camera">
+<li class="plug" data-q="lights, camera, action! save and load unlimited camera and lighting presets in group pose neneppie utility ui gpose group pose camera" data-name="lights, camera, action!" data-installs="30266" data-updated="1777573762" data-status="ok">
   <a class="plug-link" href="/plugins/cameraloader/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/CameraLoader/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>L</span>
     <span class="plug-body">
@@ -142,7 +161,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="photobooth advanced controls for portraits &amp; adventurer plates. iri portrait adventurer plate fashion enhancement qol">
+<li class="plug" data-q="photobooth advanced controls for portraits &amp; adventurer plates. iri portrait adventurer plate fashion enhancement qol" data-name="photobooth" data-installs="24066" data-updated="1777769857" data-status="ok">
   <a class="plug-link" href="/plugins/photobooth/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Photobooth/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -157,11 +176,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="skillswap skill mod creator ocealot mods skills">
+<li class="plug" data-q="skillswap skill mod creator ocealot mods skills" data-name="skillswap" data-installs="19634" data-updated="1697854291" data-status="unavailable">
   <a class="plug-link" href="/plugins/skillswap/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/SkillSwap/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">SkillSwap</span>
+      <span class="plug-name">SkillSwap <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Skill mod creator</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -172,7 +191,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="musical guide enhanced camera distance control and first-person experience. yf camera">
+<li class="plug" data-q="musical guide enhanced camera distance control and first-person experience. yf camera" data-name="musical guide" data-installs="17456" data-updated="1788021429" data-status="ok">
   <a class="plug-link" href="/plugins/musicalguide/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/MusicalGuide/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
@@ -187,11 +206,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="xivr - vr mod mod to allow vr marulu, streetrat utility">
+<li class="plug" data-q="xivr - vr mod mod to allow vr marulu, streetrat utility" data-name="xivr - vr mod" data-installs="17075" data-updated="1680802698" data-status="unavailable">
   <a class="plug-link" href="/plugins/xivr/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/xivr/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>X</span>
     <span class="plug-body">
-      <span class="plug-name">XIVR - VR Mod</span>
+      <span class="plug-name">XIVR - VR Mod <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Mod to allow VR</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -202,7 +221,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="dispeller easily clean out your glamour dresser. lovasz-akos glamour dresser models fashion cute utility">
+<li class="plug" data-q="dispeller easily clean out your glamour dresser. lovasz-akos glamour dresser models fashion cute utility" data-name="dispeller" data-installs="9937" data-updated="1790785894" data-status="ok">
   <a class="plug-link" href="/plugins/dispeller/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Dispeller/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>D</span>
     <span class="plug-body">
@@ -217,7 +236,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="wachumakeymaking? a mod that calculates what you can do with what you have. nesrie crafting">
+<li class="plug" data-q="wachumakeymaking? a mod that calculates what you can do with what you have. nesrie crafting" data-name="wachumakeymaking?" data-installs="8772" data-updated="1791645772" data-status="ok">
   <a class="plug-link" href="/plugins/wachumakeymaking/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/WachuMakeyMaking/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>W</span>
     <span class="plug-body">
@@ -232,7 +251,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="sightseeingway automatically rename your screenshots with character and location info. leon aquitaine screenshot gpose utility">
+<li class="plug" data-q="sightseeingway automatically rename your screenshots with character and location info. leon aquitaine screenshot gpose utility" data-name="sightseeingway" data-installs="8013" data-updated="1777672554" data-status="ok">
   <a class="plug-link" href="/plugins/sightseeingway/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Sightseeingway/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -247,11 +266,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="show gear shows your gear in the fitting room by default. ash ">
+<li class="plug" data-q="show gear shows your gear in the fitting room by default. ash " data-name="show gear" data-installs="1733" data-updated="1712089368" data-status="unavailable">
   <a class="plug-link" href="/plugins/showgear/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ShowGear/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">Show Gear</span>
+      <span class="plug-name">Show Gear <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Shows your gear in the Fitting Room by default.</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -262,11 +281,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="glamourwishlist create wish lists of items you want to glamour dragonflyy glamour wishlist">
+<li class="plug" data-q="glamourwishlist create wish lists of items you want to glamour dragonflyy glamour wishlist" data-name="glamourwishlist" data-installs="1678" data-updated="1696787332" data-status="unavailable">
   <a class="plug-link" href="/plugins/glamourwishlist/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/GlamourWishlist/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
-      <span class="plug-name">GlamourWishlist</span>
+      <span class="plug-name">GlamourWishlist <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Create wish lists of items you want to glamour</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -277,7 +296,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="glamswapcommand swap glams to your currently selected gearset! skyde789 glam glamour command gearset">
+<li class="plug" data-q="glamswapcommand swap glams to your currently selected gearset! skyde789 glam glamour command gearset" data-name="glamswapcommand" data-installs="629" data-updated="1777583360" data-status="ok">
   <a class="plug-link" href="/plugins/glamswapcommand/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/GlamSwapCommand/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
@@ -292,7 +311,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="glamour roulette picks a random outfit! sleeds2 glamour randomizer roulette outfit">
+<li class="plug" data-q="glamour roulette picks a random outfit! sleeds2 glamour randomizer roulette outfit" data-name="glamour roulette" data-installs="471" data-updated="1784612923" data-status="ok">
   <a class="plug-link" href="/plugins/glamourroulette/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/GlamourRoulette/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
@@ -307,11 +326,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="fashion report calculator / dye finder know your fashion report points on the spot and help crowdsource new items and dyes! the redheaded witch &amp; willwolf76 fashion report gold saucer mini game masked rose glamour mgp">
+<li class="plug" data-q="fashion report calculator / dye finder know your fashion report points on the spot and help crowdsource new items and dyes! the redheaded witch &amp; willwolf76 fashion report gold saucer mini game masked rose glamour mgp" data-name="fashion report calculator / dye finder" data-installs="336" data-updated="1764128162" data-status="unavailable">
   <a class="plug-link" href="/plugins/fashionreport/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/FashionReport/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>F</span>
     <span class="plug-body">
-      <span class="plug-name">Fashion Report Calculator / Dye Finder</span>
+      <span class="plug-name">Fashion Report Calculator / Dye Finder <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Know your Fashion Report points on the spot and help crowdsource new items and dyes!</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -322,11 +341,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="restore camera pivot while auto-running restore legacy camera pivot while auto-running. ryankhart camera movement utility">
+<li class="plug" data-q="restore camera pivot while auto-running restore legacy camera pivot while auto-running. ryankhart camera movement utility" data-name="restore camera pivot while auto-running" data-installs="292" data-updated="1780343312" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/restorecamerapivotwhileautorunning/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/RestoreCameraPivotWhileAutorunning/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
-      <span class="plug-name">Restore Camera Pivot While Auto-Running</span>
+      <span class="plug-name">Restore Camera Pivot While Auto-Running <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Restore legacy camera pivot while auto-running.</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -337,11 +356,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="train conductor choo choo the redheaded witch hunt train utility">
+<li class="plug" data-q="train conductor choo choo the redheaded witch hunt train utility" data-name="train conductor" data-installs="35" data-updated="1764128142" data-status="unavailable">
   <a class="plug-link" href="/plugins/trainconductor/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/TrainConductor/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
-      <span class="plug-name">Train Conductor</span>
+      <span class="plug-name">Train Conductor <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Choo Choo</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -353,7 +372,7 @@
 </li>
 
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>
 
 

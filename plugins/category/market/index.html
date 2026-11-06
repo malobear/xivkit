@@ -51,7 +51,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Market and economy</nav>
 <header class="hero">
   <h1>Market and economy plugins</h1>
-  <p class="lede">Market board price checks, retainer helpers, and tools for selling and crafting for profit. 25 plugins, most installed first.</p>
+  <p class="lede">Market board price checks, retainer helpers, and tools for selling and crafting for profit.</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -62,12 +62,31 @@
     <a class="chip" href="/plugins/">All <span>498</span></a>
     <a class="chip" href="/plugins/category/housing/">Housing <span>9</span></a><a class="chip" href="/plugins/category/roleplay/">Roleplay and venues <span>13</span></a><a class="chip" href="/plugins/category/games/">Minigames and fun <span>20</span></a><a class="chip" href="/plugins/category/glamour/">Glamour and mods <span>19</span></a><a class="chip" href="/plugins/category/market/" aria-current="page">Market and economy <span>25</span></a><a class="chip" href="/plugins/category/crafting-gathering/">Crafting and gathering <span>16</span></a><a class="chip" href="/plugins/category/combat/">Combat and duties <span>95</span></a><a class="chip" href="/plugins/category/ui/">UI and HUD <span>69</span></a><a class="chip" href="/plugins/category/chat-social/">Chat and social <span>65</span></a><a class="chip" href="/plugins/category/audio-music/">Audio and music <span>29</span></a><a class="chip" href="/plugins/category/graphics/">Graphics and performance <span>28</span></a><a class="chip" href="/plugins/category/quality-of-life/">Quality of life <span>95</span></a><a class="chip" href="/plugins/category/other/">Other <span>15</span></a>
   </div>
+  
+<details class="filter-panel" open>
+  <summary>Sort and filter <span class="filter-count" id="filter-count" hidden></span></summary>
+  <div class="filters">
+    <label class="sort"><span>Sort</span>
+      <select id="sort">
+        <option value="installs">Most installed</option>
+        <option value="updated">Recently updated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
+    <label class="toggle"><input type="checkbox" id="f-notesting"><span>Hide testing builds</span></label>
+    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
+    <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
+  </div>
+</details>
+
 </section>
 
 <section aria-label="Market and economy plugins">
+  <p class="sub" id="result-line">25 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="market board browse the market board from anywhere. fmauneko market board marketboard market board">
+<li class="plug" data-q="market board browse the market board from anywhere. fmauneko market board marketboard market board" data-name="market board" data-installs="2644006" data-updated="1777543138" data-status="ok">
   <a class="plug-link" href="/plugins/marketboardplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/MarketBoardPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
@@ -82,7 +101,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="price insight see item marketboard prices on hover! kouzukii marketboard items price">
+<li class="plug" data-q="price insight see item marketboard prices on hover! kouzukii marketboard items price" data-name="price insight" data-installs="2333917" data-updated="1777726397" data-status="ok" data-pick>
   <a class="plug-link" href="/plugins/priceinsight/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PriceInsight/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -97,7 +116,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="penny pincher copies 1 below the cheapest offer to your clipboard when you check marketboard prices tesu marketboard undercut penny clipboard">
+<li class="plug" data-q="penny pincher copies 1 below the cheapest offer to your clipboard when you check marketboard prices tesu marketboard undercut penny clipboard" data-name="penny pincher" data-installs="1062467" data-updated="1777564150" data-status="ok">
   <a class="plug-link" href="/plugins/pennypincher/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PennyPincher/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -112,7 +131,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="pricecheck quickly price check your items. infi, kalilistic, caitlyn price marketboard universalis">
+<li class="plug" data-q="pricecheck quickly price check your items. infi, kalilistic, caitlyn price marketboard universalis" data-name="pricecheck" data-installs="467655" data-updated="1777503104" data-status="ok">
   <a class="plug-link" href="/plugins/pricecheck/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PriceCheck/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -127,11 +146,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="currencyalert display alerts upon reaching configurable currencies thresholds. midorikami, lharz currency tomestones alert tracker">
+<li class="plug" data-q="currencyalert display alerts upon reaching configurable currencies thresholds. midorikami, lharz currency tomestones alert tracker" data-name="currencyalert" data-installs="459911" data-updated="1754620592" data-status="unavailable">
   <a class="plug-link" href="/plugins/currencyalert/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/CurrencyAlert/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
-      <span class="plug-name">CurrencyAlert</span>
+      <span class="plug-name">CurrencyAlert <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Display alerts upon reaching configurable currencies thresholds.</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -142,7 +161,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="allagan market get your retainer sales organized, track active sales, historical sales and undercutting! critical_impact market sales retainers">
+<li class="plug" data-q="allagan market get your retainer sales organized, track active sales, historical sales and undercutting! critical_impact market sales retainers" data-name="allagan market" data-installs="364367" data-updated="1786262212" data-status="ok" data-pick>
   <a class="plug-link" href="/plugins/allaganmarket/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AllaganMarket/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
@@ -157,7 +176,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="simplemarketboard a simple and compact market board plugin for power users. elypha marketboard price data universalis elypha">
+<li class="plug" data-q="simplemarketboard a simple and compact market board plugin for power users. elypha marketboard price data universalis elypha" data-name="simplemarketboard" data-installs="101261" data-updated="1782076967" data-status="ok">
   <a class="plug-link" href="/plugins/simplemarketboard/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SimpleMarketBoard/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -172,11 +191,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="currency tracker track all your currencies! atmoomen money currency tracker transaction tomestone">
+<li class="plug" data-q="currency tracker track all your currencies! atmoomen money currency tracker transaction tomestone" data-name="currency tracker" data-installs="91357" data-updated="1729624863" data-status="unavailable">
   <a class="plug-link" href="/plugins/currencytracker/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/CurrencyTracker/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
-      <span class="plug-name">Currency Tracker</span>
+      <span class="plug-name">Currency Tracker <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Track all your currencies!</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -187,7 +206,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="currency spender discover how to use all the in-game currencies. blackcatz1911 currency poetics tomestone">
+<li class="plug" data-q="currency spender discover how to use all the in-game currencies. blackcatz1911 currency poetics tomestone" data-name="currency spender" data-installs="80746" data-updated="1787600195" data-status="ok">
   <a class="plug-link" href="/plugins/currencyspender/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/CurrencySpender/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -202,7 +221,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="stacksellprice because multiplication is hard. infi, variablevixen ">
+<li class="plug" data-q="stacksellprice because multiplication is hard. infi, variablevixen " data-name="stacksellprice" data-installs="41480" data-updated="1777500353" data-status="ok" data-pick>
   <a class="plug-link" href="/plugins/stacksellprice/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/StackSellPrice/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -217,7 +236,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="item use easily see common item uses. punishedpineapple item inventory leve levequest gc grand company aquarium crafting">
+<li class="plug" data-q="item use easily see common item uses. punishedpineapple item inventory leve levequest gc grand company aquarium crafting" data-name="item use" data-installs="28374" data-updated="1777601167" data-status="ok">
   <a class="plug-link" href="/plugins/itemuse/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ItemUse/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>I</span>
     <span class="plug-body">
@@ -232,7 +251,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="cashflow cashflow is a plugin that will log your trades, sales and purchases. nightmarexiv, asuna, klia ">
+<li class="plug" data-q="cashflow cashflow is a plugin that will log your trades, sales and purchases. nightmarexiv, asuna, klia " data-name="cashflow" data-installs="25094" data-updated="1777544315" data-status="ok">
   <a class="plug-link" href="/plugins/cashflow/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/CashFlow/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -247,7 +266,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="shop item revealer shows you what items vendors won&#39;t sell you yet. era utility vendor shop">
+<li class="plug" data-q="shop item revealer shows you what items vendors won&#39;t sell you yet. era utility vendor shop" data-name="shop item revealer" data-installs="20808" data-updated="1777509395" data-status="ok">
   <a class="plug-link" href="/plugins/shopitemrevealer/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/ShopItemRevealer/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -262,7 +281,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="retainer sales see retainer sales quicker populo other">
+<li class="plug" data-q="retainer sales see retainer sales quicker populo other" data-name="retainer sales" data-installs="14562" data-updated="1777502957" data-status="ok">
   <a class="plug-link" href="/plugins/retainersales/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/RetainerSales/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
@@ -277,7 +296,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="easy mbhistory useful for when you want to quickly export marketboard transaction history. infi marketboard clipboard history">
+<li class="plug" data-q="easy mbhistory useful for when you want to quickly export marketboard transaction history. infi marketboard clipboard history" data-name="easy mbhistory" data-installs="14135" data-updated="1777503061" data-status="ok">
   <a class="plug-link" href="/plugins/mbhistory/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/MBHistory/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>E</span>
     <span class="plug-body">
@@ -292,7 +311,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="currency watchdog shows an overlay and/or sends alerts when your held currency items (or non-currency items) match configurable rules. a spiritual successor to currencyalert. nebel currency tomestones overlay alert tracker">
+<li class="plug" data-q="currency watchdog shows an overlay and/or sends alerts when your held currency items (or non-currency items) match configurable rules. a spiritual successor to currencyalert. nebel currency tomestones overlay alert tracker" data-name="currency watchdog" data-installs="8457" data-updated="1783277792" data-status="ok">
   <a class="plug-link" href="/plugins/currencywatchdog/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/CurrencyWatchdog/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
@@ -307,7 +326,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="toastingway keep on top of new items. stonewind item notification toast toastingway">
+<li class="plug" data-q="toastingway keep on top of new items. stonewind item notification toast toastingway" data-name="toastingway" data-installs="7149" data-updated="1781747216" data-status="ok">
   <a class="plug-link" href="/plugins/toastingwayplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ToastingwayPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
@@ -322,7 +341,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="retainer alerts reminds you about retainer ventures. ibcrootbeer retainer alert venture">
+<li class="plug" data-q="retainer alerts reminds you about retainer ventures. ibcrootbeer retainer alert venture" data-name="retainer alerts" data-installs="4775" data-updated="1787030028" data-status="ok">
   <a class="plug-link" href="/plugins/retaineralerts/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/RetainerAlerts/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
@@ -337,11 +356,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="market uploader uploads market data to market.xivhub.org and other configurable aggregators. zhyra market uploader">
+<li class="plug" data-q="market uploader uploads market data to market.xivhub.org and other configurable aggregators. zhyra market uploader" data-name="market uploader" data-installs="4213" data-updated="1676753539" data-status="unavailable">
   <a class="plug-link" href="/plugins/marketuploader/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/MarketUploader/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>M</span>
     <span class="plug-body">
-      <span class="plug-name">Market Uploader</span>
+      <span class="plug-name">Market Uploader <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Uploads market data to market.xivhub.org and other configurable aggregators.</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -352,7 +371,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="topsellingitems find cross-dc market opportunities. epinephren marketboard universalis economy">
+<li class="plug" data-q="topsellingitems find cross-dc market opportunities. epinephren marketboard universalis economy" data-name="topsellingitems" data-installs="3046" data-updated="1780306521" data-status="ok">
   <a class="plug-link" href="/plugins/topsellingitems/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/TopSellingItems/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
@@ -367,11 +386,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="coin pouch currency alerts and convenient teleports. aelexe currency tomestones utility other">
+<li class="plug" data-q="coin pouch currency alerts and convenient teleports. aelexe currency tomestones utility other" data-name="coin pouch" data-installs="2260" data-updated="1662739830" data-status="unavailable">
   <a class="plug-link" href="/plugins/coinpouch/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/Aelexe/coin-pouch/master/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
-      <span class="plug-name">Coin Pouch</span>
+      <span class="plug-name">Coin Pouch <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Currency alerts and convenient teleports.</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -382,7 +401,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="saddlebag exchange marketboard analytics for ffxiv saddlebag exchange marketboard economy gil crafting money trading flipping">
+<li class="plug" data-q="saddlebag exchange marketboard analytics for ffxiv saddlebag exchange marketboard economy gil crafting money trading flipping" data-name="saddlebag exchange" data-installs="2227" data-updated="1785444545" data-status="ok">
   <a class="plug-link" href="/plugins/saddlebagexchange/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SaddlebagExchange/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -397,7 +416,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="shanbells bringing shananigans to eorzea kliff!! shan kliff currency silly">
+<li class="plug" data-q="shanbells bringing shananigans to eorzea kliff!! shan kliff currency silly" data-name="shanbells" data-installs="820" data-updated="1778110343" data-status="ok">
   <a class="plug-link" href="/plugins/shanbells/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Shanbells/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -412,7 +431,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="sundried never forget your npc shop sales again! meoiswa ui convenience items trash npc-shop sell inventory">
+<li class="plug" data-q="sundried never forget your npc shop sales again! meoiswa ui convenience items trash npc-shop sell inventory" data-name="sundried" data-installs="511" data-updated="1783026572" data-status="ok">
   <a class="plug-link" href="/plugins/sundried/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Sundried/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -427,11 +446,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="gils tracker tracks gil gained and spent during the session. nickoos gil economy session">
+<li class="plug" data-q="gils tracker tracks gil gained and spent during the session. nickoos gil economy session" data-name="gils tracker" data-installs="340" data-updated="1772998302" data-status="outdated">
   <a class="plug-link" href="/plugins/gilstracker/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/GilsTracker/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
-      <span class="plug-name">Gils Tracker</span>
+      <span class="plug-name">Gils Tracker <span class="badge badge-off">Outdated</span></span>
       <span class="plug-desc">Tracks gil gained and spent during the session.</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -443,7 +462,7 @@
 </li>
 
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>
 
 

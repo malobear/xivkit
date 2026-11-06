@@ -51,7 +51,7 @@
 <nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Other</nav>
 <header class="hero">
   <h1>Other plugins</h1>
-  <p class="lede">Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins. 15 plugins, most installed first.</p>
+  <p class="lede">Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.</p>
 </header>
 
 <section class="controls" aria-label="Find a plugin">
@@ -62,12 +62,31 @@
     <a class="chip" href="/plugins/">All <span>498</span></a>
     <a class="chip" href="/plugins/category/housing/">Housing <span>9</span></a><a class="chip" href="/plugins/category/roleplay/">Roleplay and venues <span>13</span></a><a class="chip" href="/plugins/category/games/">Minigames and fun <span>20</span></a><a class="chip" href="/plugins/category/glamour/">Glamour and mods <span>19</span></a><a class="chip" href="/plugins/category/market/">Market and economy <span>25</span></a><a class="chip" href="/plugins/category/crafting-gathering/">Crafting and gathering <span>16</span></a><a class="chip" href="/plugins/category/combat/">Combat and duties <span>95</span></a><a class="chip" href="/plugins/category/ui/">UI and HUD <span>69</span></a><a class="chip" href="/plugins/category/chat-social/">Chat and social <span>65</span></a><a class="chip" href="/plugins/category/audio-music/">Audio and music <span>29</span></a><a class="chip" href="/plugins/category/graphics/">Graphics and performance <span>28</span></a><a class="chip" href="/plugins/category/quality-of-life/">Quality of life <span>95</span></a><a class="chip" href="/plugins/category/other/" aria-current="page">Other <span>15</span></a>
   </div>
+  
+<details class="filter-panel" open>
+  <summary>Sort and filter <span class="filter-count" id="filter-count" hidden></span></summary>
+  <div class="filters">
+    <label class="sort"><span>Sort</span>
+      <select id="sort">
+        <option value="installs">Most installed</option>
+        <option value="updated">Recently updated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
+    <label class="toggle"><input type="checkbox" id="f-notesting"><span>Hide testing builds</span></label>
+    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
+    <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
+  </div>
+</details>
+
 </section>
 
 <section aria-label="Other plugins">
+  <p class="sub" id="result-line">15 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="pat me pat counter mgal2o4 pat lala">
+<li class="plug" data-q="pat me pat counter mgal2o4 pat lala" data-name="pat me" data-installs="474724" data-updated="1777508940" data-status="ok">
   <a class="plug-link" href="/plugins/patme/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PatMe/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
@@ -82,7 +101,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="tippy tippy, your new ffxiv virtual assistant. critical-impact ">
+<li class="plug" data-q="tippy tippy, your new ffxiv virtual assistant. critical-impact " data-name="tippy" data-installs="22211" data-updated="1777696085" data-status="ok">
   <a class="plug-link" href="/plugins/tippy/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Tippy/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>T</span>
     <span class="plug-body">
@@ -97,7 +116,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="nopolice removes the weeaboo police nocturn police weeaboo weeaboo police">
+<li class="plug" data-q="nopolice removes the weeaboo police nocturn police weeaboo weeaboo police" data-name="nopolice" data-installs="19328" data-updated="1778549398" data-status="ok">
   <a class="plug-link" href="/plugins/nopolice/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/NoPolice/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>N</span>
     <span class="plug-body">
@@ -112,11 +131,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="a realm repopulated the realm, now with more realm in it netstyx npc flavor customizable">
+<li class="plug" data-q="a realm repopulated the realm, now with more realm in it netstyx npc flavor customizable" data-name="a realm repopulated" data-installs="16405" data-updated="1793850157" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/arealmrepopulated/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ARealmRepopulated/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
-      <span class="plug-name">A Realm Repopulated</span>
+      <span class="plug-name">A Realm Repopulated <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">The realm, now with more realm in it</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -127,7 +146,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="obsplugin control obs by websocket bluefissure obs ui util">
+<li class="plug" data-q="obsplugin control obs by websocket bluefissure obs ui util" data-name="obsplugin" data-installs="14678" data-updated="1777789028" data-status="ok">
   <a class="plug-link" href="/plugins/obsplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/OBSPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>O</span>
     <span class="plug-body">
@@ -142,11 +161,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="eorzea votes cast your vote in weekly lighthearted opinion polls! is a hot dog a sandwich? anna vote voting questions eorzea">
+<li class="plug" data-q="eorzea votes cast your vote in weekly lighthearted opinion polls! is a hot dog a sandwich? anna vote voting questions eorzea" data-name="eorzea votes" data-installs="11032" data-updated="1743098088" data-status="unavailable">
   <a class="plug-link" href="/plugins/eorzeavotes/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/EorzeaVotes/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>E</span>
     <span class="plug-body">
-      <span class="plug-name">Eorzea Votes</span>
+      <span class="plug-name">Eorzea Votes <span class="badge badge-off">Not in installer</span></span>
       <span class="plug-desc">Cast your vote in weekly lighthearted opinion polls! Is a hot dog a sandwich?</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -157,11 +176,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="pathfinder visualizer for nearby model paths. adds +5 to perception. chirp + bwuny pathfinder resources models paths mdl vfx">
+<li class="plug" data-q="pathfinder visualizer for nearby model paths. adds +5 to perception. chirp + bwuny pathfinder resources models paths mdl vfx" data-name="pathfinder" data-installs="10018" data-updated="1777698195" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/pathfinder/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Pathfinder/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
-      <span class="plug-name">Pathfinder</span>
+      <span class="plug-name">Pathfinder <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Visualizer for nearby model paths. Adds +5 to perception.</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -172,7 +191,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="fatal frame takes a screenshot upon death (and other events). glyceri screenshot death">
+<li class="plug" data-q="fatal frame takes a screenshot upon death (and other events). glyceri screenshot death" data-name="fatal frame" data-installs="5988" data-updated="1779912045" data-status="ok">
   <a class="plug-link" href="/plugins/xivfatalframe/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/XivFatalFrame/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>F</span>
     <span class="plug-body">
@@ -187,11 +206,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="archipelagoxiv client for the archipelago multiworld randomizer. silasary archipelago multiworld randomizer">
+<li class="plug" data-q="archipelagoxiv client for the archipelago multiworld randomizer. silasary archipelago multiworld randomizer" data-name="archipelagoxiv" data-installs="5607" data-updated="1793056908" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/archipelagoxiv/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ArchipelagoXIV/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
-      <span class="plug-name">ArchipelagoXIV</span>
+      <span class="plug-name">ArchipelagoXIV <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Client for the Archipelago Multiworld Randomizer.</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -202,7 +221,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="lap cat counter counts both sides of every shared lap :3 pinkkitty ">
+<li class="plug" data-q="lap cat counter counts both sides of every shared lap :3 pinkkitty " data-name="lap cat counter" data-installs="3073" data-updated="1791334517" data-status="ok">
   <a class="plug-link" href="/plugins/lapcatcounter/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/LapCatCounter/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>L</span>
     <span class="plug-body">
@@ -217,7 +236,7 @@
   </a>
 </li>
 
-<li class="plug" data-q="steam recording enhanced add various in-game events to your steam game recording timeline, comes with instructions for non-steam users! speedas ui steam recording">
+<li class="plug" data-q="steam recording enhanced add various in-game events to your steam game recording timeline, comes with instructions for non-steam users! speedas ui steam recording" data-name="steam recording enhanced" data-installs="2062" data-updated="1792193068" data-status="ok">
   <a class="plug-link" href="/plugins/steamrecordingenhanced/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/SteamRecordingEnhanced/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
@@ -232,11 +251,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="pulltoobs automated obs recording manager for ffxiv encounters. miu-b obs recording encounter automation">
+<li class="plug" data-q="pulltoobs automated obs recording manager for ffxiv encounters. miu-b obs recording encounter automation" data-name="pulltoobs" data-installs="570" data-updated="1780522148" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/pulltoobs/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/PullToOBS/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
-      <span class="plug-name">PullToOBS</span>
+      <span class="plug-name">PullToOBS <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Automated OBS recording manager for FFXIV encounters.</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -247,11 +266,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="pseudonamingway give mendingway and vendingway the respect they deserve! sourpuh (formerly chirp) rename mendingway vendingway supplyingway loporrit">
+<li class="plug" data-q="pseudonamingway give mendingway and vendingway the respect they deserve! sourpuh (formerly chirp) rename mendingway vendingway supplyingway loporrit" data-name="pseudonamingway" data-installs="340" data-updated="1785167212" data-status="ok" data-testing>
   <a class="plug-link" href="/plugins/pseudonamingway/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Pseudonamingway/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
-      <span class="plug-name">Pseudonamingway</span>
+      <span class="plug-name">Pseudonamingway <span class="badge badge-test">Testing builds</span></span>
       <span class="plug-desc">Give Mendingway and Vendingway the respect they deserve!</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -262,11 +281,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="shrinkage shrinks characters based on their health! mikelosx funny">
+<li class="plug" data-q="shrinkage shrinks characters based on their health! mikelosx funny" data-name="shrinkage" data-installs="131" data-updated="1775452815" data-status="outdated">
   <a class="plug-link" href="/plugins/shrinkage/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Shrinkage/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">Shrinkage</span>
+      <span class="plug-name">Shrinkage <span class="badge badge-off">Outdated</span></span>
       <span class="plug-desc">Shrinks characters based on their Health!</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -277,11 +296,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="rec-cue recording activity indicator. miu-b recording indicator monitor">
+<li class="plug" data-q="rec-cue recording activity indicator. miu-b recording indicator monitor" data-name="rec-cue" data-installs="75" data-updated="1771360039" data-status="outdated">
   <a class="plug-link" href="/plugins/rec-cue/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/rec-cue/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
-      <span class="plug-name">rec-cue</span>
+      <span class="plug-name">rec-cue <span class="badge badge-off">Outdated</span></span>
       <span class="plug-desc">Recording activity indicator.</span>
       <span class="plug-meta">
         <span class="chip-static">Other</span>
@@ -293,7 +312,7 @@
 </li>
 
   </ul>
-  <p class="empty" id="empty" hidden>No plugins match that search.</p>
+  <p class="empty" id="empty" hidden>No plugins match. Try a different search or clear a filter.</p>
 </section>
 
 
