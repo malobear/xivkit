@@ -16,6 +16,9 @@ const OVERRIDES = fileURLToPath(new URL("../directory/content/categories.json", 
 const MASTER = "https://kamori.goats.dev/Plugin/PluginMaster";
 const BANNED = "https://raw.githubusercontent.com/goatcorp/DalamudAssets/master/UIRes/bannedplugin.json";
 const RELEASE = "https://kamori.goats.dev/Dalamud/Release/VersionInfo?track=release";
+// Where Dalamud serves official plugin icons and screenshots from, and that repo's file list.
+const D17_RAW = "https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/";
+const D17_TREE = "https://api.github.com/repos/goatcorp/PluginDistD17/git/trees/main?recursive=1";
 
 // Each category scores keyword hits: name and punchline count triple, tags and the
 // description once. The best score wins; a tie goes to the earlier category.
@@ -52,6 +55,13 @@ const [master, banned, picks, overrides, release] = await Promise.all([
   readFile(OVERRIDES, "utf8").then(JSON.parse).then((o) => o.categories ?? {}),
   getJson(RELEASE).catch(() => null),
 ]);
+
+// GITHUB_TOKEN is optional locally (the API allows 60 calls an hour without one) and set
+// automatically in GitHub Actions.
+const tree = await fetch(D17_TREE, { headers: { "user-agent": "xivkit-plugin-directory", accept: "application/vnd.github+json", ...(process.env.GITHUB_TOKEN ? { authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}) } })
+  .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${D17_TREE}: ${r.status}`))));
+if (tree.truncated) throw new Error("PluginDistD17 file list came back truncated; icons and screenshots would be incomplete");
+const d17Files = new Set(tree.tree.map((e) => e.path));
 
 // Can it be installed on today's Dalamud? Same rule as IsManifestEligible in Dalamud's
 // PluginManager.cs: the current API level installs, one level back is listed as
@@ -104,11 +114,37 @@ function iconCandidates(p) {
   if (gh) out.push(`https://raw.githubusercontent.com/${gh[1]}/${gh[2]}/HEAD/images/icon.png`);
   return [...new Set(out)];
 }
+// Screenshots: the same two sources, as two whole sets. Dalamud shows up to five,
+// image1.png to image5.png from PluginDistD17 (numbers can skip), and ignores ImageUrls
+// for official plugins, but many authors only list theirs in ImageUrls. Mixing the
+// sets would repeat images, so keep whichever set has more that load (ties go to the
+// official one).
+const MAX_SHOTS = 5;
+function shotSets(p) {
+  const official = p._Dip17Channel && p.InternalName
+    ? Array.from({ length: MAX_SHOTS }, (_, i) => `https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/${p._Dip17Channel}/${p.InternalName}/images/image${i + 1}.png`)
+    : [];
+  const author = [...new Set((p.ImageUrls ?? []).map((u) => String(u).replace(/^(https:\/\/github\.com\/[^/]+\/[^/]+)\/blob\//, "$1/raw/")))].slice(0, MAX_SHOTS);
+  return [official, author];
+}
+// Does this image URL load? A clear answer (200, or 404/403) is final. Rate limits, server
+// errors and timeouts are retried with a growing pause, so a busy CDN can't quietly
+// strip icons and screenshots from the directory.
+// PluginDistD17 files are looked up in its file list (one GitHub API call, fetched above)
+// instead of being requested one by one, which gets this machine throttled.
+const transient = { count: 0 };
 async function loads(url) {
-  try {
-    const res = await fetch(url, { method: "HEAD", redirect: "follow", headers: { "user-agent": "xivkit-plugin-directory" }, signal: AbortSignal.timeout(15000) });
-    return res.ok && /^image\//.test(res.headers.get("content-type") ?? "image/");
-  } catch { return false; }
+  if (url.startsWith(D17_RAW)) return d17Files.has(url.slice(D17_RAW.length));
+  if (!/^https?:\/\/[^/\s]+\/\S+$/i.test(url)) return false; // authors sometimes list a bare word
+  for (let attempt = 0; attempt < 5; attempt++) {
+    if (attempt) await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt));
+    try {
+      const res = await fetch(url, { method: "HEAD", redirect: "follow", headers: { "user-agent": "xivkit-plugin-directory" }, signal: AbortSignal.timeout(15000) });
+      if (res.status === 429 || res.status >= 500) { transient.count++; continue; }
+      return res.ok && /^image\//.test(res.headers.get("content-type") ?? "image/");
+    } catch { transient.count++; }
+  }
+  throw new Error(`${url}: still failing after 5 tries, stopping rather than dropping the image`);
 }
 async function pool(items, n, fn) {
   let i = 0;
@@ -151,7 +187,8 @@ for (const p of master) {
     repoUrl: p.RepoUrl || "",
     iconUrl: "",
     iconCandidates: iconCandidates(p),
-    images: (p.ImageUrls ?? []).slice(0, 3),
+    images: [],
+    shotSets: shotSets(p),
     testingOnly: Boolean(p.IsTestingExclusive),
     ...availability(p),
     pick: pickKey ? { note: picks[pickKey].note } : null,
@@ -159,10 +196,19 @@ for (const p of master) {
 }
 plugins.sort((a, b) => b.downloads - a.downloads);
 
-await pool(plugins, 16, async (pl) => {
+await pool(plugins, 8, async (pl) => {
   for (const url of pl.iconCandidates) if (await loads(url)) { pl.iconUrl = url; break; }
   delete pl.iconCandidates;
+  let best = [];
+  for (const set of pl.shotSets) {
+    if (set.length <= best.length) continue;
+    const ok = (await Promise.all(set.map(async (u) => ((await loads(u)) ? u : null)))).filter(Boolean);
+    if (ok.length > best.length) best = ok;
+  }
+  pl.images = best;
+  delete pl.shotSets;
 });
+console.log(`screenshots: ${plugins.filter((p) => p.images.length).length} plugins have some, ${plugins.reduce((n, p) => n + p.images.length, 0)} in all (${transient.count} temporary failures retried)`);
 const iconless = plugins.filter((p) => !p.iconUrl);
 console.log(`icons: ${plugins.length - iconless.length} found, ${iconless.length} use the letter placeholder${iconless.length ? " (" + iconless.map((p) => p.slug).join(", ") + ")" : ""}`);
 

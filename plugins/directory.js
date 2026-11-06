@@ -84,3 +84,45 @@
   var row = document.querySelector(".cats"), cur = row && row.querySelector("[aria-current=page]");
   if (row && cur && row.scrollWidth > row.clientWidth) row.scrollLeft = cur.offsetLeft - row.offsetLeft - (row.clientWidth - cur.offsetWidth) / 2;
 })();
+
+// Screenshot viewer: thumbnails link to the full image (so they work without script);
+// with script, they open in a full-size viewer with previous/next, arrow keys and swipe.
+(function () {
+  var dialog = document.querySelector(".viewer");
+  var links = Array.prototype.slice.call(document.querySelectorAll(".shots .shot"));
+  if (!dialog || !links.length || typeof dialog.showModal !== "function") return;
+  var img = dialog.querySelector("figure img"), cap = dialog.querySelector("figcaption");
+  var prev = dialog.querySelector(".viewer-prev"), next = dialog.querySelector(".viewer-next");
+  var at = 0, opener = null;
+  prev.hidden = next.hidden = links.length < 2;
+
+  function show(i) {
+    at = (i + links.length) % links.length;
+    img.src = links[at].href;
+    img.alt = links[at].querySelector("img").alt;
+    cap.textContent = links.length > 1 ? (at + 1) + " of " + links.length : "";
+  }
+  links.forEach(function (a, i) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; // let new-tab clicks through
+      e.preventDefault(); opener = a; show(i); dialog.showModal();
+    });
+  });
+  prev.addEventListener("click", function () { show(at - 1); });
+  next.addEventListener("click", function () { show(at + 1); });
+  dialog.querySelector(".viewer-close").addEventListener("click", function () { dialog.close(); });
+  // A click on the dark area around the image closes it.
+  dialog.addEventListener("click", function (e) { if (e.target === dialog || e.target.tagName === "FIGURE") dialog.close(); });
+  dialog.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") show(at - 1);
+    else if (e.key === "ArrowRight") show(at + 1);
+  });
+  var x0 = null;
+  dialog.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  dialog.addEventListener("touchend", function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50 && links.length > 1) show(dx < 0 ? at + 1 : at - 1);
+  });
+  dialog.addEventListener("close", function () { img.removeAttribute("src"); if (opener) opener.focus(); });
+})();

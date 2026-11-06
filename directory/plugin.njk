@@ -37,7 +37,14 @@ eleventyComputed:
     {% if plugin.images.length %}
     <section aria-labelledby="shots-h">
       <h2 id="shots-h">Screenshots</h2>
-      <div class="shots">{% for img in plugin.images %}<img src="{{ img }}" alt="{{ plugin.name }} screenshot {{ loop.index }}" loading="lazy">{% endfor %}</div>
+      <p class="sub">{{ plugin.images.length }} {{ "image" if plugin.images.length == 1 else "images" }} from the plugin's author. Click one to see it full size.</p>
+      <ul class="shots">{% for img in plugin.images %}<li><a class="shot" href="{{ img }}" target="_blank" rel="noopener"><img src="{{ img }}" alt="{{ plugin.name }} screenshot {{ loop.index }} of {{ loop.length }}" loading="lazy" decoding="async"></a></li>{% endfor %}</ul>
+      <dialog class="viewer" aria-label="{{ plugin.name }} screenshots">
+        <figure><img alt=""><figcaption></figcaption></figure>
+        <button class="viewer-btn viewer-close" type="button" aria-label="Close">&times;</button>
+        <button class="viewer-btn viewer-prev" type="button" aria-label="Previous screenshot">&lsaquo;</button>
+        <button class="viewer-btn viewer-next" type="button" aria-label="Next screenshot">&rsaquo;</button>
+      </dialog>
     </section>
     {% endif %}
 

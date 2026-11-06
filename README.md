@@ -106,7 +106,11 @@ keywords. The script stops on an unknown category slug and warns about overrides
 plugin has left the official list. Icons come from the same place the in-game installer
 gets them (`goatcorp/PluginDistD17`), then the author's `IconUrl`, then `images/icon.png`
 in the plugin's GitHub repo; the script keeps the first one that loads, and the page shows
-the plugin's first letter when none does. Each plugin also gets an install status using Dalamud's own rule: built for the
+the plugin's first letter when none does. Screenshots come from the same two places (up to five, the
+official `image1.png` to `image5.png` or the author's `ImageUrls`, whichever set is larger).
+The official files are checked against one GitHub API listing of `PluginDistD17` rather than
+one request per image, which gets throttled; set `GITHUB_TOKEN` to lift the API's 60
+calls an hour limit (GitHub Actions sets it automatically). Each plugin also gets an install status using Dalamud's own rule: built for the
 current API level (read from the live Dalamud release) means installable, one level back is
 "outdated", and older is left out of the installer. Lists hide the ones you can't install, and
 the ones that need testing builds turned on, unless the visitor ticks "Show not installable"
