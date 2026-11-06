@@ -20,20 +20,13 @@ eleventyComputed:
 <header class="plugin-head">
   {% if plugin.iconUrl %}<img class="plugin-icon" src="{{ plugin.iconUrl }}" alt="" width="72" height="72" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plugin-icon plug-icon-blank plugin-icon-blank" aria-hidden="true"{% if plugin.iconUrl %} hidden{% endif %}>{{ plugin.name | first | upper }}</span>
   <div>
-    <h1>{{ plugin.name }}{% if plugin.pick %} <span class="badge badge-pick">My pick</span>{% endif %}{% if plugin.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif plugin.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif plugin.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</h1>
+    <h1>{{ plugin.name }}{% if plugin.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif plugin.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif plugin.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</h1>
     <p class="lede">{{ plugin.punchline }}</p>
   </div>
 </header>
 
 <div class="plugin-grid">
   <div class="plugin-main">
-    {% if plugin.pick %}
-    <section class="callout" aria-labelledby="note-h">
-      <h2 id="note-h">Why it's on my list</h2>
-      <p>{{ plugin.pick.note }}</p>
-    </section>
-    {% endif %}
-
     {% if plugin.description and plugin.description != plugin.punchline %}
     <section aria-labelledby="about-h">
       <h2 id="about-h">About {{ plugin.name }}</h2>

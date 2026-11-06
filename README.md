@@ -99,8 +99,8 @@ pnpm plugins:build    # rebuild plugins/ from the current data
 
 `scripts/plugins-fetch.mjs` pulls the official plugin master list, drops anything on
 Dalamud's banned list (compared by version, since bans cover old releases only), sorts
-plugins into categories by keyword, and flags the ones listed in `content/picks.json` as
-"My pick". Adjust the keyword rules at the top of that script; when a plugin still lands in the
+plugins into categories by keyword, and matches the plugins listed in `content/picks.json` (my
+own notes, kept in the data but not shown on the pages for now). Adjust the keyword rules at the top of that script; when a plugin still lands in the
 wrong bucket, pin it by slug in `directory/content/categories.json`, which wins over the
 keywords. The script stops on an unknown category slug and warns about overrides whose
 plugin has left the official list. Icons come from the same place the in-game installer

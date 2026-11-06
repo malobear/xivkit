@@ -1,9 +1,9 @@
 {% macro card(p, cats) %}
-<li class="plug" data-q="{{ (p.name + ' ' + p.punchline + ' ' + p.author + ' ' + p.tags | join(' ')) | lower }}" data-name="{{ p.name | lower }}" data-installs="{{ p.downloads }}" data-updated="{{ p.lastUpdate }}" data-status="{{ p.status }}"{% if p.needsTesting %} data-testing{% endif %}{% if p.pick %} data-pick{% endif %}>
+<li class="plug" data-q="{{ (p.name + ' ' + p.punchline + ' ' + p.author + ' ' + p.tags | join(' ')) | lower }}" data-name="{{ p.name | lower }}" data-installs="{{ p.downloads }}" data-updated="{{ p.lastUpdate }}" data-status="{{ p.status }}"{% if p.needsTesting %} data-testing{% endif %}>
   <a class="plug-link" href="{{ '/plugins/' + p.slug + '/' }}">
     {% if p.iconUrl %}<img class="plug-icon" src="{{ p.iconUrl }}" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plug-icon plug-icon-blank" aria-hidden="true"{% if p.iconUrl %} hidden{% endif %}>{{ p.name | first | upper }}</span>
     <span class="plug-body">
-      <span class="plug-name">{{ p.name }}{% if p.pick %} <span class="badge badge-pick">My pick</span>{% endif %}{% if p.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif p.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif p.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</span>
+      <span class="plug-name">{{ p.name }}{% if p.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif p.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif p.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</span>
       <span class="plug-desc">{{ p.punchline | trunc(120) }}</span>
       <span class="plug-meta">
         <span class="chip-static">{{ cats | categoryName(p.category) }}</span>
@@ -27,7 +27,6 @@
       </select>
     </label>
     <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
-    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
     <label class="toggle"><input type="checkbox" id="f-testing"><span>Show testing builds (<span id="test-count">0</span>)</span></label>
     <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
   </div>

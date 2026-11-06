@@ -4,7 +4,8 @@
 //   pnpm plugins:build    (data, then the Eleventy build into plugins/)
 //
 // Source: Dalamud's official live plugin master list. Plugins on Dalamud's banned
-// list are dropped. "My picks" notes come from directory/content/picks.json, which
+// list are dropped. "My picks" notes come from directory/content/picks.json (kept in
+// the data but not shown on the pages for now), which
 // is hand-edited. Run this on a schedule (or by hand) and commit the result.
 import { writeFile, readFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";

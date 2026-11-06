@@ -13,7 +13,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FFXIV Dalamud Plugin Directory | XIVKit</title>
-<meta name="description" content="Browse 498 FFXIV Dalamud plugins by category, with install counts, last-updated dates and short notes on the ones I actually use.">
+<meta name="description" content="Browse 498 FFXIV Dalamud plugins by category, with install counts, last-updated dates, and install status for each.">
 <link rel="canonical" href="https://xivkit.com/plugins/">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -23,12 +23,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XIVKit">
 <meta property="og:title" content="FFXIV Dalamud Plugin Directory | XIVKit">
-<meta property="og:description" content="Browse 498 FFXIV Dalamud plugins by category, with install counts, last-updated dates and short notes on the ones I actually use.">
+<meta property="og:description" content="Browse 498 FFXIV Dalamud plugins by category, with install counts, last-updated dates, and install status for each.">
 <meta property="og:url" content="https://xivkit.com/plugins/">
 <meta property="og:image" content="https://xivkit.com/og-plugins.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FFXIV Dalamud Plugin Directory | XIVKit">
-<meta name="twitter:description" content="Browse 498 FFXIV Dalamud plugins by category, with install counts, last-updated dates and short notes on the ones I actually use.">
+<meta name="twitter:description" content="Browse 498 FFXIV Dalamud plugins by category, with install counts, last-updated dates, and install status for each.">
 <meta name="twitter:image" content="https://xivkit.com/og-plugins.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +50,7 @@
   
 <header class="hero">
   <h1>FFXIV plugin directory</h1>
-  <p class="lede">Every plugin in Dalamud's official list, sorted into categories you can actually browse. 498 plugins, refreshed from the official data, 371 of them install straight from the in-game installer, and 44 more once you turn on testing builds. The ones I use are marked <span class="badge badge-pick">My pick</span>.</p>
+  <p class="lede">Every plugin in Dalamud's official list, sorted into categories you can actually browse. 498 plugins, refreshed from the official data, 371 of them install straight from the in-game installer, and 44 more once you turn on testing builds.</p>
   <p class="note">Not sure how to install these? In game, type <code>/xlplugins</code>, open All Plugins, and search for the plugin.</p>
 </header>
 
@@ -74,7 +74,6 @@
       </select>
     </label>
     <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
-    <label class="toggle"><input type="checkbox" id="f-picks"><span>My picks only</span></label>
     <label class="toggle"><input type="checkbox" id="f-testing"><span>Show testing builds (<span id="test-count">0</span>)</span></label>
     <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
   </div>
@@ -82,162 +81,16 @@
 
 </section>
 
-
-
-<section aria-labelledby="picks-h">
-  <h2 id="picks-h">My picks</h2>
-  <p class="sub">Plugins from the official list that I use myself. The rest of what I run lives on the <a href="/plugins.html">plugins page</a>.</p>
-  <ul class="plug-list" data-filter-list>
-    
-<li class="plug" data-q="simple tweaks plugin this was supposed to be simple... caraxi " data-name="simple tweaks plugin" data-installs="8893616" data-updated="1792255828" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/simpletweaksplugin/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SimpleTweaksPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
-    <span class="plug-body">
-      <span class="plug-name">Simple Tweaks Plugin <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">This was supposed to be simple...</span>
-      <span class="plug-meta">
-        <span class="chip-static">Quality of life</span>
-        <span>8.9M installs</span>
-        <span>Updated 2026-10-17</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="allagan tools get organized in ffxiv, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airships, and submarines! critical_impact inventory sorting filtering" data-name="allagan tools" data-installs="3911133" data-updated="1789298380" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/inventorytools/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/InventoryTools/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
-    <span class="plug-body">
-      <span class="plug-name">Allagan Tools <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Get organized in FFXIV, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airshi…</span>
-      <span class="plug-meta">
-        <span class="chip-static">Quality of life</span>
-        <span>3.9M installs</span>
-        <span>Updated 2026-09-13</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="price insight see item marketboard prices on hover! kouzukii marketboard items price" data-name="price insight" data-installs="2333917" data-updated="1777726397" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/priceinsight/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PriceInsight/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
-    <span class="plug-body">
-      <span class="plug-name">Price Insight <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">See item marketboard prices on hover!</span>
-      <span class="plug-meta">
-        <span class="chip-static">Market and economy</span>
-        <span>2.3M installs</span>
-        <span>Updated 2026-05-02</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="chat 2 electric boogaloo - ♪ a whole new chat, a new fantastic chat window ♪ infi, anna social ui chat replacement" data-name="chat 2" data-installs="1109061" data-updated="1793228736" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/chattwo/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ChatTwo/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
-    <span class="plug-body">
-      <span class="plug-name">Chat 2 <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Electric Boogaloo - ♪ A whole new chat, a new fantastic chat window ♪</span>
-      <span class="plug-meta">
-        <span class="chip-static">Chat and social</span>
-        <span>1.1M installs</span>
-        <span>Updated 2026-10-28</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="umbra xiv adds fully customizable toolbars and 3d world markers to the game. una ui marker markers toolbar" data-name="umbra xiv" data-installs="1038120" data-updated="1785618177" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/umbra/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Umbra/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>U</span>
-    <span class="plug-body">
-      <span class="plug-name">Umbra XIV <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Adds fully customizable toolbars and 3D world markers to the game.</span>
-      <span class="plug-meta">
-        <span class="chip-static">UI and HUD</span>
-        <span>1M installs</span>
-        <span>Updated 2026-08-01</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="glamaholic save and swap your glamour plates. anna, caitlyn " data-name="glamaholic" data-installs="827457" data-updated="1778181105" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/glamaholic/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Glamaholic/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
-    <span class="plug-body">
-      <span class="plug-name">Glamaholic <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Save and swap your glamour plates.</span>
-      <span class="plug-meta">
-        <span class="chip-static">Glamour and mods</span>
-        <span>827k installs</span>
-        <span>Updated 2026-05-07</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="allagan market get your retainer sales organized, track active sales, historical sales and undercutting! critical_impact market sales retainers" data-name="allagan market" data-installs="364367" data-updated="1786262212" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/allaganmarket/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AllaganMarket/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
-    <span class="plug-body">
-      <span class="plug-name">Allagan Market <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Get your retainer sales organized, track active sales, historical sales and undercutting!</span>
-      <span class="plug-meta">
-        <span class="chip-static">Market and economy</span>
-        <span>364k installs</span>
-        <span>Updated 2026-08-09</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="repairme never forget to repair &amp; extract materia again! chalkos repair materia spiritbond alert condition gear" data-name="repairme" data-installs="275526" data-updated="1783132001" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/repairme/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/RepairMe/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
-    <span class="plug-body">
-      <span class="plug-name">RepairMe <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Never forget to repair &amp; extract materia again!</span>
-      <span class="plug-meta">
-        <span class="chip-static">Quality of life</span>
-        <span>276k installs</span>
-        <span>Updated 2026-07-04</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-<li class="plug" data-q="stacksellprice because multiplication is hard. infi, variablevixen " data-name="stacksellprice" data-installs="41480" data-updated="1777500353" data-status="ok" data-pick>
-  <a class="plug-link" href="/plugins/stacksellprice/">
-    <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/StackSellPrice/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
-    <span class="plug-body">
-      <span class="plug-name">StackSellPrice <span class="badge badge-pick">My pick</span></span>
-      <span class="plug-desc">Because multiplication is hard.</span>
-      <span class="plug-meta">
-        <span class="chip-static">Market and economy</span>
-        <span>41k installs</span>
-        <span>Updated 2026-04-29</span>
-      </span>
-    </span>
-  </a>
-</li>
-
-  </ul>
-</section>
-
-
 <section aria-labelledby="all-h">
   <h2 id="all-h">All plugins</h2>
   <p class="sub" id="result-line">498 plugins, most installed first.</p>
   <ul class="plug-list" data-filter-list>
     
-<li class="plug" data-q="simple tweaks plugin this was supposed to be simple... caraxi " data-name="simple tweaks plugin" data-installs="8893616" data-updated="1792255828" data-status="ok" data-pick>
+<li class="plug" data-q="simple tweaks plugin this was supposed to be simple... caraxi " data-name="simple tweaks plugin" data-installs="8893616" data-updated="1792255828" data-status="ok">
   <a class="plug-link" href="/plugins/simpletweaksplugin/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SimpleTweaksPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">Simple Tweaks Plugin <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Simple Tweaks Plugin</span>
       <span class="plug-desc">This was supposed to be simple...</span>
       <span class="plug-meta">
         <span class="chip-static">Quality of life</span>
@@ -263,11 +116,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="allagan tools get organized in ffxiv, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airships, and submarines! critical_impact inventory sorting filtering" data-name="allagan tools" data-installs="3911133" data-updated="1789298380" data-status="ok" data-pick>
+<li class="plug" data-q="allagan tools get organized in ffxiv, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airships, and submarines! critical_impact inventory sorting filtering" data-name="allagan tools" data-installs="3911133" data-updated="1789298380" data-status="ok">
   <a class="plug-link" href="/plugins/inventorytools/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/InventoryTools/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
-      <span class="plug-name">Allagan Tools <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Allagan Tools</span>
       <span class="plug-desc">Get organized in FFXIV, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airshi…</span>
       <span class="plug-meta">
         <span class="chip-static">Quality of life</span>
@@ -338,11 +191,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="price insight see item marketboard prices on hover! kouzukii marketboard items price" data-name="price insight" data-installs="2333917" data-updated="1777726397" data-status="ok" data-pick>
+<li class="plug" data-q="price insight see item marketboard prices on hover! kouzukii marketboard items price" data-name="price insight" data-installs="2333917" data-updated="1777726397" data-status="ok">
   <a class="plug-link" href="/plugins/priceinsight/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/PriceInsight/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>P</span>
     <span class="plug-body">
-      <span class="plug-name">Price Insight <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Price Insight</span>
       <span class="plug-desc">See item marketboard prices on hover!</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -548,11 +401,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="chat 2 electric boogaloo - ♪ a whole new chat, a new fantastic chat window ♪ infi, anna social ui chat replacement" data-name="chat 2" data-installs="1109061" data-updated="1793228736" data-status="ok" data-pick>
+<li class="plug" data-q="chat 2 electric boogaloo - ♪ a whole new chat, a new fantastic chat window ♪ infi, anna social ui chat replacement" data-name="chat 2" data-installs="1109061" data-updated="1793228736" data-status="ok">
   <a class="plug-link" href="/plugins/chattwo/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/ChatTwo/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>C</span>
     <span class="plug-body">
-      <span class="plug-name">Chat 2 <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Chat 2</span>
       <span class="plug-desc">Electric Boogaloo - ♪ A whole new chat, a new fantastic chat window ♪</span>
       <span class="plug-meta">
         <span class="chip-static">Chat and social</span>
@@ -653,11 +506,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="umbra xiv adds fully customizable toolbars and 3d world markers to the game. una ui marker markers toolbar" data-name="umbra xiv" data-installs="1038120" data-updated="1785618177" data-status="ok" data-pick>
+<li class="plug" data-q="umbra xiv adds fully customizable toolbars and 3d world markers to the game. una ui marker markers toolbar" data-name="umbra xiv" data-installs="1038120" data-updated="1785618177" data-status="ok">
   <a class="plug-link" href="/plugins/umbra/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/Umbra/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>U</span>
     <span class="plug-body">
-      <span class="plug-name">Umbra XIV <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Umbra XIV</span>
       <span class="plug-desc">Adds fully customizable toolbars and 3D world markers to the game.</span>
       <span class="plug-meta">
         <span class="chip-static">UI and HUD</span>
@@ -743,11 +596,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="glamaholic save and swap your glamour plates. anna, caitlyn " data-name="glamaholic" data-installs="827457" data-updated="1778181105" data-status="ok" data-pick>
+<li class="plug" data-q="glamaholic save and swap your glamour plates. anna, caitlyn " data-name="glamaholic" data-installs="827457" data-updated="1778181105" data-status="ok">
   <a class="plug-link" href="/plugins/glamaholic/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/Glamaholic/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>G</span>
     <span class="plug-body">
-      <span class="plug-name">Glamaholic <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Glamaholic</span>
       <span class="plug-desc">Save and swap your glamour plates.</span>
       <span class="plug-meta">
         <span class="chip-static">Glamour and mods</span>
@@ -1253,11 +1106,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="allagan market get your retainer sales organized, track active sales, historical sales and undercutting! critical_impact market sales retainers" data-name="allagan market" data-installs="364367" data-updated="1786262212" data-status="ok" data-pick>
+<li class="plug" data-q="allagan market get your retainer sales organized, track active sales, historical sales and undercutting! critical_impact market sales retainers" data-name="allagan market" data-installs="364367" data-updated="1786262212" data-status="ok">
   <a class="plug-link" href="/plugins/allaganmarket/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/AllaganMarket/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span>
     <span class="plug-body">
-      <span class="plug-name">Allagan Market <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">Allagan Market</span>
       <span class="plug-desc">Get your retainer sales organized, track active sales, historical sales and undercutting!</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>
@@ -1538,11 +1391,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="repairme never forget to repair &amp; extract materia again! chalkos repair materia spiritbond alert condition gear" data-name="repairme" data-installs="275526" data-updated="1783132001" data-status="ok" data-pick>
+<li class="plug" data-q="repairme never forget to repair &amp; extract materia again! chalkos repair materia spiritbond alert condition gear" data-name="repairme" data-installs="275526" data-updated="1783132001" data-status="ok">
   <a class="plug-link" href="/plugins/repairme/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/RepairMe/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>R</span>
     <span class="plug-body">
-      <span class="plug-name">RepairMe <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">RepairMe</span>
       <span class="plug-desc">Never forget to repair &amp; extract materia again!</span>
       <span class="plug-meta">
         <span class="chip-static">Quality of life</span>
@@ -3443,11 +3296,11 @@
   </a>
 </li>
 
-<li class="plug" data-q="stacksellprice because multiplication is hard. infi, variablevixen " data-name="stacksellprice" data-installs="41480" data-updated="1777500353" data-status="ok" data-pick>
+<li class="plug" data-q="stacksellprice because multiplication is hard. infi, variablevixen " data-name="stacksellprice" data-installs="41480" data-updated="1777500353" data-status="ok">
   <a class="plug-link" href="/plugins/stacksellprice/">
     <img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/stable/StackSellPrice/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span>
     <span class="plug-body">
-      <span class="plug-name">StackSellPrice <span class="badge badge-pick">My pick</span></span>
+      <span class="plug-name">StackSellPrice</span>
       <span class="plug-desc">Because multiplication is hard.</span>
       <span class="plug-meta">
         <span class="chip-static">Market and economy</span>

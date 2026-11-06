@@ -11,7 +11,6 @@ export default function (eleventyConfig) {
   });
   eleventyConfig.addFilter("isoDate", (ts) => (ts ? new Date(ts * 1000).toISOString().slice(0, 10) : ""));
   eleventyConfig.addFilter("inCategory", (list, slug) => list.filter((p) => p.category === slug));
-  eleventyConfig.addFilter("picks", (list) => list.filter((p) => p.pick));
   // Same category, installable ones only, most installed first (the data is already in that order).
   eleventyConfig.addFilter("similar", (list, plugin) =>
     list.filter((p) => p.category === plugin.category && p.slug !== plugin.slug && p.status === "ok").slice(0, 4));

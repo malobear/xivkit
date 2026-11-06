@@ -7,7 +7,7 @@
   if (!input || !lists.length) return;
   var main = lists[lists.length - 1];
   var $ = function (id) { return document.getElementById(id); };
-  var sort = $("sort"), fRecent = $("f-recent"), fTesting = $("f-testing"), fPicks = $("f-picks"), fAll = $("f-all");
+  var sort = $("sort"), fRecent = $("f-recent"), fTesting = $("f-testing"), fAll = $("f-all");
   var empty = $("empty"), line = $("result-line"), badge = $("filter-count"), panel = document.querySelector(".filter-panel");
   var DAY = 86400, now = Date.now() / 1000;
   var SORT_TEXT = { installs: "most installed first", updated: "most recently updated first", name: "by name" };
@@ -20,7 +20,6 @@
   if ($("test-count")) $("test-count").textContent = testCount;
   if (!offCount && fAll) fAll.closest("label").hidden = true;
   if (!testCount && fTesting) fTesting.closest("label").hidden = true;
-  if (fPicks && !main.querySelector(".plug[data-pick]")) fPicks.closest("label").hidden = true;
 
   var cards = Array.prototype.slice.call(main.querySelectorAll(".plug"));
   var byKey = {
@@ -33,7 +32,7 @@
     var q = input.value.trim().toLowerCase();
     var key = sort && byKey[sort.value] ? sort.value : "installs";
     var recent = fRecent && fRecent.checked, testing = fTesting && fTesting.checked;
-    var picks = fPicks && fPicks.checked, all = fAll && fAll.checked;
+    var all = fAll && fAll.checked;
     var shown = 0;
     lists.forEach(function (list) {
       list.querySelectorAll(".plug").forEach(function (li) {
@@ -41,8 +40,7 @@
         var hit = (!q || d.q.indexOf(q) !== -1)
           && (all || d.status === "ok")
           && (!recent || now - d.updated < 90 * DAY)
-          && (testing || !("testing" in d))
-          && (!picks || "pick" in d);
+          && (testing || !("testing" in d));
         li.hidden = !hit;
         if (list === main && hit) shown++;
       });
@@ -51,14 +49,14 @@
 
     if (line) line.textContent = "Showing " + shown + " of " + cards.length + " plugins, " + SORT_TEXT[key] + ".";
     if (empty) empty.hidden = shown !== 0;
-    var active = (key !== "installs") + recent + testing + picks + all;
+    var active = (key !== "installs") + recent + testing + all;
     if (badge) { badge.textContent = active; badge.hidden = !active; }
 
     if (save === false) return;
     var url = new URL(location.href), p = url.searchParams;
     var set = function (k, on, v) { if (on) p.set(k, v || "1"); else p.delete(k); };
     set("q", q, q); set("sort", key !== "installs", key);
-    set("recent", recent); set("testing", testing); set("picks", picks); set("all", all);
+    set("recent", recent); set("testing", testing); set("all", all);
     history.replaceState(null, "", url);
   }
 
@@ -68,12 +66,11 @@
   if (sort && byKey[p.get("sort")]) sort.value = p.get("sort");
   if (fRecent) fRecent.checked = p.has("recent");
   if (fTesting) fTesting.checked = p.has("testing");
-  if (fPicks) fPicks.checked = p.has("picks");
   if (fAll) fAll.checked = p.has("all");
   apply(false);
 
   input.addEventListener("input", apply);
-  [sort, fRecent, fTesting, fPicks, fAll].forEach(function (el) { if (el) el.addEventListener("change", apply); });
+  [sort, fRecent, fTesting, fAll].forEach(function (el) { if (el) el.addEventListener("change", apply); });
 
   // On phones the panel starts folded, unless the link already carries filters.
   // Desktop hides the panel's toggle, so it must be open there.
