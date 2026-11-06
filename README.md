@@ -103,7 +103,10 @@ plugins into categories by keyword, and flags the ones listed in `content/picks.
 "My pick". Adjust the keyword rules at the top of that script; when a plugin still lands in the
 wrong bucket, pin it by slug in `directory/content/categories.json`, which wins over the
 keywords. The script stops on an unknown category slug and warns about overrides whose
-plugin has left the official list. While the directory is a
+plugin has left the official list. Icons come from the same place the in-game installer
+gets them (`goatcorp/PluginDistD17`), then the author's `IconUrl`, then `images/icon.png`
+in the plugin's GitHub repo; the script keeps the first one that loads, and the page shows
+the plugin's first letter when none does. While the directory is a
 prototype, `directory/_data/site.json` sets `indexable: false`, which adds `noindex` to
 every page; flip it to `true` (and add the pages to `sitemap.xml`) to launch.
 

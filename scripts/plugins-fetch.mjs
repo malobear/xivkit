@@ -72,6 +72,32 @@ const isBanned = (p) => banned.some((b) => String(b.Name ?? "").toLowerCase() ==
   && (!b.AssemblyVersion || cmpVer(p.AssemblyVersion ?? "0", b.AssemblyVersion) <= 0));
 const pickNames = Object.keys(picks);
 
+// Icons, best first. Dalamud's installer ignores IconUrl for official plugins and loads
+// the icon from goatcorp/PluginDistD17 (GetPluginIconUrl in PluginImageCache.cs), so that
+// is what players see in game. Then the author's IconUrl, then the usual images/icon.png
+// in the plugin's GitHub repo. Only a URL that actually loads is kept.
+function iconCandidates(p) {
+  const out = [];
+  if (p._Dip17Channel && p.InternalName) {
+    out.push(`https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/${p._Dip17Channel}/${p.InternalName}/images/icon.png`);
+  }
+  // A github.com/.../blob/... link is an HTML page; /raw/ serves the image itself.
+  if (p.IconUrl) out.push(String(p.IconUrl).replace(/^(https:\/\/github\.com\/[^/]+\/[^/]+)\/blob\//, "$1/raw/"));
+  const gh = String(p.RepoUrl ?? "").match(/^https?:\/\/github\.com\/([^/]+)\/([^/#?]+?)(?:\.git)?(?:[/#?]|$)/i);
+  if (gh) out.push(`https://raw.githubusercontent.com/${gh[1]}/${gh[2]}/HEAD/images/icon.png`);
+  return [...new Set(out)];
+}
+async function loads(url) {
+  try {
+    const res = await fetch(url, { method: "HEAD", redirect: "follow", headers: { "user-agent": "xivkit-plugin-directory" }, signal: AbortSignal.timeout(15000) });
+    return res.ok && /^image\//.test(res.headers.get("content-type") ?? "image/");
+  } catch { return false; }
+}
+async function pool(items, n, fn) {
+  let i = 0;
+  await Promise.all(Array.from({ length: n }, async () => { while (i < items.length) await fn(items[i++]); }));
+}
+
 const seen = new Set();
 const plugins = [];
 for (const p of master) {
@@ -107,7 +133,8 @@ for (const p of master) {
     downloads: p.DownloadCount ?? 0,
     lastUpdate: p.LastUpdate ?? 0,
     repoUrl: p.RepoUrl || "",
-    iconUrl: p.IconUrl || "",
+    iconUrl: "",
+    iconCandidates: iconCandidates(p),
     images: (p.ImageUrls ?? []).slice(0, 3),
     testingOnly: Boolean(p.IsTestingExclusive),
     automation: AUTOMATION.test(hay),
@@ -115,6 +142,14 @@ for (const p of master) {
   });
 }
 plugins.sort((a, b) => b.downloads - a.downloads);
+
+await pool(plugins, 16, async (pl) => {
+  for (const url of pl.iconCandidates) if (await loads(url)) { pl.iconUrl = url; break; }
+  delete pl.iconCandidates;
+});
+const iconless = plugins.filter((p) => !p.iconUrl);
+console.log(`icons: ${plugins.length - iconless.length} found, ${iconless.length} use the letter placeholder${iconless.length ? " (" + iconless.map((p) => p.slug).join(", ") + ")" : ""}`);
+
 const unused = Object.keys(overrides).filter((k) => !seen.has(k));
 if (unused.length) console.warn(`categories.json: no plugin with slug ${unused.join(", ")} (removed or renamed?)`);
 
