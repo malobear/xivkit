@@ -18,7 +18,7 @@ eleventyComputed:
 </nav>
 
 <header class="plugin-head">
-  {% if plugin.iconUrl %}<img class="plugin-icon" src="{{ plugin.iconUrl }}" alt="" width="72" height="72" onerror="this.style.visibility='hidden'">{% endif %}
+  {% if plugin.iconUrl %}<img class="plugin-icon" src="{{ plugin.iconUrl }}" alt="" width="72" height="72" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plugin-icon plug-icon-blank plugin-icon-blank" aria-hidden="true"{% if plugin.iconUrl %} hidden{% endif %}>{{ plugin.name | first }}</span>
   <div>
     <h1>{{ plugin.name }}{% if plugin.pick %} <span class="badge badge-pick">My pick</span>{% endif %}</h1>
     <p class="lede">{{ plugin.punchline }}</p>

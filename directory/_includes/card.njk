@@ -1,7 +1,7 @@
 {% macro card(p, cats) %}
 <li class="plug" data-q="{{ (p.name + ' ' + p.punchline + ' ' + p.author + ' ' + p.tags | join(' ')) | lower }}">
   <a class="plug-link" href="{{ '/plugins/' + p.slug + '/' }}">
-    {% if p.iconUrl %}<img class="plug-icon" src="{{ p.iconUrl }}" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.style.visibility='hidden'">{% else %}<span class="plug-icon plug-icon-blank" aria-hidden="true">{{ p.name | first }}</span>{% endif %}
+    {% if p.iconUrl %}<img class="plug-icon" src="{{ p.iconUrl }}" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plug-icon plug-icon-blank" aria-hidden="true"{% if p.iconUrl %} hidden{% endif %}>{{ p.name | first }}</span>
     <span class="plug-body">
       <span class="plug-name">{{ p.name }}{% if p.pick %} <span class="badge badge-pick">My pick</span>{% endif %}</span>
       <span class="plug-desc">{{ p.punchline | trunc(120) }}</span>
