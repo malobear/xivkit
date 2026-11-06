@@ -87,7 +87,7 @@ so the site never breaks, it just shows English for that one entry until transla
 
 `xivkit.com/plugins/` is a generated directory of Dalamud's official plugin list, built with
 [Eleventy](https://www.11ty.dev/). Source lives in `directory/` (templates in `_includes/`,
-generated data in `_data/`, hand-written notes in `content/picks.json`); the output goes to
+generated data in `_data/`, hand-written picks and category overrides in `content/`); the output goes to
 `plugins/` and is committed, since the site deploys straight from the branch. Do not edit
 files in `plugins/` by hand.
 
@@ -100,7 +100,10 @@ pnpm plugins:build    # rebuild plugins/ from the current data
 `scripts/plugins-fetch.mjs` pulls the official plugin master list, drops anything on
 Dalamud's banned list (compared by version, since bans cover old releases only), sorts
 plugins into categories by keyword, and flags the ones listed in `content/picks.json` as
-"My pick". Adjust the category rules at the top of that script. While the directory is a
+"My pick". Adjust the keyword rules at the top of that script; when a plugin still lands in the
+wrong bucket, pin it by slug in `directory/content/categories.json`, which wins over the
+keywords. The script stops on an unknown category slug and warns about overrides whose
+plugin has left the official list. While the directory is a
 prototype, `directory/_data/site.json` sets `indexable: false`, which adds `noindex` to
 every page; flip it to `true` (and add the pages to `sitemap.xml`) to launch.
 

@@ -29,3 +29,9 @@
   var start = new URLSearchParams(location.search).get("q");
   if (start) { input.value = start; apply(); }
 })();
+
+// On phones the category chips are one sideways-scrolling row; bring the current one into view.
+(function () {
+  var row = document.querySelector(".cats"), cur = row && row.querySelector("[aria-current=page]");
+  if (row && cur && row.scrollWidth > row.clientWidth) row.scrollLeft = cur.offsetLeft - row.offsetLeft - (row.clientWidth - cur.offsetWidth) / 2;
+})();

@@ -2,61 +2,79 @@
   {
     "slug": "housing",
     "name": "Housing",
-    "blurb": "Plugins for decorating, placing and managing houses, apartments and your Free Company workshop.",
+    "blurb": "Plugins for decorating, placing and managing houses, apartments and your Free Company estate.",
+    "count": 9
+  },
+  {
+    "slug": "roleplay",
+    "name": "Roleplay and venues",
+    "blurb": "Character profiles, custom titles, RP event calendars, and tools for running or visiting player venues.",
     "count": 13
+  },
+  {
+    "slug": "games",
+    "name": "Minigames and fun",
+    "blurb": "Games to play while you wait or lie dead on the floor, plus dice, cards and other silly extras.",
+    "count": 20
   },
   {
     "slug": "glamour",
     "name": "Glamour and mods",
-    "blurb": "Outfit, plate and appearance tools, plus helpers for mod loaders and posing.",
-    "count": 31
+    "blurb": "Outfit, plate and appearance tools, camera and screenshot helpers, and tools for mod loaders and posing.",
+    "count": 19
   },
   {
     "slug": "market",
     "name": "Market and economy",
     "blurb": "Market board price checks, retainer helpers, and tools for selling and crafting for profit.",
-    "count": 27
+    "count": 25
   },
   {
     "slug": "crafting-gathering",
     "name": "Crafting and gathering",
-    "blurb": "Crafting macros and solvers, gathering routes and node timers, and fishing helpers.",
-    "count": 32
+    "blurb": "Crafting macros and solvers, gathering routes and node timers, fishing helpers, and Island Sanctuary planners.",
+    "count": 16
   },
   {
     "slug": "combat",
-    "name": "Combat and jobs",
-    "blurb": "Job gauges, cooldown trackers, timeline and mechanic helpers for raids and trials.",
-    "count": 57
+    "name": "Combat and duties",
+    "blurb": "Job gauges, cooldown trackers, mechanic helpers, fly text, and tools for dungeons, roulettes, hunts and other duty content.",
+    "count": 95
   },
   {
     "slug": "ui",
     "name": "UI and HUD",
-    "blurb": "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates and menus.",
-    "count": 85
+    "blurb": "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates, tooltips and menus.",
+    "count": 69
   },
   {
     "slug": "chat-social",
     "name": "Chat and social",
-    "blurb": "Chat windows and filters, friend lists, translation, and tools for staying in touch.",
-    "count": 91
+    "blurb": "Chat windows and filters, friend lists, linkshells, translation, and tools for staying in touch.",
+    "count": 65
   },
   {
     "slug": "audio-music",
     "name": "Audio and music",
     "blurb": "Orchestrion, bard and music helpers, plus sound and volume controls.",
-    "count": 26
+    "count": 29
+  },
+  {
+    "slug": "graphics",
+    "name": "Graphics and performance",
+    "blurb": "Frame rate, resolution, shadow and render settings, crash and input fixes, and other tweaks to the game client itself.",
+    "count": 28
   },
   {
     "slug": "quality-of-life",
     "name": "Quality of life",
-    "blurb": "Small helpers that remove friction: tweaks, reminders, trackers and shortcuts.",
-    "count": 35
+    "blurb": "Small helpers that remove friction: tweaks, reminders, collection trackers, notifications and shortcuts.",
+    "count": 95
   },
   {
     "slug": "other",
     "name": "Other",
     "blurb": "Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.",
-    "count": 101
+    "count": 15
   }
 ]

@@ -11,21 +11,25 @@ import { fileURLToPath } from "node:url";
 
 const DATA = fileURLToPath(new URL("../directory/_data/", import.meta.url));
 const PICKS = fileURLToPath(new URL("../directory/content/picks.json", import.meta.url));
+const OVERRIDES = fileURLToPath(new URL("../directory/content/categories.json", import.meta.url));
 const MASTER = "https://kamori.goats.dev/Plugin/PluginMaster";
 const BANNED = "https://raw.githubusercontent.com/goatcorp/DalamudAssets/master/UIRes/bannedplugin.json";
 
 // Each category scores keyword hits: name and punchline count triple, tags and the
 // description once. The best score wins; a tie goes to the earlier category.
 const CATEGORIES = [
-  { slug: "housing", name: "Housing", blurb: "Plugins for decorating, placing and managing houses, apartments and your Free Company workshop.", re: /\b(housing|house|houses|furnishing|furniture|decorat\w*|estate|apartment|workshop|plot|ward)\b/gi },
-  { slug: "glamour", name: "Glamour and mods", blurb: "Outfit, plate and appearance tools, plus helpers for mod loaders and posing.", re: /\b(glamou?r\w*|outfit\w*|dye\w*|mirage|gpose|pose\w*|mods?|penumbra|appearance|camera|fashion|cosmetic\w*|emotes?)\b/gi },
-  { slug: "market", name: "Market and economy", blurb: "Market board price checks, retainer helpers, and tools for selling and crafting for profit.", re: /\b(market\w*|price\w*|retainers?|gil|sell\w*|sale|economy|listings?|universalis|profit\w*)\b/gi },
-  { slug: "crafting-gathering", name: "Crafting and gathering", blurb: "Crafting macros and solvers, gathering routes and node timers, and fishing helpers.", re: /\b(craft\w*|gather\w*|fish\w*|botanist|miner|nodes?|collectables?|desynth\w*|materia|hunts?|treasure|mining|recipes?)\b/gi },
-  { slug: "combat", name: "Combat and jobs", blurb: "Job gauges, cooldown trackers, timeline and mechanic helpers for raids and trials.", re: /\b(combat|rotation\w*|jobs?|cooldowns?|raids?|boss\w*|dps|tank\w*|healer\w*|aoe|enmity|buffs?|debuffs?|gauge\w*|trials?|pvp|ultimates?|limit break|mechanics?)\b/gi },
-  { slug: "ui", name: "UI and HUD", blurb: "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates and menus.", re: /\b(ui|hud|hotbars?|bars?|overlays?|layouts?|fonts?|themes?|interface|skins?|crosshair|minimap|map|nameplates?)\b/gi },
-  { slug: "chat-social", name: "Chat and social", blurb: "Chat windows and filters, friend lists, translation, and tools for staying in touch.", re: /\b(chat\w*|friends?|translat\w*|social|tells?|linkshells?|discord|whispers?|messag\w*|spam|party finder|players?)\b/gi },
-  { slug: "audio-music", name: "Audio and music", blurb: "Orchestrion, bard and music helpers, plus sound and volume controls.", re: /\b(music|audio|sounds?|orchestrion|bard|songs?|volume|performance|instruments?|bgm)\b/gi },
-  { slug: "quality-of-life", name: "Quality of life", blurb: "Small helpers that remove friction: tweaks, reminders, trackers and shortcuts.", re: /\b(tweaks?|qol|quality of life|trackers?|reminders?|timers?|helpers?|daily|todo|checklists?|completion|shortcuts?|convenience)\b/gi },
+  { slug: "housing", name: "Housing", blurb: "Plugins for decorating, placing and managing houses, apartments and your Free Company estate.", re: /\b(housing|house|houses|furnishing\w*|furniture|decorat\w*|estates?|apartments?|interior|exterior|placement)\b/gi },
+  { slug: "roleplay", name: "Roleplay and venues", blurb: "Character profiles, custom titles, RP event calendars, and tools for running or visiting player venues.", re: /\b(roleplay\w*|rp|rpers?|venues?|honorifics?|titles?|rp profiles?|character profiles?|partake|nameplate titles?|events? calendar)\b/gi },
+  { slug: "games", name: "Minigames and fun", blurb: "Games to play while you wait or lie dead on the floor, plus dice, cards and other silly extras.", re: /\b(mini-?games?|arcade|puzzle game|games? to play|minesweeper|tetris|blackjack|casino|gambl\w*|dice|death ?roll|triple triad|triad|2048|bomberman|super hexagon|puzzle bobble|tic-tac-toe)\b/gi },
+  { slug: "glamour", name: "Glamour and mods", blurb: "Outfit, plate and appearance tools, camera and screenshot helpers, and tools for mod loaders and posing.", re: /\b(glamou?r\w*|outfit\w*|dye\w*|mirage|gpose|pose\w*|mods?|penumbra|appearance|camera|fashion|cosmetic\w*|emotes?)\b/gi },
+  { slug: "market", name: "Market and economy", blurb: "Market board price checks, retainer helpers, and tools for selling and crafting for profit.", re: /\b(market\w*|price\w*|retainers?|gil|sell\w*|sale|economy|listings?|universalis|profit\w*|trades?|currenc\w*)\b/gi },
+  { slug: "crafting-gathering", name: "Crafting and gathering", blurb: "Crafting macros and solvers, gathering routes and node timers, fishing helpers, and Island Sanctuary planners.", re: /\b(craft\w*|gather\w*|fish\w*|botanist|miner|nodes?|collectables?|desynth\w*|materia|mining|recipes?|island sanctuary|sanctuary|workshop agenda|cosmic exploration)\b/gi },
+  { slug: "combat", name: "Combat and duties", blurb: "Job gauges, cooldown trackers, mechanic helpers, fly text, and tools for dungeons, roulettes, hunts and other duty content.", re: /\b(combat|rotation\w*|jobs?|cooldowns?|raids?|boss\w*|dps|tank\w*|healer\w*|aoe|enmity|buffs?|debuffs?|gauge\w*|trials?|pvp|ultimates?|limit break|mechanics?|dut(?:y|ies)|dungeons?|deep dungeons?|roulettes?|waymarks?|wondrous tails|faux hollows|relics?|zodiac|fates?|hunts?|treasure maps?|fly ?text|damage|targets?|targeting|enem(?:y|ies)|spawns?)\b/gi },
+  { slug: "ui", name: "UI and HUD", blurb: "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates, tooltips and menus.", re: /\b(ui|hud|hotbars?|bars?|overlays?|layouts?|fonts?|themes?|interface|skins?|crosshair|minimap|map|nameplates?|tooltips?|text box\w*|addons?|character panel)\b/gi },
+  { slug: "chat-social", name: "Chat and social", blurb: "Chat windows and filters, friend lists, linkshells, translation, and tools for staying in touch.", re: /\b(chat\w*|friends?|translat\w*|social|tells?|linkshells?|discord|whispers?|messag\w*|spam|party finder|nicknames?|dialogue)\b/gi },
+  { slug: "audio-music", name: "Audio and music", blurb: "Orchestrion, bard and music helpers, plus sound and volume controls.", re: /\b(music|audio|sounds?|orchestrion|bard|songs?|volume|performance|instruments?|bgm|tts|text to speech|voices?)\b/gi },
+  { slug: "graphics", name: "Graphics and performance", blurb: "Frame rate, resolution, shadow and render settings, crash and input fixes, and other tweaks to the game client itself.", re: /\b(fps|frame ?rate|graphics?|shadows?|resolution|render\w*|latency|reflex|vfx|lighting|physics|gpu|game window|taskbar|crash\w*|backups?|ping|lobby error|controller)\b/gi },
+  { slug: "quality-of-life", name: "Quality of life", blurb: "Small helpers that remove friction: tweaks, reminders, collection trackers, notifications and shortcuts.", re: /\b(tweaks?|qol|quality of life|trackers?|reminders?|timers?|helpers?|daily|todo|checklists?|completion|shortcuts?|convenience|notif\w*|mounts?|minions?|collect(?:ion|ed|ions)|teleport\w*|aetherytes?|macros?|inventory|search)\b/gi },
 ];
 const OTHER = { slug: "other", name: "Other", blurb: "Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.", re: null };
 const hits = (re, text) => (text.match(re) || []).length;
@@ -42,11 +46,19 @@ async function getJson(url) {
   return res.json();
 }
 
-const [master, banned, picks] = await Promise.all([
+const [master, banned, picks, overrides] = await Promise.all([
   getJson(MASTER),
   getJson(BANNED).catch(() => []),
   readFile(PICKS, "utf8").then(JSON.parse).catch(() => ({})),
+  readFile(OVERRIDES, "utf8").then(JSON.parse).then((o) => o.categories ?? {}),
 ]);
+
+// Hand-set categories (directory/content/categories.json) win over keyword scoring.
+// A typo in a category slug is an error, not a silent new bucket.
+const validCats = new Set([...CATEGORIES, OTHER].map((c) => c.slug));
+for (const [slug, cat] of Object.entries(overrides)) {
+  if (!validCats.has(cat)) throw new Error(`categories.json: ${slug} -> unknown category "${cat}"`);
+}
 
 // Dalamud bans by internal name and a version ceiling: a plugin is blocked when its
 // current version is at or below the banned one. Old banned releases must not hide
@@ -77,7 +89,7 @@ for (const p of master) {
     const score = hits(c.re, strong) * 3 + hits(c.re, weak);
     if (score > top) { top = score; best = c; }
   }
-  const category = best.slug;
+  const category = overrides[slug] ?? best.slug;
   const hay = strong + " " + weak;
 
   const lower = name.toLowerCase();
@@ -103,6 +115,8 @@ for (const p of master) {
   });
 }
 plugins.sort((a, b) => b.downloads - a.downloads);
+const unused = Object.keys(overrides).filter((k) => !seen.has(k));
+if (unused.length) console.warn(`categories.json: no plugin with slug ${unused.join(", ")} (removed or renamed?)`);
 
 const categories = [...CATEGORIES, OTHER].map((c) => ({
   slug: c.slug,
