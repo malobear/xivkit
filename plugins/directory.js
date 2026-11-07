@@ -20,7 +20,7 @@
   if ($("test-count")) $("test-count").textContent = testCount;
   var thirdCount = main.querySelectorAll(".plug[data-third]").length;
   if ($("third-count")) $("third-count").textContent = thirdCount;
-  if (!thirdCount) { if (fThird) fThird.closest("label").hidden = true; var lg = document.querySelector(".legend"); if (lg) lg.hidden = true; }
+  if (!thirdCount && fThird) fThird.closest("label").hidden = true;
   if (!offCount && fAll) fAll.closest("label").hidden = true;
   if (!testCount && fTesting) fTesting.closest("label").hidden = true;
 
@@ -53,7 +53,8 @@
 
     if (line) line.textContent = "Showing " + shown + " of " + cards.length + " plugins, " + SORT_TEXT[key] + ".";
     if (empty) empty.hidden = shown !== 0;
-    var active = (key !== "installs") + recent + testing + all + third;
+    var lg = document.querySelector(".legend"); if (lg) lg.hidden = !third;
+    var active = recent + testing + all + third;
     if (badge) { badge.textContent = active; badge.hidden = !active; }
 
     if (save === false) return;
@@ -130,4 +131,29 @@
     if (Math.abs(dx) > 50 && links.length > 1) show(dx < 0 ? at + 1 : at - 1);
   });
   dialog.addEventListener("close", function () { img.removeAttribute("src"); if (opener) opener.focus(); });
+})();
+
+// Copy buttons (the custom repository address on third-party plugin pages). The buttons are
+// hidden in the HTML and only shown here, since they need script to work.
+(function () {
+  document.querySelectorAll(".copy-btn").forEach(function (btn) {
+    var label = btn.querySelector(".copy-label"), text = btn.dataset.copy, timer;
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      var done = function (ok) {
+        label.textContent = ok ? "Copied" : "Press Ctrl+C";
+        btn.classList.toggle("copied", ok);
+        clearTimeout(timer);
+        timer = setTimeout(function () { label.textContent = "Copy"; btn.classList.remove("copied"); }, 2000);
+      };
+      var fallback = function () {
+        var code = btn.closest(".copybox").querySelector("code"), r = document.createRange();
+        r.selectNodeContents(code); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+        done(ok);
+      };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      else fallback();
+    });
+  });
 })();
