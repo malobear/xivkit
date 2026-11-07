@@ -129,6 +129,8 @@ round badge on their icon and title, a "Third-party" filter (off by default, `?t
 install step with a copy button for the repository address. Add a repo by adding one line there
 and running `pnpm plugins`.
 
+A GitHub Action (`.github/workflows/plugins-refresh.yml`) runs `pnpm plugins` every Monday and commits any changes to `main`. It can also be started by hand from the Actions tab.
+
 ### Searching / sharing a filtered view
 
 Typing in the search box filters by name, description, or tag, and updates the URL
