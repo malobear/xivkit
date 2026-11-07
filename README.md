@@ -85,7 +85,7 @@ so the site never breaks, it just shows English for that one entry until transla
 
 ### Plugin directory
 
-`xivkit.com/plugins/` is a generated directory of Dalamud's official plugin list, built with
+`xivkit.com/plugins/` is a generated directory of Dalamud's official plugin list plus a few third-party repositories, built with
 [Eleventy](https://www.11ty.dev/). Source lives in `directory/` (templates in `_includes/`,
 generated data in `_data/`, hand-written picks and category overrides in `content/`); the output goes to
 `plugins/` and is committed, since the site deploys straight from the branch. Do not edit
@@ -116,8 +116,18 @@ current API level (read from the live Dalamud release) means installable, one le
 the ones that need testing builds turned on, unless the visitor ticks "Show not installable"
 or "Show testing builds"; their pages stay up and say why or how. Sort and
 filter choices are kept in the URL (`?sort=updated&recent=1`, and so on). While the directory is a
-prototype, `directory/_data/site.json` sets `indexable: false`, which adds `noindex` to
-every page; flip it to `true` (and add the pages to `sitemap.xml`) to launch.
+live, `directory/_data/site.json` has `indexable: true`; set it to `false` to add `noindex` to
+every page again. Plugins the installer doesn't list at all (built for an older API) get `noindex`
+and are left out of the sitemap. Eleventy generates `plugins/sitemap.xml` (listed in `robots.txt`
+and submitted to IndexNow by the deploy workflow), so the hand-kept root `sitemap.xml` doesn't
+need the directory's pages.
+
+Third-party repositories are listed in `directory/content/repos.json` (`url` is the address people
+paste under `/xlsettings` > Experimental > Custom Plugin Repositories). The first repo listed wins
+when a plugin is in several, and the official list wins over all of them. Those plugins get a
+round badge on their icon and title, a "Third-party" filter (off by default, `?third=1`), and an
+install step with a copy button for the repository address. Add a repo by adding one line there
+and running `pnpm plugins`.
 
 ### Searching / sharing a filtered view
 

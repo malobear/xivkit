@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://xivkit.com/sitemap.xml
+Sitemap: https://xivkit.com/plugins/sitemap.xml

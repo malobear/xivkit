@@ -20,6 +20,8 @@ The site is static and every page is plain HTML. Market board prices on the guid
 - [Tools & Links](https://xivkit.com/): Curated FFXIV tools grouped by use: market and economy, progress trackers, glamour, housing, reference databases, and community sites.
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins in active use, tagged by whether they're in the default plugin directory or need a custom (experimental) repo.
 
+- [Plugin directory](https://xivkit.com/plugins/): Browsable directory of Dalamud plugins, official and from well-known third-party repositories (marked with a badge), by category with install counts, install status and how-to-install steps. Generated from the live plugin lists.
+
 ## Optional
 
 - [Watchlist](https://xivkit.com/watchlist.html): FFXIV tools that are recommended but not yet tried by the maintainer.

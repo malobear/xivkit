@@ -1,5 +1,5 @@
 {
   "origin": "https://xivkit.com",
   "base": "/plugins/",
-  "indexable": false
+  "indexable": true
 }

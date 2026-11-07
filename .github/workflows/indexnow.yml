@@ -1,7 +1,7 @@
 # Pings IndexNow (Bing, Yandex, Naver, Seznam, and others) after each GitHub Pages
 # deploy, so changed pages get recrawled within hours instead of weeks.
 #
-# Every URL in sitemap.xml is submitted on each deploy, so unlisted or draft pages stay out.
+# Every URL in sitemap.xml and plugins/sitemap.xml is submitted on each deploy, so unlisted or draft pages stay out.
 # IndexNow does not reach Google; submit sitemap.xml in Search Console for that.
 
 name: IndexNow
@@ -32,7 +32,7 @@ jobs:
         id: urls
         run: |
           set -euo pipefail
-          grep -o '<loc>[^<]*</loc>' sitemap.xml | sed -e 's#<loc>##' -e 's#</loc>##' > sitemap_urls.txt
+          cat sitemap.xml plugins/sitemap.xml | grep -o '<loc>[^<]*</loc>' | sed -e 's#<loc>##' -e 's#</loc>##' > sitemap_urls.txt
 
           # Submit every sitemap URL on each deploy. The site is small, and diffing only
           # HEAD^..HEAD missed pages changed earlier in a multi-commit push.

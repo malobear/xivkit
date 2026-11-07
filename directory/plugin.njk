@@ -10,6 +10,7 @@ eleventyComputed:
   pageDescription: "{{ plugin.punchline | trunc(150) }} {{ plugin.name }} by {{ plugin.author }}: {{ plugin.downloads | num }} installs, updated {{ plugin.lastUpdate | isoDate }}."
   canonicalPath: "{{ plugin.slug }}/"
   isIndex: false
+  noindex: "{{ 'true' if plugin.status == 'unavailable' else 'false' }}"
 ---
 {% from "card.njk" import card, srcBadge %}
 {% set repo = repos | repoFor(plugin) %}

@@ -1,0 +1,14 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ site.origin }}{{ site.base }}</loc><lastmod>{{ meta.fetched }}</lastmod></url>
+{%- for c in categories %}
+  <url><loc>{{ site.origin }}{{ site.base }}category/{{ c.slug }}/</loc><lastmod>{{ meta.fetched }}</lastmod></url>
+{%- endfor %}
+{%- for p in plugins %}{% if p.status != "unavailable" %}
+  <url><loc>{{ site.origin }}{{ site.base }}{{ p.slug }}/</loc><lastmod>{{ p.lastUpdate | isoDate }}</lastmod></url>
+{%- endif %}{% endfor %}
+</urlset>
