@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ3SSXDSFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQ3SSXDSFK');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuickTransfer: FFXIV Dalamud plugin | XIVKit</title>
+<meta name="description" content="Quick item transfer + split helpers. QuickTransfer by Kage: 2,849 installs, updated 2026-10-12.">
+<link rel="canonical" href="https://xivkit.com/plugins/quicktransfer/">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f5f8" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="XIVKit">
+<meta property="og:title" content="QuickTransfer: FFXIV Dalamud plugin | XIVKit">
+<meta property="og:description" content="Quick item transfer + split helpers. QuickTransfer by Kage: 2,849 installs, updated 2026-10-12.">
+<meta property="og:url" content="https://xivkit.com/plugins/quicktransfer/">
+<meta property="og:image" content="https://xivkit.com/og-plugins.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QuickTransfer: FFXIV Dalamud plugin | XIVKit">
+<meta name="twitter:description" content="Quick item transfer + split helpers. QuickTransfer by Kage: 2,849 installs, updated 2026-10-12.">
+<meta name="twitter:image" content="https://xivkit.com/og-plugins.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="/brand.css">
+<link rel="stylesheet" href="/plugins/directory.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav">
+    <a class="wordmark" href="/" aria-label="XIVKit home">XIV<b>KIT</b></a>
+    <a href="/">Tools I use</a>
+    <a href="/watchlist.html">Watchlist</a>
+    <a href="/plugins.html">My plugins</a>
+    <a href="/plugins/" aria-current="false">Plugin directory</a>
+  </nav>
+
+  
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span>
+  <a href="/plugins/category/quality-of-life/">Quality of life</a>
+</nav>
+
+<header class="plugin-head">
+  <img class="plugin-icon" src="https://puni.sh/api/plugins/icon/144" alt="" width="72" height="72" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plugin-icon plug-icon-blank plugin-icon-blank" aria-hidden="true" hidden>Q</span>
+  <div>
+    <h1>QuickTransfer <svg class="src-badge src-badge-title" viewBox="0 0 20 20" role="img" aria-label="Third-party repository"><title>Third-party repository</title><circle cx="10" cy="10" r="10"/><g fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="5.4" r="1.5"/><circle cx="13.8" cy="5.4" r="1.5"/><circle cx="10" cy="14.6" r="1.5"/><path d="M6.2 6.9v.9a2.6 2.6 0 0 0 2.6 2.6h2.4a2.6 2.6 0 0 0 2.6-2.6v-.9M10 10.4v2.7"/></g></svg></h1>
+    <p class="lede">Quick item transfer + split helpers.</p>
+  </div>
+</header>
+
+<div class="plugin-grid">
+  <div class="plugin-main">
+    
+    <section aria-labelledby="about-h">
+      <h2 id="about-h">About QuickTransfer</h2>
+      <p>Automate inventory transfers with Shift/Ctrl/Alt + Right-Click. Trade window, vendor quick sell, FC chest.</p>
+    </section>
+    
+
+    
+
+    <section aria-labelledby="install-h">
+      
+      <h2 id="install-h">How to install</h2>
+      <ol class="steps">
+        <li>Install <a href="https://goatcorp.github.io/" target="_blank" rel="noopener noreferrer">XIVLauncher with Dalamud</a> and start the game through it.</li>
+        <li>Type <code>/xlsettings</code> and open the <strong>Experimental</strong> tab. Under <strong>Custom Plugin Repositories</strong>, paste <code class="repo-url">https://puni.sh/api/repository/kage</code>, click the <strong>+</strong> button, then the save button.</li>
+        
+        <li>Type <code>/xlplugins</code> to open the plugin installer.</li>
+        <li>Open <strong>All Plugins</strong>, search for <strong>QuickTransfer</strong>, and click Install.</li>
+      </ol>
+      <p class="warn"><svg class="src-badge src-badge-inline" viewBox="0 0 20 20" role="img" aria-label="Third-party repository"><title>Third-party repository</title><circle cx="10" cy="10" r="10"/><g fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="5.4" r="1.5"/><circle cx="13.8" cy="5.4" r="1.5"/><circle cx="10" cy="14.6" r="1.5"/><path d="M6.2 6.9v.9a2.6 2.6 0 0 0 2.6 2.6h2.4a2.6 2.6 0 0 0 2.6-2.6v-.9M10 10.4v2.7"/></g></svg> QuickTransfer comes from the Puni.sh (kage) repository, not Dalamud's official list. Dalamud's team has not reviewed it. Only add repositories you trust, and remove the repository again if you stop using its plugins.</p>
+      
+    </section>
+
+    
+    
+    <section aria-labelledby="similar-h">
+      <h2 id="similar-h">Similar plugins</h2>
+      <ul class="plug-list">
+<li class="plug" data-q="simple tweaks plugin this was supposed to be simple... caraxi " data-name="simple tweaks plugin" data-installs="8893616" data-updated="1792255828" data-status="ok">
+  <a class="plug-link" href="/plugins/simpletweaksplugin/">
+    <span class="plug-ico"><img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/SimpleTweaksPlugin/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>S</span></span>
+    <span class="plug-body">
+      <span class="plug-name">Simple Tweaks Plugin</span>
+      <span class="plug-desc">This was supposed to be simple...</span>
+      <span class="plug-meta">
+        <span class="chip-static">Quality of life</span>
+        <span>8.9M installs</span>
+        <span>Updated 2026-10-17</span>
+      </span>
+    </span>
+  </a>
+</li>
+
+<li class="plug" data-q="allagan tools get organized in ffxiv, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airships, and submarines! critical_impact inventory sorting filtering" data-name="allagan tools" data-installs="3911133" data-updated="1789298380" data-status="ok">
+  <a class="plug-link" href="/plugins/inventorytools/">
+    <span class="plug-ico"><img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/InventoryTools/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>A</span></span>
+    <span class="plug-body">
+      <span class="plug-name">Allagan Tools</span>
+      <span class="plug-desc">Get organized in FFXIV, easily locate/show where to sort items, plan your crafting, and search for mobs, duties, airshi…</span>
+      <span class="plug-meta">
+        <span class="chip-static">Quality of life</span>
+        <span>3.9M installs</span>
+        <span>Updated 2026-09-13</span>
+      </span>
+    </span>
+  </a>
+</li>
+
+<li class="plug" data-q="questionable a tiny quest helper plugin. the puni.sh quest squad quest msq qol utility" data-name="questionable" data-installs="2602992" data-updated="1793480225" data-status="ok" data-third>
+  <a class="plug-link" href="/plugins/questionable/">
+    <span class="plug-ico"><img class="plug-icon" src="https://puni.sh/api/plugins/icon/94" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>Q</span><svg class="src-badge src-badge-card" viewBox="0 0 20 20" role="img" aria-label="Third-party repository"><title>Third-party repository</title><circle cx="10" cy="10" r="10"/><g fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="5.4" r="1.5"/><circle cx="13.8" cy="5.4" r="1.5"/><circle cx="10" cy="14.6" r="1.5"/><path d="M6.2 6.9v.9a2.6 2.6 0 0 0 2.6 2.6h2.4a2.6 2.6 0 0 0 2.6-2.6v-.9M10 10.4v2.7"/></g></svg></span>
+    <span class="plug-body">
+      <span class="plug-name">Questionable</span>
+      <span class="plug-desc">A tiny quest helper plugin.</span>
+      <span class="plug-meta">
+        <span class="chip-static">Quality of life</span>
+        <span>2.6M installs</span>
+        <span>Updated 2026-10-31</span>
+      </span>
+    </span>
+  </a>
+</li>
+
+<li class="plug" data-q="dailyduty easily track daily and weekly tasks midorikami utility gil tasks dailies tracking todo" data-name="dailyduty" data-installs="2067464" data-updated="1791759578" data-status="ok">
+  <a class="plug-link" href="/plugins/dailyduty/">
+    <span class="plug-ico"><img class="plug-icon" src="https://raw.githubusercontent.com/goatcorp/PluginDistD17/main/testing-live/DailyDuty/images/icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><span class="plug-icon plug-icon-blank" aria-hidden="true" hidden>D</span></span>
+    <span class="plug-body">
+      <span class="plug-name">DailyDuty</span>
+      <span class="plug-desc">Easily Track Daily and Weekly tasks</span>
+      <span class="plug-meta">
+        <span class="chip-static">Quality of life</span>
+        <span>2.1M installs</span>
+        <span>Updated 2026-10-11</span>
+      </span>
+    </span>
+  </a>
+</li>
+</ul>
+    </section>
+    
+  </div>
+
+  <aside class="facts" aria-label="Plugin facts">
+    <dl>
+      <div><dt>Author</dt><dd>Kage</dd></div>
+      <div><dt>Category</dt><dd><a href="/plugins/category/quality-of-life/">Quality of life</a></dd></div>
+      <div><dt>Installs</dt><dd>2,849</dd></div>
+      <div><dt>Last updated</dt><dd>2026-10-12</dd></div>
+      <div><dt>Status</dt><dd>Installable</dd></div>
+      <div><dt>Dalamud API</dt><dd>15</dd></div>
+      <div><dt>Repository</dt><dd><a href="https://puni.sh/directory" target="_blank" rel="noopener noreferrer">Puni.sh (kage)</a> (third-party)</dd></div>
+      <div><dt>Source</dt><dd><a href="https://github.com/Kagekazu/QuickTransfer" target="_blank" rel="noopener noreferrer">github.com</a></dd></div>
+    </dl>
+    <p class="tags"><span class="chip-static">inventory</span><span class="chip-static">utility</span><span class="chip-static">quality of life</span></p>
+  </aside>
+</div>
+
+
+  <footer class="site-footer">
+    <p>Plugin data comes from Dalamud's official plugin list and a handful of third-party repositories, last refreshed 2026-11-06. Plugins on Dalamud's banned list are left out. Third-party plugins are marked with a badge and have not been reviewed by Dalamud's team.</p>
+    <p>Plugins are third-party client tools. They are not made, supported or endorsed by Square Enix, and using them is at your own risk. Anything that automates gameplay can break the game's Terms of Service.</p>
+    <p>Source on <a href="https://github.com/malobear/xivkit" target="_blank" rel="noopener noreferrer">GitHub</a>. See the <a href="/">main list</a> for the rest of the tools I use.</p>
+    <p class="legal">FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made directory, not affiliated with or endorsed by Square Enix.</p>
+  </footer>
+</div>
+<script src="/plugins/directory.js"></script>
+</body>
+</html>

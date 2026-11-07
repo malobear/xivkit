@@ -1,7 +1,9 @@
+{% macro srcBadge(cls, label) %}<svg class="src-badge {{ cls }}" viewBox="0 0 20 20" role="img" aria-label="{{ label or 'Third-party repository' }}"><title>{{ label or 'Third-party repository' }}</title><circle cx="10" cy="10" r="10"/><g fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="5.4" r="1.5"/><circle cx="13.8" cy="5.4" r="1.5"/><circle cx="10" cy="14.6" r="1.5"/><path d="M6.2 6.9v.9a2.6 2.6 0 0 0 2.6 2.6h2.4a2.6 2.6 0 0 0 2.6-2.6v-.9M10 10.4v2.7"/></g></svg>{% endmacro %}
+
 {% macro card(p, cats) %}
-<li class="plug" data-q="{{ (p.name + ' ' + p.punchline + ' ' + p.author + ' ' + p.tags | join(' ')) | lower }}" data-name="{{ p.name | lower }}" data-installs="{{ p.downloads }}" data-updated="{{ p.lastUpdate }}" data-status="{{ p.status }}"{% if p.needsTesting %} data-testing{% endif %}>
+<li class="plug" data-q="{{ (p.name + ' ' + p.punchline + ' ' + p.author + ' ' + p.tags | join(' ')) | lower }}" data-name="{{ p.name | lower }}" data-installs="{{ p.downloads }}" data-updated="{{ p.lastUpdate }}" data-status="{{ p.status }}"{% if p.needsTesting %} data-testing{% endif %}{% if p.source != "official" %} data-third{% endif %}>
   <a class="plug-link" href="{{ '/plugins/' + p.slug + '/' }}">
-    {% if p.iconUrl %}<img class="plug-icon" src="{{ p.iconUrl }}" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plug-icon plug-icon-blank" aria-hidden="true"{% if p.iconUrl %} hidden{% endif %}>{{ p.name | first | upper }}</span>
+    <span class="plug-ico">{% if p.iconUrl %}<img class="plug-icon" src="{{ p.iconUrl }}" alt="" width="44" height="44" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plug-icon plug-icon-blank" aria-hidden="true"{% if p.iconUrl %} hidden{% endif %}>{{ p.name | first | upper }}</span>{% if p.source != "official" %}{{ srcBadge("src-badge-card") }}{% endif %}</span>
     <span class="plug-body">
       <span class="plug-name">{{ p.name }}{% if p.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif p.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif p.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</span>
       <span class="plug-desc">{{ p.punchline | trunc(120) }}</span>
@@ -28,7 +30,9 @@
     </label>
     <label class="toggle"><input type="checkbox" id="f-recent"><span>Updated in the last 90 days</span></label>
     <label class="toggle"><input type="checkbox" id="f-testing"><span>Show testing builds (<span id="test-count">0</span>)</span></label>
+    <label class="toggle"><input type="checkbox" id="f-third"><span>Show third-party plugins {{ srcBadge("src-badge-inline") }} (<span id="third-count">{{ meta.thirdParty }}</span>)</span></label>
     <label class="toggle"><input type="checkbox" id="f-all"><span>Show not installable (<span id="off-count">0</span>)</span></label>
   </div>
+  <p class="legend">{{ srcBadge("src-badge-inline") }} <span><strong>Third-party plugin.</strong> It is not in Dalamud's official list, so you add its repository under <code>/xlsettings</code> first, and Dalamud's team has not reviewed it. Each plugin page shows how.</span></p>
 </details>
 {% endmacro %}

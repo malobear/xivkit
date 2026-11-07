@@ -14,6 +14,7 @@ export default function (eleventyConfig) {
   // Same category, installable ones only, most installed first (the data is already in that order).
   eleventyConfig.addFilter("similar", (list, plugin) =>
     list.filter((p) => p.category === plugin.category && p.slug !== plugin.slug && p.status === "ok").slice(0, 4));
+  eleventyConfig.addFilter("repoFor", (repos, plugin) => repos.find((r) => r.id === plugin.source));
   eleventyConfig.addFilter("categoryName", (cats, slug) => (cats.find((c) => c.slug === slug) || {}).name || slug);
   eleventyConfig.addFilter("trunc", (s, n) => (s && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s));
   eleventyConfig.addFilter("host", (url) => {

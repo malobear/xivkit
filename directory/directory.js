@@ -7,7 +7,7 @@
   if (!input || !lists.length) return;
   var main = lists[lists.length - 1];
   var $ = function (id) { return document.getElementById(id); };
-  var sort = $("sort"), fRecent = $("f-recent"), fTesting = $("f-testing"), fAll = $("f-all");
+  var sort = $("sort"), fRecent = $("f-recent"), fTesting = $("f-testing"), fAll = $("f-all"), fThird = $("f-third");
   var empty = $("empty"), line = $("result-line"), badge = $("filter-count"), panel = document.querySelector(".filter-panel");
   var DAY = 86400, now = Date.now() / 1000;
   var SORT_TEXT = { installs: "most installed first", updated: "most recently updated first", name: "by name" };
@@ -18,6 +18,9 @@
   var testCount = main.querySelectorAll(".plug[data-testing]").length;
   if ($("off-count")) $("off-count").textContent = offCount;
   if ($("test-count")) $("test-count").textContent = testCount;
+  var thirdCount = main.querySelectorAll(".plug[data-third]").length;
+  if ($("third-count")) $("third-count").textContent = thirdCount;
+  if (!thirdCount) { if (fThird) fThird.closest("label").hidden = true; var lg = document.querySelector(".legend"); if (lg) lg.hidden = true; }
   if (!offCount && fAll) fAll.closest("label").hidden = true;
   if (!testCount && fTesting) fTesting.closest("label").hidden = true;
 
@@ -32,7 +35,7 @@
     var q = input.value.trim().toLowerCase();
     var key = sort && byKey[sort.value] ? sort.value : "installs";
     var recent = fRecent && fRecent.checked, testing = fTesting && fTesting.checked;
-    var all = fAll && fAll.checked;
+    var all = fAll && fAll.checked, third = fThird && fThird.checked;
     var shown = 0;
     lists.forEach(function (list) {
       list.querySelectorAll(".plug").forEach(function (li) {
@@ -40,7 +43,8 @@
         var hit = (!q || d.q.indexOf(q) !== -1)
           && (all || d.status === "ok")
           && (!recent || now - d.updated < 90 * DAY)
-          && (testing || !("testing" in d));
+          && (testing || !("testing" in d))
+          && (third || !("third" in d));
         li.hidden = !hit;
         if (list === main && hit) shown++;
       });
@@ -49,14 +53,14 @@
 
     if (line) line.textContent = "Showing " + shown + " of " + cards.length + " plugins, " + SORT_TEXT[key] + ".";
     if (empty) empty.hidden = shown !== 0;
-    var active = (key !== "installs") + recent + testing + all;
+    var active = (key !== "installs") + recent + testing + all + third;
     if (badge) { badge.textContent = active; badge.hidden = !active; }
 
     if (save === false) return;
     var url = new URL(location.href), p = url.searchParams;
     var set = function (k, on, v) { if (on) p.set(k, v || "1"); else p.delete(k); };
     set("q", q, q); set("sort", key !== "installs", key);
-    set("recent", recent); set("testing", testing); set("all", all);
+    set("recent", recent); set("testing", testing); set("all", all); set("third", third);
     history.replaceState(null, "", url);
   }
 
@@ -67,10 +71,11 @@
   if (fRecent) fRecent.checked = p.has("recent");
   if (fTesting) fTesting.checked = p.has("testing");
   if (fAll) fAll.checked = p.has("all");
+  if (fThird) fThird.checked = p.has("third");
   apply(false);
 
   input.addEventListener("input", apply);
-  [sort, fRecent, fTesting, fAll].forEach(function (el) { if (el) el.addEventListener("change", apply); });
+  [sort, fRecent, fTesting, fAll, fThird].forEach(function (el) { if (el) el.addEventListener("change", apply); });
 
   // On phones the panel starts folded, unless the link already carries filters.
   // Desktop hides the panel's toggle, so it must be open there.
