@@ -268,6 +268,64 @@ Notes:
   Ko-fi, Patreon) from every plugin page that has them, and it is useful to visitors
   because it points them at a way to thank the authors.
 
+### Third-party repo to consider: EchoXIV
+
+`https://echoxiv.com/` is a small plugin suite by one author (jFray, GitHub
+`jfraygit/EchoXIV`) with its own repository. Its manifest is at
+`https://echoxiv.com/pluginmaster.json` (the address people would add under Custom
+Plugin Repositories), and it is the same manifest format the fetch already reads.
+
+Checked 2026-11-08: the manifest lists 5 plugins at API level 15, all by jFray, with icons
+and punchlines: EchoMix (shared music sync), EchoSim (rotation simulator), EchoNav
+(what's up in North Horn, one click to go there), EchoGlam (glamour sharing) and
+EchoRoleplay (roleplay profile). The site's homepage text only mentions the first three,
+so it may lag the manifest.
+
+Notes:
+- Adding it is one line in `directory/content/repos.json`
+  (`{ "id": "echoxiv", "name": "EchoXIV", "site": "https://echoxiv.com/", "url": "https://echoxiv.com/pluginmaster.json" }`)
+  and then `pnpm plugins`. Put it after the established repos, since order decides which
+  repo wins for duplicate plugins (no overlap expected).
+- Check before adding: that these plugins are not already in the official list or
+  another listed repo, and whether the suite is established enough for "well-known
+  third-party repositories". It looks new and small, so it may be worth waiting or
+  asking the author. Several plugins do networked things (music sync, sharing glamours
+  and profiles), so read what they send before recommending them.
+- Would also feed the author pages idea, since jFray would have 5 plugins.
+
+### Third-party repo to consider: Aethertek
+
+`https://aethertek.io/` publishes a combined repository at `https://aethertek.io/x.json`
+(same manifest format the fetch already reads). It is a hub that gathers plugins from
+several authors rather than one person's own plugins.
+
+Checked 2026-11-08: 30 plugins at API level 15, none already in the directory by
+`InternalName`. About 21 are by DhogGPT/McVaxius (the main publisher), plus five XA and Aethertek
+plugins, WigglyMuffin's Questionable and Influx, MacaronDream's Questionable Companion,
+and Kyuuso's Eureka Suite. The site also has a donations link, a wiki and a Discord.
+
+Notes:
+- Adding it is one line in `directory/content/repos.json`
+  (`{ "id": "aethertek", "name": "Aethertek", "site": "https://aethertek.io/", "url": "https://aethertek.io/x.json" }`)
+  and then `pnpm plugins`. Order matters for duplicates, so list it after the
+  established repos.
+- **Content policy decision needed first.** A large share is automation: Questionable
+  (automated questing), Loot Goblin (treasure map bot), Fren Rider (multiboxing
+  follow), MOGTOME (duty farming), AI Duty Solver, Botology, Coppelia (HealBot) and
+  similar. Botting-style tools are against the game's terms, and the directory is a
+  public showcase. Options: list everything with a clear note, list everything but
+  tag automation plugins and filter them out by default (like the Third-party filter),
+  or skip the automation plugins. This is the main reason not to add it blindly.
+- Several entries are stubs for privately granted or beta access (mom, DhogNav,
+  Deep Ducking, XA Zod "private early beta"). They would be useless pages for visitors.
+  The fetch would need a per-repo exclude list (by `InternalName`) in `repos.json`.
+- Adding it would create a lot of pages from one author, so it pairs with the author
+  pages idea (DhogGPT alone would be about 19 plugins, the largest author group in the
+  directory after NightmareXIV). It also pairs with the Support section idea, since the
+  site asks for donations.
+- Same vetting as EchoXIV: these plugins read and send game data in various ways, so
+  skim what they do before recommending anything.
+
 ### Smaller parked items
 
 - **"Docs and usage on GitHub" link**: make the source link a clear call to action on
