@@ -223,6 +223,51 @@ Plan if picked up:
    which shows the real list once the plugin is installed.
 3. Render the section only for confirmed plugins. Never publish unconfirmed guesses.
 
+### Author pages
+
+Make the author on each plugin page a link to an author page (`/plugins/author/<slug>/`)
+listing everything that person publishes in the directory, with a link to their GitHub
+profile. Lets people discover more good plugins from authors they already trust, and
+gives search engines a page per author to index.
+
+Notes:
+- Data check (2026-11-08): 382 distinct authors in `plugins.json`, 102 with more than
+  one plugin (NightmareXIV 21, rail 10, MidoriKami 9, Caraxi 8, and so on). Only
+  generate pages for multi-plugin authors, so there are no thin one-plugin pages.
+  Single-plugin authors can stay plain text.
+- Dalamud's `Author` is a free-text display name and not unique (it can be a handle,
+  a team, or a comma list). Safer to key on the GitHub repo owner parsed from
+  `repoUrl`, and show the display name as the title. Needs a pass for plugins whose
+  `repoUrl` owner differs from the author name, and for multi-author strings.
+- Page content: author name, GitHub profile link (and avatar via
+  `https://github.com/<owner>.png`), plugin count, and the plugin list reusing the
+  existing card/list partial. Worth a short generated intro line ("N Dalamud plugins
+  by X") so the page isn't just a list.
+- Add the author pages to `plugins/sitemap.xml` (new Eleventy template next to
+  `category.njk`), and link them from the plugin page and the category pages. Respect
+  the same `unavailable` rule: leave out authors with no available plugins.
+- Good for the indexing goal: roughly 100 new indexable pages plus an outbound link to
+  each author's GitHub profile.
+
+### Support section for authors with donate or sponsor links
+
+On the plugin page's info sidebar, add a "Support" section with the author's donate or
+sponsor links when the repo has any (GitHub Sponsors, Ko-fi, Patreon, Buy Me a Coffee,
+and so on). The same links could also appear on the author page.
+
+Notes:
+- `plugins.json` has no funding fields today, so `scripts/plugins-fetch.mjs` needs to
+  collect them. GitHub exposes them as the repo's `.github/FUNDING.yml` (raw file) or
+  as `fundingLinks` in the GraphQL API. Parsing FUNDING.yml needs no auth but is one
+  request per repo (about 600), so reuse whatever caching or rate-limit handling the
+  fetch already has. Only show links the repo itself declares, never guess.
+- Render with `rel="noopener nofollow"` as for other outbound links, and keep it to
+  recognised platforms rather than arbitrary URLs from the YAML.
+- Needs i18n strings for the section heading if the directory pages are localized.
+- Good for the outbound-link goal: links to high-authority sites (GitHub Sponsors,
+  Ko-fi, Patreon) from every plugin page that has them, and it is useful to visitors
+  because it points them at a way to thank the authors.
+
 ### Smaller parked items
 
 - **"Docs and usage on GitHub" link**: make the source link a clear call to action on
@@ -238,6 +283,25 @@ Plan if picked up:
   Dalamud (Allagan Tools has a `screenshot5.png` it doesn't publish). If wanted, add a
   small per-plugin override list rather than scanning repos, which are full of
   unrelated images.
+
+---
+
+## Site performance and accessibility pass
+
+From a PageSpeed/Lighthouse run on the homepage (mobile, 2026-11-08): Performance 81,
+Accessibility 87, Best Practices 100, SEO 100. Full findings and a suggested order are
+in `pagespeed-report-2026-11-08.md`.
+
+- **Fix layout shift (CLS 0.34)**: reserve space for the JS-built tag bar and check
+  the list shifting down after load. The only metric that is actually bad.
+- **Small list icons**: the guide list uses full-size `og-*.png` cards at favicon
+  size (about 300 KB wasted). Generate about 64px WebP icons.
+- **Accessibility**: lighten footer legal text (4.47:1), underline footer links, and
+  enlarge the tag button tap targets.
+- **Trim render-blocking CSS**: Bulma is 36 KB with about 28 KB unused, and the Google
+  Fonts stylesheet blocks render. Self-host a trimmed Bulma and/or the fonts. Needs care
+  to keep the brand look.
+- **Test the other pages**: only the homepage was run so far.
 
 ---
 
