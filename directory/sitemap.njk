@@ -9,6 +9,6 @@ eleventyExcludeFromCollections: true
   <url><loc>{{ site.origin }}{{ site.base }}category/{{ c.slug }}/</loc><lastmod>{{ meta.fetched }}</lastmod></url>
 {%- endfor %}
 {%- for p in plugins %}{% if p.status != "unavailable" %}
-  <url><loc>{{ site.origin }}{{ site.base }}{{ p.slug }}/</loc><lastmod>{{ p.lastUpdate | isoDate }}</lastmod></url>
+  <url><loc>{{ site.origin }}{{ site.base }}{{ p.slug }}/</loc>{% set d = p.lastUpdate | isoDate %}{% if d %}<lastmod>{{ d }}</lastmod>{% endif %}</url>
 {%- endif %}{% endfor %}
 </urlset>
