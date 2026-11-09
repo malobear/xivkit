@@ -19,8 +19,23 @@ The site is static and every page is plain HTML. Market board prices on the guid
 
 - [Tools & Links](https://xivkit.com/): Curated FFXIV tools grouped by use: market and economy, progress trackers, glamour, housing, reference databases, and community sites.
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins in active use, tagged by whether they're in the default plugin directory or need a custom (experimental) repo.
-
 - [Plugin directory](https://xivkit.com/plugins/): Browsable directory of Dalamud plugins, official and from well-known third-party repositories (marked with a badge), by category with install counts, install status and how-to-install steps. Generated from the live plugin lists.
+
+## Plugin directory categories
+
+- [Housing](https://xivkit.com/plugins/category/housing/): Plugins for decorating, placing and managing houses, apartments and your Free Company estate.
+- [Roleplay and venues](https://xivkit.com/plugins/category/roleplay/): Character profiles, custom titles, RP event calendars, and tools for running or visiting player venues.
+- [Minigames and fun](https://xivkit.com/plugins/category/games/): Games to play while you wait or lie dead on the floor, plus dice, cards and other silly extras.
+- [Glamour and mods](https://xivkit.com/plugins/category/glamour/): Outfit, plate and appearance tools, camera and screenshot helpers, and tools for mod loaders and posing.
+- [Market and economy](https://xivkit.com/plugins/category/market/): Market board price checks, retainer helpers, and tools for selling and crafting for profit.
+- [Crafting and gathering](https://xivkit.com/plugins/category/crafting-gathering/): Crafting macros and solvers, gathering routes and node timers, fishing helpers, and Island Sanctuary planners.
+- [Combat and duties](https://xivkit.com/plugins/category/combat/): Job gauges, cooldown trackers, mechanic helpers, fly text, and tools for dungeons, roulettes, hunts and other duty content.
+- [UI and HUD](https://xivkit.com/plugins/category/ui/): Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates, tooltips and menus.
+- [Chat and social](https://xivkit.com/plugins/category/chat-social/): Chat windows and filters, friend lists, linkshells, translation, and tools for staying in touch.
+- [Audio and music](https://xivkit.com/plugins/category/audio-music/): Orchestrion, bard and music helpers, plus sound and volume controls.
+- [Graphics and performance](https://xivkit.com/plugins/category/graphics/): Frame rate, resolution, shadow and render settings, crash and input fixes, and other tweaks to the game client itself.
+- [Quality of life](https://xivkit.com/plugins/category/quality-of-life/): Small helpers that remove friction: tweaks, reminders, collection trackers, notifications and shortcuts.
+- [Other](https://xivkit.com/plugins/category/other/): Everything that does not fit a bigger bucket: odd, useful and one-of-a-kind plugins.
 
 ## Optional
 
