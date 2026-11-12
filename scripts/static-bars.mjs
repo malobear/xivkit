@@ -8,7 +8,7 @@
 //   the same way the page script sorts them, and each `.tags` button gets its data-tag-key.
 //   The page scripts reuse these and still add any tag that's missing, so a stale bar
 //   shifts a little but never breaks filtering. Those pages also get the phone-only
-//   "Filter by tag" toggle.
+//   "Tags" toggle.
 // - Every page loading i18n.js gets a ?v= version stamp (see VERSION below).
 //
 //   node scripts/static-bars.mjs           update pages in place
@@ -47,7 +47,7 @@ function tagBar(html) {
   // The phone-only toggle that folds the bar away (brand-directory.css).
   if (!html.includes('class="tag-toggle"')) {
     html = html.replace('<div id="tag-bar">',
-      '<button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">Filter by tag</button>\n    <div id="tag-bar">');
+      '<button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">Tags</button>\n    <div id="tag-bar">');
   }
   return html;
 }

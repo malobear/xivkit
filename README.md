@@ -102,7 +102,7 @@ pnpm i18n:check   # fail if any of that is out of date (also runs in CI on push)
   and the tag filter pills into the page HTML so the list doesn't jump down after load
   (layout shift). Run it after changing an item's tags too. If you forget, the page
   script still adds missing pills, it just shifts a little. On phones the tag pills fold
-  behind a "Filter by tag" toggle. The same script stamps `i18n.js?v=<hash>` on every
+  behind a "Tags" toggle. The same script stamps `i18n.js?v=<hash>` on every
   page, and the translations load with that version, so a cached old script or JSON is
   never mixed with a newer page after a deploy.
 - **To opt a page in,** add it to `PAGES` at the top of `scripts/i18n-build.mjs` and add
