@@ -44,6 +44,30 @@ li .tags button { font-size: 0.72rem; padding: 3px 9px; }
 .tag-pill:hover, .tag-pill.active, li .tags button:hover { color: var(--accent); border-color: var(--accent); }
 .tag-pill.active { background: var(--accent-solid); border-color: var(--accent-solid); color: var(--on-accent); font-weight: 600; }
 
+/* Phones: the sidebar sits above the list, so the long tag filter folds away behind a
+   toggle. Desktop keeps it open in the sticky sidebar. */
+.tag-toggle { display: none; }
+@media (max-width: 768px) {
+  .tag-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--raised);
+    color: var(--muted);
+    font: 500 0.78rem var(--font-mono);
+    cursor: pointer;
+  }
+  .tag-toggle::after { content: "\25BE"; transition: transform 0.15s; }
+  .tag-toggle[aria-expanded="true"] { color: var(--accent); border-color: var(--accent); }
+  .tag-toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
+  #tag-bar:not(.open) { display: none; }
+  #tag-bar.open { margin-top: 10px; }
+}
+
 /* Cards */
 li { background: var(--card); border-color: var(--border); }
 li:hover { border-color: var(--accent); box-shadow: var(--shadow-lift); }

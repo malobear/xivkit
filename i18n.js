@@ -2,6 +2,11 @@
   var SUPPORTED = ['en', 'ja', 'de', 'fr'];
   var NAMES = { en: 'EN', ja: '日本語', de: 'DE', fr: 'FR' };
 
+  // Pages load i18n.js?v=<hash> (scripts/static-bars.mjs); the translations get the same
+  // version so a cached old copy is never mixed with a newer page.
+  var VERSION = '';
+  try { VERSION = new URL(document.currentScript.src).searchParams.get('v') || ''; } catch (e) {}
+
   // Pages pre-rendered by scripts/i18n-build.mjs live in ja/, de/ and fr/ and carry
   // data-static-lang. Every page that has copies lists them as hreflang alternates.
   var STATIC_LANG = document.documentElement.getAttribute('data-static-lang');
@@ -162,7 +167,7 @@
       fallbackLng: 'en',
       supportedLngs: SUPPORTED,
       load: 'languageOnly',
-      backend: { loadPath: 'i18n/{{lng}}.json' },
+      backend: { loadPath: 'i18n/{{lng}}.json' + (VERSION ? '?v=' + VERSION : '') },
       detection: {
         order: ['querystring', 'localStorage', 'navigator'],
         lookupQuerystring: 'lang',

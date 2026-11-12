@@ -303,6 +303,7 @@
       <input id="search" type="search" data-i18n="pages.watchlist.searchPlaceholder" data-i18n-placeholder placeholder="Search watchlist by name, description, or tag..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title title="Clear" hidden>&times;</button>
     </div>
+    <button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">Filter by tag</button>
     <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="checklist">checklist</button><button type="button" class="tag-pill" data-tag-key="community">community</button><button type="button" class="tag-pill" data-tag-key="experimental">experimental</button><button type="button" class="tag-pill" data-tag-key="fishing">fishing</button><button type="button" class="tag-pill" data-tag-key="gathering">gathering</button><button type="button" class="tag-pill" data-tag-key="gear">gear</button><button type="button" class="tag-pill" data-tag-key="glamour">glamour</button><button type="button" class="tag-pill" data-tag-key="graphics">graphics</button><button type="button" class="tag-pill" data-tag-key="hunts">hunts</button><button type="button" class="tag-pill" data-tag-key="immersion">immersion</button><button type="button" class="tag-pill" data-tag-key="inventory">inventory</button><button type="button" class="tag-pill" data-tag-key="items">items</button><button type="button" class="tag-pill" data-tag-key="macos">macos</button><button type="button" class="tag-pill" data-tag-key="maps">maps</button><button type="button" class="tag-pill" data-tag-key="plugins">plugins</button><button type="button" class="tag-pill" data-tag-key="quests">quests</button><button type="button" class="tag-pill" data-tag-key="relic">relic</button><button type="button" class="tag-pill" data-tag-key="reshade">reshade</button><button type="button" class="tag-pill" data-tag-key="retainer">retainer</button><button type="button" class="tag-pill" data-tag-key="rotations">rotations</button><button type="button" class="tag-pill" data-tag-key="schedule">schedule</button><button type="button" class="tag-pill" data-tag-key="sightseeing">sightseeing</button><button type="button" class="tag-pill" data-tag-key="theorycrafting">theorycrafting</button><button type="button" class="tag-pill" data-tag-key="tracker">tracker</button><button type="button" class="tag-pill" data-tag-key="wiki">wiki</button></div>
   </div>
 
@@ -399,7 +400,7 @@
 <script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=c07cdff1"></script>
 <script>
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('li[data-tags]'));
@@ -407,6 +408,14 @@
   var input = document.getElementById('search');
   var clearBtn = document.getElementById('clear-search');
   var tagBar = document.getElementById('tag-bar');
+  // Phones fold the tag filter behind a toggle (see brand-directory.css).
+  var tagToggle = document.querySelector('.tag-toggle');
+  function showTags(open) {
+    if (!tagToggle) return;
+    tagBar.classList.toggle('open', open);
+    tagToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (tagToggle) tagToggle.addEventListener('click', function () { showTags(!tagBar.classList.contains('open')); });
   var emptyState = document.getElementById('empty-state');
   var emptyClear = document.getElementById('empty-clear');
 
@@ -462,6 +471,8 @@
   }
 
   function setQuery(q) {
+    // On phones, fold the tags away again so the filtered list is in view.
+    if (tagToggle && tagToggle.offsetParent) showTags(false);
     input.value = q;
     applyFilter();
     updateUrl(q);

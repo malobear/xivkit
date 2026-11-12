@@ -7,11 +7,14 @@
 // - Pages with <div id="tag-bar"> get one pill per tag used by their <li data-tags>, sorted
 //   the same way the page script sorts them, and each `.tags` button gets its data-tag-key.
 //   The page scripts reuse these and still add any tag that's missing, so a stale bar
-//   shifts a little but never breaks filtering.
+//   shifts a little but never breaks filtering. Those pages also get the phone-only
+//   "Filter by tag" toggle.
+// - Every page loading i18n.js gets a ?v= version stamp (see VERSION below).
 //
 //   node scripts/static-bars.mjs           update pages in place
 //   node scripts/static-bars.mjs --check   exit 1 if any page is out of date
 
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -40,15 +43,30 @@ function tagBar(html) {
     unesc(m[1]).split(",").map((t) => t.trim()).filter(Boolean).forEach((t) => tags.add(t));
   }
   const pills = [...tags].sort().map((t) => `<button type="button" class="tag-pill" data-tag-key="${esc(t)}">${esc(t)}</button>`).join("");
-  return html.replace(/<div id="tag-bar">[\s\S]*?<\/div>/, `<div id="tag-bar">${pills}</div>`);
+  html = html.replace(/<div id="tag-bar">[\s\S]*?<\/div>/, `<div id="tag-bar">${pills}</div>`);
+  // The phone-only toggle that folds the bar away (brand-directory.css).
+  if (!html.includes('class="tag-toggle"')) {
+    html = html.replace('<div id="tag-bar">',
+      '<button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">Filter by tag</button>\n    <div id="tag-bar">');
+  }
+  return html;
 }
+
+// i18n.js and i18n/*.json are cached for 10 minutes, so right after a deploy a browser could
+// run old script or translations against new HTML (duplicate language buttons, raw tag keys).
+// Pages load i18n.js?v=<hash of both>, and i18n.js passes the same version to the JSON.
+const VERSION = crypto.createHash("sha1")
+  .update(fs.readFileSync(path.join(ROOT, "i18n.js")))
+  .update(fs.readdirSync(path.join(ROOT, "i18n")).sort().map((f) => fs.readFileSync(path.join(ROOT, "i18n", f), "utf8")).join("\n"))
+  .digest("hex").slice(0, 8);
+const stampVersion = (html) => html.replace(/src="i18n\.js(?:\?v=[^"]*)?"/g, `src="i18n.js?v=${VERSION}"`);
 
 const stale = [];
 for (const file of fs.readdirSync(ROOT).filter((f) => f.endsWith(".html"))) {
   const full = path.join(ROOT, file);
   const before = fs.readFileSync(full, "utf8");
-  if (!before.includes('<div id="lang-bar">') && !before.includes('<div id="tag-bar">')) continue;
-  const after = tagBar(langBar(before));
+  if (!before.includes('<div id="lang-bar">') && !before.includes('<div id="tag-bar">') && !before.includes('src="i18n.js')) continue;
+  const after = stampVersion(tagBar(langBar(before)));
   if (after === before) continue;
   stale.push(file);
   if (!check) fs.writeFileSync(full, after);

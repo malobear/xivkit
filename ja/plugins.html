@@ -305,6 +305,7 @@
       <input id="search" type="search" data-i18n="pages.plugins.searchPlaceholder" data-i18n-placeholder="" placeholder="名前・説明・タグでプラグインを検索..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title="" title="クリア" hidden>×</button>
     </div>
+    <button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">タグで絞り込む</button>
     <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="browser">ブラウザ</button><button type="button" class="tag-pill" data-tag-key="chat">チャット</button><button type="button" class="tag-pill" data-tag-key="compression">圧縮</button><button type="button" class="tag-pill" data-tag-key="discovery">発見</button><button type="button" class="tag-pill" data-tag-key="experimental">実験的</button><button type="button" class="tag-pill" data-tag-key="friends">フレンド</button><button type="button" class="tag-pill" data-tag-key="gear">装備</button><button type="button" class="tag-pill" data-tag-key="glamour">ミラプリ</button><button type="button" class="tag-pill" data-tag-key="guide">ガイド</button><button type="button" class="tag-pill" data-tag-key="housing">ハウジング</button><button type="button" class="tag-pill" data-tag-key="hud">HUD</button><button type="button" class="tag-pill" data-tag-key="inventory">インベントリ</button><button type="button" class="tag-pill" data-tag-key="items">アイテム</button><button type="button" class="tag-pill" data-tag-key="market">マーケット</button><button type="button" class="tag-pill" data-tag-key="mods">MOD</button><button type="button" class="tag-pill" data-tag-key="paid">有料</button><button type="button" class="tag-pill" data-tag-key="plates">ミラプリプレート</button><button type="button" class="tag-pill" data-tag-key="plugins">プラグイン</button><button type="button" class="tag-pill" data-tag-key="publisher">パブリッシャー</button><button type="button" class="tag-pill" data-tag-key="qol">快適性</button><button type="button" class="tag-pill" data-tag-key="retainer">リテイナー</button><button type="button" class="tag-pill" data-tag-key="social">ソーシャル</button><button type="button" class="tag-pill" data-tag-key="toolbars">ツールバー</button><button type="button" class="tag-pill" data-tag-key="tracker">トラッカー</button><button type="button" class="tag-pill" data-tag-key="travel">移動</button><button type="button" class="tag-pill" data-tag-key="ui">UI</button></div>
   </div>
 
@@ -459,7 +460,7 @@
 <script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=c07cdff1"></script>
 <script>
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('li[data-tags]'));
@@ -467,6 +468,14 @@
   var input = document.getElementById('search');
   var clearBtn = document.getElementById('clear-search');
   var tagBar = document.getElementById('tag-bar');
+  // Phones fold the tag filter behind a toggle (see brand-directory.css).
+  var tagToggle = document.querySelector('.tag-toggle');
+  function showTags(open) {
+    if (!tagToggle) return;
+    tagBar.classList.toggle('open', open);
+    tagToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (tagToggle) tagToggle.addEventListener('click', function () { showTags(!tagBar.classList.contains('open')); });
   var emptyState = document.getElementById('empty-state');
   var emptyClear = document.getElementById('empty-clear');
 
@@ -522,6 +531,8 @@
   }
 
   function setQuery(q) {
+    // On phones, fold the tags away again so the filtered list is in view.
+    if (tagToggle && tagToggle.offsetParent) showTags(false);
     input.value = q;
     applyFilter();
     updateUrl(q);

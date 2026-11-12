@@ -375,6 +375,7 @@
       <input id="search" type="search" data-i18n="pages.index.searchPlaceholder" data-i18n-placeholder="" placeholder="Rechercher un outil par nom, description ou tag..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title="" title="Effacer" hidden>×</button>
     </div>
+    <button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">Filtrer par tag</button>
     <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="browser">navigateur</button><button type="button" class="tag-pill" data-tag-key="builder">générateur</button><button type="button" class="tag-pill" data-tag-key="calculator">calculateur</button><button type="button" class="tag-pill" data-tag-key="chat">chat</button><button type="button" class="tag-pill" data-tag-key="checklist">liste de vérification</button><button type="button" class="tag-pill" data-tag-key="chocobo">chocobo</button><button type="button" class="tag-pill" data-tag-key="collectibles">objets à collectionner</button><button type="button" class="tag-pill" data-tag-key="community">communauté</button><button type="button" class="tag-pill" data-tag-key="controller">manette</button><button type="button" class="tag-pill" data-tag-key="crafting">artisanat</button><button type="button" class="tag-pill" data-tag-key="crossbreeding">croisement</button><button type="button" class="tag-pill" data-tag-key="currency">monnaie</button><button type="button" class="tag-pill" data-tag-key="database">base de données</button><button type="button" class="tag-pill" data-tag-key="dev">développement</button><button type="button" class="tag-pill" data-tag-key="dungeons">donjons</button><button type="button" class="tag-pill" data-tag-key="economy">économie</button><button type="button" class="tag-pill" data-tag-key="eureka">Eureka</button><button type="button" class="tag-pill" data-tag-key="events">événements</button><button type="button" class="tag-pill" data-tag-key="gallery">galerie</button><button type="button" class="tag-pill" data-tag-key="gardening">jardinage</button><button type="button" class="tag-pill" data-tag-key="gathering">récolte</button><button type="button" class="tag-pill" data-tag-key="gear">équipement</button><button type="button" class="tag-pill" data-tag-key="glamour">glamour</button><button type="button" class="tag-pill" data-tag-key="graphics">graphismes</button><button type="button" class="tag-pill" data-tag-key="guide">guide</button><button type="button" class="tag-pill" data-tag-key="hotbars">barres de raccourcis</button><button type="button" class="tag-pill" data-tag-key="housing">logement</button><button type="button" class="tag-pill" data-tag-key="inventory">inventaire</button><button type="button" class="tag-pill" data-tag-key="items">objets</button><button type="button" class="tag-pill" data-tag-key="job-guides">guides de job</button><button type="button" class="tag-pill" data-tag-key="jump-puzzle">puzzle de saut</button><button type="button" class="tag-pill" data-tag-key="launcher">lanceur</button><button type="button" class="tag-pill" data-tag-key="lodestone">Lodestone</button><button type="button" class="tag-pill" data-tag-key="macos">macOS</button><button type="button" class="tag-pill" data-tag-key="macro">macro</button><button type="button" class="tag-pill" data-tag-key="market">marché</button><button type="button" class="tag-pill" data-tag-key="meta-list">méta-liste</button><button type="button" class="tag-pill" data-tag-key="minions">mascottes</button><button type="button" class="tag-pill" data-tag-key="mounts">montures</button><button type="button" class="tag-pill" data-tag-key="msq">scénario principal</button><button type="button" class="tag-pill" data-tag-key="news">actualités</button><button type="button" class="tag-pill" data-tag-key="nightlife">vie nocturne</button><button type="button" class="tag-pill" data-tag-key="nm">NM</button><button type="button" class="tag-pill" data-tag-key="official">officiel</button><button type="button" class="tag-pill" data-tag-key="pvp">JcJ</button><button type="button" class="tag-pill" data-tag-key="quests">quêtes</button><button type="button" class="tag-pill" data-tag-key="raids">raids</button><button type="button" class="tag-pill" data-tag-key="reddit">Reddit</button><button type="button" class="tag-pill" data-tag-key="reference">référence</button><button type="button" class="tag-pill" data-tag-key="reshade">ReShade</button><button type="button" class="tag-pill" data-tag-key="resources">ressources</button><button type="button" class="tag-pill" data-tag-key="retainer">servant</button><button type="button" class="tag-pill" data-tag-key="roleplay">jeu de rôle</button><button type="button" class="tag-pill" data-tag-key="screenshots">captures d'écran</button><button type="button" class="tag-pill" data-tag-key="streaming">streaming</button><button type="button" class="tag-pill" data-tag-key="symbols">symboles</button><button type="button" class="tag-pill" data-tag-key="tracker">suivi</button><button type="button" class="tag-pill" data-tag-key="unicode">unicode</button><button type="button" class="tag-pill" data-tag-key="venues">lieux</button><button type="button" class="tag-pill" data-tag-key="wiki">wiki</button></div>
   </div>
 
@@ -619,7 +620,7 @@
 <script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=c07cdff1"></script>
 <script>
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('li[data-tags]'));
@@ -627,6 +628,14 @@
   var input = document.getElementById('search');
   var clearBtn = document.getElementById('clear-search');
   var tagBar = document.getElementById('tag-bar');
+  // Phones fold the tag filter behind a toggle (see brand-directory.css).
+  var tagToggle = document.querySelector('.tag-toggle');
+  function showTags(open) {
+    if (!tagToggle) return;
+    tagBar.classList.toggle('open', open);
+    tagToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (tagToggle) tagToggle.addEventListener('click', function () { showTags(!tagBar.classList.contains('open')); });
   var emptyState = document.getElementById('empty-state');
   var emptyClear = document.getElementById('empty-clear');
 
@@ -683,6 +692,8 @@
   }
 
   function setQuery(q) {
+    // On phones, fold the tags away again so the filtered list is in view.
+    if (tagToggle && tagToggle.offsetParent) showTags(false);
     input.value = q;
     applyFilter();
     updateUrl(q);

@@ -373,6 +373,7 @@
       <input id="search" type="search" data-i18n="pages.index.searchPlaceholder" data-i18n-placeholder placeholder="Search tools by name, description, or tag..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title title="Clear" hidden>&times;</button>
     </div>
+    <button type="button" class="tag-toggle" aria-expanded="false" aria-controls="tag-bar" data-i18n="shared.tagToggle">Filter by tag</button>
     <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="browser">browser</button><button type="button" class="tag-pill" data-tag-key="builder">builder</button><button type="button" class="tag-pill" data-tag-key="calculator">calculator</button><button type="button" class="tag-pill" data-tag-key="chat">chat</button><button type="button" class="tag-pill" data-tag-key="checklist">checklist</button><button type="button" class="tag-pill" data-tag-key="chocobo">chocobo</button><button type="button" class="tag-pill" data-tag-key="collectibles">collectibles</button><button type="button" class="tag-pill" data-tag-key="community">community</button><button type="button" class="tag-pill" data-tag-key="controller">controller</button><button type="button" class="tag-pill" data-tag-key="crafting">crafting</button><button type="button" class="tag-pill" data-tag-key="crossbreeding">crossbreeding</button><button type="button" class="tag-pill" data-tag-key="currency">currency</button><button type="button" class="tag-pill" data-tag-key="database">database</button><button type="button" class="tag-pill" data-tag-key="dev">dev</button><button type="button" class="tag-pill" data-tag-key="dungeons">dungeons</button><button type="button" class="tag-pill" data-tag-key="economy">economy</button><button type="button" class="tag-pill" data-tag-key="eureka">eureka</button><button type="button" class="tag-pill" data-tag-key="events">events</button><button type="button" class="tag-pill" data-tag-key="gallery">gallery</button><button type="button" class="tag-pill" data-tag-key="gardening">gardening</button><button type="button" class="tag-pill" data-tag-key="gathering">gathering</button><button type="button" class="tag-pill" data-tag-key="gear">gear</button><button type="button" class="tag-pill" data-tag-key="glamour">glamour</button><button type="button" class="tag-pill" data-tag-key="graphics">graphics</button><button type="button" class="tag-pill" data-tag-key="guide">guide</button><button type="button" class="tag-pill" data-tag-key="hotbars">hotbars</button><button type="button" class="tag-pill" data-tag-key="housing">housing</button><button type="button" class="tag-pill" data-tag-key="inventory">inventory</button><button type="button" class="tag-pill" data-tag-key="items">items</button><button type="button" class="tag-pill" data-tag-key="job-guides">job-guides</button><button type="button" class="tag-pill" data-tag-key="jump-puzzle">jump-puzzle</button><button type="button" class="tag-pill" data-tag-key="launcher">launcher</button><button type="button" class="tag-pill" data-tag-key="lodestone">lodestone</button><button type="button" class="tag-pill" data-tag-key="macos">macos</button><button type="button" class="tag-pill" data-tag-key="macro">macro</button><button type="button" class="tag-pill" data-tag-key="market">market</button><button type="button" class="tag-pill" data-tag-key="meta-list">meta-list</button><button type="button" class="tag-pill" data-tag-key="minions">minions</button><button type="button" class="tag-pill" data-tag-key="mounts">mounts</button><button type="button" class="tag-pill" data-tag-key="msq">msq</button><button type="button" class="tag-pill" data-tag-key="news">news</button><button type="button" class="tag-pill" data-tag-key="nightlife">nightlife</button><button type="button" class="tag-pill" data-tag-key="nm">nm</button><button type="button" class="tag-pill" data-tag-key="official">official</button><button type="button" class="tag-pill" data-tag-key="pvp">pvp</button><button type="button" class="tag-pill" data-tag-key="quests">quests</button><button type="button" class="tag-pill" data-tag-key="raids">raids</button><button type="button" class="tag-pill" data-tag-key="reddit">reddit</button><button type="button" class="tag-pill" data-tag-key="reference">reference</button><button type="button" class="tag-pill" data-tag-key="reshade">reshade</button><button type="button" class="tag-pill" data-tag-key="resources">resources</button><button type="button" class="tag-pill" data-tag-key="retainer">retainer</button><button type="button" class="tag-pill" data-tag-key="roleplay">roleplay</button><button type="button" class="tag-pill" data-tag-key="screenshots">screenshots</button><button type="button" class="tag-pill" data-tag-key="streaming">streaming</button><button type="button" class="tag-pill" data-tag-key="symbols">symbols</button><button type="button" class="tag-pill" data-tag-key="tracker">tracker</button><button type="button" class="tag-pill" data-tag-key="unicode">unicode</button><button type="button" class="tag-pill" data-tag-key="venues">venues</button><button type="button" class="tag-pill" data-tag-key="wiki">wiki</button></div>
   </div>
 
@@ -617,7 +618,7 @@
 <script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="i18n.js"></script>
+<script src="i18n.js?v=c07cdff1"></script>
 <script>
 (function () {
   var items = Array.prototype.slice.call(document.querySelectorAll('li[data-tags]'));
@@ -625,6 +626,14 @@
   var input = document.getElementById('search');
   var clearBtn = document.getElementById('clear-search');
   var tagBar = document.getElementById('tag-bar');
+  // Phones fold the tag filter behind a toggle (see brand-directory.css).
+  var tagToggle = document.querySelector('.tag-toggle');
+  function showTags(open) {
+    if (!tagToggle) return;
+    tagBar.classList.toggle('open', open);
+    tagToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if (tagToggle) tagToggle.addEventListener('click', function () { showTags(!tagBar.classList.contains('open')); });
   var emptyState = document.getElementById('empty-state');
   var emptyClear = document.getElementById('empty-clear');
 
@@ -681,6 +690,8 @@
   }
 
   function setQuery(q) {
+    // On phones, fold the tags away again so the filtered list is in view.
+    if (tagToggle && tagToggle.offsetParent) showTags(false);
     input.value = q;
     applyFilter();
     updateUrl(q);

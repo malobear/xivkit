@@ -14,6 +14,7 @@
     },
     "clearSearchTitle": "Effacer",
     "emptyClear": "Effacer",
+    "tagToggle": "Filtrer par tag",
     "legal": "FINAL FANTASY XIV est une marque déposée de Square Enix Holdings Co., Ltd. Ceci est une liste de fans non officielle, non affiliée à Square Enix et non approuvée par elle.",
     "footerGithubLine": "Code source sur {github}. Quelque chose manque ? Ouvrez une PR ou contactez-moi.",
     "githubLinkLabel": "GitHub",
