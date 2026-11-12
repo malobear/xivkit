@@ -65,6 +65,7 @@
     "controller": "コントローラー",
     "crafting": "クラフト",
     "crossbreeding": "交配",
+    "currency": "通貨",
     "database": "データベース",
     "dev": "開発",
     "discovery": "発見",
@@ -669,6 +670,28 @@
     },
     "progress": {
       "loading": "価格を読み込み中… {{total}}件中{{done}}件"
+    }
+  },
+  "seo": {
+    "index": {
+      "title": "XIVKit：FF14 おすすめツール＆リンク集",
+      "description": "実際に使っているFF14のツールとリンクをまとめています。理論計算ツール、マーケットボードのデータ、製作管理ツール、資料サイトなど、良いものが見つかるたびに更新。"
+    },
+    "plugins": {
+      "title": "FF14 おすすめDalamudプラグイン | XIVKit",
+      "description": "実際に使っているFF14のDalamudプラグイン。デフォルトのプラグイン一覧にあるものと、カスタムリポジトリ（experimental）として追加するものがあります。"
+    },
+    "watchlist": {
+      "title": "FF14 ツール ウォッチリスト | XIVKit",
+      "description": "話には聞いた、または他の人が勧めているけれど、まだ自分では試していないFF14ツール。後で確認するための保管場所です。"
+    },
+    "huntForAstronomy": {
+      "title": "FF14 Hunt for Astronomy 報酬一覧：トームストーンで交換する価値は？ | XIVKit",
+      "description": "FF14「Hunt for Astronomy」の交換アイテム全種について、他の入手方法、マーケットボードでの相場、トームストーンで交換すべきかの判定を掲載。絞り込みと、必要なトームストーンの合計計算つき。"
+    },
+    "msqTracker": {
+      "title": "FF14 メインクエスト進行トラッカー（共有リンク対応） | XIVKit",
+      "description": "新生エオルゼアから黄金のレガシーまで、FF14のメインクエストの進行状況を記録。現在のクエストがページのリンクに入るのでそのまま友達に共有でき、進行状況のPNG画像も書き出せます。"
     }
   }
 }

@@ -205,9 +205,11 @@ today.
 Rollout:
 
 1. **Phase 1, the already-translated pages:** `index.html`, `plugins.html`,
-   `watchlist.html`, `hunt-for-astronomy.html`, `msq-tracker.html`, and
-   `fanfest-bingo.html`. Build the script, the hreflang cluster, the sitemap alternates,
-   and the language-bar links. Submit the updated sitemap in Search Console.
+   `watchlist.html`, `hunt-for-astronomy.html`, and `msq-tracker.html`. Build the
+   script, the hreflang cluster, the sitemap alternates, and the language-bar links.
+   Submit the updated sitemap in Search Console. (`fanfest-bingo.html` was dropped from
+   this phase during implementation: its 9 keys cover only nav, footer, and related
+   guides, and the card text itself is English.)
 2. **Phase 2, the data-driven guides:** `trade-in-mounts.html` and
    `retainer-ventures.html` (load `i18n.js` and finish their keys first), then
    `inventory-decluttering.html`, `keybound-brawler.html`, and `jump-puzzle-macros.html`.

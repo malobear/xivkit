@@ -33,6 +33,12 @@ accumulate an English-only backlog. Flag any uncertain in-game terminology (Hous
 Glamour, Retainer, and similar systems have specific localized terms) for review
 rather than guessing silently.
 
+Fully translated pages also get pre-rendered copies in `ja/`, `de/`, and `fr/` for search
+engines (ADR 0001, README "Language copies for search engines"). After editing one of those
+pages, any `i18n/*.json` file, or `sitemap.xml`, run `pnpm i18n` and commit the output; CI
+runs `pnpm i18n:check`. Never edit the generated folders by hand. Opt a new page in only
+once its body copy is translated, with `seo.<key>.title`/`description` in all four files.
+
 ## Checking whether a Dalamud plugin needs the `experimental` tag
 
 `plugins.html` tags any plugin not in Dalamud's default plugin directory as

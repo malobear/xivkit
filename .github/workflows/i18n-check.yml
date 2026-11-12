@@ -1,0 +1,33 @@
+# Fails when the pre-rendered language copies (ja/, de/, fr/), the hreflang blocks, or the
+# sitemap alternates are out of date with the English pages and i18n/*.json.
+# Fix by running `pnpm i18n` locally and committing the result.
+
+name: Translated pages check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm i18n:check

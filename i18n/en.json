@@ -65,6 +65,7 @@
     "controller": "controller",
     "crafting": "crafting",
     "crossbreeding": "crossbreeding",
+    "currency": "currency",
     "database": "database",
     "dev": "dev",
     "discovery": "discovery",
@@ -669,6 +670,28 @@
     },
     "progress": {
       "loading": "Loading live prices… {{done}} of {{total}}"
+    }
+  },
+  "seo": {
+    "index": {
+      "title": "XIVKit: FFXIV Tools & Links",
+      "description": "Curated FFXIV tools and links: theorycrafting calculators, market board data, crafting trackers, and reference sites, updated whenever something new is worth keeping."
+    },
+    "plugins": {
+      "title": "FFXIV Plugins | XIVKit",
+      "description": "Dalamud plugins I actually use for FFXIV: client-side tools, some from the default plugin directory, some added as custom/experimental repos."
+    },
+    "watchlist": {
+      "title": "FFXIV Watchlist | XIVKit",
+      "description": "FFXIV tools I've heard about or others recommend but haven't tried myself yet, a holding place to explore later."
+    },
+    "huntForAstronomy": {
+      "title": "FFXIV Hunt for Astronomy Rewards: Worth the Tomes? | XIVKit",
+      "description": "Every reward in FFXIV's Hunt for Astronomy trove, where else it drops, what it sells for on the market board, and a straight verdict on whether it's worth the tomestones. Filterable, with a running tomestone budget tracker."
+    },
+    "msqTracker": {
+      "title": "FFXIV MSQ Tracker with a Shareable Link | XIVKit",
+      "description": "Track your FFXIV Main Scenario Quest progress from A Realm Reborn through Dawntrail. Your current quest lives in the page link so you can paste it to friends, and you can export a PNG progress card."
     }
   }
 }

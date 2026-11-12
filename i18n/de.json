@@ -65,6 +65,7 @@
     "controller": "Controller",
     "crafting": "Handwerk",
     "crossbreeding": "Kreuzung",
+    "currency": "Währung",
     "database": "Datenbank",
     "dev": "Entwicklung",
     "discovery": "Entdeckung",
@@ -669,6 +670,28 @@
     },
     "progress": {
       "loading": "Live-Preise werden geladen… {{done}} von {{total}}"
+    }
+  },
+  "seo": {
+    "index": {
+      "title": "XIVKit: FFXIV-Tools & Links",
+      "description": "Ausgewählte FFXIV-Tools und Links: Theorycrafting-Rechner, Marktbrett-Daten, Crafting-Tracker und Nachschlageseiten. Wird aktualisiert, sobald etwas Neues dazukommt, das sich lohnt."
+    },
+    "plugins": {
+      "title": "FFXIV-Plugins | XIVKit",
+      "description": "Dalamud-Plugins, die ich in FFXIV tatsächlich nutze: clientseitige Tools, teils aus dem Standard-Plugin-Verzeichnis, teils über eigene (experimentelle) Repositories."
+    },
+    "watchlist": {
+      "title": "FFXIV-Watchlist | XIVKit",
+      "description": "FFXIV-Tools, von denen ich gehört habe oder die andere empfehlen, die ich aber selbst noch nicht ausprobiert habe. Ein Sammelplatz zum späteren Erkunden."
+    },
+    "huntForAstronomy": {
+      "title": "FFXIV Hunt for Astronomy: Welche Belohnungen lohnen die Steine? | XIVKit",
+      "description": "Alle Belohnungen der Hunt for Astronomy in FFXIV: wo sie sonst droppen, was sie auf dem Marktbrett kosten und eine klare Einschätzung, ob sie die Steine wert sind. Filterbar, mit laufender Summe der Steine."
+    },
+    "msqTracker": {
+      "title": "FFXIV Hauptszenario-Tracker mit teilbarem Link | XIVKit",
+      "description": "Verfolge deinen Fortschritt im FFXIV-Hauptszenario von A Realm Reborn bis Dawntrail. Deine aktuelle Quest steckt im Seitenlink, den du Freunden schicken kannst, und du kannst eine PNG-Fortschrittskarte exportieren."
     }
   }
 }

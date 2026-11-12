@@ -2,6 +2,52 @@
   var SUPPORTED = ['en', 'ja', 'de', 'fr'];
   var NAMES = { en: 'EN', ja: '日本語', de: 'DE', fr: 'FR' };
 
+  // Pages pre-rendered by scripts/i18n-build.mjs live in ja/, de/ and fr/ and carry
+  // data-static-lang. Every page that has copies lists them as hreflang alternates.
+  var STATIC_LANG = document.documentElement.getAttribute('data-static-lang');
+  var PAGE_LANG = STATIC_LANG || 'en';
+  var ALTERNATES = {};
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (link) {
+    var code = link.getAttribute('hreflang');
+    // Keep the path but stay on this host, so local previews don't jump to xivkit.com.
+    if (SUPPORTED.indexOf(code) !== -1) ALTERNATES[code] = location.origin + new URL(link.href).pathname;
+  });
+
+  function stored() { try { return localStorage.getItem('lang'); } catch (e) { return null; } }
+  function store(lang) { try { localStorage.setItem('lang', lang); } catch (e) {} }
+
+  // Go to this page's copy in another language, keeping any other query (?q=) and the hash.
+  function goTo(lang, replace) {
+    var params = new URLSearchParams(location.search);
+    params.delete('lang');
+    var target = ALTERNATES[lang];
+    if (!target) { target = ALTERNATES.en || location.pathname; params.set('lang', lang); }
+    var qs = params.toString();
+    store(lang);
+    var url = target + (qs ? '?' + qs : '') + location.hash;
+    if (replace) { location.replace(url); } else { location.href = url; }
+  }
+
+  // An English page asked for in a language it has a copy in (an old ?lang= link, or a
+  // language picked earlier) forwards to that copy. Crawlers send neither, so they stay.
+  if (!STATIC_LANG) {
+    var wanted = new URLSearchParams(location.search).get('lang') || stored();
+    if (wanted && wanted !== 'en' && ALTERNATES[wanted]) { goTo(wanted, true); return; }
+  }
+
+  if (STATIC_LANG) store(STATIC_LANG);
+
+  // On a pre-rendered page <base href="../"> points relative links at the site root, so
+  // in-page anchors that scripts add later (href="#...") need to stay on this page.
+  if (STATIC_LANG) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href^="#"]');
+      if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      location.hash = a.getAttribute('href');
+    });
+  }
+
   function applyRich(el, translated) {
     var frag = document.createDocumentFragment();
     var re = /\{(\w+)\}/g;
@@ -69,6 +115,7 @@
   }
 
   function syncUrl(lang) {
+    if (STATIC_LANG) return;
     var params = new URLSearchParams(location.search);
     if (lang === 'en') { params.delete('lang'); } else { params.set('lang', lang); }
     var qs = params.toString();
@@ -84,7 +131,12 @@
       btn.className = 'tag-pill lang-pill';
       btn.dataset.lang = code;
       btn.textContent = NAMES[code];
-      btn.addEventListener('click', function () { i18next.changeLanguage(code); });
+      btn.addEventListener('click', function () {
+        // Pages with language copies switch by URL; the rest translate in place as before.
+        if (code !== PAGE_LANG && (ALTERNATES[code] || STATIC_LANG)) { goTo(code); return; }
+        if (code === PAGE_LANG && STATIC_LANG) return;
+        i18next.changeLanguage(code);
+      });
       bar.appendChild(btn);
     });
   }
@@ -102,6 +154,7 @@
     .use(i18nextHttpBackend)
     .use(i18nextBrowserLanguageDetector)
     .init({
+      lng: STATIC_LANG || undefined,
       fallbackLng: 'en',
       supportedLngs: SUPPORTED,
       load: 'languageOnly',

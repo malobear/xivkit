@@ -83,6 +83,31 @@ files where it's needed. Adding the same key to `i18n/ja.json`, `de.json`, and
 `fr.json` is optional: a missing key falls back to the English text automatically,
 so the site never breaks, it just shows English for that one entry until translated.
 
+#### Language copies for search engines (`ja/`, `de/`, `fr/`)
+
+Pages that are fully translated also get a pre-rendered copy per language, so search
+engines can index them (see `docs/adr/0001-indexable-translations.md`). Each copy has the
+translated text in its static HTML, its own `lang`, canonical, title, and description,
+and hreflang links tying the languages together. `i18n.js` still runs on top for the
+parts pages build at runtime, and the language bar switches between the copies.
+
+```
+pnpm i18n         # rebuild ja/ de/ fr/, the hreflang blocks, and the sitemap alternates
+pnpm i18n:check   # fail if any of that is out of date (also runs in CI on push)
+```
+
+- **Run `pnpm i18n` after editing an opted-in page, any `i18n/*.json` file, or
+  `sitemap.xml`,** and commit the result. Never edit `ja/`, `de/`, or `fr/` by hand.
+- **To opt a page in,** add it to `PAGES` at the top of `scripts/i18n-build.mjs` and add
+  its translated `seo.<key>.title` and `seo.<key>.description` to all four JSON files.
+  Only do this once the page's body copy is translated, not just its nav and footer. The
+  build skips any language where a key the page uses is missing, and prints which ones.
+- Opted-in pages: `index.html`, `plugins.html`, `watchlist.html`,
+  `hunt-for-astronomy.html`, `msq-tracker.html`. Every other page stays English-only
+  and translates in the browser as before.
+- Old `?lang=xx` links, and a language the visitor picked earlier, forward to the
+  matching copy when one exists.
+
 ### Plugin directory
 
 `xivkit.com/plugins/` is a generated directory of Dalamud's official plugin list plus a few third-party repositories, built with

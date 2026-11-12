@@ -65,6 +65,7 @@
     "controller": "manette",
     "crafting": "artisanat",
     "crossbreeding": "croisement",
+    "currency": "monnaie",
     "database": "base de données",
     "dev": "développement",
     "discovery": "découverte",
@@ -669,6 +670,28 @@
     },
     "progress": {
       "loading": "Chargement des prix en direct… {{done}} sur {{total}}"
+    }
+  },
+  "seo": {
+    "index": {
+      "title": "XIVKit : outils et liens FFXIV",
+      "description": "Une sélection d'outils et de liens FFXIV : calculateurs de theorycraft, données du marché, suivi d'artisanat et sites de référence, mise à jour dès qu'une trouvaille en vaut la peine."
+    },
+    "plugins": {
+      "title": "Plugins FFXIV | XIVKit",
+      "description": "Les plugins Dalamud que j'utilise vraiment sur FFXIV : des outils côté client, certains dans le répertoire de plugins par défaut, d'autres ajoutés via des dépôts personnalisés (expérimentaux)."
+    },
+    "watchlist": {
+      "title": "Watchlist FFXIV | XIVKit",
+      "description": "Des outils FFXIV dont j'ai entendu parler ou que d'autres recommandent, mais que je n'ai pas encore essayés. Un espace d'attente à explorer plus tard."
+    },
+    "huntForAstronomy": {
+      "title": "FFXIV Hunt for Astronomy : quelles récompenses valent vos mémoquartz ? | XIVKit",
+      "description": "Toutes les récompenses de la Hunt for Astronomy de FFXIV : leurs autres sources, leur prix sur le marché et un avis tranché sur l'intérêt de les échanger contre des mémoquartz. Filtrable, avec le total de mémoquartz en temps réel."
+    },
+    "msqTracker": {
+      "title": "Suivi du scénario principal FFXIV avec lien partageable | XIVKit",
+      "description": "Suivez votre progression dans le scénario principal de FFXIV, d'A Realm Reborn à Dawntrail. Votre quête actuelle est dans le lien de la page pour la partager, et vous pouvez exporter une carte de progression en PNG."
     }
   }
 }
