@@ -300,12 +300,12 @@
   <div class="page-layout columns">
   <div class="sidebar-col column is-3">
     <nav class="page-nav"><a href="ja/" data-i18n="shared.nav.tools">使っているツール</a><a class="current" href="ja/watchlist.html" data-i18n="shared.nav.watchlist">ウォッチリスト</a><a href="ja/plugins.html" data-i18n="shared.nav.plugins">プラグイン</a><a href="plugins/" data-i18n="shared.nav.directory">プラグインディレクトリ</a><a href="ja/#guides" data-i18n="shared.nav.guides">ガイド</a></nav>
-    <div id="lang-bar"></div>
+    <div id="lang-bar"><button type="button" class="tag-pill lang-pill" data-lang="en">EN</button><button type="button" class="tag-pill lang-pill active" data-lang="ja">日本語</button><button type="button" class="tag-pill lang-pill" data-lang="de">DE</button><button type="button" class="tag-pill lang-pill" data-lang="fr">FR</button></div>
     <div class="search-bar">
       <input id="search" type="search" data-i18n="pages.watchlist.searchPlaceholder" data-i18n-placeholder="" placeholder="名前・説明・タグでウォッチリストを検索..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title="" title="クリア" hidden>×</button>
     </div>
-    <div id="tag-bar"></div>
+    <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="checklist">チェックリスト</button><button type="button" class="tag-pill" data-tag-key="community">コミュニティ</button><button type="button" class="tag-pill" data-tag-key="experimental">実験的</button><button type="button" class="tag-pill" data-tag-key="fishing">釣り</button><button type="button" class="tag-pill" data-tag-key="gathering">採集</button><button type="button" class="tag-pill" data-tag-key="gear">装備</button><button type="button" class="tag-pill" data-tag-key="glamour">ミラプリ</button><button type="button" class="tag-pill" data-tag-key="graphics">グラフィック</button><button type="button" class="tag-pill" data-tag-key="hunts">モブハント</button><button type="button" class="tag-pill" data-tag-key="immersion">没入感</button><button type="button" class="tag-pill" data-tag-key="inventory">インベントリ</button><button type="button" class="tag-pill" data-tag-key="items">アイテム</button><button type="button" class="tag-pill" data-tag-key="macos">macOS</button><button type="button" class="tag-pill" data-tag-key="maps">マップ</button><button type="button" class="tag-pill" data-tag-key="plugins">プラグイン</button><button type="button" class="tag-pill" data-tag-key="quests">クエスト</button><button type="button" class="tag-pill" data-tag-key="relic">リレイック</button><button type="button" class="tag-pill" data-tag-key="reshade">ReShade</button><button type="button" class="tag-pill" data-tag-key="retainer">リテイナー</button><button type="button" class="tag-pill" data-tag-key="rotations">立ち回り</button><button type="button" class="tag-pill" data-tag-key="schedule">スケジュール</button><button type="button" class="tag-pill" data-tag-key="sightseeing">観光</button><button type="button" class="tag-pill" data-tag-key="theorycrafting">理論値</button><button type="button" class="tag-pill" data-tag-key="tracker">トラッカー</button><button type="button" class="tag-pill" data-tag-key="wiki">Wiki</button></div>
   </div>
 
   <div class="content-col column is-9">
@@ -316,15 +316,15 @@
     <ul>
       <li data-tags="theorycrafting, rotations, community">
         <a href="https://www.thebalanceffxiv.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">The Balance<span class="desc" data-i18n="items.thebalance">ジョブ理論値ハブ、立ち回りガイド、Discord</span></span></a>
-        <div class="tags"><button type="button">theorycrafting</button><button type="button">rotations</button><button type="button">community</button></div>
+        <div class="tags"><button type="button" data-tag-key="theorycrafting">理論値</button><button type="button" data-tag-key="rotations">立ち回り</button><button type="button" data-tag-key="community">コミュニティ</button></div>
       </li>
       <li data-tags="gear, theorycrafting">
         <a href="https://etro.gg/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Etro<span class="desc" data-i18n="items.etro">ギアセットプランナー兼BiSビルダー</span></span></a>
-        <div class="tags"><button type="button">gear</button><button type="button">theorycrafting</button></div>
+        <div class="tags"><button type="button" data-tag-key="gear">装備</button><button type="button" data-tag-key="theorycrafting">理論値</button></div>
       </li>
       <li data-tags="gear, glamour">
         <a href="https://ffxiv.ariyala.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Ariyala's Toolbox<span class="desc" data-i18n="items.ariyala">代替のギアセット/ミラプリプランナー</span></span></a>
-        <div class="tags"><button type="button">gear</button><button type="button">glamour</button></div>
+        <div class="tags"><button type="button" data-tag-key="gear">装備</button><button type="button" data-tag-key="glamour">ミラプリ</button></div>
       </li>
     </ul>
   </section>
@@ -334,11 +334,11 @@
     <ul>
       <li data-tags="wiki, items, quests">
         <a href="https://ffxiv.gamerescape.com/wiki/Main_Page" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Gamer Escape Wiki<span class="desc" data-i18n="items.gamerescapewiki">アイテム・クエスト・ゲーム全般の情報。Console Games Wikiの代替</span></span></a>
-        <div class="tags"><button type="button">wiki</button><button type="button">items</button><button type="button">quests</button></div>
+        <div class="tags"><button type="button" data-tag-key="wiki">Wiki</button><button type="button" data-tag-key="items">アイテム</button><button type="button" data-tag-key="quests">クエスト</button></div>
       </li>
       <li data-tags="maps, hunts, gathering">
         <a href="http://heavenswhere.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Heavenswhere<span class="desc" data-i18n="items.heavenswhere">モブハント、採集ポイント、エーテライトの流れ、宝の地図の対話型マップ(現在メンテナンスページ表示中、利用前に要確認)</span></span></a>
-        <div class="tags"><button type="button">maps</button><button type="button">hunts</button><button type="button">gathering</button></div>
+        <div class="tags"><button type="button" data-tag-key="maps">マップ</button><button type="button" data-tag-key="hunts">モブハント</button><button type="button" data-tag-key="gathering">採集</button></div>
       </li>
     </ul>
   </section>
@@ -348,19 +348,19 @@
     <ul>
       <li data-tags="relic, checklist, tracker">
         <a href="https://ffxivrelictracker.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">FFXIV Relic Tracker<span class="desc" data-i18n="items.relictracker">リレイック武器の進行状況と残りの必要作業を追跡</span></span></a>
-        <div class="tags"><button type="button">relic</button><button type="button">checklist</button><button type="button">tracker</button></div>
+        <div class="tags"><button type="button" data-tag-key="relic">リレイック</button><button type="button" data-tag-key="checklist">チェックリスト</button><button type="button" data-tag-key="tracker">トラッカー</button></div>
       </li>
       <li data-tags="sightseeing, checklist">
         <a href="https://tylian.net/sslog/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Sightseeing Log Helper<span class="desc" data-i18n="items.sightseeinglog">ゲーム内の観光ログビンゴを助けるツール</span></span></a>
-        <div class="tags"><button type="button">sightseeing</button><button type="button">checklist</button></div>
+        <div class="tags"><button type="button" data-tag-key="sightseeing">観光</button><button type="button" data-tag-key="checklist">チェックリスト</button></div>
       </li>
       <li data-tags="fishing, schedule">
         <a href="https://ffxiv.pf-n.co/ocean-fishing" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Ocean Fishing Schedule<span class="desc" data-i18n="items.oceanfishing">今後の洋上釣りの航海スケジュール、青魚、実績情報</span></span></a>
-        <div class="tags"><button type="button">fishing</button><button type="button">schedule</button></div>
+        <div class="tags"><button type="button" data-tag-key="fishing">釣り</button><button type="button" data-tag-key="schedule">スケジュール</button></div>
       </li>
       <li data-tags="fishing, tracker">
         <a href="https://ff14fish.carbuncleplushy.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Fish Tracker<span class="desc" data-i18n="items.ff14fish">特定の魚を釣るための天候・時間帯の条件を予測、コミュニティ標準の釣りスプレッドシート</span></span></a>
-        <div class="tags"><button type="button">fishing</button><button type="button">tracker</button></div>
+        <div class="tags"><button type="button" data-tag-key="fishing">釣り</button><button type="button" data-tag-key="tracker">トラッカー</button></div>
       </li>
     </ul>
   </section>
@@ -370,11 +370,11 @@
     <ul>
       <li data-tags="plugins, immersion, experimental">
         <a href="https://aetherphone.net/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Aetherphone<span class="desc" data-i18n="items.aetherphone">ゲーム内にフル機能のスマートフォン風UIを追加:ソーシャルフィード、メッセージ、写真共有、マーケットボード、ミニゲームなど。ホーム画面のような体験をかなり再現。カスタムリポジトリで、デフォルトのプラグイン一覧には含まれない</span></span></a>
-        <div class="tags"><button type="button">plugins</button><button type="button">immersion</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="plugins">プラグイン</button><button type="button" data-tag-key="immersion">没入感</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
       <li data-tags="inventory, retainer, glamour">
         <a href="https://github.com/Nepharyas/a_realm_reorganized" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">A Realm Reorganized<span class="desc" data-i18n="items.arealmreorganized">ミラージュドレッサー、タンス、鞄、防具庫、チョコボの鞍袋、リテイナーを走査して重複品や中途半端なセット、タンスに収納できるようになったアイテムを見つけ出し、それぞれのウィンドウ内で直接ハイライト表示する。デフォルトのプラグイン一覧に含まれる。作者のテストチャンネルでまだ配布中で、自分ではまだ試していない</span></span></a>
-        <div class="tags"><button type="button">inventory</button><button type="button">retainer</button><button type="button">glamour</button></div>
+        <div class="tags"><button type="button" data-tag-key="inventory">インベントリ</button><button type="button" data-tag-key="retainer">リテイナー</button><button type="button" data-tag-key="glamour">ミラプリ</button></div>
       </li>
     </ul>
   </section>
@@ -384,7 +384,7 @@
     <ul>
       <li data-tags="macos, reshade, graphics">
         <a href="https://patinafx.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">PatinaFX<span class="desc" data-i18n="items.patinafx">Apple Silicon専用のシェーダーツールで、Metalで描画するあらゆるゲームにReShadeコミュニティ製シェーダーを読み込める。XIV on Mac内蔵のReShade導入が不安定だったための代替として試用中</span></span></a>
-        <div class="tags"><button type="button">macos</button><button type="button">reshade</button><button type="button">graphics</button></div>
+        <div class="tags"><button type="button" data-tag-key="macos">macOS</button><button type="button" data-tag-key="reshade">ReShade</button><button type="button" data-tag-key="graphics">グラフィック</button></div>
       </li>
     </ul>
   </section>
@@ -430,7 +430,15 @@
     });
   });
   allTags.sort();
+  // The pills are already in the HTML (scripts/static-bars.mjs) so the list doesn't jump
+  // at load. Wire those up, and add any tag that's missing from them.
+  var hasPill = {};
+  tagBar.querySelectorAll('.tag-pill').forEach(function (btn) {
+    hasPill[btn.dataset.tagKey] = true;
+    btn.addEventListener('click', function () { setQuery(btn.dataset.tagKey); });
+  });
   allTags.forEach(function (tag) {
+    if (hasPill[tag]) return;
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'tag-pill';
@@ -441,7 +449,7 @@
   });
 
   document.querySelectorAll('li .tags button').forEach(function (btn) {
-    btn.dataset.tagKey = btn.textContent.trim();
+    btn.dataset.tagKey = btn.dataset.tagKey || btn.textContent.trim();
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       setQuery(btn.dataset.tagKey);

@@ -98,6 +98,10 @@ pnpm i18n:check   # fail if any of that is out of date (also runs in CI on push)
 
 - **Run `pnpm i18n` after editing an opted-in page, any `i18n/*.json` file, or
   `sitemap.xml`,** and commit the result. Never edit `ja/`, `de/`, or `fr/` by hand.
+- `pnpm i18n` first runs `scripts/static-bars.mjs`, which writes the language buttons
+  and the tag filter pills into the page HTML so the list doesn't jump down after load
+  (layout shift). Run it after changing an item's tags too. If you forget, the page
+  script still adds missing pills, it just shifts a little.
 - **To opt a page in,** add it to `PAGES` at the top of `scripts/i18n-build.mjs` and add
   its translated `seo.<key>.title` and `seo.<key>.description` to all four JSON files.
   Only do this once the page's body copy is translated, not just its nav and footer. The

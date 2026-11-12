@@ -300,12 +300,12 @@
   <div class="page-layout columns">
   <div class="sidebar-col column is-3">
     <nav class="page-nav"><a href="ja/" data-i18n="shared.nav.tools">使っているツール</a><a href="ja/watchlist.html" data-i18n="shared.nav.watchlist">ウォッチリスト</a><a class="current" href="ja/plugins.html" data-i18n="shared.nav.plugins">プラグイン</a><a href="plugins/" data-i18n="shared.nav.directory">プラグインディレクトリ</a><a href="ja/#guides" data-i18n="shared.nav.guides">ガイド</a></nav>
-    <div id="lang-bar"></div>
+    <div id="lang-bar"><button type="button" class="tag-pill lang-pill" data-lang="en">EN</button><button type="button" class="tag-pill lang-pill active" data-lang="ja">日本語</button><button type="button" class="tag-pill lang-pill" data-lang="de">DE</button><button type="button" class="tag-pill lang-pill" data-lang="fr">FR</button></div>
     <div class="search-bar">
       <input id="search" type="search" data-i18n="pages.plugins.searchPlaceholder" data-i18n-placeholder="" placeholder="名前・説明・タグでプラグインを検索..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title="" title="クリア" hidden>×</button>
     </div>
-    <div id="tag-bar"></div>
+    <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="browser">ブラウザ</button><button type="button" class="tag-pill" data-tag-key="chat">チャット</button><button type="button" class="tag-pill" data-tag-key="compression">圧縮</button><button type="button" class="tag-pill" data-tag-key="discovery">発見</button><button type="button" class="tag-pill" data-tag-key="experimental">実験的</button><button type="button" class="tag-pill" data-tag-key="friends">フレンド</button><button type="button" class="tag-pill" data-tag-key="gear">装備</button><button type="button" class="tag-pill" data-tag-key="glamour">ミラプリ</button><button type="button" class="tag-pill" data-tag-key="guide">ガイド</button><button type="button" class="tag-pill" data-tag-key="housing">ハウジング</button><button type="button" class="tag-pill" data-tag-key="hud">HUD</button><button type="button" class="tag-pill" data-tag-key="inventory">インベントリ</button><button type="button" class="tag-pill" data-tag-key="items">アイテム</button><button type="button" class="tag-pill" data-tag-key="market">マーケット</button><button type="button" class="tag-pill" data-tag-key="mods">MOD</button><button type="button" class="tag-pill" data-tag-key="paid">有料</button><button type="button" class="tag-pill" data-tag-key="plates">ミラプリプレート</button><button type="button" class="tag-pill" data-tag-key="plugins">プラグイン</button><button type="button" class="tag-pill" data-tag-key="publisher">パブリッシャー</button><button type="button" class="tag-pill" data-tag-key="qol">快適性</button><button type="button" class="tag-pill" data-tag-key="retainer">リテイナー</button><button type="button" class="tag-pill" data-tag-key="social">ソーシャル</button><button type="button" class="tag-pill" data-tag-key="toolbars">ツールバー</button><button type="button" class="tag-pill" data-tag-key="tracker">トラッカー</button><button type="button" class="tag-pill" data-tag-key="travel">移動</button><button type="button" class="tag-pill" data-tag-key="ui">UI</button></div>
   </div>
 
   <div class="content-col column is-9">
@@ -316,19 +316,19 @@
     <ul>
       <li data-tags="plugins, mods">
         <a href="https://dalamud.dev/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Dalamud<span class="desc" data-i18n="items.dalamud">FFXIVのクライアントツール・MOD用プラグインフレームワーク。まずこれをインストール、このページの他の項目は全てこれを通じて動作</span></span></a>
-        <div class="tags"><button type="button">plugins</button><button type="button">mods</button></div>
+        <div class="tags"><button type="button" data-tag-key="plugins">プラグイン</button><button type="button" data-tag-key="mods">MOD</button></div>
       </li>
       <li data-tags="mods, experimental">
         <a href="https://github.com/xivdev/Penumbra" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Penumbra<span class="desc" data-i18n="items.penumbra">ゲームファイルを書き換えずにテクスチャ/モデルMODを適用するランタイムMODローダー。カスタムリポジトリで、デフォルトのプラグイン一覧には含まれない</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">MOD</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
       <li data-tags="glamour, experimental">
         <a href="https://github.com/Ottermandias/Glamourer" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Glamourer<span class="desc" data-i18n="items.glamourer">Penumbra MODを利用してキャラクターの外見を変更、GlamaholicのプレートもこれをMODを通じて適用される。カスタムリポジトリで、デフォルトのプラグイン一覧には含まれない</span></span></a>
-        <div class="tags"><button type="button">glamour</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="glamour">ミラプリ</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
       <li data-tags="guide">
         <a href="https://reniguide.carrd.co/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">The Reni Guide<span class="desc" data-i18n="items.renireguide">PenumbraとGlamourerを使ったキャラクターMODのセットアップを解説する初心者向けガイド</span></span></a>
-        <div class="tags"><button type="button">guide</button></div>
+        <div class="tags"><button type="button" data-tag-key="guide">ガイド</button></div>
       </li>
     </ul>
   </section>
@@ -338,11 +338,11 @@
     <ul>
       <li data-tags="housing, experimental">
         <a href="https://github.com/LeonBlade/BDTHPlugin" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Burning Down The House (BDTH)<span class="desc" data-i18n="items.bdth">ギズモでハウジングアイテムを配置、ゲーム内エディターよりはるかに精密。カスタムリポジトリで、デフォルトのプラグイン一覧には含まれない</span></span></a>
-        <div class="tags"><button type="button">housing</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="housing">ハウジング</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
       <li data-tags="travel, experimental">
         <a href="https://github.com/NightmareXIV/Lifestream" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Lifestream<span class="desc" data-i18n="items.lifestream">コマンド一つで別のワールド、データセンター、ハウスへ移動。カスタムリポジトリで、デフォルトのプラグイン一覧には含まれない</span></span></a>
-        <div class="tags"><button type="button">travel</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="travel">移動</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
     </ul>
   </section>
@@ -352,7 +352,7 @@
     <ul>
       <li data-tags="glamour, plates">
         <a href="https://github.com/caitlyn-gg/Glamaholic" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Glamaholic<span class="desc" data-i18n="items.glamaholic">ミラプリプレートの保存・切り替え。Eorzea Collectionや他者のエクスポートからルックをそのままインポートして試着し、Glamourer経由で適用。デフォルトのプラグインリポジトリに含まれる</span></span></a>
-        <div class="tags"><button type="button">glamour</button><button type="button">plates</button></div>
+        <div class="tags"><button type="button" data-tag-key="glamour">ミラプリ</button><button type="button" data-tag-key="plates">ミラプリプレート</button></div>
       </li>
     </ul>
   </section>
@@ -362,19 +362,19 @@
     <ul>
       <li data-tags="mods, glamour, gear">
         <a href="https://www.xivmodarchive.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">XIV Mod Archive<span class="desc" data-i18n="items.xivmodarchive">最大級の無料MOD配布サイト:ミラプリ、装備、アニメーションMODなど、Penumbra経由でインストール</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">glamour</button><button type="button">gear</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">MOD</button><button type="button" data-tag-key="glamour">ミラプリ</button><button type="button" data-tag-key="gear">装備</button></div>
       </li>
       <li data-tags="mods, glamour, gear">
         <a href="https://heliosphere.app/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Heliosphere<span class="desc" data-i18n="items.heliosphere">Mod Archiveで見つからないときに使う2番目のMOD配布/管理サイト</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">glamour</button><button type="button">gear</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">MOD</button><button type="button" data-tag-key="glamour">ミラプリ</button><button type="button" data-tag-key="gear">装備</button></div>
       </li>
       <li data-tags="mods, glamour, paid">
         <a href="https://www.glamourdresser.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Glamour Dresser<span class="desc" data-i18n="items.glamourdresser">有料MODマーケットプレイス。基本的には購入しないが、しばらくすると無料公開する作者も多いのでPatreonをチェックして無料になったものを探す</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">glamour</button><button type="button">paid</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">MOD</button><button type="button" data-tag-key="glamour">ミラプリ</button><button type="button" data-tag-key="paid">有料</button></div>
       </li>
       <li data-tags="guide, mods, compression">
         <a href="https://compressyourself.carrd.co/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Compress Yourself<span class="desc" data-i18n="items.compressyourself">Lightless/PlayerSync向けにMODテクスチャを圧縮する手順ガイド。同期するMODのサイズを抑えられる</span></span></a>
-        <div class="tags"><button type="button">guide</button><button type="button">mods</button><button type="button">compression</button></div>
+        <div class="tags"><button type="button" data-tag-key="guide">ガイド</button><button type="button" data-tag-key="mods">MOD</button><button type="button" data-tag-key="compression">圧縮</button></div>
       </li>
     </ul>
   </section>
@@ -384,11 +384,11 @@
     <ul>
       <li data-tags="chat, ui, qol">
         <a href="https://github.com/Infiziert90/ChatTwo" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Chat 2<span class="desc" data-i18n="items.chat2">ゲーム内チャットウィンドウを全面刷新:タブ無制限、フィルタリング強化、チャンネルごとのRGBカラー、未読件数表示。必須級のプラグイン</span></span></a>
-        <div class="tags"><button type="button">chat</button><button type="button">ui</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="chat">チャット</button><button type="button" data-tag-key="ui">UI</button><button type="button" data-tag-key="qol">快適性</button></div>
       </li>
       <li data-tags="ui, toolbars, hud">
         <a href="https://una-xiv.github.io/umbra-docs/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Umbra XIV<span class="desc" data-i18n="items.umbraxiv">完全カスタマイズ可能なツールバーと3Dワールドマーカー。デフォルトのプラグインリポジトリに含まれる</span></span></a>
-        <div class="tags"><button type="button">ui</button><button type="button">toolbars</button><button type="button">hud</button></div>
+        <div class="tags"><button type="button" data-tag-key="ui">UI</button><button type="button" data-tag-key="toolbars">ツールバー</button><button type="button" data-tag-key="hud">HUD</button></div>
       </li>
     </ul>
   </section>
@@ -398,7 +398,7 @@
     <ul>
       <li data-tags="social, friends, experimental">
         <a href="https://github.com/devckuw/BetterFriendList" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Better Friend List<span class="desc" data-i18n="items.betterfriendlist">サーバー横断のフレンドリストで、FC風のログイン/ログアウト通知付き。相手側もインストールしていないと通知は届かない</span></span></a>
-        <div class="tags"><button type="button">social</button><button type="button">friends</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="social">ソーシャル</button><button type="button" data-tag-key="friends">フレンド</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
     </ul>
   </section>
@@ -408,27 +408,27 @@
     <ul>
       <li data-tags="inventory, retainer, items">
         <a href="https://github.com/Critical-Impact/InventoryTools" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Allagan Tools<span class="desc" data-i18n="items.allagantools">キャラクター、リテイナー、フリーカンパニー金庫をまたいだアイテムの検索・絞り込みに加え、クラフト計画やマーケットボード情報をツールチップに直接表示する。デフォルトのプラグイン一覧に含まれる</span></span></a>
-        <div class="tags"><button type="button">inventory</button><button type="button">retainer</button><button type="button">items</button></div>
+        <div class="tags"><button type="button" data-tag-key="inventory">インベントリ</button><button type="button" data-tag-key="retainer">リテイナー</button><button type="button" data-tag-key="items">アイテム</button></div>
       </li>
       <li data-tags="retainer, market, tracker">
         <a href="https://github.com/Critical-Impact/AllaganMarket" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Allagan Market<span class="desc" data-i18n="items.allaganmarket">全キャラクターのリテイナーの出品状況、販売履歴、値下げ状況をまとめて追跡できる。デフォルトのプラグイン一覧に含まれる</span></span></a>
-        <div class="tags"><button type="button">retainer</button><button type="button">market</button><button type="button">tracker</button></div>
+        <div class="tags"><button type="button" data-tag-key="retainer">リテイナー</button><button type="button" data-tag-key="market">マーケット</button><button type="button" data-tag-key="tracker">トラッカー</button></div>
       </li>
       <li data-tags="market, tracker, qol">
         <a href="https://github.com/kouzukii/ffxiv-priceinsight" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Price Insight<span class="desc" data-i18n="items.priceinsight">アイテムにマウスを重ねるとUniversalisから取得したNQ/HQのマーケットボード価格と直近の取引価格をツールチップに表示する。デフォルトのプラグイン一覧に含まれる</span></span></a>
-        <div class="tags"><button type="button">market</button><button type="button">tracker</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="market">マーケット</button><button type="button" data-tag-key="tracker">トラッカー</button><button type="button" data-tag-key="qol">快適性</button></div>
       </li>
       <li data-tags="market, qol">
         <a href="https://github.com/Infiziert90/StackSellPrice" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">StackSellPrice<span class="desc" data-i18n="items.stacksellprice">1個分ではなくスタック全体のNPC売却額をツールチップに表示するので、素材の山を売る前に自分で掛け算する必要がない。デフォルトのプラグイン一覧に含まれる</span></span></a>
-        <div class="tags"><button type="button">market</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="market">マーケット</button><button type="button" data-tag-key="qol">快適性</button></div>
       </li>
       <li data-tags="gear, qol">
         <a href="https://github.com/chalkos/RepairMe" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">RepairMe<span class="desc" data-i18n="items.repairme">装備の耐久修理が必要なとき、または手放す前に抽出すべきマテリアが付いているときに知らせてくれる。デフォルトのプラグイン一覧に含まれる</span></span></a>
-        <div class="tags"><button type="button">gear</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="gear">装備</button><button type="button" data-tag-key="qol">快適性</button></div>
       </li>
       <li data-tags="qol">
         <a href="https://github.com/Caraxi/SimpleTweaksPlugin" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Simple Tweaks<span class="desc" data-i18n="items.simpletweaks">個別にオン/オフできる大量の快適化調整をまとめたプラグイン。インベントリやリテイナー、ツールチップに直接関わる調整も複数含まれる。デフォルトのプラグイン一覧に含まれる</span></span></a>
-        <div class="tags"><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="qol">快適性</button></div>
       </li>
     </ul>
   </section>
@@ -438,11 +438,11 @@
     <ul>
       <li data-tags="browser, discovery">
         <a href="https://tommadness.github.io/Plugin-Browser/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Dalamud Plugin Browser<span class="desc" data-i18n="items.dalamudpluginbrowser">Dalamud本体のプラグイン一覧よりも使いやすい、メインリポジトリ用の検索・閲覧UI</span></span></a>
-        <div class="tags"><button type="button">browser</button><button type="button">discovery</button></div>
+        <div class="tags"><button type="button" data-tag-key="browser">ブラウザ</button><button type="button" data-tag-key="discovery">発見</button></div>
       </li>
       <li data-tags="publisher, experimental">
         <a href="https://puni.sh/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Puni.sh<span class="desc" data-i18n="items.punish">よく利用しているプラグインスタジオ/パブリッシャー:Artisan、AutoRetainer、Pandora's Boxなど多数。リポジトリはDalamudのExperimental設定から追加</span></span></a>
-        <div class="tags"><button type="button">publisher</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="publisher">パブリッシャー</button><button type="button" data-tag-key="experimental">実験的</button></div>
       </li>
     </ul>
   </section>
@@ -488,7 +488,15 @@
     });
   });
   allTags.sort();
+  // The pills are already in the HTML (scripts/static-bars.mjs) so the list doesn't jump
+  // at load. Wire those up, and add any tag that's missing from them.
+  var hasPill = {};
+  tagBar.querySelectorAll('.tag-pill').forEach(function (btn) {
+    hasPill[btn.dataset.tagKey] = true;
+    btn.addEventListener('click', function () { setQuery(btn.dataset.tagKey); });
+  });
   allTags.forEach(function (tag) {
+    if (hasPill[tag]) return;
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'tag-pill';
@@ -499,7 +507,7 @@
   });
 
   document.querySelectorAll('li .tags button').forEach(function (btn) {
-    btn.dataset.tagKey = btn.textContent.trim();
+    btn.dataset.tagKey = btn.dataset.tagKey || btn.textContent.trim();
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       setQuery(btn.dataset.tagKey);

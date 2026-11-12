@@ -139,8 +139,12 @@ function translateBody(document, lang) {
     out.textContent = currentT(patch ? "shared.updated.withPatch" : "shared.updated.dateOnly", { patch, date: shown });
   });
 
-  document.querySelectorAll("li .tags button[data-tag-key]").forEach((btn) => {
+  document.querySelectorAll("#tag-bar .tag-pill[data-tag-key], li .tags button[data-tag-key]").forEach((btn) => {
     btn.textContent = currentT("tags." + btn.getAttribute("data-tag-key"));
+  });
+
+  document.querySelectorAll("#lang-bar button[data-lang]").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
   });
 }
 

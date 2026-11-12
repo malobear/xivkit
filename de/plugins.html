@@ -300,12 +300,12 @@
   <div class="page-layout columns">
   <div class="sidebar-col column is-3">
     <nav class="page-nav"><a href="de/" data-i18n="shared.nav.tools">Meine Tools</a><a href="de/watchlist.html" data-i18n="shared.nav.watchlist">Watchlist</a><a class="current" href="de/plugins.html" data-i18n="shared.nav.plugins">Plugins</a><a href="plugins/" data-i18n="shared.nav.directory">Plugin-Verzeichnis</a><a href="de/#guides" data-i18n="shared.nav.guides">Guides</a></nav>
-    <div id="lang-bar"></div>
+    <div id="lang-bar"><button type="button" class="tag-pill lang-pill" data-lang="en">EN</button><button type="button" class="tag-pill lang-pill" data-lang="ja">日本語</button><button type="button" class="tag-pill lang-pill active" data-lang="de">DE</button><button type="button" class="tag-pill lang-pill" data-lang="fr">FR</button></div>
     <div class="search-bar">
       <input id="search" type="search" data-i18n="pages.plugins.searchPlaceholder" data-i18n-placeholder="" placeholder="Plugins nach Name, Beschreibung oder Tag durchsuchen..." autocomplete="off">
       <button id="clear-search" type="button" data-i18n="shared.clearSearchTitle" data-i18n-title="" title="Leeren" hidden>×</button>
     </div>
-    <div id="tag-bar"></div>
+    <div id="tag-bar"><button type="button" class="tag-pill" data-tag-key="browser">Browser</button><button type="button" class="tag-pill" data-tag-key="chat">Chat</button><button type="button" class="tag-pill" data-tag-key="compression">Komprimierung</button><button type="button" class="tag-pill" data-tag-key="discovery">Entdeckung</button><button type="button" class="tag-pill" data-tag-key="experimental">experimentell</button><button type="button" class="tag-pill" data-tag-key="friends">Freunde</button><button type="button" class="tag-pill" data-tag-key="gear">Ausrüstung</button><button type="button" class="tag-pill" data-tag-key="glamour">Glamour</button><button type="button" class="tag-pill" data-tag-key="guide">Guide</button><button type="button" class="tag-pill" data-tag-key="housing">Behausung</button><button type="button" class="tag-pill" data-tag-key="hud">HUD</button><button type="button" class="tag-pill" data-tag-key="inventory">Inventar</button><button type="button" class="tag-pill" data-tag-key="items">Items</button><button type="button" class="tag-pill" data-tag-key="market">Markt</button><button type="button" class="tag-pill" data-tag-key="mods">Mods</button><button type="button" class="tag-pill" data-tag-key="paid">kostenpflichtig</button><button type="button" class="tag-pill" data-tag-key="plates">Glamour-Platten</button><button type="button" class="tag-pill" data-tag-key="plugins">Plugins</button><button type="button" class="tag-pill" data-tag-key="publisher">Publisher</button><button type="button" class="tag-pill" data-tag-key="qol">Komfort</button><button type="button" class="tag-pill" data-tag-key="retainer">Gehilfe</button><button type="button" class="tag-pill" data-tag-key="social">Sozial</button><button type="button" class="tag-pill" data-tag-key="toolbars">Toolbars</button><button type="button" class="tag-pill" data-tag-key="tracker">Tracker</button><button type="button" class="tag-pill" data-tag-key="travel">Reisen</button><button type="button" class="tag-pill" data-tag-key="ui">UI</button></div>
   </div>
 
   <div class="content-col column is-9">
@@ -316,19 +316,19 @@
     <ul>
       <li data-tags="plugins, mods">
         <a href="https://dalamud.dev/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Dalamud<span class="desc" data-i18n="items.dalamud">Plugin-Framework für FFXIV-Client-Tools und -Mods. Zuerst installieren, alles andere auf dieser Seite läuft darüber</span></span></a>
-        <div class="tags"><button type="button">plugins</button><button type="button">mods</button></div>
+        <div class="tags"><button type="button" data-tag-key="plugins">Plugins</button><button type="button" data-tag-key="mods">Mods</button></div>
       </li>
       <li data-tags="mods, experimental">
         <a href="https://github.com/xivdev/Penumbra" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Penumbra<span class="desc" data-i18n="items.penumbra">Mod-Loader zur Laufzeit, wendet Textur-/Modell-Mods an, ohne Spieldateien zu verändern. Custom-Repo, nicht im Standard-Plugin-Verzeichnis</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">Mods</button><button type="button" data-tag-key="experimental">experimentell</button></div>
       </li>
       <li data-tags="glamour, experimental">
         <a href="https://github.com/Ottermandias/Glamourer" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Glamourer<span class="desc" data-i18n="items.glamourer">Ändert das äußere Erscheinungsbild deines Charakters über Penumbra-Mods, worüber auch Glamaholic-Platten angewendet werden. Custom-Repo, nicht im Standard-Plugin-Verzeichnis</span></span></a>
-        <div class="tags"><button type="button">glamour</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="glamour">Glamour</button><button type="button" data-tag-key="experimental">experimentell</button></div>
       </li>
       <li data-tags="guide">
         <a href="https://reniguide.carrd.co/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">The Reni Guide<span class="desc" data-i18n="items.renireguide">Anfängerfreundliche Anleitung zum Einrichten von Penumbra und Glamourer für Charakter-Mods</span></span></a>
-        <div class="tags"><button type="button">guide</button></div>
+        <div class="tags"><button type="button" data-tag-key="guide">Guide</button></div>
       </li>
     </ul>
   </section>
@@ -338,11 +338,11 @@
     <ul>
       <li data-tags="housing, experimental">
         <a href="https://github.com/LeonBlade/BDTHPlugin" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Burning Down The House (BDTH)<span class="desc" data-i18n="items.bdth">Gizmo-basierte Positionierung von Einrichtungsgegenständen, deutlich präziser als der Ingame-Editor. Custom-Repo, nicht im Standard-Plugin-Verzeichnis.</span></span></a>
-        <div class="tags"><button type="button">housing</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="housing">Behausung</button><button type="button" data-tag-key="experimental">experimentell</button></div>
       </li>
       <li data-tags="travel, experimental">
         <a href="https://github.com/NightmareXIV/Lifestream" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Lifestream<span class="desc" data-i18n="items.lifestream">Reise mit einem einzigen Befehl zu einer anderen Welt, einem anderen Rechenzentrum oder Haus. Custom-Repo, nicht im Standard-Plugin-Verzeichnis</span></span></a>
-        <div class="tags"><button type="button">travel</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="travel">Reisen</button><button type="button" data-tag-key="experimental">experimentell</button></div>
       </li>
     </ul>
   </section>
@@ -352,7 +352,7 @@
     <ul>
       <li data-tags="glamour, plates">
         <a href="https://github.com/caitlyn-gg/Glamaholic" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Glamaholic<span class="desc" data-i18n="items.glamaholic">Glamour-Platten speichern und wechseln. Looks direkt aus Eorzea Collection oder fremden Exports importieren, anprobieren und über Glamourer anwenden. Im Standard-Plugin-Repo enthalten</span></span></a>
-        <div class="tags"><button type="button">glamour</button><button type="button">plates</button></div>
+        <div class="tags"><button type="button" data-tag-key="glamour">Glamour</button><button type="button" data-tag-key="plates">Glamour-Platten</button></div>
       </li>
     </ul>
   </section>
@@ -362,19 +362,19 @@
     <ul>
       <li data-tags="mods, glamour, gear">
         <a href="https://www.xivmodarchive.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">XIV Mod Archive<span class="desc" data-i18n="items.xivmodarchive">Größtes kostenloses Mod-Repository: Glamour-, Ausrüstungs- und Animations-Mods, installiert über Penumbra</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">glamour</button><button type="button">gear</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">Mods</button><button type="button" data-tag-key="glamour">Glamour</button><button type="button" data-tag-key="gear">Ausrüstung</button></div>
       </li>
       <li data-tags="mods, glamour, gear">
         <a href="https://heliosphere.app/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Heliosphere<span class="desc" data-i18n="items.heliosphere">Zweite Mod-Quelle/-Verwaltung, die ich nutze, wenn Mod Archive nicht hat, was ich suche</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">glamour</button><button type="button">gear</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">Mods</button><button type="button" data-tag-key="glamour">Glamour</button><button type="button" data-tag-key="gear">Ausrüstung</button></div>
       </li>
       <li data-tags="mods, glamour, paid">
         <a href="https://www.glamourdresser.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Glamour Dresser<span class="desc" data-i18n="items.glamourdresser">Kostenpflichtiger Mod-Marktplatz. Ich zahle normalerweise nicht, aber viele Ersteller geben Mods nach einer Weile kostenlos frei, daher schaue ich auf ihren Patreons nach frei gewordenen Sachen</span></span></a>
-        <div class="tags"><button type="button">mods</button><button type="button">glamour</button><button type="button">paid</button></div>
+        <div class="tags"><button type="button" data-tag-key="mods">Mods</button><button type="button" data-tag-key="glamour">Glamour</button><button type="button" data-tag-key="paid">kostenpflichtig</button></div>
       </li>
       <li data-tags="guide, mods, compression">
         <a href="https://compressyourself.carrd.co/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Compress Yourself<span class="desc" data-i18n="items.compressyourself">Schritt-für-Schritt-Anleitung zum Komprimieren von Mod-Texturen für Lightless/PlayerSync. Hält synchronisierte Mod-Größen klein</span></span></a>
-        <div class="tags"><button type="button">guide</button><button type="button">mods</button><button type="button">compression</button></div>
+        <div class="tags"><button type="button" data-tag-key="guide">Guide</button><button type="button" data-tag-key="mods">Mods</button><button type="button" data-tag-key="compression">Komprimierung</button></div>
       </li>
     </ul>
   </section>
@@ -384,11 +384,11 @@
     <ul>
       <li data-tags="chat, ui, qol">
         <a href="https://github.com/Infiziert90/ChatTwo" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Chat 2<span class="desc" data-i18n="items.chat2">Komplett überarbeitetes Ingame-Chatfenster: unbegrenzte Tabs, bessere Filter, RGB-Kanalfarben, Zähler für ungelesene Nachrichten. Ein Muss</span></span></a>
-        <div class="tags"><button type="button">chat</button><button type="button">ui</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="chat">Chat</button><button type="button" data-tag-key="ui">UI</button><button type="button" data-tag-key="qol">Komfort</button></div>
       </li>
       <li data-tags="ui, toolbars, hud">
         <a href="https://una-xiv.github.io/umbra-docs/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Umbra XIV<span class="desc" data-i18n="items.umbraxiv">Vollständig anpassbare Toolbars und 3D-Weltmarkierungen. Im Standard-Plugin-Repo enthalten</span></span></a>
-        <div class="tags"><button type="button">ui</button><button type="button">toolbars</button><button type="button">hud</button></div>
+        <div class="tags"><button type="button" data-tag-key="ui">UI</button><button type="button" data-tag-key="toolbars">Toolbars</button><button type="button" data-tag-key="hud">HUD</button></div>
       </li>
     </ul>
   </section>
@@ -398,7 +398,7 @@
     <ul>
       <li data-tags="social, friends, experimental">
         <a href="https://github.com/devckuw/BetterFriendList" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Better Friend List<span class="desc" data-i18n="items.betterfriendlist">Serverübergreifende Freundesliste mit FC-artigen An-/Abmelde-Benachrichtigungen. Die andere Person braucht es ebenfalls installiert, damit du ihre siehst</span></span></a>
-        <div class="tags"><button type="button">social</button><button type="button">friends</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="social">Sozial</button><button type="button" data-tag-key="friends">Freunde</button><button type="button" data-tag-key="experimental">experimentell</button></div>
       </li>
     </ul>
   </section>
@@ -408,27 +408,27 @@
     <ul>
       <li data-tags="inventory, retainer, items">
         <a href="https://github.com/Critical-Impact/InventoryTools" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Allagan Tools<span class="desc" data-i18n="items.allagantools">Speicherübergreifende Inventarsuche und -filterung über Charaktere, Gehilfen und die Kompanietruhe hinweg, dazu Craft-Planung und Marktbrett-Integration direkt im Tooltip. Im Standard-Plugin-Verzeichnis enthalten</span></span></a>
-        <div class="tags"><button type="button">inventory</button><button type="button">retainer</button><button type="button">items</button></div>
+        <div class="tags"><button type="button" data-tag-key="inventory">Inventar</button><button type="button" data-tag-key="retainer">Gehilfe</button><button type="button" data-tag-key="items">Items</button></div>
       </li>
       <li data-tags="retainer, market, tracker">
         <a href="https://github.com/Critical-Impact/AllaganMarket" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Allagan Market<span class="desc" data-i18n="items.allaganmarket">Verfolgt Gehilfen-Marktangebote, Verkäufe und Unterbietungen über alle Charaktere hinweg gleichzeitig. Im Standard-Plugin-Verzeichnis enthalten</span></span></a>
-        <div class="tags"><button type="button">retainer</button><button type="button">market</button><button type="button">tracker</button></div>
+        <div class="tags"><button type="button" data-tag-key="retainer">Gehilfe</button><button type="button" data-tag-key="market">Markt</button><button type="button" data-tag-key="tracker">Tracker</button></div>
       </li>
       <li data-tags="market, tracker, qol">
         <a href="https://github.com/kouzukii/ffxiv-priceinsight" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Price Insight<span class="desc" data-i18n="items.priceinsight">Zeigt NQ/HQ-Marktbrettpreise und den letzten Verkauf direkt im Tooltip eines Gegenstands beim Überfahren mit der Maus an, abgerufen von Universalis. Im Standard-Plugin-Verzeichnis enthalten</span></span></a>
-        <div class="tags"><button type="button">market</button><button type="button">tracker</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="market">Markt</button><button type="button" data-tag-key="tracker">Tracker</button><button type="button" data-tag-key="qol">Komfort</button></div>
       </li>
       <li data-tags="market, qol">
         <a href="https://github.com/Infiziert90/StackSellPrice" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">StackSellPrice<span class="desc" data-i18n="items.stacksellprice">Zeigt den Verkaufspreis eines ganzen Stapels im Tooltip an statt nur für ein einzelnes Stück, sodass man die Multiplikation nicht selbst machen muss, bevor man einen Stapel Materialien verkauft. Im Standard-Plugin-Verzeichnis enthalten</span></span></a>
-        <div class="tags"><button type="button">market</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="market">Markt</button><button type="button" data-tag-key="qol">Komfort</button></div>
       </li>
       <li data-tags="gear, qol">
         <a href="https://github.com/chalkos/RepairMe" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">RepairMe<span class="desc" data-i18n="items.repairme">Erinnert daran, wenn Ausrüstung repariert werden muss oder noch Materia enthält, die extrahiert werden sollte, bevor man sie loswird. Im Standard-Plugin-Verzeichnis enthalten</span></span></a>
-        <div class="tags"><button type="button">gear</button><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="gear">Ausrüstung</button><button type="button" data-tag-key="qol">Komfort</button></div>
       </li>
       <li data-tags="qol">
         <a href="https://github.com/Caraxi/SimpleTweaksPlugin" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Simple Tweaks<span class="desc" data-i18n="items.simpletweaks">Riesige Sammlung einzeln aktivierbarer Komfort-Anpassungen; mehrere betreffen direkt Inventar, Gehilfen und Tooltips. Im Standard-Plugin-Verzeichnis enthalten</span></span></a>
-        <div class="tags"><button type="button">qol</button></div>
+        <div class="tags"><button type="button" data-tag-key="qol">Komfort</button></div>
       </li>
     </ul>
   </section>
@@ -438,11 +438,11 @@
     <ul>
       <li data-tags="browser, discovery">
         <a href="https://tommadness.github.io/Plugin-Browser/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Dalamud Plugin Browser<span class="desc" data-i18n="items.dalamudpluginbrowser">Bessere Such-/Browse-Oberfläche für das Hauptplugin-Repo als Dalamuds eigene Ingame-Liste</span></span></a>
-        <div class="tags"><button type="button">browser</button><button type="button">discovery</button></div>
+        <div class="tags"><button type="button" data-tag-key="browser">Browser</button><button type="button" data-tag-key="discovery">Entdeckung</button></div>
       </li>
       <li data-tags="publisher, experimental">
         <a href="https://puni.sh/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Puni.sh<span class="desc" data-i18n="items.punish">Plugin-Studio/Publisher, von dem ich viel nutze: Artisan, AutoRetainer, Pandora's Box und mehr. Ihr Repo kommt unter Dalamuds Experimental-Einstellungen.</span></span></a>
-        <div class="tags"><button type="button">publisher</button><button type="button">experimental</button></div>
+        <div class="tags"><button type="button" data-tag-key="publisher">Publisher</button><button type="button" data-tag-key="experimental">experimentell</button></div>
       </li>
     </ul>
   </section>
@@ -488,7 +488,15 @@
     });
   });
   allTags.sort();
+  // The pills are already in the HTML (scripts/static-bars.mjs) so the list doesn't jump
+  // at load. Wire those up, and add any tag that's missing from them.
+  var hasPill = {};
+  tagBar.querySelectorAll('.tag-pill').forEach(function (btn) {
+    hasPill[btn.dataset.tagKey] = true;
+    btn.addEventListener('click', function () { setQuery(btn.dataset.tagKey); });
+  });
   allTags.forEach(function (tag) {
+    if (hasPill[tag]) return;
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'tag-pill';
@@ -499,7 +507,7 @@
   });
 
   document.querySelectorAll('li .tags button').forEach(function (btn) {
-    btn.dataset.tagKey = btn.textContent.trim();
+    btn.dataset.tagKey = btn.dataset.tagKey || btn.textContent.trim();
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       setQuery(btn.dataset.tagKey);

@@ -126,18 +126,22 @@
     var bar = document.getElementById('lang-bar');
     if (!bar) return;
     SUPPORTED.forEach(function (code) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'tag-pill lang-pill';
-      btn.dataset.lang = code;
-      btn.textContent = NAMES[code];
+      // Pages ship the buttons in their HTML (scripts/static-bars.mjs); create any missing.
+      var btn = bar.querySelector('button[data-lang="' + code + '"]');
+      if (!btn) {
+        btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'tag-pill lang-pill';
+        btn.dataset.lang = code;
+        btn.textContent = NAMES[code];
+        bar.appendChild(btn);
+      }
       btn.addEventListener('click', function () {
         // Pages with language copies switch by URL; the rest translate in place as before.
         if (code !== PAGE_LANG && (ALTERNATES[code] || STATIC_LANG)) { goTo(code); return; }
         if (code === PAGE_LANG && STATIC_LANG) return;
         i18next.changeLanguage(code);
       });
-      bar.appendChild(btn);
     });
   }
 
