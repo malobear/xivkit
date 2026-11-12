@@ -21,9 +21,15 @@
     "related": {
       "heading": "Guides associés",
       "desc": {
+        "currencyPlanner": {
+          "tradeInMounts": "Certaines monnaies achètent des montures. Toutes les montures d'échange, avec un avis net : farmer ou acheter.",
+          "retainerVentures": "Plus de gils avant Evercold : toutes les tâches de servant classées selon leurs gains sur votre monde.",
+          "inventoryDecluttering": "Du rangement avant le lancement ? Décidez quoi garder, stocker ou jeter."
+        },
         "retainerVentures": {
           "inventoryDecluttering": "Les servants remplissent vite vos sacs. Triez ce que vous gardez, stockez ou jetez avant que le butin ne s'accumule.",
-          "tradeInMounts": "Transformez les gils des missions en monture : quelles montures d'échange valent le farm, et lesquelles acheter directement."
+          "tradeInMounts": "Transformez les gils des missions en monture : quelles montures d'échange valent le farm, et lesquelles acheter directement.",
+          "currencyPlanner": "Vous avez aussi des mémoquartz ou des assignats en trop ? Voyez quels objets rapportent le plus de gils."
         },
         "inventoryDecluttering": {
           "retainerVentures": "Mettez vos servants au travail : chaque mission classée selon ce qu'elle rapporte à l'Hôtel des ventes.",
@@ -32,7 +38,8 @@
         "tradeInMounts": {
           "huntForAstronomy": "Une autre boutique d'événement avec une monture, et un avis tranché sur ce qui vaut vraiment le coup.",
           "retainerVentures": "Besoin de gils pour acheter les matériaux ? Voyez quelles missions de servant rapportent le plus sur votre monde.",
-          "keyboundBrawler": "Une autre boutique d'événement avec une monture : le coût de chaque récompense en MGC et le nombre de parties nécessaires."
+          "keyboundBrawler": "Une autre boutique d'événement avec une monture : le coût de chaque récompense en MGC et le nombre de parties nécessaires.",
+          "currencyPlanner": "Tout ce que vos monnaies achètent d'autre, classé selon le prix au marché."
         },
         "huntForAstronomy": {
           "tradeInMounts": "Vous hésitez pour la monture d'ici ? Comparez-la à toutes les autres montures obtenues par échange.",
@@ -217,7 +224,8 @@
     "stacksellprice": "Affiche le prix de vente au marchand de la pile entière dans l'infobulle au lieu d'une seule unité, pour éviter de faire la multiplication soi-même avant de vendre un tas de matériaux. Dans le dépôt de plugins par défaut",
     "repairme": "Rappelle quand un équipement a besoin d'être réparé ou contient encore de la matéria à extraire avant de s'en débarrasser. Dans le dépôt de plugins par défaut",
     "simpletweaks": "Immense collection d'ajustements de confort activables individuellement ; plusieurs touchent directement l'inventaire, les gestionnaires et les infobulles. Dans le dépôt de plugins par défaut",
-    "xivkitmsq": "Suis ta progression dans le scénario principal jusqu'au dernier patch, avec ta quête actuelle dans un lien à coller et une carte de progression PNG à partager"
+    "xivkitmsq": "Suis ta progression dans le scénario principal jusqu'au dernier patch, avec ta quête actuelle dans un lien à coller et une carte de progression PNG à partager",
+    "currencyplanner": "Choisissez une monnaie qui s'accumule (mémoquartz, assignats, gemmes bicolores, insignes, MGP) et voyez ce qu'elle achète : les meilleurs objets à revendre au prix du marché, ce qui vaut la peine d'être collectionné, et s'il faut la dépenser avant Evercold"
   },
   "pages": {
     "index": {
@@ -675,6 +683,79 @@
       "loading": "Chargement des prix en direct… {{done}} sur {{total}}"
     }
   },
+  "cp": {
+    "h1": "Planificateur de monnaies : quoi acheter avant Evercold",
+    "lede": "Choisissez une monnaie qui s'accumule et voyez ce qu'elle achète : les objets qui se vendent le mieux au marché en ce moment, ce qui vaut la peine d'être gardé pour votre collection, et s'il faut la dépenser avant la 8.0 ou la conserver.",
+    "currencyLabel": "Monnaie",
+    "haveLabel": "Combien vous en avez",
+    "marketLabel": "Marché",
+    "summaryHeading": "En un coup d'œil",
+    "sellHeading": "Le meilleur pour les gils",
+    "sellNote": "Les objets échangeables, classés par gils obtenus par unité de monnaie dépensée, au prix de vente moyen sur votre marché. Ceux qui se vendent moins d'une fois par jour sont marqués lents : un gros lot peut rester invendu des semaines.",
+    "collectHeading": "Pour votre collection",
+    "collectNote": "Montures, mascottes, rouleaux d'orchestrion, cartes et autres déblocages que cette monnaie achète. Si un objet se vend aussi au marché, son prix est affiché pour voir s'il revient moins cher de l'acheter directement.",
+    "allHeading": "Tout ce qu'elle achète d'autre",
+    "sourcesHeading": "Sources et fonctionnement",
+    "sourcesShops": "Les vendeurs existants et le coût de chaque échange viennent des données de boutiques extraites par {teamcraft}, qui ne comptent que les vendeurs réellement accessibles en jeu. Les échanges qui demandent aussi un jeton ou une seconde monnaie (la plupart des améliorations d'équipement) sont exclus.",
+    "sourcesItems": "Les noms d'objets dans les quatre langues, les icônes et les catégories viennent de {xivapi}. Les prix et la vitesse de vente sont récupérés en direct sur {universalis} pour le marché choisi.",
+    "sourcesVerdict": "Les conseils dépenser ou garder sont mon avis basé sur les lancements des extensions précédentes, pas sur des changements annoncés pour la 8.0. Je les mettrai à jour à la sortie des notes de patch d'Evercold.",
+    "gcSeals": "Sceaux de Grande Compagnie",
+    "loading": "Chargement des prix du marché : {{done}} sur {{total}}",
+    "priceFail": "Certains prix n'ont pas pu être chargés depuis Universalis. Réessayez dans une minute.",
+    "gilAmount": "{{amount}} gils",
+    "costEach": "Coûte {{cost}}",
+    "costMany": "Coûte {{cost}} pour {{qty}}",
+    "verdicts": {
+      "spend": "À dépenser avant la 8.0",
+      "watch": "À surveiller pour la 8.0",
+      "keep": "Peut être gardée"
+    },
+    "verdictText": {
+      "spend": "Devrait perdre l'essentiel de sa valeur au lancement, d'après les extensions précédentes.",
+      "watch": "Les extensions précédentes ont modifié ce type de monnaie au lancement, mieux vaut ne pas l'accumuler.",
+      "keep": "Aucun changement attendu au lancement. Dépensez-la quand vous voulez."
+    },
+    "notes": {
+      "mnemonics": "Ce mémoquartz n'achète que l'équipement de fin de jeu actuel, que les premiers donjons d'Evercold remplaceront pendant la montée en niveau. N'achetez que ce que vous utiliserez avant le lancement. Les extensions précédentes ont retiré les mémoquartz en cours lors de patchs ultérieurs.",
+      "mathematics": "Son équipement sera dépassé au lancement lui aussi, mais il achète aussi des matériaux d'artisanat de raid qui se vendent au marché. Convertir le surplus en gils avant la 8.0 est l'approche habituelle.",
+      "poetics": "Les mémoquartz allagois poétiques sont conservés d'une extension à l'autre, mais le maximum est de 2 000. Si vous êtes proche du plafond, dépensez-en en matériaux ou objets de collection pour ne pas perdre les nouveaux.",
+      "orange-crafters": "Les extensions précédentes ont ajouté un nouveau palier d'assignats au lancement, et l'équipement d'assignats niveau 100 sera dépassé. Les matérias et matériaux gardent leur valeur plus longtemps que l'équipement.",
+      "orange-gatherers": "Les extensions précédentes ont ajouté un nouveau palier d'assignats au lancement, et l'équipement d'assignats niveau 100 sera dépassé. Les matérias et matériaux gardent leur valeur plus longtemps que l'équipement."
+    },
+    "statItems": "objets qu'elle achète",
+    "statItemsSub": "{{sell}} revendables, {{collect}} déblocages",
+    "statBest": "meilleur gain en gils par {{currency}}",
+    "statWorth": "vos {{have}} {{currency}}, vendus au prix du jour",
+    "statDays": "{{buys}} × {{item}}, environ {{days}} jours de ventes du marché",
+    "statNoSell": "Rien à vendre",
+    "statNoSellSub": "Tout ce que cette monnaie achète est non échangeable.",
+    "noTradeable": "Rien de ce que cette monnaie achète ne peut se vendre au marché.",
+    "noPrices": "Pas encore de données de marché pour ces objets sur ce marché.",
+    "avgPrice": "se vend {{price}} gils",
+    "perDay": "{{sold}} vendus par jour",
+    "slow": "lent",
+    "gilPer": "gils l'unité",
+    "showAll": "Tout afficher ({{n}})",
+    "noCollect": "Cette monnaie n'achète aucun objet de collection.",
+    "onBoard": "{{price}} gils au marché",
+    "untradeable": "non échangeable",
+    "noOther": "Rien dans les types choisis.",
+    "kinds": {
+      "collectible": "Déblocage",
+      "material": "Matériaux",
+      "materia": "Matérias",
+      "housing": "Logement",
+      "consumable": "Plats et potions",
+      "other": "Autres",
+      "gear": "Équipement"
+    },
+    "groups": {
+      "tomestones": "Mémoquartz",
+      "scrips": "Assignats",
+      "hunts": "Chasses et missions",
+      "other": "Autres monnaies"
+    }
+  },
   "seo": {
     "index": {
       "title": "XIVKit : outils et liens FFXIV",
@@ -695,6 +776,10 @@
     "msqTracker": {
       "title": "Suivi du scénario principal FFXIV avec lien partageable | XIVKit",
       "description": "Suivez votre progression dans le scénario principal de FFXIV, d'A Realm Reborn à Dawntrail. Votre quête actuelle est dans le lien de la page pour la partager, et vous pouvez exporter une carte de progression en PNG."
+    },
+    "currencyPlanner": {
+      "title": "Planificateur de monnaies FFXIV : quoi acheter avant Evercold | XIVKit",
+      "description": "Choisissez une monnaie de FFXIV (mémoquartz, assignats, gemmes bicolores, insignes, MGP et plus) et voyez quoi acheter avant Evercold : les meilleurs objets à revendre au prix du marché en direct, ce qui vaut la peine d'être collectionné, et s'il faut la dépenser avant la 8.0."
     }
   }
 }

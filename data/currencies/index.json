@@ -1,0 +1,238 @@
+{
+ "currencies": [
+  {
+   "key": "mnemonics",
+   "group": "tomestones",
+   "id": 49,
+   "names": [
+    "Allagan Tomestone of Mnemonics",
+    "アラガントームストーン:記憶",
+    "Allagischer Stein der Mnemonik",
+    "Mémoquartz allagois mnémonique"
+   ],
+   "icon": "065000/065137",
+   "items": 55
+  },
+  {
+   "key": "mathematics",
+   "group": "tomestones",
+   "id": 48,
+   "names": [
+    "Allagan Tomestone of Mathematics",
+    "アラガントームストーン:数理",
+    "Allagischer Stein der Mathematik",
+    "Mémoquartz allagois mathématique"
+   ],
+   "icon": "065000/065122",
+   "items": 91
+  },
+  {
+   "key": "poetics",
+   "group": "tomestones",
+   "id": 28,
+   "names": [
+    "Allagan Tomestone of Poetics",
+    "アラガントームストーン:詩学",
+    "Allagischer Stein der Poesie",
+    "Mémoquartz allagois poétique"
+   ],
+   "icon": "065000/065023",
+   "items": 798
+  },
+  {
+   "key": "orange-crafters",
+   "group": "scrips",
+   "id": 41784,
+   "names": [
+    "Orange Crafters' Scrip",
+    "クラフタースクリップ:橙貨",
+    "Oranger Handwerkerschein",
+    "Assignat orange d'artisan"
+   ],
+   "icon": "065000/065110",
+   "items": 116
+  },
+  {
+   "key": "orange-gatherers",
+   "group": "scrips",
+   "id": 41785,
+   "names": [
+    "Orange Gatherers' Scrip",
+    "ギャザラースクリップ:橙貨",
+    "Oranger Sammlerschein",
+    "Assignat orange de récolteur"
+   ],
+   "icon": "065000/065109",
+   "items": 56
+  },
+  {
+   "key": "purple-crafters",
+   "group": "scrips",
+   "id": 33913,
+   "names": [
+    "Purple Crafters' Scrip",
+    "クラフタースクリップ:紫貨",
+    "Violetter Handwerkerschein",
+    "Assignat mauve d'artisan"
+   ],
+   "icon": "065000/065088",
+   "items": 628
+  },
+  {
+   "key": "purple-gatherers",
+   "group": "scrips",
+   "id": 33914,
+   "names": [
+    "Purple Gatherers' Scrip",
+    "ギャザラースクリップ:紫貨",
+    "Violetter Sammlerschein",
+    "Assignat mauve de récolteur"
+   ],
+   "icon": "065000/065087",
+   "items": 313
+  },
+  {
+   "key": "bicolor",
+   "group": "hunts",
+   "id": 26807,
+   "names": [
+    "Bicolor Gemstone",
+    "バイカラージェム",
+    "Zweifarbiger Edelstein",
+    "Gemme bicolore"
+   ],
+   "icon": "065000/065071",
+   "items": 231
+  },
+  {
+   "key": "nuts",
+   "group": "hunts",
+   "id": 26533,
+   "names": [
+    "Sack of Nuts",
+    "モブハントの戦利品",
+    "Kupo-Trophäe",
+    "Insigne de chasse"
+   ],
+   "icon": "065000/065068",
+   "items": 511
+  },
+  {
+   "key": "centurio",
+   "group": "hunts",
+   "id": 10307,
+   "names": [
+    "Centurio Seal",
+    "セントリオ記章",
+    "Centurio-Abzeichen",
+    "Insigne Centurio"
+   ],
+   "icon": "065000/065034",
+   "items": 345
+  },
+  {
+   "key": "allied",
+   "group": "hunts",
+   "id": 27,
+   "names": [
+    "Allied Seal",
+    "同盟記章",
+    "Jagdabzeichen",
+    "Insigne allié"
+   ],
+   "icon": "065000/065024",
+   "items": 221
+  },
+  {
+   "key": "gc-seals",
+   "group": "other",
+   "id": 20,
+   "names": [
+    "Storm Seal",
+    "黒渦団軍票",
+    "Flottentaler",
+    "Sceau de compagnie limséen"
+   ],
+   "icon": "065000/065004",
+   "items": 621
+  },
+  {
+   "key": "mgp",
+   "group": "other",
+   "id": 29,
+   "names": [
+    "MGP",
+    "マンダヴィル・ゴールドソーサーポイント",
+    "MGP",
+    "Point du Gold Saucer"
+   ],
+   "icon": "065000/065025",
+   "items": 445
+  },
+  {
+   "key": "wolf",
+   "group": "other",
+   "id": 25,
+   "names": [
+    "Wolf Mark",
+    "対人戦績",
+    "Wolfsmarke",
+    "Marque de loup"
+   ],
+   "icon": "065000/065014",
+   "items": 719
+  },
+  {
+   "key": "trophy",
+   "group": "other",
+   "id": 36656,
+   "names": [
+    "Trophy Crystal",
+    "トロフィークリスタル",
+    "Kristalltrophäen",
+    "Cristal-trophée"
+   ],
+   "icon": "065000/065090",
+   "items": 333
+  },
+  {
+   "key": "skybuilders",
+   "group": "other",
+   "id": 28063,
+   "names": [
+    "Skybuilders' Scrip",
+    "蒼天街振興券",
+    "Himmelsstadt-Aufbauschein",
+    "Assignat d'Azurée"
+   ],
+   "icon": "065000/065073",
+   "items": 117
+  },
+  {
+   "key": "cosmocredits",
+   "group": "other",
+   "id": 45690,
+   "names": [
+    "Cosmocredit",
+    "コスモクレジット",
+    "Kosmo-Kohle",
+    "Crédit cosmique"
+   ],
+   "icon": "065000/065112",
+   "items": 86
+  },
+  {
+   "key": "cowries",
+   "group": "other",
+   "id": 37549,
+   "names": [
+    "Seafarer's Cowrie",
+    "シェルダレースクリップ:青船貨",
+    "Blaue Cieldaläen-Kauri",
+    "Assignat insulaire azur"
+   ],
+   "icon": "065000/065096",
+   "items": 102
+  }
+ ]
+}

@@ -23,7 +23,8 @@
       "desc": {
         "retainerVentures": {
           "inventoryDecluttering": "Retainers fill your bags fast. Sort what to keep, bank, or discard before the haul piles up.",
-          "tradeInMounts": "Turn venture gil into a mount: which trade-in mounts are worth grinding, and which to just buy."
+          "tradeInMounts": "Turn venture gil into a mount: which trade-in mounts are worth grinding, and which to just buy.",
+          "currencyPlanner": "Sitting on tomestones or scrips too? See which items turn them into the most gil."
         },
         "inventoryDecluttering": {
           "retainerVentures": "Put your retainer slots to work: every venture ranked by what it earns on the market board.",
@@ -32,7 +33,8 @@
         "tradeInMounts": {
           "huntForAstronomy": "Another event shop with a mount in it, and a straight call on what is worth the tomes.",
           "retainerVentures": "Need gil to buy the mats? See which retainer ventures earn the most on your world.",
-          "keyboundBrawler": "Another event shop with a mount: what each reward costs in MGC and how many runs it takes."
+          "keyboundBrawler": "Another event shop with a mount: what each reward costs in MGC and how many runs it takes.",
+          "currencyPlanner": "Everything else your currencies buy, ranked by what it sells for on the market board."
         },
         "huntForAstronomy": {
           "tradeInMounts": "Weighing the mount here? Compare it with every other mount you can trade in for.",
@@ -45,6 +47,11 @@
         "jumpPuzzleMacros": {
           "inventoryDecluttering": "Another quality-of-life guide: free up bag and retainer space before your next trip.",
           "retainerVentures": "Put your retainers to work while you practice: every venture ranked by market board gil."
+        },
+        "currencyPlanner": {
+          "tradeInMounts": "Some currencies buy mounts. See every trade-in mount with a straight grind-or-buy verdict.",
+          "retainerVentures": "More gil before Evercold: every retainer venture ranked by what it earns on your world.",
+          "inventoryDecluttering": "Clearing out before launch? Decide what to keep, bank, or discard."
         },
         "fanfestBingo": {
           "huntForAstronomy": "Another event to plan for: every Hunt for Astronomy reward, and whether it is worth the tomes.",
@@ -217,7 +224,8 @@
     "stacksellprice": "Shows a full stack's vendor sell price on the tooltip instead of just one unit, so you don't have to do the multiplication yourself before deciding to vendor a pile of materials. In the default plugin repo",
     "repairme": "Reminds you when gear needs repairing or still has materia to extract before you get rid of it. In the default plugin repo",
     "simpletweaks": "Huge, individually toggleable grab-bag of quality-of-life tweaks; several touch inventory, retainers, and tooltips directly. In the default plugin repo",
-    "xivkitmsq": "Track your Main Scenario Quest progress through the latest patch, with your current quest in a link you can paste and a PNG progress card to share"
+    "xivkitmsq": "Track your Main Scenario Quest progress through the latest patch, with your current quest in a link you can paste and a PNG progress card to share",
+    "currencyplanner": "Pick a currency you have piling up (tomestones, scrips, bicolor gemstones, seals, MGP) and see what it buys: the best items for gil at live prices, what's worth collecting, and whether to spend it before Evercold"
   },
   "pages": {
     "index": {
@@ -675,6 +683,79 @@
       "loading": "Loading live prices… {{done}} of {{total}}"
     }
   },
+  "cp": {
+    "h1": "Currency planner: what to buy before Evercold",
+    "lede": "Pick a currency you have piling up and see what it buys: the items that sell best on the market board right now, what's worth keeping for your collection, and whether to spend it before 8.0 or hold on to it.",
+    "currencyLabel": "Currency",
+    "haveLabel": "How many you have",
+    "marketLabel": "Market",
+    "summaryHeading": "At a glance",
+    "sellHeading": "Best for gil",
+    "sellNote": "Tradeable items ranked by gil per currency spent, using the average sale price on your market. Items selling less than once a day are marked slow: one big batch of those can sit unsold for weeks.",
+    "collectHeading": "For your collection",
+    "collectNote": "Mounts, minions, orchestrion rolls, cards and other unlocks this currency buys. When one also sells on the market board, the board price is shown so you can tell whether it is cheaper to buy it outright.",
+    "allHeading": "Everything else it buys",
+    "sourcesHeading": "Sources and how this works",
+    "sourcesShops": "Which vendors exist and what each trade costs comes from {teamcraft}'s extracted shop data, which only counts vendors you can actually reach in game. Trades that also need a token or a second currency (most gear upgrades) are left out.",
+    "sourcesItems": "Item names in all four languages, icons and categories come from {xivapi}. Market prices and sales speed are pulled live from {universalis} for the market you pick.",
+    "sourcesVerdict": "The spend-or-keep notes are my read based on past expansion launches, not announced 8.0 changes. I will update them when the Evercold patch notes are out.",
+    "gcSeals": "Grand Company seals",
+    "loading": "Loading market prices: {{done}} of {{total}}",
+    "priceFail": "Some prices could not be loaded from Universalis. Try again in a minute.",
+    "gilAmount": "{{amount}} gil",
+    "costEach": "Costs {{cost}}",
+    "costMany": "Costs {{cost}} for {{qty}}",
+    "verdicts": {
+      "spend": "Spend before 8.0",
+      "watch": "Watch for 8.0",
+      "keep": "Safe to keep"
+    },
+    "verdictText": {
+      "spend": "Expected to lose most of its value at launch, based on past expansions.",
+      "watch": "Past expansions changed this kind of currency at launch, so don't stockpile it.",
+      "keep": "No change expected at launch. Spend it whenever it suits you."
+    },
+    "notes": {
+      "mnemonics": "This tomestone only buys current endgame gear, and Evercold's first dungeons will replace that gear while you level. Buy only what you will use before launch. Past expansions retired the current tomestones in later patches.",
+      "mathematics": "Its gear will be outclassed at launch too, but Mathematics also buys raid-tier crafting materials that sell on the market board. Turning the spare ones into gil before 8.0 is the usual play.",
+      "poetics": "Poetics carry over between expansions, but you can hold at most 2,000. If you are near the cap, spend some on materials or collectibles so new ones are not wasted.",
+      "orange-crafters": "Past expansions added a new scrip tier at launch, and level 100 scrip gear will be outclassed. Materia and materials keep their value longer than gear.",
+      "orange-gatherers": "Past expansions added a new scrip tier at launch, and level 100 scrip gear will be outclassed. Materia and materials keep their value longer than gear."
+    },
+    "statItems": "things it buys",
+    "statItemsSub": "{{sell}} can be sold, {{collect}} are unlocks",
+    "statBest": "best gil per {{currency}}",
+    "statWorth": "your {{have}} {{currency}}, sold at today's prices",
+    "statDays": "{{buys}} × {{item}}, about {{days}} days of what the market sells",
+    "statNoSell": "Nothing to sell",
+    "statNoSellSub": "Everything this currency buys is untradeable.",
+    "noTradeable": "Nothing this currency buys can be sold on the market board.",
+    "noPrices": "No market data for these items on this market yet.",
+    "avgPrice": "sells for {{price}} gil",
+    "perDay": "{{sold}} sold a day",
+    "slow": "slow",
+    "gilPer": "gil each",
+    "showAll": "Show all {{n}}",
+    "noCollect": "This currency doesn't buy any collectibles.",
+    "onBoard": "{{price}} gil on the board",
+    "untradeable": "untradeable",
+    "noOther": "Nothing else in the selected types.",
+    "kinds": {
+      "collectible": "Unlock",
+      "material": "Materials",
+      "materia": "Materia",
+      "housing": "Housing",
+      "consumable": "Food and potions",
+      "other": "Other",
+      "gear": "Gear"
+    },
+    "groups": {
+      "tomestones": "Tomestones",
+      "scrips": "Scrips",
+      "hunts": "Hunts and duties",
+      "other": "Other currencies"
+    }
+  },
   "seo": {
     "index": {
       "title": "XIVKit: FFXIV Tools & Links",
@@ -695,6 +776,10 @@
     "msqTracker": {
       "title": "FFXIV MSQ Tracker with a Shareable Link | XIVKit",
       "description": "Track your FFXIV Main Scenario Quest progress from A Realm Reborn through Dawntrail. Your current quest lives in the page link so you can paste it to friends, and you can export a PNG progress card."
+    },
+    "currencyPlanner": {
+      "title": "FFXIV Currency Planner: What to Buy Before Evercold | XIVKit",
+      "description": "Pick an FFXIV currency (tomestones, scrips, bicolor gemstones, seals, MGP and more) and see what to buy with it before Evercold: the best items for gil with live market prices, what's worth collecting, and whether to spend it before 8.0."
     }
   }
 }

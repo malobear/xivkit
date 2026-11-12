@@ -30,6 +30,7 @@ const GUIDES = {
   keyboundBrawler: { file: "keybound-brawler.html", name: "Keybound Brawler: The Grind Math" },
   jumpPuzzleMacros: { file: "jump-puzzle-macros.html", name: "Jump Puzzle Macros" },
   fanfestBingo: { file: "fanfest-bingo.html", name: "Fan Fest Keynote Bingo Maker" },
+  currencyPlanner: { file: "currency-planner.html", name: "Currency Planner: What to Buy Before Evercold" },
 };
 
 const HEADING = "Related guides";
@@ -39,6 +40,7 @@ const RELATED = {
   retainerVentures: [
     ["inventoryDecluttering", "Retainers fill your bags fast. Sort what to keep, bank, or discard before the haul piles up."],
     ["tradeInMounts", "Turn venture gil into a mount: which trade-in mounts are worth grinding, and which to just buy."],
+    ["currencyPlanner", "Sitting on tomestones or scrips too? See which items turn them into the most gil."],
   ],
   inventoryDecluttering: [
     ["retainerVentures", "Put your retainer slots to work: every venture ranked by what it earns on the market board."],
@@ -48,6 +50,7 @@ const RELATED = {
     ["huntForAstronomy", "Another event shop with a mount in it, and a straight call on what is worth the tomes."],
     ["retainerVentures", "Need gil to buy the mats? See which retainer ventures earn the most on your world."],
     ["keyboundBrawler", "Another event shop with a mount: what each reward costs in MGC and how many runs it takes."],
+    ["currencyPlanner", "Everything else your currencies buy, ranked by what it sells for on the market board."],
   ],
   huntForAstronomy: [
     ["tradeInMounts", "Weighing the mount here? Compare it with every other mount you can trade in for."],
@@ -60,6 +63,11 @@ const RELATED = {
   jumpPuzzleMacros: [
     ["inventoryDecluttering", "Another quality-of-life guide: free up bag and retainer space before your next trip."],
     ["retainerVentures", "Put your retainers to work while you practice: every venture ranked by market board gil."],
+  ],
+  currencyPlanner: [
+    ["tradeInMounts", "Some currencies buy mounts. See every trade-in mount with a straight grind-or-buy verdict."],
+    ["retainerVentures", "More gil before Evercold: every retainer venture ranked by what it earns on your world."],
+    ["inventoryDecluttering", "Clearing out before launch? Decide what to keep, bank, or discard."],
   ],
   fanfestBingo: [
     ["huntForAstronomy", "Another event to plan for: every Hunt for Astronomy reward, and whether it is worth the tomes."],

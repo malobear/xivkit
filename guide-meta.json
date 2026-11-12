@@ -32,5 +32,9 @@
   "msq-tracker": {
     "patch": "7.57",
     "updated": "2026-11-02"
+  },
+  "currency-planner": {
+    "patch": null,
+    "updated": "2026-11-11"
   }
 }

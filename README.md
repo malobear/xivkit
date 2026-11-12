@@ -210,6 +210,19 @@ icon paths, all from XIVAPI). The "Leveling and gear" tab shows example prices f
 Refresh the snapshot now and then with `pnpm snapshot` (Excalibur) or
 `pnpm snapshot <world>`, and commit it: the file carries its own date, which the page shows.
 
+### Currency planner data
+
+`currency-planner.html` reads `data/currencies/index.json` plus one file per currency
+(`data/currencies/<key>.json`), so a visitor only downloads the currency they pick. After a
+patch, run `pnpm currencies` and commit the result. Vendors and trade costs come from FFXIV
+Teamcraft's extracted shop data, which decodes the game's tomestone and scrip slots (they
+shift every patch) and only keeps vendors an NPC actually opens. Item names in all four
+languages, icons, tradeability and categories come from XIVAPI. To add a currency, add it to
+`CURRENCIES` at the top of `scripts/currency-shops.mjs` and its group, spend-or-keep verdict
+(`VERDICT` in the page) and any note under `cp.notes` in the four `i18n/*.json` files. The
+verdicts are a judgment call based on past expansions: revisit them when the 8.0 patch notes
+are out.
+
 ### MSQ tracker data
 
 `msq-tracker.html` reads `msq.json`. After a patch that adds Main Scenario Quests, run

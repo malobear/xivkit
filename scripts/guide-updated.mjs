@@ -28,6 +28,7 @@ const AFTER = {
   "jump-puzzle-macros": /^\s*<p>A macro-and-hotbar trick.*<\/p>$/m,
   "fanfest-bingo": /^\s*<p class="lede">Chart your predictions.*<\/p>$/m,
   "msq-tracker": /^\s*<p class="lede" data-i18n="pages\.msqTracker\.lede">.*<\/p>$/m,
+  "currency-planner": /^\s*<p class="lede" data-i18n="cp\.lede">.*<\/p>$/m,
   "inventory-decluttering": /^<p>Staring at a full bag\?.*<\/p>$/m,
 };
 
