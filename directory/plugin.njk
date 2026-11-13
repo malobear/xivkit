@@ -34,20 +34,7 @@ eleventyComputed:
       <h2 id="about-h">About {{ plugin.name }}</h2>
       <p>{{ plugin.description }}</p>
     </section>
-    {% endif %}{% set guide = usage[plugin.slug] %}{% if guide %}
-
-    <section class="usage" aria-labelledby="usage-h">
-      <h2 id="usage-h">Commands and tips</h2>
-      <p>{{ guide.intro | safe }}</p>
-      {% for g in guide.groups %}
-      <h3>{{ g.title }}</h3>
-      <dl class="cmds">{% for c in g.commands %}
-        <div><dt><code>{{ c.cmd }}</code>{% if c.extra %} <span class="badge badge-test">Not in the help</span>{% endif %}</dt><dd>{{ c.does | safe }}{% if c.ex and c.ex not in c.does %} Example: <code>{{ c.ex }}</code>{% endif %}</dd></div>{% endfor %}
-      </dl>
-      {% if g.note %}<p class="sub">{{ g.note | safe }}</p>{% endif %}
-      {% endfor %}
-      <p class="sub usage-src">Written from {{ plugin.name }}'s source code as of {{ guide.sourceDate }}{% if guide.checkedInGame %} and checked in game on {{ guide.checkedInGame }}{% endif %}. Commands can change when the plugin updates.{% if guide.authorList %} {{ guide.authorList | safe }}{% endif %}</p>
-    </section>{% endif %}
+    {% endif %}
 
     {% if plugin.images.length %}
     <section aria-labelledby="shots-h">
@@ -79,7 +66,20 @@ eleventyComputed:
       <h2 id="install-h">Can you install it?</h2>
       <p class="warn">{% if plugin.status == "outdated" %}Not right now. {{ plugin.name }} was last built for Dalamud API {{ plugin.apiLevel }}, and current Dalamud is API {{ meta.api }}, so the installer lists it as outdated and won't install it until the author releases an update.{% else %}Not right now. {{ plugin.name }} was last built for Dalamud API {{ plugin.apiLevel }}, and current Dalamud is API {{ meta.api }}, so the installer doesn't list it at all. It will come back if the author updates it.{% endif %}{% set alt = plugins | similar(plugin) %}{% if alt.length %} In the meantime, the similar plugins below do work.{% endif %}</p>
       {% endif %}
-    </section>
+    </section>{% set guide = usage[plugin.slug] %}{% if guide %}
+
+    <section class="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h">Commands and tips</h2>
+      <p>{{ guide.intro | safe }}</p>
+      {% for g in guide.groups %}
+      <h3>{{ g.title }}</h3>
+      <dl class="cmds">{% for c in g.commands %}
+        <div><dt><code>{{ c.cmd }}</code>{% if c.extra %} <span class="badge badge-test">Not in the help</span>{% endif %}</dt><dd>{{ c.does | safe }}{% if c.ex and c.ex not in c.does %} Example: <code>{{ c.ex }}</code>{% endif %}</dd></div>{% endfor %}
+      </dl>
+      {% if g.note %}<p class="sub">{{ g.note | safe }}</p>{% endif %}
+      {% endfor %}
+      <p class="sub usage-src">Written from {{ plugin.name }}'s source code as of {{ guide.sourceDate }}{% if guide.checkedInGame %} and checked in game on {{ guide.checkedInGame }}{% endif %}. Commands can change when the plugin updates.{% if guide.authorList %} {{ guide.authorList | safe }}{% endif %}</p>
+    </section>{% endif %}
 
     {% set more = plugins | similar(plugin) %}
     {% if more.length %}
