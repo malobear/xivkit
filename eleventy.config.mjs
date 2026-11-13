@@ -1,6 +1,7 @@
 // Builds the plugin directory: directory/ (templates + data) -> plugins/ (committed output).
 // Nothing else on the site goes through Eleventy. Run with `pnpm plugins:build`.
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 export default function (eleventyConfig) {
   // Hand-written command guides, keyed by plugin slug (directory/content/usage.json). Kept out of
@@ -11,6 +12,11 @@ export default function (eleventyConfig) {
   // Each plugin's own help text, copied from its released DLL by scripts/plugins-help.mjs.
   eleventyConfig.addGlobalData("pluginHelp", () =>
     JSON.parse(readFileSync(new URL("./directory/content/plugin-help.json", import.meta.url), "utf8")));
+
+  // ?v=<hash of the file> on the directory's CSS and JS, so a deploy never pairs new pages with a
+  // stylesheet the browser cached from before (GitHub Pages caches for 10 minutes).
+  eleventyConfig.addFilter("assetVersion", (file) =>
+    createHash("sha1").update(readFileSync(new URL("./" + file, import.meta.url))).digest("hex").slice(0, 10));
 
   eleventyConfig.addPassthroughCopy({ "directory/directory.css": "directory.css" });
   eleventyConfig.addPassthroughCopy({ "directory/directory.js": "directory.js" });
