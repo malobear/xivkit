@@ -190,3 +190,4 @@ html:has(.viewer[open]){overflow:hidden}
 .author-name{font-weight:600;overflow-wrap:anywhere}
 .author-stats{font-size:13px;color:var(--muted)}
 .author-head{margin-bottom:20px}
+.cats .chip-authors{border-style:dashed}

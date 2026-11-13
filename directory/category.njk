@@ -22,6 +22,7 @@ eleventyComputed:
 <div class="cats" role="group" aria-label="Categories">
   <a class="chip" href="/plugins/">All <span>{{ meta.count }}</span></a>
   {% for c in categories %}<a class="chip" href="/plugins/category/{{ c.slug }}/"{% if c.slug == cat.slug %} aria-current="page"{% endif %}>{{ c.name }} <span>{{ c.count }}</span></a>{% endfor %}
+  <a class="chip chip-authors" href="/plugins/authors/">Authors <span>{{ authors.length }}</span></a>
 </div>
 {% if plugins | inCategory(cat.slug) | thirdParty | length %}{{ legend() }}{% endif %}
 
