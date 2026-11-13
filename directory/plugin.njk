@@ -6,8 +6,8 @@ pagination:
   alias: plugin
 permalink: "/{{ plugin.slug }}/index.html"
 eleventyComputed:
-  pageTitle: "{{ plugin.name }}: FFXIV Dalamud plugin | XIVKit"
-  pageDescription: "{{ plugin.punchline | trunc(150) }} {{ plugin.name }} by {{ plugin.author }}: {{ plugin.downloads | num }} installs, updated {{ plugin.lastUpdate | isoDate }}."
+  pageTitle: "{{ plugin.name }}{{ ' commands and guide' if usage[plugin.slug] }}: FFXIV Dalamud plugin | XIVKit"
+  pageDescription: "{% if usage[plugin.slug] %}{{ usage[plugin.slug].description }}{% else %}{{ plugin.punchline | trunc(150) }} {{ plugin.name }} by {{ plugin.author }}: {{ plugin.downloads | num }} installs, updated {{ plugin.lastUpdate | isoDate }}.{% endif %}"
   canonicalPath: "{{ plugin.slug }}/"
   isIndex: false
   noindex: "{{ 'true' if plugin.status == 'unavailable' else 'false' }}"
@@ -34,7 +34,20 @@ eleventyComputed:
       <h2 id="about-h">About {{ plugin.name }}</h2>
       <p>{{ plugin.description }}</p>
     </section>
-    {% endif %}
+    {% endif %}{% set guide = usage[plugin.slug] %}{% if guide %}
+
+    <section class="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h">Commands and tips</h2>
+      <p>{{ guide.intro | safe }}</p>
+      {% for g in guide.groups %}
+      <h3>{{ g.title }}</h3>
+      <dl class="cmds">{% for c in g.commands %}
+        <div><dt><code>{{ c.cmd }}</code>{% if c.extra %} <span class="badge badge-test">Not in the help</span>{% endif %}</dt><dd>{{ c.does | safe }}{% if c.ex and c.ex not in c.does %} Example: <code>{{ c.ex }}</code>{% endif %}</dd></div>{% endfor %}
+      </dl>
+      {% if g.note %}<p class="sub">{{ g.note | safe }}</p>{% endif %}
+      {% endfor %}
+      <p class="sub usage-src">Written from {{ plugin.name }}'s source code as of {{ guide.sourceDate }}{% if guide.checkedInGame %} and checked in game on {{ guide.checkedInGame }}{% endif %}. Commands can change when the plugin updates.{% if guide.authorList %} {{ guide.authorList | safe }}{% endif %}</p>
+    </section>{% endif %}
 
     {% if plugin.images.length %}
     <section aria-labelledby="shots-h">

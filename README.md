@@ -161,6 +161,15 @@ round badge on their icon and title, a "Third-party" filter (off by default, `?t
 install step with a copy button for the repository address. Add a repo by adding one line there
 and running `pnpm plugins`.
 
+Some plugin pages get a hand-written "Commands and tips" section from
+`directory/content/usage.json`, keyed by plugin slug, for popular plugins whose own docs don't
+list their chat commands. Each entry has an intro, groups of commands (`cmd`, `does`, an optional
+`ex` example, and `extra: true` for commands missing from the plugin's own in-game help), and
+`sourceDate`/`checkedInGame` for the footnote. A plugin with an entry also gets "commands and
+guide" in its title and the entry's `description` as its meta description. Work commands out from
+the plugin's source (where it registers them and parses the arguments), not by guessing, and check
+them in game before setting `checkedInGame`. Then run `pnpm plugins:build`.
+
 A GitHub Action (`.github/workflows/plugins-refresh.yml`) runs `pnpm plugins` every Monday and commits any changes to `main`. It can also be started by hand from the Actions tab.
 
 ### Searching / sharing a filtered view

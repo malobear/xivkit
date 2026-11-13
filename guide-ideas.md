@@ -214,6 +214,12 @@ There's no way to tell from the file alone whether a string is a command the plu
 adds or a game command it types. It also means downloading ~500 zips (Allagan Tools
 alone is 8MB).
 
+Update (2026-11-12): reading the source works where the DLL scan didn't. Lifestream's README
+lists no commands, but its source registers `/li` and `/lifestream` (`EzCmd.Add`), keeps a help
+list in `Lang.cs`, and parses about ten subcommands that list leaves out (`stop`, `inn`, `occult`,
+instance numbers, `fcgc`, character switching with `@`). The plugin page section now exists
+(`directory/content/usage.json`, rendered by `directory/plugin.njk`), with Lifestream as the pilot.
+
 Plan if picked up:
 1. A one-off candidates script (not part of every fetch): scan each plugin's DLL
    (both string tables) and README, filter out known game and Dalamud commands, and

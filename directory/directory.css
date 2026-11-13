@@ -141,3 +141,14 @@ h2{font-family:var(--font-sans);font-weight:700;font-size:clamp(22px,3vw,28px);l
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 html:has(.viewer[open]){overflow:hidden}
+
+/* Commands and tips (directory/content/usage.json) */
+.usage h3{font-size:17px;margin:22px 0 6px}
+.cmds{margin:0 0 6px;max-width:72ch}
+.cmds div{padding:8px 0;border-bottom:1px solid var(--border)}
+.cmds div:last-child{border-bottom:0}
+.cmds dt code{font-size:15px}
+.cmds dd{margin:4px 0 0;font-size:15px}
+.cmds dd code{white-space:nowrap}
+.cmds .badge{margin-left:4px}
+.usage-src{margin-top:18px}

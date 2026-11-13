@@ -1,6 +1,14 @@
 // Builds the plugin directory: directory/ (templates + data) -> plugins/ (committed output).
 // Nothing else on the site goes through Eleventy. Run with `pnpm plugins:build`.
+import { readFileSync } from "node:fs";
+
 export default function (eleventyConfig) {
+  // Hand-written command guides, keyed by plugin slug (directory/content/usage.json). Kept out of
+  // _data/ because the fetch script owns that folder.
+  eleventyConfig.addGlobalData("usage", () =>
+    JSON.parse(readFileSync(new URL("./directory/content/usage.json", import.meta.url), "utf8")));
+  eleventyConfig.addWatchTarget("./directory/content/usage.json");
+
   eleventyConfig.addPassthroughCopy({ "directory/directory.css": "directory.css" });
   eleventyConfig.addPassthroughCopy({ "directory/directory.js": "directory.js" });
 

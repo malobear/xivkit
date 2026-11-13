@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lifestream: FFXIV Dalamud plugin | XIVKit</title>
-<meta name="description" content="A plugin to speed up Aethernet travel and World changing. Lifestream by NightmareXIV: 1,669,960 installs, updated 2026-10-29.">
+<title>Lifestream commands and guide: FFXIV Dalamud plugin | XIVKit</title>
+<meta name="description" content="Every Lifestream chat command with examples: world and data center travel, housing, Grand Company, inns, instances, and the shortcuts its own help leaves out.">
 <link rel="canonical" href="https://xivkit.com/plugins/lifestream/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
@@ -21,13 +21,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XIVKit">
-<meta property="og:title" content="Lifestream: FFXIV Dalamud plugin | XIVKit">
-<meta property="og:description" content="A plugin to speed up Aethernet travel and World changing. Lifestream by NightmareXIV: 1,669,960 installs, updated 2026-10-29.">
+<meta property="og:title" content="Lifestream commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta property="og:description" content="Every Lifestream chat command with examples: world and data center travel, housing, Grand Company, inns, instances, and the shortcuts its own help leaves out.">
 <meta property="og:url" content="https://xivkit.com/plugins/lifestream/">
 <meta property="og:image" content="https://xivkit.com/og-plugins.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lifestream: FFXIV Dalamud plugin | XIVKit">
-<meta name="twitter:description" content="A plugin to speed up Aethernet travel and World changing. Lifestream by NightmareXIV: 1,669,960 installs, updated 2026-10-29.">
+<meta name="twitter:title" content="Lifestream commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta name="twitter:description" content="Every Lifestream chat command with examples: world and data center travel, housing, Grand Company, inns, instances, and the shortcuts its own help leaves out.">
 <meta name="twitter:image" content="https://xivkit.com/og-plugins.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,6 +69,82 @@
       <p>- One click to teleport to any world or aethernet destination - Click on aetheryte shards inside zone map to teleport to them</p>
     </section>
     
+
+    <section class="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h">Commands and tips</h2>
+      <p>Almost everything in Lifestream runs through one chat command, <code>/li</code>, followed by where you want to go. The plugin's README doesn't list any of them, and the Help tab inside the plugin (open it with <code>/lifestream</code>) misses a few. Commands marked <span class="badge badge-test">Not in the help</span> aren't in that tab at all. Every command also works in a macro, so a hotbar button for <code>/li fc</code> or <code>/li mb</code> is one click from anywhere.</p>
+      
+      <h3>Worlds and data centers</h3>
+      <dl class="cmds">
+        <div><dt><code>/li</code></dt><dd>Go back to your home world. You can change what a bare <code>/li</code> does under Settings (open the world list, open the settings, or nothing).</dd></div>
+        <div><dt><code>/li &lt;world&gt;</code></dt><dd>Go to a world, on your data center or another one. The start of the name is enough, so <code>/li bal</code> is Balmung. Worlds on your current data center are checked first, so type enough letters to tell similar names apart.</dd></div>
+        <div><dt><code>/li &lt;data center&gt;</code></dt><dd>Go to a random world on that data center. Example: <code>/li light</code></dd></div>
+        <div><dt><code>/li w</code></dt><dd>Open Lifestream's world travel window and pick a world from the list. <code>/li world</code> and <code>/li travel</code> do the same.</dd></div>
+        <div><dt><code>/li stop</code> <span class="badge badge-test">Not in the help</span></dt><dd>Cancel whatever Lifestream is doing, such as a trip that's stuck in a queue.</dd></div>
+      </dl>
+      <p class="sub">Data center travel is on by default. Lifestream leaves your party when it needs to; you can turn that and data center travel off in Settings.</p>
+      
+      <h3>Aetherytes and the aethernet</h3>
+      <dl class="cmds">
+        <div><dt><code>/li &lt;aethernet shard&gt;</code></dt><dd>In a city, go to an aethernet shard by part of its name. In Ul'dah, <code>/li sapphire</code> takes you to the Sapphire Avenue Exchange.</dd></div>
+        <div><dt><code>/li tp &lt;aetheryte&gt;</code> <span class="badge badge-test">Not in the help</span></dt><dd>Teleport to an aetheryte by part of its name, the same as picking it from the Teleport list. Example: <code>/li tp tuliyollal</code></dd></div>
+        <div><dt><code>/li &lt;world&gt;, tp &lt;aetheryte&gt;</code></dt><dd>Go to another world, then teleport straight to an aetheryte there. Example: <code>/li bal, tp kugane</code></dd></div>
+      </dl>
+      <p class="sub">You can also click an aethernet shard on the zone map to go there, without typing anything.</p>
+      
+      <h3>Market board</h3>
+      <dl class="cmds">
+        <div><dt><code>/li mb</code></dt><dd>Go to a market board.</dd></div>
+        <div><dt><code>/li &lt;world&gt; mb</code></dt><dd>Go to another world and straight to its market board, for checking or buying on a world you don't live on. Example: <code>/li bal mb</code></dd></div>
+      </dl>
+      
+      
+      <h3>Housing</h3>
+      <dl class="cmds">
+        <div><dt><code>/li home</code></dt><dd>Go to your own house. <code>/li house</code> and <code>/li private</code> do the same.</dd></div>
+        <div><dt><code>/li fc</code></dt><dd>Go to your Free Company's house.</dd></div>
+        <div><dt><code>/li ws</code></dt><dd>Go to your Free Company's workshop, all the way inside.</dd></div>
+        <div><dt><code>/li apt</code></dt><dd>Go to your apartment.</dd></div>
+        <div><dt><code>/li shared</code></dt><dd>Go to a house you share with someone else.</dd></div>
+        <div><dt><code>/li auto</code></dt><dd>Go to whichever of your homes you set as preferred in Settings (house, shared, FC or apartment).</dd></div>
+        <div><dt><code>/li &lt;district&gt; &lt;ward&gt; &lt;plot&gt;</code></dt><dd>Go to any plot on your current world. Districts are <code>mist</code>, <code>lavender</code>, <code>goblet</code>, <code>shirogane</code> and <code>empyreum</code>. Example: <code>/li mist 5 12</code></dd></div>
+        <div><dt><code>/li &lt;world&gt; &lt;district&gt; &lt;ward&gt; &lt;plot&gt;</code></dt><dd>Go to a plot on another world, useful for venues and friends' houses. Example: <code>/li bal goblet 3 30</code></dd></div>
+        <div><dt><code>/li &lt;saved address&gt;</code> <span class="badge badge-test">Not in the help</span></dt><dd>Give an Address Book entry an alias and it becomes its own command. Save a venue as <code>venue</code> and <code>/li venue</code> takes you there from anywhere.</dd></div>
+      </dl>
+      <p class="sub">For the house commands to walk you to the door, register your houses once in the plugin's House Registration tab (stand on the plot, then record the path to the entrance).</p>
+      
+      <h3>Grand Company and inns</h3>
+      <dl class="cmds">
+        <div><dt><code>/li gc</code></dt><dd>Go to your Grand Company's headquarters, for seal turn-ins and expert delivery.</dd></div>
+        <div><dt><code>/li gc &lt;company&gt;</code></dt><dd>Go to a specific Grand Company: <code>mael</code>, <code>adder</code> or <code>flames</code>. Example: <code>/li gc flames</code></dd></div>
+        <div><dt><code>/li gcc</code></dt><dd>Go to the company chest in your Grand Company's city.</dd></div>
+        <div><dt><code>/li hc</code></dt><dd>Same as <code>/li gc</code>, but goes back to your home world first. <code>/li hcc</code> does the same for the company chest.</dd></div>
+        <div><dt><code>/li fcgc</code> <span class="badge badge-test">Not in the help</span></dt><dd>Go to your Free Company's Grand Company instead of your own, for FC seal turn-ins when the two differ.</dd></div>
+        <div><dt><code>/li inn</code> <span class="badge badge-test">Not in the help</span></dt><dd>Go to your inn room on the world you're on.</dd></div>
+        <div><dt><code>/li hinn</code> <span class="badge badge-test">Not in the help</span></dt><dd>Go back to your home world, then to your inn room.</dd></div>
+        <div><dt><code>/li inn &lt;number&gt;</code> <span class="badge badge-test">Not in the help</span></dt><dd>Go to a specific city's inn. Type a number that's too high, like <code>/li inn 99</code>, to see the list. Example: <code>/li inn 2</code></dd></div>
+      </dl>
+      <p class="sub">Walking to the Grand Company counter uses the optional vnavmesh plugin. Without it Lifestream still teleports you to the right city.</p>
+      
+      <h3>Instances and special areas</h3>
+      <dl class="cmds">
+        <div><dt><code>/li &lt;instance number&gt;</code> <span class="badge badge-test">Not in the help</span></dt><dd>Switch to that instance of the zone you're in, when the zone has instances. Handy for hunts and FATEs. Example: <code>/li 2</code></dd></div>
+        <div><dt><code>/li cosmic</code></dt><dd>Go to Cosmic Exploration, going back to your home world first if needed.</dd></div>
+        <div><dt><code>/li occult</code> <span class="badge badge-test">Not in the help</span></dt><dd>Go to the Occult Crescent.</dd></div>
+        <div><dt><code>/li island</code></dt><dd>Go to your Island Sanctuary.</dd></div>
+        <div><dt><code>/li firmament</code></dt><dd>Go to the Firmament in Ishgard.</dd></div>
+      </dl>
+      
+      
+      <h3>Chaining and switching characters</h3>
+      <dl class="cmds">
+        <div><dt><code>/li &lt;world&gt; &lt;shortcut&gt;</code> <span class="badge badge-test">Not in the help</span></dt><dd>Most shortcuts above can follow a world name, and run once you arrive. <code>/li bal gc</code> goes to Balmung and then your Grand Company. Use a comma for anything longer: <code>/li bal, venue</code>.</dd></div>
+        <div><dt><code>/li &lt;first&gt; &lt;last&gt;@&lt;world&gt;</code> <span class="badge badge-test">Not in the help</span></dt><dd>Log out and back in as another of your characters on the same account. Add a world after it to travel there once logged in. Example: <code>/li Jane Doe@Balmung</code></dd></div>
+      </dl>
+      <p class="sub">Build your own multi-step routes in the Custom Alias tab, and run them with <code>/li</code> plus the alias name.</p>
+      
+      <p class="sub usage-src">Written from Lifestream's source code as of 2026-10-16. Commands can change when the plugin updates. The Help tab in <code>/lifestream</code> has the author's own list.</p>
+    </section>
 
     
 
