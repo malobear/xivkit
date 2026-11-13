@@ -17,9 +17,9 @@
       ]
     ]
   },
-  "glamaholic": {
+  "drawers": {
     "help": {
-      "/glamaholic": "Toggle visibility of the Glamaholic window"
+      "/drawers": null
     }
   }
 }

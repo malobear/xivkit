@@ -76,6 +76,7 @@ export function openAssembly(b) {
     return { name: str(rd(r + parentSize, strIdx)), cls };
   };
   const methodName = (i) => str(rd(row(0x06, i) + 8, strIdx));
+  const fieldName = (i) => str(rd(row(0x04, i) + 2, strIdx));
 
   // The type a MethodDef belongs to: the TypeDef whose MethodList range contains it. Worked out
   // once for every method, since the TypeDef rows are sorted by MethodList.
@@ -122,7 +123,7 @@ export function openAssembly(b) {
     }
   }
 
-  return { us, memberRef, methodName, methods, attributes };
+  return { us, memberRef, methodName, fieldName, methods, attributes };
 }
 
 // The fixed string arguments of an attribute value blob: prolog 0x0001, then each argument. Handles
@@ -150,8 +151,9 @@ export function attributeStrings(v) {
   return s ? [s] : [];
 }
 
-// The string loads and method calls in a method body, in order. This scans for the byte patterns
-// of ldstr (0x72 + string token) and call / callvirt / newobj (0x28 / 0x6F / 0x73 + MemberRef or
+// The string loads, field loads and method calls in a method body, in order. This scans for the
+// byte patterns of ldstr (0x72 + string token), ldfld / ldflda / ldsfld / ldsflda (0x7B-0x7F +
+// Field or MemberRef token) and call / callvirt / newobj (0x28 / 0x6F / 0x73 + MemberRef or
 // MethodDef token) rather than decoding every opcode, which is plenty for command registration.
 export function events(asm, code) {
   const out = [];
@@ -165,9 +167,62 @@ export function events(asm, code) {
         const m = tbl === 0x0a ? asm.memberRef(tok) : { name: asm.methodName(tok), cls: "" };
         out.push({ t: "call", name: m.name, cls: m.cls }); i += 4;
       } catch {}
+    } else if (op >= 0x7b && op <= 0x7f && op !== 0x7d && (tbl === 0x04 || tbl === 0x0a) && tok) {
+      try { out.push({ t: "field", name: tbl === 0x04 ? asm.fieldName(tok) : asm.memberRef(tok).name }); i += 4; } catch {}
     }
   }
   return out;
+}
+
+// Rebuilds a help message built at run time from text and the plugin's name, such as
+// $"Toggle visibility of the {Plugin.Name} window" or string.Format("Open {0} settings", Name).
+// `exprEnd` is the index of the last event of the expression (the Concat / Format /
+// ToStringAndClear call). Returns null unless every piece is literal text or the plugin's name,
+// so an unknown value never ends up as a gap in the sentence.
+const NAME_GETTER = /^get_(Name|PluginName|DisplayName)$/;
+const NAME_FIELD = /^(<)?_?(name|pluginName|displayName)(>k__BackingField)?$/i;
+const RECEIVER = /^get_(Manifest|PluginInterface|Interface|Instance|Plugin|Service|Services)$/;
+const RECEIVER_FIELD = /^(<)?_?(plugin(Interface)?|pi|dalamud(Plugin)?Interface|instance|manifest)(>k__BackingField)?$/i;
+const JOINER = (e) => (e.cls === "String" && /^(Concat|Format)$/.test(e.name)) || (e.cls === "DefaultInterpolatedStringHandler" && /^(\.ctor|AppendLiteral|AppendFormatted|ToStringAndClear)$/.test(e.name));
+// Also understood: Localize("key", "English fallback") calls (CheapLoc and similar), whose fallback
+// is the author's own English text, and getters that just return a literal (constGetters).
+function composeHelp(win, exprEnd, names, constGetters) {
+  const last = win[exprEnd];
+  const ends = last && last.t === "call" && ((JOINER(last) && /^(Concat|Format|ToStringAndClear)$/.test(last.name)) || last.name === "Localize" || constGetters.has(last.name));
+  if (!ends) return null;
+  const parts = [];
+  let i = exprEnd;
+  for (; i >= 0; i--) {
+    const e = win[i];
+    if (e.t === "str") {
+      // A "/cmd" literal ends the walk, unless the text after it starts with a space, as in
+      // "/altoholic" + " help for more options": then it's part of the sentence.
+      if (isCmd(e.v)) { if (parts[0] && /^\s/.test(parts[0].text)) parts.unshift({ text: e.v }); break; }
+      parts.unshift({ text: e.v });
+    }
+    else if (e.t === "call" && e.name === "Localize") {
+      const fb = win[i - 1], key = win[i - 2];
+      if (!fb || fb.t !== "str" || !key || key.t !== "str") return null;
+      parts.unshift({ text: fb.v });
+      i -= 2;
+    }
+    else if (e.t === "call" && constGetters.has(e.name)) parts.unshift({ text: constGetters.get(e.name) });
+    else if (e.t === "call" && JOINER(e)) { if (e.name === "Format") parts.format = true; }
+    else if (e.t === "call" && NAME_GETTER.test(e.name)) parts.unshift({ text: names.name });
+    else if (e.t === "call" && e.name === "get_InternalName") parts.unshift({ text: names.internalName });
+    else if (e.t === "field" && NAME_FIELD.test(e.name)) parts.unshift({ text: names.name });
+    else if ((e.t === "call" && RECEIVER.test(e.name)) || (e.t === "field" && RECEIVER_FIELD.test(e.name))) continue;
+    // The start of the expression: the object it's set on (new CommandInfo, a delegate), or the
+    // property set just before it (ShowInHelp = true, say).
+    else if (e.t === "call" && (e.name === ".ctor" || e.name.startsWith("set_"))) break;
+    else return null; // something else feeds into the text
+  }
+  if (!parts.length || parts.some((p) => p.text == null)) return null;
+  if (parts.format) {
+    const [fmt, ...args] = parts.map((p) => p.text);
+    return fmt.replace(/\{(\d+)\}/g, (m, n) => (args[n] ?? m));
+  }
+  return parts.map((p) => p.text).join("");
 }
 
 const isCmd = (s) => /^\/[A-Za-z][A-Za-z0-9_-]{0,30}$/.test(s);
@@ -177,9 +232,10 @@ const isCmd = (s) => /^\/[A-Za-z][A-Za-z0-9_-]{0,30}$/.test(s);
 // - ECommons' EzCmd.Add("/cmd", handler, "help")
 // - wrappers called Register / RegisterCommand / AddCommand taking ("/cmd", "help", ...)
 // - [Command("/cmd")] [Aliases(...)] [HelpMessage("...")] attributes on handler methods
-// help is null when it is built at run time (string concatenation, a translation lookup) rather
-// than written as one literal.
-export function findCommands(asm) {
+// help is null when it is built at run time from anything but text and the plugin's name (a
+// translation lookup, a setting) rather than written as one literal.
+// names: the plugin's display and internal name, used to rebuild help built from them.
+export function findCommands(asm, names = { name: "{Name}", internalName: "{InternalName}" }) {
   const found = new Map();
   const WRAPPERS = new Set(["Register", "RegisterCommand", "AddCommand"]);
   // Set when AddHandler is called with a command that isn't a literal, i.e. the plugin keeps its
@@ -188,13 +244,24 @@ export function findCommands(asm) {
   const all = [];
   // Property getters per class, for the command-class style: { owner: { getterName: [strings] } }.
   const getters = new Map();
+  // Getters that only return a literal, by name, for help built from them. A name used by several
+  // getters returning different text is left out, since a call can't be matched to one of them.
+  const constGetters = new Map(), clash = new Set();
   for (const m of asm.methods()) {
     const ev = events(asm, m.code);
     all.push(ev);
     if (m.name.startsWith("get_")) {
       if (!getters.has(m.owner)) getters.set(m.owner, {});
-      getters.get(m.owner)[m.name.slice(4)] = { strs: ev.filter((x) => x.t === "str").map((x) => x.v), calls: ev.some((x) => x.t === "call") };
+      const strs = ev.filter((x) => x.t === "str").map((x) => x.v), calls = ev.some((x) => x.t !== "str");
+      getters.get(m.owner)[m.name.slice(4)] = { strs, calls };
+      if (strs.length === 1 && !calls) {
+        if (constGetters.has(m.name) && constGetters.get(m.name) !== strs[0]) clash.add(m.name);
+        constGetters.set(m.name, strs[0]);
+      }
     }
+  }
+  for (const n of clash) constGetters.delete(n);
+  for (const ev of all) {
     let since = 0;
     for (let i = 0; i < ev.length; i++) {
       const e = ev[i];
@@ -225,6 +292,7 @@ export function findCommands(asm) {
       if (dalamud) {
         const k = win.findIndex((x) => x.t === "call" && x.name === "set_HelpMessage");
         if (k > 0 && win[k - 1].t === "str" && !isCmd(win[k - 1].v)) help = win[k - 1].v;
+        else if (k > 0) help = composeHelp(win, k - 1, names, constGetters);
       } else {
         const last = win[win.length - 1];
         if (last && last.t === "str" && last !== cmdEv) help = last.v;

@@ -23,7 +23,7 @@ const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")) : {};
 const OFFICIAL = "https://kamori.goats.dev/Plugin/PluginMaster";
 const UA = { "user-agent": "xivkit-plugin-directory" };
 // Bump when scripts/lib/dotnet.mjs learns to find more, so every plugin is checked again.
-const SCAN = 4;
+const SCAN = 6;
 
 async function getJson(url) {
   const res = await fetch(url, { headers: UA });
@@ -57,7 +57,7 @@ async function commandsFor(plugin, entry) {
     const want = `${plugin.internalName}.dll`.toLowerCase();
     const dll = readdirSync(join(dir, "x"), { recursive: true }).map(String).find((f) => f.toLowerCase().replace(/\\/g, "/").split("/").pop() === want);
     if (!dll) throw new Error(`${want} not in the zip`);
-    return findCommands(openAssembly(readFileSync(join(dir, "x", dll))));
+    return findCommands(openAssembly(readFileSync(join(dir, "x", dll))), { name: plugin.name, internalName: plugin.internalName });
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
