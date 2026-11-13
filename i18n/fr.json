@@ -225,7 +225,8 @@
     "repairme": "Rappelle quand un équipement a besoin d'être réparé ou contient encore de la matéria à extraire avant de s'en débarrasser. Dans le dépôt de plugins par défaut",
     "simpletweaks": "Immense collection d'ajustements de confort activables individuellement ; plusieurs touchent directement l'inventaire, les gestionnaires et les infobulles. Dans le dépôt de plugins par défaut",
     "xivkitmsq": "Suis ta progression dans le scénario principal jusqu'au dernier patch, avec ta quête actuelle dans un lien à coller et une carte de progression PNG à partager",
-    "currencyplanner": "Choisissez une monnaie qui s'accumule (mémoquartz, assignats, gemmes bicolores, insignes, MGP) et voyez ce qu'elle achète : les meilleurs objets à revendre au prix du marché, ce qui vaut la peine d'être collectionné, et s'il faut la dépenser avant Evercold"
+    "currencyplanner": "Choisissez une monnaie qui s'accumule (mémoquartz, assignats, gemmes bicolores, insignes, MGP) et voyez ce qu'elle achète : les meilleurs objets à revendre au prix du marché, ce qui vaut la peine d'être collectionné, et s'il faut la dépenser avant Evercold",
+    "plugindirectory": "Tous les plugins Dalamud de la liste officielle et des dépôts tiers connus, classés par catégorie, avec les étapes d'installation et les commandes de chat de chaque plugin"
   },
   "pages": {
     "index": {
@@ -233,9 +234,9 @@
       "tagline": "Une liste évolutive des choses que j'utilise vraiment. Mise à jour à chaque fois que je trouve quelque chose qui vaut la peine d'être gardé.",
       "searchPlaceholder": "Rechercher un outil par nom, description ou tag...",
       "emptyStateText": "Aucun outil ne correspond à cette recherche.",
-      "footerLine1": "Vous avez trouvé quelque chose que je n'ai pas essayé ? Consultez la {watchlist}. À la recherche de plugins ? Consultez la {plugins}.",
+      "footerLine1": "Vous avez trouvé quelque chose que je n'ai pas essayé ? Consultez la {watchlist}. À la recherche de plugins ? Consultez l'{plugins}.",
       "watchlistLinkLabel": "watchlist",
-      "pluginsLinkLabel": "page des plugins",
+      "pluginsLinkLabel": "annuaire de plugins",
       "sections": {
         "market": "Marché & Économie",
         "progress": "Progression & Listes de vérification",

@@ -225,7 +225,8 @@
     "repairme": "Reminds you when gear needs repairing or still has materia to extract before you get rid of it. In the default plugin repo",
     "simpletweaks": "Huge, individually toggleable grab-bag of quality-of-life tweaks; several touch inventory, retainers, and tooltips directly. In the default plugin repo",
     "xivkitmsq": "Track your Main Scenario Quest progress through the latest patch, with your current quest in a link you can paste and a PNG progress card to share",
-    "currencyplanner": "Pick a currency you have piling up (tomestones, scrips, bicolor gemstones, seals, MGP) and see what it buys: the best items for gil at live prices, what's worth collecting, and whether to spend it before Evercold"
+    "currencyplanner": "Pick a currency you have piling up (tomestones, scrips, bicolor gemstones, seals, MGP) and see what it buys: the best items for gil at live prices, what's worth collecting, and whether to spend it before Evercold",
+    "plugindirectory": "Every Dalamud plugin from the official list and well-known third-party repositories, sorted into categories, with install steps and each plugin's chat commands"
   },
   "pages": {
     "index": {
@@ -235,7 +236,7 @@
       "emptyStateText": "No tools match that search.",
       "footerLine1": "Found something I haven't tried? See the {watchlist}. Looking for plugins? See the {plugins}.",
       "watchlistLinkLabel": "watchlist",
-      "pluginsLinkLabel": "plugins page",
+      "pluginsLinkLabel": "plugin directory",
       "sections": {
         "market": "Market & Economy",
         "progress": "Progress & Checklists",

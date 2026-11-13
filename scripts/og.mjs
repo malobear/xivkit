@@ -19,6 +19,7 @@ const DOMAIN = "xivkit.com";
 const CARDS = [
   { name: "tools", title: "XIVKit", description: "Curated FFXIV tools, calculators, and reference sites. Updated whenever something new is worth keeping.", tags: ["market", "crafting", "checklist", "glamour", "guides"] },
   { name: "plugins", title: "FFXIV Plugins", description: "Dalamud plugins I actually use, client-side tools for housing, chat, glamour, and more.", tags: ["housing", "chat", "glamour", "ui"] },
+  { name: "plugin-directory", title: "Dalamud plugin directory", description: "Every plugin from the official list and well-known third-party repos, with install steps and each plugin's chat commands.", tags: ["plugins", "commands", "install"] },
   { name: "watchlist", title: "FFXIV Watchlist", description: "Tools I've heard about or seen recommended but haven't tried myself yet.", tags: ["theorycrafting", "gear", "checklist"] },
   { name: "jump-puzzle-macros", title: "Jump Puzzle Macros", description: "Timed macro-and-hotbar technique for jumping exact, repeatable distances, with copyable macros and a calibration spot.", tags: ["guide", "macro"] },
   { name: "trade-in-mounts", title: "Trade-in mounts: grind vs. buy the mats", description: "Every trade-in mount, with live market prices and a straight verdict: grind it out, or buy your way there.", tags: ["guide", "mounts", "market"] },
