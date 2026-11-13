@@ -6,8 +6,17 @@
 // GitHub repo, because some authors release newer builds than the source they publish. A plugin's
 // help text is a string literal in its DLL, so this reads the DLL's user string heap (#US) and
 // picks the text out by the rule in usage.json:
-//   { "start": "...", "end": "..." }  one literal that contains start, cut from start to end
-//   { "prefix": "/qst " }               every literal that starts with prefix, one per line
+//   { "start": "...", "end": "...", "lead": "/cmd → " }
+//       one literal that contains start, cut from start to end, with lead put in front (for help
+//       text whose first line describes the bare command without naming it)
+//   { "prefix": "/qst " }        every literal that starts with prefix, one per line
+//   { "pairs": ["/cmd", ...] }   each command literal and the literal right after it, its help
+//                                message, as "/cmd → help"
+//   { "lines": [["/cmd", "help"], ...] }
+//       for plugins whose help isn't one block (attributes, resource files, settings windows):
+//       lines copied from the plugin's source at the commit the release was built from (the DLL's
+//       version string names it). The script checks every command and help text is still in the
+//       released DLL. A third item overrides what to look for: a string, or false to skip.
 // If a rule stops matching after an update, the script keeps the last good text and says so.
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync, existsSync } from "node:fs";
@@ -66,7 +75,31 @@ function userStrings(b) {
   return out;
 }
 
-function pick(strings, rule) {
+// Whether a string occurs anywhere in the DLL, as UTF-16 (string literals) or UTF-8 (attributes
+// and embedded resources).
+const inDll = (bytes, str) => bytes.includes(Buffer.from(str, "utf16le")) || bytes.includes(Buffer.from(str, "utf8"));
+
+function pick(strings, rule, bytes, warn) {
+  if (rule.lines) {
+    const missing = [];
+    for (const [cmd, help, check] of rule.lines) {
+      const root = cmd.split(" ")[0];
+      if (!inDll(bytes, root) && !inDll(bytes, root.replace(/^\//, ""))) missing.push(root);
+      const look = check === undefined ? help : check;
+      if (look && !inDll(bytes, look)) missing.push(look);
+    }
+    if (missing.length) { warn(`not in the release any more: ${[...new Set(missing)].map((m) => JSON.stringify(m)).join(", ")}`); return null; }
+    return rule.lines.map(([cmd, help]) => (help ? `${cmd} → ${help}` : cmd)).join("\n");
+  }
+  if (rule.pairs) {
+    const lines = [];
+    for (const cmd of rule.pairs) {
+      const i = strings.indexOf(cmd);
+      if (i < 0 || !strings[i + 1]) { warn(`${cmd} not found`); return null; }
+      lines.push(`${cmd} → ${strings[i + 1]}`);
+    }
+    return lines.join("\n");
+  }
   if (rule.start) {
     const s = strings.find((x) => x.includes(rule.start));
     if (!s) return null;
@@ -76,7 +109,7 @@ function pick(strings, rule) {
       if (e < 0) return null;
       text = text.slice(0, e + rule.end.length);
     }
-    return text;
+    return (rule.lead || "") + text;
   }
   if (rule.prefix) {
     const lines = [...new Set(strings.filter((x) => x.startsWith(rule.prefix)))];
@@ -107,7 +140,8 @@ for (const [slug, u] of wanted) {
   if (!plugin) { keep("not in plugins.json"); continue; }
   const entry = (await masterFor(plugin.source)).find((m) => m.InternalName === plugin.internalName);
   if (!entry?.DownloadLinkInstall) { keep("no download link"); continue; }
-  if (previous[slug]?.version === entry.AssemblyVersion) { out[slug] = previous[slug]; continue; }
+  const ruleKey = JSON.stringify(u.help);
+  if (previous[slug]?.version === entry.AssemblyVersion && previous[slug]?.rule === ruleKey) { out[slug] = previous[slug]; continue; }
 
   const dir = mkdtempSync(join(tmpdir(), "plugin-help-"));
   try {
@@ -120,9 +154,10 @@ for (const [slug, u] of wanted) {
     const dllName = `${plugin.internalName}.dll`.toLowerCase();
     const dll = readdirSync(join(dir, "x"), { recursive: true }).find((f) => String(f).toLowerCase().replace(/\\/g, "/").split("/").pop() === dllName);
     if (!dll) { keep(`${dllName} not in the zip`); continue; }
-    const text = pick(userStrings(readFileSync(join(dir, "x", String(dll)))), u.help);
+    const bytes = readFileSync(join(dir, "x", String(dll)));
+    const text = pick(userStrings(bytes), u.help, bytes, (m) => console.warn(`${slug}: ${m}`));
     if (!text) { keep("help rule matched nothing (did the plugin's help change?)"); continue; }
-    out[slug] = { version: entry.AssemblyVersion, text: tidy(text) };
+    out[slug] = { version: entry.AssemblyVersion, kind: u.help.lines ? "lines" : "verbatim", rule: ruleKey, text: tidy(text) };
     console.log(`${slug}: ${entry.AssemblyVersion}${previous[slug] && previous[slug].text !== out[slug].text ? " (help text changed, review usage.json extras)" : ""}`);
   } finally {
     rmSync(dir, { recursive: true, force: true });

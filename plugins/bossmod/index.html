@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boss Mod: FFXIV Dalamud plugin | XIVKit</title>
-<meta name="description" content="Don&amp;#39;t fail at raid mechanics anymore Boss Mod by veyn, xan_0: 2,855,779 installs, updated 2026-11-12.">
+<title>Boss Mod commands and guide: FFXIV Dalamud plugin | XIVKit</title>
+<meta name="description" content="Every BossMod (VBM) chat command from the plugin&amp;#39;s own help: settings, replays, autorotation presets, AI mode and macro queueing.">
 <link rel="canonical" href="https://xivkit.com/plugins/bossmod/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
@@ -21,13 +21,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XIVKit">
-<meta property="og:title" content="Boss Mod: FFXIV Dalamud plugin | XIVKit">
-<meta property="og:description" content="Don&amp;#39;t fail at raid mechanics anymore Boss Mod by veyn, xan_0: 2,855,779 installs, updated 2026-11-12.">
+<meta property="og:title" content="Boss Mod commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta property="og:description" content="Every BossMod (VBM) chat command from the plugin&amp;#39;s own help: settings, replays, autorotation presets, AI mode and macro queueing.">
 <meta property="og:url" content="https://xivkit.com/plugins/bossmod/">
 <meta property="og:image" content="https://xivkit.com/og-plugins.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Boss Mod: FFXIV Dalamud plugin | XIVKit">
-<meta name="twitter:description" content="Don&amp;#39;t fail at raid mechanics anymore Boss Mod by veyn, xan_0: 2,855,779 installs, updated 2026-11-12.">
+<meta name="twitter:title" content="Boss Mod commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta name="twitter:description" content="Every BossMod (VBM) chat command from the plugin&amp;#39;s own help: settings, replays, autorotation presets, AI mode and macro queueing.">
 <meta name="twitter:image" content="https://xivkit.com/og-plugins.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,6 +102,20 @@
       </ol>
       <p class="warn"><svg class="src-badge src-badge-inline" viewBox="0 0 20 20" role="img" aria-label="Third-party repository"><title>Third-party repository</title><circle cx="10" cy="10" r="10"/><g fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="5.4" r="1.5"/><circle cx="13.8" cy="5.4" r="1.5"/><circle cx="10" cy="14.6" r="1.5"/><path d="M6.2 6.9v.9a2.6 2.6 0 0 0 2.6 2.6h2.4a2.6 2.6 0 0 0 2.6-2.6v-.9M10 10.4v2.7"/></g></svg> Boss Mod comes from the Puni.sh (veyn) repository, not Dalamud's official list. Dalamud's team has not reviewed it. Only add repositories you trust, and remove the repository again if you stop using its plugins.</p>
       
+    </section>
+
+    <section class="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg>Commands</h2>
+      <p>BossMod runs from <code>/vbm</code>. Type a subcommand it doesn't know, like <code>/vbm help</code>, and it prints this same list in chat.</p>
+      
+      <figure class="ingame-help">
+        <div class="chat"><span>/vbm → show boss mod settings UI</span><span>/vbm r → show/hide replay management window</span><span>/vbm ar → toggle autorotation ui</span><span>/vbm ar clear → clear current preset; autorotation will do nothing unless plan is active</span><span>/vbm ar disable → force disable autorotation; no actions will be executed automatically even if plan is active</span><span>/vbm ar set &lt;preset&gt; → start executing specified preset, and deactivate others</span><span>/vbm ar toggle → force disable autorotation if not already; otherwise clear overrides</span><span>/vbm ar toggle &lt;preset&gt; → start executing specified preset unless it's already active; clear otherwise</span><span>/vbm ar activate &lt;preset&gt; → add specified preset to active list</span><span>/vbm ar deactivate &lt;preset&gt; → remove specified preset from active list</span><span>/vbm ar togglemulti &lt;preset&gt; → if specified preset is in active list, disable it, otherwise enable it</span><span>/vbm ai → toggle multibox ui</span><span>/vbm ai on → enable AI mode</span><span>/vbm ai off → disable AI mode</span><span>/vbm ai toggle → toggle AI mode</span><span>/vbm ai follow &lt;name&gt;/slot&lt;N&gt; → enable multibox mode and follow party member with specified name or at specified slot</span><span>/vbm cfg &lt;config-type&gt; &lt;field&gt; [&lt;value&gt;] → query or modify configuration setting</span><span>/vbm d → show debug UI</span><span>/vbm gc → execute C# garbage collector</span><span>/vbm clear-maps → clear all generated bitmaps (for pathfinding)</span><span>/vbm macro → enables VBM action queue inside macros (by default, any actions used in macros bypass the queue)</span><span>/vbm macro-off → disables VBM action queue inside a macro, if it has been enabled previously</span><span>/vbm helpme → gather diagnostic information</span><span>/vbmai → alias for /vbm ai</span></div>
+        <figcaption>Boss Mod's own command descriptions by veyn, xan_0, checked against the released plugin, version 7.5.8.1.</figcaption>
+      </figure>
+      
+      
+      
+      <p class="sub usage-src">Commands can change when the plugin updates.</p>
     </section>
 
     <section aria-labelledby="details-h">

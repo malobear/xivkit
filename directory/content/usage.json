@@ -23,5 +23,129 @@
       "You can also click an aethernet shard on the zone map to go there without typing anything."
     ],
     "checkedInGame": null
+  },
+  "simpletweaksplugin": {
+    "description": "Every Simple Tweaks chat command and the tweak it belongs to: /tweaks, /bait, /equipjob, /leaveduty, /levelingdungeon, /setoption, /usecollection and more.",
+    "intro": "Type <code>/tweaks</code> to open the settings. Every other command belongs to a tweak and only works once you turn that tweak on there (search for the command's name). Most of them can be renamed in the tweak's own settings. The descriptions below are the plugin's own.",
+    "help": { "lines": [
+      ["/tweaks", "Open config window for Simple Tweaks", "Open config window for "],
+      ["/bait <name or ID>", "Switches fishing baits."],
+      ["/chatvis show|hide|toggle", "Provides commands to hide the chat.", "Provides commands to hide the chat."],
+      ["/chrdir", "Print your character save directory to chat. '/chrdir open' to open the directory in explorer."],
+      ["/equipjob <job>", "Switches to the highest item-level gearset for a job."],
+      ["/equiprecommended", "Equips recommended gear."],
+      ["/estateaccess", "Adds a command to open the estate access configuration for the current estate."],
+      ["/estatelist <friend>", "Opens the estate list for one of your friends."],
+      ["/leaveduty", "Leave the current duty"],
+      ["/levelingdungeon", "Open the highest level leveling dungeon."],
+      ["/lights (0-5) [ssao-on | ssao-off] [save]", "Adjust the lighting of the house or apartment you are currently in.", "Adjust the lighting of the house or apartment you are currently in."],
+      ["/maincommand <command>", "Execute a Main Command"],
+      ["/minionaway", "Adds a command to dismiss your current minion."],
+      ["/phantomjob [job]", "Adds a command to switch phantom jobs within Occult Crescent"],
+      ["/pid", "Print your process id to chat."],
+      ["/playerplate", "Opens the character card for the selected character."],
+      ["/setoption <option> <value>", "Usage: /setoption <option> <value>"],
+      ["/stopcrafting", "Stops crafting without closing the crafting log."],
+      ["/updategearset", "Updates the active gearset with your current equipment."],
+      ["/usecollection <name or ID>", "Use a Collection item by name or ID. Use without parameters to list available items and IDs."]
+    ] }
+  },
+  "artisan": {
+    "description": "Every Artisan chat command from the plugin's own help: open lists, macros and Endurance, start a list by ID, toggle automatic mode.",
+    "intro": "All of Artisan's commands start with <code>/artisan</code>. Its README doesn't list them. This is the plugin's own help text, the same one Dalamud shows for the command in <code>/xlhelp</code>.",
+    "help": { "start": "Opens the Artisan menu.", "end": "Toggles Automatic Action Execution Mode on/off.", "lead": "/artisan → " }
+  },
+  "gatherbuddy": {
+    "description": "Every GatherBuddy chat command from the plugin's own help: /gather, /gatherbtn, /gathermin, /gatherfish, /gathergroup and /gbc.",
+    "intro": "GatherBuddy's main trick is <code>/gather</code> followed by an item name: it finds the nearest node, teleports you close and switches to the right gear. These are the plugin's own descriptions of each command.",
+    "help": { "pairs": ["/gatherbuddy", "/gather", "/gatherbtn", "/gathermin", "/gatherfish", "/gathergroup", "/gbc"] }
+  },
+  "inventorytools": {
+    "description": "Every Allagan Tools chat command from the plugin's own help: item lists, crafts, airships, submarines, retainer ventures, highlighting and more.",
+    "intro": "Allagan Tools has a command for almost every window, handy for macros. Several have a short alias, shown in brackets. These are the plugin's own descriptions.",
+    "help": { "lines": [
+      ["/allagantools (or /atools)", "Shows the allagan tools items list window."],
+      ["/openlist <list>", "Open/closes a window displaying the contents of a single list."],
+      ["/athighlight <list> (or /atf)", "Toggles the specified list's highlight on/off, turning off any other highlighting in the process."],
+      ["/atclearall [background|ui]", "Closes all list windows and clears all active highlighting. Pass in background or ui to close just the background or ui highlighting respectively."],
+      ["/moreinfo <item> (or /itemwindow)", "Opens the more information window for a specific item. Provide the name of the item or the ID of the item."],
+      ["/crafts", "Opens the allagan tools crafts window"],
+      ["/craftoverlay", "Toggles the crafting overlay window."],
+      ["/airships", "Opens the allagan tools airships window"],
+      ["/submarines", "Opens the allagan tools submarines window"],
+      ["/retainerventures", "Opens the allagan tools retainer ventures window"],
+      ["/duties (or /atduties)", "Shows the allagan tools duties window."],
+      ["/mobs (or /atmobs)", "Shows the allagan tools mobs compendium."],
+      ["/atnpcs", "Shows the allagan tools npcs window."],
+      ["/compendium (or /atc)", "Shows the allagan tools compendium window."],
+      ["/compendiumlist (or /atclt)", "Toggle a specific compendium list window."],
+      ["/chocobocolour (or /atcc)", "Toggles the chocobo colour calculator window."],
+      ["/atconfig", "Opens the allagan tools configuration window"],
+      ["/athelp", "Opens the allagan tools help window"]
+    ] }
+  },
+  "autohook": {
+    "description": "Every AutoHook chat command from the plugin's own help: turn it on and off, switch presets and bait, start casting, open the replay and fish data windows.",
+    "intro": "AutoHook's commands are handy in fishing macros, for example switching preset and bait before you cast. These are the plugin's own descriptions.",
+    "help": { "lines": [
+      ["/autohook (or /ahcfg)", "Opens Config Window"],
+      ["/ahon", "Enables AutoHook"],
+      ["/ahoff", "Disables AutoHook"],
+      ["/ahtg", "Toggles AutoHook On/Off"],
+      ["/ahstart", "Start casting with your selected preset"],
+      ["/ahpreset <preset name>", "Set custom preset by chat command -> /ahpreset presetName"],
+      ["/agpreset <preset name>", "Set Autogig preset by chat command -> /agpreset presetName"],
+      ["/ahbait <name or ID> (or /bait)", "Switches fishing baits (by Name or ID)"],
+      ["/ahreplay", "Opens Replay Window"],
+      ["/ahfish [fish name or ID]", "Opens the Fish Data window. Add an optional fish name or id to open to that fish."]
+    ] }
+  },
+  "bossmod": {
+    "description": "Every BossMod (VBM) chat command from the plugin's own help: settings, replays, autorotation presets, AI mode and macro queueing.",
+    "intro": "BossMod runs from <code>/vbm</code>. Type a subcommand it doesn't know, like <code>/vbm help</code>, and it prints this same list in chat.",
+    "help": { "lines": [
+      ["/vbm", "show boss mod settings UI"],
+      ["/vbm r", "show/hide replay management window"],
+      ["/vbm ar", "toggle autorotation ui"],
+      ["/vbm ar clear", "clear current preset; autorotation will do nothing unless plan is active"],
+      ["/vbm ar disable", "force disable autorotation; no actions will be executed automatically even if plan is active"],
+      ["/vbm ar set <preset>", "start executing specified preset, and deactivate others"],
+      ["/vbm ar toggle", "force disable autorotation if not already; otherwise clear overrides"],
+      ["/vbm ar toggle <preset>", "start executing specified preset unless it's already active; clear otherwise"],
+      ["/vbm ar activate <preset>", "add specified preset to active list"],
+      ["/vbm ar deactivate <preset>", "remove specified preset from active list"],
+      ["/vbm ar togglemulti <preset>", "if specified preset is in active list, disable it, otherwise enable it"],
+      ["/vbm ai", "toggle multibox ui"],
+      ["/vbm ai on", "enable AI mode"],
+      ["/vbm ai off", "disable AI mode"],
+      ["/vbm ai toggle", "toggle AI mode"],
+      ["/vbm ai follow <name>/slot<N>", "enable multibox mode and follow party member with specified name or at specified slot"],
+      ["/vbm cfg <config-type> <field> [<value>]", "query or modify configuration setting"],
+      ["/vbm d", "show debug UI"],
+      ["/vbm gc", "execute C# garbage collector"],
+      ["/vbm clear-maps", "clear all generated bitmaps (for pathfinding)"],
+      ["/vbm macro", "enables VBM action queue inside macros (by default, any actions used in macros bypass the queue)"],
+      ["/vbm macro-off", "disables VBM action queue inside a macro, if it has been enabled previously"],
+      ["/vbm helpme", "gather diagnostic information"],
+      ["/vbmai", "alias for /vbm ai", "alias for "]
+    ] }
+  },
+  "honorific": {
+    "description": "Every Honorific chat command: open the settings, enable or toggle titles, and force a custom title with its colour and glow.",
+    "intro": "Honorific's settings window has a Commands section with these same commands. The title commands work well in gearset macros, so a title can change with your job.",
+    "help": { "lines": [
+      ["/honorific", "Open the Honorific config window."],
+      ["/honorific title <enable|disable|toggle> <title>", "Enable, Disable, or Toggle a title on the current character."],
+      ["/honorific force set <title> | [prefix|suffix] | #<HexColor> | #<HexGlow>", "Sets a title that will override all other configured titles."],
+      ["/honorific force clear", "Clear the forced title."]
+    ] },
+    "extras": [
+      { "cmd": "/honorific random", "does": "Pick a new random title, for characters set to use random titles." }
+    ]
+  },
+  "autoretainer": {
+    "description": "Every AutoRetainer chat command from the plugin's own help: enable, MultiMode, relog to a character, sell items, expert delivery, armoire and dresser.",
+    "intro": "All of AutoRetainer's commands start with <code>/autoretainer</code>, or the shorter <code>/ays</code>. This is the plugin's own help text, the same one Dalamud shows for the command in <code>/xlhelp</code>.",
+    "help": { "start": "Open plugin interface", "end": "(requires Glamour Log plugin)", "lead": "/autoretainer → " }
   }
 }

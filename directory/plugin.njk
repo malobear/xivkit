@@ -74,12 +74,12 @@ eleventyComputed:
     </section>{% set guide = usage[plugin.slug] %}{% set help = pluginHelp[plugin.slug] %}{% if guide %}
 
     <section class="usage" aria-labelledby="usage-h">
-      <h2 id="usage-h">{{ icon("terminal") }}Commands and tips</h2>
+      <h2 id="usage-h">{{ icon("terminal") }}{{ "Commands and tips" if (guide.tips.length or guide.extras.length) else "Commands" }}</h2>
       <p>{{ guide.intro | safe }}</p>
       {% if help %}
       <figure class="ingame-help">
         <div class="chat">{{ help.text | helpLines | safe }}</div>
-        <figcaption>From {{ plugin.name }}'s own help, version {{ help.version }}, copied from the released plugin. Written by {{ plugin.author }}.</figcaption>
+        <figcaption>{% if help.kind == "lines" %}{{ plugin.name }}'s own command descriptions by {{ plugin.author }}, checked against the released plugin, version {{ help.version }}.{% else %}From {{ plugin.name }}'s own help, version {{ help.version }}, copied from the released plugin. Written by {{ plugin.author }}.{% endif %}</figcaption>
       </figure>
       {% endif %}
       {% if guide.extras.length %}

@@ -170,8 +170,10 @@ list their chat commands. It has two parts:
   than GitHub because some authors ship newer builds than the source they publish (Lifestream's repo
   was a whole minor version behind). The page shows it in a dark panel styled like the in-game help.
 - **XIVKit's notes**, hand-written in `directory/content/usage.json` and keyed by plugin slug: an
-  `intro`, a `help` rule saying where the help text is (`start`/`end` markers inside one string, or a
-  `prefix` that every help line starts with), `extras` for commands the help leaves out (`cmd`,
+  `intro`, a `help` rule saying where the help text is (`start`/`end` markers inside one string, a
+  `prefix` every help line starts with, `pairs` of command and help message, or `lines` copied from
+  the plugin's source at the commit the release names, each checked against the release; see the
+  top of the script), `extras` for commands the help leaves out (`cmd`,
   `does`, optional `ex`), `tips`, and `checkedInGame` once the extras have been tried. Work extras out
   from the plugin's code, not by guessing, and only list what the help doesn't already say.
 
