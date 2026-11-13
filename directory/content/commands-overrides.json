@@ -16,5 +16,10 @@
         "Open DailyDuty"
       ]
     ]
+  },
+  "glamaholic": {
+    "help": {
+      "/glamaholic": "Toggle visibility of the Glamaholic window"
+    }
   }
 }
