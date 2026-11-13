@@ -29,10 +29,10 @@ eleventyComputed:
 
 <div class="plugin-grid">
   <div class="plugin-main">
-    {% if plugin.description and plugin.description != plugin.punchline %}
-    <section aria-labelledby="about-h">
+    {% if plugin.description and (plugin.description | oneLine) != plugin.punchline %}
+    <section class="about" aria-labelledby="about-h">
       <h2 id="about-h">About {{ plugin.name }}</h2>
-      <p>{{ plugin.description }}</p>
+      {{ plugin.description | description | safe }}
     </section>
     {% endif %}
 

@@ -152,3 +152,5 @@ html:has(.viewer[open]){overflow:hidden}
 .cmds dd code{white-space:nowrap}
 .cmds .badge{margin-left:4px}
 .usage-src{margin-top:18px}
+.about ul,.about ol{padding-left:22px;max-width:68ch}
+.about li{margin:4px 0}

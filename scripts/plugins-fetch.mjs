@@ -43,6 +43,9 @@ const hits = (re, text) => (text.match(re) || []).length;
 
 const slugify = (s) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const clean = (s) => String(s ?? "").replace(/\s+/g, " ").trim();
+// Like clean(), but keeps line breaks (one blank line at most) so the page can show the
+// author's paragraphs and "- item" lists. See the "description" filter in eleventy.config.mjs.
+const cleanLines = (s) => String(s ?? "").split(/\r?\n/).map((l) => l.replace(/\s+/g, " ").trim()).join("\n").replace(/\n{3,}/g, "\n\n").trim();
 
 async function getJson(url) {
   const res = await fetch(url, { headers: { "user-agent": "xivkit-plugin-directory" } });
@@ -221,7 +224,7 @@ for (const p of [...master, ...thirdParty]) {
     internalName: p.InternalName,
     author: clean(p.Author),
     punchline: clean(p.Punchline),
-    description: clean(p.Description),
+    description: cleanLines(p.Description),
     category,
     tags,
     downloads: p.DownloadCount ?? 0,

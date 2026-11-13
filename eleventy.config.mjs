@@ -25,6 +25,34 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("repoFor", (repos, plugin) => repos.find((r) => r.id === plugin.source));
   eleventyConfig.addFilter("categoryName", (cats, slug) => (cats.find((c) => c.slug === slug) || {}).name || slug);
   eleventyConfig.addFilter("trunc", (s, n) => (s && s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s));
+  // Plugin descriptions are plain text with line breaks. Lines starting with -, *, + or a bullet
+  // become a list, numbered lines a numbered list, and the rest paragraphs (a blank line starts a
+  // new one).
+  const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  eleventyConfig.addFilter("oneLine", (s) => String(s ?? "").replace(/\s+/g, " ").trim());
+  eleventyConfig.addFilter("description", (text) => {
+    const out = [];
+    let para = [], list = null;
+    const flushPara = () => { if (para.length) out.push(`<p>${para.join(" ")}</p>`); para = []; };
+    const flushList = () => { if (list) out.push(`<${list.tag}>${list.items.map((i) => `<li>${i}</li>`).join("")}</${list.tag}>`); list = null; };
+    for (const raw of String(text ?? "").split("\n")) {
+      const line = raw.trim();
+      if (!line) { flushPara(); flushList(); continue; }
+      const bullet = line.match(/^(?:[-*+•]|(\d+)[.)])\s+(.*)$/);
+      if (bullet) {
+        const tag = bullet[1] ? "ol" : "ul";
+        flushPara();
+        if (list && list.tag !== tag) flushList();
+        list ??= { tag, items: [] };
+        list.items.push(esc(bullet[2]));
+      } else {
+        flushList();
+        para.push(esc(line.replace(/^#+\s+/, "")));
+      }
+    }
+    flushPara(); flushList();
+    return out.join("\n");
+  });
   eleventyConfig.addFilter("host", (url) => {
     try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
   });
