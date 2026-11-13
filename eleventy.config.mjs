@@ -23,7 +23,7 @@ export default function (eleventyConfig) {
     if (o === false || !found[slug]) return "";
     return found[slug].commands
       // Developer commands (/xxdebug, /xxtest) aren't for players.
-      .filter((c) => !/debug|test$/i.test(c.cmd) && !(o?.hide || []).includes(c.cmd))
+      .filter((c) => !/debug|test$|dev$/i.test(c.cmd) && !(o?.hide || []).includes(c.cmd))
       .map((c) => {
         let help = o?.help && c.cmd in o.help ? o.help[c.cmd] : c.help;
         // Some authors write "\n" inside a verbatim string, so it arrives as a literal backslash-n.

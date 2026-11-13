@@ -77,7 +77,18 @@ export function openAssembly(b) {
   };
   const methodName = (i) => str(rd(row(0x06, i) + 8, strIdx));
 
-  // Every method body, as { name, code } (the raw IL bytes).
+  // The type a MethodDef belongs to: the TypeDef whose MethodList range contains it. Worked out
+  // once for every method, since the TypeDef rows are sorted by MethodList.
+  const methodListOff = 4 + strIdx * 2 + typeDefOrRef + idx(0x04);
+  const ownerIdx = new Array(rows[0x06] + 2).fill(0);
+  for (let t = 1; t <= rows[0x02]; t++) {
+    const from = rd(row(0x02, t) + methodListOff, idx(0x06));
+    const to = t < rows[0x02] ? rd(row(0x02, t + 1) + methodListOff, idx(0x06)) : rows[0x06] + 1;
+    for (let m = from; m < to && m <= rows[0x06]; m++) ownerIdx[m] = t;
+  }
+  const methodOwner = (m) => (ownerIdx[m] ? typeDefName(ownerIdx[m]) : "");
+
+  // Every method body, as { name, owner, code } (owner is the TypeDef row, code the raw IL bytes).
   function* methods() {
     for (let i = 1; i <= rows[0x06]; i++) {
       const r = row(0x06, i), rva = b.readUInt32LE(r);
@@ -88,17 +99,9 @@ export function openAssembly(b) {
       let code, size;
       if ((h & 3) === 2) { size = h >> 2; code = o + 1; }
       else { size = b.readUInt32LE(o + 4); code = o + ((b.readUInt16LE(o) >> 12) * 4); }
-      yield { name: methodName(i), code: b.subarray(code, code + size) };
+      yield { name: methodName(i), owner: ownerIdx[i], code: b.subarray(code, code + size) };
     }
   }
-
-  // The type a MethodDef belongs to: the TypeDef whose MethodList range contains it.
-  const methodListOff = 4 + strIdx * 2 + typeDefOrRef + idx(0x04);
-  const methodOwner = (m) => {
-    let owner = 0;
-    for (let i = 1; i <= rows[0x02]; i++) { if (rd(row(0x02, i) + methodListOff, idx(0x06)) <= m) owner = i; else break; }
-    return owner ? typeDefName(owner) : "";
-  };
   // A blob: compressed length, then bytes.
   const blob = (i) => {
     const s = streams["#Blob"].o + i;
@@ -179,8 +182,19 @@ const isCmd = (s) => /^\/[A-Za-z][A-Za-z0-9_-]{0,30}$/.test(s);
 export function findCommands(asm) {
   const found = new Map();
   const WRAPPERS = new Set(["Register", "RegisterCommand", "AddCommand"]);
+  // Set when AddHandler is called with a command that isn't a literal, i.e. the plugin keeps its
+  // commands in a list and registers them in a loop.
+  let fromList = false;
+  const all = [];
+  // Property getters per class, for the command-class style: { owner: { getterName: [strings] } }.
+  const getters = new Map();
   for (const m of asm.methods()) {
     const ev = events(asm, m.code);
+    all.push(ev);
+    if (m.name.startsWith("get_")) {
+      if (!getters.has(m.owner)) getters.set(m.owner, {});
+      getters.get(m.owner)[m.name.slice(4)] = { strs: ev.filter((x) => x.t === "str").map((x) => x.v), calls: ev.some((x) => x.t === "call") };
+    }
     let since = 0;
     for (let i = 0; i < ev.length; i++) {
       const e = ev[i];
@@ -206,7 +220,7 @@ export function findCommands(asm) {
       // AddHandler("/cmd", new CommandInfo(...) { ... }) and building the CommandInfo first, then
       // AddHandler("/cmd", info), and skips "/name" strings used earlier in the method (paths).
       const cmdEv = win.filter((x) => x.t === "str" && isCmd(x.v)).pop();
-      if (!cmdEv) continue;
+      if (!cmdEv) { if (dalamud) fromList = true; continue; }
       let help = null;
       if (dalamud) {
         const k = win.findIndex((x) => x.t === "call" && x.name === "set_HelpMessage");
@@ -217,6 +231,42 @@ export function findCommands(asm) {
       }
       if (help !== null && !help.trim()) help = null;
       if (!found.has(cmdEv.v)) found.set(cmdEv.v, { cmd: cmdEv.v, help });
+    }
+  }
+
+  // List style: new Registration("/cmd", "help sentence", ...) entries, registered in a loop. Only
+  // used when the plugin calls AddHandler without a literal, so stray "/word" strings elsewhere
+  // aren't mistaken for commands.
+  if (fromList) {
+    for (const ev of all) {
+      for (let i = 0; i + 1 < ev.length; i++) {
+        const a = ev[i], h = ev[i + 1];
+        if (a.t !== "str" || !isCmd(a.v) || h.t !== "str" || isCmd(h.v) || !/^[A-Za-z].*\s/.test(h.v)) continue;
+        if (!ev.slice(i + 2, i + 6).some((x) => x.t === "call" && x.name === ".ctor")) continue;
+        if (!found.has(a.v)) found.set(a.v, { cmd: a.v, help: h.v });
+      }
+    }
+  }
+
+  // Command-class style: a class per command whose getters return its name, aliases and help, e.g.
+  // `CommandCode => "/petname"`, `Aliases => ["/pname"]`, `Description => "..."`. Only when AddHandler
+  // got a non-literal command, as for the list style. A class with several command getters (one
+  // settings class listing all the names) gets no help text, since it can't be matched up.
+  if (fromList) {
+    const NAME = /^(Command|CommandCode|CommandName|MainCommand|Name|[A-Za-z]*CommandName)$/;
+    const HELP = /^(Description|HelpMessage|HelpText|Help|Summary)$/;
+    for (const g of getters.values()) {
+      const names = Object.entries(g).filter(([k, v]) => NAME.test(k) && v.strs.length === 1 && isCmd(v.strs[0]) && !v.calls);
+      if (!names.length) continue;
+      const helpEntry = Object.entries(g).find(([k, v]) => HELP.test(k) && v.strs.length === 1 && !isCmd(v.strs[0]) && /\s/.test(v.strs[0]) && !v.calls);
+      const aliases = (Object.entries(g).find(([k]) => k === "Aliases")?.[1].strs || []).filter(isCmd);
+      for (const [, v] of names) {
+        const cmd = v.strs[0];
+        if (found.has(cmd)) continue;
+        const one = names.length === 1;
+        const label = one && aliases.length ? `${cmd} (or ${aliases.join(", ")})` : cmd;
+        found.set(cmd, { cmd: label, help: one && helpEntry ? helpEntry[1].strs[0] : null });
+      }
     }
   }
 

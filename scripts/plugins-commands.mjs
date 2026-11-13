@@ -23,7 +23,7 @@ const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")) : {};
 const OFFICIAL = "https://kamori.goats.dev/Plugin/PluginMaster";
 const UA = { "user-agent": "xivkit-plugin-directory" };
 // Bump when scripts/lib/dotnet.mjs learns to find more, so every plugin is checked again.
-const SCAN = 2;
+const SCAN = 4;
 
 async function getJson(url) {
   const res = await fetch(url, { headers: UA });

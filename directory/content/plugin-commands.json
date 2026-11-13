@@ -1,7 +1,7 @@
 {
  "abilityants": {
   "version": "1.0.2.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pants",
@@ -11,7 +11,7 @@
  },
  "accountant": {
   "version": "1.8.3.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/accountant",
@@ -25,12 +25,33 @@
  },
  "acquisitiondate": {
   "version": "1.2.1.1",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/acquisitiondate",
+    "help": "Opens the Acquisition Date window."
+   },
+   {
+    "cmd": "/acquisitionsettings",
+    "help": "Opens the Acquisition Date Settings Window"
+   },
+   {
+    "cmd": "/acquisitiondev",
+    "help": "Opens the Acquisition Date Dev Window"
+   },
+   {
+    "cmd": "/acqdate",
+    "help": null
+   },
+   {
+    "cmd": "/acqdsettings",
+    "help": null
+   }
+  ]
  },
  "acrylicxiv": {
   "version": "0.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/acrylic",
@@ -40,7 +61,7 @@
  },
  "actiontimeline": {
   "version": "1.9.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/actiontimeline",
@@ -58,7 +79,7 @@
  },
  "activevenuefinder": {
   "version": "2.2.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/avf",
@@ -68,7 +89,7 @@
  },
  "adaptivehud": {
   "version": "1.0.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pah",
@@ -78,7 +99,7 @@
  },
  "adventurerinneed": {
   "version": "1.6.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pbonus",
@@ -88,7 +109,7 @@
  },
  "aether48": {
   "version": "1.0.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/a48",
@@ -98,7 +119,7 @@
  },
  "aetherbags": {
   "version": "1.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aetherbags",
@@ -112,7 +133,7 @@
  },
  "aetherblackbox": {
   "version": "7.56.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/abb",
@@ -126,7 +147,7 @@
  },
  "aetherbomber": {
   "version": "0.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aetherbomber",
@@ -140,7 +161,7 @@
  },
  "aetherbreaker": {
   "version": "2.1.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/abreaker",
@@ -150,7 +171,7 @@
  },
  "aetherbreakout": {
   "version": "1.2.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/abreakout",
@@ -160,7 +181,7 @@
  },
  "aetherdraw": {
   "version": "7.5.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aetherdraw",
@@ -174,7 +195,7 @@
  },
  "aethergon": {
   "version": "1.2.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/agon",
@@ -184,7 +205,7 @@
  },
  "aetherialarena": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aarena",
@@ -198,7 +219,7 @@
  },
  "aethericflow": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aethericflow",
@@ -216,7 +237,7 @@
  },
  "aetherloveplugin": {
   "version": "2.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aetheros",
@@ -226,7 +247,7 @@
  },
  "aetherpool": {
   "version": "0.5.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aetherpool",
@@ -236,7 +257,7 @@
  },
  "afkmute": {
   "version": "1.0.0.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/afkmute",
@@ -250,7 +271,7 @@
  },
  "akutrack": {
   "version": "0.0.33.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/akut",
@@ -268,17 +289,34 @@
  },
  "allaganitemsearch": {
   "version": "1.3.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "allaganmarket": {
   "version": "1.4.0.2",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/allaganmarket",
+    "help": "Shows the Allagan Market main window."
+   },
+   {
+    "cmd": "/amarket",
+    "help": "Alias for /allaganmarket."
+   },
+   {
+    "cmd": "/amconfig",
+    "help": "Shows the Allagan Market configuration window."
+   },
+   {
+    "cmd": "/amdebug",
+    "help": "Shows the Allagan Market debug window."
+   }
+  ]
  },
  "allagantetris": {
   "version": "1.3.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tetris",
@@ -288,7 +326,7 @@
  },
  "altoholic": {
   "version": "1.16.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/altoholic",
@@ -298,7 +336,7 @@
  },
  "antiafkkick-dalamud": {
   "version": "2.1.0.11",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/aak",
@@ -308,7 +346,7 @@
  },
  "archipelagoxiv": {
   "version": "0.32.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ap-connect",
@@ -334,7 +372,7 @@
  },
  "arcontrol": {
   "version": "8.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/arcontrol",
@@ -348,7 +386,7 @@
  },
  "ardiscard": {
   "version": "8.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/discardconfig",
@@ -366,12 +404,12 @@
  },
  "arealmrecorded": {
   "version": "1.0.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "arealmreorganized": {
   "version": "0.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/arr",
@@ -381,7 +419,7 @@
  },
  "arealmrepopulated": {
   "version": "0.1.14.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/arrp",
@@ -391,7 +429,7 @@
  },
  "artisan": {
   "version": "4.0.5.23",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/artisan",
@@ -401,7 +439,7 @@
  },
  "ascianmusicplayer": {
   "version": "1.2.1.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/amp",
@@ -427,7 +465,7 @@
  },
  "audiblecharacterstatus": {
   "version": "1.0.1.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pacs",
@@ -437,7 +475,7 @@
  },
  "autobgm": {
   "version": "1.5.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/autobgm",
@@ -447,7 +485,7 @@
  },
  "autoduty": {
   "version": "0.0.0.399",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ad",
@@ -461,12 +499,12 @@
  },
  "autohook": {
   "version": "6.0.4.3",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "automaton": {
   "version": "69.232",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cbt",
@@ -476,7 +514,7 @@
  },
  "autominion": {
   "version": "1.1.0.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/autominion",
@@ -486,12 +524,12 @@
  },
  "automountbgm": {
   "version": "4.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "autoretainer": {
   "version": "4.6.2.21",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/autoretainer",
@@ -505,7 +543,7 @@
  },
  "autosweep": {
   "version": "1.4.10.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/phouse",
@@ -519,7 +557,7 @@
  },
  "autotimer": {
   "version": "1.1.0.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/autotimer",
@@ -533,12 +571,12 @@
  },
  "avantgarde": {
   "version": "1.2.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "avarice": {
   "version": "2.2.0.13",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/avarice",
@@ -548,7 +586,7 @@
  },
  "backseatdriver": {
   "version": "0.2.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pbsdriver",
@@ -566,7 +604,7 @@
  },
  "bardicmemory": {
   "version": "0.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bardicmemory",
@@ -576,7 +614,7 @@
  },
  "bartender": {
   "version": "1.1.8.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bartender",
@@ -602,12 +640,12 @@
  },
  "batterygauge": {
   "version": "1.2.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "battlevest": {
   "version": "1.0.2.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/battlevest",
@@ -617,7 +655,7 @@
  },
  "bdthplugin": {
   "version": "1.7.4.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bdth",
@@ -627,7 +665,7 @@
  },
  "beastiebuddy": {
   "version": "7.56.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bbuddy",
@@ -637,12 +675,12 @@
  },
  "beegwindow": {
   "version": "0.0.0.8",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "betterdeaths": {
   "version": "1.0.0.64",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/betterdeaths",
@@ -672,7 +710,7 @@
  },
  "betterdiscordrichpresence": {
   "version": "1.0.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/drp",
@@ -682,7 +720,7 @@
  },
  "betterfriendlist": {
   "version": "2.1.4.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/betterfriendlist",
@@ -696,7 +734,7 @@
  },
  "betterinblue": {
   "version": "2.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pblue",
@@ -706,7 +744,7 @@
  },
  "betterminionroulette": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pminion",
@@ -716,7 +754,7 @@
  },
  "bettermountroulette": {
   "version": "1.8.1.32",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pbmr",
@@ -730,12 +768,12 @@
  },
  "betterpartyfinder": {
   "version": "1.7.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "betterplaytime": {
   "version": "1.4.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/btime (or /betterplaytime)",
@@ -745,7 +783,7 @@
  },
  "bettershadows": {
   "version": "1.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pbshadows",
@@ -771,12 +809,12 @@
  },
  "bettertargetingsystem": {
   "version": "0.15.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "bignaelquotes": {
   "version": "0.0.9.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bigquotes",
@@ -786,7 +824,7 @@
  },
  "bigplayerdebuffs": {
   "version": "1.1.0.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bigplayerdebuffs",
@@ -796,7 +834,7 @@
  },
  "bilingualtooltips": {
   "version": "1.7.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/btt",
@@ -806,12 +844,12 @@
  },
  "bisbuddy": {
   "version": "0.2.9.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "blackjackbuttler": {
   "version": "2.0.0.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bjb",
@@ -821,7 +859,7 @@
  },
  "bluemagehelper": {
   "version": "3.4.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/spellbook",
@@ -831,17 +869,17 @@
  },
  "borderless-fix": {
   "version": "0.0.0.9",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "bossmod": {
   "version": "7.5.8.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "bozjabuddy": {
   "version": "1.1.6.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bb",
@@ -851,7 +889,7 @@
  },
  "brio": {
   "version": "0.8.0.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/brio",
@@ -869,7 +907,7 @@
  },
  "browsingway": {
   "version": "1.7.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bw",
@@ -879,7 +917,7 @@
  },
  "bsthelper": {
   "version": "0.1.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/bst",
@@ -893,17 +931,17 @@
  },
  "buildingway": {
   "version": "1.0.1.6",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "burnout": {
   "version": "1.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "burnttoast": {
   "version": "1.4.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pbth",
@@ -913,7 +951,7 @@
  },
  "cameraloader": {
   "version": "1.0.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/lca",
@@ -923,7 +961,7 @@
  },
  "cashflow": {
   "version": "1.0.2.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cashflow",
@@ -937,7 +975,7 @@
  },
  "ccanonymizer": {
   "version": "0.4.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/panon",
@@ -947,7 +985,7 @@
  },
  "characterpanelrefined": {
   "version": "1.8.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cprconfig",
@@ -957,7 +995,7 @@
  },
  "chatalerts": {
   "version": "2.2.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chatalerts",
@@ -967,7 +1005,7 @@
  },
  "chatanywhere": {
   "version": "1.6.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chatanywhere",
@@ -977,7 +1015,7 @@
  },
  "chatcontext": {
   "version": "0.0.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chatcontext",
@@ -987,7 +1025,7 @@
  },
  "chatcoordinates": {
   "version": "2.1.2.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/coord",
@@ -1001,7 +1039,7 @@
  },
  "chatproximity": {
   "version": "1.5.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chatprox",
@@ -1011,7 +1049,7 @@
  },
  "chatter": {
   "version": "1.3.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chatterdebug",
@@ -1021,7 +1059,7 @@
  },
  "chattranslated": {
   "version": "3.6.1.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pchat",
@@ -1031,7 +1069,7 @@
  },
  "chattwo": {
   "version": "1.41.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chat2Viewer",
@@ -1053,7 +1091,7 @@
  },
  "chattyper": {
   "version": "0.1.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chattyper",
@@ -1063,7 +1101,7 @@
  },
  "chestdiff": {
   "version": "0.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chestdiff",
@@ -1073,7 +1111,7 @@
  },
  "chibichaos": {
   "version": "0.1.17.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chibichaos",
@@ -1083,7 +1121,7 @@
  },
  "chilledleves": {
   "version": "1.0.2.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chilledleves",
@@ -1097,7 +1135,7 @@
  },
  "chillframes": {
   "version": "3.2.4.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chillframes",
@@ -1111,7 +1149,7 @@
  },
  "chocoboracinggamba": {
   "version": "1.0.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cr",
@@ -1129,7 +1167,7 @@
  },
  "chocoholic": {
   "version": "0.0.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chocoholic",
@@ -1139,7 +1177,7 @@
  },
  "chroma": {
   "version": "1.3.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/chroma",
@@ -1149,7 +1187,7 @@
  },
  "cl-showpos": {
   "version": "1.1.6.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pshowpos",
@@ -1159,7 +1197,7 @@
  },
  "clarityinchaos": {
   "version": "2.5.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cic",
@@ -1169,12 +1207,17 @@
  },
  "cleanhuntchat": {
   "version": "1.2.2.0",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/cleanhunt",
+    "help": null
+   }
+  ]
  },
  "clock": {
   "version": "1.0.7.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/clock",
@@ -1192,7 +1235,7 @@
  },
  "collectablecalculator": {
   "version": "4.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cc",
@@ -1202,12 +1245,12 @@
  },
  "collections": {
   "version": "1.0.3.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "collectorsanxiety": {
   "version": "0.0.14.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/panxiety",
@@ -1217,7 +1260,7 @@
  },
  "combatcursorcontainment": {
   "version": "1.0.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ccc",
@@ -1227,7 +1270,7 @@
  },
  "comfyloot": {
   "version": "1.0.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/loot",
@@ -1237,7 +1280,7 @@
  },
  "compass": {
   "version": "1.34.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/compass",
@@ -1247,7 +1290,7 @@
  },
  "conditionaltweaks": {
   "version": "7.4.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/CondiTweaks",
@@ -1257,7 +1300,7 @@
  },
  "congahelper": {
   "version": "0.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/conga",
@@ -1267,7 +1310,7 @@
  },
  "congratulations": {
   "version": "1.4.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/congratsconfig",
@@ -1277,7 +1320,7 @@
  },
  "contactstracker": {
   "version": "1.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ctracker",
@@ -1287,7 +1330,7 @@
  },
  "coordimporter": {
   "version": "1.3.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ci",
@@ -1297,7 +1340,7 @@
  },
  "copeseethemeld": {
   "version": "0.0.3.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cope",
@@ -1307,7 +1350,7 @@
  },
  "craftimizer": {
   "version": "2.11.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/crafteditor",
@@ -1333,7 +1376,7 @@
  },
  "createxiv": {
   "version": "1.0.6.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/create",
@@ -1343,7 +1386,7 @@
  },
  "crossup": {
   "version": "1.7.1.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xup",
@@ -1353,7 +1396,7 @@
  },
  "crystalradio": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cradio",
@@ -1363,7 +1406,7 @@
  },
  "currencyspender": {
   "version": "1.3.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cur",
@@ -1377,7 +1420,7 @@
  },
  "currencywatchdog": {
   "version": "1.0.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cdog",
@@ -1387,17 +1430,17 @@
  },
  "customequalizer2782": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "customizeplus": {
   "version": "2.2.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "customloadingscreens": {
   "version": "0.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/customloadingscreens",
@@ -1407,12 +1450,12 @@
  },
  "customresolution2782": {
   "version": "1.1.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "cwlslastseentool": {
   "version": "2.0.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/shelltools",
@@ -1422,7 +1465,7 @@
  },
  "dailyduty": {
   "version": "6.0.5.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dd",
@@ -1436,7 +1479,7 @@
  },
  "dalamud-charactersync": {
   "version": "2.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pcharsync",
@@ -1446,7 +1489,7 @@
  },
  "dalamud-discordbridge": {
   "version": "1.6.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pdiscord",
@@ -1456,7 +1499,7 @@
  },
  "dalamud-findanything": {
   "version": "1.1.4.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wotsit",
@@ -1470,7 +1513,7 @@
  },
  "dalamud-fullscreencutscenes": {
   "version": "1.0.0.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pcutscenes",
@@ -1480,12 +1523,12 @@
  },
  "dalamud-loadingimage": {
   "version": "1.0.0.18",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "dalamud-richpresence": {
   "version": "2.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/prp",
@@ -1495,7 +1538,7 @@
  },
  "dalamudminesweeper": {
   "version": "1.6.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/minesweeper",
@@ -1505,7 +1548,7 @@
  },
  "damageinfoplugin": {
   "version": "2.4.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dmginfo",
@@ -1515,7 +1558,7 @@
  },
  "deathrecap": {
   "version": "1.13.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/deathrecap",
@@ -1529,7 +1572,7 @@
  },
  "deathroll": {
   "version": "1.5.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/drh (or /deathroll)",
@@ -1539,17 +1582,17 @@
  },
  "deepdungeondex": {
   "version": "2.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "deepdungeontracker": {
   "version": "1.0.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "deliveroo": {
   "version": "7.5.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/deliveroo",
@@ -1559,7 +1602,7 @@
  },
  "delvcd": {
   "version": "1.6.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/delvcd",
@@ -1573,7 +1616,7 @@
  },
  "delvui": {
   "version": "2.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/delvui",
@@ -1587,12 +1630,12 @@
  },
  "devicechangefix": {
   "version": "3.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "diademcalculator": {
   "version": "1.1.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dcalc",
@@ -1602,7 +1645,7 @@
  },
  "directional": {
   "version": "1.0.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dtarget",
@@ -1612,7 +1655,7 @@
  },
  "discordbotffxiv": {
   "version": "1.1.2.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/discordbot",
@@ -1622,7 +1665,7 @@
  },
  "dispeller": {
   "version": "1.5.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dispeller",
@@ -1632,7 +1675,7 @@
  },
  "distance": {
   "version": "1.1.4.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pdistance",
@@ -1642,7 +1685,7 @@
  },
  "distantseas": {
   "version": "1.1.0.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pseas",
@@ -1652,7 +1695,7 @@
  },
  "dmumits": {
   "version": "0.1.0.18",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dmumits",
@@ -1666,12 +1709,12 @@
  },
  "dmup4debuffhelper": {
   "version": "0.1.0.18",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "doorbell": {
   "version": "1.0.4.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/doorbell",
@@ -1681,7 +1724,7 @@
  },
  "dotcalculator": {
   "version": "0.0.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dotcalculator",
@@ -1691,7 +1734,7 @@
  },
  "dotposition": {
   "version": "1.0.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dotpos",
@@ -1701,7 +1744,7 @@
  },
  "dragoonmaycry": {
   "version": "1.4.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dmc",
@@ -1711,7 +1754,7 @@
  },
  "drawers": {
   "version": "0.1.0.51",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/drawers",
@@ -1721,7 +1764,7 @@
  },
  "dropbox": {
   "version": "1.0.2.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dropbox",
@@ -1731,7 +1774,7 @@
  },
  "dsreyelocator": {
   "version": "2.0.1.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eye",
@@ -1741,7 +1784,7 @@
  },
  "dummy": {
   "version": "0.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dummy",
@@ -1751,7 +1794,7 @@
  },
  "dutylootpreview": {
   "version": "0.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dlp",
@@ -1761,7 +1804,7 @@
  },
  "dutypusher": {
   "version": "0.1.4.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dutypusher",
@@ -1787,7 +1830,7 @@
  },
  "dutyspeed": {
   "version": "1.7.5.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ds",
@@ -1797,7 +1840,7 @@
  },
  "dutytracker": {
   "version": "1.0.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/dt",
@@ -1807,7 +1850,7 @@
  },
  "dynamicbridge": {
   "version": "1.0.8.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/db",
@@ -1817,12 +1860,12 @@
  },
  "dynamicuiscaling": {
   "version": "1.15.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "easychatlog": {
   "version": "0.1.9.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/easychatlog",
@@ -1836,7 +1879,7 @@
  },
  "easyeyes": {
   "version": "1.3.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/easy",
@@ -1846,12 +1889,12 @@
  },
  "easytranslate-dalamudplugin": {
   "version": "7.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "echoglossian": {
   "version": "4.2601.1031.2017",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eglo",
@@ -1869,7 +1912,7 @@
  },
  "echoxiv": {
   "version": "1.0.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/translate",
@@ -1887,7 +1930,7 @@
  },
  "eldenring": {
   "version": "0.0.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eldenring",
@@ -1897,7 +1940,7 @@
  },
  "emotelog": {
   "version": "1.1.7.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/elog",
@@ -1907,7 +1950,7 @@
  },
  "enemylistdebuffs": {
   "version": "1.13.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eldebuffs",
@@ -1917,7 +1960,7 @@
  },
  "engagetimer": {
   "version": "2.4.5.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eg",
@@ -1931,12 +1974,12 @@
  },
  "enmityhp": {
   "version": "2.0.1.9",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "eurekahelper": {
   "version": "2.0.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eurekahelper",
@@ -1962,7 +2005,7 @@
  },
  "eurekatrackerautopopper": {
   "version": "1.7.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/el",
@@ -2004,7 +2047,7 @@
  },
  "eventy": {
   "version": "1.0.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/eventy",
@@ -2018,7 +2061,7 @@
  },
  "expandedhotbars": {
   "version": "1.0.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/expandedhotbars",
@@ -2036,7 +2079,7 @@
  },
  "expandedsearchinfo": {
   "version": "1.4.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/esi",
@@ -2046,7 +2089,7 @@
  },
  "explorersicebox": {
   "version": "1.1.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/explorersicebox",
@@ -2060,12 +2103,12 @@
  },
  "extrachat": {
   "version": "1.3.11.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "facade": {
   "version": "1.0.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/facade",
@@ -2075,7 +2118,7 @@
  },
  "fadedrollfixer": {
   "version": "0.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/faded",
@@ -2085,7 +2128,7 @@
  },
  "faderplugin": {
   "version": "2.7.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pfader",
@@ -2095,12 +2138,12 @@
  },
  "fantasyplayer": {
   "version": "2.6.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "fastjobswitcher": {
   "version": "4.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pj",
@@ -2118,12 +2161,12 @@
  },
  "fastwaymarksplugin": {
   "version": "1.3.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "fatehelper": {
   "version": "1.2.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fatehelper",
@@ -2141,7 +2184,7 @@
  },
  "fatelimit": {
   "version": "0.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fatelimit",
@@ -2155,12 +2198,12 @@
  },
  "fauxhollowssolver": {
   "version": "1.5.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "fcch": {
   "version": "2.6.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fcch",
@@ -2170,7 +2213,7 @@
  },
  "fcnamecolor": {
   "version": "5.1.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fcnc",
@@ -2180,7 +2223,7 @@
  },
  "fctracker": {
   "version": "0.0.0.43",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fct",
@@ -2194,7 +2237,7 @@
  },
  "ffxiv-venues-directory": {
   "version": "1.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ffxivvenues",
@@ -2204,7 +2247,7 @@
  },
  "ffxiv2mqtt": {
   "version": "1.0.9.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mqtt",
@@ -2222,7 +2265,7 @@
  },
  "ffxivrpcalendarplugin": {
   "version": "1.0.1.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/events",
@@ -2240,7 +2283,7 @@
  },
  "fidgetspinner": {
   "version": "0.0.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fspin",
@@ -2250,17 +2293,17 @@
  },
  "fishnotify": {
   "version": "10.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "flashoncutscenedone": {
   "version": "0.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "flashonreadycheck": {
   "version": "0.1.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/readyflash",
@@ -2270,7 +2313,7 @@
  },
  "flashontell": {
   "version": "0.0.11.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pflash",
@@ -2280,7 +2323,7 @@
  },
  "flytextfilter": {
   "version": "4.5.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/flytext",
@@ -2294,7 +2337,7 @@
  },
  "foodcheck": {
   "version": "1.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/foodcheck",
@@ -2308,7 +2351,7 @@
  },
  "fpsplugin": {
   "version": "1.7.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pfps",
@@ -2318,7 +2361,7 @@
  },
  "friendnote": {
   "version": "1.0.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fnote",
@@ -2328,12 +2371,12 @@
  },
  "fungah": {
   "version": "1.0.0.9",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "gambawhere": {
   "version": "1.0.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gambawhere",
@@ -2351,7 +2394,7 @@
  },
  "gaolbreak": {
   "version": "0.0.0.31",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gaolbreak",
@@ -2361,7 +2404,7 @@
  },
  "gatherbuddy": {
   "version": "3.8.11.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gatherdebug",
@@ -2371,7 +2414,7 @@
  },
  "gatherchill": {
   "version": "1.0.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gatherchill",
@@ -2389,7 +2432,7 @@
  },
  "gaugeomatic": {
   "version": "0.8.3.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gomatic",
@@ -2399,7 +2442,7 @@
  },
  "gearsetreminder": {
   "version": "1.0.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gsr",
@@ -2409,7 +2452,7 @@
  },
  "gearsetsort": {
   "version": "0.0.7.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gearsetsort",
@@ -2423,7 +2466,7 @@
  },
  "gearsetter": {
   "version": "4.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gup",
@@ -2437,7 +2480,7 @@
  },
  "gilstracker": {
   "version": "0.0.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gilstracker",
@@ -2447,7 +2490,7 @@
  },
  "glamaholic": {
   "version": "1.15.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/glamaholic",
@@ -2461,7 +2504,7 @@
  },
  "glamourer": {
   "version": "1.7.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/glamourer",
@@ -2475,12 +2518,12 @@
  },
  "glamourlog": {
   "version": "15.78",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "glamourroulette": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/glamourroulette",
@@ -2498,7 +2541,7 @@
  },
  "glamswapcommand": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/cgs",
@@ -2508,7 +2551,7 @@
  },
  "globetrotter": {
   "version": "1.2.17",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pglobetrotter",
@@ -2522,12 +2565,12 @@
  },
  "goodfriend": {
   "version": "3.12.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "gracegawker": {
   "version": "1.1.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pgrace",
@@ -2537,7 +2580,7 @@
  },
  "graphicsconfig": {
   "version": "1.0.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gconfig",
@@ -2563,7 +2606,7 @@
  },
  "gubal": {
   "version": "0.5.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gubal",
@@ -2573,7 +2616,7 @@
  },
  "handyhotbarhelper": {
   "version": "0.1.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hhh",
@@ -2583,7 +2626,7 @@
  },
  "harphero": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/harphero",
@@ -2593,12 +2636,12 @@
  },
  "heliosphere-plugin": {
   "version": "4.10.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "henchman": {
   "version": "4.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/henchman",
@@ -2624,7 +2667,7 @@
  },
  "highfpsphysicsplugin": {
   "version": "10.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/physics",
@@ -2634,12 +2677,12 @@
  },
  "himbeertoniraidtool": {
   "version": "1.10.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "hitspark": {
   "version": "0.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hitspark",
@@ -2653,7 +2696,7 @@
  },
  "honorific": {
   "version": "1.7.5.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/honorific",
@@ -2663,7 +2706,7 @@
  },
  "hotbarbackup": {
   "version": "1.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hbbu",
@@ -2673,7 +2716,7 @@
  },
  "housemate": {
   "version": "1.0.3.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/housemate",
@@ -2683,7 +2726,7 @@
  },
  "housingcullfix": {
   "version": "0.0.1.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/housingcullfix",
@@ -2693,7 +2736,7 @@
  },
  "housingherald": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pherald",
@@ -2703,7 +2746,7 @@
  },
  "housingway": {
   "version": "1.0.2.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/door",
@@ -2717,7 +2760,7 @@
  },
  "hudlayouthelper": {
   "version": "0.0.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hudhelper",
@@ -2727,7 +2770,7 @@
  },
  "hudmanager": {
   "version": "2.7.2.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hudman",
@@ -2737,7 +2780,7 @@
  },
  "hudunlimited": {
   "version": "1.2.3.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hudunlimited",
@@ -2751,7 +2794,7 @@
  },
  "huntalerts": {
   "version": "1.4.1.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/huntalerts",
@@ -2761,7 +2804,7 @@
  },
  "huntbuddy": {
   "version": "1.2.2.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/phb",
@@ -2771,7 +2814,7 @@
  },
  "hunthelper": {
   "version": "1.0.0.34",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hh",
@@ -2817,7 +2860,7 @@
  },
  "hunttrainassistant": {
   "version": "1.0.2.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hta",
@@ -2827,7 +2870,7 @@
  },
  "hunty": {
   "version": "1.3.7.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hunty",
@@ -2845,7 +2888,7 @@
  },
  "hybridcamera": {
   "version": "1.9.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/phcam",
@@ -2855,7 +2898,7 @@
  },
  "hyperborea": {
   "version": "1.0.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/hyper",
@@ -2865,7 +2908,7 @@
  },
  "hyperfocus": {
   "version": "0.1.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/phfocus",
@@ -2875,7 +2918,7 @@
  },
  "iamready": {
   "version": "1.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/iar",
@@ -2885,7 +2928,7 @@
  },
  "ice": {
   "version": "1.0.0.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/icecosmic",
@@ -2903,17 +2946,17 @@
  },
  "ihatecapslock": {
   "version": "15.750.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "imagenation": {
   "version": "1.0.0.11",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "inputflow": {
   "version": "1.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/inputflow",
@@ -2923,7 +2966,7 @@
  },
  "inspecto": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/insp",
@@ -2933,7 +2976,7 @@
  },
  "interjection": {
   "version": "0.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/interjection",
@@ -2943,7 +2986,7 @@
  },
  "inventorysearchbar": {
   "version": "1.9.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/inventorysearchbar",
@@ -2957,7 +3000,7 @@
  },
  "inventorytools": {
   "version": "1.15.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/allagantools (or /atools)",
@@ -3051,12 +3094,12 @@
  },
  "islandworkshopsearch": {
   "version": "1.0.0.6",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "itemsearchplugin": {
   "version": "1.10.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xlitem",
@@ -3070,12 +3113,17 @@
  },
  "itemuse": {
   "version": "1.0.1.2",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/pitemuse",
+    "help": null
+   }
+  ]
  },
  "itemvendorlocation": {
   "version": "2.14.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pvendor",
@@ -3085,7 +3133,7 @@
  },
  "itsup": {
   "version": "0.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/itsup",
@@ -3095,7 +3143,7 @@
  },
  "jobautoswitcher": {
   "version": "1.3.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/jas",
@@ -3105,7 +3153,7 @@
  },
  "jobbars": {
   "version": "1.3.3.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/jobbars",
@@ -3115,7 +3163,7 @@
  },
  "jobmountroulette": {
   "version": "1.1.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/jmr",
@@ -3125,7 +3173,7 @@
  },
  "jobrouletteplugin": {
   "version": "1.7.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/jobroulette",
@@ -3139,12 +3187,12 @@
  },
  "jobtitles": {
   "version": "0.2.0.10",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "jumpscare": {
   "version": "1.2.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/jumpscare",
@@ -3166,7 +3214,7 @@
  },
  "justbackup": {
   "version": "1.1.1.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/justbackup",
@@ -3176,7 +3224,7 @@
  },
  "karaoke": {
   "version": "0.0.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/karaoke",
@@ -3186,7 +3234,7 @@
  },
  "keybindsplus": {
   "version": "0.2.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/kp",
@@ -3196,7 +3244,7 @@
  },
  "kingdomheartsplugin": {
   "version": "1.0.7.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/khpconfig",
@@ -3210,7 +3258,7 @@
  },
  "knightshopper": {
   "version": "1.0.1.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/knightshopper",
@@ -3224,12 +3272,12 @@
  },
  "ktisis": {
   "version": "0.4.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "lapcatcounter": {
   "version": "1.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/lapcat",
@@ -3247,7 +3295,7 @@
  },
  "lazygatherer": {
   "version": "1.4.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/lazygatherer",
@@ -3265,7 +3313,7 @@
  },
  "lazyloot": {
   "version": "5.3.3.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/lazyloot",
@@ -3283,7 +3331,7 @@
  },
  "lifestream": {
   "version": "2.6.0.13",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/lifestream",
@@ -3297,12 +3345,12 @@
  },
  "limitbreaknow": {
   "version": "0.0.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "liteshade": {
   "version": "1.0.2.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/liteshade",
@@ -3312,17 +3360,17 @@
  },
  "logogramhelper": {
   "version": "0.0.3.8",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "looturesrewritten": {
   "version": "1.0.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "lootview": {
   "version": "1.6.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/lv",
@@ -3332,7 +3380,7 @@
  },
  "macrochain": {
   "version": "2.2.0.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nextmacro",
@@ -3346,7 +3394,7 @@
  },
  "macromate": {
   "version": "1.0.27.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/macromate",
@@ -3360,7 +3408,7 @@
  },
  "macrorecorded": {
   "version": "1.0.8.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/macrorecorded",
@@ -3374,7 +3422,7 @@
  },
  "magitekstratagem": {
   "version": "1.4.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/magiteks",
@@ -3388,7 +3436,7 @@
  },
  "maidenalert": {
   "version": "1.0.0.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/malert",
@@ -3406,7 +3454,7 @@
  },
  "malmstone": {
   "version": "1.0.8.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pmalm",
@@ -3416,7 +3464,7 @@
  },
  "maplinker": {
   "version": "1.1.13.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/maplink",
@@ -3426,7 +3474,7 @@
  },
  "mappartyassist": {
   "version": "2.5.2.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mparty",
@@ -3448,12 +3496,12 @@
  },
  "mappy": {
   "version": "3.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "marketboardplugin": {
   "version": "1.13.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pmb",
@@ -3463,7 +3511,7 @@
  },
  "marketbuddy": {
   "version": "0.2.4.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mbuddy",
@@ -3473,7 +3521,7 @@
  },
  "mbhistory": {
   "version": "1.0.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/history",
@@ -3483,12 +3531,12 @@
  },
  "memorymarker": {
   "version": "2.2.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "messenger": {
   "version": "1.5.0.21",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xim",
@@ -3502,7 +3550,7 @@
  },
  "mimicryhelper": {
   "version": "1.0.1.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mimic",
@@ -3512,7 +3560,7 @@
  },
  "mini": {
   "version": "2.1.1.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mini",
@@ -3522,12 +3570,12 @@
  },
  "minicactpotsolver": {
   "version": "4.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "minigamesemporium": {
   "version": "0.0.16.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/minigamesemporium",
@@ -3545,7 +3593,7 @@
  },
  "minimapmarkermagnitude": {
   "version": "1.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mmm",
@@ -3555,7 +3603,7 @@
  },
  "minimappingway": {
   "version": "15.750.1.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mmway",
@@ -3569,7 +3617,7 @@
  },
  "moaction": {
   "version": "4.10.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pmoaction",
@@ -3587,7 +3635,7 @@
  },
  "mogmail": {
   "version": "1.2.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mogmail",
@@ -3597,12 +3645,12 @@
  },
  "mogmogcheck": {
   "version": "3.6.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "monsterloothunter": {
   "version": "1.6.24.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/monsterloot",
@@ -3616,7 +3664,7 @@
  },
  "moodles": {
   "version": "1.1.3.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/moodles",
@@ -3630,7 +3678,7 @@
  },
  "moonbaseomega": {
   "version": "1.1.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/moonbaseomega",
@@ -3640,7 +3688,7 @@
  },
  "mounttilt": {
   "version": "1.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mounttilt",
@@ -3650,7 +3698,7 @@
  },
  "mouselock": {
   "version": "1.0.1.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mouselock",
@@ -3660,7 +3708,7 @@
  },
  "multihit": {
   "version": "0.0.4.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mhit",
@@ -3670,7 +3718,7 @@
  },
  "musicalguide": {
   "version": "1.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mguide",
@@ -3680,7 +3728,7 @@
  },
  "nalapf": {
   "version": "1.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pfr",
@@ -3690,7 +3738,7 @@
  },
  "nameplatedebuffs": {
   "version": "1.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/npdebuffs",
@@ -3700,7 +3748,7 @@
  },
  "namingway": {
   "version": "1.1.22.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/namingway",
@@ -3710,7 +3758,7 @@
  },
  "neatnoter": {
   "version": "2.7.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/notebook",
@@ -3728,7 +3776,7 @@
  },
  "necrolens": {
   "version": "1.0.8.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/necrolens",
@@ -3750,7 +3798,7 @@
  },
  "neko": {
   "version": "1.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nekocfg",
@@ -3764,12 +3812,12 @@
  },
  "nicedamage": {
   "version": "2.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "nicknamer": {
   "version": "1.0.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nickname (or /nicknamer, /nn)",
@@ -3783,7 +3831,7 @@
  },
  "nokillplugin": {
   "version": "1.2.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nokill",
@@ -3793,7 +3841,7 @@
  },
  "nomousemoveforward": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nomousemoveforward",
@@ -3803,12 +3851,12 @@
  },
  "nopolice": {
   "version": "1.0.0.7",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "noquesticons": {
   "version": "1.5.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/noquesticons",
@@ -3822,7 +3870,7 @@
  },
  "northstar": {
   "version": "0.1.3.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ns",
@@ -3832,7 +3880,7 @@
  },
  "nosoliciting": {
   "version": "3.2.10.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/prmt",
@@ -3846,7 +3894,7 @@
  },
  "notankyou": {
   "version": "7.4.4.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nty",
@@ -3856,7 +3904,7 @@
  },
  "noted": {
   "version": "1.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/noted",
@@ -3866,7 +3914,7 @@
  },
  "notificationmaster": {
   "version": "2.1.1.16",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pnotify",
@@ -3880,12 +3928,12 @@
  },
  "notypesay": {
   "version": "1.0.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "nowplaying": {
   "version": "1.3.0.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/nowplaying",
@@ -3899,7 +3947,7 @@
  },
  "objectexplorer": {
   "version": "1.0.0.11",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/oe",
@@ -3909,7 +3957,7 @@
  },
  "obsplugin": {
   "version": "1.0.5.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/obs",
@@ -3919,7 +3967,7 @@
  },
  "ofdungeonsdeep": {
   "version": "1.1.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/odd",
@@ -3929,7 +3977,7 @@
  },
  "ohhey": {
   "version": "0.2.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ohhey",
@@ -3939,7 +3987,7 @@
  },
  "oofplugin": {
   "version": "1.4.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/oof",
@@ -3957,7 +4005,7 @@
  },
  "openercreator": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ocrt",
@@ -3967,7 +4015,7 @@
  },
  "orangeguidancetomestone": {
   "version": "1.11.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ogt",
@@ -3977,7 +4025,7 @@
  },
  "orbwalker": {
   "version": "1.0.1.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/orbwalker",
@@ -3987,7 +4035,7 @@
  },
  "orchestrion": {
   "version": "2.3.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/porch",
@@ -3997,7 +4045,7 @@
  },
  "owofy": {
   "version": "1.7.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/owo",
@@ -4011,7 +4059,7 @@
  },
  "paissawah": {
   "version": "1.0.0.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/PaissaWah",
@@ -4021,7 +4069,7 @@
  },
  "palantir": {
   "version": "0.0.0.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/palantir",
@@ -4031,7 +4079,7 @@
  },
  "pandorasbox": {
   "version": "1.6.4.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pandora",
@@ -4041,7 +4089,7 @@
  },
  "partyfinderex": {
   "version": "0.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pfex",
@@ -4051,7 +4099,7 @@
  },
  "partyicons": {
   "version": "1.2.3.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ppi",
@@ -4061,7 +4109,7 @@
  },
  "partyplanner": {
   "version": "1.7.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/partyplanner",
@@ -4071,7 +4119,7 @@
  },
  "partysortplus": {
   "version": "1.0.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/psp",
@@ -4081,12 +4129,12 @@
  },
  "pathfinder": {
   "version": "0.1.7.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "patme": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/patme",
@@ -4100,7 +4148,7 @@
  },
  "peepingtom": {
   "version": "1.7.25",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ppeepingtom",
@@ -4118,7 +4166,7 @@
  },
  "pennypincher": {
   "version": "1.9.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/penny",
@@ -4128,7 +4176,7 @@
  },
  "penumbra": {
   "version": "1.7.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/penumbra",
@@ -4138,12 +4186,33 @@
  },
  "petrenamer": {
   "version": "3.0.1.1",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/petdev (or /pdev)",
+    "help": "Opens the Pet Dev Window"
+   },
+   {
+    "cmd": "/petlist (or /plist)",
+    "help": null
+   },
+   {
+    "cmd": "/petname (or /pname)",
+    "help": null
+   },
+   {
+    "cmd": "/petsettings (or /psettings, /petconfig, /pconfig)",
+    "help": null
+   },
+   {
+    "cmd": "/petsharing (or /psharing)",
+    "help": null
+   }
+  ]
  },
  "petscale": {
   "version": "2.1.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pscale",
@@ -4153,7 +4222,7 @@
  },
  "pfsearch": {
   "version": "1.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pf",
@@ -4163,7 +4232,7 @@
  },
  "photobooth": {
   "version": "1.0.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pb",
@@ -4173,7 +4242,7 @@
  },
  "pingplugin": {
   "version": "2.11.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ping",
@@ -4191,7 +4260,7 @@
  },
  "pixelperfect": {
   "version": "3.3.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pp",
@@ -4201,7 +4270,7 @@
  },
  "playertags": {
   "version": "1.12.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/playertags",
@@ -4211,7 +4280,7 @@
  },
  "playertrack": {
   "version": "3.6.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ptrack",
@@ -4225,7 +4294,7 @@
  },
  "pluginpresetmanager": {
   "version": "1.0.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ppreset",
@@ -4239,7 +4308,7 @@
  },
  "positionalguide": {
   "version": "4.8.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/posguide",
@@ -4249,7 +4318,7 @@
  },
  "prefpro": {
   "version": "1.3.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/prefpro",
@@ -4259,7 +4328,7 @@
  },
  "pricecheck": {
   "version": "2.7.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pcheck",
@@ -4281,7 +4350,7 @@
  },
  "priceinsight": {
   "version": "2.11.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/priceinsight",
@@ -4291,12 +4360,12 @@
  },
  "prioritizer": {
   "version": "2.0.1.4",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "proxyplayer": {
   "version": "1.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pplayer",
@@ -4306,12 +4375,12 @@
  },
  "pseudonamingway": {
   "version": "0.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "pulltoobs": {
   "version": "0.4.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pulltoobs",
@@ -4325,7 +4394,7 @@
  },
  "pushyfinder": {
   "version": "1.3.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pushyfinder",
@@ -4335,7 +4404,7 @@
  },
  "pvpannouncer": {
   "version": "1.7.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pvpannouncer",
@@ -4353,7 +4422,7 @@
  },
  "pvpstats": {
   "version": "2.7.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pvpstats",
@@ -4383,7 +4452,7 @@
  },
  "qolbar": {
   "version": "2.3.3.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/qolbar",
@@ -4405,7 +4474,7 @@
  },
  "questaway": {
   "version": "2.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/questaway",
@@ -4415,7 +4484,7 @@
  },
  "questionable": {
   "version": "15.756.3.60",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/qst",
@@ -4425,7 +4494,7 @@
  },
  "questjournal": {
   "version": "1.4.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/qj",
@@ -4455,7 +4524,7 @@
  },
  "questmap": {
   "version": "15.755.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/quests",
@@ -4473,7 +4542,7 @@
  },
  "questshare": {
   "version": "1.2.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/questshare",
@@ -4495,7 +4564,7 @@
  },
  "questtextrecolor": {
   "version": "1.4.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/questtext",
@@ -4505,7 +4574,7 @@
  },
  "questtracker": {
   "version": "1.2.3.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/questtracker",
@@ -4519,7 +4588,7 @@
  },
  "quicksymbols": {
   "version": "1.0.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/qs",
@@ -4537,7 +4606,7 @@
  },
  "quicktransfer": {
   "version": "1.1.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/qt",
@@ -4547,7 +4616,7 @@
  },
  "quietden": {
   "version": "1.2.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/quietden",
@@ -4557,7 +4626,7 @@
  },
  "racingway": {
   "version": "0.1.1.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/race",
@@ -4567,7 +4636,7 @@
  },
  "randomclassselector": {
   "version": "1.0.0.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/rnd",
@@ -4581,7 +4650,7 @@
  },
  "razerreader": {
   "version": "2.0.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pbattery",
@@ -4591,12 +4660,12 @@
  },
  "reactionex": {
   "version": "1.0.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "readycheckhelper": {
   "version": "1.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pready",
@@ -4606,12 +4675,12 @@
  },
  "realtorch": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "rec-cue": {
   "version": "0.0.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/reccue",
@@ -4621,7 +4690,7 @@
  },
  "redirect": {
   "version": "1.2.7.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/redirect",
@@ -4631,17 +4700,17 @@
  },
  "relictracker": {
   "version": "1.0.2.7",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "remotepartyfinder": {
   "version": "1.0.19.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "repairdeez": {
   "version": "20.0.0.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/repairdeez",
@@ -4651,7 +4720,7 @@
  },
  "repairme": {
   "version": "1.0.1.22",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/repairme",
@@ -4661,7 +4730,7 @@
  },
  "resanctuary": {
   "version": "1.4.0.7",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/psanctuary",
@@ -4671,7 +4740,7 @@
  },
  "resizablehud": {
   "version": "1.7.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/prhud",
@@ -4681,7 +4750,7 @@
  },
  "reslogger2-plugin": {
   "version": "0.0.3.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/reslog",
@@ -4691,7 +4760,7 @@
  },
  "resstackcounter": {
   "version": "1.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ressc",
@@ -4701,12 +4770,12 @@
  },
  "restorecamerapivotwhileautorunning": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "retaineralerts": {
   "version": "1.6.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/retaineralerts",
@@ -4720,12 +4789,12 @@
  },
  "retainersales": {
   "version": "1.4.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "rezoplugin": {
   "version": "15.750.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/prezo",
@@ -4735,7 +4804,7 @@
  },
  "rezpls": {
   "version": "1.5.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/rezpls",
@@ -4745,7 +4814,7 @@
  },
  "roleplayprofiles": {
   "version": "1.2.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/rpp",
@@ -4755,7 +4824,7 @@
  },
  "rputils": {
   "version": "0.7.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/rputils",
@@ -4765,7 +4834,7 @@
  },
  "rtyping": {
   "version": "0.3.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/rtyping",
@@ -4775,7 +4844,7 @@
  },
  "saddlebagexchange": {
   "version": "1.0.19.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/saddlebag",
@@ -4793,7 +4862,7 @@
  },
  "saru": {
   "version": "1.0.3.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/saru",
@@ -4803,7 +4872,7 @@
  },
  "saucy": {
   "version": "2.1.2.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/saucy",
@@ -4813,12 +4882,12 @@
  },
  "scouthelper": {
   "version": "1.12.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "scrollabletabs": {
   "version": "1.3.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/scrollabletabs",
@@ -4828,7 +4897,7 @@
  },
  "seatedsidekickspectator": {
   "version": "1.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/sss",
@@ -4838,7 +4907,7 @@
  },
  "selectstring": {
   "version": "1.0.1.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ss",
@@ -4848,7 +4917,7 @@
  },
  "selfcare": {
   "version": "0.2.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/selfcare",
@@ -4858,7 +4927,7 @@
  },
  "shanbells": {
   "version": "1.4.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/sbconfig",
@@ -4868,12 +4937,12 @@
  },
  "shopitemicons": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "shopitemrevealer": {
   "version": "1.2.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/shopitemrevealer",
@@ -4891,7 +4960,7 @@
  },
  "shrinkage": {
   "version": "0.1.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/shrinkage",
@@ -4901,7 +4970,7 @@
  },
  "sightseeingway": {
   "version": "1.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/sightseeingway",
@@ -4915,12 +4984,25 @@
  },
  "silencenomore": {
   "version": "1.4.0.1",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/dutytell",
+    "help": "Set your tell mode to 'Duty Tell'."
+   },
+   {
+    "cmd": "/globaltell",
+    "help": "Set your tell mode to 'Global Tell'."
+   },
+   {
+    "cmd": "/silence",
+    "help": null
+   }
+  ]
  },
  "sillychat": {
   "version": "1.7.16.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/silly",
@@ -4938,12 +5020,12 @@
  },
  "simplecompare": {
   "version": "2.1.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "simpleheels": {
   "version": "0.11.1.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/heels",
@@ -4953,7 +5035,7 @@
  },
  "simplemaptracker": {
   "version": "1.0.4.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/maps",
@@ -4963,7 +5045,7 @@
  },
  "simplemarketboard": {
   "version": "1.12.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/smb",
@@ -4977,7 +5059,7 @@
  },
  "simpleminigames": {
   "version": "1.0.3.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/simpleminigames",
@@ -4991,7 +5073,7 @@
  },
  "simpletodo": {
   "version": "0.0.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ptodo",
@@ -5005,7 +5087,7 @@
  },
  "simpletriggers": {
   "version": "1.0.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/simpletriggers",
@@ -5031,7 +5113,7 @@
  },
  "simpletweaksplugin": {
   "version": "1.15.0.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tweaks",
@@ -5040,12 +5122,36 @@
    {
     "cmd": "/stopcrafting",
     "help": "Stops crafting without closing the crafting log."
+   },
+   {
+    "cmd": "/updategearset",
+    "help": null
+   },
+   {
+    "cmd": "/leaveduty",
+    "help": "Leave the current duty"
+   },
+   {
+    "cmd": "/levelingdungeon",
+    "help": "Open the highest level leveling dungeon."
+   },
+   {
+    "cmd": "/estateaccess",
+    "help": null
+   },
+   {
+    "cmd": "/phantomjob",
+    "help": null
+   },
+   {
+    "cmd": "/chatvis",
+    "help": null
    }
   ]
  },
  "skippy": {
   "version": "2.2.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/skippy",
@@ -5055,7 +5161,7 @@
  },
  "snooper": {
   "version": "1.5.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/snooper",
@@ -5065,12 +5171,12 @@
  },
  "somethingneeddoing": {
   "version": "15.13",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "sonarplugin": {
   "version": "15.757.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/sonar",
@@ -5100,7 +5206,7 @@
  },
  "sortakinda": {
   "version": "3.0.2.9",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/sortakinda",
@@ -5114,7 +5220,7 @@
  },
  "soundeffectmuter": {
   "version": "1.4.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ptogglesem",
@@ -5124,7 +5230,7 @@
  },
  "soundfilter": {
   "version": "1.5.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/soundfilter",
@@ -5134,7 +5240,7 @@
  },
  "soundsetter": {
   "version": "1.14.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/soundsetterconfig (or /ssconfig)",
@@ -5172,7 +5278,7 @@
  },
  "splatoon": {
   "version": "3.9.2.33",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/splatoon",
@@ -5190,7 +5296,7 @@
  },
  "squadronista": {
   "version": "7.5.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/squadronista",
@@ -5204,12 +5310,12 @@
  },
  "stacksellprice": {
   "version": "4.8.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "standalonepluginmanager": {
   "version": "1.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/spm",
@@ -5219,7 +5325,7 @@
  },
  "stanleyparablexiv": {
   "version": "4.1.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/narrator",
@@ -5241,12 +5347,12 @@
  },
  "statuscontrast": {
   "version": "4.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "statustimers": {
   "version": "1.0.4.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/statustimers",
@@ -5256,7 +5362,7 @@
  },
  "steamrecordingenhanced": {
   "version": "1.0.0.4",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/steamrec",
@@ -5270,7 +5376,7 @@
  },
  "stickyfocustarget": {
   "version": "1.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/stickyfocustarget",
@@ -5284,7 +5390,7 @@
  },
  "stormtalons": {
   "version": "1.1.0.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/stormtalon",
@@ -5294,7 +5400,7 @@
  },
  "stylist": {
   "version": "1.0.0.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/stylist",
@@ -5304,7 +5410,7 @@
  },
  "submarinetracker": {
   "version": "2.0.6.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/stracker",
@@ -5334,12 +5440,12 @@
  },
  "suithighlighter": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "sundried": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/sundried",
@@ -5349,7 +5455,7 @@
  },
  "swatch": {
   "version": "0.0.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/swatch",
@@ -5359,12 +5465,21 @@
  },
  "talkcopy": {
   "version": "1.5.0.0",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/talkcopy",
+    "help": "Toggles the plugin on or off."
+   },
+   {
+    "cmd": "/dialogcopy",
+    "help": null
+   }
+  ]
  },
  "targetfurniture": {
   "version": "1.0.2.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/targetfurniture",
@@ -5378,7 +5493,7 @@
  },
  "targetlines": {
   "version": "1.10.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ptlines",
@@ -5392,12 +5507,12 @@
  },
  "teamcraftlistmaker": {
   "version": "1.0.1.2",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "teleporterplugin": {
   "version": "2.0.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tp",
@@ -5411,7 +5526,7 @@
  },
  "termfilter2": {
   "version": "1.0.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tf2",
@@ -5421,7 +5536,7 @@
  },
  "textadvance": {
   "version": "3.3.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/at",
@@ -5431,7 +5546,7 @@
  },
  "texttotalk": {
   "version": "1.40.9.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/showbattletalk",
@@ -5473,7 +5588,7 @@
  },
  "tf2criticalhitsplugin": {
   "version": "3.7.3.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/joeconfig",
@@ -5491,12 +5606,12 @@
  },
  "theheartoftheparty": {
   "version": "1.0.12.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "thingstodoineorzea": {
   "version": "1.0.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ttd",
@@ -5506,7 +5621,7 @@
  },
  "ticktracker": {
   "version": "1.6.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tick",
@@ -5516,7 +5631,7 @@
  },
  "tidychat": {
   "version": "3.1.1.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tidychat",
@@ -5530,7 +5645,7 @@
  },
  "tilted": {
   "version": "4.4.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tilted",
@@ -5540,7 +5655,7 @@
  },
  "tippy": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tippy",
@@ -5562,7 +5677,7 @@
  },
  "titleedit": {
   "version": "3.0.7.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/titleedit",
@@ -5576,7 +5691,7 @@
  },
  "titleroulette": {
   "version": "4.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ptitle",
@@ -5590,7 +5705,7 @@
  },
  "toastingwayplugin": {
   "version": "1.4.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tw",
@@ -5600,7 +5715,7 @@
  },
  "topsellingitems": {
   "version": "1.0.3.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/topselling",
@@ -5614,12 +5729,12 @@
  },
  "totalcharacterlevel": {
   "version": "0.0.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "totallevelplugin": {
   "version": "0.0.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/totallevel",
@@ -5629,7 +5744,7 @@
  },
  "tourist": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tourist",
@@ -5639,7 +5754,7 @@
  },
  "touristmod": {
   "version": "1.15.1000.18",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tourist",
@@ -5649,7 +5764,7 @@
  },
  "tpie": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tpie",
@@ -5659,7 +5774,7 @@
  },
  "trackytrack": {
   "version": "1.7.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ttracker (or /tracky)",
@@ -5673,7 +5788,7 @@
  },
  "traintracker": {
   "version": "0.9.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/traintracker",
@@ -5683,7 +5798,7 @@
  },
  "triadbuddy": {
   "version": "1.15.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/triadbuddy",
@@ -5693,7 +5808,7 @@
  },
  "truthordare": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/tod",
@@ -5715,7 +5830,7 @@
  },
  "twitchxiv": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/twitch (or /twconfig)",
@@ -5741,12 +5856,12 @@
  },
  "ukrchatsupport": {
   "version": "1.1.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "umbra": {
   "version": "3.1.18.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/umbra",
@@ -5768,7 +5883,7 @@
  },
  "unloaderrorfuckoff": {
   "version": "1.0.0.10",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fuckoff",
@@ -5778,7 +5893,7 @@
  },
  "vanillahotbarextender": {
   "version": "1.2.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/vhe",
@@ -5788,7 +5903,7 @@
  },
  "vanillaplus": {
   "version": "1.4.5.13",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/gameconfig",
@@ -5826,7 +5941,7 @@
  },
  "venuemanager": {
   "version": "3.2.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/venue",
@@ -5844,7 +5959,7 @@
  },
  "venuescope": {
   "version": "1.1.1.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/venuescope",
@@ -5858,7 +5973,7 @@
  },
  "veryimportantitem": {
   "version": "1.0.0.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pvii",
@@ -5868,12 +5983,12 @@
  },
  "vfallguy": {
   "version": "0.0.0.13",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "vfaux": {
   "version": "0.0.0.12",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/vfaux",
@@ -5883,7 +5998,7 @@
  },
  "vfxeditor": {
   "version": "1.9.4.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/vfxedit",
@@ -5893,12 +6008,33 @@
  },
  "visibility": {
   "version": "1.1.9.6",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/pvis",
+    "help": null
+   },
+   {
+    "cmd": "/void",
+    "help": null
+   },
+   {
+    "cmd": "/voidtarget",
+    "help": null
+   },
+   {
+    "cmd": "/whitelist",
+    "help": null
+   },
+   {
+    "cmd": "/whitelisttarget",
+    "help": null
+   }
+  ]
  },
  "visland": {
   "version": "0.0.0.152",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/visland",
@@ -5908,7 +6044,7 @@
  },
  "viwi": {
   "version": "0.0.0.62",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ws",
@@ -5978,7 +6114,7 @@
  },
  "vnavmesh": {
   "version": "1.2.3.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/vnav",
@@ -5992,7 +6128,7 @@
  },
  "voicedirector": {
   "version": "1.7.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/vodir",
@@ -6002,7 +6138,7 @@
  },
  "vsatisfy": {
   "version": "0.0.0.46",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/vsatisfy",
@@ -6012,7 +6148,7 @@
  },
  "wachumakeymaking": {
   "version": "2.0.6.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wymm",
@@ -6022,7 +6158,7 @@
  },
  "wahbuttons": {
   "version": "20.0.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wahbuttons",
@@ -6032,7 +6168,7 @@
  },
  "wahjumps": {
   "version": "20.0.0.2",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/WahJumps",
@@ -6042,7 +6178,7 @@
  },
  "wahtools": {
   "version": "20.0.0.39",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wah",
@@ -6056,7 +6192,7 @@
  },
  "wahventory": {
   "version": "20.0.0.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wahventory",
@@ -6066,7 +6202,7 @@
  },
  "waitingway-dalamud": {
   "version": "2.4.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/waitingway",
@@ -6076,7 +6212,7 @@
  },
  "wavewrangler": {
   "version": "1.0.4.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/o",
@@ -6086,12 +6222,17 @@
  },
  "waymarkpresetplugin": {
   "version": "1.5.5.4",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/pwaymark",
+    "help": null
+   }
+  ]
  },
  "waymarkstudio": {
   "version": "0.0.0.53",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wms",
@@ -6101,7 +6242,7 @@
  },
  "weatherman": {
   "version": "2.5.0.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/weatherman",
@@ -6111,17 +6252,22 @@
  },
  "wextras": {
   "version": "1.0.0.10",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "whatdidyousay": {
   "version": "1.0.2.9",
-  "scan": 2,
-  "commands": []
+  "scan": 4,
+  "commands": [
+   {
+    "cmd": "/saywhat",
+    "help": null
+   }
+  ]
  },
  "whereamiagain": {
   "version": "2.1.1.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/waia",
@@ -6131,7 +6277,7 @@
  },
  "whereismymouse": {
   "version": "0.0.1.6",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wmm",
@@ -6141,7 +6287,7 @@
  },
  "whichmount": {
   "version": "1.5.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/mountsconfig",
@@ -6155,17 +6301,17 @@
  },
  "whichpatchwasthat": {
   "version": "7.5.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "whoamiagain": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "whodidthat": {
   "version": "1.10.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pwdt",
@@ -6179,12 +6325,12 @@
  },
  "wholist": {
   "version": "1.11.3.1",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "whostalking": {
   "version": "0.8.10.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/whostalking",
@@ -6194,7 +6340,7 @@
  },
  "wikilinx": {
   "version": "0.0.0.11",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wikilinx",
@@ -6204,7 +6350,7 @@
  },
  "wintitle": {
   "version": "15.750.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wintitle",
@@ -6214,12 +6360,12 @@
  },
  "wondroustailssolver": {
   "version": "3.2.2.6",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "wordsmith": {
   "version": "1.16.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/thesaurus",
@@ -6237,7 +6383,7 @@
  },
  "workshopoptimizerplugin": {
   "version": "0.3.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wso",
@@ -6247,7 +6393,7 @@
  },
  "workshoppa": {
   "version": "9.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/ws",
@@ -6269,7 +6415,7 @@
  },
  "wrathcombo": {
   "version": "1.0.4.27",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wrath",
@@ -6283,7 +6429,7 @@
  },
  "wtsync": {
   "version": "0.17.2.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wtsync",
@@ -6293,7 +6439,7 @@
  },
  "wuklamark": {
   "version": "1.2.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wlmark",
@@ -6307,7 +6453,7 @@
  },
  "xivchat": {
   "version": "1.7.13",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xivchat",
@@ -6317,7 +6463,7 @@
  },
  "xivcombo": {
   "version": "2.0.15.3",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pcombo",
@@ -6327,7 +6473,7 @@
  },
  "xivcontrollertoggle": {
   "version": "1.2.5.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/controllerhudcfg",
@@ -6349,12 +6495,12 @@
  },
  "xivdeck-ffxivplugin": {
   "version": "0.4.5",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "xivfatalframe": {
   "version": "1.3.0.1",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/fatalframe",
@@ -6364,7 +6510,7 @@
  },
  "xivgearexport": {
   "version": "1.6.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xgeconfig",
@@ -6386,7 +6532,7 @@
  },
  "xivjitterfix": {
   "version": "0.0.0.5",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/jitterfix",
@@ -6396,7 +6542,7 @@
  },
  "xivlogger": {
   "version": "1.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xivlogger",
@@ -6414,7 +6560,7 @@
  },
  "xivreflex": {
   "version": "1.0.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xivreflex",
@@ -6424,7 +6570,7 @@
  },
  "xivremotechat": {
   "version": "0.0.0.15",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/xrc",
@@ -6438,7 +6584,7 @@
  },
  "xivuncombo": {
   "version": "1.0.15.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/puncombo",
@@ -6448,7 +6594,7 @@
  },
  "xivwindowresizer": {
   "version": "1.0.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/wresize",
@@ -6458,7 +6604,7 @@
  },
  "yesalready": {
   "version": "1.15.7.8",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/yesalready",
@@ -6468,12 +6614,12 @@
  },
  "yokaicheck": {
   "version": "1.3.1.0",
-  "scan": 2,
+  "scan": 4,
   "commands": []
  },
  "zds": {
   "version": "1.2.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/zd",
@@ -6483,7 +6629,7 @@
  },
  "zodiacbuddy": {
   "version": "1.15.0.0",
-  "scan": 2,
+  "scan": 4,
   "commands": [
    {
     "cmd": "/pzodiac",
