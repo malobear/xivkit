@@ -154,3 +154,11 @@ html:has(.viewer[open]){overflow:hidden}
 .usage-src{margin-top:18px}
 .about ul,.about ol{padding-left:22px;max-width:68ch}
 .about li{margin:4px 0}
+.ingame-help{margin:14px 0 6px}
+.chat{background:#121216;color:#ece9e4;border:1px solid var(--border-strong);border-radius:8px;padding:12px 16px;font:14px/1.5 var(--font-sans)}
+.chat span{display:block;padding-left:1.4em;text-indent:-1.4em;overflow-wrap:anywhere}
+.chat .head{font-weight:600;color:#fff;padding-left:0;text-indent:0;margin-top:2px}
+.chat .gap{height:.6em}
+.ingame-help figcaption{color:var(--muted);font-size:13px;margin-top:6px}
+.tips{padding-left:22px;max-width:68ch}
+.tips li{margin:6px 0}

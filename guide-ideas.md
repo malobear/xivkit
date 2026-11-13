@@ -214,11 +214,23 @@ There's no way to tell from the file alone whether a string is a command the plu
 adds or a game command it types. It also means downloading ~500 zips (Allagan Tools
 alone is 8MB).
 
-Update (2026-11-12): reading the source works where the DLL scan didn't. Lifestream's README
-lists no commands, but its source registers `/li` and `/lifestream` (`EzCmd.Add`), keeps a help
-list in `Lang.cs`, and parses about ten subcommands that list leaves out (`stop`, `inn`, `occult`,
-instance numbers, `fcgc`, character switching with `@`). The plugin page section now exists
-(`directory/content/usage.json`, rendered by `directory/plugin.njk`), with Lifestream as the pilot.
+Update (2026-11-12): the page section exists now (`directory/content/usage.json`,
+`scripts/plugins-help.mjs`, `directory/plugin.njk`), with Lifestream as the pilot. Two findings:
+- Read the released DLL, not the repo. Lifestream's GitHub `main` builds 2.5.4.18 while the
+  installer ships 2.6.0.13, so the source missed the friend estate and South Horn commands. The
+  help text is a string literal in the DLL (the #US heap), so it comes out exact.
+- Survey of the top 10 by installs: none of their READMEs lists commands except BossMod's `/vbm`
+  (Honorific has no README). How each documents them in the plugin:
+  - Full help list in one string, ready to show: Artisan (`/artisan` subcommands), AutoRetainer
+    (`/autoretainer`, 17 lines), and Lifestream (not top 10, 1.7M installs). Questionable has one
+    string per line (`/qst help-all`), which the `prefix` rule handles.
+  - One help line per command: GatherBuddy (6 commands with clear help), BossMod (`/vbm`, `/vbmai`),
+    Honorific and Market Board (one command each that opens a window, little to add).
+  - Needs hand work: Simple Tweaks (commands belong to individual tweaks and only exist once that
+    tweak is on), AutoHook (11 commands, help text not next to them, probably in resources), and
+    Allagan Tools (commands are in attributes, not plain strings).
+  Best next candidates: Artisan, AutoRetainer, GatherBuddy, then Simple Tweaks by hand. Artisan,
+  AutoRetainer, AutoHook and Questionable are automation tools, so mind the Aethertek policy question.
 
 Plan if picked up:
 1. A one-off candidates script (not part of every fetch): scan each plugin's DLL

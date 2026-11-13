@@ -1,85 +1,27 @@
 {
   "lifestream": {
-    "description": "Every Lifestream chat command with examples: world and data center travel, housing, Grand Company, inns, instances, and the shortcuts its own help leaves out.",
-    "intro": "Almost everything in Lifestream runs through one chat command, <code>/li</code>, followed by where you want to go. The plugin's README doesn't list any of them, and the Help tab inside the plugin (open it with <code>/lifestream</code>) misses a few. Commands marked <span class=\"badge badge-test\">Not in the help</span> aren't in that tab at all. Every command also works in a macro, so a hotbar button for <code>/li fc</code> or <code>/li mb</code> is one click from anywhere.",
-    "groups": [
-      {
-        "title": "Worlds and data centers",
-        "commands": [
-          { "cmd": "/li", "does": "Go back to your home world. You can change what a bare <code>/li</code> does under Settings (open the world list, open the settings, or nothing)." },
-          { "cmd": "/li <world>", "ex": "/li bal", "does": "Go to a world, on your data center or another one. The start of the name is enough, so <code>/li bal</code> is Balmung. Worlds on your current data center are checked first, so type enough letters to tell similar names apart." },
-          { "cmd": "/li <data center>", "ex": "/li light", "does": "Go to a random world on that data center." },
-          { "cmd": "/li w", "does": "Open Lifestream's world travel window and pick a world from the list. <code>/li world</code> and <code>/li travel</code> do the same." },
-          { "cmd": "/li stop", "extra": true, "does": "Cancel whatever Lifestream is doing, such as a trip that's stuck in a queue." }
-        ],
-        "note": "Data center travel is on by default. Lifestream leaves your party when it needs to; you can turn that and data center travel off in Settings."
-      },
-      {
-        "title": "Aetherytes and the aethernet",
-        "commands": [
-          { "cmd": "/li <aethernet shard>", "ex": "/li sapphire", "does": "In a city, go to an aethernet shard by part of its name. In Ul'dah, <code>/li sapphire</code> takes you to the Sapphire Avenue Exchange." },
-          { "cmd": "/li tp <aetheryte>", "ex": "/li tp tuliyollal", "extra": true, "does": "Teleport to an aetheryte by part of its name, the same as picking it from the Teleport list." },
-          { "cmd": "/li <world>, tp <aetheryte>", "ex": "/li bal, tp kugane", "does": "Go to another world, then teleport straight to an aetheryte there." }
-        ],
-        "note": "You can also click an aethernet shard on the zone map to go there, without typing anything."
-      },
-      {
-        "title": "Market board",
-        "commands": [
-          { "cmd": "/li mb", "does": "Go to a market board." },
-          { "cmd": "/li <world> mb", "ex": "/li bal mb", "does": "Go to another world and straight to its market board, for checking or buying on a world you don't live on." }
-        ]
-      },
-      {
-        "title": "Housing",
-        "commands": [
-          { "cmd": "/li home", "does": "Go to your own house. <code>/li house</code> and <code>/li private</code> do the same." },
-          { "cmd": "/li fc", "does": "Go to your Free Company's house." },
-          { "cmd": "/li ws", "does": "Go to your Free Company's workshop, all the way inside." },
-          { "cmd": "/li apt", "does": "Go to your apartment." },
-          { "cmd": "/li shared", "does": "Go to a house you share with someone else." },
-          { "cmd": "/li auto", "does": "Go to whichever of your homes you set as preferred in Settings (house, shared, FC or apartment)." },
-          { "cmd": "/li <district> <ward> <plot>", "ex": "/li mist 5 12", "does": "Go to any plot on your current world. Districts are <code>mist</code>, <code>lavender</code>, <code>goblet</code>, <code>shirogane</code> and <code>empyreum</code>." },
-          { "cmd": "/li <world> <district> <ward> <plot>", "ex": "/li bal goblet 3 30", "does": "Go to a plot on another world, useful for venues and friends' houses." },
-          { "cmd": "/li <saved address>", "ex": "/li venue", "extra": true, "does": "Give an Address Book entry an alias and it becomes its own command. Save a venue as <code>venue</code> and <code>/li venue</code> takes you there from anywhere." }
-        ],
-        "note": "For the house commands to walk you to the door, register your houses once in the plugin's House Registration tab (stand on the plot, then record the path to the entrance)."
-      },
-      {
-        "title": "Grand Company and inns",
-        "commands": [
-          { "cmd": "/li gc", "does": "Go to your Grand Company's headquarters, for seal turn-ins and expert delivery." },
-          { "cmd": "/li gc <company>", "ex": "/li gc flames", "does": "Go to a specific Grand Company: <code>mael</code>, <code>adder</code> or <code>flames</code>." },
-          { "cmd": "/li gcc", "does": "Go to the company chest in your Grand Company's city." },
-          { "cmd": "/li hc", "does": "Same as <code>/li gc</code>, but goes back to your home world first. <code>/li hcc</code> does the same for the company chest." },
-          { "cmd": "/li fcgc", "extra": true, "does": "Go to your Free Company's Grand Company instead of your own, for FC seal turn-ins when the two differ." },
-          { "cmd": "/li inn", "extra": true, "does": "Go to your inn room on the world you're on." },
-          { "cmd": "/li hinn", "extra": true, "does": "Go back to your home world, then to your inn room." },
-          { "cmd": "/li inn <number>", "ex": "/li inn 2", "extra": true, "does": "Go to a specific city's inn. Type a number that's too high, like <code>/li inn 99</code>, to see the list." }
-        ],
-        "note": "Walking to the Grand Company counter uses the optional vnavmesh plugin. Without it Lifestream still teleports you to the right city."
-      },
-      {
-        "title": "Instances and special areas",
-        "commands": [
-          { "cmd": "/li <instance number>", "ex": "/li 2", "extra": true, "does": "Switch to that instance of the zone you're in, when the zone has instances. Handy for hunts and FATEs." },
-          { "cmd": "/li cosmic", "does": "Go to Cosmic Exploration, going back to your home world first if needed." },
-          { "cmd": "/li occult", "extra": true, "does": "Go to the Occult Crescent." },
-          { "cmd": "/li island", "does": "Go to your Island Sanctuary." },
-          { "cmd": "/li firmament", "does": "Go to the Firmament in Ishgard." }
-        ]
-      },
-      {
-        "title": "Chaining and switching characters",
-        "commands": [
-          { "cmd": "/li <world> <shortcut>", "ex": "/li bal gc", "extra": true, "does": "Most shortcuts above can follow a world name, and run once you arrive. <code>/li bal gc</code> goes to Balmung and then your Grand Company. Use a comma for anything longer: <code>/li bal, venue</code>." },
-          { "cmd": "/li <first> <last>@<world>", "ex": "/li Jane Doe@Balmung", "extra": true, "does": "Log out and back in as another of your characters on the same account. Add a world after it to travel there once logged in." }
-        ],
-        "note": "Build your own multi-step routes in the Custom Alias tab, and run them with <code>/li</code> plus the alias name."
-      }
+    "description": "Every Lifestream chat command: the plugin's own help list, plus the commands and setup tips it leaves out (inns, instances, stopping a trip, chaining).",
+    "intro": "Almost everything in Lifestream runs through one chat command, <code>/li</code>, followed by where you want to go. Its README doesn't list any of them. The full list is in the plugin's Help tab (type <code>/lifestream</code>), copied below as it appears in game.",
+    "help": { "start": "-- Main Travel --", "end": "/lifestream → open plugin configuration" },
+    "extras": [
+      { "cmd": "/li stop", "does": "Cancel whatever Lifestream is doing, such as a trip stuck in a queue." },
+      { "cmd": "/li inn", "does": "Go to your inn room on the world you're on. <code>/li hinn</code> goes back to your home world first." },
+      { "cmd": "/li inn <number>", "ex": "/li inn 2", "does": "Go to a specific city's inn. A number that's too high, like <code>/li inn 99</code>, prints the list." },
+      { "cmd": "/li <instance number>", "ex": "/li 2", "does": "Switch to that instance of the zone you're in, when the zone has instances. Handy for hunts and FATEs." },
+      { "cmd": "/li fcgc", "does": "Go to your Free Company's Grand Company instead of your own, for FC seal turn-ins when the two differ." },
+      { "cmd": "/li tp <aetheryte>", "ex": "/li tp tuliyollal", "does": "Teleport to an aetheryte by part of its name, without changing world." },
+      { "cmd": "/li <world> <shortcut>", "ex": "/li bal gc", "does": "Put a shortcut after a world name and it runs once you arrive. Use a comma for anything longer, like an alias: <code>/li bal, venue</code>." },
+      { "cmd": "/li <alias>", "ex": "/li venue", "does": "Give an Address Book entry or a Custom Alias route an alias and it becomes its own command." },
+      { "cmd": "/li <first> <last>@<world>", "ex": "/li Jane Doe@Balmung", "does": "Log out and back in as another of your characters on the same account." }
     ],
-    "authorList": "The Help tab in <code>/lifestream</code> has the author's own list.",
-    "sourceDate": "2026-10-16",
+    "tips": [
+      "Names can be shortened. <code>/li bal</code> is Balmung and <code>/li sapphire</code> is Ul'dah's Sapphire Avenue Exchange. Worlds on your current data center are checked first.",
+      "Register your houses once in the House Registration tab (stand on the plot, then record the path to the door) so the estate commands walk you inside.",
+      "Install the optional vnavmesh plugin for the Grand Company commands to walk you to the counter. Without it they still teleport you to the right city.",
+      "Everything works in a macro, so a hotbar button for <code>/li fc</code> or <code>/li mb</code> is one click from anywhere.",
+      "Settings decide what a bare <code>/li</code> does (go home, open the world list, open settings, or nothing), whether data center travel is allowed, and whether to leave your party first.",
+      "You can also click an aethernet shard on the zone map to go there without typing anything."
+    ],
     "checkedInGame": null
   }
 }

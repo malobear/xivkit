@@ -161,14 +161,23 @@ round badge on their icon and title, a "Third-party" filter (off by default, `?t
 install step with a copy button for the repository address. Add a repo by adding one line there
 and running `pnpm plugins`.
 
-Some plugin pages get a hand-written "Commands and tips" section from
-`directory/content/usage.json`, keyed by plugin slug, for popular plugins whose own docs don't
-list their chat commands. Each entry has an intro, groups of commands (`cmd`, `does`, an optional
-`ex` example, and `extra: true` for commands missing from the plugin's own in-game help), and
-`sourceDate`/`checkedInGame` for the footnote. A plugin with an entry also gets "commands and
-guide" in its title and the entry's `description` as its meta description. Work commands out from
-the plugin's source (where it registers them and parses the arguments), not by guessing, and check
-them in game before setting `checkedInGame`. Then run `pnpm plugins:build`.
+Some plugin pages get a "Commands and tips" section, for popular plugins whose own docs don't
+list their chat commands. It has two parts:
+
+- **The plugin's own help, word for word.** `scripts/plugins-help.mjs` (`pnpm plugins:help`, part of
+  `pnpm plugins`) downloads the released plugin, the same `latest.zip` the installer uses, and copies
+  the help text out of its DLL into `directory/content/plugin-help.json`. It reads the release rather
+  than GitHub because some authors ship newer builds than the source they publish (Lifestream's repo
+  was a whole minor version behind). The page shows it in a dark panel styled like the in-game help.
+- **XIVKit's notes**, hand-written in `directory/content/usage.json` and keyed by plugin slug: an
+  `intro`, a `help` rule saying where the help text is (`start`/`end` markers inside one string, or a
+  `prefix` that every help line starts with), `extras` for commands the help leaves out (`cmd`,
+  `does`, optional `ex`), `tips`, and `checkedInGame` once the extras have been tried. Work extras out
+  from the plugin's code, not by guessing, and only list what the help doesn't already say.
+
+A plugin with an entry also gets "commands and guide" in its title and the entry's `description` as
+its meta description. When an update changes the help text the script says so; check the extras
+still hold. If a rule stops matching, it keeps the last good text and warns.
 
 A GitHub Action (`.github/workflows/plugins-refresh.yml`) runs `pnpm plugins` every Monday and commits any changes to `main`. It can also be started by hand from the Actions tab.
 

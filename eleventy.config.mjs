@@ -8,6 +8,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("usage", () =>
     JSON.parse(readFileSync(new URL("./directory/content/usage.json", import.meta.url), "utf8")));
   eleventyConfig.addWatchTarget("./directory/content/usage.json");
+  // Each plugin's own help text, copied from its released DLL by scripts/plugins-help.mjs.
+  eleventyConfig.addGlobalData("pluginHelp", () =>
+    JSON.parse(readFileSync(new URL("./directory/content/plugin-help.json", import.meta.url), "utf8")));
 
   eleventyConfig.addPassthroughCopy({ "directory/directory.css": "directory.css" });
   eleventyConfig.addPassthroughCopy({ "directory/directory.js": "directory.js" });
@@ -53,6 +56,14 @@ export default function (eleventyConfig) {
     flushPara(); flushList();
     return out.join("\n");
   });
+  // A plugin's in-game help text, one block per line so long lines wrap with a hanging indent.
+  // "-- Section --" lines become headings, as they read in game.
+  eleventyConfig.addFilter("helpLines", (text) => String(text ?? "").split("\n").map((l) => {
+    const t = l.trim();
+    if (!t) return "<span class=\"gap\"></span>";
+    const head = t.match(/^-{2,}\s*(.+?)\s*-{2,}$/);
+    return head ? `<span class="head">${esc(head[1])}</span>` : `<span>${esc(t)}</span>`;
+  }).join(""));
   eleventyConfig.addFilter("host", (url) => {
     try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
   });
