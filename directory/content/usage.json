@@ -147,5 +147,10 @@
     "description": "Every AutoRetainer chat command from the plugin's own help: enable, MultiMode, relog to a character, sell items, expert delivery, armoire and dresser.",
     "intro": "All of AutoRetainer's commands start with <code>/autoretainer</code>, or the shorter <code>/ays</code>. This is the plugin's own help text, the same one Dalamud shows for the command in <code>/xlhelp</code>.",
     "help": { "start": "Open plugin interface", "end": "(requires Glamour Log plugin)", "lead": "/autoretainer → " }
+  },
+  "questionable": {
+    "description": "Every Questionable chat command from the plugin's own help: start and stop questing, the quest priority list, journal progress, next quest and more.",
+    "intro": "Questionable runs from <code>/qst</code>. Type <code>/qst help-all</code> in game to print this same list in chat, or <code>/qst help</code> for the short version. It automates questing, which is against the game's terms of service, so use it at your own risk.",
+    "help": { "prefix": "/qst " }
   }
 }
