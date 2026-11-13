@@ -13,6 +13,7 @@ eleventyComputed:
   noindex: "{{ 'true' if plugin.status == 'unavailable' else 'false' }}"
 ---
 {% from "card.njk" import card, srcBadge %}
+{% from "icons.njk" import icon %}
 {% set repo = repos | repoFor(plugin) %}
 <nav class="crumbs" aria-label="Breadcrumb">
   <a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span>
@@ -24,34 +25,25 @@ eleventyComputed:
   <div>
     <h1>{{ plugin.name }}{% if plugin.source != "official" %} {{ srcBadge("src-badge-title") }}{% endif %}{% if plugin.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif plugin.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif plugin.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</h1>
     <p class="lede">{{ plugin.punchline }}</p>
+    <ul class="meta">
+      <li>{{ icon("user") }}<span>by <strong>{{ plugin.author or "Unknown" }}</strong></span></li>
+      <li title="{{ plugin.downloads | num }} installs">{{ icon("download") }}<span><strong>{{ plugin.downloads | compact }}</strong> installs</span></li>
+      {% if plugin.lastUpdate %}<li>{{ icon("clock") }}<span>Updated <time datetime="{{ plugin.lastUpdate | isoDate }}"><strong>{{ plugin.lastUpdate | niceDate }}</strong></time></span></li>{% endif %}
+    </ul>
   </div>
 </header>
-
-<aside class="facts" aria-label="Plugin facts">
-  <dl>
-    <div><dt>Author</dt><dd>{{ plugin.author or "Unknown" }}</dd></div>
-    <div><dt>Category</dt><dd><a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a></dd></div>
-    <div><dt>Installs</dt><dd>{{ plugin.downloads | num }}</dd></div>
-    {% if plugin.lastUpdate %}<div><dt>Last updated</dt><dd>{{ plugin.lastUpdate | isoDate }}</dd></div>{% endif %}
-    <div><dt>Status</dt><dd>{% if plugin.status == "ok" %}Installable{% if plugin.needsTesting %} (testing builds){% endif %}{% elif plugin.status == "outdated" %}Outdated, not installable{% else %}Not in the installer{% endif %}</dd></div>
-    <div><dt>Dalamud API</dt><dd>{{ plugin.apiLevel }}{% if plugin.apiLevel < meta.api %} (current is {{ meta.api }}){% endif %}</dd></div>
-    <div><dt>Repository</dt><dd>{% if plugin.source == "official" or not repo %}Dalamud official list{% else %}<a href="{{ repo.site }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a> (third-party){% endif %}</dd></div>
-    {% if plugin.repoUrl %}<div><dt>Source</dt><dd><a href="{{ plugin.repoUrl }}" target="_blank" rel="noopener noreferrer">{{ plugin.repoUrl | host }}</a></dd></div>{% endif %}
-  </dl>
-  {% if plugin.tags.length %}<p class="tags">{% for t in plugin.tags %}<span class="chip-static">{{ t }}</span>{% endfor %}</p>{% endif %}
-</aside>
 
 <div class="plugin-main">
     {% if plugin.description and (plugin.description | oneLine) != plugin.punchline %}
     <section class="about" aria-labelledby="about-h">
-      <h2 id="about-h">About {{ plugin.name }}</h2>
+      <h2 id="about-h">{{ icon("info") }}About {{ plugin.name }}</h2>
       {{ plugin.description | description | safe }}
     </section>
     {% endif %}
 
     {% if plugin.images.length %}
     <section aria-labelledby="shots-h">
-      <h2 id="shots-h">Screenshots</h2>
+      <h2 id="shots-h">{{ icon("image") }}Screenshots</h2>
       <p class="sub">{{ plugin.images.length }} {{ "image" if plugin.images.length == 1 else "images" }} from the plugin's author. Click one to see it full size.</p>
       <ul class="shots">{% for img in plugin.images %}<li><a class="shot" href="{{ img }}" target="_blank" rel="noopener"><img src="{{ img }}" alt="{{ plugin.name }} screenshot {{ loop.index }} of {{ loop.length }}" loading="lazy" decoding="async"></a></li>{% endfor %}</ul>
       <dialog class="viewer" aria-label="{{ plugin.name }} screenshots">
@@ -65,7 +57,7 @@ eleventyComputed:
 
     <section aria-labelledby="install-h">
       {% if plugin.status == "ok" %}
-      <h2 id="install-h">How to install</h2>
+      <h2 id="install-h">{{ icon("download") }}How to install</h2>
       <ol class="steps">
         <li>Install <a href="https://goatcorp.github.io/" target="_blank" rel="noopener noreferrer">XIVLauncher with Dalamud</a> and start the game through it.</li>
         {% if plugin.source != "official" and repo %}<li>Type <code>/xlsettings</code> and open the <strong>Experimental</strong> tab. Under <strong>Custom Plugin Repositories</strong>, paste this address, click the <strong>+</strong> button, then the save button.
@@ -76,13 +68,13 @@ eleventyComputed:
       </ol>
       {% if plugin.source != "official" and repo %}<p class="warn">{{ srcBadge("src-badge-inline") }} {{ plugin.name }} comes from the {{ repo.name }} repository, not Dalamud's official list. Dalamud's team has not reviewed it. Only add repositories you trust, and remove the repository again if you stop using its plugins.</p>{% endif %}
       {% else %}
-      <h2 id="install-h">Can you install it?</h2>
+      <h2 id="install-h">{{ icon("alert") }}Can you install it?</h2>
       <p class="warn">{% if plugin.status == "outdated" %}Not right now. {{ plugin.name }} was last built for Dalamud API {{ plugin.apiLevel }}, and current Dalamud is API {{ meta.api }}, so the installer lists it as outdated and won't install it until the author releases an update.{% else %}Not right now. {{ plugin.name }} was last built for Dalamud API {{ plugin.apiLevel }}, and current Dalamud is API {{ meta.api }}, so the installer doesn't list it at all. It will come back if the author updates it.{% endif %}{% set alt = plugins | similar(plugin) %}{% if alt.length %} In the meantime, the similar plugins below do work.{% endif %}</p>
       {% endif %}
     </section>{% set guide = usage[plugin.slug] %}{% set help = pluginHelp[plugin.slug] %}{% if guide %}
 
     <section class="usage" aria-labelledby="usage-h">
-      <h2 id="usage-h">Commands and tips</h2>
+      <h2 id="usage-h">{{ icon("terminal") }}Commands and tips</h2>
       <p>{{ guide.intro | safe }}</p>
       {% if help %}
       <figure class="ingame-help">
@@ -103,10 +95,22 @@ eleventyComputed:
       <p class="sub usage-src">{% if guide.extras.length or guide.tips.length %}The extra commands and tips are XIVKit's notes, worked out from the plugin's code{% if guide.checkedInGame %} and checked in game on {{ guide.checkedInGame }}{% endif %}. {% endif %}Commands can change when the plugin updates.</p>
     </section>{% endif %}
 
+    <section aria-labelledby="details-h">
+      <h2 id="details-h">{{ icon("list") }}Details</h2>
+      <dl class="details">
+        <div><dt>{{ icon("folder") }}Category</dt><dd><a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a></dd></div>
+        <div><dt>{{ icon("check" if plugin.status == "ok" else "alert") }}Status</dt><dd>{% if plugin.status == "ok" %}Installable{% if plugin.needsTesting %} (testing builds){% endif %}{% elif plugin.status == "outdated" %}Outdated, not installable{% else %}Not in the installer{% endif %}</dd></div>
+        <div><dt>{{ icon("plug") }}Dalamud API</dt><dd>{{ plugin.apiLevel }}{% if plugin.apiLevel < meta.api %} (current is {{ meta.api }}){% endif %}</dd></div>
+        <div><dt>{{ icon("box") }}Repository</dt><dd>{% if plugin.source == "official" or not repo %}Dalamud official list{% else %}<a href="{{ repo.site }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a>, third-party{% endif %}</dd></div>
+        {% if plugin.repoUrl %}<div><dt>{{ icon("code") }}Source code</dt><dd><a href="{{ plugin.repoUrl }}" target="_blank" rel="noopener noreferrer">{{ plugin.repoUrl | host }}</a></dd></div>{% endif %}
+        {% if plugin.tags.length %}<div class="details-tags"><dt>{{ icon("tag") }}Tags</dt><dd>{% for t in plugin.tags %}<span class="chip-static">{{ t }}</span>{% endfor %}</dd></div>{% endif %}
+      </dl>
+    </section>
+
     {% set more = plugins | similar(plugin) %}
     {% if more.length %}
     <section aria-labelledby="similar-h">
-      <h2 id="similar-h">Similar plugins</h2>
+      <h2 id="similar-h">{{ icon("grid") }}Similar plugins</h2>
       <ul class="plug-list">{% for p in more %}{{ card(p, categories) }}{% endfor %}</ul>
     </section>
     {% endif %}
