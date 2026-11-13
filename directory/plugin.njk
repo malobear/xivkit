@@ -93,7 +93,15 @@ eleventyComputed:
       <ul class="tips">{% for t in guide.tips %}<li>{{ t | safe }}</li>{% endfor %}</ul>
       {% endif %}
       <p class="sub usage-src">{% if guide.extras.length or guide.tips.length %}The extra commands and tips are XIVKit's notes, worked out from the plugin's code{% if guide.checkedInGame %} and checked in game on {{ guide.checkedInGame }}{% endif %}. {% endif %}Commands can change when the plugin updates.</p>
-    </section>{% endif %}
+    </section>{% else %}{% set cmdText = plugin.slug | commandText %}{% if cmdText %}
+
+    <section class="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h">{{ icon("terminal") }}Commands</h2>
+      <figure class="ingame-help">
+        <div class="chat">{{ cmdText | helpLines | safe }}</div>
+        <figcaption>The chat commands {{ plugin.name }} registers, with the help text Dalamud shows for each, read from the released plugin (version {{ pluginCommands[plugin.slug].version }}). Some plugins have more commands or options than they list here.</figcaption>
+      </figure>
+    </section>{% endif %}{% endif %}
 
     <section aria-labelledby="details-h">
       <h2 id="details-h">{{ icon("list") }}Details</h2>

@@ -1,0 +1,4 @@
+{
+  "_about": "Fixes for directory/content/plugin-commands.json, which scripts/plugins-commands.mjs reads out of each released plugin. Key by plugin slug. false hides the plugin's commands. Otherwise: \"hide\" lists commands to leave out, and \"help\" replaces a command's help text (null removes it). Only correct what the plugin actually says; don't invent help text.",
+  "jobbars": { "help": { "/jobbars": null } }
+}

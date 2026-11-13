@@ -1,0 +1,5417 @@
+{
+ "abilityants": {
+  "version": "1.0.2.6",
+  "commands": [
+   {
+    "cmd": "/pants",
+    "help": "Draw ants border around specific abilities. /pants to configure."
+   }
+  ]
+ },
+ "accountant": {
+  "version": "1.8.3.1",
+  "commands": [
+   {
+    "cmd": "/accountant",
+    "help": "Open Accountant config. Use '/acct' or '/accountant timers' to toggle the timer window."
+   },
+   {
+    "cmd": "/acct",
+    "help": "Toggle the timer window."
+   }
+  ]
+ },
+ "acquisitiondate": {
+  "version": "1.2.1.1",
+  "commands": []
+ },
+ "acrylicxiv": {
+  "version": "0.1.0.0",
+  "commands": [
+   {
+    "cmd": "/acrylic",
+    "help": null
+   }
+  ]
+ },
+ "actiontimeline": {
+  "version": "1.9.0.0",
+  "commands": [
+   {
+    "cmd": "/actiontimeline",
+    "help": "Opens the ActionTimeline configuration window."
+   },
+   {
+    "cmd": "/att",
+    "help": "Opens the ActionTimeline Timeline Settings window."
+   },
+   {
+    "cmd": "/atr",
+    "help": "Opens the ActionTimeline Rotation Settings window."
+   }
+  ]
+ },
+ "activevenuefinder": {
+  "version": "2.2.0.1",
+  "commands": [
+   {
+    "cmd": "/avf",
+    "help": "Open Active Venue Finder. Use '/avf config' for settings."
+   }
+  ]
+ },
+ "adaptivehud": {
+  "version": "1.0.15.0",
+  "commands": [
+   {
+    "cmd": "/pah",
+    "help": "Opens configuration window for Adaptive Hud"
+   }
+  ]
+ },
+ "adventurerinneed": {
+  "version": "1.6.0.1",
+  "commands": [
+   {
+    "cmd": "/pbonus",
+    "help": null
+   }
+  ]
+ },
+ "aether48": {
+  "version": "1.0.0.3",
+  "commands": [
+   {
+    "cmd": "/a48",
+    "help": "Opens the Aether48 game window."
+   }
+  ]
+ },
+ "aetherbags": {
+  "version": "1.0.0.5",
+  "commands": [
+   {
+    "cmd": "/aetherbags",
+    "help": "Opens your inventory. Use '/ab help' for more options."
+   },
+   {
+    "cmd": "/ab",
+    "help": "Opens your inventory. Use '/ab help' for more options."
+   }
+  ]
+ },
+ "aetherblackbox": {
+  "version": "7.56.1.1",
+  "commands": [
+   {
+    "cmd": "/abb",
+    "help": "Open Aether Blackbox"
+   },
+   {
+    "cmd": "/aetherblackbox",
+    "help": "Open Aether Blackbox"
+   }
+  ]
+ },
+ "aetherbomber": {
+  "version": "0.0.0.5",
+  "commands": [
+   {
+    "cmd": "/aetherbomber",
+    "help": "Opens the AetherBomber game window."
+   },
+   {
+    "cmd": "/abomb2",
+    "help": "Opens a second AetherBomber window for testing."
+   }
+  ]
+ },
+ "aetherbreaker": {
+  "version": "2.1.1.3",
+  "commands": [
+   {
+    "cmd": "/abreaker",
+    "help": "Opens the AetherBreaker game window."
+   }
+  ]
+ },
+ "aetherbreakout": {
+  "version": "1.2.2.0",
+  "commands": [
+   {
+    "cmd": "/abreakout",
+    "help": "Opens the AetherBreakout game window."
+   }
+  ]
+ },
+ "aetherdraw": {
+  "version": "7.5.0.1",
+  "commands": [
+   {
+    "cmd": "/aetherdraw",
+    "help": "Opens the main AetherDraw whiteboard."
+   },
+   {
+    "cmd": "/aetherdraw2",
+    "help": "Opens a second AetherDraw window for testing."
+   }
+  ]
+ },
+ "aethergon": {
+  "version": "1.2.0.2",
+  "commands": [
+   {
+    "cmd": "/agon",
+    "help": "Opens the AetherGon game window."
+   }
+  ]
+ },
+ "aetherialarena": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/aarena",
+    "help": "Opens the Aetherial Arena main window."
+   },
+   {
+    "cmd": "/aadebug",
+    "help": null
+   }
+  ]
+ },
+ "aethericflow": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/aethericflow",
+    "help": null
+   },
+   {
+    "cmd": "/aftp",
+    "help": null
+   },
+   {
+    "cmd": "/aethericflowtp",
+    "help": null
+   }
+  ]
+ },
+ "aetherloveplugin": {
+  "version": "2.8.0.0",
+  "commands": [
+   {
+    "cmd": "/aetheros",
+    "help": "Open AetherOS. Subcommands: \"resetscreen\" (recenter the window), \"debug\" (diagnostics), \"clearcache\" (wipe local caches and restart the phone), \"resetassets\" (delete the downloaded phone files and download them again)."
+   }
+  ]
+ },
+ "aetherpool": {
+  "version": "0.5.1.1",
+  "commands": [
+   {
+    "cmd": "/aetherpool",
+    "help": "Opens the AetherPool game window."
+   }
+  ]
+ },
+ "afkmute": {
+  "version": "1.0.0.8",
+  "commands": [
+   {
+    "cmd": "/afkmute",
+    "help": "Toggles active state of plugin."
+   },
+   {
+    "cmd": "/am",
+    "help": "Toggles active state of plugin."
+   }
+  ]
+ },
+ "akutrack": {
+  "version": "0.0.33.0",
+  "commands": [
+   {
+    "cmd": "/akut",
+    "help": "Opens the main menu with debug information."
+   },
+   {
+    "cmd": "/akum",
+    "help": "Opens the map window."
+   },
+   {
+    "cmd": "/akuc",
+    "help": "Opens the configuration window."
+   }
+  ]
+ },
+ "allaganitemsearch": {
+  "version": "1.3.0.2",
+  "commands": []
+ },
+ "allaganmarket": {
+  "version": "1.4.0.2",
+  "commands": []
+ },
+ "allagantetris": {
+  "version": "1.3.0.0",
+  "commands": [
+   {
+    "cmd": "/tetris",
+    "help": "Opens the tetris window."
+   }
+  ]
+ },
+ "altoholic": {
+  "version": "1.16.4.0",
+  "commands": [
+   {
+    "cmd": "/altoholic",
+    "help": null
+   }
+  ]
+ },
+ "antiafkkick-dalamud": {
+  "version": "2.1.0.11",
+  "commands": [
+   {
+    "cmd": "/aak",
+    "help": null
+   }
+  ]
+ },
+ "archipelagoxiv": {
+  "version": "0.32.0.0",
+  "commands": [
+   {
+    "cmd": "/ap-connect",
+    "help": "Show Archipelago main window, and connect if we're not connected"
+   },
+   {
+    "cmd": "/ap-config",
+    "help": "Archipelago Config"
+   },
+   {
+    "cmd": "/ap-debug",
+    "help": "Show Archipelago debug window"
+   },
+   {
+    "cmd": "/ap-disconnect",
+    "help": "Disconnect from Archipelago"
+   },
+   {
+    "cmd": "/ap",
+    "help": "Send chat messages to your multiworld"
+   }
+  ]
+ },
+ "arcontrol": {
+  "version": "8.7",
+  "commands": [
+   {
+    "cmd": "/arcontrol",
+    "help": "Manage retainers"
+   },
+   {
+    "cmd": "/arc",
+    "help": "Alias of /arcontrol"
+   }
+  ]
+ },
+ "ardiscard": {
+  "version": "8.5",
+  "commands": [
+   {
+    "cmd": "/discardconfig",
+    "help": "Configures which items to automatically discard"
+   },
+   {
+    "cmd": "/discardall",
+    "help": "Discard all configured items now"
+   },
+   {
+    "cmd": "/discard",
+    "help": "Show what will be discarded with your current configuration"
+   }
+  ]
+ },
+ "arealmrecorded": {
+  "version": "1.0.3.0",
+  "commands": []
+ },
+ "arealmreorganized": {
+  "version": "0.2.0.0",
+  "commands": [
+   {
+    "cmd": "/arr",
+    "help": "Open A Realm Reorganized."
+   }
+  ]
+ },
+ "arealmrepopulated": {
+  "version": "0.1.14.0",
+  "commands": [
+   {
+    "cmd": "/arrp",
+    "help": "Opens the configuration window\n/arrp reload → Reloads the scenarios in the current area"
+   }
+  ]
+ },
+ "artisan": {
+  "version": "4.0.5.23",
+  "commands": [
+   {
+    "cmd": "/artisan",
+    "help": "Opens the Artisan menu.\n/artisan lists → Open Lists.\n/artisan lists <ID> → Opens specific list by ID.\n/artisan lists <ID> start → Starts specific list by ID.\n/artisan macros → Open Macros.\n/artisan macros <ID> → Opens specific macro by ID.\n/artisan endurance → Open Endurance.\n/artisan endurance start|stop → Starts or stops endurance mode.\n/artisan settings → Open Settings.\n/artisan workshops → Open FC Workshops.\n/artisan builder → Open List Builder.\n/artisan automode → Toggles Automatic Action Execution Mode on/off."
+   }
+  ]
+ },
+ "ascianmusicplayer": {
+  "version": "1.2.1.5",
+  "commands": [
+   {
+    "cmd": "/amp",
+    "help": "Opens the main Ascian Music Player window.\n     Music controls: /amp [play|pause|next|previous|shuffle|repeat]"
+   },
+   {
+    "cmd": "/ampmini",
+    "help": "Opens the Ascian Mini Player."
+   },
+   {
+    "cmd": "/ampsettings",
+    "help": "Opens the Ascian Music Player settings."
+   },
+   {
+    "cmd": "/ampplaylist",
+    "help": "Opens the Ascian Music Player playlist manager."
+   },
+   {
+    "cmd": "/amplyrics",
+    "help": "Opens the Ascian Music Player lyrics window."
+   }
+  ]
+ },
+ "audiblecharacterstatus": {
+  "version": "1.0.1.10",
+  "commands": []
+ },
+ "autobgm": {
+  "version": "1.5.1.1",
+  "commands": [
+   {
+    "cmd": "/autobgm",
+    "help": "opens the configuration window"
+   }
+  ]
+ },
+ "autoduty": {
+  "version": "0.0.0.399",
+  "commands": [
+   {
+    "cmd": "/ad",
+    "help": null
+   },
+   {
+    "cmd": "/autoduty",
+    "help": null
+   }
+  ]
+ },
+ "autohook": {
+  "version": "6.0.4.3",
+  "commands": []
+ },
+ "automaton": {
+  "version": "69.232",
+  "commands": [
+   {
+    "cmd": "/cbt",
+    "help": null
+   }
+  ]
+ },
+ "autominion": {
+  "version": "1.1.0.10",
+  "commands": [
+   {
+    "cmd": "/autominion",
+    "help": "Open the config window.\nUse /autominion reroll to shuffle now.\nUse /autominion group <name> to summon from a favorite group."
+   }
+  ]
+ },
+ "automountbgm": {
+  "version": "4.0.0.0",
+  "commands": []
+ },
+ "autoretainer": {
+  "version": "4.6.2.21",
+  "commands": [
+   {
+    "cmd": "/autoretainer",
+    "help": "Open plugin interface\r\n/ays - alias for /autoretainer\r\n/autoretainer e|enable → Enable plugin\r\n/autoretainer d|disable - Disable plugin\r\n/autoretainer t|toggle - toggle plugin\r\n/autoretainer m|multi - toggle MultiMode\r\n/autoretainer relog Character Name@WorldName - relog to the targeted character if configured\r\n/autoretainer b|browser - open venture browser\r\n/autoretainer expert - toggle expert settings\r\n/autoretainer debug - toggle debug menu and verbose output\r\n/autoretainer shutdown <hours> [minutes] [seconds] - schedule a game shutdown in this amount of time\r\n/autoretainer itemsell - begin selling items to NPC or retainer if possible\r\n/autoretainer het - enter nearby own house or apartment if possible\r\n/autoretainer reset - reset all pending tasks\r\n/autoretainer deliver - deliver expert delivery items\r\n/autoretainer armoire - deliver all eligible items into armoire\r\n/autoretainer dresser - deliver all eligible items into glamour dresser (requires Glamour Log plugin)"
+   },
+   {
+    "cmd": "/ays",
+    "help": null
+   }
+  ]
+ },
+ "autosweep": {
+  "version": "1.4.10.0",
+  "commands": [
+   {
+    "cmd": "/phouse",
+    "help": "View all houses available for sale."
+   },
+   {
+    "cmd": "/psweep",
+    "help": "Configure PaissaHouse settings.\n\"/psweep reset\" to reset a sweep if sweeping the same district multiple times in a row."
+   }
+  ]
+ },
+ "autotimer": {
+  "version": "1.1.0.7",
+  "commands": [
+   {
+    "cmd": "/autotimer",
+    "help": "Toggles the autotimer bar"
+   },
+   {
+    "cmd": "/autotimerconfig",
+    "help": "Toggles the autotimer configuration window"
+   }
+  ]
+ },
+ "avantgarde": {
+  "version": "1.2.4.0",
+  "commands": []
+ },
+ "avarice": {
+  "version": "2.2.0.13",
+  "commands": [
+   {
+    "cmd": "/avarice",
+    "help": "Toggle configuration window. Use '/avarice draw' to toggle drawing, '/avarice debug' for debug mode."
+   }
+  ]
+ },
+ "backseatdriver": {
+  "version": "0.2.1.3",
+  "commands": [
+   {
+    "cmd": "/pbsdriver",
+    "help": "Show all hints for the current duty."
+   },
+   {
+    "cmd": "/pbsdriver-quick",
+    "help": "Print hints for your job for all encounters in the current duty."
+   },
+   {
+    "cmd": "/pbsdriver-handbook",
+    "help": "Opens a handbook containing all duties covered by the plugin."
+   }
+  ]
+ },
+ "bardicmemory": {
+  "version": "0.0.1.0",
+  "commands": [
+   {
+    "cmd": "/bardicmemory",
+    "help": null
+   }
+  ]
+ },
+ "bartender": {
+  "version": "1.1.8.4",
+  "commands": []
+ },
+ "batterygauge": {
+  "version": "1.2.6.0",
+  "commands": []
+ },
+ "battlevest": {
+  "version": "1.0.2.3",
+  "commands": [
+   {
+    "cmd": "/battlevest",
+    "help": "Open configuration"
+   }
+  ]
+ },
+ "bdthplugin": {
+  "version": "1.7.4.2",
+  "commands": [
+   {
+    "cmd": "/bdth",
+    "help": "Opens the controls for Burning Down the House plugin."
+   }
+  ]
+ },
+ "beastiebuddy": {
+  "version": "7.56.1.0",
+  "commands": [
+   {
+    "cmd": "/bbuddy",
+    "help": "Opens the BeastieBuddy monster search window."
+   }
+  ]
+ },
+ "beegwindow": {
+  "version": "0.0.0.8",
+  "commands": []
+ },
+ "betterdeaths": {
+  "version": "1.0.0.64",
+  "commands": [
+   {
+    "cmd": "/betterdeaths",
+    "help": "Toggle Better Deaths."
+   },
+   {
+    "cmd": "/bd",
+    "help": "Toggle Better Deaths."
+   },
+   {
+    "cmd": "/bdw",
+    "help": "Toggle the Better Deaths Death Window."
+   },
+   {
+    "cmd": "/bdm",
+    "help": "Toggle the Better Deaths DPS meter widget."
+   },
+   {
+    "cmd": "/bdr",
+    "help": "Reset the DPS meter in the overworld, saving the current encounter. Unavailable inside duties."
+   },
+   {
+    "cmd": "/rc",
+    "help": "Start a ready check."
+   }
+  ]
+ },
+ "betterdiscordrichpresence": {
+  "version": "1.0.5.0",
+  "commands": [
+   {
+    "cmd": "/drp",
+    "help": "Open Discord Rich Presence configuration"
+   }
+  ]
+ },
+ "betterfriendlist": {
+  "version": "2.1.4.3",
+  "commands": [
+   {
+    "cmd": "/betterfriendlist",
+    "help": "Open the friend list"
+   },
+   {
+    "cmd": "/bfl",
+    "help": "Alias for /betterfriendlist"
+   }
+  ]
+ },
+ "betterinblue": {
+  "version": "2.2.0.0",
+  "commands": [
+   {
+    "cmd": "/pblue",
+    "help": "Opens the main menu."
+   }
+  ]
+ },
+ "betterminionroulette": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/pminion",
+    "help": "Open the config window.\n/pminion <group> → Summon a random minion from the specified group"
+   }
+  ]
+ },
+ "bettermountroulette": {
+  "version": "1.8.1.32",
+  "commands": [
+   {
+    "cmd": "/pbmr",
+    "help": "Open the config window."
+   },
+   {
+    "cmd": "/pmount",
+    "help": "Mount a random mount from the specified group, e.g. \"/pmount My Group\" summons a mount from the \"My Group\" group"
+   }
+  ]
+ },
+ "betterpartyfinder": {
+  "version": "1.7.0.0",
+  "commands": []
+ },
+ "betterplaytime": {
+  "version": "1.4.5.0",
+  "commands": []
+ },
+ "bettershadows": {
+  "version": "1.8.0.0",
+  "commands": [
+   {
+    "cmd": "/pbshadows",
+    "help": "Toggle the configuration window."
+   },
+   {
+    "cmd": "/tbshadows",
+    "help": "Toggle the functionality."
+   },
+   {
+    "cmd": "/bshedit",
+    "help": "Open the preset editor window."
+   },
+   {
+    "cmd": "/bshlist",
+    "help": "Open the preset list window."
+   },
+   {
+    "cmd": "/bshzone",
+    "help": "Open the zone editor window."
+   }
+  ]
+ },
+ "bettertargetingsystem": {
+  "version": "0.15.3.0",
+  "commands": []
+ },
+ "bignaelquotes": {
+  "version": "0.0.9.0",
+  "commands": [
+   {
+    "cmd": "/bigquotes",
+    "help": "Open the configuration window"
+   }
+  ]
+ },
+ "bigplayerdebuffs": {
+  "version": "1.1.0.15",
+  "commands": [
+   {
+    "cmd": "/bigplayerdebuffs",
+    "help": null
+   }
+  ]
+ },
+ "bilingualtooltips": {
+  "version": "1.7.6.0",
+  "commands": [
+   {
+    "cmd": "/btt",
+    "help": "main command entry:\n└ /btt → open the main window.\n└ /btt c|config → open the configuration window.\n└ /btt ml|history → open the lookup history window.\n└ /btt dialogue → toggle the NPC dialogue translation window."
+   }
+  ]
+ },
+ "bisbuddy": {
+  "version": "0.2.9.0",
+  "commands": []
+ },
+ "blackjackbuttler": {
+  "version": "2.0.0.6",
+  "commands": [
+   {
+    "cmd": "/bjb",
+    "help": "Open BlackJack Buttler. Use '/bjb chat' to open the BJB Messenger."
+   }
+  ]
+ },
+ "bluemagehelper": {
+  "version": "3.4.1.0",
+  "commands": [
+   {
+    "cmd": "/spellbook",
+    "help": "Opens a small guide book"
+   }
+  ]
+ },
+ "borderless-fix": {
+  "version": "0.0.0.9",
+  "commands": []
+ },
+ "bossmod": {
+  "version": "7.5.8.1",
+  "commands": []
+ },
+ "bozjabuddy": {
+  "version": "1.1.6.9",
+  "commands": [
+   {
+    "cmd": "/bb",
+    "help": "Open the main menu"
+   }
+  ]
+ },
+ "brio": {
+  "version": "0.8.0.12",
+  "commands": [
+   {
+    "cmd": "/brio",
+    "help": "Toggles the Brio window."
+   },
+   {
+    "cmd": "/xat",
+    "help": "Toggles the Brio window."
+   },
+   {
+    "cmd": "/mcdf",
+    "help": "Toggles Brio's MCDF window."
+   }
+  ]
+ },
+ "browsingway": {
+  "version": "1.7.2",
+  "commands": [
+   {
+    "cmd": "/bw",
+    "help": "Control Browsingway from the chat line! Type '/bw config' or open the settings for more info."
+   }
+  ]
+ },
+ "bsthelper": {
+  "version": "0.1.7.0",
+  "commands": [
+   {
+    "cmd": "/bst",
+    "help": "Open the bestiary. \"/bst <number|name>\" travels to that beast, \"/bst stop\" cancels"
+   },
+   {
+    "cmd": "/bsthelper",
+    "help": "Alias of /bst."
+   }
+  ]
+ },
+ "buildingway": {
+  "version": "1.0.1.6",
+  "commands": []
+ },
+ "burnout": {
+  "version": "1.0.0.1",
+  "commands": []
+ },
+ "burnttoast": {
+  "version": "1.4.5.0",
+  "commands": [
+   {
+    "cmd": "/pbth",
+    "help": null
+   }
+  ]
+ },
+ "cameraloader": {
+  "version": "1.0.6.0",
+  "commands": [
+   {
+    "cmd": "/lca",
+    "help": "Toggles LCAction's main window"
+   }
+  ]
+ },
+ "cashflow": {
+  "version": "1.0.2.12",
+  "commands": [
+   {
+    "cmd": "/cashflow",
+    "help": null
+   },
+   {
+    "cmd": "/cflow",
+    "help": null
+   }
+  ]
+ },
+ "ccanonymizer": {
+  "version": "0.4.1.1",
+  "commands": [
+   {
+    "cmd": "/panon",
+    "help": "Open Config"
+   }
+  ]
+ },
+ "characterpanelrefined": {
+  "version": "1.8.6.0",
+  "commands": [
+   {
+    "cmd": "/cprconfig",
+    "help": "Open the Character Panel Refined configuration."
+   }
+  ]
+ },
+ "chatalerts": {
+  "version": "2.2.4.0",
+  "commands": [
+   {
+    "cmd": "/chatalerts",
+    "help": null
+   }
+  ]
+ },
+ "chatanywhere": {
+  "version": "1.6.0.1",
+  "commands": [
+   {
+    "cmd": "/chatanywhere",
+    "help": "Open ChatAnywhere settings. Use 'start' or 'stop' to control the server."
+   }
+  ]
+ },
+ "chatcontext": {
+  "version": "0.0.5.0",
+  "commands": [
+   {
+    "cmd": "/chatcontext",
+    "help": "Available subcommands for /chatcontext are main, config, disable and enable"
+   }
+  ]
+ },
+ "chatcoordinates": {
+  "version": "2.1.2.10",
+  "commands": [
+   {
+    "cmd": "/coord",
+    "help": null
+   },
+   {
+    "cmd": "/ctp",
+    "help": null
+   }
+  ]
+ },
+ "chatproximity": {
+  "version": "1.5.0.0",
+  "commands": [
+   {
+    "cmd": "/chatprox",
+    "help": "(Without arguments) Open settings (With arguments) help for more information."
+   }
+  ]
+ },
+ "chatter": {
+  "version": "1.3.6.0",
+  "commands": [
+   {
+    "cmd": "/chatterdebug",
+    "help": "Opens the Chatter main window."
+   }
+  ]
+ },
+ "chattranslated": {
+  "version": "3.6.1.4",
+  "commands": [
+   {
+    "cmd": "/pchat",
+    "help": "Open Chat Translated main window."
+   }
+  ]
+ },
+ "chattwo": {
+  "version": "1.41.2.0",
+  "commands": []
+ },
+ "chattyper": {
+  "version": "0.1.8.0",
+  "commands": []
+ },
+ "chestdiff": {
+  "version": "0.1.0.0",
+  "commands": [
+   {
+    "cmd": "/chestdiff",
+    "help": "Open ChestDiff. Use /chestdiff export to export visible FC chest history since the configured time."
+   }
+  ]
+ },
+ "chibichaos": {
+  "version": "0.1.17.7",
+  "commands": [
+   {
+    "cmd": "/chibichaos",
+    "help": "Open the Chibi Chaos configuration window."
+   }
+  ]
+ },
+ "chilledleves": {
+  "version": "1.0.2.2",
+  "commands": [
+   {
+    "cmd": "/chilledleves",
+    "help": "Open plugin interface\r\n/chilledleves start | stop - starts/stops the turnin process\r\n/chilledleves s|settings - Opens the worklist menu\r\n/leveitalone - alias"
+   },
+   {
+    "cmd": "/leveitalone",
+    "help": null
+   }
+  ]
+ },
+ "chillframes": {
+  "version": "3.2.4.6",
+  "commands": [
+   {
+    "cmd": "/chillframes",
+    "help": "Open ChillFrames Config"
+   },
+   {
+    "cmd": "/pcf",
+    "help": "Open ChillFrames Config"
+   }
+  ]
+ },
+ "chocoboracinggamba": {
+  "version": "1.0.7.0",
+  "commands": [
+   {
+    "cmd": "/cr",
+    "help": "Open Chocobo Racing UI."
+   },
+   {
+    "cmd": "/chocoboracing",
+    "help": "Open Chocobo Racing UI."
+   },
+   {
+    "cmd": "/chocoboracingconfig",
+    "help": "Open Chocobo Racing UI to the Settings tab."
+   }
+  ]
+ },
+ "chocoholic": {
+  "version": "0.0.0.3",
+  "commands": [
+   {
+    "cmd": "/chocoholic",
+    "help": null
+   }
+  ]
+ },
+ "chroma": {
+  "version": "1.3.0.0",
+  "commands": [
+   {
+    "cmd": "/chroma",
+    "help": "Toggles Chroma menu.\n/chroma on | off | toggle → Enables, disables or toggles Chroma.\n/chroma duties → Toggles Duty Overrides menu.\n/chroma friendly [on | off] → Enables, disables or toggles Non-Hostile omens.\n/chroma warning [on | off] → Enables, disables or toggles Cast Warning.\n/chroma <red | orange | yellow | green | blue | purple | pink | black> → Sets global omen color to a preset.\n/chroma #RRGGBB → Sets global omen color to a hex color.\n/chroma alpha <0.2-10> → Sets omen Alpha (color intensity).\n/chroma white → Enables White Mode.\n/chroma rainbow → Enables Rainbow Mode.\n/chroma reset → Resets all colors and modes to default."
+   }
+  ]
+ },
+ "cl-showpos": {
+  "version": "1.1.6.7",
+  "commands": [
+   {
+    "cmd": "/pshowpos",
+    "help": "Open the settings menu"
+   }
+  ]
+ },
+ "clarityinchaos": {
+  "version": "2.5.1.1",
+  "commands": [
+   {
+    "cmd": "/cic",
+    "help": "opens the configuration window"
+   }
+  ]
+ },
+ "cleanhuntchat": {
+  "version": "1.2.2.0",
+  "commands": []
+ },
+ "clock": {
+  "version": "1.0.7.5",
+  "commands": [
+   {
+    "cmd": "/clock",
+    "help": "Clock commands: /clock, /clock on, /clock off, /clock help, /clock timezone <TimeZoneInfo ID>, /clock format 12|24|12s|24s|weekday|date, /clock colon default|always|hidden|slow|fast, /clock layout horizontal|vertical, /clock <timezone> to <timezone>, /clock lock, /clock unlock, /clock profile next|list|set <n>|add <name>|rename <name>|delete"
+   },
+   {
+    "cmd": "/clockalarms",
+    "help": null
+   },
+   {
+    "cmd": "/alarms",
+    "help": null
+   }
+  ]
+ },
+ "collectablecalculator": {
+  "version": "4.6",
+  "commands": [
+   {
+    "cmd": "/cc",
+    "help": "Opens the summary window"
+   }
+  ]
+ },
+ "collections": {
+  "version": "1.0.3.2",
+  "commands": []
+ },
+ "collectorsanxiety": {
+  "version": "0.0.14.0",
+  "commands": [
+   {
+    "cmd": "/panxiety",
+    "help": "Open the Collector's Anxiety main window."
+   }
+  ]
+ },
+ "combatcursorcontainment": {
+  "version": "1.0.9",
+  "commands": [
+   {
+    "cmd": "/ccc",
+    "help": "Opens the Combat Cursor Containment config window.\n/ccc <enable|on|1> → Enables locking cursor during combat.\n/ccc <disable|off|0> → Disables locking cursor during combat."
+   }
+  ]
+ },
+ "comfyloot": {
+  "version": "1.0.5.0",
+  "commands": [
+   {
+    "cmd": "/loot",
+    "help": "Toggle ComfyLoot window\n/loot config → Open settings"
+   }
+  ]
+ },
+ "compass": {
+  "version": "1.34.0",
+  "commands": [
+   {
+    "cmd": "/compass",
+    "help": null
+   }
+  ]
+ },
+ "conditionaltweaks": {
+  "version": "7.4.1.0",
+  "commands": [
+   {
+    "cmd": "/CondiTweaks",
+    "help": "Opens the settings menu."
+   }
+  ]
+ },
+ "congahelper": {
+  "version": "0.1.0.0",
+  "commands": [
+   {
+    "cmd": "/conga",
+    "help": "Arrange party list in left-to-right screen order"
+   }
+  ]
+ },
+ "congratulations": {
+  "version": "1.4.3.0",
+  "commands": [
+   {
+    "cmd": "/congratsconfig",
+    "help": "Opens the Congratulations configuration window"
+   }
+  ]
+ },
+ "contactstracker": {
+  "version": "1.1.0.0",
+  "commands": [
+   {
+    "cmd": "/ctracker",
+    "help": "Open Plugin\n/ctracker analyze -> AnalyzeWindow"
+   }
+  ]
+ },
+ "coordimporter": {
+  "version": "1.3.0.0",
+  "commands": [
+   {
+    "cmd": "/ci",
+    "help": "Paste coordinates in dialog box and click 'Import'. Coordinates will show in echo chat."
+   }
+  ]
+ },
+ "copeseethemeld": {
+  "version": "0.0.3.1",
+  "commands": [
+   {
+    "cmd": "/cope",
+    "help": "Open meld UI"
+   }
+  ]
+ },
+ "craftimizer": {
+  "version": "2.11.0.1",
+  "commands": []
+ },
+ "createxiv": {
+  "version": "1.0.6.9",
+  "commands": [
+   {
+    "cmd": "/create",
+    "help": "Opens the CreateXIV window, or creates an alias with /create <alias> <command|macro:##|shared:##> [category-Optional]."
+   }
+  ]
+ },
+ "crossup": {
+  "version": "1.7.1.5",
+  "commands": [
+   {
+    "cmd": "/xup",
+    "help": null
+   }
+  ]
+ },
+ "crystalradio": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/cradio",
+    "help": "Open CrystalRadio. Use /cradio or /cradio config."
+   }
+  ]
+ },
+ "currencyspender": {
+  "version": "1.3.1.0",
+  "commands": [
+   {
+    "cmd": "/cur",
+    "help": "Short command. Also pairable with all arguments. Arguments: config, c, settings, s"
+   },
+   {
+    "cmd": "/currencyspender",
+    "help": "Open plugin interface. Also pairable with all arguments. Arguments: config, c, settings, s"
+   }
+  ]
+ },
+ "currencywatchdog": {
+  "version": "1.0.5.0",
+  "commands": [
+   {
+    "cmd": "/cdog",
+    "help": "Open the settings window\n/cdog plugin on|off|toggle → Enable, disable or toggle the plugin\n/cdog overlay on|off|toggle → Enable, disable or toggle the overlay\n/cdog chat on|off|toggle → Enable, disable or toggle chat alerts"
+   }
+  ]
+ },
+ "customequalizer2782": {
+  "version": "1.0.0.0",
+  "commands": []
+ },
+ "customizeplus": {
+  "version": "2.2.1.3",
+  "commands": []
+ },
+ "customloadingscreens": {
+  "version": "0.0.0.5",
+  "commands": [
+   {
+    "cmd": "/customloadingscreens",
+    "help": "A useful message to display in /xlhelp"
+   }
+  ]
+ },
+ "customresolution2782": {
+  "version": "1.1.4.0",
+  "commands": []
+ },
+ "cwlslastseentool": {
+  "version": "2.0.2.0",
+  "commands": [
+   {
+    "cmd": "/shelltools",
+    "help": "Open the Linkshell Tools window"
+   }
+  ]
+ },
+ "dailyduty": {
+  "version": "6.0.5.3",
+  "commands": [
+   {
+    "cmd": "/dd",
+    "help": null
+   },
+   {
+    "cmd": "/dailyduty",
+    "help": null
+   }
+  ]
+ },
+ "dalamud-charactersync": {
+  "version": "2.1.1.1",
+  "commands": [
+   {
+    "cmd": "/pcharsync",
+    "help": "Open the Character Sync configuration."
+   }
+  ]
+ },
+ "dalamud-discordbridge": {
+  "version": "1.6.2.1",
+  "commands": []
+ },
+ "dalamud-findanything": {
+  "version": "1.1.4.1",
+  "commands": [
+   {
+    "cmd": "/wotsit",
+    "help": "Open the Wotsit settings."
+   },
+   {
+    "cmd": "/bountifuldn",
+    "help": "Open the Wotsit settings."
+   }
+  ]
+ },
+ "dalamud-fullscreencutscenes": {
+  "version": "1.0.0.8",
+  "commands": [
+   {
+    "cmd": "/pcutscenes",
+    "help": "/pcutscenes: Toggle the plugin on/off\n/pcutscenes true|false: manually set the plugin state"
+   }
+  ]
+ },
+ "dalamud-loadingimage": {
+  "version": "1.0.0.18",
+  "commands": []
+ },
+ "dalamud-richpresence": {
+  "version": "2.1.1.1",
+  "commands": [
+   {
+    "cmd": "/prp",
+    "help": "Opens the Discord Rich Presence configuration window."
+   }
+  ]
+ },
+ "dalamudminesweeper": {
+  "version": "1.6.0.0",
+  "commands": [
+   {
+    "cmd": "/minesweeper",
+    "help": "Open the Minesweeper window"
+   }
+  ]
+ },
+ "damageinfoplugin": {
+  "version": "2.4.2.0",
+  "commands": [
+   {
+    "cmd": "/dmginfo",
+    "help": "Display the Damage Info configuration interface."
+   }
+  ]
+ },
+ "deathrecap": {
+  "version": "1.13.4.0",
+  "commands": [
+   {
+    "cmd": "/deathrecap",
+    "help": "Open the death recap window"
+   },
+   {
+    "cmd": "/dr",
+    "help": null
+   }
+  ]
+ },
+ "deathroll": {
+  "version": "1.5.8.0",
+  "commands": []
+ },
+ "deepdungeondex": {
+  "version": "2.15.0.0",
+  "commands": []
+ },
+ "deepdungeontracker": {
+  "version": "1.0.2.0",
+  "commands": []
+ },
+ "deliveroo": {
+  "version": "7.5.0.2",
+  "commands": [
+   {
+    "cmd": "/deliveroo",
+    "help": "Open the configuration"
+   }
+  ]
+ },
+ "delvcd": {
+  "version": "1.6.0.1",
+  "commands": [
+   {
+    "cmd": "/delvcd",
+    "help": "Opens the DelvCD configuration window."
+   },
+   {
+    "cmd": "/dcd",
+    "help": "Opens the DelvCD configuration window."
+   }
+  ]
+ },
+ "delvui": {
+  "version": "2.8.0.0",
+  "commands": [
+   {
+    "cmd": "/delvui",
+    "help": "Opens the DelvUI configuration window.\n/delvui toggle → Toggles HUD visibility.\n/delvui show → Shows HUD.\n/delvui hide → Hides HUD.\n/delvui toggledefaulthud → Toggles the game's Job Gauges visibility.\n/delvui forcejob <JOB> → Forces DelvUI to show the hud for the given Job short name.\n/delvui profile <PROFILE> → Switch to the given profile.\n/delvui mouse <on/off> → Toggles special input handling to support extra mouse buttons when hovering DelvUI elements."
+   },
+   {
+    "cmd": "/dui",
+    "help": "Opens the DelvUI configuration window.\n/dui toggle → Toggles HUD visibility.\n/dui show → Shows HUD.\n/dui hide → Hides HUD./dui toggledefaulthud → Toggles the game's Job Gauges visibility.\n/dui forcejob <JOB> → Forces DelvUI to show the hud for the given Job short name.\n/dui profile <PROFILE> → Switch to the given profile.\n/dui mouse <on/off> → Toggles special input handling to support extra mouse buttons when hovering DelvUI elements."
+   }
+  ]
+ },
+ "devicechangefix": {
+  "version": "3.1.1.1",
+  "commands": []
+ },
+ "diademcalculator": {
+  "version": "1.1.5.0",
+  "commands": []
+ },
+ "directional": {
+  "version": "1.0.2.0",
+  "commands": [
+   {
+    "cmd": "/dtarget",
+    "help": "Draw the compass directionals around the target for easier callouts"
+   }
+  ]
+ },
+ "discordbotffxiv": {
+  "version": "1.1.2.4",
+  "commands": [
+   {
+    "cmd": "/discordbot",
+    "help": "Open main interface."
+   }
+  ]
+ },
+ "dispeller": {
+  "version": "1.5.2.0",
+  "commands": [
+   {
+    "cmd": "/dispeller",
+    "help": "Open Dispeller - Find shared models in your glamour dresser! Use \"/dispeller config\" for settings."
+   }
+  ]
+ },
+ "distance": {
+  "version": "1.1.4.1",
+  "commands": [
+   {
+    "cmd": "/pdistance",
+    "help": null
+   }
+  ]
+ },
+ "distantseas": {
+  "version": "1.1.0.8",
+  "commands": [
+   {
+    "cmd": "/pseas",
+    "help": null
+   }
+  ]
+ },
+ "dmumits": {
+  "version": "0.1.0.18",
+  "commands": [
+   {
+    "cmd": "/dmumits",
+    "help": "Open DMU Mits settings."
+   },
+   {
+    "cmd": "/dmit",
+    "help": "Open DMU Mits settings."
+   }
+  ]
+ },
+ "dmup4debuffhelper": {
+  "version": "0.1.0.18",
+  "commands": []
+ },
+ "doorbell": {
+  "version": "1.0.4.3",
+  "commands": [
+   {
+    "cmd": "/doorbell",
+    "help": null
+   }
+  ]
+ },
+ "dotcalculator": {
+  "version": "0.0.6.0",
+  "commands": [
+   {
+    "cmd": "/dotcalculator",
+    "help": "Display config options for DotCalculator"
+   }
+  ]
+ },
+ "dotposition": {
+  "version": "1.0.0.4",
+  "commands": [
+   {
+    "cmd": "/dotpos",
+    "help": "Open Dot Position Configuration\n/dotpos on - Enable plugin\n/dotpos off - Disable plugin\n/dotpos toggle - Toggle visibility"
+   }
+  ]
+ },
+ "dragoonmaycry": {
+  "version": "1.4.0.4",
+  "commands": [
+   {
+    "cmd": "/dmc",
+    "help": "opens record history"
+   }
+  ]
+ },
+ "drawers": {
+  "version": "0.1.0.51",
+  "commands": [
+   {
+    "cmd": "/drawers",
+    "help": " weapon draw/sheathe\n/drawers auto - toggle automatic mode, so that all weapon drawing/sheathing is changed to the emote version"
+   }
+  ]
+ },
+ "dropbox": {
+  "version": "1.0.2.15",
+  "commands": [
+   {
+    "cmd": "/dropbox",
+    "help": null
+   }
+  ]
+ },
+ "dsreyelocator": {
+  "version": "2.0.1.10",
+  "commands": [
+   {
+    "cmd": "/eye",
+    "help": "Open configuration"
+   }
+  ]
+ },
+ "dummy": {
+  "version": "0.0.0.1",
+  "commands": [
+   {
+    "cmd": "/dummy",
+    "help": "opens Dummy settings"
+   }
+  ]
+ },
+ "dutylootpreview": {
+  "version": "0.0.0.1",
+  "commands": [
+   {
+    "cmd": "/dlp",
+    "help": "Toggle the Duty Loot Preview window. Use \"/dlp import\" to import favorites from VanillaPlus."
+   }
+  ]
+ },
+ "dutypusher": {
+  "version": "0.1.4.7",
+  "commands": [
+   {
+    "cmd": "/dutypusher",
+    "help": "Open DutyPusher Settings"
+   },
+   {
+    "cmd": "/dpui",
+    "help": "Open DutyPusher Settings"
+   },
+   {
+    "cmd": "/dp",
+    "help": "Switch the DutyPusher enabled state"
+   },
+   {
+    "cmd": "/dpon",
+    "help": "Enable the DutyPusher"
+   },
+   {
+    "cmd": "/dpoff",
+    "help": "Disable the DutyPusher"
+   }
+  ]
+ },
+ "dutyspeed": {
+  "version": "1.7.5.1",
+  "commands": [
+   {
+    "cmd": "/ds",
+    "help": "Toggles the DutySpeed timer window."
+   }
+  ]
+ },
+ "dutytracker": {
+  "version": "1.0.6.0",
+  "commands": [
+   {
+    "cmd": "/dt",
+    "help": "Open the Duty Tracker menu"
+   }
+  ]
+ },
+ "dynamicbridge": {
+  "version": "1.0.8.9",
+  "commands": [
+   {
+    "cmd": "/db",
+    "help": "open the plugin settings\n/db apply → reapply rules immediately\n/db static <name> → mark preset as static\n/db dynamic → cancel static preset and use dynamic rules\n/db characterprofile <name> → changes profile of currently active character to provided profile"
+   }
+  ]
+ },
+ "dynamicuiscaling": {
+  "version": "1.15.1.0",
+  "commands": []
+ },
+ "easychatlog": {
+  "version": "0.1.9.7",
+  "commands": [
+   {
+    "cmd": "/easychatlog",
+    "help": null
+   },
+   {
+    "cmd": "/ecl",
+    "help": null
+   }
+  ]
+ },
+ "easyeyes": {
+  "version": "1.3.1.3",
+  "commands": [
+   {
+    "cmd": "/easy",
+    "help": "toggle ui"
+   }
+  ]
+ },
+ "easytranslate-dalamudplugin": {
+  "version": "7.0.1.0",
+  "commands": []
+ },
+ "echoglossian": {
+  "version": "4.2601.1031.2017",
+  "commands": [
+   {
+    "cmd": "/eglo",
+    "help": null
+   },
+   {
+    "cmd": "/eglodbmanager",
+    "help": null
+   },
+   {
+    "cmd": "/eglotranslatordebugger",
+    "help": "Opens the Translator Debugger and Metrics window."
+   }
+  ]
+ },
+ "echoxiv": {
+  "version": "1.0.2.1",
+  "commands": [
+   {
+    "cmd": "/translate",
+    "help": null
+   },
+   {
+    "cmd": "/tl",
+    "help": null
+   },
+   {
+    "cmd": "/echoxiv",
+    "help": null
+   }
+  ]
+ },
+ "eldenring": {
+  "version": "0.0.15.0",
+  "commands": [
+   {
+    "cmd": "/eldenring",
+    "help": "Used to control the volume of the audio using \"vol 0-100\""
+   }
+  ]
+ },
+ "emotelog": {
+  "version": "1.1.7.1",
+  "commands": [
+   {
+    "cmd": "/elog",
+    "help": "Opens the Emote Log window, \"/elog config\" to open settings and \"/elog clear\" to clear the log"
+   }
+  ]
+ },
+ "enemylistdebuffs": {
+  "version": "1.13.0.3",
+  "commands": [
+   {
+    "cmd": "/eldebuffs",
+    "help": "Toggles config window."
+   }
+  ]
+ },
+ "engagetimer": {
+  "version": "2.4.5.2",
+  "commands": [
+   {
+    "cmd": "/eg",
+    "help": null
+   },
+   {
+    "cmd": "/egsettings",
+    "help": null
+   }
+  ]
+ },
+ "enmityhp": {
+  "version": "2.0.1.9",
+  "commands": []
+ },
+ "eurekahelper": {
+  "version": "2.0.4.0",
+  "commands": []
+ },
+ "eurekatrackerautopopper": {
+  "version": "1.7.4.0",
+  "commands": []
+ },
+ "eventy": {
+  "version": "1.0.8.0",
+  "commands": []
+ },
+ "expandedhotbars": {
+  "version": "1.0.1.2",
+  "commands": [
+   {
+    "cmd": "/expandedhotbars",
+    "help": "Show/Hide/Toggle hotbars or the config window"
+   },
+   {
+    "cmd": "/exhotbar",
+    "help": "Show/Hide/Toggle hotbars or the config window"
+   },
+   {
+    "cmd": "/exhotbars",
+    "help": "Show/Hide/Toggle hotbars or the config window"
+   }
+  ]
+ },
+ "expandedsearchinfo": {
+  "version": "1.4.5",
+  "commands": [
+   {
+    "cmd": "/esi",
+    "help": "Toggles Expanded Search Info's configuration window"
+   }
+  ]
+ },
+ "explorersicebox": {
+  "version": "1.1.0.3",
+  "commands": [
+   {
+    "cmd": "/explorersicebox",
+    "help": "Open plugin interface\r\n/icebox - alias for /explorersicebox\r\n/explorersicebox s|settings - Opens the workshop menu"
+   },
+   {
+    "cmd": "/icebox",
+    "help": null
+   }
+  ]
+ },
+ "extrachat": {
+  "version": "1.3.11.0",
+  "commands": []
+ },
+ "facade": {
+  "version": "1.0.0.4",
+  "commands": [
+   {
+    "cmd": "/facade",
+    "help": "See '/facade help' for more."
+   }
+  ]
+ },
+ "fadedrollfixer": {
+  "version": "0.1.1.1",
+  "commands": [
+   {
+    "cmd": "/faded",
+    "help": "Opens the main window. Click \"Get crafting lists\" to generate a crafting list for the faded orchestrion rolls in your inventory, and an additional one for any inks or blank papers you might still need. The plugin will prioritize recipes that use multiple rolls, and alternate between recipes that use the same one."
+   }
+  ]
+ },
+ "faderplugin": {
+  "version": "2.7.8.0",
+  "commands": [
+   {
+    "cmd": "/pfader",
+    "help": "Opens settings\n't' toggles whether it's enabled.\n'on' enables the plugin\n'off' disables the plugin."
+   }
+  ]
+ },
+ "fantasyplayer": {
+  "version": "2.6.0.1",
+  "commands": []
+ },
+ "fastjobswitcher": {
+  "version": "4.1.0.0",
+  "commands": [
+   {
+    "cmd": "/fjs",
+    "help": "opens the configuration window"
+   }
+  ]
+ },
+ "fastwaymarksplugin": {
+  "version": "1.3.4.0",
+  "commands": []
+ },
+ "fatehelper": {
+  "version": "1.2.0.1",
+  "commands": [
+   {
+    "cmd": "/fatehelper",
+    "help": "Toggle FATE list."
+   },
+   {
+    "cmd": "/fh",
+    "help": "Toggle FATE list."
+   },
+   {
+    "cmd": "/fatehelperconfig",
+    "help": "Show FATE Helper configuration window."
+   }
+  ]
+ },
+ "fatelimit": {
+  "version": "0.1.0.0",
+  "commands": [
+   {
+    "cmd": "/fatelimit",
+    "help": "Open FateLimit settings\n→ /fatelimit test - Place or remove a practice FATE around you\n→ /fatelimit toggle - Turn borders on or off"
+   },
+   {
+    "cmd": "/fl",
+    "help": null
+   }
+  ]
+ },
+ "fauxhollowssolver": {
+  "version": "1.5.1.2",
+  "commands": []
+ },
+ "fcch": {
+  "version": "2.6.0.0",
+  "commands": [
+   {
+    "cmd": "/fcch",
+    "help": "Opens settings.\n- Deposit: da (All) | da1-da5 (Tabs) | ds (Custom) | dd (Dupes) | dc (Crystals)\n- Withdraw: wa (All) | wa1-wa5 (Tabs) | ws (Custom) | wp (Workshop) | wc (Crystals)\n- Gil: gd (Deposit) | gw (Withdraw) - e.g. 5k, 1m, 50%, all"
+   }
+  ]
+ },
+ "fcnamecolor": {
+  "version": "5.1.3.0",
+  "commands": [
+   {
+    "cmd": "/fcnc",
+    "help": "Opens the FCNameColor Config."
+   }
+  ]
+ },
+ "fctracker": {
+  "version": "0.0.0.43",
+  "commands": [
+   {
+    "cmd": "/fct",
+    "help": null
+   },
+   {
+    "cmd": "/fctrack",
+    "help": null
+   }
+  ]
+ },
+ "ffxiv-venues-directory": {
+  "version": "1.2.0.0",
+  "commands": [
+   {
+    "cmd": "/ffxivvenues",
+    "help": "Open the venue directory"
+   }
+  ]
+ },
+ "ffxiv2mqtt": {
+  "version": "1.0.9.0",
+  "commands": [
+   {
+    "cmd": "/mqtt",
+    "help": "Open plugin settings."
+   },
+   {
+    "cmd": "/mtest",
+    "help": "Test"
+   },
+   {
+    "cmd": "/mqttcustom",
+    "help": "Send a custom MQTT message with the given topic and payload."
+   }
+  ]
+ },
+ "ffxivrpcalendarplugin": {
+  "version": "1.0.1.9",
+  "commands": [
+   {
+    "cmd": "/events",
+    "help": "Show the RP Calendar UI."
+   },
+   {
+    "cmd": "/resetcalendar",
+    "help": null
+   },
+   {
+    "cmd": "/eventsdebug",
+    "help": null
+   }
+  ]
+ },
+ "fidgetspinner": {
+  "version": "0.0.0.4",
+  "commands": [
+   {
+    "cmd": "/fspin",
+    "help": "`/fspin left` or `/fspin right`.\nOptionally include a decimal multiplier (0, 10] to adjust spin speed like `/fspin left 0.5` for half speed or `/fspin right 3` for triple speed."
+   }
+  ]
+ },
+ "fishnotify": {
+  "version": "10.1",
+  "commands": []
+ },
+ "flashoncutscenedone": {
+  "version": "0.0.1.0",
+  "commands": []
+ },
+ "flashonreadycheck": {
+  "version": "0.1.0.2",
+  "commands": [
+   {
+    "cmd": "/readyflash",
+    "help": "Tries to flash the window after three seconds."
+   }
+  ]
+ },
+ "flashontell": {
+  "version": "0.0.11.0",
+  "commands": []
+ },
+ "flytextfilter": {
+  "version": "4.5.0.0",
+  "commands": [
+   {
+    "cmd": "/flytext",
+    "help": "Open config"
+   },
+   {
+    "cmd": "/ftf",
+    "help": "Open config"
+   }
+  ]
+ },
+ "foodcheck": {
+  "version": "1.0.0.1",
+  "commands": []
+ },
+ "fpsplugin": {
+  "version": "1.7.1.1",
+  "commands": [
+   {
+    "cmd": "/pfps",
+    "help": null
+   }
+  ]
+ },
+ "friendnote": {
+  "version": "1.0.2.0",
+  "commands": [
+   {
+    "cmd": "/fnote",
+    "help": null
+   }
+  ]
+ },
+ "fungah": {
+  "version": "1.0.0.9",
+  "commands": []
+ },
+ "gambawhere": {
+  "version": "1.0.8.0",
+  "commands": [
+   {
+    "cmd": "/gambawhere",
+    "help": "Opens the Gamba Where window."
+   },
+   {
+    "cmd": "/gw",
+    "help": "Alias for /gambawhere."
+   },
+   {
+    "cmd": "/gambawhereconfig",
+    "help": "Opens the Gamba Where settings tab."
+   }
+  ]
+ },
+ "gaolbreak": {
+  "version": "0.0.0.31",
+  "commands": [
+   {
+    "cmd": "/gaolbreak",
+    "help": "Toggle the Config window."
+   }
+  ]
+ },
+ "gatherbuddy": {
+  "version": "3.8.11.1",
+  "commands": [
+   {
+    "cmd": "/gatherdebug",
+    "help": "Use to open the GatherBuddy interface."
+   }
+  ]
+ },
+ "gatherchill": {
+  "version": "1.0.0.4",
+  "commands": [
+   {
+    "cmd": "/gatherchill",
+    "help": "Open plugin interface\r\n/gatherchill start - Starts running list\r\n/gatherchill stop - Stops plugin\r\n/gatherchill overlay - opens the overlay\r\n/forager - other option\r\n/chill - other OTHER option"
+   },
+   {
+    "cmd": "/forager",
+    "help": null
+   },
+   {
+    "cmd": "/chill",
+    "help": null
+   }
+  ]
+ },
+ "gaugeomatic": {
+  "version": "0.8.3.4",
+  "commands": [
+   {
+    "cmd": "/gomatic",
+    "help": "Open Gauge-O-Matic Settings"
+   }
+  ]
+ },
+ "gearsetreminder": {
+  "version": "1.0.0.4",
+  "commands": [
+   {
+    "cmd": "/gsr",
+    "help": "Open Gearset Reminder settings."
+   }
+  ]
+ },
+ "gearsetsort": {
+  "version": "0.0.7.2",
+  "commands": [
+   {
+    "cmd": "/gearsetsort",
+    "help": "Open GearsetSort Interface"
+   },
+   {
+    "cmd": "/gss",
+    "help": "Shortcut to GearsetSort Interface"
+   }
+  ]
+ },
+ "gearsetter": {
+  "version": "4.3",
+  "commands": [
+   {
+    "cmd": "/gup",
+    "help": "Show possible gear upgrades for all gearsets"
+   },
+   {
+    "cmd": "/gbrowser",
+    "help": "Toggle the equipment browser window"
+   }
+  ]
+ },
+ "gilstracker": {
+  "version": "0.0.0.2",
+  "commands": [
+   {
+    "cmd": "/gilstracker",
+    "help": "Open the GilsTracker window."
+   }
+  ]
+ },
+ "glamaholic": {
+  "version": "1.15.2.0",
+  "commands": [
+   {
+    "cmd": "/glamaholic",
+    "help": null
+   },
+   {
+    "cmd": "/tryonglamourer",
+    "help": "Try on an EC glamour using Glamourer, link can be provided in the command or in the clipboard"
+   }
+  ]
+ },
+ "glamourer": {
+  "version": "1.7.1.3",
+  "commands": [
+   {
+    "cmd": "/glamourer",
+    "help": "Open or close the Glamourer window."
+   },
+   {
+    "cmd": "/glamour",
+    "help": "Use Glamourer Functions. Use with 'help' or '?' for extended help."
+   }
+  ]
+ },
+ "glamourlog": {
+  "version": "15.78",
+  "commands": []
+ },
+ "glamourroulette": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/glamourroulette",
+    "help": "Choose a random enabled glamour plate.\n  /glamroulette|/gr - Alias for /glamourroulette\n  /glamourroulette config|settings - Toggle the settings window."
+   },
+   {
+    "cmd": "/glamroulette",
+    "help": null
+   },
+   {
+    "cmd": "/gr",
+    "help": null
+   }
+  ]
+ },
+ "glamswapcommand": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/cgs",
+    "help": "Change the glamour for your currently selected gear set! usage: /cgs <glamNumber>"
+   }
+  ]
+ },
+ "globetrotter": {
+  "version": "1.2.17",
+  "commands": [
+   {
+    "cmd": "/pglobetrotter",
+    "help": "Show the Globetrotter config"
+   },
+   {
+    "cmd": "/tmap",
+    "help": "Open the map and place a flag at the location of your current treasure map"
+   }
+  ]
+ },
+ "goodfriend": {
+  "version": "3.12.1.0",
+  "commands": []
+ },
+ "gracegawker": {
+  "version": "1.1.7.0",
+  "commands": [
+   {
+    "cmd": "/pgrace",
+    "help": "Opens the configuration menu for Grace Gawker."
+   }
+  ]
+ },
+ "graphicsconfig": {
+  "version": "1.0.1.3",
+  "commands": []
+ },
+ "gubal": {
+  "version": "0.5.1.0",
+  "commands": [
+   {
+    "cmd": "/gubal",
+    "help": "Open Gubal configuration"
+   }
+  ]
+ },
+ "handyhotbarhelper": {
+  "version": "0.1.4",
+  "commands": [
+   {
+    "cmd": "/hhh",
+    "help": "Opens the game's Actions & Traits window."
+   }
+  ]
+ },
+ "harphero": {
+  "version": "1.15.0.0",
+  "commands": [
+   {
+    "cmd": "/harphero",
+    "help": null
+   }
+  ]
+ },
+ "heliosphere-plugin": {
+  "version": "4.10.7.0",
+  "commands": []
+ },
+ "henchman": {
+  "version": "4.0.0.0",
+  "commands": [
+   {
+    "cmd": "/henchman",
+    "help": "Open plugin window\r\n/henchman BumpOnALog <Class|GC> [RunDuties] → Run current huntlog rank for Class/GC\r\n/henchman OnYourMark → Runs with currently selected HuntBills\r\n/henchman RetainerVocate <1-10> <RetainerClassAbbr> <QuestClassAbbr> <FirstExploration> → Run retainer creation with selected parameters and random names\r\n/henchman SetupRetainer <Name> <PresetId> → Runs retainer setup for retainer fantasia. Keep presetId and/or name empty to randomize them.\r\n/henchman OnABoat → Run On A Boat (also works when you are already on a voyage)\r\n/henchman ToggleRender [On|Off] → De-/activate 3D rendering (safes A LOT of GPU load).\r\n/henchman ToggleUnfocusedRender [On|Off] → Toggle disabling 3D rendering while the game is unfocused.\r\n/henchman Stop"
+   },
+   {
+    "cmd": "/knightman",
+    "help": null
+   },
+   {
+    "cmd": "/henchmore",
+    "help": null
+   },
+   {
+    "cmd": "/henchmen",
+    "help": null
+   },
+   {
+    "cmd": "/hench",
+    "help": null
+   }
+  ]
+ },
+ "highfpsphysicsplugin": {
+  "version": "10.0.0.0",
+  "commands": [
+   {
+    "cmd": "/physics",
+    "help": "Open Configuration Window\n/physics on - Enable Physics Change\n/physics off - Disable Physics Change\n/physics t - Toggle Physics Change"
+   }
+  ]
+ },
+ "himbeertoniraidtool": {
+  "version": "1.10.2.1",
+  "commands": []
+ },
+ "hitspark": {
+  "version": "0.2.0.0",
+  "commands": [
+   {
+    "cmd": "/hitspark",
+    "help": "Open HitSpark settings\n→ /hitspark test - Toggle test numbers around you\n→ /hitspark native - Toggle native mode (hand everything back to the game)"
+   },
+   {
+    "cmd": "/hs",
+    "help": null
+   }
+  ]
+ },
+ "honorific": {
+  "version": "1.7.5.1",
+  "commands": [
+   {
+    "cmd": "/honorific",
+    "help": "Open the Honorific config window."
+   }
+  ]
+ },
+ "hotbarbackup": {
+  "version": "1.0.0.5",
+  "commands": [
+   {
+    "cmd": "/hbbu",
+    "help": "Opens up the hotbar backup tool."
+   }
+  ]
+ },
+ "housemate": {
+  "version": "1.0.3.6",
+  "commands": [
+   {
+    "cmd": "/housemate",
+    "help": "Display the Housemate configuration interface.\nToggle the Housemate object overlay with '/housemate toggle'"
+   }
+  ]
+ },
+ "housingcullfix": {
+  "version": "0.0.1.8",
+  "commands": [
+   {
+    "cmd": "/housingcullfix",
+    "help": "Manage Housing Cull Fix settings"
+   }
+  ]
+ },
+ "housingherald": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/pherald",
+    "help": "Opens the menu for Housing Herald."
+   }
+  ]
+ },
+ "housingway": {
+  "version": "1.0.2.2",
+  "commands": [
+   {
+    "cmd": "/door",
+    "help": "Moves the player to the entrance."
+   },
+   {
+    "cmd": "/housingway",
+    "help": "Show the Housingway config window."
+   }
+  ]
+ },
+ "hudlayouthelper": {
+  "version": "0.0.4.0",
+  "commands": [
+   {
+    "cmd": "/hudhelper",
+    "help": "Toggle the config and debug window."
+   }
+  ]
+ },
+ "hudmanager": {
+  "version": "2.7.2.2",
+  "commands": [
+   {
+    "cmd": "/hudman",
+    "help": "Open the HUD Manager settings or swap to layout name\n\t/hudman → open config window\n\t/hudman swap <layout> → switch to a layout\n\t/hudman condition <condition> true|false|toggle → modify a custom condition\n\t/hudman swapper on|off|toggle → enable or disable automatic layout swapping"
+   }
+  ]
+ },
+ "hudunlimited": {
+  "version": "1.2.3.3",
+  "commands": [
+   {
+    "cmd": "/hudunlimited",
+    "help": "Open HUDUnlimited Config Window"
+   },
+   {
+    "cmd": "/hudu",
+    "help": "Open HUDUnlimited Config Window"
+   }
+  ]
+ },
+ "huntalerts": {
+  "version": "1.4.1.12",
+  "commands": [
+   {
+    "cmd": "/huntalerts",
+    "help": "Opens a list of previous hunt alerts"
+   }
+  ]
+ },
+ "huntbuddy": {
+  "version": "1.2.2.2",
+  "commands": []
+ },
+ "hunthelper": {
+  "version": "1.0.0.34",
+  "commands": [
+   {
+    "cmd": "/hh",
+    "help": null
+   },
+   {
+    "cmd": "/hh1",
+    "help": null
+   },
+   {
+    "cmd": "/hh2",
+    "help": null
+   },
+   {
+    "cmd": "/hh1save",
+    "help": null
+   },
+   {
+    "cmd": "/hh2save",
+    "help": null
+   },
+   {
+    "cmd": "/hht",
+    "help": null
+   },
+   {
+    "cmd": "/hhn",
+    "help": null
+   },
+   {
+    "cmd": "/hhna",
+    "help": null
+   },
+   {
+    "cmd": "/hhc",
+    "help": null
+   },
+   {
+    "cmd": "/hhr",
+    "help": null
+   }
+  ]
+ },
+ "hunttrainassistant": {
+  "version": "1.0.2.15",
+  "commands": [
+   {
+    "cmd": "/hta",
+    "help": "toggle plugin interface\n/hta clear: clear current conductors\n/hta <player name>: add new conductor"
+   }
+  ]
+ },
+ "hunty": {
+  "version": "1.3.7.1",
+  "commands": [
+   {
+    "cmd": "/hunty",
+    "help": null
+   },
+   {
+    "cmd": "/huntyxl",
+    "help": null
+   },
+   {
+    "cmd": "/huntycompanion",
+    "help": null
+   }
+  ]
+ },
+ "hybridcamera": {
+  "version": "1.9.0.0",
+  "commands": [
+   {
+    "cmd": "/phcam",
+    "help": "Toggle the configuration window."
+   }
+  ]
+ },
+ "hyperborea": {
+  "version": "1.0.1.2",
+  "commands": [
+   {
+    "cmd": "/hyper",
+    "help": null
+   }
+  ]
+ },
+ "hyperfocus": {
+  "version": "0.1.1.2",
+  "commands": [
+   {
+    "cmd": "/phfocus",
+    "help": "Open settings"
+   }
+  ]
+ },
+ "iamready": {
+  "version": "1.1.0.0",
+  "commands": [
+   {
+    "cmd": "/iar",
+    "help": "Open I Am Ready."
+   }
+  ]
+ },
+ "ice": {
+  "version": "1.0.0.6",
+  "commands": [
+   {
+    "cmd": "/icecosmic",
+    "help": "Open plugin interface\r\n/ice help - shows all commands\r\n/ice clear - removes all missions\r\n/ice stop - stops ICE\r\n/ice start - Starts ICE\r\n/ice add | remove | toggle | only \r\n/ice flag [id] - Opens the map and marks where the area of gathering is."
+   },
+   {
+    "cmd": "/ice",
+    "help": null
+   },
+   {
+    "cmd": "/IceCosmic",
+    "help": null
+   }
+  ]
+ },
+ "ihatecapslock": {
+  "version": "15.750.0.0",
+  "commands": []
+ },
+ "imagenation": {
+  "version": "1.0.0.11",
+  "commands": []
+ },
+ "inputflow": {
+  "version": "1.0.0.1",
+  "commands": [
+   {
+    "cmd": "/inputflow",
+    "help": "Open config"
+   }
+  ]
+ },
+ "inspecto": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/insp",
+    "help": "Open the main window"
+   }
+  ]
+ },
+ "interjection": {
+  "version": "0.0.0.5",
+  "commands": [
+   {
+    "cmd": "/interjection",
+    "help": "Toggles config window."
+   }
+  ]
+ },
+ "inventorysearchbar": {
+  "version": "1.9.8.0",
+  "commands": [
+   {
+    "cmd": "/inventorysearchbar",
+    "help": "Opens the Inventory Search Bar configuration window."
+   },
+   {
+    "cmd": "/isb",
+    "help": "Opens the Inventory Search Bar configuration window."
+   }
+  ]
+ },
+ "inventorytools": {
+  "version": "1.15.1.1",
+  "commands": []
+ },
+ "islandworkshopsearch": {
+  "version": "1.0.0.6",
+  "commands": []
+ },
+ "itemsearchplugin": {
+  "version": "1.10.6.0",
+  "commands": [
+   {
+    "cmd": "/xlitem",
+    "help": null
+   },
+   {
+    "cmd": "/fittingroom",
+    "help": null
+   }
+  ]
+ },
+ "itemuse": {
+  "version": "1.0.1.2",
+  "commands": []
+ },
+ "itemvendorlocation": {
+  "version": "2.14.0.1",
+  "commands": [
+   {
+    "cmd": "/pvendor",
+    "help": "Displays the Item Vendor Location config window"
+   }
+  ]
+ },
+ "itsup": {
+  "version": "0.8.0.0",
+  "commands": [
+   {
+    "cmd": "/itsup",
+    "help": "Open config.\n/itsup move → Unlock the bar to reposition it.\n/itsup preview → Toggle preview mode.\n/itsup reset → Reset the bar position and size."
+   }
+  ]
+ },
+ "jobautoswitcher": {
+  "version": "1.3.1.0",
+  "commands": [
+   {
+    "cmd": "/jas",
+    "help": "Job Auto Switcher — /jas [on|off|config]"
+   }
+  ]
+ },
+ "jobbars": {
+  "version": "1.3.3.2",
+  "commands": [
+   {
+    "cmd": "/jobbars",
+    "help": "Open config window for VFXEditor"
+   }
+  ]
+ },
+ "jobmountroulette": {
+  "version": "1.1.2.0",
+  "commands": [
+   {
+    "cmd": "/jmr",
+    "help": "Open the configuration window and personalize the mount roulette for your current job."
+   }
+  ]
+ },
+ "jobrouletteplugin": {
+  "version": "1.7.2.1",
+  "commands": [
+   {
+    "cmd": "/jobroulette",
+    "help": "Randomly pick an enabled job and equip its gear set.\n/jobroulette support|tank|healer|dps|melee|ranged|caster (or magic) - Randomly pick an enabled job from that role.\n/jobroulette leveling|expert|highlevel|levelcap|trials|msq|allianceraid|normalraid|guildhests|mentor - Request a role-in-need roulette job for that duty roulette.\n/jobroulette glam|glamour - Toggle random Glamour Plate selection on/off.\n/jobroulette current|currentjob - Toggle whether Job Roulette may select your current job.\n/jobroulette settings - Toggle the Job Roulette settings window."
+   },
+   {
+    "cmd": "/jr",
+    "help": "Alias for /jobroulette."
+   }
+  ]
+ },
+ "jobtitles": {
+  "version": "0.2.0.10",
+  "commands": []
+ },
+ "jumpscare": {
+  "version": "1.2.4.0",
+  "commands": [
+   {
+    "cmd": "/jumpscare",
+    "help": "Start/stop jumpscare timer"
+   },
+   {
+    "cmd": "/js",
+    "help": "Alias for /jumpscare"
+   },
+   {
+    "cmd": "/jumpscarecfg",
+    "help": "Open the jumpscare configuration window"
+   },
+   {
+    "cmd": "/jscfg",
+    "help": "Alias for /jumpscarecfg"
+   }
+  ]
+ },
+ "justbackup": {
+  "version": "1.1.1.5",
+  "commands": [
+   {
+    "cmd": "/justbackup",
+    "help": "do a manual backup"
+   }
+  ]
+ },
+ "karaoke": {
+  "version": "0.0.7.0",
+  "commands": [
+   {
+    "cmd": "/karaoke",
+    "help": "Open the lyric player window\n    - config: open config window\n    - reload: reload lyrics cache\n    - debug: open debug window"
+   }
+  ]
+ },
+ "keybindsplus": {
+  "version": "0.2.1.0",
+  "commands": [
+   {
+    "cmd": "/kp",
+    "help": "Opens the KeybindsPlus window."
+   }
+  ]
+ },
+ "kingdomheartsplugin": {
+  "version": "1.0.7.6",
+  "commands": [
+   {
+    "cmd": "/khpconfig",
+    "help": "Opens configuration for Kingdom Hearts UI Bars."
+   },
+   {
+    "cmd": "/khp",
+    "help": "Toggles the KH UI."
+   }
+  ]
+ },
+ "knightshopper": {
+  "version": "1.0.1.9",
+  "commands": [
+   {
+    "cmd": "/knightshopper",
+    "help": null
+   },
+   {
+    "cmd": "/shopmore",
+    "help": null
+   }
+  ]
+ },
+ "ktisis": {
+  "version": "0.4.1.2",
+  "commands": []
+ },
+ "lapcatcounter": {
+  "version": "1.1.1.1",
+  "commands": [
+   {
+    "cmd": "/lapcat",
+    "help": "Open Lap Cat Counter"
+   },
+   {
+    "cmd": "/lapcatcount",
+    "help": "Print your total lap count to chat"
+   },
+   {
+    "cmd": "/lapdebug",
+    "help": "Toggle LapCatCounter debug. Usage: /lapdebug [on|off|overlay]"
+   }
+  ]
+ },
+ "lazygatherer": {
+  "version": "1.4.5.0",
+  "commands": [
+   {
+    "cmd": "/lazygatherer",
+    "help": "Open the configuration"
+   },
+   {
+    "cmd": "/lg",
+    "help": "Open the configuration"
+   },
+   {
+    "cmd": "/gpalert",
+    "help": "Displays GP alert configuration.\n/gpalert <On/Off> -> enable or disable the alert.\n/gpalert <1-9999> -> set the GP threshold."
+   }
+  ]
+ },
+ "lazyloot": {
+  "version": "5.3.3.3",
+  "commands": [
+   {
+    "cmd": "/lazyloot",
+    "help": "Open Lazy Loot config."
+   },
+   {
+    "cmd": "/lazy",
+    "help": "Open Lazy Loot config by default. Add need | greed | pass to roll on current items."
+   },
+   {
+    "cmd": "/fulf",
+    "help": "Enable/Disable FULF with /fulf [on|off] or change the loot rule with /fulf need | greed | pass."
+   }
+  ]
+ },
+ "lifestream": {
+  "version": "2.6.0.13",
+  "commands": [
+   {
+    "cmd": "/lifestream",
+    "help": null
+   },
+   {
+    "cmd": "/li",
+    "help": "Return to home world. Type /lifestream and switch to \"Help\" tab for a list of built-in shortcuts."
+   }
+  ]
+ },
+ "limitbreaknow": {
+  "version": "0.0.0.3",
+  "commands": []
+ },
+ "liteshade": {
+  "version": "1.0.2.3",
+  "commands": [
+   {
+    "cmd": "/liteshade",
+    "help": "Open LiteShade. Options: status, profile <name>, next, previous, auto, toggle."
+   }
+  ]
+ },
+ "logogramhelper": {
+  "version": "0.0.3.8",
+  "commands": []
+ },
+ "looturesrewritten": {
+  "version": "1.0.0.2",
+  "commands": []
+ },
+ "lootview": {
+  "version": "1.6.5.0",
+  "commands": [
+   {
+    "cmd": "/lv",
+    "help": "Toggle LootView window\n→ /lv config - Open settings"
+   }
+  ]
+ },
+ "macrochain": {
+  "version": "2.2.0.15",
+  "commands": [
+   {
+    "cmd": "/nextmacro",
+    "help": "Executes the next macro."
+   },
+   {
+    "cmd": "/runmacro",
+    "help": "Execute a macro (Not usable inside macros). - /runmacro ## [individual|shared]."
+   }
+  ]
+ },
+ "macromate": {
+  "version": "1.0.27.4",
+  "commands": [
+   {
+    "cmd": "/macromate",
+    "help": "Show the Macro Mate window"
+   },
+   {
+    "cmd": "/mm",
+    "help": null
+   }
+  ]
+ },
+ "macrorecorded": {
+  "version": "1.0.8.0",
+  "commands": [
+   {
+    "cmd": "/macrorecorded",
+    "help": "Opens the macro recording utility window"
+   },
+   {
+    "cmd": "/mcrec",
+    "help": "Opens the macro recording utility window"
+   }
+  ]
+ },
+ "magitekstratagem": {
+  "version": "1.4.0.0",
+  "commands": [
+   {
+    "cmd": "/magiteks",
+    "help": "opens the configuration window"
+   },
+   {
+    "cmd": "/magiteksoverlay",
+    "help": "togggles the overlay"
+   }
+  ]
+ },
+ "maidenalert": {
+  "version": "1.0.0.7",
+  "commands": [
+   {
+    "cmd": "/malert",
+    "help": null
+   },
+   {
+    "cmd": "/maidenalert",
+    "help": null
+   },
+   {
+    "cmd": "/malerttest",
+    "help": null
+   }
+  ]
+ },
+ "malmstone": {
+  "version": "1.0.8.3",
+  "commands": [
+   {
+    "cmd": "/pmalm",
+    "help": "/pmalm <rank> <all/cc/fl/rw> -- Displays PVP games left until a target rank. cc = Crystalline Conflict, fl = Frontlines, rw = Rivalwings"
+   }
+  ]
+ },
+ "maplinker": {
+  "version": "1.1.13.0",
+  "commands": [
+   {
+    "cmd": "/maplink",
+    "help": "/maplink - open the maplink panel."
+   }
+  ]
+ },
+ "mappartyassist": {
+  "version": "2.5.2.2",
+  "commands": [
+   {
+    "cmd": "/mparty",
+    "help": "Opens map tracker console."
+   },
+   {
+    "cmd": "/mpartystats",
+    "help": "Opens stats window."
+   },
+   {
+    "cmd": "/mpartyconfig",
+    "help": "Open settings window."
+   },
+   {
+    "cmd": "/mpartyedit",
+    "help": "Toggle editing of maps/duty results."
+   }
+  ]
+ },
+ "mappy": {
+  "version": "3.2.0.0",
+  "commands": []
+ },
+ "marketboardplugin": {
+  "version": "1.13.0.0",
+  "commands": [
+   {
+    "cmd": "/pmb",
+    "help": "Open the market board window."
+   }
+  ]
+ },
+ "marketbuddy": {
+  "version": "0.2.4.2",
+  "commands": [
+   {
+    "cmd": "/mbuddy",
+    "help": "Show plugin configuration window."
+   }
+  ]
+ },
+ "mbhistory": {
+  "version": "1.0.5.0",
+  "commands": []
+ },
+ "memorymarker": {
+  "version": "2.2.4.0",
+  "commands": []
+ },
+ "messenger": {
+  "version": "1.5.0.21",
+  "commands": [
+   {
+    "cmd": "/xim",
+    "help": "open main control window\n/xim h|hide → temporarily hide/show all message windows\n/xim c|close → close all active windows and reset cascading positions\n/xim <partial player name> - attempt to open chat history with specified player"
+   },
+   {
+    "cmd": "/msg",
+    "help": "Alias"
+   }
+  ]
+ },
+ "mimicryhelper": {
+  "version": "1.0.1.9",
+  "commands": [
+   {
+    "cmd": "/mimic",
+    "help": "Bring up the main menu with buttons for Tank, Healer, and DPS roles. You can specify the first letter of the role as an argument (e.g. /mimic t)."
+   }
+  ]
+ },
+ "mini": {
+  "version": "2.1.1.9",
+  "commands": [
+   {
+    "cmd": "/mini",
+    "help": "Minimize the game\n/mini <t|tray> → Minimize to tray\n/mini <c|config|s|settings> → Open settings"
+   }
+  ]
+ },
+ "minicactpotsolver": {
+  "version": "4.0.1.0",
+  "commands": []
+ },
+ "minigamesemporium": {
+  "version": "0.0.16.4",
+  "commands": [
+   {
+    "cmd": "/minigamesemporium",
+    "help": "Opens the Mini Games Emporium window."
+   },
+   {
+    "cmd": "/mge",
+    "help": "Opens the Mini Games Emporium window."
+   },
+   {
+    "cmd": "/mgeconfig",
+    "help": "Opens the Mini Games Emporium settings tab."
+   }
+  ]
+ },
+ "minimapmarkermagnitude": {
+  "version": "1.0.3",
+  "commands": [
+   {
+    "cmd": "/mmm",
+    "help": "Opens the Minimap Marker Magnitude config window."
+   }
+  ]
+ },
+ "minimappingway": {
+  "version": "15.750.1.4",
+  "commands": [
+   {
+    "cmd": "/mmway",
+    "help": "Opens Mini-Mappingway settings"
+   },
+   {
+    "cmd": "/mmwaydebug",
+    "help": null
+   }
+  ]
+ },
+ "moaction": {
+  "version": "4.10.1.0",
+  "commands": [
+   {
+    "cmd": "/pmoaction",
+    "help": "Open a window to edit mouseover action settings."
+   },
+   {
+    "cmd": "/moaction",
+    "help": "Alias for /pmoaction."
+   },
+   {
+    "cmd": "/mo",
+    "help": "Alias for /pmoaction."
+   }
+  ]
+ },
+ "mogmail": {
+  "version": "1.2.6.0",
+  "commands": [
+   {
+    "cmd": "/mogmail",
+    "help": "Open settings. Subcommands: pop (use inventory items), stop (abort runs), archive (open archive viewer)."
+   }
+  ]
+ },
+ "mogmogcheck": {
+  "version": "3.6.1.0",
+  "commands": []
+ },
+ "monsterloothunter": {
+  "version": "1.6.24.7",
+  "commands": [
+   {
+    "cmd": "/monsterloot",
+    "help": "Opens loot search window. Search term is optional"
+   },
+   {
+    "cmd": "/mloot",
+    "help": "Opens loot search window. Search term is optional"
+   }
+  ]
+ },
+ "moodles": {
+  "version": "1.1.3.5",
+  "commands": [
+   {
+    "cmd": "/moodles",
+    "help": "Open plugin interface"
+   },
+   {
+    "cmd": "/moodle",
+    "help": "Add or remove moodles"
+   }
+  ]
+ },
+ "moonbaseomega": {
+  "version": "1.1.0.5",
+  "commands": [
+   {
+    "cmd": "/moonbaseomega",
+    "help": "Open the config window"
+   }
+  ]
+ },
+ "mounttilt": {
+  "version": "1.0.0.1",
+  "commands": [
+   {
+    "cmd": "/mounttilt",
+    "help": "Open the configuration window"
+   }
+  ]
+ },
+ "mouselock": {
+  "version": "1.0.1.8",
+  "commands": [
+   {
+    "cmd": "/mouselock",
+    "help": "MouseLock command. Use '/mouselock help' for options."
+   }
+  ]
+ },
+ "multihit": {
+  "version": "0.0.4.2",
+  "commands": [
+   {
+    "cmd": "/mhit",
+    "help": "Open MultiHit window."
+   }
+  ]
+ },
+ "musicalguide": {
+  "version": "1.8.0.0",
+  "commands": [
+   {
+    "cmd": "/mguide",
+    "help": "Open settings for Musical Guide"
+   }
+  ]
+ },
+ "nalapf": {
+  "version": "1.1.0.0",
+  "commands": [
+   {
+    "cmd": "/pfr",
+    "help": "Open NalaPF. /pfr recreate puts your last PF back up, /pfr save [title] saves the PF you are recruiting with."
+   }
+  ]
+ },
+ "nameplatedebuffs": {
+  "version": "1.1.1.1",
+  "commands": [
+   {
+    "cmd": "/npdebuffs",
+    "help": "Toggles configuration window\n/npdebuffs toggle → Toggle Nameplate Debuffs\n/npdebuffs enable → Enables Nameplate Debuffs\n/npdebuffs disable → Disables Nameplate Debuffs"
+   }
+  ]
+ },
+ "namingway": {
+  "version": "1.1.22.1",
+  "commands": [
+   {
+    "cmd": "/namingway",
+    "help": "Opens the Namingway interface"
+   }
+  ]
+ },
+ "neatnoter": {
+  "version": "2.7.6.0",
+  "commands": [
+   {
+    "cmd": "/notebook",
+    "help": "Open/close the NeatNoter notebook."
+   },
+   {
+    "cmd": "/noteoverlay",
+    "help": "Open/close the NeatNoter note overlay."
+   },
+   {
+    "cmd": "/notebookconfig",
+    "help": "Open/close the NeatNoter settings."
+   }
+  ]
+ },
+ "necrolens": {
+  "version": "1.0.8.12",
+  "commands": [
+   {
+    "cmd": "/necrolens",
+    "help": null
+   },
+   {
+    "cmd": "/necrolenscfg",
+    "help": null
+   },
+   {
+    "cmd": "/openchest",
+    "help": null
+   },
+   {
+    "cmd": "/pomander",
+    "help": "Try to use the pomander with given name"
+   }
+  ]
+ },
+ "neko": {
+  "version": "1.4.0",
+  "commands": [
+   {
+    "cmd": "/nekocfg",
+    "help": "Configuration window"
+   },
+   {
+    "cmd": "/neko",
+    "help": "Display the main window, containing the image."
+   }
+  ]
+ },
+ "nicedamage": {
+  "version": "2.0.0.0",
+  "commands": []
+ },
+ "nicknamer": {
+  "version": "1.0.0.3",
+  "commands": []
+ },
+ "nokillplugin": {
+  "version": "1.2.4.0",
+  "commands": [
+   {
+    "cmd": "/nokill",
+    "help": "/nokill - open the no kill plugin panel."
+   }
+  ]
+ },
+ "nomousemoveforward": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/nomousemoveforward",
+    "help": "Open the settings window."
+   }
+  ]
+ },
+ "nopolice": {
+  "version": "1.0.0.7",
+  "commands": []
+ },
+ "noquesticons": {
+  "version": "1.5.0.0",
+  "commands": [
+   {
+    "cmd": "/noquesticons",
+    "help": "Open the NoQuestIcons settings window (or use the shorter /nqi). Use 'on' or 'off' to enable/disable without opening the window."
+   },
+   {
+    "cmd": "/nqi",
+    "help": "Alias for /noquesticons."
+   }
+  ]
+ },
+ "northstar": {
+  "version": "0.1.3.1",
+  "commands": [
+   {
+    "cmd": "/ns",
+    "help": "Open the NorthStar configuration window"
+   }
+  ]
+ },
+ "nosoliciting": {
+  "version": "3.2.10.0",
+  "commands": [
+   {
+    "cmd": "/prmt",
+    "help": "Opens the NoSoliciting configuration (deprecated)"
+   },
+   {
+    "cmd": "/nosol",
+    "help": "Opens the NoSoliciting configuration"
+   }
+  ]
+ },
+ "notankyou": {
+  "version": "7.4.4.7",
+  "commands": [
+   {
+    "cmd": "/nty",
+    "help": "Open NoTankYou config window"
+   }
+  ]
+ },
+ "noted": {
+  "version": "1.8.0.0",
+  "commands": [
+   {
+    "cmd": "/noted",
+    "help": "Opens the NOTED configuration window."
+   }
+  ]
+ },
+ "notificationmaster": {
+  "version": "2.1.1.16",
+  "commands": [
+   {
+    "cmd": "/pnotify",
+    "help": "open/close configuration\n/pnotify shutup|s [time in minutes] - pause plugin for specified amount of minutes or until restart if time is not specified\n/pnotify resume|r - resume plugin operation"
+   },
+   {
+    "cmd": "/gp",
+    "help": "open config\n/gp <number> → set trigger GP amount"
+   }
+  ]
+ },
+ "notypesay": {
+  "version": "1.0.3.0",
+  "commands": []
+ },
+ "nowplaying": {
+  "version": "1.3.0.8",
+  "commands": [
+   {
+    "cmd": "/nowplaying",
+    "help": "args: [current, next, prev, play, pause, playpause, statusbar, hideonpause, maxsongchars <int>, maxartistchars <int>, trunc]."
+   },
+   {
+    "cmd": "/npl",
+    "help": "Alias for /nowplaying. Supports all the same arguments."
+   }
+  ]
+ },
+ "objectexplorer": {
+  "version": "1.0.0.11",
+  "commands": [
+   {
+    "cmd": "/oe",
+    "help": null
+   }
+  ]
+ },
+ "obsplugin": {
+  "version": "1.0.5.7",
+  "commands": []
+ },
+ "ofdungeonsdeep": {
+  "version": "1.1.15.0",
+  "commands": [
+   {
+    "cmd": "/odd",
+    "help": "Open Configuration Window\n/odd dex → Open Monster Dex\n/odd floor → Show Floor Info"
+   }
+  ]
+ },
+ "ohhey": {
+  "version": "0.2.1.0",
+  "commands": [
+   {
+    "cmd": "/ohhey",
+    "help": "Opens the OhHey main window if used by itself or when using '/ohhey main'.\nUse '/ohhey config' to open the configuration window."
+   }
+  ]
+ },
+ "oofplugin": {
+  "version": "1.4.1.0",
+  "commands": [
+   {
+    "cmd": "/oof",
+    "help": "play oof sound"
+   },
+   {
+    "cmd": "/oofsettings",
+    "help": "change oof settings"
+   },
+   {
+    "cmd": "/oofvideo",
+    "help": "open Hbomberguy video on OOF.mp3"
+   }
+  ]
+ },
+ "openercreator": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/ocrt",
+    "help": "Create, save, and practice your openers."
+   }
+  ]
+ },
+ "orangeguidancetomestone": {
+  "version": "1.11.0.0",
+  "commands": [
+   {
+    "cmd": "/ogt",
+    "help": "Toggle UI - try /ogt help"
+   }
+  ]
+ },
+ "orbwalker": {
+  "version": "1.0.1.10",
+  "commands": [
+   {
+    "cmd": "/orbwalker",
+    "help": null
+   }
+  ]
+ },
+ "orchestrion": {
+  "version": "2.3.0.1",
+  "commands": [
+   {
+    "cmd": "/porch",
+    "help": null
+   }
+  ]
+ },
+ "owofy": {
+  "version": "1.7.4.0",
+  "commands": []
+ },
+ "paissawah": {
+  "version": "1.0.0.7",
+  "commands": [
+   {
+    "cmd": "/PaissaWah",
+    "help": "Open PaissaWah"
+   }
+  ]
+ },
+ "palantir": {
+  "version": "0.0.0.10",
+  "commands": [
+   {
+    "cmd": "/palantir",
+    "help": "Opens the Palantir window"
+   }
+  ]
+ },
+ "pandorasbox": {
+  "version": "1.6.4.6",
+  "commands": [
+   {
+    "cmd": "/pandora",
+    "help": "Opens the Pandora menu."
+   }
+  ]
+ },
+ "partyfinderex": {
+  "version": "0.1.0.0",
+  "commands": [
+   {
+    "cmd": "/pfex",
+    "help": "Open Party Finder Ex - View party listings with filtering and alerts"
+   }
+  ]
+ },
+ "partyicons": {
+  "version": "1.2.3.5",
+  "commands": [
+   {
+    "cmd": "/ppi",
+    "help": "opens configuration window; \"reset\" or \"r\" resets all assignments"
+   }
+  ]
+ },
+ "partyplanner": {
+  "version": "1.7.6.0",
+  "commands": [
+   {
+    "cmd": "/partyplanner",
+    "help": "Display a list of community events sourced from partyverse.app"
+   }
+  ]
+ },
+ "partysortplus": {
+  "version": "1.0.0.2",
+  "commands": [
+   {
+    "cmd": "/psp",
+    "help": "Run a party list sort!\n/psp ui → Show the configuration window.\n/psp config → Show the configuration window.\n/psp tutorial → Show the tutorial window again."
+   }
+  ]
+ },
+ "pathfinder": {
+  "version": "0.1.7.1",
+  "commands": []
+ },
+ "patme": {
+  "version": "1.15.0.0",
+  "commands": [
+   {
+    "cmd": "/patme",
+    "help": "Show counters in chat"
+   },
+   {
+    "cmd": "/patcount",
+    "help": "Toggle counter UI"
+   }
+  ]
+ },
+ "peepingtom": {
+  "version": "1.7.25",
+  "commands": [
+   {
+    "cmd": "/ppeepingtom",
+    "help": "Use with no arguments to show the list. Use with \"c\" or \"config\" to show the config"
+   },
+   {
+    "cmd": "/ptom",
+    "help": "Alias for /ppeepingtom"
+   },
+   {
+    "cmd": "/ppeep",
+    "help": "Alias for /ppeepingtom"
+   }
+  ]
+ },
+ "pennypincher": {
+  "version": "1.9.0.1",
+  "commands": [
+   {
+    "cmd": "/penny",
+    "help": null
+   }
+  ]
+ },
+ "penumbra": {
+  "version": "1.7.2.1",
+  "commands": [
+   {
+    "cmd": "/penumbra",
+    "help": "Without arguments, toggles the main window. Use /penumbra help to get further command help."
+   }
+  ]
+ },
+ "petrenamer": {
+  "version": "3.0.1.1",
+  "commands": []
+ },
+ "petscale": {
+  "version": "2.1.0.3",
+  "commands": [
+   {
+    "cmd": "/pscale",
+    "help": "Open or close Pet Scale's config window."
+   }
+  ]
+ },
+ "pfsearch": {
+  "version": "1.0.0.1",
+  "commands": [
+   {
+    "cmd": "/pf",
+    "help": "Open Party Finder Plugin"
+   }
+  ]
+ },
+ "photobooth": {
+  "version": "1.0.2.0",
+  "commands": [
+   {
+    "cmd": "/pb",
+    "help": "Open the Photobooth portrait editor window."
+   }
+  ]
+ },
+ "pingplugin": {
+  "version": "2.11.1.0",
+  "commands": []
+ },
+ "pixelperfect": {
+  "version": "3.3.4.0",
+  "commands": [
+   {
+    "cmd": "/pp",
+    "help": "Pixel Perfect config."
+   }
+  ]
+ },
+ "playertags": {
+  "version": "1.12.5.0",
+  "commands": [
+   {
+    "cmd": "/playertags",
+    "help": null
+   }
+  ]
+ },
+ "playertrack": {
+  "version": "3.6.1.1",
+  "commands": [
+   {
+    "cmd": "/ptrack",
+    "help": null
+   },
+   {
+    "cmd": "/ptrackconfig",
+    "help": null
+   }
+  ]
+ },
+ "pluginpresetmanager": {
+  "version": "1.0.7.0",
+  "commands": [
+   {
+    "cmd": "/ppreset",
+    "help": "Open the Plugin Preset Manager window"
+   },
+   {
+    "cmd": "/ppm",
+    "help": "Apply a preset by name or 'alwayson' to disable all except always-on. Usage: /ppm <preset name|alwayson>"
+   }
+  ]
+ },
+ "positionalguide": {
+  "version": "4.8.3",
+  "commands": [
+   {
+    "cmd": "/posguide",
+    "help": "Open Positional Assistant's config window"
+   }
+  ]
+ },
+ "prefpro": {
+  "version": "1.3.1.0",
+  "commands": [
+   {
+    "cmd": "/prefpro",
+    "help": "Display the PrefPro configuration interface."
+   }
+  ]
+ },
+ "pricecheck": {
+  "version": "2.7.6.0",
+  "commands": [
+   {
+    "cmd": "/pcheck",
+    "help": "Show price check."
+   },
+   {
+    "cmd": "/pricecheck",
+    "help": null
+   },
+   {
+    "cmd": "/pcheckconfig",
+    "help": "Show price check config."
+   },
+   {
+    "cmd": "/pricecheckconfig",
+    "help": null
+   }
+  ]
+ },
+ "priceinsight": {
+  "version": "2.11.5.0",
+  "commands": [
+   {
+    "cmd": "/priceinsight",
+    "help": "Price Insight Configuration Menu"
+   }
+  ]
+ },
+ "prioritizer": {
+  "version": "2.0.1.4",
+  "commands": []
+ },
+ "proxyplayer": {
+  "version": "1.2.0.0",
+  "commands": [
+   {
+    "cmd": "/pplayer",
+    "help": "Opens the ProxyPlayer main window.\n/pplayer toggle - Toggles play/pause for the current music source.\n/pplayer next - Skips to the next track in the current music source.\n/pplayer prev - Returns to the previous track in the current music source.\n/pplayer stop - Stops playback for the current music source (if supported).\n/pplayer shuffle - Toggles shuffle mode for the current music source (if supported).\n/pplayer repeat - Toggles repeat mode for the current music source (if supported).\n/pplayer songinfo - Displays the current track information for the active music source.\n/pplayer next-source - Switches to the next available music source (if multiple sessions are available)."
+   }
+  ]
+ },
+ "pseudonamingway": {
+  "version": "0.2.0.0",
+  "commands": []
+ },
+ "pulltoobs": {
+  "version": "0.4.0.0",
+  "commands": [
+   {
+    "cmd": "/pulltoobs",
+    "help": "Open PullToOBS configuration window. Subcommands: obs (toggle connection), rec (toggle standby), show/hide (indicator), insta (quick-save clip)."
+   },
+   {
+    "cmd": "/pto",
+    "help": "Open PullToOBS configuration window (alias). Subcommands: obs (toggle connection), rec (toggle standby), show/hide (indicator), insta (quick-save clip)."
+   }
+  ]
+ },
+ "pushyfinder": {
+  "version": "1.3.2.1",
+  "commands": [
+   {
+    "cmd": "/pushyfinder",
+    "help": "Opens the configuration window."
+   }
+  ]
+ },
+ "pvpannouncer": {
+  "version": "1.7.0.2",
+  "commands": [
+   {
+    "cmd": "/pvpannouncer",
+    "help": "Open the Config Window - Old Command! Use /npcannouncer"
+   },
+   {
+    "cmd": "/npcannouncer",
+    "help": "Open the Config Window"
+   },
+   {
+    "cmd": "/muteannouncer",
+    "help": "Toggle Mute Announcer - Supply a name to this command to toggle a specified announcer!"
+   }
+  ]
+ },
+ "pvpstats": {
+  "version": "2.7.1.0",
+  "commands": [
+   {
+    "cmd": "/pvpstats",
+    "help": "Opens launcher window."
+   },
+   {
+    "cmd": "/ccstats",
+    "help": "Opens Crystalline Conflict tracker."
+   },
+   {
+    "cmd": "/flstats",
+    "help": "Opens Frontline tracker."
+   },
+   {
+    "cmd": "/rwstats",
+    "help": "Opens Rival Wings tracker."
+   },
+   {
+    "cmd": "/pvpstatsconfig",
+    "help": "Opens config window."
+   },
+   {
+    "cmd": "/lastmatch",
+    "help": "Opens match details window of last played match."
+   }
+  ]
+ },
+ "qolbar": {
+  "version": "2.3.3.9",
+  "commands": []
+ },
+ "questaway": {
+  "version": "2.0.1.0",
+  "commands": [
+   {
+    "cmd": "/questaway",
+    "help": "open/close configuration"
+   }
+  ]
+ },
+ "questionable": {
+  "version": "15.756.3.60",
+  "commands": [
+   {
+    "cmd": "/qst",
+    "help": null
+   }
+  ]
+ },
+ "questjournal": {
+  "version": "1.4.0.1",
+  "commands": [
+   {
+    "cmd": "/qj",
+    "help": "Open the Quest Journal."
+   },
+   {
+    "cmd": "/questjournal",
+    "help": "Open the Quest Journal."
+   },
+   {
+    "cmd": "/fetch-all",
+    "help": "[Developer Mode] Fetch all quest data from the Lumina sheets and save it to the plugin's output directory."
+   },
+   {
+    "cmd": "/fetch-msq",
+    "help": "[Developer Mode] Fetch msq data from the Lumina sheets and save it to the plugin's output directory."
+   },
+   {
+    "cmd": "/fetch-job",
+    "help": "[Developer Mode] Fetch job data from the Lumina sheets and save it to the plugin's output directory."
+   },
+   {
+    "cmd": "/fetch-feature",
+    "help": "[Developer Mode] Fetch feature data from the Lumina sheets and save it to the plugin's output directory."
+   }
+  ]
+ },
+ "questmap": {
+  "version": "15.755.2.0",
+  "commands": [
+   {
+    "cmd": "/quests",
+    "help": "Show Quest Map"
+   },
+   {
+    "cmd": "/questinfo",
+    "help": "Show information for a specified quest by name or id"
+   },
+   {
+    "cmd": "/questgraph",
+    "help": "Show graph for a specified quest by name or id"
+   }
+  ]
+ },
+ "questshare": {
+  "version": "1.2.15.0",
+  "commands": [
+   {
+    "cmd": "/questshare",
+    "help": "Open the Quest Share window."
+   },
+   {
+    "cmd": "/questsharemini",
+    "help": "Open the Quest Share mini window. Requires a valid share code entered."
+   },
+   {
+    "cmd": "/qsmini",
+    "help": "Open the Quest Share mini window. Requires a valid share code entered."
+   },
+   {
+    "cmd": "/qsnext",
+    "help": "Print the next quest objective and a map marker. Optionally supply \"flag\" or \"step\" for just the flag or step text."
+   }
+  ]
+ },
+ "questtextrecolor": {
+  "version": "1.4.1.0",
+  "commands": [
+   {
+    "cmd": "/questtext",
+    "help": "Open the Quest Text Recolor settings."
+   }
+  ]
+ },
+ "questtracker": {
+  "version": "1.2.3.1",
+  "commands": [
+   {
+    "cmd": "/questtracker",
+    "help": "See '/questtracker help' for more."
+   },
+   {
+    "cmd": "/qt",
+    "help": "Alias for /questtracker."
+   }
+  ]
+ },
+ "quicksymbols": {
+  "version": "1.0.1.3",
+  "commands": []
+ },
+ "quicktransfer": {
+  "version": "1.1.1.2",
+  "commands": [
+   {
+    "cmd": "/qt",
+    "help": "Open QuickTransfer settings"
+   }
+  ]
+ },
+ "quietden": {
+  "version": "1.2.3.0",
+  "commands": [
+   {
+    "cmd": "/quietden",
+    "help": "Opens plugin menu"
+   }
+  ]
+ },
+ "racingway": {
+  "version": "0.1.1.9",
+  "commands": [
+   {
+    "cmd": "/race",
+    "help": "Open the main UI\n/race quit → Quit current race"
+   }
+  ]
+ },
+ "randomclassselector": {
+  "version": "1.0.0.9",
+  "commands": []
+ },
+ "razerreader": {
+  "version": "2.0.2.0",
+  "commands": [
+   {
+    "cmd": "/pbattery",
+    "help": "Opens the configuration menu for Battery Buddy."
+   }
+  ]
+ },
+ "reactionex": {
+  "version": "1.0.1.2",
+  "commands": []
+ },
+ "readycheckhelper": {
+  "version": "1.1.1.1",
+  "commands": [
+   {
+    "cmd": "/pready",
+    "help": null
+   }
+  ]
+ },
+ "realtorch": {
+  "version": "1.0.0.0",
+  "commands": []
+ },
+ "rec-cue": {
+  "version": "0.0.3.0",
+  "commands": [
+   {
+    "cmd": "/reccue",
+    "help": "Show/hide the indicator or open the configuration window. Options: show, hide"
+   }
+  ]
+ },
+ "redirect": {
+  "version": "1.2.7.1",
+  "commands": [
+   {
+    "cmd": "/redirect",
+    "help": "Opens the configuration menu"
+   }
+  ]
+ },
+ "relictracker": {
+  "version": "1.0.2.7",
+  "commands": []
+ },
+ "remotepartyfinder": {
+  "version": "1.0.19.0",
+  "commands": []
+ },
+ "repairdeez": {
+  "version": "20.0.0.6",
+  "commands": [
+   {
+    "cmd": "/repairdeez",
+    "help": null
+   }
+  ]
+ },
+ "repairme": {
+  "version": "1.0.1.22",
+  "commands": [
+   {
+    "cmd": "/repairme",
+    "help": "RepairMe plugin configuration"
+   }
+  ]
+ },
+ "resanctuary": {
+  "version": "1.4.0.7",
+  "commands": [
+   {
+    "cmd": "/psanctuary",
+    "help": "Opens the main ReSanctuary interface."
+   }
+  ]
+ },
+ "resizablehud": {
+  "version": "1.7.0.0",
+  "commands": [
+   {
+    "cmd": "/prhud",
+    "help": "Toggle the visibility of the configuration window."
+   }
+  ]
+ },
+ "reslogger2-plugin": {
+  "version": "0.0.3.5",
+  "commands": [
+   {
+    "cmd": "/reslog",
+    "help": "Performs ResLogger2 commands. Use /reslog help for more information."
+   }
+  ]
+ },
+ "resstackcounter": {
+  "version": "1.1.0.0",
+  "commands": [
+   {
+    "cmd": "/ressc",
+    "help": "Open the Res Stack Counter window ( add ' Settings' for settings instead)"
+   }
+  ]
+ },
+ "restorecamerapivotwhileautorunning": {
+  "version": "1.0.0.0",
+  "commands": []
+ },
+ "retaineralerts": {
+  "version": "1.6.0.0",
+  "commands": [
+   {
+    "cmd": "/retaineralerts",
+    "help": "Opens the settings for retainer alerts."
+   },
+   {
+    "cmd": "/ra",
+    "help": "Opens the settings for retainer alerts."
+   }
+  ]
+ },
+ "retainersales": {
+  "version": "1.4.0.0",
+  "commands": []
+ },
+ "rezoplugin": {
+  "version": "15.750.0.0",
+  "commands": [
+   {
+    "cmd": "/prezo",
+    "help": "Open / Close rezo scale plugin configuration window."
+   }
+  ]
+ },
+ "rezpls": {
+  "version": "1.5.4.0",
+  "commands": [
+   {
+    "cmd": "/rezpls",
+    "help": "Open the configuration window for RezPls."
+   }
+  ]
+ },
+ "roleplayprofiles": {
+  "version": "1.2.0.5",
+  "commands": [
+   {
+    "cmd": "/rpp",
+    "help": "Controls the Roleplay Profiles plugin."
+   }
+  ]
+ },
+ "rputils": {
+  "version": "0.7.0.0",
+  "commands": [
+   {
+    "cmd": "/rputils",
+    "help": "Toggle the display of the Rp Utils toolbar."
+   }
+  ]
+ },
+ "rtyping": {
+  "version": "0.3.0.0",
+  "commands": [
+   {
+    "cmd": "/rtyping",
+    "help": "Opens main plugin window"
+   }
+  ]
+ },
+ "saddlebagexchange": {
+  "version": "1.0.19.0",
+  "commands": [
+   {
+    "cmd": "/saddlebag",
+    "help": null
+   },
+   {
+    "cmd": "/saddlebagexchange",
+    "help": null
+   },
+   {
+    "cmd": "/sbex",
+    "help": null
+   }
+  ]
+ },
+ "saru": {
+  "version": "1.0.3.5",
+  "commands": [
+   {
+    "cmd": "/saru",
+    "help": "/saru opens Saru. /saru start <scriptname> starts a script. /saru stop stops all scripts."
+   }
+  ]
+ },
+ "saucy": {
+  "version": "2.1.2.9",
+  "commands": [
+   {
+    "cmd": "/saucy",
+    "help": null
+   }
+  ]
+ },
+ "scouthelper": {
+  "version": "1.12.0.0",
+  "commands": []
+ },
+ "scrollabletabs": {
+  "version": "1.3.1.0",
+  "commands": [
+   {
+    "cmd": "/scrollabletabs",
+    "help": null
+   }
+  ]
+ },
+ "seatedsidekickspectator": {
+  "version": "1.0.3",
+  "commands": [
+   {
+    "cmd": "/sss",
+    "help": "Opens the Seated Sidekick Spectator config window."
+   }
+  ]
+ },
+ "selectstring": {
+  "version": "1.0.1.12",
+  "commands": [
+   {
+    "cmd": "/ss",
+    "help": null
+   }
+  ]
+ },
+ "selfcare": {
+  "version": "0.2.15.0",
+  "commands": [
+   {
+    "cmd": "/selfcare",
+    "help": null
+   }
+  ]
+ },
+ "shanbells": {
+  "version": "1.4.0.0",
+  "commands": [
+   {
+    "cmd": "/sbconfig",
+    "help": "Opens the Shanbells configuration window."
+   }
+  ]
+ },
+ "shopitemicons": {
+  "version": "1.0.0.0",
+  "commands": []
+ },
+ "shopitemrevealer": {
+  "version": "1.2.15.0",
+  "commands": [
+   {
+    "cmd": "/shopitemrevealer",
+    "help": "Opens the Shop Item Revealer window."
+   },
+   {
+    "cmd": "/shopitems",
+    "help": "Opens the Shop Item Revealer window."
+   },
+   {
+    "cmd": "/shopdebug",
+    "help": "Shop Item Revealer debug commands."
+   }
+  ]
+ },
+ "shrinkage": {
+  "version": "0.1.1.0",
+  "commands": [
+   {
+    "cmd": "/shrinkage",
+    "help": "opens the shrinkage config window"
+   }
+  ]
+ },
+ "sightseeingway": {
+  "version": "1.2.0.0",
+  "commands": [
+   {
+    "cmd": "/sightseeingway",
+    "help": "Opens the configuration window for Sightseeingway."
+   },
+   {
+    "cmd": "/sway",
+    "help": "Opens the configuration window for Sightseeingway."
+   }
+  ]
+ },
+ "silencenomore": {
+  "version": "1.4.0.1",
+  "commands": []
+ },
+ "sillychat": {
+  "version": "1.7.16.0",
+  "commands": [
+   {
+    "cmd": "/silly",
+    "help": null
+   },
+   {
+    "cmd": "/sillyconfig",
+    "help": null
+   },
+   {
+    "cmd": "/sillyhistory",
+    "help": null
+   }
+  ]
+ },
+ "simplecompare": {
+  "version": "2.1.2.1",
+  "commands": []
+ },
+ "simpleheels": {
+  "version": "0.11.1.12",
+  "commands": [
+   {
+    "cmd": "/heels",
+    "help": null
+   }
+  ]
+ },
+ "simplemaptracker": {
+  "version": "1.0.4.1",
+  "commands": [
+   {
+    "cmd": "/maps",
+    "help": "Open the Simple Map Tracker window"
+   }
+  ]
+ },
+ "simplemarketboard": {
+  "version": "1.12.0.0",
+  "commands": [
+   {
+    "cmd": "/smb",
+    "help": "main command entry:\n└ /smb → open the main window (market data table).\n└ /smb c|config → open the configuration window."
+   },
+   {
+    "cmd": "/mb",
+    "help": "[ SAME AS ] → /smb"
+   }
+  ]
+ },
+ "simpleminigames": {
+  "version": "1.0.3.1",
+  "commands": [
+   {
+    "cmd": "/simpleminigames",
+    "help": "Open SimpleMiniGames."
+   },
+   {
+    "cmd": "/smg",
+    "help": "Alias for /simpleminigames."
+   }
+  ]
+ },
+ "simpletodo": {
+  "version": "0.0.6.0",
+  "commands": [
+   {
+    "cmd": "/ptodo",
+    "help": null
+   },
+   {
+    "cmd": "/ptodoconfig",
+    "help": null
+   }
+  ]
+ },
+ "simpletriggers": {
+  "version": "1.0.5.0",
+  "commands": [
+   {
+    "cmd": "/simpletriggers",
+    "help": "Opens the Simple Triggers window."
+   },
+   {
+    "cmd": "/strig",
+    "help": "Opens the Simple Triggers window."
+   },
+   {
+    "cmd": "/sttoggle",
+    "help": "Toggles the entire trigger system on or off."
+   },
+   {
+    "cmd": "/stspeak",
+    "help": "Reads aloud the phrase using the configured TTS."
+   },
+   {
+    "cmd": "/ststop",
+    "help": "Stops the current audio playback and removes any queued streams."
+   }
+  ]
+ },
+ "simpletweaksplugin": {
+  "version": "1.15.0.8",
+  "commands": [
+   {
+    "cmd": "/tweaks",
+    "help": null
+   },
+   {
+    "cmd": "/stopcrafting",
+    "help": "Stops crafting without closing the crafting log."
+   }
+  ]
+ },
+ "skippy": {
+  "version": "2.2.5.0",
+  "commands": [
+   {
+    "cmd": "/skippy",
+    "help": "/skippy [on/off/log/user]: Toggle the plugin state, export debug logs, print your UserID, or open the settings window."
+   }
+  ]
+ },
+ "snooper": {
+  "version": "1.5.1.0",
+  "commands": [
+   {
+    "cmd": "/snooper",
+    "help": "Toggles the Snooper window."
+   }
+  ]
+ },
+ "somethingneeddoing": {
+  "version": "15.13",
+  "commands": []
+ },
+ "sonarplugin": {
+  "version": "15.757.0.0",
+  "commands": []
+ },
+ "sortakinda": {
+  "version": "3.0.2.9",
+  "commands": [
+   {
+    "cmd": "/sortakinda",
+    "help": "Open SortaKinda Config"
+   },
+   {
+    "cmd": "/sorta",
+    "help": "Open SortaKinda Config"
+   }
+  ]
+ },
+ "soundeffectmuter": {
+  "version": "1.4.2.0",
+  "commands": [
+   {
+    "cmd": "/ptogglesem",
+    "help": "Enable/Disable plugin"
+   }
+  ]
+ },
+ "soundfilter": {
+  "version": "1.5.3.0",
+  "commands": [
+   {
+    "cmd": "/soundfilter",
+    "help": null
+   }
+  ]
+ },
+ "soundsetter": {
+  "version": "1.14.0.0",
+  "commands": []
+ },
+ "splatoon": {
+  "version": "3.9.2.33",
+  "commands": [
+   {
+    "cmd": "/splatoon",
+    "help": "open Splatoon configuration menu \r\n/splatoon toggle <PresetName> → toggle specified preset \r\n/splatoon disable <PresetName> → disable specified preset \r\n/splatoon enable <PresetName> → enable specified preset\r\n/splatoon p → open script priority editor"
+   },
+   {
+    "cmd": "/sf",
+    "help": "highlight objects containing specified phrase"
+   },
+   {
+    "cmd": "/loadsplatoon",
+    "help": "Manually load Splatoon"
+   }
+  ]
+ },
+ "squadronista": {
+  "version": "7.5.0.0",
+  "commands": [
+   {
+    "cmd": "/squadronista",
+    "help": "Open the Squadronista window"
+   },
+   {
+    "cmd": "/squad",
+    "help": "Open the Squadronista window (short alias)"
+   }
+  ]
+ },
+ "stacksellprice": {
+  "version": "4.8.0.0",
+  "commands": []
+ },
+ "standalonepluginmanager": {
+  "version": "1.0.0.5",
+  "commands": [
+   {
+    "cmd": "/spm",
+    "help": null
+   }
+  ]
+ },
+ "stanleyparablexiv": {
+  "version": "4.1.0.3",
+  "commands": [
+   {
+    "cmd": "/narrator",
+    "help": "Opens the Stanley Parable XIV configuration."
+   },
+   {
+    "cmd": "/narratorvolume",
+    "help": "Sets the volume for the Narrator."
+   },
+   {
+    "cmd": "/narratortest",
+    "help": null
+   },
+   {
+    "cmd": "/narratorconfigreload",
+    "help": null
+   }
+  ]
+ },
+ "statuscontrast": {
+  "version": "4.0.1.0",
+  "commands": []
+ },
+ "statustimers": {
+  "version": "1.0.4.1",
+  "commands": [
+   {
+    "cmd": "/statustimers",
+    "help": "Open the main window"
+   }
+  ]
+ },
+ "steamrecordingenhanced": {
+  "version": "1.0.0.4",
+  "commands": [
+   {
+    "cmd": "/steamrec",
+    "help": "Open the configuration window"
+   },
+   {
+    "cmd": "/steamrecevent",
+    "help": "Manually place an event on the recording timeline. /steamrecevent [event title]"
+   }
+  ]
+ },
+ "stickyfocustarget": {
+  "version": "1.2.0.0",
+  "commands": [
+   {
+    "cmd": "/stickyfocustarget",
+    "help": null
+   },
+   {
+    "cmd": "/sft",
+    "help": null
+   }
+  ]
+ },
+ "stormtalons": {
+  "version": "1.1.0.10",
+  "commands": [
+   {
+    "cmd": "/stormtalon",
+    "help": "Stormtalon config"
+   }
+  ]
+ },
+ "stylist": {
+  "version": "1.0.0.15",
+  "commands": [
+   {
+    "cmd": "/stylist",
+    "help": "Open the plugin's UI\n/stylist all|tank|healer|dps|crafter|gatherer|melee|ranged|magic - update certain role gearsets"
+   }
+  ]
+ },
+ "submarinetracker": {
+  "version": "2.0.6.3",
+  "commands": []
+ },
+ "suithighlighter": {
+  "version": "1.0.0.0",
+  "commands": []
+ },
+ "sundried": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/sundried",
+    "help": "opens the configuration window"
+   }
+  ]
+ },
+ "swatch": {
+  "version": "0.0.3.0",
+  "commands": [
+   {
+    "cmd": "/swatch",
+    "help": "open Swatch config"
+   }
+  ]
+ },
+ "talkcopy": {
+  "version": "1.5.0.0",
+  "commands": []
+ },
+ "targetfurniture": {
+  "version": "1.0.2.5",
+  "commands": [
+   {
+    "cmd": "/targetfurniture",
+    "help": "Open Config Window"
+   },
+   {
+    "cmd": "/tfcfg",
+    "help": "Short Command for the Config Window "
+   }
+  ]
+ },
+ "targetlines": {
+  "version": "1.10.2.0",
+  "commands": [
+   {
+    "cmd": "/ptlines",
+    "help": "Toggle the configuration window."
+   },
+   {
+    "cmd": "/ttl",
+    "help": "Toggle target line overlay."
+   }
+  ]
+ },
+ "teamcraftlistmaker": {
+  "version": "1.0.1.2",
+  "commands": []
+ },
+ "teleporterplugin": {
+  "version": "2.0.3.0",
+  "commands": [
+   {
+    "cmd": "/tp",
+    "help": "/tp <aetheryte name> - Teleport to aetheryte (use just '/tp' to open the Config)"
+   },
+   {
+    "cmd": "/tpm",
+    "help": "/tpm <map name> - Teleport to map"
+   }
+  ]
+ },
+ "termfilter2": {
+  "version": "1.0.0.2",
+  "commands": []
+ },
+ "textadvance": {
+  "version": "3.3.0.1",
+  "commands": [
+   {
+    "cmd": "/at",
+    "help": "toggles TextAdvance plugin.\\n/at y|yes|e|enable - turns on TextAdvance.\r\n/at n|no|d|disable - turns off TextAdvance.\r\n/at c|config|s|settings - opens TextAdvance settings.\r\n/at g - toggles visual quest target markers\r\n/at mtq - move to the first available quest location, if present (requires navmesh integration to be enabled)\r\n/at mtqstop - cancel all pending movement tasks\r\n/at mtf - move to flag"
+   }
+  ]
+ },
+ "texttotalk": {
+  "version": "1.40.9.0",
+  "commands": []
+ },
+ "tf2criticalhitsplugin": {
+  "version": "3.7.3.0",
+  "commands": [
+   {
+    "cmd": "/joeconfig",
+    "help": "Opens the Hit it, Joe! configuration window"
+   },
+   {
+    "cmd": "/critconfig",
+    "help": null
+   },
+   {
+    "cmd": "/rescuemejoe",
+    "help": null
+   }
+  ]
+ },
+ "theheartoftheparty": {
+  "version": "1.0.12.0",
+  "commands": []
+ },
+ "thingstodoineorzea": {
+  "version": "1.0.1.1",
+  "commands": [
+   {
+    "cmd": "/ttd",
+    "help": "Opens the Things To Do In Eorzea window."
+   }
+  ]
+ },
+ "ticktracker": {
+  "version": "1.6.6.0",
+  "commands": [
+   {
+    "cmd": "/tick",
+    "help": "Open or close Tick Tracker's config window."
+   }
+  ]
+ },
+ "tidychat": {
+  "version": "3.1.1.3",
+  "commands": [
+   {
+    "cmd": "/tidychat",
+    "help": null
+   },
+   {
+    "cmd": "/tidy",
+    "help": null
+   }
+  ]
+ },
+ "tilted": {
+  "version": "4.4.1.1",
+  "commands": [
+   {
+    "cmd": "/tilted",
+    "help": "opens the configuration window"
+   }
+  ]
+ },
+ "tippy": {
+  "version": "1.15.0.0",
+  "commands": [
+   {
+    "cmd": "/tippy",
+    "help": null
+   },
+   {
+    "cmd": "/tippyconfig",
+    "help": null
+   },
+   {
+    "cmd": "/tippysendmsg",
+    "help": null
+   },
+   {
+    "cmd": "/tippysendtip",
+    "help": null
+   }
+  ]
+ },
+ "titleedit": {
+  "version": "3.0.7.0",
+  "commands": [
+   {
+    "cmd": "/titleedit",
+    "help": "Open Title Edit configuration"
+   },
+   {
+    "cmd": "/te",
+    "help": null
+   }
+  ]
+ },
+ "titleroulette": {
+  "version": "4.6",
+  "commands": [
+   {
+    "cmd": "/ptitle",
+    "help": "Picks a random title - optionally specified by a group."
+   },
+   {
+    "cmd": "/ptitlecfg",
+    "help": "Configures which titles are used in title roulette."
+   }
+  ]
+ },
+ "toastingwayplugin": {
+  "version": "1.4.0.1",
+  "commands": [
+   {
+    "cmd": "/tw",
+    "help": "Open configuration"
+   }
+  ]
+ },
+ "topsellingitems": {
+  "version": "1.0.3.2",
+  "commands": [
+   {
+    "cmd": "/topselling",
+    "help": "Open the Top Selling Items window."
+   },
+   {
+    "cmd": "/tpsg",
+    "help": "Shortcut for opening the Top Selling Items window."
+   }
+  ]
+ },
+ "totalcharacterlevel": {
+  "version": "0.0.0.1",
+  "commands": []
+ },
+ "totallevelplugin": {
+  "version": "0.0.1.1",
+  "commands": [
+   {
+    "cmd": "/totallevel",
+    "help": "opens the configuration window"
+   }
+  ]
+ },
+ "tourist": {
+  "version": "1.15.0.0",
+  "commands": [
+   {
+    "cmd": "/tourist",
+    "help": "Opens the Tourist interface"
+   }
+  ]
+ },
+ "touristmod": {
+  "version": "1.15.1000.18",
+  "commands": [
+   {
+    "cmd": "/tourist",
+    "help": "Opens the TouristMod interface"
+   }
+  ]
+ },
+ "tpie": {
+  "version": "1.15.0.0",
+  "commands": [
+   {
+    "cmd": "/tpie",
+    "help": "Opens the TPie configuration window."
+   }
+  ]
+ },
+ "trackytrack": {
+  "version": "1.7.5.0",
+  "commands": []
+ },
+ "traintracker": {
+  "version": "0.9.1.0",
+  "commands": [
+   {
+    "cmd": "/traintracker",
+    "help": "Open Train Tracker window"
+   }
+  ]
+ },
+ "triadbuddy": {
+  "version": "1.15.0.1",
+  "commands": [
+   {
+    "cmd": "/triadbuddy",
+    "help": null
+   }
+  ]
+ },
+ "truthordare": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/tod",
+    "help": "Opens the Truth or Dare window. Use /tod config for the settings."
+   },
+   {
+    "cmd": "/todstart",
+    "help": "Starts a Truth or Dare round."
+   },
+   {
+    "cmd": "/todstop",
+    "help": "Cancels the Truth or Dare round in progress."
+   },
+   {
+    "cmd": "/todstatus",
+    "help": "Prints the current Truth or Dare round state."
+   }
+  ]
+ },
+ "twitchxiv": {
+  "version": "1.0.1.0",
+  "commands": []
+ },
+ "ukrchatsupport": {
+  "version": "1.1.0.0",
+  "commands": []
+ },
+ "umbra": {
+  "version": "3.1.18.0",
+  "commands": [
+   {
+    "cmd": "/umbra",
+    "help": "Opens the Umbra settings window."
+   },
+   {
+    "cmd": "/umbra-aux",
+    "help": "Shows or hides an auxiliary toolbar. Usage: /umbra-aux <show|hide|toggle> [name]."
+   },
+   {
+    "cmd": "/umbra-toggle",
+    "help": "Toggles a specific Umbra setting. Usage: /umbra-toggle <setting>. For a list of settings, use /umbra-toggle without arguments."
+   },
+   {
+    "cmd": "/umbra-toolbar-profile",
+    "help": "Switches the toolbar profile. Usage: /umbra-toolbar-profile <profile name>."
+   }
+  ]
+ },
+ "unloaderrorfuckoff": {
+  "version": "1.0.0.10",
+  "commands": [
+   {
+    "cmd": "/fuckoff",
+    "help": null
+   }
+  ]
+ },
+ "vanillahotbarextender": {
+  "version": "1.2.5.0",
+  "commands": [
+   {
+    "cmd": "/vhe",
+    "help": "Open plugin window\n/vhe {save | load} {hotbar number} {save name} → Save or load a hotbar\n/vhe clear {hotbar number} → Clear a hotbar\n"
+   }
+  ]
+ },
+ "vanillaplus": {
+  "version": "1.4.5.13",
+  "commands": [
+   {
+    "cmd": "/gameconfig",
+    "help": null
+   },
+   {
+    "cmd": "/flagthere",
+    "help": null
+   },
+   {
+    "cmd": "/vanillaplus",
+    "help": null
+   },
+   {
+    "cmd": "/plus",
+    "help": null
+   },
+   {
+    "cmd": "/recentloot",
+    "help": null
+   },
+   {
+    "cmd": "/questlist",
+    "help": null
+   },
+   {
+    "cmd": "/listinventory",
+    "help": null
+   },
+   {
+    "cmd": "/fatelist",
+    "help": null
+   }
+  ]
+ },
+ "venuemanager": {
+  "version": "3.2.1",
+  "commands": [
+   {
+    "cmd": "/venue",
+    "help": "Open venue manager interface to see guests list and manage venues"
+   },
+   {
+    "cmd": "/vm",
+    "help": "Alias for /venue"
+   },
+   {
+    "cmd": "/club",
+    "help": "Alias for /venue"
+   }
+  ]
+ },
+ "venuescope": {
+  "version": "1.1.1.1",
+  "commands": [
+   {
+    "cmd": "/venuescope",
+    "help": "Open VenueScope FFXIV community event browser"
+   },
+   {
+    "cmd": "/vs",
+    "help": "Alias for /venuescope"
+   }
+  ]
+ },
+ "veryimportantitem": {
+  "version": "1.0.0.3",
+  "commands": [
+   {
+    "cmd": "/pvii",
+    "help": "Opens the configuration for Very Important Item."
+   }
+  ]
+ },
+ "vfallguy": {
+  "version": "0.0.0.13",
+  "commands": []
+ },
+ "vfaux": {
+  "version": "0.0.0.12",
+  "commands": [
+   {
+    "cmd": "/vfaux",
+    "help": "Show plugin window"
+   }
+  ]
+ },
+ "vfxeditor": {
+  "version": "1.9.4.6",
+  "commands": [
+   {
+    "cmd": "/vfxedit",
+    "help": "toggle ui"
+   }
+  ]
+ },
+ "visibility": {
+  "version": "1.1.9.6",
+  "commands": []
+ },
+ "visland": {
+  "version": "0.0.0.152",
+  "commands": [
+   {
+    "cmd": "/visland",
+    "help": null
+   }
+  ]
+ },
+ "viwi": {
+  "version": "0.0.0.62",
+  "commands": [
+   {
+    "cmd": "/ws",
+    "help": null
+   },
+   {
+    "cmd": "/workshoppa",
+    "help": "Open Workshoppa UI"
+   },
+   {
+    "cmd": "/buy-tanks",
+    "help": null
+   },
+   {
+    "cmd": "/fill-tanks",
+    "help": null
+   },
+   {
+    "cmd": "/buy-stone",
+    "help": null
+   },
+   {
+    "cmd": "/fill-stone",
+    "help": null
+   },
+   {
+    "cmd": "/grindstone",
+    "help": null
+   },
+   {
+    "cmd": "/g6dm",
+    "help": null
+   },
+   {
+    "cmd": "/bunbun",
+    "help": null
+   },
+   {
+    "cmd": "/k-",
+    "help": null
+   },
+   {
+    "cmd": "/ks",
+    "help": null
+   },
+   {
+    "cmd": "/dbq",
+    "help": null
+   },
+   {
+    "cmd": "/glamoursets",
+    "help": null
+   },
+   {
+    "cmd": "/whatweather",
+    "help": null
+   },
+   {
+    "cmd": "/viwirestart",
+    "help": "Restart the client using AutoLogin settings. Optional: /viwirestart NA|EU|OCE|JP"
+   },
+   {
+    "cmd": "/viwi",
+    "help": "Opens the VIWI dashboard."
+   }
+  ]
+ },
+ "vnavmesh": {
+  "version": "1.2.3.15",
+  "commands": [
+   {
+    "cmd": "/vnav",
+    "help": "Opens the debug menu.\n/vnav moveto <X> <Y> <Z> → move to raw coordinates\n/vnav movedir <X> <Y> <Z> → move this many units over (relative to player facing)\n/vnav movetarget → move to target's position\n/vnav moveflag → move to flag position\n/vnav flyto <X> <Y> <Z> → fly to raw coordinates\n/vnav flydir <X> <Y> <Z> → fly this many units over (relative to player facing)\n/vnav flytarget → fly to target's position\n/vnav flyflag → fly to flag position\n/vnav stop → stop all movement\n/vnav reload → reload current territory's navmesh from cache\n/vnav rebuild → rebuild current territory's navmesh from scratch\n/vnav aligncamera → toggle aligning camera to movement direction\n/vnav aligncamera true|yes|enable → enable aligning camera to movement direction\n/vnav aligncamera false|no|disable → disable aligning camera to movement direction\n/vnav dtr → toggle dtr status\n/vnav collider → toggle collision debug visualization"
+   },
+   {
+    "cmd": "/vnavmesh",
+    "help": null
+   }
+  ]
+ },
+ "voicedirector": {
+  "version": "1.7.0.0",
+  "commands": [
+   {
+    "cmd": "/vodir",
+    "help": "Open the config window for Voice director"
+   }
+  ]
+ },
+ "vsatisfy": {
+  "version": "0.0.0.46",
+  "commands": [
+   {
+    "cmd": "/vsatisfy",
+    "help": "Toggle main window"
+   }
+  ]
+ },
+ "wachumakeymaking": {
+  "version": "2.0.6.0",
+  "commands": [
+   {
+    "cmd": "/wymm",
+    "help": "toggles the window open/closed"
+   }
+  ]
+ },
+ "wahbuttons": {
+  "version": "20.0.0.2",
+  "commands": [
+   {
+    "cmd": "/wahbuttons",
+    "help": "Open the button editor. \"/wahbuttons <window name>\" shows or hides that window."
+   }
+  ]
+ },
+ "wahjumps": {
+  "version": "20.0.0.2",
+  "commands": [
+   {
+    "cmd": "/WahJumps",
+    "help": "Opens the WahJumps UI."
+   }
+  ]
+ },
+ "wahtools": {
+  "version": "20.0.0.39",
+  "commands": [
+   {
+    "cmd": "/wah",
+    "help": "Opens WahTools."
+   },
+   {
+    "cmd": "/wahtools",
+    "help": null
+   }
+  ]
+ },
+ "wahventory": {
+  "version": "20.0.0.6",
+  "commands": [
+   {
+    "cmd": "/wahventory",
+    "help": "Open the wahventory window\n/wahventory auto - Execute auto-discard for configured items"
+   }
+  ]
+ },
+ "waitingway-dalamud": {
+  "version": "2.4.2.0",
+  "commands": [
+   {
+    "cmd": "/waitingway",
+    "help": "Open the Waitingway settings window."
+   }
+  ]
+ },
+ "wavewrangler": {
+  "version": "1.0.4.0",
+  "commands": [
+   {
+    "cmd": "/o",
+    "help": "Outputs \"o/\" in chat"
+   }
+  ]
+ },
+ "waymarkpresetplugin": {
+  "version": "1.5.5.4",
+  "commands": []
+ },
+ "waymarkstudio": {
+  "version": "0.0.0.53",
+  "commands": [
+   {
+    "cmd": "/wms",
+    "help": "Open/close main window"
+   }
+  ]
+ },
+ "weatherman": {
+  "version": "2.5.0.6",
+  "commands": [
+   {
+    "cmd": "/weatherman",
+    "help": "Toggle plugin settings"
+   }
+  ]
+ },
+ "wextras": {
+  "version": "1.0.0.10",
+  "commands": []
+ },
+ "whatdidyousay": {
+  "version": "1.0.2.9",
+  "commands": []
+ },
+ "whereamiagain": {
+  "version": "2.1.1.6",
+  "commands": [
+   {
+    "cmd": "/waia",
+    "help": "Open configuration window"
+   }
+  ]
+ },
+ "whereismymouse": {
+  "version": "0.0.1.6",
+  "commands": [
+   {
+    "cmd": "/wmm",
+    "help": "Open Where's my mouse setting menu"
+   }
+  ]
+ },
+ "whichmount": {
+  "version": "1.5.5.0",
+  "commands": [
+   {
+    "cmd": "/mountsconfig",
+    "help": "Open mount search configuration."
+   },
+   {
+    "cmd": "/mountlist",
+    "help": "Show mount database."
+   }
+  ]
+ },
+ "whichpatchwasthat": {
+  "version": "7.5.0.0",
+  "commands": []
+ },
+ "whoamiagain": {
+  "version": "1.15.0.0",
+  "commands": []
+ },
+ "whodidthat": {
+  "version": "1.10.0.1",
+  "commands": [
+   {
+    "cmd": "/pwdt",
+    "help": "Type /pwdt to get started."
+   },
+   {
+    "cmd": "/pwdtc",
+    "help": "Type /pwdtc for the plugin config."
+   }
+  ]
+ },
+ "wholist": {
+  "version": "1.11.3.1",
+  "commands": []
+ },
+ "whostalking": {
+  "version": "0.8.10.0",
+  "commands": [
+   {
+    "cmd": "/whostalking",
+    "help": "Toggle Settings\n/whostalking port <number> --> Set the port used"
+   }
+  ]
+ },
+ "wikilinx": {
+  "version": "0.0.0.11",
+  "commands": [
+   {
+    "cmd": "/wikilinx",
+    "help": "Toggle Wikilinx configuration window"
+   }
+  ]
+ },
+ "wintitle": {
+  "version": "15.750.0.0",
+  "commands": [
+   {
+    "cmd": "/wintitle",
+    "help": "Change window title. Empty to revert."
+   }
+  ]
+ },
+ "wondroustailssolver": {
+  "version": "3.2.2.6",
+  "commands": []
+ },
+ "wordsmith": {
+  "version": "1.16.1.0",
+  "commands": [
+   {
+    "cmd": "/thesaurus",
+    "help": "Display the thesaurus window."
+   },
+   {
+    "cmd": "/wordsmith",
+    "help": "Display the configuration window."
+   },
+   {
+    "cmd": "/scratchpad",
+    "help": "Opens or creates a scratch pad. Follow with a number or custom name if you like. (i.e. \"/scratchpad 5\" or \"/scratchpad Juliet\")"
+   }
+  ]
+ },
+ "workshopoptimizerplugin": {
+  "version": "0.3.2.0",
+  "commands": [
+   {
+    "cmd": "/wso",
+    "help": "Optimize the workshop"
+   }
+  ]
+ },
+ "workshoppa": {
+  "version": "9.2.0.0",
+  "commands": [
+   {
+    "cmd": "/ws",
+    "help": "Open UI"
+   },
+   {
+    "cmd": "/workshoppa",
+    "help": null
+   },
+   {
+    "cmd": "/buy-tanks",
+    "help": "Buy a given number of ceruleum tank stacks."
+   },
+   {
+    "cmd": "/fill-tanks",
+    "help": "Fill your inventory with a given number of ceruleum tank stacks."
+   }
+  ]
+ },
+ "wrathcombo": {
+  "version": "1.0.4.27",
+  "commands": [
+   {
+    "cmd": "/wrath",
+    "help": "Open a window to edit custom combo settings.\n/wrath auto → Toggle Auto-rotation on/off.\n/wrath debug → Dumps a debug log onto your desktop for developers.\n/scombo → Old alias from XIVSlothCombo, still works!"
+   },
+   {
+    "cmd": "/scombo",
+    "help": null
+   }
+  ]
+ },
+ "wtsync": {
+  "version": "0.17.2.0",
+  "commands": [
+   {
+    "cmd": "/wtsync",
+    "help": null
+   }
+  ]
+ },
+ "wuklamark": {
+  "version": "1.2.1.0",
+  "commands": [
+   {
+    "cmd": "/wlmark",
+    "help": "Manage and view your custom map markers.\n/wlmark here → Save your current location as a map marker.\n/wlmark here g:\"<Group>\" → Save to a specific group.\n/wlmark here t:\"<Template>\" → Save using a specific template.\n/wlmark here t:\"<Template>\" g:\"<Group>\" → Save using template and group (group ignored if template enforces its own group)."
+   },
+   {
+    "cmd": "/wuklamark",
+    "help": "Alias for /wlmark.\n/wuklamark here → Alias for `/wlmark here`."
+   }
+  ]
+ },
+ "xivchat": {
+  "version": "1.7.13",
+  "commands": [
+   {
+    "cmd": "/xivchat",
+    "help": "Opens the config for the XIVChat plugin"
+   }
+  ]
+ },
+ "xivcombo": {
+  "version": "2.0.15.3",
+  "commands": [
+   {
+    "cmd": "/pcombo",
+    "help": "Open the XIVCombo main interface."
+   }
+  ]
+ },
+ "xivcontrollertoggle": {
+  "version": "1.2.5.0",
+  "commands": [
+   {
+    "cmd": "/controllerhudcfg",
+    "help": "Open settings for MK Controller Switcher"
+   },
+   {
+    "cmd": "/pad",
+    "help": "Change hud mode to controller / pad"
+   },
+   {
+    "cmd": "/kbm",
+    "help": "Change hud mode to keyboard and mouse"
+   },
+   {
+    "cmd": "/togpad",
+    "help": "Toggle hud mode between pad and kb/m"
+   }
+  ]
+ },
+ "xivdeck-ffxivplugin": {
+  "version": "0.4.5",
+  "commands": []
+ },
+ "xivfatalframe": {
+  "version": "1.3.0.1",
+  "commands": [
+   {
+    "cmd": "/fatalframe",
+    "help": "Configuration Screen for FatalFrame"
+   }
+  ]
+ },
+ "xivgearexport": {
+  "version": "1.6.0.0",
+  "commands": [
+   {
+    "cmd": "/xgeconfig",
+    "help": "Type /xgeconfig or /xivgearexportconfig to change the config."
+   },
+   {
+    "cmd": "/xivgearexportconfig",
+    "help": null
+   },
+   {
+    "cmd": "/xge",
+    "help": "Type /xge or /xivgearexport to export your gearset to xivgear.app."
+   },
+   {
+    "cmd": "/xivgearexport",
+    "help": null
+   }
+  ]
+ },
+ "xivjitterfix": {
+  "version": "0.0.0.5",
+  "commands": [
+   {
+    "cmd": "/jitterfix",
+    "help": "Open the XIVJitterFix config window.\n/jitterfix jitter <value> → Sets jitter multiplier to a specific value."
+   }
+  ]
+ },
+ "xivlogger": {
+  "version": "1.2.0.0",
+  "commands": [
+   {
+    "cmd": "/xivlogger",
+    "help": "Opens settings window for XIVLogger"
+   },
+   {
+    "cmd": "/savelog",
+    "help": "Saves a chat log as a text file with the current settings, /savelog <number> to save the last <number> messages"
+   },
+   {
+    "cmd": "/copylog",
+    "help": "Copies a chat log to your clipboard with the current settings, /copylog <number> to copy the last <number> messages"
+   }
+  ]
+ },
+ "xivreflex": {
+  "version": "1.0.0.0",
+  "commands": [
+   {
+    "cmd": "/xivreflex",
+    "help": null
+   }
+  ]
+ },
+ "xivremotechat": {
+  "version": "0.0.0.15",
+  "commands": [
+   {
+    "cmd": "/xrc",
+    "help": "Open the XIV Remote Chat configuration window."
+   },
+   {
+    "cmd": "/xivremotechat",
+    "help": "Open the XIV Remote Chat configuration window."
+   }
+  ]
+ },
+ "xivuncombo": {
+  "version": "1.0.15.0",
+  "commands": [
+   {
+    "cmd": "/puncombo",
+    "help": "Open a window to edit XIVUncombo settings."
+   }
+  ]
+ },
+ "xivwindowresizer": {
+  "version": "1.0.1.0",
+  "commands": [
+   {
+    "cmd": "/wresize",
+    "help": "Window resizer.\r\nUsage:\r\n/wresize - Toggle the resizer window.\r\n/wresize set <width> <height> - Set window size.\r\n/wresize reset - Reset window size back to the original size.\r\n/wresize update - Update window size used by /wresize reset command. Use if you have changed game's screen resolution without restarting the game or reloading the plugin."
+   }
+  ]
+ },
+ "yesalready": {
+  "version": "1.15.7.8",
+  "commands": [
+   {
+    "cmd": "/yesalready",
+    "help": "Opens the plugin window."
+   }
+  ]
+ },
+ "yokaicheck": {
+  "version": "1.3.1.0",
+  "commands": []
+ },
+ "zds": {
+  "version": "1.2.0.0",
+  "commands": [
+   {
+    "cmd": "/zd",
+    "help": "Opens settings. Use '/zd profile <name>' to switch profiles or '/zd profile save <name>' to save one."
+   }
+  ]
+ },
+ "zodiacbuddy": {
+  "version": "1.15.0.0",
+  "commands": [
+   {
+    "cmd": "/pzodiac",
+    "help": "Open a window to edit various settings."
+   }
+  ]
+ }
+}

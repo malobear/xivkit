@@ -12,6 +12,26 @@ export default function (eleventyConfig) {
   // Each plugin's own help text, copied from its released DLL by scripts/plugins-help.mjs.
   eleventyConfig.addGlobalData("pluginHelp", () =>
     JSON.parse(readFileSync(new URL("./directory/content/plugin-help.json", import.meta.url), "utf8")));
+  // Every plugin's registered chat commands (scripts/plugins-commands.mjs), with hand fixes from
+  // commands-overrides.json applied. Returns the help text as lines for the chat panel, or "".
+  const readJson = (p, fallback) => { try { return JSON.parse(readFileSync(new URL(p, import.meta.url), "utf8")); } catch { return fallback; } };
+  const found = readJson("./directory/content/plugin-commands.json", {});
+  const overrides = readJson("./directory/content/commands-overrides.json", {});
+  eleventyConfig.addGlobalData("pluginCommands", () => found);
+  eleventyConfig.addFilter("commandText", (slug) => {
+    const o = overrides[slug];
+    if (o === false || !found[slug]) return "";
+    return found[slug].commands
+      // Developer commands (/xxdebug, /xxtest) aren't for players.
+      .filter((c) => !/debug|test$/i.test(c.cmd) && !(o?.hide || []).includes(c.cmd))
+      .map((c) => {
+        let help = o?.help && c.cmd in o.help ? o.help[c.cmd] : c.help;
+        // Some authors write "\n" inside a verbatim string, so it arrives as a literal backslash-n.
+        if (help) help = help.replace(/\\n/g, "\n");
+        return help ? `${c.cmd} → ${help}` : c.cmd;
+      })
+      .join("\n");
+  });
 
   // ?v=<hash of the file> on the directory's CSS and JS, so a deploy never pairs new pages with a
   // stylesheet the browser cached from before (GitHub Pages caches for 10 minutes).

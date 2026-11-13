@@ -13,7 +13,8 @@
     "plugins:fetch": "node scripts/plugins-fetch.mjs",
     "plugins:build": "node -e \"require('fs').rmSync('plugins',{recursive:true,force:true})\" && eleventy",
     "plugins:help": "node scripts/plugins-help.mjs",
-    "plugins": "pnpm plugins:fetch && pnpm plugins:help && pnpm plugins:build",
+    "plugins:commands": "node scripts/plugins-commands.mjs",
+    "plugins": "pnpm plugins:fetch && pnpm plugins:help && pnpm plugins:commands && pnpm plugins:build",
     "i18n": "node scripts/static-bars.mjs && node scripts/i18n-build.mjs",
     "i18n:check": "node scripts/static-bars.mjs --check && node scripts/i18n-build.mjs --check",
     "currencies": "node scripts/currency-shops.mjs"

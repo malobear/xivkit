@@ -177,6 +177,13 @@ list their chat commands. It has two parts:
   `does`, optional `ex`), `tips`, and `checkedInGame` once the extras have been tried. Work extras out
   from the plugin's code, not by guessing, and only list what the help doesn't already say.
 
+Every other plugin page gets a plainer "Commands" list instead, when the plugin has any:
+`scripts/plugins-commands.mjs` (`pnpm plugins:commands`, part of `pnpm plugins`) reads each released
+DLL with `scripts/lib/dotnet.mjs`, finds the `AddHandler`/`EzCmd.Add` calls, and writes each command
+and its help text to `directory/content/plugin-commands.json`. It only downloads a plugin again when
+its version changes. Plugins that register commands another way (attributes, resource files) come
+out empty. Fix or hide wrong results in `directory/content/commands-overrides.json`.
+
 A plugin with an entry also gets "commands and guide" in its title and the entry's `description` as
 its meta description. When an update changes the help text the script says so; check the extras
 still hold. If a rule stops matching, it keeps the last good text and warns.
