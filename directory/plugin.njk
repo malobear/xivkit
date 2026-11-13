@@ -27,8 +27,21 @@ eleventyComputed:
   </div>
 </header>
 
-<div class="plugin-grid">
-  <div class="plugin-main">
+<aside class="facts" aria-label="Plugin facts">
+  <dl>
+    <div><dt>Author</dt><dd>{{ plugin.author or "Unknown" }}</dd></div>
+    <div><dt>Category</dt><dd><a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a></dd></div>
+    <div><dt>Installs</dt><dd>{{ plugin.downloads | num }}</dd></div>
+    {% if plugin.lastUpdate %}<div><dt>Last updated</dt><dd>{{ plugin.lastUpdate | isoDate }}</dd></div>{% endif %}
+    <div><dt>Status</dt><dd>{% if plugin.status == "ok" %}Installable{% if plugin.needsTesting %} (testing builds){% endif %}{% elif plugin.status == "outdated" %}Outdated, not installable{% else %}Not in the installer{% endif %}</dd></div>
+    <div><dt>Dalamud API</dt><dd>{{ plugin.apiLevel }}{% if plugin.apiLevel < meta.api %} (current is {{ meta.api }}){% endif %}</dd></div>
+    <div><dt>Repository</dt><dd>{% if plugin.source == "official" or not repo %}Dalamud official list{% else %}<a href="{{ repo.site }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a> (third-party){% endif %}</dd></div>
+    {% if plugin.repoUrl %}<div><dt>Source</dt><dd><a href="{{ plugin.repoUrl }}" target="_blank" rel="noopener noreferrer">{{ plugin.repoUrl | host }}</a></dd></div>{% endif %}
+  </dl>
+  {% if plugin.tags.length %}<p class="tags">{% for t in plugin.tags %}<span class="chip-static">{{ t }}</span>{% endfor %}</p>{% endif %}
+</aside>
+
+<div class="plugin-main">
     {% if plugin.description and (plugin.description | oneLine) != plugin.punchline %}
     <section class="about" aria-labelledby="about-h">
       <h2 id="about-h">About {{ plugin.name }}</h2>
@@ -97,19 +110,4 @@ eleventyComputed:
       <ul class="plug-list">{% for p in more %}{{ card(p, categories) }}{% endfor %}</ul>
     </section>
     {% endif %}
-  </div>
-
-  <aside class="facts" aria-label="Plugin facts">
-    <dl>
-      <div><dt>Author</dt><dd>{{ plugin.author or "Unknown" }}</dd></div>
-      <div><dt>Category</dt><dd><a href="/plugins/category/{{ plugin.category }}/">{{ categories | categoryName(plugin.category) }}</a></dd></div>
-      <div><dt>Installs</dt><dd>{{ plugin.downloads | num }}</dd></div>
-      {% if plugin.lastUpdate %}<div><dt>Last updated</dt><dd>{{ plugin.lastUpdate | isoDate }}</dd></div>{% endif %}
-      <div><dt>Status</dt><dd>{% if plugin.status == "ok" %}Installable{% if plugin.needsTesting %} (testing builds){% endif %}{% elif plugin.status == "outdated" %}Outdated, not installable{% else %}Not in the installer{% endif %}</dd></div>
-      <div><dt>Dalamud API</dt><dd>{{ plugin.apiLevel }}{% if plugin.apiLevel < meta.api %} (current is {{ meta.api }}){% endif %}</dd></div>
-      <div><dt>Repository</dt><dd>{% if plugin.source == "official" or not repo %}Dalamud official list{% else %}<a href="{{ repo.site }}" target="_blank" rel="noopener noreferrer">{{ repo.name }}</a> (third-party){% endif %}</dd></div>
-      {% if plugin.repoUrl %}<div><dt>Source</dt><dd><a href="{{ plugin.repoUrl }}" target="_blank" rel="noopener noreferrer">{{ plugin.repoUrl | host }}</a></dd></div>{% endif %}
-    </dl>
-    {% if plugin.tags.length %}<p class="tags">{% for t in plugin.tags %}<span class="chip-static">{{ t }}</span>{% endfor %}</p>{% endif %}
-  </aside>
 </div>
