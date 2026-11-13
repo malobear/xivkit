@@ -30,6 +30,7 @@ export default function (eleventyConfig) {
         if (help) help = help.replace(/\\n/g, "\n");
         return help ? `${c.cmd} → ${help}` : c.cmd;
       })
+      .concat((o?.add || []).map(([cmd, help]) => (help ? `${cmd} → ${help}` : cmd)))
       .join("\n");
   });
 

@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Something Need Doing: FFXIV Dalamud plugin | XIVKit</title>
-<meta name="description" content="Work work. Something Need Doing by daemitus, croizat: 837,892 installs, updated 2026-10-31.">
+<title>Something Need Doing commands and guide: FFXIV Dalamud plugin | XIVKit</title>
+<meta name="description" content="Every Something Need Doing chat command from the plugin&amp;#39;s own help: run, loop, pause, resume and stop macros by name, plus the status window.">
 <link rel="canonical" href="https://xivkit.com/plugins/somethingneeddoing/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
@@ -21,13 +21,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XIVKit">
-<meta property="og:title" content="Something Need Doing: FFXIV Dalamud plugin | XIVKit">
-<meta property="og:description" content="Work work. Something Need Doing by daemitus, croizat: 837,892 installs, updated 2026-10-31.">
+<meta property="og:title" content="Something Need Doing commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta property="og:description" content="Every Something Need Doing chat command from the plugin&amp;#39;s own help: run, loop, pause, resume and stop macros by name, plus the status window.">
 <meta property="og:url" content="https://xivkit.com/plugins/somethingneeddoing/">
 <meta property="og:image" content="https://xivkit.com/og-plugins.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Something Need Doing: FFXIV Dalamud plugin | XIVKit">
-<meta name="twitter:description" content="Work work. Something Need Doing by daemitus, croizat: 837,892 installs, updated 2026-10-31.">
+<meta name="twitter:title" content="Something Need Doing commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta name="twitter:description" content="Every Something Need Doing chat command from the plugin&amp;#39;s own help: run, loop, pause, resume and stop macros by name, plus the status window.">
 <meta name="twitter:image" content="https://xivkit.com/og-plugins.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,6 +90,20 @@
       </ol>
       <p class="warn"><svg class="src-badge src-badge-inline" viewBox="0 0 20 20" role="img" aria-label="Third-party repository"><title>Third-party repository</title><circle cx="10" cy="10" r="10"/><g fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.2" cy="5.4" r="1.5"/><circle cx="13.8" cy="5.4" r="1.5"/><circle cx="10" cy="14.6" r="1.5"/><path d="M6.2 6.9v.9a2.6 2.6 0 0 0 2.6 2.6h2.4a2.6 2.6 0 0 0 2.6-2.6v-.9M10 10.4v2.7"/></g></svg> Something Need Doing comes from the Puni.sh (croizat) repository, not Dalamud's official list. Dalamud's team has not reviewed it. Only add repositories you trust, and remove the repository again if you stop using its plugins.</p>
       
+    </section>
+
+    <section class="usage" aria-labelledby="usage-h">
+      <h2 id="usage-h"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg>Commands</h2>
+      <p>Something Need Doing's commands start with <code>/snd</code> (or <code>/somethingneeddoing</code>, or the old <code>/pcraft</code>). They are handy inside macros and on hotbars, for example to start a crafting macro a set number of times. Type <code>/snd help</code> in game to print this list in chat.</p>
+      
+      <figure class="ingame-help">
+        <div class="chat"><span>/snd → Open the main window</span><span>/snd run &lt;macro name&gt; → Run a macro, the name must be unique.</span><span>/snd run loop &lt;count&gt; &lt;macro name&gt; → Run a macro and then loop N times, the name must be unique.</span><span>/snd pause &lt;macro name&gt; → Pause the given executing macro.</span><span>/snd pause loop &lt;macro name&gt; → Pause the given executing macro at the next loop point.</span><span>/snd pause all → Pause all running macros.</span><span>/snd resume &lt;macro name&gt; → Resume the given paused macro.</span><span>/snd resume all → Resume all paused macros.</span><span>/snd stop &lt;macro name&gt; → Stop the given executing macro.</span><span>/snd stop loop &lt;macro name&gt; → Stop the given executing macro at the next loop point.</span><span>/snd stop all → Stop all running macros.</span><span>/snd status → Toggle the running macros window.</span><span>/snd changelog → Toggle the changelog window.</span><span>/snd id &lt;macro name&gt; → Get the macro ID for a macro name.</span><span>/snd help → Show the help window.</span></div>
+        <figcaption>Something Need Doing's own command descriptions by daemitus, croizat, checked against the released plugin, version 15.13.</figcaption>
+      </figure>
+      
+      
+      
+      <p class="sub usage-src">Commands can change when the plugin updates.</p>
     </section>
 
     <section aria-labelledby="details-h">

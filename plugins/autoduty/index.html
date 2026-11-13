@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AutoDuty: FFXIV Dalamud plugin | XIVKit</title>
-<meta name="description" content="Dungeons while you sleep, eat, or work. (Swimsuit Shtola made easy.) AutoDuty by erdelf, Herculezz: 2,417,931 installs, updated 2026-11-11.">
+<title>AutoDuty commands and guide: FFXIV Dalamud plugin | XIVKit</title>
+<meta name="description" content="Every AutoDuty chat command from the plugin&amp;#39;s own help: start, stop and pause runs, queue duties, leveling mode, and the repair, desynth, turn-in and retainer helpers.">
 <link rel="canonical" href="https://xivkit.com/plugins/autoduty/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
@@ -21,13 +21,13 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XIVKit">
-<meta property="og:title" content="AutoDuty: FFXIV Dalamud plugin | XIVKit">
-<meta property="og:description" content="Dungeons while you sleep, eat, or work. (Swimsuit Shtola made easy.) AutoDuty by erdelf, Herculezz: 2,417,931 installs, updated 2026-11-11.">
+<meta property="og:title" content="AutoDuty commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta property="og:description" content="Every AutoDuty chat command from the plugin&amp;#39;s own help: start, stop and pause runs, queue duties, leveling mode, and the repair, desynth, turn-in and retainer helpers.">
 <meta property="og:url" content="https://xivkit.com/plugins/autoduty/">
 <meta property="og:image" content="https://xivkit.com/og-plugins.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AutoDuty: FFXIV Dalamud plugin | XIVKit">
-<meta name="twitter:description" content="Dungeons while you sleep, eat, or work. (Swimsuit Shtola made easy.) AutoDuty by erdelf, Herculezz: 2,417,931 installs, updated 2026-11-11.">
+<meta name="twitter:title" content="AutoDuty commands and guide: FFXIV Dalamud plugin | XIVKit">
+<meta name="twitter:description" content="Every AutoDuty chat command from the plugin&amp;#39;s own help: start, stop and pause runs, queue duties, leveling mode, and the repair, desynth, turn-in and retainer helpers.">
 <meta name="twitter:image" content="https://xivkit.com/og-plugins.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -106,10 +106,16 @@
 
     <section class="usage" aria-labelledby="usage-h">
       <h2 id="usage-h"><svg class="ico" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg>Commands</h2>
+      <p>AutoDuty runs from <code>/autoduty</code> or the shorter <code>/ad</code>, and most commands work in macros. Where two names are shown, either works. It automates running duties, which is against the game's terms of service, so use it at your own risk.</p>
+      
       <figure class="ingame-help">
-        <div class="chat"><span>/ad</span><span>/autoduty</span></div>
-        <figcaption>The chat commands AutoDuty registers, with the help text Dalamud shows for each, read from the released plugin (version 0.0.0.399). Some plugins have more commands or options than they list here.</figcaption>
+        <div class="chat"><span>/ad</span><span>/ad config / cfg → opens config window / modifies config</span><span>/ad start → starts autoduty when in a Duty</span><span>/ad stop → stops everything</span><span>/ad pause → pause route</span><span>/ad resume → resume route</span><span>/ad queue → queues duty</span><span>/ad run → starts auto duty in territory type specified</span><span>/ad leveling → Enables leveling mode (0 = disabled)</span><span>/ad skipstep → skips the current step</span><span>/ad overlay → opens overlay</span><span>/ad board → opens the Crucible board map</span><span>/ad movetoflag → moves to the flag map marker</span><span>/ad goto / go &lt;place&gt; → Goes to a specific location in the game world. Targets: inn / barracks / gc / bell / apartment / home / fc</span><span>/ad repair → Repairs your gear</span><span>/ad desynth → Desynth's items in your inventory</span><span>/ad extract → Extract's materia from equipment</span><span>/ad turnin / gcturnin → Automatically turns in items into the Grand Company Supply</span><span>/ad autoequip / equiprec → Equips recommended gear</span><span>/ad coffer → Opens coffers in your inventory</span><span>/ad armoire → Stores items in your inventory to the Armoire.</span><span>/ad glamour → Stores items in your inventory to the Glamour Chest.</span><span>/ad ar / autoretainer → Automatically manages retainers using the AutoRetainer plugin</span><span>/ad arm / autoretainermulti → Runs one cycle of AutoRetainer's Multi Mode</span><span>/ad shop → Executes shopping</span><span>/ad ttfull → opens packs, registers cards and sells the rest</span><span>/ad ttsell / sellcards → Sells Triple Triad cards to the vendor in Gold Saucer</span><span>/ad ttreg / registercards → Automatically registers Triple Triad cards in your inventory</span><span>/ad exitduty → Exits the current duty if you are not in combat</span><span>/ad dataid → Logs and copies your target's dataid to clipboard</span></div>
+        <figcaption>AutoDuty's own command descriptions by erdelf, Herculezz, checked against the released plugin, version 0.0.0.399.</figcaption>
       </figure>
+      
+      
+      
+      <p class="sub usage-src">Commands can change when the plugin updates.</p>
     </section>
 
     <section aria-labelledby="details-h">

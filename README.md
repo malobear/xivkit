@@ -179,10 +179,10 @@ list their chat commands. It has two parts:
 
 Every other plugin page gets a plainer "Commands" list instead, when the plugin has any:
 `scripts/plugins-commands.mjs` (`pnpm plugins:commands`, part of `pnpm plugins`) reads each released
-DLL with `scripts/lib/dotnet.mjs`, finds the `AddHandler`/`EzCmd.Add` calls, and writes each command
+DLL with `scripts/lib/dotnet.mjs`, finds how it registers commands (`AddHandler` and `EzCmd.Add` calls, `[Command]` attributes, `Register("/cmd", "help")` wrappers, command lists and command classes), and writes each command
 and its help text to `directory/content/plugin-commands.json`. It only downloads a plugin again when
 its version changes. Plugins that register commands another way (attributes, resource files) come
-out empty. Fix or hide wrong results in `directory/content/commands-overrides.json`.
+out empty. Fix, hide or add commands in `directory/content/commands-overrides.json` (for example a command whose help is translated at run time, copied from the plugin's source).
 
 A plugin with an entry also gets "commands and guide" in its title and the entry's `description` as
 its meta description. When an update changes the help text the script says so; check the extras

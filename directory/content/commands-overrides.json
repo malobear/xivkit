@@ -1,4 +1,20 @@
 {
-  "_about": "Fixes for directory/content/plugin-commands.json, which scripts/plugins-commands.mjs reads out of each released plugin. Key by plugin slug. false hides the plugin's commands. Otherwise: \"hide\" lists commands to leave out, and \"help\" replaces a command's help text (null removes it). Only correct what the plugin actually says; don't invent help text.",
-  "jobbars": { "help": { "/jobbars": null } }
+  "_about": "Fixes for directory/content/plugin-commands.json, which scripts/plugins-commands.mjs reads out of each released plugin. Key by plugin slug. false hides the plugin's commands. Otherwise: \"hide\" lists commands to leave out, and \"help\" replaces a command's help text (null removes it). \"add\" lists extra [command, help] pairs for commands the script can't find (help translated at run time, say), copied from the plugin's source. Only correct what the plugin actually says; don't invent help text.",
+  "jobbars": {
+    "help": {
+      "/jobbars": null
+    }
+  },
+  "dailyduty": {
+    "hide": [
+      "/dd",
+      "/dailyduty"
+    ],
+    "add": [
+      [
+        "/dailyduty (or /dd)",
+        "Open DailyDuty"
+      ]
+    ]
+  }
 }

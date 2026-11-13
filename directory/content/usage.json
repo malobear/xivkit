@@ -152,5 +152,91 @@
     "description": "Every Questionable chat command from the plugin's own help: start and stop questing, the quest priority list, journal progress, next quest and more.",
     "intro": "Questionable runs from <code>/qst</code>. Type <code>/qst help-all</code> in game to print this same list in chat, or <code>/qst help</code> for the short version. It automates questing, which is against the game's terms of service, so use it at your own risk.",
     "help": { "prefix": "/qst " }
+  },
+  "somethingneeddoing": {
+    "description": "Every Something Need Doing chat command from the plugin's own help: run, loop, pause, resume and stop macros by name, plus the status window.",
+    "intro": "Something Need Doing's commands start with <code>/snd</code> (or <code>/somethingneeddoing</code>, or the old <code>/pcraft</code>). They are handy inside macros and on hotbars, for example to start a crafting macro a set number of times. Type <code>/snd help</code> in game to print this list in chat.",
+    "help": { "lines": [
+      ["/snd","Open the main window"],
+      ["/snd run <macro name>","Run a macro, the name must be unique."],
+      ["/snd run loop <count> <macro name>","Run a macro and then loop N times, the name must be unique."],
+      ["/snd pause <macro name>","Pause the given executing macro."],
+      ["/snd pause loop <macro name>","Pause the given executing macro at the next loop point."],
+      ["/snd pause all","Pause all running macros."],
+      ["/snd resume <macro name>","Resume the given paused macro."],
+      ["/snd resume all","Resume all paused macros."],
+      ["/snd stop <macro name>","Stop the given executing macro."],
+      ["/snd stop loop <macro name>","Stop the given executing macro at the next loop point."],
+      ["/snd stop all","Stop all running macros."],
+      ["/snd status","Toggle the running macros window."],
+      ["/snd changelog","Toggle the changelog window."],
+      ["/snd id <macro name>","Get the macro ID for a macro name."],
+      ["/snd help","Show the help window."]
+    ] }
+  },
+  "autoduty": {
+    "description": "Every AutoDuty chat command from the plugin's own help: start, stop and pause runs, queue duties, leveling mode, and the repair, desynth, turn-in and retainer helpers.",
+    "intro": "AutoDuty runs from <code>/autoduty</code> or the shorter <code>/ad</code>, and most commands work in macros. Where two names are shown, either works. It automates running duties, which is against the game's terms of service, so use it at your own risk.",
+    "help": { "lines": [
+      ["/ad",null,false],
+      ["/ad config / cfg","opens config window / modifies config"],
+      ["/ad start","starts autoduty when in a Duty"],
+      ["/ad stop","stops everything"],
+      ["/ad pause","pause route"],
+      ["/ad resume","resume route"],
+      ["/ad queue","queues duty"],
+      ["/ad run","starts auto duty in territory type specified"],
+      ["/ad leveling","Enables leveling mode (0 = disabled)"],
+      ["/ad skipstep","skips the current step"],
+      ["/ad overlay","opens overlay"],
+      ["/ad board","opens the Crucible board map"],
+      ["/ad movetoflag","moves to the flag map marker"],
+      ["/ad goto / go <place>","Goes to a specific location in the game world. Targets: inn / barracks / gc / bell / apartment / home / fc","Goes to a specific location in the game world"],
+      ["/ad repair","Repairs your gear"],
+      ["/ad desynth","Desynth's items in your inventory"],
+      ["/ad extract","Extract's materia from equipment"],
+      ["/ad turnin / gcturnin","Automatically turns in items into the Grand Company Supply"],
+      ["/ad autoequip / equiprec","Equips recommended gear"],
+      ["/ad coffer","Opens coffers in your inventory"],
+      ["/ad armoire","Stores items in your inventory to the Armoire."],
+      ["/ad glamour","Stores items in your inventory to the Glamour Chest."],
+      ["/ad ar / autoretainer","Automatically manages retainers using the AutoRetainer plugin"],
+      ["/ad arm / autoretainermulti","Runs one cycle of AutoRetainer's Multi Mode"],
+      ["/ad shop","Executes shopping"],
+      ["/ad ttfull","opens packs, registers cards and sells the rest"],
+      ["/ad ttsell / sellcards","Sells Triple Triad cards to the vendor in Gold Saucer"],
+      ["/ad ttreg / registercards","Automatically registers Triple Triad cards in your inventory"],
+      ["/ad exitduty","Exits the current duty if you are not in combat"],
+      ["/ad dataid","Logs and copies your target's dataid to clipboard"]
+    ] }
+  },
+  "deepdungeondex": {
+    "description": "Every Deep Dungeon Dex chat command from the plugin's own help: settings, refreshing its data and resetting floor detection.",
+    "intro": "Deep Dungeon Dex opens on its own when you target an enemy in a deep dungeon, so you rarely need these. Its commands all start with <code>/pdex</code>, and <code>/pdex help</code> prints this list in chat.",
+    "help": { "lines": [
+      ["/pdex help, h","shows all commands in chat"],
+      ["/pdex config, cfg","Opens the config window."],
+      ["/pdex refresh, clear","Refreshes the data internally stored"],
+      ["/pdex enable_floor, e_floor, enable_f, ef","Resets the floor getter function to try again"]
+    ] }
+  },
+  "mappy": {
+    "description": "Every Mappy chat command: show, hide and follow the map, keep it open, centre it, and toggle the FATE, quest and flag lists.",
+    "intro": "All of Mappy's commands start with <code>/mappy</code>, and <code>/mappy help</code> prints the same list in chat. <code>/mappy</code> on its own opens the settings. Pick one of the options after a command, for example <code>/mappy map toggle</code> or <code>/mappy autofollow disable</code>. They work well on a hotbar.",
+    "help": { "lines": [
+      ["/mappy",null,false],
+      ["/mappy help",null,false],
+      ["/mappy map show | hide | toggle",null,"/map"],
+      ["/mappy map follow",null,"/map/follow"],
+      ["/mappy map unfollow",null,"/map/unfollow"],
+      ["/mappy center player",null,"/center/player"],
+      ["/mappy center map",null,"/center/map"],
+      ["/mappy autofollow enable | disable | toggle",null,"/autofollow"],
+      ["/mappy keepopen enable | disable | toggle",null,"/keepopen"],
+      ["/mappy fatelist enable | disable | toggle",null,"/fatelist"],
+      ["/mappy questlist enable | disable | toggle",null,"/questlist"],
+      ["/mappy flaglist enable | disable | toggle",null,"/flaglist"],
+      ["/mappy areamap reset",null,"/areamap/reset"]
+    ] }
   }
 }
