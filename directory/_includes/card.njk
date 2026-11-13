@@ -34,7 +34,7 @@
     <div class="filters">
       <label class="pill"><input type="checkbox" id="f-recent"><span>Updated in 90 days</span></label>
       <label class="pill"><input type="checkbox" id="f-testing"><span>Testing builds <b id="test-count">0</b></span></label>
-      <label class="pill" title="Plugins from outside Dalamud's official list"><input type="checkbox" id="f-third"><span>{{ srcBadge("src-badge-inline") }} Third-party <b id="third-count">{{ meta.thirdParty }}</b></span></label>
+      <label class="pill" title="Plugins from outside Dalamud's official list"><input type="checkbox" id="f-third" checked><span>{{ srcBadge("src-badge-inline") }} Third-party <b id="third-count">{{ meta.thirdParty }}</b></span></label>
       <label class="pill"><input type="checkbox" id="f-all"><span>Not installable <b id="off-count">0</b></span></label>
     </div>
   </details>
@@ -42,5 +42,5 @@
 {% endmacro %}
 
 {% macro legend() %}
-<p class="legend" hidden>{{ srcBadge("src-badge-inline") }} <span><strong>Third-party plugin.</strong> Not in Dalamud's official list and not reviewed by Dalamud's team. Add its repository under <code>/xlsettings</code> first; each plugin page shows how.</span></p>
+<p class="legend">{{ srcBadge("src-badge-inline") }} <span><strong>Third-party plugin.</strong> Not in Dalamud's official list and not reviewed by Dalamud's team. Add its repository under <code>/xlsettings</code> first; each plugin page shows how.</span></p>
 {% endmacro %}

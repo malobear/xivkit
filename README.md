@@ -157,7 +157,7 @@ need the directory's pages.
 Third-party repositories are listed in `directory/content/repos.json` (`url` is the address people
 paste under `/xlsettings` > Experimental > Custom Plugin Repositories). The first repo listed wins
 when a plugin is in several, and the official list wins over all of them. Those plugins get a
-round badge on their icon and title, a "Third-party" filter (off by default, `?third=1`), and an
+round badge on their icon and title, a "Third-party" filter (on by default; turning it off adds `?third=0`), and an
 install step with a copy button for the repository address. Add a repo by adding one line there
 and running `pnpm plugins`.
 

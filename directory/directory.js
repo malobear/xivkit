@@ -53,15 +53,16 @@
 
     if (line) line.textContent = "Showing " + shown + " of " + cards.length + " plugins, " + SORT_TEXT[key] + ".";
     if (empty) empty.hidden = shown !== 0;
-    var lg = document.querySelector(".legend"); if (lg) lg.hidden = !third;
-    var active = recent + testing + all + third;
+    var lg = document.querySelector(".legend"); if (lg) lg.hidden = !third || !thirdCount;
+    // Third-party is on by default, so turning it off is what counts as a filter.
+    var active = recent + testing + all + !third;
     if (badge) { badge.textContent = active; badge.hidden = !active; }
 
     if (save === false) return;
     var url = new URL(location.href), p = url.searchParams;
     var set = function (k, on, v) { if (on) p.set(k, v || "1"); else p.delete(k); };
     set("q", q, q); set("sort", key !== "installs", key);
-    set("recent", recent); set("testing", testing); set("all", all); set("third", third);
+    set("recent", recent); set("testing", testing); set("all", all); set("third", !third, "0");
     history.replaceState(null, "", url);
   }
 
@@ -72,7 +73,8 @@
   if (fRecent) fRecent.checked = p.has("recent");
   if (fTesting) fTesting.checked = p.has("testing");
   if (fAll) fAll.checked = p.has("all");
-  if (fThird) fThird.checked = p.has("third");
+  // On unless the link says third=0 (older links with third=1 still mean on).
+  if (fThird) fThird.checked = p.get("third") !== "0";
   apply(false);
 
   input.addEventListener("input", apply);
