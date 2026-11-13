@@ -1,0 +1,23 @@
+---
+layout: base.njk
+permalink: /authors/index.html
+eleventyComputed:
+  pageTitle: "FFXIV Dalamud plugin authors | XIVKit"
+  pageDescription: "The {{ authors.length }} people behind two or more FFXIV Dalamud plugins, with every plugin they make, install counts and last updates."
+  canonicalPath: "authors/"
+  isIndex: false
+---
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span> Authors</nav>
+<header class="hero">
+  <h1>Plugin authors</h1>
+  <p class="lede">Everyone credited on two or more plugins in the directory, most installed first. Found a plugin you like? Their other plugins are a good place to look next.</p>
+</header>
+
+<ul class="author-list">
+  {% for a in authors %}
+  <li><a href="/plugins/author/{{ a.slug }}/">
+    {% if a.avatar %}<img class="author-mini" src="https://github.com/{{ a.avatar }}.png?size=80" alt="" width="40" height="40" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="author-mini plug-icon-blank" aria-hidden="true"{% if a.avatar %} hidden{% endif %}>{{ a.name | first | upper }}</span>
+    <span class="author-body"><span class="author-name">{{ a.name }}</span><span class="author-stats">{{ a.count }} plugins · {{ a.installs | compact }} installs</span></span>
+  </a></li>
+  {% endfor %}
+</ul>

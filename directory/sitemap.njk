@@ -8,6 +8,10 @@ eleventyExcludeFromCollections: true
 {%- for c in categories %}
   <url><loc>{{ site.origin }}{{ site.base }}category/{{ c.slug }}/</loc><lastmod>{{ meta.fetched }}</lastmod></url>
 {%- endfor %}
+  <url><loc>{{ site.origin }}{{ site.base }}authors/</loc><lastmod>{{ meta.fetched }}</lastmod></url>
+{%- for a in authors %}
+  <url><loc>{{ site.origin }}{{ site.base }}author/{{ a.slug }}/</loc>{% set d = a.lastUpdate | isoDate %}{% if d %}<lastmod>{{ d }}</lastmod>{% endif %}</url>
+{%- endfor %}
 {%- for p in plugins %}{% if p.status != "unavailable" %}
   <url><loc>{{ site.origin }}{{ site.base }}{{ p.slug }}/</loc>{% set d = p.lastUpdate | isoDate %}{% if d %}<lastmod>{{ d }}</lastmod>{% endif %}</url>
 {%- endif %}{% endfor %}

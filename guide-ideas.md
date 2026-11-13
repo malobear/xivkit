@@ -243,6 +243,10 @@ Plan if picked up:
 
 ### Author pages
 
+**Done 2026-11-12**: 116 author pages plus an index, keyed on the credited name rather than the repo
+owner (organisations like PunishXIV host other people's plugins), see the README. The notes below
+are the original plan.
+
 Make the author on each plugin page a link to an author page (`/plugins/author/<slug>/`)
 listing everything that person publishes in the directory, with a link to their GitHub
 profile. Lets people discover more good plugins from authors they already trust, and

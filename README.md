@@ -154,6 +154,13 @@ and are left out of the sitemap. Eleventy generates `plugins/sitemap.xml` (liste
 and submitted to IndexNow by the deploy workflow), so the hand-kept root `sitemap.xml` doesn't
 need the directory's pages.
 
+Everyone credited on two or more listed plugins gets an author page at `/plugins/author/<slug>/`,
+with an index at `/plugins/authors/` (both in the sitemap). `directory/authors.mjs` splits Dalamud's free-text
+Author field into people ("kawaii, NightmareXIV", "Caraxi, maintained & updated by Khayle"), drops former
+authors in brackets, and credits each plugin to everyone named. A GitHub link appears when one of their
+repos is under their own name, or when all their solo plugins live under one account (the link then names
+that account); the avatar only shows for the first case. The "by" line on each plugin page links to these.
+
 Third-party repositories are listed in `directory/content/repos.json` (`url` is the address people
 paste under `/xlsettings` > Experimental > Custom Plugin Repositories). The first repo listed wins
 when a plugin is in several, and the official list wins over all of them. Those plugins get a

@@ -177,3 +177,16 @@ html:has(.viewer[open]){overflow:hidden}
 .details dd{margin:2px 0 0;font-weight:600;font-size:15px;overflow-wrap:anywhere}
 .details .details-tags{grid-column:1/-1}
 .details-tags dd{display:flex;flex-wrap:wrap;gap:6px;font-weight:400}
+
+/* Author pages */
+.author-head .author-avatar{border-radius:50%}
+.meta a{color:var(--accent)}
+.author-list{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:10px}
+.author-list a{display:flex;align-items:center;gap:12px;padding:10px 12px;background:var(--card);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:var(--text)}
+.author-list a:hover{border-color:var(--border-strong)}
+.author-mini{flex:none;width:40px;height:40px;border-radius:50%;background:var(--raised);object-fit:cover;display:inline-flex;align-items:center;justify-content:center;font-weight:700}
+.author-mini[hidden]{display:none}
+.author-body{display:flex;flex-direction:column;min-width:0}
+.author-name{font-weight:600;overflow-wrap:anywhere}
+.author-stats{font-size:13px;color:var(--muted)}
+.author-head{margin-bottom:20px}

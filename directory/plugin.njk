@@ -26,7 +26,7 @@ eleventyComputed:
     <h1>{{ plugin.name }}{% if plugin.source != "official" %} {{ srcBadge("src-badge-title") }}{% endif %}{% if plugin.status == "outdated" %} <span class="badge badge-off">Outdated</span>{% elif plugin.status == "unavailable" %} <span class="badge badge-off">Not in installer</span>{% elif plugin.needsTesting %} <span class="badge badge-test">Testing builds</span>{% endif %}</h1>
     <p class="lede">{{ plugin.punchline }}</p>
     <ul class="meta">
-      <li>{{ icon("user") }}<span>by <strong>{{ plugin.author or "Unknown" }}</strong></span></li>
+      <li>{{ icon("user") }}<span>by {% set credits = pluginAuthors[plugin.slug] %}{% if credits.length %}{% for c in credits %}<strong>{% if c.slug %}<a href="/plugins/author/{{ c.slug }}/">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</strong>{{ ", " if not loop.last }}{% endfor %}{% else %}<strong>{{ plugin.author or "Unknown" }}</strong>{% endif %}</span></li>
       <li title="{{ plugin.downloads | num }} installs">{{ icon("download") }}<span><strong>{{ plugin.downloads | compact }}</strong> installs</span></li>
       {% if plugin.lastUpdate %}<li>{{ icon("clock") }}<span>Updated <time datetime="{{ plugin.lastUpdate | isoDate }}"><strong>{{ plugin.lastUpdate | niceDate }}</strong></time></span></li>{% endif %}
     </ul>

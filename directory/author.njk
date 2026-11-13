@@ -1,0 +1,42 @@
+---
+layout: base.njk
+pagination:
+  data: authors
+  size: 1
+  alias: author
+permalink: "/author/{{ author.slug }}/index.html"
+eleventyComputed:
+  pageTitle: "{{ author.name }}: {{ author.count }} FFXIV Dalamud plugins | XIVKit"
+  pageDescription: "{{ author.count }} Dalamud plugins by {{ author.name }}{% set ps = plugins | bySlugs(author.plugins) %}: {% for p in ps | slice2(3) %}{{ p.name }}{{ ', ' if not loop.last }}{% endfor %}{% if author.count > 3 %} and more{% endif %}. Install steps, install counts and chat commands for each."
+  canonicalPath: "author/{{ author.slug }}/"
+  isIndex: false
+---
+{% from "card.njk" import card %}
+{% from "icons.njk" import icon %}
+{% set ps = plugins | bySlugs(author.plugins) %}
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="/plugins/">Plugin directory</a> <span aria-hidden="true">/</span>
+  <a href="/plugins/authors/">Authors</a>
+</nav>
+
+<header class="plugin-head author-head">
+  {% if author.avatar %}<img class="plugin-icon author-avatar" src="https://github.com/{{ author.avatar }}.png?size=144" alt="" width="72" height="72" onerror="this.hidden=true;this.nextElementSibling.hidden=false">{% endif %}<span class="plugin-icon plug-icon-blank plugin-icon-blank author-avatar" aria-hidden="true"{% if author.avatar %} hidden{% endif %}>{{ author.name | first | upper }}</span>
+  <div>
+    <h1>{{ author.name }}</h1>
+    <p class="lede">{{ author.count }} Dalamud plugins in the directory{% if ps[0] %}, best known for {{ ps[0].name }}{% endif %}.</p>
+    <ul class="meta">
+      <li>{{ icon("grid") }}<span><strong>{{ author.count }}</strong> plugins</span></li>
+      <li title="{{ author.installs | num }} installs">{{ icon("download") }}<span><strong>{{ author.installs | compact }}</strong> installs in total</span></li>
+      {% if author.lastUpdate %}<li>{{ icon("clock") }}<span>Last update <time datetime="{{ author.lastUpdate | isoDate }}"><strong>{{ author.lastUpdate | niceDate }}</strong></time></span></li>{% endif %}
+      {% if author.github %}<li>{{ icon("code") }}<span>Plugins on GitHub: <a href="https://github.com/{{ author.github }}" target="_blank" rel="noopener noreferrer">{{ author.github }}</a></span></li>{% endif %}
+    </ul>
+  </div>
+</header>
+
+<section aria-labelledby="author-plugins-h">
+  <h2 id="author-plugins-h" class="sr">Plugins by {{ author.name }}</h2>
+  <p class="sub">Most installed first. Plugins credited to several people also appear on each of their pages.</p>
+  <ul class="plug-list">
+    {% for p in ps %}{{ card(p, categories) }}{% endfor %}
+  </ul>
+</section>

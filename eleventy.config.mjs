@@ -2,6 +2,7 @@
 // Nothing else on the site goes through Eleventy. Run with `pnpm plugins:build`.
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
+import { buildAuthors } from "./directory/authors.mjs";
 
 export default function (eleventyConfig) {
   // Hand-written command guides, keyed by plugin slug (directory/content/usage.json). Kept out of
@@ -18,6 +19,13 @@ export default function (eleventyConfig) {
   const found = readJson("./directory/content/plugin-commands.json", {});
   const overrides = readJson("./directory/content/commands-overrides.json", {});
   eleventyConfig.addGlobalData("pluginCommands", () => found);
+  // Author pages (directory/authors.mjs): authors with two or more listed plugins, and each
+  // plugin's credited people with their page slug where they have one.
+  const { authors, pluginAuthors } = buildAuthors(readJson("./directory/_data/plugins.json", []));
+  eleventyConfig.addGlobalData("authors", () => authors);
+  eleventyConfig.addGlobalData("pluginAuthors", () => pluginAuthors);
+  eleventyConfig.addFilter("bySlugs", (list, slugs) => slugs.map((s) => list.find((p) => p.slug === s)).filter(Boolean));
+  eleventyConfig.addFilter("slice2", (list, n) => list.slice(0, n));
   eleventyConfig.addFilter("commandText", (slug) => {
     const o = overrides[slug];
     if (o === false || !found[slug]) return "";
