@@ -57,9 +57,13 @@ export function openAssembly(b) {
     0x08: 2 + 2 + strIdx, // Param
     0x09: idx(0x02) + typeDefOrRef, // InterfaceImpl
     0x0a: coded(3, [0x02, 0x01, 0x1a, 0x06, 0x1b]) + strIdx + blobIdx, // MemberRef
+    0x0b: 2 + coded(2, [0x04, 0x08, 0x17]) + blobIdx, // Constant
+    // CustomAttribute: Parent (HasCustomAttribute), Type (CustomAttributeType), Value (blob)
+    0x0c: coded(5, [0x06, 0x04, 0x01, 0x02, 0x08, 0x09, 0x0a, 0x00, 0x0e, 0x17, 0x14, 0x11, 0x1a, 0x1b, 0x20, 0x23, 0x26, 0x27, 0x28, 0x2a, 0x2c, 0x2b])
+      + coded(3, [0x06, 0x0a]) + blobIdx,
   };
   const start = {};
-  for (let i = 0; i <= 0x0a; i++) { start[i] = q; q += rows[i] * sizes[i]; }
+  for (let i = 0; i <= 0x0c; i++) { start[i] = q; q += rows[i] * sizes[i]; }
   const rd = (pos, n) => (n === 2 ? b.readUInt16LE(pos) : b.readUInt32LE(pos));
   const row = (table, i) => start[table] + (i - 1) * sizes[table];
 
@@ -88,7 +92,59 @@ export function openAssembly(b) {
     }
   }
 
-  return { us, memberRef, methodName, methods };
+  // The type a MethodDef belongs to: the TypeDef whose MethodList range contains it.
+  const methodListOff = 4 + strIdx * 2 + typeDefOrRef + idx(0x04);
+  const methodOwner = (m) => {
+    let owner = 0;
+    for (let i = 1; i <= rows[0x02]; i++) { if (rd(row(0x02, i) + methodListOff, idx(0x06)) <= m) owner = i; else break; }
+    return owner ? typeDefName(owner) : "";
+  };
+  // A blob: compressed length, then bytes.
+  const blob = (i) => {
+    const s = streams["#Blob"].o + i;
+    let len = b[s], hdr = 1;
+    if ((len & 0xc0) === 0x80) { len = ((len & 0x3f) << 8) | b[s + 1]; hdr = 2; }
+    else if ((len & 0xe0) === 0xc0) { len = ((len & 0x1f) << 24) | (b[s + 1] << 16) | (b[s + 2] << 8) | b[s + 3]; hdr = 4; }
+    return b.subarray(s + hdr, s + hdr + len);
+  };
+  // Every custom attribute, as { parent, type, value } where parent is the raw coded index (equal
+  // for attributes on the same method), type the attribute class name, value the blob.
+  const caParent = sizes[0x0c] - coded(3, [0x06, 0x0a]) - blobIdx, caType = coded(3, [0x06, 0x0a]);
+  function* attributes() {
+    for (let i = 1; i <= rows[0x0c]; i++) {
+      const r = row(0x0c, i), parent = rd(r, caParent), type = rd(r + caParent, caType);
+      const tag = type & 7, ti = type >> 3;
+      const cls = tag === 3 ? memberRef(ti).cls : tag === 2 ? methodOwner(ti) : "";
+      yield { parent, type: cls, value: blob(rd(r + caParent + caType, blobIdx)) };
+    }
+  }
+
+  return { us, memberRef, methodName, methods, attributes };
+}
+
+// The fixed string arguments of an attribute value blob: prolog 0x0001, then each argument. Handles
+// string and string[] (params) arguments, which is all the command attributes use.
+export function attributeStrings(v) {
+  if (v.length < 2 || v[0] !== 1 || v[1] !== 0) return [];
+  let p = 2;
+  const ser = () => {
+    if (v[p] === 0xff) { p++; return null; }
+    let len = v[p], hdr = 1;
+    if ((len & 0xc0) === 0x80) { len = ((len & 0x3f) << 8) | v[p + 1]; hdr = 2; }
+    const s = v.subarray(p + hdr, p + hdr + len).toString("utf8");
+    p += hdr + len;
+    return s;
+  };
+  // A string[] starts with a 4-byte count; a string with its compressed length. A count below
+  // 0x80 with three zero bytes after it is read as an array.
+  if (v.length >= p + 4 && v[p + 1] === 0 && v[p + 2] === 0 && v[p + 3] === 0 && v[p] < 0x80 && v.length > p + 4) {
+    const n = v.readUInt32LE(p); p += 4;
+    const out = [];
+    for (let i = 0; i < n && p < v.length; i++) out.push(ser());
+    return out.filter(Boolean);
+  }
+  const s = ser();
+  return s ? [s] : [];
 }
 
 // The string loads and method calls in a method body, in order. This scans for the byte patterns
@@ -113,12 +169,16 @@ export function events(asm, code) {
 
 const isCmd = (s) => /^\/[A-Za-z][A-Za-z0-9_-]{0,30}$/.test(s);
 
-// The chat commands a plugin registers, as [{ cmd, help }]. Recognises Dalamud's
-// ICommandManager.AddHandler("/cmd", new CommandInfo(...) { HelpMessage = "..." }) and ECommons'
-// EzCmd.Add("/cmd", handler, "help"). help is null when it is built at run time (string
-// concatenation, a translation lookup) rather than written as one literal.
+// The chat commands a plugin registers, as [{ cmd, help }]. Recognises:
+// - Dalamud's ICommandManager.AddHandler("/cmd", new CommandInfo(...) { HelpMessage = "..." })
+// - ECommons' EzCmd.Add("/cmd", handler, "help")
+// - wrappers called Register / RegisterCommand / AddCommand taking ("/cmd", "help", ...)
+// - [Command("/cmd")] [Aliases(...)] [HelpMessage("...")] attributes on handler methods
+// help is null when it is built at run time (string concatenation, a translation lookup) rather
+// than written as one literal.
 export function findCommands(asm) {
   const found = new Map();
+  const WRAPPERS = new Set(["Register", "RegisterCommand", "AddCommand"]);
   for (const m of asm.methods()) {
     const ev = events(asm, m.code);
     let since = 0;
@@ -127,7 +187,19 @@ export function findCommands(asm) {
       if (e.t !== "call") continue;
       const dalamud = e.name === "AddHandler";
       const ez = e.name === "Add" && e.cls === "EzCmd";
-      if (!dalamud && !ez) continue;
+      const wrapper = WRAPPERS.has(e.name);
+      if (!dalamud && !ez && !wrapper) continue;
+      if (wrapper) {
+        // Only when the command literal is in this call's own arguments, i.e. the last few events.
+        const win = ev.slice(Math.max(since, i - 4), i);
+        const k = win.map((x) => x.t === "str" && isCmd(x.v)).lastIndexOf(true);
+        if (k < 0) continue;
+        since = i + 1;
+        const next = win[k + 1];
+        const help = next && next.t === "str" && !isCmd(next.v) && next.v.trim() ? next.v : null;
+        if (!found.has(win[k].v)) found.set(win[k].v, { cmd: win[k].v, help });
+        continue;
+      }
       const win = ev.slice(since, i);
       since = i + 1;
       // The command is the last "/name" literal before the call. That covers both
@@ -146,6 +218,24 @@ export function findCommands(asm) {
       if (help !== null && !help.trim()) help = null;
       if (!found.has(cmdEv.v)) found.set(cmdEv.v, { cmd: cmdEv.v, help });
     }
+  }
+
+  // Attribute style: group the attributes on each method, then read Command / Aliases /
+  // HelpMessage off them. Attributes marked DoNotShowInHelp are left out, as Dalamud's own list does.
+  const byParent = new Map();
+  for (const a of asm.attributes()) {
+    const name = a.type.replace(/Attribute$/, "");
+    if (!["Command", "Aliases", "HelpMessage", "DoNotShowInHelp"].includes(name)) continue;
+    if (!byParent.has(a.parent)) byParent.set(a.parent, {});
+    byParent.get(a.parent)[name] = attributeStrings(a.value);
+  }
+  for (const g of byParent.values()) {
+    const cmd = g.Command?.[0];
+    if (!cmd || !isCmd(cmd) || g.DoNotShowInHelp) continue;
+    const aliases = (g.Aliases || []).filter(isCmd);
+    const help = g.HelpMessage?.[0]?.trim() || null;
+    const label = aliases.length ? `${cmd} (or ${aliases.join(", ")})` : cmd;
+    if (!found.has(cmd)) found.set(cmd, { cmd: label, help });
   }
   return [...found.values()];
 }

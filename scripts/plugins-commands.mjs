@@ -22,6 +22,8 @@ const repos = JSON.parse(readFileSync(file("../directory/content/repos.json"), "
 const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")) : {};
 const OFFICIAL = "https://kamori.goats.dev/Plugin/PluginMaster";
 const UA = { "user-agent": "xivkit-plugin-directory" };
+// Bump when scripts/lib/dotnet.mjs learns to find more, so every plugin is checked again.
+const SCAN = 2;
 
 async function getJson(url) {
   const res = await fetch(url, { headers: UA });
@@ -68,7 +70,7 @@ for (const plugin of plugins) {
   const entry = (masters[plugin.source] || []).find((m) => m.InternalName === plugin.internalName);
   if (!entry?.DownloadLinkInstall) { if (previous[plugin.slug]) out[plugin.slug] = previous[plugin.slug]; continue; }
   const version = (plugin.needsTesting || plugin.testingOnly) && entry.TestingAssemblyVersion ? entry.TestingAssemblyVersion : entry.AssemblyVersion;
-  if (previous[plugin.slug]?.version === version) { out[plugin.slug] = previous[plugin.slug]; continue; }
+  if (previous[plugin.slug]?.version === version && previous[plugin.slug]?.scan === SCAN) { out[plugin.slug] = previous[plugin.slug]; continue; }
   todo.push({ plugin, entry, version });
 }
 
@@ -77,7 +79,7 @@ const worker = async () => {
   while (todo.length) {
     const { plugin, entry, version } = todo.shift();
     try {
-      out[plugin.slug] = { version, commands: await commandsFor(plugin, entry) };
+      out[plugin.slug] = { version, scan: SCAN, commands: await commandsFor(plugin, entry) };
     } catch (e) {
       failed++;
       console.warn(`${plugin.slug}: ${e.message}${previous[plugin.slug] ? ", keeping the last result" : ""}`);
