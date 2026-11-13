@@ -144,7 +144,7 @@
         label.textContent = ok ? "Copied" : "Press Ctrl+C";
         btn.classList.toggle("copied", ok);
         clearTimeout(timer);
-        timer = setTimeout(function () { label.textContent = "Copy"; btn.classList.remove("copied"); }, 2000);
+        timer = setTimeout(function () { label.textContent = "Copy address"; btn.classList.remove("copied"); }, 2000);
       };
       var fallback = function () {
         var code = btn.closest(".copybox").querySelector("code"), r = document.createRange();
