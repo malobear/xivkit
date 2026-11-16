@@ -325,7 +325,7 @@
   ]
  },
  "altoholic": {
-  "version": "1.16.4.0",
+  "version": "1.17.1.0",
   "scan": 6,
   "commands": [
    {
@@ -503,7 +503,7 @@
   "commands": []
  },
  "automaton": {
-  "version": "69.232",
+  "version": "69.234",
   "scan": 6,
   "commands": [
    {
@@ -528,7 +528,7 @@
   "commands": []
  },
  "autoretainer": {
-  "version": "4.6.2.21",
+  "version": "4.6.2.22",
   "scan": 6,
   "commands": [
    {
@@ -679,7 +679,7 @@
   "commands": []
  },
  "betterdeaths": {
-  "version": "1.0.0.64",
+  "version": "1.0.0.65",
   "scan": 6,
   "commands": [
    {
@@ -719,7 +719,7 @@
   ]
  },
  "betterfriendlist": {
-  "version": "2.1.4.3",
+  "version": "2.1.4.4",
   "scan": 6,
   "commands": [
    {
@@ -873,7 +873,7 @@
   "commands": []
  },
  "bossmod": {
-  "version": "7.5.8.1",
+  "version": "7.5.8.4",
   "scan": 6,
   "commands": []
  },
@@ -1120,7 +1120,7 @@
   ]
  },
  "chilledleves": {
-  "version": "1.0.2.2",
+  "version": "1.0.2.3",
   "scan": 6,
   "commands": [
    {
@@ -1527,7 +1527,7 @@
   "commands": []
  },
  "dalamud-richpresence": {
-  "version": "2.1.1.1",
+  "version": "2.2.0.0",
   "scan": 6,
   "commands": [
    {
@@ -1654,7 +1654,7 @@
   ]
  },
  "discordbotffxiv": {
-  "version": "1.1.2.4",
+  "version": "1.1.2.5",
   "scan": 6,
   "commands": [
    {
@@ -2335,6 +2335,16 @@
    }
   ]
  },
+ "fontchanger-dalamudplugin": {
+  "version": "0.0.0.1",
+  "scan": 6,
+  "commands": [
+   {
+    "cmd": "/fontchanger",
+    "help": "Open the Custom Fonts window."
+   }
+  ]
+ },
  "foodcheck": {
   "version": "1.0.0.1",
   "scan": 6,
@@ -2413,7 +2423,7 @@
   ]
  },
  "gatherchill": {
-  "version": "1.0.0.4",
+  "version": "1.0.0.6",
   "scan": 6,
   "commands": [
    {
@@ -2517,7 +2527,7 @@
   ]
  },
  "glamourlog": {
-  "version": "15.78",
+  "version": "15.79",
   "scan": 6,
   "commands": []
  },
@@ -2604,6 +2614,132 @@
    }
   ]
  },
+ "gratis": {
+  "version": "0.1.2.1",
+  "scan": 6,
+  "commands": [
+   {
+    "cmd": "/journal",
+    "help": null
+   },
+   {
+    "cmd": "/context",
+    "help": null
+   },
+   {
+    "cmd": "/flag",
+    "help": null
+   },
+   {
+    "cmd": "/find",
+    "help": null
+   },
+   {
+    "cmd": "/triad",
+    "help": null
+   },
+   {
+    "cmd": "/nearest",
+    "help": null
+   },
+   {
+    "cmd": "/msq",
+    "help": null
+   },
+   {
+    "cmd": "/travel",
+    "help": null
+   },
+   {
+    "cmd": "/aether",
+    "help": null
+   },
+   {
+    "cmd": "/popups",
+    "help": null
+   },
+   {
+    "cmd": "/chrome",
+    "help": null
+   },
+   {
+    "cmd": "/enemies",
+    "help": null
+   },
+   {
+    "cmd": "/links",
+    "help": null
+   },
+   {
+    "cmd": "/door",
+    "help": null
+   },
+   {
+    "cmd": "/memory",
+    "help": null
+   },
+   {
+    "cmd": "/window",
+    "help": null
+   },
+   {
+    "cmd": "/camera",
+    "help": null
+   },
+   {
+    "cmd": "/markers",
+    "help": null
+   },
+   {
+    "cmd": "/text",
+    "help": null
+   },
+   {
+    "cmd": "/attunement",
+    "help": null
+   },
+   {
+    "cmd": "/subzone",
+    "help": null
+   },
+   {
+    "cmd": "/measure",
+    "help": null
+   },
+   {
+    "cmd": "/ghost",
+    "help": null
+   },
+   {
+    "cmd": "/view",
+    "help": null
+   },
+   {
+    "cmd": "/pointers",
+    "help": null
+   },
+   {
+    "cmd": "/spotlight",
+    "help": null
+   },
+   {
+    "cmd": "/motion",
+    "help": null
+   },
+   {
+    "cmd": "/perf",
+    "help": null
+   },
+   {
+    "cmd": "/zone",
+    "help": null
+   },
+   {
+    "cmd": "/reload",
+    "help": null
+   }
+  ]
+ },
  "gubal": {
   "version": "0.5.1.0",
   "scan": 6,
@@ -2640,7 +2776,7 @@
   "commands": []
  },
  "henchman": {
-  "version": "4.0.0.0",
+  "version": "4.0.0.1",
   "scan": 6,
   "commands": [
    {
@@ -2681,7 +2817,7 @@
   "commands": []
  },
  "hitspark": {
-  "version": "0.2.0.0",
+  "version": "0.3.0.0",
   "scan": 6,
   "commands": [
    {
@@ -3257,7 +3393,7 @@
   ]
  },
  "knightshopper": {
-  "version": "1.0.1.9",
+  "version": "1.0.2.0",
   "scan": 6,
   "commands": [
    {
@@ -4221,7 +4357,7 @@
   ]
  },
  "pfsearch": {
-  "version": "1.0.0.1",
+  "version": "1.0.0.2",
   "scan": 6,
   "commands": [
    {
@@ -5112,7 +5248,7 @@
   ]
  },
  "simpletweaksplugin": {
-  "version": "1.15.0.8",
+  "version": "1.15.0.9",
   "scan": 6,
   "commands": [
    {
@@ -5160,7 +5296,7 @@
   ]
  },
  "snooper": {
-  "version": "1.5.1.0",
+  "version": "1.6.0.0",
   "scan": 6,
   "commands": [
    {
@@ -5534,6 +5670,24 @@
    }
   ]
  },
+ "tether": {
+  "version": "1.3.0.0",
+  "scan": 6,
+  "commands": [
+   {
+    "cmd": "/tether",
+    "help": "Open the group chat manager."
+   },
+   {
+    "cmd": "/groupchats",
+    "help": "Open the group chat manager."
+   },
+   {
+    "cmd": "/tethersettings",
+    "help": "Open config."
+   }
+  ]
+ },
  "textadvance": {
   "version": "3.3.0.1",
   "scan": 6,
@@ -5616,6 +5770,16 @@
    {
     "cmd": "/ttd",
     "help": "Opens the Things To Do In Eorzea window."
+   }
+  ]
+ },
+ "throwcrapout": {
+  "version": "0.6.0.3",
+  "scan": 6,
+  "commands": [
+   {
+    "cmd": "/tco",
+    "help": "/tco | /tco config | /tco sort | /tco split | /tco clear | /tco stop"
    }
   ]
  },
@@ -5739,6 +5903,16 @@
    {
     "cmd": "/totallevel",
     "help": "opens the configuration window"
+   }
+  ]
+ },
+ "toucantally": {
+  "version": "1.0.0.0",
+  "scan": 6,
+  "commands": [
+   {
+    "cmd": "/toucan",
+    "help": "Open Toucan Tally settings. '/toucan move' toggles area placement, '/toucan debug' opens the debug window."
    }
   ]
  },
@@ -6033,7 +6207,7 @@
   ]
  },
  "visland": {
-  "version": "0.0.0.152",
+  "version": "0.0.0.153",
   "scan": 6,
   "commands": [
    {
@@ -6137,7 +6311,7 @@
   ]
  },
  "vsatisfy": {
-  "version": "0.0.0.46",
+  "version": "0.0.0.47",
   "scan": 6,
   "commands": [
    {
@@ -6177,7 +6351,7 @@
   ]
  },
  "wahtools": {
-  "version": "20.0.0.39",
+  "version": "20.0.0.52",
   "scan": 6,
   "commands": [
    {

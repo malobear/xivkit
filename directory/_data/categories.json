@@ -39,19 +39,19 @@
     "slug": "combat",
     "name": "Combat and duties",
     "blurb": "Job gauges, cooldown trackers, mechanic helpers, fly text, and tools for dungeons, roulettes, hunts and other duty content.",
-    "count": 119
+    "count": 120
   },
   {
     "slug": "ui",
     "name": "UI and HUD",
     "blurb": "Replacements and tweaks for the HUD, hotbars, bars, windows, nameplates, tooltips and menus.",
-    "count": 71
+    "count": 73
   },
   {
     "slug": "chat-social",
     "name": "Chat and social",
     "blurb": "Chat windows and filters, friend lists, linkshells, translation, and tools for staying in touch.",
-    "count": 73
+    "count": 74
   },
   {
     "slug": "audio-music",
