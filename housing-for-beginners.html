@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ3SSXDSFK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DQ3SSXDSFK');
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>FFXIV Housing for Beginners: Permits, Limits, and Resources | XIVKit</title>
+<meta name="description" content="A work-in-progress starting point for FFXIV housing: the best beginner guides, how permits and ownership work, furnishing limits, upkeep, cheap furnishing, and tools.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0c0b0e" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f5f8" media="(prefers-color-scheme: light)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --paper:#EDF0F3; --surface:#F8F9FB; --ink:#18233B; --muted:#56617A; --rule:#C8D0DB;
+  --cyan:#1B7C93; --moss:#4E6A2C; --gold:#94640E; --rose:#9A3F55; --slate:#6B7385;
+  --chip:#E1E6EC; --focus:#1B7C93;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#131A29; --surface:#1A2336; --ink:#E4E9F1; --muted:#9BA6B9; --rule:#2E3A52;
+    --cyan:#63C3D8; --moss:#A5C674; --gold:#E3B45E; --rose:#E08AA0; --slate:#A3ABBD;
+    --chip:#243049; --focus:#63C3D8;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#131A29; --surface:#1A2336; --ink:#E4E9F1; --muted:#9BA6B9; --rule:#2E3A52;
+  --cyan:#63C3D8; --moss:#A5C674; --gold:#E3B45E; --rose:#E08AA0; --slate:#A3ABBD;
+  --chip:#243049; --focus:#63C3D8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:var(--cyan);text-underline-offset:2px}
+a:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:18px 0 0;font-size:14px}
+.site-nav a{color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
+.site-nav a:hover{color:var(--ink)}
+.site-footer{border-top:1px solid var(--rule);margin-top:32px;padding-top:20px;font-size:14px;color:var(--muted)}
+.site-footer p{margin:6px 0}
+.site-footer .legal{margin-top:10px;font-size:13px;opacity:.75}
+
+.wip-banner{margin:16px 0 0;padding:10px 14px;border:1px solid var(--gold);border-left-width:4px;border-radius:6px;background:var(--surface);font-size:15px}
+.wip-banner b{color:var(--gold)}
+
+header.hero{padding:20px 0 4px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;max-width:18ch}
+.hero .lede{max-width:68ch;color:var(--muted);margin:0 0 12px}
+
+
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.legend{display:grid;gap:6px;margin:14px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:70ch;font-size:14px;list-style:none}
+.legend li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.03em;border:1px solid var(--v);color:var(--v);border-radius:999px;padding:1px 10px;white-space:nowrap}
+.pill.confirmed{--v:var(--moss)} .pill.expected{--v:var(--gold)} .pill.tba{--v:var(--slate)} .pill.advice{--v:var(--cyan)}
+.pill.sm{font-size:11px;padding:0 8px;vertical-align:1px;margin-right:4px}
+
+.toc{margin:18px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;max-width:70ch}
+.toc h2{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:var(--body)}
+.toc ol{margin:0;padding-left:22px;columns:2;column-gap:28px;font-size:15px}
+.toc li{margin:3px 0;break-inside:avoid}
+
+main section{padding:26px 0 8px;border-top:1px solid var(--rule);margin-top:26px;scroll-margin-top:12px}
+.sec-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 6px}
+.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;margin:0;display:flex;align-items:baseline;gap:10px}
+.sec-head .num{font:600 14px var(--font-mono,monospace);color:var(--muted)}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+h3.mini{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-family:var(--body)}
+ul.links{margin:0;padding-left:20px;max-width:76ch}
+ul.links li{margin:5px 0}
+
+
+
+footer{padding:34px 0 60px;color:var(--muted);font-size:15px}
+footer h2{color:var(--ink);font-family:var(--display);font-size:24px;margin:0 0 6px}
+footer ul{padding-left:18px;max-width:78ch}
+footer li{margin:5px 0}
+
+@media (max-width:760px){
+  body{font-size:16px}
+  .toc ol{columns:1}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+table.lim{border-collapse:collapse;width:100%;max-width:76ch;font-size:15px;margin:8px 0}
+table.lim th,table.lim td{border:1px solid var(--rule);padding:6px 10px;text-align:left}
+table.lim th{background:var(--surface);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.lim-wrap{overflow-x:auto}
+.note{max-width:76ch;margin:10px 0;padding:10px 14px;border:1px solid var(--rule);border-left:4px solid var(--cyan);border-radius:6px;background:var(--surface);font-size:15px}
+.note.warn{border-left-color:var(--gold)}
+.note p{margin:4px 0}
+section p{max-width:76ch}
+ul.links li small{color:var(--muted)}
+
+.util-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px;margin:8px 0 18px}
+.util{display:flex;gap:14px;padding:14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
+.u-img{flex:none;width:80px;height:80px;object-fit:contain;border-radius:8px;background:var(--chip)}
+.u-body{min-width:0}
+.util h3{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-family:var(--display);font-size:20px;margin:0 0 4px;line-height:1.2}
+.u-ico{width:32px;height:32px;vertical-align:middle;flex:none}
+.u-purpose{margin:0 0 8px;font-size:15px}
+.util dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:3px 12px;font-size:14px}
+.util dt{color:var(--muted);font-weight:700}
+.util dd{margin:0}
+.u-src{margin:8px 0 0;font-size:13px}
+.util-table td:first-child{white-space:nowrap}
+@media (max-width:560px){.util{flex-direction:column}.util dl{grid-template-columns:1fr}.util dt{margin-top:4px}}
+</style>
+<link rel="stylesheet" href="brand.css">
+<link rel="stylesheet" href="brand-guide-vars.css">
+</head>
+<body>
+<div class="wrap">
+
+<nav class="site-nav">
+  <a class="wordmark" href="./" aria-label="XIVKit home">XIV<b>KIT</b></a>
+  <a href="./">Tools I use</a>
+  <a href="watchlist.html">Watchlist</a>
+  <a href="plugins.html">Plugins</a>
+  <a href="./#guides">Guides</a>
+</nav>
+
+<p class="wip-banner" role="note"><b>Work in progress.</b> A starting point for housing resources, last checked November 15, 2026. Numbers come from community wikis and third-party articles, not official patch notes, so confirm them in game.</p>
+
+<header class="hero">
+  <h1>Housing for Beginners</h1>
+  <p class="lede">Just got a small house and not sure where to start? This page collects the best beginner guides, the rules that trip people up (permits, limits, the demolition timer), cheap ways to furnish, and the tools worth knowing about.</p>
+  <ul class="legend" aria-label="Status tags">
+    <li><span class="pill confirmed">Official</span> Posted by Square Enix on the Lodestone</li>
+    <li><span class="pill expected">Check in game</span> From a community wiki or third-party article. Confirm before relying on it</li>
+    <li><span class="pill advice">Our advice</span> A recommendation from us</li>
+  </ul>
+  <nav class="toc" aria-label="Sections">
+    <h2>On this page</h2>
+    <ol><li><a href="#guides">Beginner guides</a></li><li><a href="#permits">Permits and ownership</a></li><li><a href="#limits">Limits by size</a></li><li><a href="#flowerpots">Flowerpots</a></li><li><a href="#gardens">Garden patches</a></li><li><a href="#utilities">Utilities people miss</a></li><li><a href="#upkeep">Upkeep and demolition</a></li><li><a href="#furnish">Furnishing cheaply</a></li><li><a href="#tools">Sites and plugins</a></li><li><a href="#evercold">What may change in Evercold</a></li></ol>
+  </nav>
+</header>
+
+<main>
+  <section id="guides">
+    <div class="sec-head"><h2><span class="num">1</span>Beginner guides</h2></div>
+    <p>There is no single start-here guide that covers both the outside and the inside of a house, and no official beginner guide on the Lodestone. The best pair is the wiki for rules and the HGXIV guide for decorating.</p>
+    <ul class="links">
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Player_Housing" target="_blank" rel="noopener noreferrer">Console Games Wiki: Player Housing</a>: Districts, estate sizes, the lottery, fixtures, and furnishing limits. The most complete rules reference (last edited October 21, 2026).</li>
+      <li><a href="https://hgxiv.com/basics-guide/" target="_blank" rel="noopener noreferrer">HGXIV Basics Guide</a>: Written by housing designers. The Housing menu, interior remodeling, Layout Mode, grid snap, counter placement, and lighting. Interiors only, no exteriors.</li>
+      <li><a href="https://hgxiv.com" target="_blank" rel="noopener noreferrer">HGXIV</a>: Also links a Glitch Guide, a lighting guide, and a Design Guide marked "Updated as of Patch 7.5X". Has a Discord and YouTube channel for questions.</li>
+      <li><a href="https://ffxiv-housing-tutorials.carrd.co/" target="_blank" rel="noopener noreferrer">FFXIV Housing Tutorials</a>: Small placement tricks such as floating furniture and placing from storage. Anonymous and undated, so treat it as a tips list.</li>
+      <li><a href="https://housingsnap.com/" target="_blank" rel="noopener noreferrer">Housing Snap</a>: Player screenshots you can filter by house size. Good for small-house inspiration.</li>
+      <li><a href="https://na.finalfantasyxiv.com/blog/003684.html" target="_blank" rel="noopener noreferrer">Mister Foxclon's Neighborhood (Lodestone)</a>: Square Enix tours of player-built houses, for ideas.</li>
+    </ul>
+    <p class="note warn"><b>Skip the old buying guides.</b> Articles from the Patch 6.1 era (PCGamesN, NerdBear) predate lottery-only sales and the 7.5 furnishing limits. Even the wiki disagrees with itself in places: its Storage page still shows the old small-house cap.</p>
+  </section>
+
+  <section id="permits">
+    <div class="sec-head"><h2><span class="num">2</span>Permits and ownership</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p><b>There is only one housing permit.</b> The "Personal Estate Permit" and "Free Company Estate Permit" do not exist as separate items. After you win a plot, you buy a size-matched <b>Construction Permit</b> at the Estate Hall: 450,000 gil for a cottage (small), 1,000,000 for a house (medium), and 3,000,000 for a mansion (large). You then have 45 days to build.</p>
+    <p>What does vary is the kind of estate:</p>
+    <ul class="links">
+      <li><b>Personal house.</b> Needs a level 50 combat class and Second Lieutenant rank in a Grand Company. Can be shared with up to 3 friends.</li>
+      <li><b>Free Company house.</b> Needs FC rank 6, at least 4 members, and 30 days of membership for the buyer. Only FC houses have Private Chambers (300,000 gil each).</li>
+      <li><b>Apartment.</b> One per character, 500,000 gil, and it sits outside the house limit. Not subject to demolition. No yard or garden.</li>
+    </ul>
+    <p>A character can hold one personal house and, if they lead an FC, one FC house, plus one apartment. Personal and FC plots cannot be converted into each other. The wiki words the one-house rule two different ways, so confirm in game.</p>
+    <p>Land is sold by lottery on a 9-day cycle (5 days of entry, 4 of results), one entry per period. A small plot costs 3,000,000 to 3,750,000 gil depending on plot grade. Price does not change by district. The full price is held as a deposit while you wait.</p>
+    <p class="note"><b>Not the same thing:</b> hiring a vendor for your house also uses "permits". The cheapest is the 3,000 gil Steward Permit for an Estate Manservant or Maidservant.</p>
+  </section>
+
+  <section id="limits">
+    <div class="sec-head"><h2><span class="num">3</span>Limits by size</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>Patch 7.5 raised indoor furnishing limits by half and doubled yard limits. Your small house now holds <b>300 indoor and 40 yard</b> furnishings. Several things have their own separate limits, listed below the first table.</p>
+    <h3 class="mini">Furnishings</h3>
+    <div class="lim-wrap"><table class="lim">
+      <thead><tr><th>Estate</th><th>Indoor now</th><th>Indoor before 7.5</th><th>Yard now</th><th>Yard before 7.5</th></tr></thead>
+      <tbody>
+        <tr><td>Apartment</td><td>150</td><td>100</td><td>No yard</td><td>No yard</td></tr>
+        <tr><td>Private Chamber (FC house)</td><td>150</td><td>100</td><td>No yard</td><td>No yard</td></tr>
+        <tr><td><b>Small (Cottage)</b></td><td><b>300</b></td><td>200</td><td><b>40</b></td><td>20</td></tr>
+        <tr><td>Medium (House)</td><td>450</td><td>300</td><td>60</td><td>30</td></tr>
+        <tr><td>Large (Mansion)</td><td>600</td><td>400</td><td>80</td><td>40</td></tr>
+      </tbody>
+    </table></div>
+    <h3 class="mini">Separate limits</h3>
+    <div class="lim-wrap"><table class="lim">
+      <thead><tr><th>Estate</th><th>Flowerpots</th><th>Garden patches</th><th>Vendors (NPCs)</th><th>Crafting facilities</th></tr></thead>
+      <tbody>
+        <tr><td>Apartment</td><td>Up to 2</td><td>0</td><td>4</td><td>2</td></tr>
+        <tr><td>Private Chamber</td><td>Up to 2</td><td>0</td><td>4</td><td>2</td></tr>
+        <tr><td><b>Small (Cottage)</b></td><td><b>2</b></td><td><b>1</b></td><td>6</td><td>4</td></tr>
+        <tr><td>Medium (House)</td><td>3</td><td>2</td><td>8</td><td>6</td></tr>
+        <tr><td>Large (Mansion)</td><td>4</td><td>3</td><td>10</td><td>8</td></tr>
+      </tbody>
+    </table></div>
+    <p>Every estate size has a Chocobo Stable (an apartment building shares one among its tenants). Summoning Bells, Crystal Bells, the Orchestrion, and the Armoire are listed as available but no count is given. The wiki gives no numeric limit for aquariums, wall-mounted items, or tabletop items.</p>
+    <p>Patch 7.5 also caps how many furnishings are drawn on screen at 400 and added a Display Limits setting. Some players reported indoor items disappearing after the increase. We could not confirm whether that is fixed.</p>
+    <p class="note warn"><b>Not yet sourced:</b> whether flowerpots, vendors, and crafting facilities also count toward the indoor furnishing total. No wiki page says either way, so check in game before filling a small house to the limit.</p>
+    <p><b>Fixtures.</b> A house has four required exterior pieces (roof, wall, windows, door) and four optional ones (roof decoration, wall decoration, placard, fence), plus interior wall, flooring, and ceiling light. Placed furnishings can no longer be traded. A Storeroom holds items that cannot return to your inventory.</p>
+    <ul class="links">
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Player_Housing" target="_blank" rel="noopener noreferrer">Console Games Wiki: Player Housing</a>: Furnishing limits and the Patch 7.5 note (last edited October 21, 2026).</li>
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Apartments" target="_blank" rel="noopener noreferrer">Console Games Wiki: Apartments</a> and <a href="https://ffxiv.consolegameswiki.com/wiki/Private_Chamber" target="_blank" rel="noopener noreferrer">Private Chamber</a>: Limits for the smallest estates.</li>
+    </ul>
+  </section>
+
+  <section id="flowerpots">
+    <div class="sec-head"><h2><span class="num">4</span>Flowerpots</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>A flowerpot is a <b>furnishing that grows one plant indoors</b>. It is not a garden patch, and it is the only way to garden in an apartment or Private Chamber.</p>
+    <div class="lim-wrap"><table class="lim">
+      <thead><tr><th>Estate</th><th>Flowerpots</th></tr></thead>
+      <tbody>
+        <tr><td>Apartment</td><td>Up to 2</td></tr>
+        <tr><td>Private Chamber</td><td>Up to 2</td></tr>
+        <tr><td><b>Small (Cottage)</b></td><td><b>2</b></td></tr>
+        <tr><td>Medium (House)</td><td>3</td></tr>
+        <tr><td>Large (Mansion)</td><td>4</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="links">
+      <li><b>One crop per pot.</b> A garden patch has several beds. A flowerpot has one.</li>
+      <li><b>Same plants as the garden.</b> Flowerpots grow the same plants and crops as patches, with the same steps (plant, fertilize once per hour, tend, harvest). Some seeds can only be grown in a flowerpot.</li>
+      <li><b>Indoors.</b> The wiki describes flowerpots as indoor furnishings. It describes no outdoor flowerpot.</li>
+      <li><b>No crossbreeding.</b> The wiki says intercrossing is not possible in a flowerpot.</li>
+      <li><b>Pots in storage do not grow.</b> Take them out of the Storeroom to keep a crop going.</li>
+    </ul>
+    <p>The Flowerpot page has no Apartment row, while the Apartments page says "up to two", so the apartment figure is from that page only.</p>
+    <ul class="links">
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Flowerpot" target="_blank" rel="noopener noreferrer">Console Games Wiki: Flowerpot</a>: Counts by size and which seeds need a pot (last edited July 8, 2026).</li>
+    </ul>
+  </section>
+
+  <section id="gardens">
+    <div class="sec-head"><h2><span class="num">5</span>Garden patches</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>A garden patch is a <b>placed outdoor plot with several beds</b>, so it only applies to houses with a yard. Apartments and Private Chambers cannot have one.</p>
+    <div class="lim-wrap"><table class="lim">
+      <thead><tr><th>Estate</th><th>Patches</th><th>Beds in total</th></tr></thead>
+      <tbody>
+        <tr><td>Apartment / Private Chamber</td><td>0</td><td>0</td></tr>
+        <tr><td><b>Small (Cottage)</b></td><td><b>1</b></td><td><b>Up to 8</b></td></tr>
+        <tr><td>Medium (House)</td><td>2</td><td>Up to 16</td></tr>
+        <tr><td>Large (Mansion)</td><td>3</td><td>Up to 24</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="links">
+      <li><b>Patch types.</b> Round has 4 beds, Oblong has 6, Deluxe has 8. A small house gets one patch, so only the Deluxe fills the 8-bed allowance.</li>
+      <li><b>Outdoors only.</b> Patches go on the estate grounds.</li>
+      <li><b>Patches in storage do not grow.</b></li>
+    </ul>
+    <ul class="links">
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Gardening" target="_blank" rel="noopener noreferrer">Console Games Wiki: Gardening</a>: Patch types, planting steps, and crossbreeding (last edited October 13, 2026).</li>
+    </ul>
+  </section>
+
+  <section id="utilities">
+    <div class="sec-head"><h2><span class="num">6</span>Utilities people miss</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>These furnishings do something useful rather than just look nice. Most new owners skip a few. Item icons are from XIVAPI, and prices and sources are from the Console Games Wiki and Garland Tools, so check in game before buying. Most of these are crafted and have no vendor price, so we link Universalis instead of guessing.</p>
+    <p class="note"><b>For a small house:</b> you have 6 vendor slots, 4 crafting facility slots, and 40 yard items. The estate-wide items below take one slot each, so start with the four essentials.</p>
+
+    <h3 class="mini">The four essentials</h3>
+    <div class="util-grid">
+      <article class="util" id="u-6600">
+        <img class="u-img" data-item="6600" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="6600" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Miniature Aetheryte <span class="pill sm advice">Everyone</span></h3>
+          <p class="u-purpose">Gives your estate its own teleport point, so you never need the residential district plaza. Teleporting to it costs 75% less (minimum 25 gil).</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Grand Company quartermasters (Second Lieutenant rank or higher). It is tradeable, so the Market Board is an option.</dd>
+            <dt>Price</dt><dd>14,470 Grand Company Seals</dd>
+            <dt>Placement</dt><dd>Outdoors, near the front gate. The item description says it cannot be retrieved once placed, so pick the spot carefully.</dd>
+            <dt>Who needs it</dt><dd>Every owner. Tenants and FC members can teleport to it too.</dd>
+            <dt>Limit</dt><dd>One per estate. Counts toward the yard limit (40 for a small house).</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Miniature_Aetheryte" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-7064">
+        <img class="u-img" data-item="7064" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="7064" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Summoning Bell <span class="pill sm advice">Everyone</span></h3>
+          <p class="u-purpose">Calls your retainers to your house, so you do not need to visit an inn or Retainer Vocate.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Crafted by a Blacksmith (level 50), or from the Market Board.</dd>
+            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Placement</dt><dd>Indoors, near where you stand most of the time. Keep it out of the way of your decorating.</dd>
+            <dt>Who needs it</dt><dd>Anyone with retainers, which is nearly everyone.</dd>
+            <dt>Limit</dt><dd>One per estate. Counts toward the indoor limit.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Summoning_Bell" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-7989">
+        <img class="u-img" data-item="7989" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="7989" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Chocobo Stable <span class="pill sm advice">Everyone</span></h3>
+          <p class="u-purpose">Lets you raise chocobos and change your companion chocobo&#x27;s feather color at home.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Housing Merchant in each residential district, or the Market Board. A free stable already stands outside every apartment building.</dd>
+            <dt>Price</dt><dd>125,000 gil</dd>
+            <dt>Placement</dt><dd>Outdoors, in the yard. It can be dyed to match your fence and walls.</dd>
+            <dt>Who needs it</dt><dd>Anyone who wants to raise or recolor a chocobo. Apartment owners can use the free one outside the building.</dd>
+            <dt>Limit</dt><dd>One per estate. Counts toward the yard limit.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Chocobo_Stable" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-6475">
+        <img class="u-img" data-item="6475" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="6475" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Moogle Letter Box <span class="pill sm advice">Everyone</span></h3>
+          <p class="u-purpose">Your housing mailbox: a Delivery Moogle at your gate for letters and delivered rewards. The in-game name is &quot;Letter Box&quot;, not mailbox.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Crafted by an Armorer (level 45), or from the Market Board.</dd>
+            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Placement</dt><dd>Outdoors, by the entrance.</dd>
+            <dt>Who needs it</dt><dd>Players who send letters or collect Mog Station and reward deliveries.</dd>
+            <dt>Limit</dt><dd>One letter box per estate. The Regal Letter Box is the fancier version and shares the same slot. Counts toward the yard limit.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Moogle_Letter_Box" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="mini">Storage, music, and appearance</h3>
+    <div class="util-grid">
+      <article class="util" id="u-8789">
+        <img class="u-img" data-item="8789" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="8789" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Armoire <span class="pill sm advice">Storage</span></h3>
+          <p class="u-purpose">Free, unlimited storage for eligible gear such as event, achievement, and artifact items. No Glamour Prisms are needed, but dye is lost.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 50), or from the Market Board.</dd>
+            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Placement</dt><dd>Indoors. Anywhere is fine, since you open it from the menu.</dd>
+            <dt>Who needs it</dt><dd>Anyone with a full armory from seasonal or event gear.</dd>
+            <dt>Limit</dt><dd>One per estate. Counts toward the indoor limit.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Armoire" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-14045">
+        <img class="u-img" data-item="14045" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="14045" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Orchestrion <span class="pill sm advice">Music</span></h3>
+          <p class="u-purpose">Plays any song you own from your Orchestrion rolls for everyone in the room.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 60), or from the Market Board.</dd>
+            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Placement</dt><dd>Indoors, on the floor. There are smaller tabletop versions if floor space is tight.</dd>
+            <dt>Who needs it</dt><dd>Anyone who wants background music.</dd>
+            <dt>Limit</dt><dd>One orchestrion of any type per estate, with a playlist of up to 8 songs.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Orchestrion" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-13061">
+        <img class="u-img" data-item="13061" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="13061" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Crystal Bell <span class="pill sm advice">Appearance</span></h3>
+          <p class="u-purpose">Summons the Aesthetician at home to change your hairstyle, face, and tattoos for 2,000 gil per accepted change. Unlock the Aesthetician first with the level 15 quest &quot;Beauty Is Only Scalp Deep&quot;.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Crafted by a Blacksmith (level 60), or from the Market Board.</dd>
+            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Placement</dt><dd>Indoors, near your Summoning Bell.</dd>
+            <dt>Who needs it</dt><dd>Anyone who changes their look.</dd>
+            <dt>Limit</dt><dd>One per estate. Counts toward the indoor limit.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Crystal_Bell" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-13069">
+        <img class="u-img" data-item="13069" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="13069" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">The Unending Journey <span class="pill sm advice">Story</span></h3>
+          <p class="u-purpose">Lets you rewatch cutscenes from quests you have completed.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 58), or from the Market Board.</dd>
+            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Placement</dt><dd>Indoors, as a table piece.</dd>
+            <dt>Who needs it</dt><dd>Story fans.</dd>
+            <dt>Limit</dt><dd>One per estate.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/The_Unending_Journey" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+      <article class="util" id="u-23846">
+        <img class="u-img" data-item="23846" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
+        <div class="u-body">
+          <h3><img class="u-ico" data-item="23846" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Mannequin <span class="pill sm advice">Glamour</span></h3>
+          <p class="u-purpose">Displays a gear set, and lets a retainer sell that gear from your estate. You must assign a retainer as the merchant when you place it.</p>
+          <dl>
+            <dt>Where to get it</dt><dd>Housing Merchant or Apartment Merchant.</dd>
+            <dt>Price</dt><dd>10,000 gil</dd>
+            <dt>Placement</dt><dd>Indoors, where visitors will see it.</dd>
+            <dt>Who needs it</dt><dd>Glamour fans and sellers.</dd>
+            <dt>Limit</dt><dd>Unclear whether it counts toward the vendor limit. Check in game.</dd>
+          </dl>
+          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Mannequin" target="_blank" rel="noopener noreferrer">Console Games Wiki</a></p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="mini">Vendor NPCs</h3>
+    <p>Housing vendors are hired with a permit bought from an Independent Sutler in each residential district, or an Apartment Merchant in apartment lobbies. They share one limit across all types: 4 in an apartment, <b>6 in a small house</b>, 8 in a medium, 10 in a large. Pick the ones you will really use. A Mender and a Steward are the usual first two.</p>
+    <div class="lim-wrap"><table class="lim util-table">
+      <thead><tr><th>Permit</th><th>Price</th><th>What it does</th></tr></thead>
+      <tbody><tr><td><img class="u-ico" data-item="7156x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Mender Permit</b></td><td>3,000 gil</td><td>Repairs your gear for gil (to 100% only).</td></tr><tr><td><img class="u-ico" data-item="13055x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Steward Permit</b></td><td>3,000 gil</td><td>Hires an Estate Manservant or Maidservant who sells the same furnishings as a Housing Merchant. Handy for decorating without leaving home.</td></tr><tr><td><img class="u-ico" data-item="7154x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Junkmonger Permit</b></td><td>3,000 gil</td><td>Sells cheap dyes, Dark Matter, garden patches, and Magicked Stable Broom.</td></tr><tr><td><img class="u-ico" data-item="7153x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Material Supplier Permit</b></td><td>3,000 gil</td><td>Sells low-level crafting ingredients. Only useful while leveling.</td></tr><tr><td><img class="u-ico" data-item="16704x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Materia Melder Permit</b></td><td>5,000 gil</td><td>Melds materia for gil. Cannot overmeld.</td></tr><tr><td><img class="u-ico" data-item="23230x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Journeyman Salvager Permit</b></td><td>5,000 gil</td><td>The housing version of the Calamity Salvager. Rebuys lost quest or achievement items.</td></tr></tbody>
+    </table></div>
+
+    <h3 class="mini">Crafting facilities</h3>
+    <p>A facility gives a 30-minute buff that raises your maximum CP while you craft on the matching class. It only helps at crafter level 90 or below. A small house holds <b>4</b> facilities, so choose the classes you are leveling. They are crafted or bought on the Market Board, with no vendor price. Owners and tenants can use them in a personal house, and any member in an FC house. The wiki lists the CP bonus as +10, which we have not tested.</p>
+    <div class="lim-wrap"><table class="lim util-table">
+      <thead><tr><th>Facility</th><th>Class it boosts</th></tr></thead>
+      <tbody><tr><td><img class="u-ico" data-item="7065" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Woodworking Bench</b></td><td>Carpenter</td></tr><tr><td><img class="u-ico" data-item="7066" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Smithing Bench</b></td><td>Blacksmith</td></tr><tr><td><img class="u-ico" data-item="7067" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Armorcraft Forge</b></td><td>Armorer</td></tr><tr><td><img class="u-ico" data-item="7068" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Goldsmithing Bench</b></td><td>Goldsmith</td></tr><tr><td><img class="u-ico" data-item="7069" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Leatherworking Bench</b></td><td>Leatherworker</td></tr><tr><td><img class="u-ico" data-item="7070" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Clothcraft Loom</b></td><td>Weaver</td></tr><tr><td><img class="u-ico" data-item="7071" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Alchemy Furnace</b></td><td>Alchemist</td></tr><tr><td><img class="u-ico" data-item="7072" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Cooking Stove</b></td><td>Culinarian</td></tr></tbody>
+    </table></div>
+    <p class="note warn"><b>Not included:</b> the Glamour Dresser cannot be placed in any estate. Aquariums and display stands are decorative only. Private Chambers are Free Company rooms, not furnishings.</p>
+  </section>
+
+  <section id="upkeep">
+    <div class="sec-head"><h2><span class="num">7</span>Upkeep and demolition</h2><div class="pills"><span class="pill confirmed">Official</span></div></div>
+    <p><b>Visit your house at least once every 45 days</b> or it is demolished. You get a warning in game at 30 days and by email at 35 and 42 days. For a shared estate, only the owner's visit counts, not a tenant's. An FC house counts a visit from any FC member.</p>
+    <p class="note warn"><b>The timer is live.</b> Demolition was briefly paused in October 2026 after a security issue. The Lodestone notice says it resumed on October 26, 2026 at 1:00 a.m. PDT, even though the wiki still says "paused". The notice does not say whether timers were reset.</p>
+    <p>If a house is demolished, you can recover 80% of the plot price from the caretaker within 35 days. Permits and exteriors are not refunded.</p>
+  </section>
+
+  <section id="furnish">
+    <div class="sec-head"><h2><span class="num">8</span>Furnishing cheaply</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>Housing Merchants sell the basics for little. Walls, floors, rugs, and bookshelves run about 5,000 gil, chairs and tables about 2,000, and lamps 3,000 to 4,000. Furnishing a small house from merchants alone is plausibly well under 1,000,000 gil (our estimate, not a sourced figure).</p>
+    <ul class="links">
+      <li><b>Preview first.</b> Merchant items can be previewed before you buy. Items from vendors, retainers, Feast, seasonal events, and the Mog Station cannot.</li>
+      <li><b>Other sources.</b> Crafting, the Market Board, garden plants, Island Sanctuary, seasonal events, Feast rewards, and Mog Station items.</li>
+      <li><b>Habits worth learning early.</b> Rotate while holding an item, use grid snap, place items on counter surfaces, use Storage Mode, and use "Move to Front Door" if you get stuck.</li>
+    </ul>
+    <p>Which furniture is cheapest to craft, and which comes from the Gold Saucer or achievements, is not covered here yet.</p>
+    <ul class="links">
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Housing_Items" target="_blank" rel="noopener noreferrer">Console Games Wiki: Housing Items</a>: Where each kind of furnishing comes from.</li>
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Template:Housing_Merchant" target="_blank" rel="noopener noreferrer">Console Games Wiki: Housing Merchant list</a>: Merchant stock and prices.</li>
+    </ul>
+  </section>
+
+  <section id="tools">
+    <div class="sec-head"><h2><span class="num">9</span>Sites and plugins</h2></div>
+    <h3 class="mini">Websites</h3>
+    <ul class="links">
+      <li><a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a>: Crowd-sourced Market Board prices for furnishings.</li>
+      <li><a href="https://www.garlandtools.org/db/" target="_blank" rel="noopener noreferrer">Garland Tools</a>: Crafting recipes and lists for furniture you make yourself.</li>
+      <li><a href="https://remakeplace.itch.io/remakeplace" target="_blank" rel="noopener noreferrer">Re:MakePlace</a>: A free standalone Windows app (about 2 GB) for planning layouts. Not a Dalamud plugin.</li>
+    </ul>
+    <h3 class="mini">Dalamud plugins</h3>
+    <p>These are in Dalamud's default plugin directory, so no custom repo is needed. Almost all are hidden from the in-game browser, so <b>search the exact plugin name</b> to find and install them. Third-party plugins are client mods and are not endorsed by Square Enix. Use them at your own risk.</p>
+    <ul class="links">
+      <li><a href="https://github.com/Abyeon/Housingway" target="_blank" rel="noopener noreferrer">Housingway</a>: Indoor lighting and camera tweaks.</li>
+      <li><a href="https://github.com/perchbirdd/Housemate" target="_blank" rel="noopener noreferrer">Housemate</a>: Shows fixture and object info for inspiration. Does not help with placement.</li>
+      <li><a href="https://github.com/InitialDet/TargetFurniture" target="_blank" rel="noopener noreferrer">Target Furniture</a>: Selects overlapping items you cannot click.</li>
+      <li><a href="https://github.com/Abyeon/HousingCullFix" target="_blank" rel="noopener noreferrer">Housing Cull Fix</a>: Removes the 400-item display limit.</li>
+      <li><a href="https://github.com/zhudotexe/FFXIV_PaissaHouse" target="_blank" rel="noopener noreferrer">PaissaHouse</a>: Alerts you to new plots on your home world.</li>
+    </ul>
+    <p>Other default-repo housing helpers: Housing Herald, Facade, Doorbell, Allagan Tools, Item Search, and Price Insight. BDTH, which lets players go past normal placement limits, is not in the default repo and would need a custom repo, so we are not recommending it here. Better Housing is listed but looks abandoned (last updated December 2023). More on our <a href="plugins.html">plugins page</a>.</p>
+  </section>
+
+  <section id="evercold">
+    <div class="sec-head"><h2><span class="num">10</span>What may change in Evercold</h2></div>
+    <p>Evercold releases February 23, 2027, with early access on February 19. Secondary sources report that Yoshida confirmed two housing overhauls for that window: a UI overhaul aimed at casual players, and a second one he did not name. Anything beyond that, including new plots, is speculation, so do not plan around it. See our <a href="get-ready-for-evercold.html">Evercold prep checklist</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <h2>To check before this is final</h2>
+  <ul>
+    <li>The 7.5 limits and the one-house rule, in game or against the Lodestone patch notes.</li>
+    <li>Entry-permission settings, Layout Mode controls, and Island Sanctuary, which this draft does not cover yet.</li>
+    <li>Reddit's decorating community, Eorzea Collection, and PaissaDB could not be verified, so they are not linked.</li>
+  </ul>
+  <p>Item names and prices come from the Console Games Wiki and community sources. Item icons are served by <a href="https://beta.xivapi.com/" target="_blank" rel="noopener noreferrer">XIVAPI</a>. FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made page, not affiliated with or endorsed by Square Enix.</p>
+</footer>
+</div>
+<script>
+(function () {
+  // XIVAPI Item sheet icon paths, keyed by item id. Permits share one icon (026192); the "x" suffix keys a permit row.
+  var ICON_PATHS = {
+    6600:'052000/052474', 7064:'052000/052513', 7989:'052000/052155', 6475:'052000/052118',
+    8789:'052000/052536', 14045:'052000/052587', 13061:'052000/052586', 13069:'052000/052575',
+    23846:'052000/052642',
+    7065:'052000/052500', 7066:'052000/052498', 7067:'052000/052502', 7068:'052000/052504',
+    7069:'052000/052499', 7070:'052000/052503', 7071:'052000/052501', 7072:'052000/052505'
+  };
+  var BASE = 'https://beta.xivapi.com/api/1/asset?path=ui/icon/';
+  document.querySelectorAll('img[data-item]').forEach(function (img) {
+    var path = img.getAttribute('data-path') ? '026000/' + img.getAttribute('data-path') : ICON_PATHS[parseInt(img.getAttribute('data-item'), 10)];
+    if (!path) { img.style.visibility = 'hidden'; return; }
+    img.src = BASE + path + (img.hasAttribute('data-hr') ? '_hr1' : '') + '.tex&format=png';
+  });
+})();
+</script>
+</body>
+</html>
