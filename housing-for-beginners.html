@@ -83,8 +83,8 @@ main section{padding:26px 0 8px;border-top:1px solid var(--rule);margin-top:26px
 .sec-head .num{font:600 14px var(--font-mono,monospace);color:var(--muted)}
 .pills{display:flex;flex-wrap:wrap;gap:6px}
 h3.mini{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-family:var(--body)}
-ul.links{margin:0;padding-left:20px;max-width:76ch}
-ul.links li{margin:5px 0}
+.links{margin:0;padding-left:20px;max-width:76ch}
+.links li{margin:5px 0}
 
 
 
@@ -121,6 +121,15 @@ ul.links li small{color:var(--muted)}
 .util dd{margin:0}
 .u-src{margin:8px 0 0;font-size:13px}
 .util-table td:first-child{white-space:nowrap}
+.price-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 4px;padding:10px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:76ch;font-size:15px}
+.price-bar select,.price-bar button{font:inherit;font-size:14px;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:4px 8px}
+.price-bar button{cursor:pointer}
+.price-bar button:disabled{opacity:.6;cursor:default}
+#priceStatus{color:var(--muted);font-size:13px}
+.price-hint{margin:0 0 12px;font-size:13px;color:var(--muted)}
+.mb b{font-variant-numeric:tabular-nums}
+.mb small{color:var(--muted);font-size:12px}
+.mb a{white-space:nowrap}
 @media (max-width:560px){.util{flex-direction:column}.util dl{grid-template-columns:1fr}.util dt{margin-top:4px}}
 </style>
 <link rel="stylesheet" href="brand.css">
@@ -149,7 +158,7 @@ ul.links li small{color:var(--muted)}
   </ul>
   <nav class="toc" aria-label="Sections">
     <h2>On this page</h2>
-    <ol><li><a href="#guides">Beginner guides</a></li><li><a href="#permits">Permits and ownership</a></li><li><a href="#limits">Limits by size</a></li><li><a href="#flowerpots">Flowerpots</a></li><li><a href="#gardens">Garden patches</a></li><li><a href="#utilities">Utilities people miss</a></li><li><a href="#upkeep">Upkeep and demolition</a></li><li><a href="#furnish">Furnishing cheaply</a></li><li><a href="#tools">Sites and plugins</a></li><li><a href="#evercold">What may change in Evercold</a></li></ol>
+    <ol><li><a href="#guides">Beginner guides</a></li><li><a href="#permits">Permits and ownership</a></li><li><a href="#sharing">Sharing your house</a></li><li><a href="#limits">Limits by size</a></li><li><a href="#flowerpots">Flowerpots</a></li><li><a href="#gardens">Garden patches</a></li><li><a href="#utilities">Utilities people miss</a></li><li><a href="#upkeep">Upkeep and demolition</a></li><li><a href="#furnish">Furnishing cheaply</a></li><li><a href="#tools">Sites and plugins</a></li><li><a href="#evercold">What may change in Evercold</a></li></ol>
   </nav>
 </header>
 
@@ -172,7 +181,7 @@ ul.links li small{color:var(--muted)}
     <p><b>There is only one housing permit.</b> The "Personal Estate Permit" and "Free Company Estate Permit" do not exist as separate items. After you win a plot, you buy a size-matched <b>Construction Permit</b> at the Estate Hall: 450,000 gil for a cottage (small), 1,000,000 for a house (medium), and 3,000,000 for a mansion (large). You then have 45 days to build.</p>
     <p>What does vary is the kind of estate:</p>
     <ul class="links">
-      <li><b>Personal house.</b> Needs a level 50 combat class and Second Lieutenant rank in a Grand Company. Can be shared with up to 3 friends.</li>
+      <li><b>Personal house.</b> Needs a level 50 combat class and Second Lieutenant rank in a Grand Company. Can be shared with up to 3 friends (see <a href="#sharing">Sharing your house</a>).</li>
       <li><b>Free Company house.</b> Needs FC rank 6, at least 4 members, and 30 days of membership for the buyer. Only FC houses have Private Chambers (300,000 gil each).</li>
       <li><b>Apartment.</b> One per character, 500,000 gil, and it sits outside the house limit. Not subject to demolition. No yard or garden.</li>
     </ul>
@@ -181,8 +190,41 @@ ul.links li small{color:var(--muted)}
     <p class="note"><b>Not the same thing:</b> hiring a vendor for your house also uses "permits". The cheapest is the 3,000 gil Steward Permit for an Estate Manservant or Maidservant.</p>
   </section>
 
+  <section id="sharing">
+    <div class="sec-head"><h2><span class="num">3</span>Sharing your house with a friend</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>The owner of a personal house can make up to <b>3 friends</b> "tenants". Tenants can teleport to the house and, if you allow it, decorate and garden. The game calls this Estate Sharing. There is no cost.</p>
+    <h3 class="mini">How to add a tenant</h3>
+    <ol class="links">
+      <li><b>Add them to your Friend List first.</b> They must be from your home world.</li>
+      <li>Open the <b>Housing</b> menu (in the Social menu), then go to <b>Estate Settings</b>, pick your estate, and choose <b>Shared Estate Settings</b>. That page can take a minute to load, so wait for it.</li>
+      <li>Pick your friend from the list and add them as a tenant.</li>
+      <li>Set their <b>Tenant Authorizations</b> (below).</li>
+    </ol>
+    <p class="note"><b>"Not on your Friend List" error, even though they are?</b> Remove them from your Friend List, add them again, and retry. You also get an error if your friend is already a tenant of two other houses.</p>
+    <h3 class="mini">What you can let a tenant do</h3>
+    <ul class="links">
+      <li><b>Estate Customization:</b> add, remove, and dye furnishings.</li>
+      <li><b>Gardening:</b> planting, harvesting, and crop disposal, each set separately.</li>
+      <li><b>Stable Tending:</b> stable chocobos.</li>
+      <li><b>Orchestrion:</b> play music.</li>
+      <li><b>Message Book:</b> manage the Message Book.</li>
+    </ul>
+    <h3 class="mini">Good to know</h3>
+    <ul class="links">
+      <li><b>Tenants do not reset the demolition timer.</b> Only the owner's visits count, so the owner still has to go in at least once every 45 days.</li>
+      <li><b>Tenants can teleport home.</b> They can use the estate's Miniature Aetheryte like the owner, and they can use its crafting facilities.</li>
+      <li><b>Only the owner can reclaim items</b> if the house is demolished.</li>
+      <li><b>Limits.</b> A player can be a tenant of at most 2 houses. Apartments cannot be shared.</li>
+      <li><b>Leaving.</b> A tenant can remove themselves from the tenant list at any time.</li>
+    </ul>
+    <p class="note warn"><b>Not yet sourced:</b> the exact button names on the Shared Estate Settings page, whether your friend has to accept, and how the owner removes a tenant. Check these in game.</p>
+    <ul class="links">
+      <li><a href="https://ffxiv.consolegameswiki.com/wiki/Personal_Housing" target="_blank" rel="noopener noreferrer">Console Games Wiki: Personal Housing</a>: The Estate Sharing section, with the menu path and authorizations (last edited March 4, 2026).</li>
+    </ul>
+  </section>
+
   <section id="limits">
-    <div class="sec-head"><h2><span class="num">3</span>Limits by size</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <div class="sec-head"><h2><span class="num">4</span>Limits by size</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
     <p>Your small house holds <b>300 indoor and 40 yard</b> furnishings. Several things have their own separate limits, listed below the first table.</p>
     <h3 class="mini">Furnishings</h3>
     <div class="lim-wrap"><table class="lim">
@@ -217,7 +259,7 @@ ul.links li small{color:var(--muted)}
   </section>
 
   <section id="flowerpots">
-    <div class="sec-head"><h2><span class="num">4</span>Flowerpots</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <div class="sec-head"><h2><span class="num">5</span>Flowerpots</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
     <p>A flowerpot is a <b>furnishing that grows one plant indoors</b>. It is not a garden patch, and it is the only way to garden in an apartment or Private Chamber.</p>
     <div class="lim-wrap"><table class="lim">
       <thead><tr><th>Estate</th><th>Flowerpots</th></tr></thead>
@@ -243,7 +285,7 @@ ul.links li small{color:var(--muted)}
   </section>
 
   <section id="gardens">
-    <div class="sec-head"><h2><span class="num">5</span>Garden patches</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <div class="sec-head"><h2><span class="num">6</span>Garden patches</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
     <p>A garden patch is a <b>placed outdoor plot with several beds</b>, so it only applies to houses with a yard. Apartments and Private Chambers cannot have one.</p>
     <div class="lim-wrap"><table class="lim">
       <thead><tr><th>Estate</th><th>Patches</th><th>Beds in total</th></tr></thead>
@@ -265,8 +307,14 @@ ul.links li small{color:var(--muted)}
   </section>
 
   <section id="utilities">
-    <div class="sec-head"><h2><span class="num">6</span>Utilities people miss</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
-    <p>These furnishings do something useful rather than just look nice. Most new owners skip a few. Item icons are from XIVAPI, and prices and sources are from the Console Games Wiki and Garland Tools, so check in game before buying. Most of these are crafted and have no vendor price, so we link Universalis instead of guessing.</p>
+    <div class="sec-head"><h2><span class="num">7</span>Utilities people miss</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <p>These furnishings do something useful rather than just look nice. Most new owners skip a few. Item icons are from XIVAPI, and prices and sources are from the Console Games Wiki and Garland Tools, so check in game before buying. Most of these are crafted and have no vendor price, so each one shows the cheapest Market Board listing right now, live from Universalis.</p>
+    <div class="price-bar">
+      <label>Market Board prices for <select id="dcSelect"></select></label>
+      <button type="button" id="refreshPrices">Refresh prices</button>
+      <span id="priceStatus" role="status" aria-live="polite"></span>
+    </div>
+    <p class="price-hint">Uses the same data center setting as our other price tools, so pick it once and it is remembered across the site.</p>
     <p class="note"><b>For a small house:</b> you have 6 vendor slots, 4 crafting facility slots, and 40 yard items. The estate-wide items below take one slot each, so start with the four essentials.</p>
 
     <h3 class="mini">The four essentials</h3>
@@ -274,7 +322,7 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-6600">
         <img class="u-img" data-item="6600" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="6600" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Miniature Aetheryte <span class="pill sm advice">Everyone</span></h3>
+          <h3>Miniature Aetheryte <span class="pill sm advice">Everyone</span></h3>
           <p class="u-purpose">Gives your estate its own teleport point, so you never need the residential district plaza. Teleporting to it costs 75% less (minimum 25 gil).</p>
           <dl>
             <dt>Where to get it</dt><dd>Grand Company quartermasters (Second Lieutenant rank or higher). It is tradeable, so the Market Board is an option.</dd>
@@ -289,11 +337,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-7064">
         <img class="u-img" data-item="7064" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="7064" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Summoning Bell <span class="pill sm advice">Everyone</span></h3>
+          <h3>Summoning Bell <span class="pill sm advice">Everyone</span></h3>
           <p class="u-purpose">Calls your retainers to your house, so you do not need to visit an inn or Retainer Vocate.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by a Blacksmith (level 50), or from the Market Board.</dd>
-            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Price</dt><dd>No vendor price. Crafted, or bought on the Market Board.</dd>
             <dt>Placement</dt><dd>Indoors, near where you stand most of the time. Keep it out of the way of your decorating.</dd>
             <dt>Who needs it</dt><dd>Anyone with retainers, which is nearly everyone.</dd>
             <dt>Limit</dt><dd>One per estate. Counts toward the indoor limit.</dd>
@@ -304,7 +352,7 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-7989">
         <img class="u-img" data-item="7989" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="7989" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Chocobo Stable <span class="pill sm advice">Everyone</span></h3>
+          <h3>Chocobo Stable <span class="pill sm advice">Everyone</span></h3>
           <p class="u-purpose">Lets you raise chocobos and change your companion chocobo&#x27;s feather color at home.</p>
           <dl>
             <dt>Where to get it</dt><dd>Housing Merchant in each residential district, or the Market Board. A free stable already stands outside every apartment building.</dd>
@@ -319,11 +367,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-6475">
         <img class="u-img" data-item="6475" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="6475" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Moogle Letter Box <span class="pill sm advice">Everyone</span></h3>
+          <h3>Moogle Letter Box <span class="pill sm advice">Everyone</span></h3>
           <p class="u-purpose">Your housing mailbox: a Delivery Moogle at your gate for letters and delivered rewards. The in-game name is &quot;Letter Box&quot;, not mailbox.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by an Armorer (level 45), or from the Market Board.</dd>
-            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Price</dt><dd>No vendor price. Crafted, or bought on the Market Board.</dd>
             <dt>Placement</dt><dd>Outdoors, by the entrance.</dd>
             <dt>Who needs it</dt><dd>Players who send letters or collect Mog Station and reward deliveries.</dd>
             <dt>Limit</dt><dd>One letter box per estate. The Regal Letter Box is the fancier version and shares the same slot. Counts toward the yard limit.</dd>
@@ -338,11 +386,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-8789">
         <img class="u-img" data-item="8789" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="8789" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Armoire <span class="pill sm advice">Storage</span></h3>
+          <h3>Armoire <span class="pill sm advice">Storage</span></h3>
           <p class="u-purpose">Free, unlimited storage for eligible gear such as event, achievement, and artifact items. No Glamour Prisms are needed, but dye is lost.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 50), or from the Market Board.</dd>
-            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Price</dt><dd>No vendor price. Crafted, or bought on the Market Board.</dd>
             <dt>Placement</dt><dd>Indoors. Anywhere is fine, since you open it from the menu.</dd>
             <dt>Who needs it</dt><dd>Anyone with a full armory from seasonal or event gear.</dd>
             <dt>Limit</dt><dd>One per estate. Counts toward the indoor limit.</dd>
@@ -353,11 +401,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-14045">
         <img class="u-img" data-item="14045" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="14045" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Orchestrion <span class="pill sm advice">Music</span></h3>
+          <h3>Orchestrion <span class="pill sm advice">Music</span></h3>
           <p class="u-purpose">Plays any song you own from your Orchestrion rolls for everyone in the room.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 60), or from the Market Board.</dd>
-            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Price</dt><dd>No vendor price. Crafted, or bought on the Market Board.</dd>
             <dt>Placement</dt><dd>Indoors, on the floor. There are smaller tabletop versions if floor space is tight.</dd>
             <dt>Who needs it</dt><dd>Anyone who wants background music.</dd>
             <dt>Limit</dt><dd>One orchestrion of any type per estate, with a playlist of up to 8 songs.</dd>
@@ -368,11 +416,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-13061">
         <img class="u-img" data-item="13061" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="13061" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Crystal Bell <span class="pill sm advice">Appearance</span></h3>
+          <h3>Crystal Bell <span class="pill sm advice">Appearance</span></h3>
           <p class="u-purpose">Summons the Aesthetician at home to change your hairstyle, face, and tattoos for 2,000 gil per accepted change. Unlock the Aesthetician first with the level 15 quest &quot;Beauty Is Only Scalp Deep&quot;.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by a Blacksmith (level 60), or from the Market Board.</dd>
-            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Price</dt><dd>No vendor price. Crafted, or bought on the Market Board.</dd>
             <dt>Placement</dt><dd>Indoors, near your Summoning Bell.</dd>
             <dt>Who needs it</dt><dd>Anyone who changes their look.</dd>
             <dt>Limit</dt><dd>One per estate. Counts toward the indoor limit.</dd>
@@ -383,11 +431,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-13069">
         <img class="u-img" data-item="13069" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="13069" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">The Unending Journey <span class="pill sm advice">Story</span></h3>
+          <h3>The Unending Journey <span class="pill sm advice">Story</span></h3>
           <p class="u-purpose">Lets you rewatch cutscenes from quests you have completed.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 58), or from the Market Board.</dd>
-            <dt>Price</dt><dd>No vendor price. Check <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> for the current Market Board price on your world.</dd>
+            <dt>Price</dt><dd>No vendor price. Crafted, or bought on the Market Board.</dd>
             <dt>Placement</dt><dd>Indoors, as a table piece.</dd>
             <dt>Who needs it</dt><dd>Story fans.</dd>
             <dt>Limit</dt><dd>One per estate.</dd>
@@ -398,7 +446,7 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-23846">
         <img class="u-img" data-item="23846" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="23846" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Mannequin <span class="pill sm advice">Glamour</span></h3>
+          <h3>Mannequin <span class="pill sm advice">Glamour</span></h3>
           <p class="u-purpose">Displays a gear set, and lets a retainer sell that gear from your estate. You must assign a retainer as the merchant when you place it.</p>
           <dl>
             <dt>Where to get it</dt><dd>Housing Merchant or Apartment Merchant.</dd>
@@ -413,11 +461,11 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-6541">
         <img class="u-img" data-item="6541" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="6541" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Message Book Stand <span class="pill sm advice">Visitors</span></h3>
+          <h3>Message Book Stand <span class="pill sm advice">Visitors</span></h3>
           <p class="u-purpose">The closest thing to a guest book. Visitors leave one message per day and can &quot;like&quot; your estate. You can set a greeting and get alerts. There is no furnishing called &quot;Guest Book&quot;.</p>
           <dl>
             <dt>Where to get it</dt><dd>Crafted by a Carpenter (level 62). We could not find a vendor.</dd>
-            <dt>Price</dt><dd>No vendor price found. Check Universalis.</dd>
+            <dt>Price</dt><dd>No vendor price found.</dd>
             <dt>Placement</dt><dd>Indoors on a tabletop, by the entrance or in the room people see first. The Dodo Message Book Stand is the outdoor version.</dd>
             <dt>Who needs it</dt><dd>Anyone who has friends or an FC visiting, or a house on a public tour.</dd>
             <dt>Limit</dt><dd>One per estate.</dd>
@@ -432,7 +480,7 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-14055">
         <img class="u-img" data-item="14055" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="14055" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Flowerpot <span class="pill sm advice">Gardening</span></h3>
+          <h3>Flowerpot <span class="pill sm advice">Gardening</span></h3>
           <p class="u-purpose">Grows one crop indoors. It is the only way to grow flower seeds, and the only way to garden in an apartment. Flower seeds cost 300 gil from Material Suppliers and Apartment Merchants. See the Flowerpots section above for counts.</p>
           <dl>
             <dt>Where to get it</dt><dd>Housing Merchants in all five districts, and the Apartment Merchant in apartment lobbies. Comes in Riviera, Glade, and Oasis styles.</dd>
@@ -447,7 +495,7 @@ ul.links li small{color:var(--muted)}
       <article class="util" id="u-7128">
         <img class="u-img" data-item="7128" data-hr alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
         <div class="u-body">
-          <h3><img class="u-ico" data-item="7128" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'">Garden Patch <span class="pill sm advice">Gardening</span></h3>
+          <h3>Garden Patch <span class="pill sm advice">Gardening</span></h3>
           <p class="u-purpose">A multi-bed outdoor plot for growing crops and crafting materials. Gardening has no unlock quest. See the Garden patches section above for counts.</p>
           <dl>
             <dt>Where to get it</dt><dd>Junkmongers (the Gardening, Dyes shop) and Housing Merchants in all five districts. Comes as Round, Oblong, and Deluxe.</dd>
@@ -471,21 +519,21 @@ ul.links li small{color:var(--muted)}
     <h3 class="mini">Crafting facilities</h3>
     <p>A facility gives a 30-minute buff that raises your maximum CP while you craft on the matching class. It only helps at crafter level 90 or below. A small house holds <b>4</b> facilities, so choose the classes you are leveling. They are crafted or bought on the Market Board, with no vendor price. Owners and tenants can use them in a personal house, and any member in an FC house. The wiki lists the CP bonus as +10, which we have not tested.</p>
     <div class="lim-wrap"><table class="lim util-table">
-      <thead><tr><th>Facility</th><th>Class it boosts</th></tr></thead>
-      <tbody><tr><td><img class="u-ico" data-item="7065" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Woodworking Bench</b></td><td>Carpenter</td></tr><tr><td><img class="u-ico" data-item="7066" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Smithing Bench</b></td><td>Blacksmith</td></tr><tr><td><img class="u-ico" data-item="7067" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Armorcraft Forge</b></td><td>Armorer</td></tr><tr><td><img class="u-ico" data-item="7068" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Goldsmithing Bench</b></td><td>Goldsmith</td></tr><tr><td><img class="u-ico" data-item="7069" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Leatherworking Bench</b></td><td>Leatherworker</td></tr><tr><td><img class="u-ico" data-item="7070" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Clothcraft Loom</b></td><td>Weaver</td></tr><tr><td><img class="u-ico" data-item="7071" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Alchemy Furnace</b></td><td>Alchemist</td></tr><tr><td><img class="u-ico" data-item="7072" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Cooking Stove</b></td><td>Culinarian</td></tr></tbody>
+      <thead><tr><th>Facility</th><th>Class it boosts</th><th>Market Board</th></tr></thead>
+      <tbody><tr><td><img class="u-ico" data-item="7065" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Woodworking Bench</b></td><td>Carpenter</td><td class="mb" data-mb="7065"></td></tr><tr><td><img class="u-ico" data-item="7066" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Smithing Bench</b></td><td>Blacksmith</td><td class="mb" data-mb="7066"></td></tr><tr><td><img class="u-ico" data-item="7067" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Armorcraft Forge</b></td><td>Armorer</td><td class="mb" data-mb="7067"></td></tr><tr><td><img class="u-ico" data-item="7068" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Goldsmithing Bench</b></td><td>Goldsmith</td><td class="mb" data-mb="7068"></td></tr><tr><td><img class="u-ico" data-item="7069" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Leatherworking Bench</b></td><td>Leatherworker</td><td class="mb" data-mb="7069"></td></tr><tr><td><img class="u-ico" data-item="7070" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Clothcraft Loom</b></td><td>Weaver</td><td class="mb" data-mb="7070"></td></tr><tr><td><img class="u-ico" data-item="7071" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Alchemy Furnace</b></td><td>Alchemist</td><td class="mb" data-mb="7071"></td></tr><tr><td><img class="u-ico" data-item="7072" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b>Cooking Stove</b></td><td>Culinarian</td><td class="mb" data-mb="7072"></td></tr></tbody>
     </table></div>
     <p class="note warn"><b>Not included:</b> the Glamour Dresser cannot be placed in any estate. Aquariums and display stands are decorative only. Private Chambers are Free Company rooms, not furnishings.</p>
   </section>
 
   <section id="upkeep">
-    <div class="sec-head"><h2><span class="num">7</span>Upkeep and demolition</h2><div class="pills"><span class="pill confirmed">Official</span></div></div>
+    <div class="sec-head"><h2><span class="num">8</span>Upkeep and demolition</h2><div class="pills"><span class="pill confirmed">Official</span></div></div>
     <p><b>Visit your house at least once every 45 days</b> or it is demolished. You get a warning in game at 30 days and by email at 35 and 42 days. For a shared estate, only the owner's visit counts, not a tenant's. An FC house counts a visit from any FC member.</p>
     <p class="note warn"><b>The timer is live.</b> Demolition was briefly paused in October 2026 after a security issue. The Lodestone notice says it resumed on October 26, 2026 at 1:00 a.m. PDT, even though the wiki still says "paused". The notice does not say whether timers were reset.</p>
     <p>If a house is demolished, you can recover 80% of the plot price from the caretaker within 35 days. Permits and exteriors are not refunded.</p>
   </section>
 
   <section id="furnish">
-    <div class="sec-head"><h2><span class="num">8</span>Furnishing cheaply</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
+    <div class="sec-head"><h2><span class="num">9</span>Furnishing cheaply</h2><div class="pills"><span class="pill expected">Check in game</span></div></div>
     <p>Housing Merchants sell the basics for little. Walls, floors, rugs, and bookshelves run about 5,000 gil, chairs and tables about 2,000, and lamps 3,000 to 4,000. Furnishing a small house from merchants alone is plausibly well under 1,000,000 gil (our estimate, not a sourced figure).</p>
     <ul class="links">
       <li><b>Preview first.</b> Merchant items can be previewed before you buy. Items from vendors, retainers, Feast, seasonal events, and the Mog Station cannot.</li>
@@ -500,7 +548,7 @@ ul.links li small{color:var(--muted)}
   </section>
 
   <section id="tools">
-    <div class="sec-head"><h2><span class="num">9</span>Sites and plugins</h2></div>
+    <div class="sec-head"><h2><span class="num">10</span>Sites and plugins</h2></div>
     <h3 class="mini">Websites</h3>
     <ul class="links">
       <li><a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a>: Crowd-sourced Market Board prices for furnishings.</li>
@@ -520,7 +568,7 @@ ul.links li small{color:var(--muted)}
   </section>
 
   <section id="evercold">
-    <div class="sec-head"><h2><span class="num">10</span>What may change in Evercold</h2></div>
+    <div class="sec-head"><h2><span class="num">11</span>What may change in Evercold</h2></div>
     <p>Evercold releases February 23, 2027, with early access on February 19. Secondary sources report that Yoshida confirmed two housing overhauls for that window: a UI overhaul aimed at casual players, and a second one he did not name. Anything beyond that, including new plots, is speculation, so do not plan around it. See our <a href="get-ready-for-evercold.html">Evercold prep checklist</a>.</p>
   </section>
 </main>
@@ -529,10 +577,11 @@ ul.links li small{color:var(--muted)}
   <h2>To check before this is final</h2>
   <ul>
     <li>The furnishing limits and the one-house rule, in game or against the Lodestone patch notes.</li>
+    <li>The Shared Estate Settings buttons: adding a tenant, whether the friend must accept, and removing one.</li>
     <li>Entry-permission settings, Layout Mode controls, and Island Sanctuary, which this draft does not cover yet.</li>
     <li>Reddit's decorating community, Eorzea Collection, and PaissaDB could not be verified, so they are not linked.</li>
   </ul>
-  <p>Item names and prices come from the Console Games Wiki and community sources. Item icons are served by <a href="https://beta.xivapi.com/" target="_blank" rel="noopener noreferrer">XIVAPI</a>. FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made page, not affiliated with or endorsed by Square Enix.</p>
+  <p>Item names and prices come from the Console Games Wiki and community sources. Item icons are served by <a href="https://beta.xivapi.com/" target="_blank" rel="noopener noreferrer">XIVAPI</a>. Live Market Board prices come from the <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer">Universalis</a> API, which is crowd-sourced, so a listing may already be gone when you check. FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. This is an unofficial, fan-made page, not affiliated with or endorsed by Square Enix.</p>
 </footer>
 </div>
 <script>
@@ -552,6 +601,114 @@ ul.links li small{color:var(--muted)}
     if (!path) { img.style.visibility = 'hidden'; return; }
     img.src = BASE + path + (img.hasAttribute('data-hr') ? '_hr1' : '') + '.tex&format=png';
   });
+})();
+</script>
+<script src="market-region.js"></script>
+<script>
+(function () {
+  // Live Market Board prices from Universalis for the region chosen in the
+  // shared market-region.js picker (the same setting the other price tools use).
+  var CACHE_PREFIX = 'hfb-price-';
+  var MAX_AGE = 15 * 60 * 1000; // reuse a cached price for 15 minutes before refetching
+  var select = document.getElementById('dcSelect');
+  var refreshBtn = document.getElementById('refreshPrices');
+  var status = document.getElementById('priceStatus');
+  var region = MarketRegion.load();
+
+  // Add a "Market Board" row under each utility card's Price row.
+  document.querySelectorAll('article.util[id^="u-"]').forEach(function (card) {
+    var id = card.id.slice(2);
+    var priceDt = Array.prototype.find.call(card.querySelectorAll('dt'), function (dt) { return dt.textContent === 'Price'; });
+    if (!priceDt) return;
+    var dt = document.createElement('dt'); dt.textContent = 'Market Board';
+    var dd = document.createElement('dd'); dd.className = 'mb'; dd.setAttribute('data-mb', id);
+    var after = priceDt.nextElementSibling;
+    after.parentNode.insertBefore(dt, after.nextSibling);
+    dt.parentNode.insertBefore(dd, dt.nextSibling);
+  });
+  var cells = Array.prototype.slice.call(document.querySelectorAll('[data-mb]'));
+  var ids = cells.map(function (c) { return c.getAttribute('data-mb'); }).filter(function (v, i, a) { return a.indexOf(v) === i; });
+
+  var fmt = function (n) { return n.toLocaleString('en-US'); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var link = function (id) { return '<a href="https://universalis.app/market/' + id + '" target="_blank" rel="noopener noreferrer">Universalis</a>'; };
+
+  function loadCached(id) {
+    try { var raw = localStorage.getItem(CACHE_PREFIX + region + ':' + id); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
+  }
+  function saveCached(id, p) {
+    try { localStorage.setItem(CACHE_PREFIX + region + ':' + id, JSON.stringify(p)); } catch (e) {}
+  }
+
+  function render(id, p, state) {
+    var html;
+    if (p && p.none) html = 'None listed right now. ' + link(id);
+    else if (p) html = '<b>' + fmt(p.low) + ' gil</b> on ' + esc(p.world) +
+      (p.avg ? ' <small>(usually sells for about ' + fmt(p.avg) + ')</small>' : '') + ' ' + link(id);
+    else if (state === 'failed') html = 'Could not load. ' + link(id);
+    else html = '<small>Loading…</small>';
+    cells.forEach(function (c) { if (c.getAttribute('data-mb') === id) c.innerHTML = html; });
+  }
+
+  // One item per request: Universalis's multi-id endpoint times out often (see trade-in-mounts.html).
+  async function fetchPrice(id) {
+    for (var attempt = 1; attempt <= 4; attempt++) {
+      try {
+        var ctrl = new AbortController();
+        var timer = setTimeout(function () { ctrl.abort(); }, 12000);
+        var res = await fetch('https://universalis.app/api/v2/' + region + '/' + id + '?listings=20&entries=20', { signal: ctrl.signal });
+        clearTimeout(timer);
+        if (res.ok) {
+          var d = await res.json();
+          if (!d.listings || !d.listings.length) return { none: true, at: Date.now() };
+          var low = d.listings.reduce(function (a, b) { return a.pricePerUnit <= b.pricePerUnit ? a : b; });
+          // Median of recent sales: a mean gets dragged up by a few overpriced sales.
+          var sold = (d.recentHistory || []).map(function (h) { return h.pricePerUnit; }).sort(function (a, b) { return a - b; });
+          var avg = sold.length ? sold[Math.floor(sold.length / 2)] : 0;
+          return { low: low.pricePerUnit, world: low.worldName || MarketRegion.LABELS[region] || region, avg: avg, at: Date.now() };
+        }
+      } catch (e) { /* retry */ }
+      if (attempt < 4) await new Promise(function (r) { setTimeout(r, 500 * attempt); });
+    }
+    return null;
+  }
+
+  var runId = 0;
+  async function loadAll(force) {
+    var run = ++runId;
+    var queue = [];
+    ids.forEach(function (id) {
+      var cached = loadCached(id);
+      render(id, cached);
+      if (force || !cached || Date.now() - cached.at > MAX_AGE) queue.push(id);
+    });
+    if (!queue.length) { status.textContent = ''; refreshBtn.disabled = false; return; }
+    var total = queue.length, done = 0, failed = 0;
+    refreshBtn.disabled = true;
+    status.textContent = 'Loading prices 0 of ' + total + '…';
+    async function worker() {
+      while (queue.length) {
+        var id = queue.shift();
+        var p = await fetchPrice(id);
+        if (run !== runId) return; // region changed mid-load
+        if (p) { saveCached(id, p); render(id, p); } else { failed++; render(id, loadCached(id), 'failed'); }
+        done++;
+        status.textContent = done < total ? 'Loading prices ' + done + ' of ' + total + '…' : (failed ? failed + ' could not load.' : '');
+      }
+    }
+    await Promise.all([worker(), worker(), worker(), worker(), worker()]);
+    if (run === runId) refreshBtn.disabled = false;
+  }
+
+  MarketRegion.populate(select);
+  select.value = region;
+  select.addEventListener('change', function () {
+    region = select.value;
+    MarketRegion.save(region);
+    loadAll(false);
+  });
+  refreshBtn.addEventListener('click', function () { loadAll(true); });
+  loadAll(false);
 })();
 </script>
 </body>
