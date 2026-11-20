@@ -36,5 +36,9 @@
   "currency-planner": {
     "patch": null,
     "updated": "2026-11-11"
+  },
+  "crafted-gear": {
+    "patch": null,
+    "updated": "2026-11-20"
   }
 }

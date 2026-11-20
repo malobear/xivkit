@@ -226,6 +226,7 @@
     "simpletweaks": "Riesige Sammlung einzeln aktivierbarer Komfort-Anpassungen; mehrere betreffen direkt Inventar, Gehilfen und Tooltips. Im Standard-Plugin-Verzeichnis enthalten",
     "xivkitmsq": "Verfolge deinen Fortschritt im Hauptszenario bis zum neuesten Patch, mit der aktuellen Quest in einem Link zum Einfügen und einer PNG-Fortschrittskarte zum Teilen",
     "currencyplanner": "Wähle eine Währung, von der du zu viel hast (Steine, Scheine, Zweifarbige Edelsteine, Abzeichen, MGP), und sieh, was sie kauft: die besten Gegenstände für Gil zu aktuellen Preisen, was sich zum Sammeln lohnt und ob du sie vor Evercold ausgeben solltest",
+    "craftedgear": "Wähle einen Job und sieh das günstigste Marktbrett-Angebot für jedes Teil des aktuellen hergestellten Ausrüstungssets, angeordnet wie das Charakterfenster im Spiel, mit dem Gesamtpreis des Sets für jeden Job zu Live-Preisen",
     "plugindirectory": "Alle Dalamud-Plugins aus der offiziellen Liste und bekannten Drittanbieter-Repositorys, nach Kategorien sortiert, mit Installationsschritten und den Chatbefehlen jedes Plugins"
   },
   "pages": {
@@ -758,7 +759,82 @@
       "other": "Andere Währungen"
     }
   },
+  "cg": {
+    "eyebrow": "Hergestelltes Set der Gegenstandsstufe {{ilvl}}: {{set}}",
+    "h1": "Einkaufsliste für hergestellte Ausrüstung",
+    "lede": "Wähle einen Job und sieh das günstigste HQ-Angebot am Marktbrett für jedes Teil des aktuellen hergestellten Sets, live von Universalis. Auf jedem Job-Knopf steht der Gesamtpreis des Sets, so siehst du, welche Jobs gerade günstig auszurüsten sind.",
+    "marketLabel": "Markt",
+    "refresh": "Preise aktualisieren",
+    "jobsLabel": "Job wählen",
+    "loading": "Lade Preise für {{market}}…",
+    "loaded": "Preise für {{market}}, geladen um {{time}}.",
+    "priceFail": "Universalis ist nicht erreichbar. Versuche es gleich noch einmal mit „Preise aktualisieren“.",
+    "dataFail": "Die Ausrüstungsliste konnte nicht geladen werden. Lade die Seite neu.",
+    "roles": {
+      "tank": "Verteidiger",
+      "healer": "Heiler",
+      "melee": "Nahkampf",
+      "ranged": "Physischer Fernkampf",
+      "caster": "Magischer Fernkampf"
+    },
+    "role": {
+      "tank": "Verteidiger",
+      "healer": "Heiler",
+      "melee": "Nahkampf-Angreifer",
+      "ranged": "Physischer Fernkampf-Angreifer",
+      "caster": "Magischer Fernkampf-Angreifer"
+    },
+    "slots": {
+      "main": "Waffe",
+      "off": "Schild",
+      "head": "Kopf",
+      "body": "Rumpf",
+      "hands": "Hände",
+      "legs": "Beine",
+      "feet": "Füße",
+      "ears": "Ohrringe",
+      "neck": "Halskette",
+      "wrists": "Armreif",
+      "ring": "Ring"
+    },
+    "leftLabel": "Waffe und Rüstung",
+    "rightLabel": "Schild und Accessoires",
+    "itemLevel": "Gegenstandsstufe",
+    "emptySlot": "Leer",
+    "notUsed": "Bei diesem Job nicht genutzt",
+    "loadingPrice": "Lade Preis",
+    "noHq": "Keine HQ-Angebote",
+    "noListings": "Keine Angebote",
+    "gil": "Gil",
+    "gilAmount": "{{amount}} Gil",
+    "seen": "gesehen {{ago}}",
+    "ornate": "Kunstvolle Version, gleiche Werte",
+    "fullSet": "Ganzes Set",
+    "setNote": "{{priced}} von {{count}} Teilen, HQ, {{market}}",
+    "someMissing": "Für manche Teile gibt es keine Angebote.",
+    "shared": "Die Rüstung teilt sich dieser Job mit {{jobs}}.",
+    "copy": "Einkaufsliste kopieren",
+    "copied": "Kopiert",
+    "copyFail": "Kopieren fehlgeschlagen",
+    "listHeader": "{{job}}: {{set}}-Set",
+    "listOn": "{{price}} auf {{world}}",
+    "listTotal": "Gesamt: {{amount}}",
+    "notes": {
+      "worlds": "Die Preise sind jeweils das günstigste einzelne Angebot auf irgendeiner Welt im gewählten Markt. Für ein ganzes Set besuchst du also meist ein paar Welten. Dazu kommen 5 % Marktsteuer.",
+      "hq": "Die Preise gelten nur für HQ. HQ und NQ haben dieselbe Gegenstandsstufe, aber HQ bringt rund 10 % mehr Hauptattribut und zusätzliche Nebenwerte, und fast alles, was Handwerker anbieten, ist ohnehin HQ. NQ ist also selten günstiger. Materia einsetzen kannst du selbst; Angebote, die schon Materia haben, zählen auch mit, wenn sie am günstigsten sind.",
+      "rings": "Ringe sind nicht einzigartig, deshalb nutzen die beiden Ringplätze die zwei günstigsten Ring-Angebote.",
+      "ornate": "Das Rumpfteil gibt es auch als „kunstvolle“ Version mit identischen Werten. Die Seite prüft beide und zeigt die günstigere.",
+      "shared": "Jobs, die dasselbe Rüstungsset tragen, brauchen nur eine neue Waffe: Verteidiger teilen sich „der Verteidigung“, Heiler „der Heilung“, magische Fernkämpfer „der Magie“ und physische Fernkämpfer „des Zielens“. Nahkämpfer sind dreigeteilt: „des Verstümmelns“ für Dragoon und Schnitter, „des Schlagens“ für Mönch und Samurai, „des Spähens“ für Ninja und Viper. Accessoires werden noch breiter geteilt: „des Schlachtens“ passt für Mönch, Dragoon, Samurai und Schnitter, „des Zielens“ für physische Fernkämpfer sowie Ninja und Viper."
+    },
+    "sourcesHeading": "Quellen",
+    "sourcesItems": "Ausrüstungsliste, Gegenstands- und Jobnamen in allen vier Sprachen sowie Symbole stammen von {xivapi}, gespeichert als crafted-gear.json und aktualisiert, wenn ein neues hergestelltes Set erscheint.",
+    "sourcesPrices": "Marktpreise kommen live von der {universalis}-API, jedes Mal wenn du die Seite lädst oder auf „Preise aktualisieren“ drückst. Universalis kennt nur, was Spieler mit dem Uploader gesehen haben, ein Angebot kann also schon weg sein, wenn du ankommst. Die Zeit unter jedem Preis zeigt, wann die Daten des Gegenstands zuletzt aktualisiert wurden."
+  },
   "seo": {
+    "craftedGear": {
+      "title": "FFXIV hergestellte Ausrüstung: Preise für das Hofliebhaber-Set nach Job | XIVKit",
+      "description": "Wähle einen Job und sieh den günstigsten HQ-Preis am Marktbrett für jedes Teil des hergestellten Hofliebhaber-Sets (Gegenstandsstufe 770), live von Universalis, angeordnet wie das Charakterfenster im Spiel."
+    },
     "index": {
       "title": "XIVKit: FFXIV-Tools & Links",
       "description": "Ausgewählte FFXIV-Tools und Links: Theorycrafting-Rechner, Marktbrett-Daten, Crafting-Tracker und Nachschlageseiten. Wird aktualisiert, sobald etwas Neues dazukommt, das sich lohnt."

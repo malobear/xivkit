@@ -53,6 +53,15 @@
     <lastmod>2026-11-01</lastmod>
   </url>
   <url>
+    <loc>https://xivkit.com/crafted-gear.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/crafted-gear.html"/>
+  </url>
+  <url>
     <loc>https://xivkit.com/keybound-brawler.html</loc>
     <lastmod>2026-11-01</lastmod>
   </url>
@@ -240,6 +249,33 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/currency-planner.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/currency-planner.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/currency-planner.html"/>
+  </url>
+  <url>
+    <loc>https://xivkit.com/ja/crafted-gear.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/crafted-gear.html"/>
+  </url>
+  <url>
+    <loc>https://xivkit.com/de/crafted-gear.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/crafted-gear.html"/>
+  </url>
+  <url>
+    <loc>https://xivkit.com/fr/crafted-gear.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/crafted-gear.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/crafted-gear.html"/>
   </url>
   <!-- i18n:end -->
 </urlset>

@@ -226,6 +226,7 @@
     "simpletweaks": "Huge, individually toggleable grab-bag of quality-of-life tweaks; several touch inventory, retainers, and tooltips directly. In the default plugin repo",
     "xivkitmsq": "Track your Main Scenario Quest progress through the latest patch, with your current quest in a link you can paste and a PNG progress card to share",
     "currencyplanner": "Pick a currency you have piling up (tomestones, scrips, bicolor gemstones, seals, MGP) and see what it buys: the best items for gil at live prices, what's worth collecting, and whether to spend it before Evercold",
+    "craftedgear": "Pick a job and see the cheapest market board listing for every piece of the current crafted gear set, laid out like the in-game Character window, with each job's full set total at live prices",
     "plugindirectory": "Every Dalamud plugin from the official list and well-known third-party repositories, sorted into categories, with install steps and each plugin's chat commands"
   },
   "pages": {
@@ -758,7 +759,82 @@
       "other": "Other currencies"
     }
   },
+  "cg": {
+    "eyebrow": "Item level {{ilvl}} crafted set: {{set}}",
+    "h1": "Crafted gear shopping list",
+    "lede": "Pick a job and see the cheapest HQ market board listing for every piece of the current crafted set, live from Universalis. Each job's full set total shows on its button, so you can see which ones are cheap to gear right now.",
+    "marketLabel": "Market",
+    "refresh": "Refresh prices",
+    "jobsLabel": "Pick a job",
+    "loading": "Loading prices for {{market}}…",
+    "loaded": "Prices for {{market}}, loaded {{time}}.",
+    "priceFail": "Could not reach Universalis. Try Refresh in a moment.",
+    "dataFail": "Could not load the gear list. Reload the page to try again.",
+    "roles": {
+      "tank": "Tanks",
+      "healer": "Healers",
+      "melee": "Melee",
+      "ranged": "Physical ranged",
+      "caster": "Magical ranged"
+    },
+    "role": {
+      "tank": "Tank",
+      "healer": "Healer",
+      "melee": "Melee DPS",
+      "ranged": "Physical ranged DPS",
+      "caster": "Magical ranged DPS"
+    },
+    "slots": {
+      "main": "Main hand",
+      "off": "Off hand",
+      "head": "Head",
+      "body": "Body",
+      "hands": "Hands",
+      "legs": "Legs",
+      "feet": "Feet",
+      "ears": "Earrings",
+      "neck": "Necklace",
+      "wrists": "Bracelets",
+      "ring": "Ring"
+    },
+    "leftLabel": "Weapon and armor",
+    "rightLabel": "Off hand and accessories",
+    "itemLevel": "Item Level",
+    "emptySlot": "None",
+    "notUsed": "Not used by this job",
+    "loadingPrice": "Loading price",
+    "noHq": "No HQ listings",
+    "noListings": "No listings",
+    "gil": "gil",
+    "gilAmount": "{{amount}} gil",
+    "seen": "seen {{ago}}",
+    "ornate": "Ornate version, same stats",
+    "fullSet": "Full set",
+    "setNote": "{{priced}} of {{count}} pieces, HQ, {{market}}",
+    "someMissing": "Some pieces have no listings.",
+    "shared": "Armor is shared with {{jobs}}.",
+    "copy": "Copy shopping list",
+    "copied": "Copied",
+    "copyFail": "Could not copy",
+    "listHeader": "{{job}}: {{set}} set",
+    "listOn": "{{price}} on {{world}}",
+    "listTotal": "Total: {{amount}}",
+    "notes": {
+      "worlds": "Prices are the lowest single listing on any world in the market you pick, so a full set usually means a few world visits. The 5% market tax is on top.",
+      "hq": "Prices are for HQ only. HQ and NQ share the same item level, but HQ adds roughly 10% more main stat plus extra substats, and nearly everything crafters list is HQ anyway, so NQ is rarely cheaper. Melding materia is up to you; listings that already have materia are counted too, if they happen to be cheapest.",
+      "rings": "Rings are not unique, so the two ring slots use the two cheapest ring listings.",
+      "ornate": "The body piece also comes as an \"Ornate\" version with identical stats. The page checks both and shows whichever is cheaper.",
+      "shared": "Jobs that wear the same armor set only need a new weapon: tanks share Fending, healers share Healing, magical ranged share Casting, and physical ranged share Aiming. Melee splits three ways: Maiming for Dragoon and Reaper, Striking for Monk and Samurai, and Scouting for Ninja and Viper. Accessories are shared more widely: Slaying covers Monk, Dragoon, Samurai, and Reaper, and Aiming covers physical ranged plus Ninja and Viper."
+    },
+    "sourcesHeading": "Sources",
+    "sourcesItems": "Item list, item and job names in all four languages, and icons come from {xivapi}, saved as crafted-gear.json and refreshed when a new crafted set comes out.",
+    "sourcesPrices": "Market prices are pulled live from the {universalis} API each time you load the page or press Refresh. Universalis only knows what players with its uploader have seen, so a listing can be gone by the time you get there. The time under each price says when that item's data was last updated."
+  },
   "seo": {
+    "craftedGear": {
+      "title": "FFXIV Crafted Gear Prices: Courtly Lover Set by Job | XIVKit",
+      "description": "Pick a job and see the cheapest HQ market board price for every piece of the item level 770 Courtly Lover crafted set, live from Universalis, laid out like the in-game Character window."
+    },
     "index": {
       "title": "XIVKit: FFXIV Tools & Links",
       "description": "Curated FFXIV tools and links: theorycrafting calculators, market board data, crafting trackers, and reference sites, updated whenever something new is worth keeping."
