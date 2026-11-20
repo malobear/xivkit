@@ -762,7 +762,7 @@
   "cg": {
     "eyebrow": "Item level {{ilvl}} crafted set: {{set}}",
     "h1": "Crafted gear shopping list",
-    "lede": "Pick a job and see the cheapest HQ market board listing for every piece of the current crafted set, live from Universalis. Each job's full set total shows on its button, so you can see which ones are cheap to gear right now.",
+    "lede": "Pick a job and see the cheapest HQ market board listing for every piece of its current crafted gear, live from Universalis: Courtly Lover for combat jobs, and Crested armor with Gold Thumb's tools for crafters and gatherers. Each job's full set total shows on its button, so you can see which ones are cheap to gear right now.",
     "marketLabel": "Market",
     "refresh": "Refresh prices",
     "jobsLabel": "Pick a job",
@@ -775,14 +775,18 @@
       "healer": "Healers",
       "melee": "Melee",
       "ranged": "Physical ranged",
-      "caster": "Magical ranged"
+      "caster": "Magical ranged",
+      "crafter": "Crafters",
+      "gatherer": "Gatherers"
     },
     "role": {
       "tank": "Tank",
       "healer": "Healer",
       "melee": "Melee DPS",
       "ranged": "Physical ranged DPS",
-      "caster": "Magical ranged DPS"
+      "caster": "Magical ranged DPS",
+      "crafter": "Disciple of the Hand",
+      "gatherer": "Disciple of the Land"
     },
     "slots": {
       "main": "Main hand",
@@ -795,7 +799,9 @@
       "ears": "Earrings",
       "neck": "Necklace",
       "wrists": "Bracelets",
-      "ring": "Ring"
+      "ring": "Ring",
+      "mainTool": "Main tool",
+      "offTool": "Off-hand tool"
     },
     "leftLabel": "Weapon and armor",
     "rightLabel": "Off hand and accessories",
@@ -808,7 +814,7 @@
     "gil": "gil",
     "gilAmount": "{{amount}} gil",
     "seen": "seen {{ago}}",
-    "ornate": "Ornate version, same stats",
+    "ornate": "Ornate version: 5 materia slots",
     "fullSet": "Full set",
     "setNote": "{{priced}} of {{count}} pieces, HQ, {{market}}",
     "someMissing": "Some pieces have no listings.",
@@ -823,8 +829,9 @@
       "worlds": "Prices are the lowest single listing on any world in the market you pick, so a full set usually means a few world visits. The 5% market tax is on top.",
       "hq": "Prices are for HQ only. HQ and NQ share the same item level, but HQ adds roughly 10% more main stat plus extra substats, and nearly everything crafters list is HQ anyway, so NQ is rarely cheaper. Melding materia is up to you; listings that already have materia are counted too, if they happen to be cheapest.",
       "rings": "Rings are not unique, so the two ring slots use the two cheapest ring listings.",
-      "ornate": "The body piece also comes as an \"Ornate\" version with identical stats. The page checks both and shows whichever is cheaper.",
-      "shared": "Jobs that wear the same armor set only need a new weapon: tanks share Fending, healers share Healing, magical ranged share Casting, and physical ranged share Aiming. Melee splits three ways: Maiming for Dragoon and Reaper, Striking for Monk and Samurai, and Scouting for Ninja and Viper. Accessories are shared more widely: Slaying covers Monk, Dragoon, Samurai, and Reaper, and Aiming covers physical ranged plus Ninja and Viper."
+      "ornate": "The combat body piece also comes as an \"Ornate\" version. It has the same base stats but five guaranteed materia slots instead of two, so you can meld it fully without risking overmelds. It is not crafted (earlier sets' Ornate pieces came from Wondrous Tails), so it is rare and usually costs far more. The page checks both and shows whichever is cheaper.",
+      "shared": "Jobs that wear the same armor set only need a new weapon: tanks share Fending, healers share Healing, magical ranged share Casting, and physical ranged share Aiming. Melee splits three ways: Maiming for Dragoon and Reaper, Striking for Monk and Samurai, and Scouting for Ninja and Viper. Accessories are shared more widely: Slaying covers Monk, Dragoon, Samurai, and Reaper, and Aiming covers physical ranged plus Ninja and Viper.",
+      "crafting": "Crafters and gatherers have no tradeable gear at the newest item level, so their list uses the best crafted gear you can buy: the item level 750 Crested set and Gold Thumb's tools. Every crafter wears the same Crested armor and every gatherer another, so a second crafter or gatherer only needs new tools."
     },
     "sourcesHeading": "Sources",
     "sourcesItems": "Item list, item and job names in all four languages, and icons come from {xivapi}, saved as crafted-gear.json and refreshed when a new crafted set comes out.",
@@ -833,7 +840,7 @@
   "seo": {
     "craftedGear": {
       "title": "FFXIV Crafted Gear Prices: Courtly Lover Set by Job | XIVKit",
-      "description": "Pick a job and see the cheapest HQ market board price for every piece of the item level 770 Courtly Lover crafted set, live from Universalis, laid out like the in-game Character window."
+      "description": "Pick a job and see the cheapest HQ market board price for every piece of its crafted gear, live from Universalis: the item level 770 Courtly Lover set for combat jobs, and Crested gear with Gold Thumb's tools for crafters and gatherers, laid out like the in-game Character window."
     },
     "index": {
       "title": "XIVKit: FFXIV Tools & Links",

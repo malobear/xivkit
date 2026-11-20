@@ -762,7 +762,7 @@
   "cg": {
     "eyebrow": "Set artisanal de niveau d'objet {{ilvl}} : {{set}}",
     "h1": "Liste de courses de l'équipement artisanal",
-    "lede": "Choisissez un job et voyez l'offre HQ la moins chère à l'Hôtel des ventes pour chaque pièce du set artisanal actuel, en direct depuis Universalis. Le prix total du set s'affiche sur le bouton de chaque job, pour voir lesquels sont bon marché à équiper en ce moment.",
+    "lede": "Choisissez un job et voyez l'offre HQ la moins chère à l'Hôtel des ventes pour chaque pièce de son équipement artisanal actuel, en direct depuis Universalis : courtisan assidu pour les jobs de combat, armure du paon bleu et outils de la main dorée pour les artisans et les récolteurs. Le prix total du set s'affiche sur le bouton de chaque job, pour voir lesquels sont bon marché à équiper en ce moment.",
     "marketLabel": "Marché",
     "refresh": "Actualiser les prix",
     "jobsLabel": "Choisir un job",
@@ -775,14 +775,18 @@
       "healer": "Soigneurs",
       "melee": "Mêlée",
       "ranged": "Distance physique",
-      "caster": "Distance magique"
+      "caster": "Distance magique",
+      "crafter": "Artisans",
+      "gatherer": "Récolteurs"
     },
     "role": {
       "tank": "Tank",
       "healer": "Soigneur",
       "melee": "DPS de mêlée",
       "ranged": "DPS physique à distance",
-      "caster": "DPS magique à distance"
+      "caster": "DPS magique à distance",
+      "crafter": "Artisan",
+      "gatherer": "Récolteur"
     },
     "slots": {
       "main": "Arme",
@@ -795,7 +799,9 @@
       "ears": "Oreilles",
       "neck": "Cou",
       "wrists": "Poignets",
-      "ring": "Bague"
+      "ring": "Bague",
+      "mainTool": "Outil principal",
+      "offTool": "Outil secondaire"
     },
     "leftLabel": "Arme et armure",
     "rightLabel": "Bouclier et accessoires",
@@ -808,7 +814,7 @@
     "gil": "gils",
     "gilAmount": "{{amount}} gils",
     "seen": "vu {{ago}}",
-    "ornate": "Version supra, mêmes stats",
+    "ornate": "Version supra : 5 emplacements de matéria",
     "fullSet": "Set complet",
     "setNote": "{{priced}} pièces sur {{count}}, HQ, {{market}}",
     "someMissing": "Certaines pièces n'ont aucune offre.",
@@ -823,8 +829,9 @@
       "worlds": "Les prix sont l'offre la moins chère sur n'importe quel monde du marché choisi, donc un set complet demande en général de passer par plusieurs mondes. La taxe de 5 % s'ajoute.",
       "hq": "Les prix sont uniquement HQ. HQ et NQ ont le même niveau d'objet, mais la HQ donne environ 10 % de caractéristique principale en plus et des caractéristiques secondaires supplémentaires, et presque tout ce que vendent les artisans est HQ de toute façon, donc la NQ est rarement moins chère. Le sertissage de matérias est à votre choix ; les offres déjà serties comptent aussi si elles sont les moins chères.",
       "rings": "Les bagues ne sont pas uniques, donc les deux emplacements de bague prennent les deux offres les moins chères.",
-      "ornate": "La pièce de torse existe aussi en version « supra » aux stats identiques. La page vérifie les deux et affiche la moins chère.",
-      "shared": "Les jobs qui portent le même set d'armure n'ont besoin que d'une nouvelle arme : les tanks partagent « protecteur », les soigneurs « soigneur », les DPS magiques à distance « incantateur » et les DPS physiques à distance « pisteur ». La mêlée se divise en trois : « abatteur » pour le chevalier dragon et le faucheur, « agresseur » pour le moine et le samouraï, « éclaireur » pour le ninja et le rôdeur vipère. Les accessoires sont encore plus partagés : « attaquant » couvre le moine, le chevalier dragon, le samouraï et le faucheur, et « pisteur » couvre les DPS physiques à distance ainsi que le ninja et le rôdeur vipère."
+      "ornate": "La pièce de torse des jobs de combat existe aussi en version « supra ». Elle a les mêmes caractéristiques de base, mais cinq emplacements de matéria garantis au lieu de deux, ce qui permet de la sertir entièrement sans risquer le sertissage avancé. Elle n'est pas fabriquée, elle est donc rare et coûte en général bien plus cher. La page vérifie les deux et affiche la moins chère.",
+      "shared": "Les jobs qui portent le même set d'armure n'ont besoin que d'une nouvelle arme : les tanks partagent « protecteur », les soigneurs « soigneur », les DPS magiques à distance « incantateur » et les DPS physiques à distance « pisteur ». La mêlée se divise en trois : « abatteur » pour le chevalier dragon et le faucheur, « agresseur » pour le moine et le samouraï, « éclaireur » pour le ninja et le rôdeur vipère. Les accessoires sont encore plus partagés : « attaquant » couvre le moine, le chevalier dragon, le samouraï et le faucheur, et « pisteur » couvre les DPS physiques à distance ainsi que le ninja et le rôdeur vipère.",
+      "crafting": "Les artisans et récolteurs n'ont pas d'équipement échangeable au tout dernier niveau d'objet, donc leur liste utilise le meilleur équipement artisanal qu'on peut acheter : le set du paon bleu de niveau d'objet 750 et les outils de la main dorée. Tous les artisans portent la même armure du paon bleu et tous les récolteurs une autre, donc un deuxième artisan ou récolteur n'a besoin que de nouveaux outils."
     },
     "sourcesHeading": "Sources",
     "sourcesItems": "La liste d'équipement, les noms d'objets et de jobs dans les quatre langues et les icônes viennent de {xivapi}, enregistrés dans crafted-gear.json et mis à jour à la sortie d'un nouveau set artisanal.",
@@ -833,7 +840,7 @@
   "seo": {
     "craftedGear": {
       "title": "FFXIV prix de l'équipement artisanal : set de courtisan assidu par job | XIVKit",
-      "description": "Choisissez un job et voyez le prix HQ le plus bas à l'Hôtel des ventes pour chaque pièce du set artisanal de courtisan assidu (niveau d'objet 770), en direct depuis Universalis, disposé comme la fenêtre Personnage du jeu."
+      "description": "Choisissez un job et voyez le prix HQ le plus bas à l'Hôtel des ventes pour chaque pièce de son équipement artisanal, en direct depuis Universalis : le set de courtisan assidu (niveau d'objet 770) pour les jobs de combat, l'équipement du paon bleu et les outils de la main dorée pour les artisans et les récolteurs, disposé comme la fenêtre Personnage du jeu."
     },
     "index": {
       "title": "XIVKit : outils et liens FFXIV",

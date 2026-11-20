@@ -10,7 +10,7 @@ A curated, hand-picked list of FFXIV tools I actually use. Kept small on purpose
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins I actually use, with a note on which ones need a custom repo.
 - [Watchlist](https://xivkit.com/watchlist.html): tools I haven't tried yet, kept separate from the ones I vouch for.
 - Guides: [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html), [Hunt for Astronomy](https://xivkit.com/hunt-for-astronomy.html), [Keybound Brawler](https://xivkit.com/keybound-brawler.html), [Fan Fest Bingo Maker](https://xivkit.com/fanfest-bingo.html), [Trade-In Mounts](https://xivkit.com/trade-in-mounts.html), and [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html), and [Retainer Ventures](https://xivkit.com/retainer-ventures.html), with live market prices where it helps.
-- Tools: [MSQ Tracker](https://xivkit.com/msq-tracker.html), a Main Scenario Quest tracker whose link carries your current quest, with a PNG progress card to share, and [Crafted Gear Shopping List](https://xivkit.com/crafted-gear.html), the cheapest market board price for each piece of the current crafted set for any job.
+- Tools: [MSQ Tracker](https://xivkit.com/msq-tracker.html), a Main Scenario Quest tracker whose link carries your current quest, with a PNG progress card to share, and [Crafted Gear Shopping List](https://xivkit.com/crafted-gear.html), the cheapest HQ market board price for each piece of the current crafted gear for any combat, crafting, or gathering job.
 
 ## Suggest a tool
 
@@ -35,7 +35,7 @@ Three list pages share the exact same structure, styling, and search/tag script:
 
 Guides are standalone pages hosted on the site and listed under "Curated Guides" on
 the home page: `jump-puzzle-macros.html`, `hunt-for-astronomy.html`, `keybound-brawler.html`, `fanfest-bingo.html`, `trade-in-mounts.html`,
-`inventory-decluttering.html`, and `retainer-ventures.html`. `msq-tracker.html` and `crafted-gear.html` are hosted tools listed in the same place. `crafted-gear.html` reads `crafted-gear.json`, written by `pnpm crafted-gear` (`scripts/crafted-gear.mjs`); when a new crafted set comes out, change `SET` and `ILVL` at the top of that script and re-run it.
+`inventory-decluttering.html`, and `retainer-ventures.html`. `msq-tracker.html` and `crafted-gear.html` are hosted tools listed in the same place. `crafted-gear.html` reads `crafted-gear.json`, written by `pnpm crafted-gear` (`scripts/crafted-gear.mjs`); it covers the combat set (Courtly Lover) and the crafter and gatherer set (Crested armor, Gold Thumb's tools). When a new crafted set comes out, update its entry in `SETS` at the top of that script (English name prefixes, item level, and the set name in each language), re-run it, then run `pnpm i18n`.
 
 All pages share the branding: titles read `Page name | XIVKit` (the home page is
 `XIVKit: FFXIV Tools & Links`), `og:site_name` is `XIVKit`, and URLs use

@@ -762,7 +762,7 @@
   "cg": {
     "eyebrow": "Hergestelltes Set der Gegenstandsstufe {{ilvl}}: {{set}}",
     "h1": "Einkaufsliste für hergestellte Ausrüstung",
-    "lede": "Wähle einen Job und sieh das günstigste HQ-Angebot am Marktbrett für jedes Teil des aktuellen hergestellten Sets, live von Universalis. Auf jedem Job-Knopf steht der Gesamtpreis des Sets, so siehst du, welche Jobs gerade günstig auszurüsten sind.",
+    "lede": "Wähle einen Job und sieh das günstigste HQ-Angebot am Marktbrett für jedes Teil seiner aktuellen hergestellten Ausrüstung, live von Universalis: Hofliebhaber für Kampfjobs, Pfauen-Rüstung und Goldhand-Werkzeuge für Handwerker und Sammler. Auf jedem Job-Knopf steht der Gesamtpreis des Sets, so siehst du, welche Jobs gerade günstig auszurüsten sind.",
     "marketLabel": "Markt",
     "refresh": "Preise aktualisieren",
     "jobsLabel": "Job wählen",
@@ -775,14 +775,18 @@
       "healer": "Heiler",
       "melee": "Nahkampf",
       "ranged": "Physischer Fernkampf",
-      "caster": "Magischer Fernkampf"
+      "caster": "Magischer Fernkampf",
+      "crafter": "Handwerker",
+      "gatherer": "Sammler"
     },
     "role": {
       "tank": "Verteidiger",
       "healer": "Heiler",
       "melee": "Nahkampf-Angreifer",
       "ranged": "Physischer Fernkampf-Angreifer",
-      "caster": "Magischer Fernkampf-Angreifer"
+      "caster": "Magischer Fernkampf-Angreifer",
+      "crafter": "Handwerker",
+      "gatherer": "Sammler"
     },
     "slots": {
       "main": "Waffe",
@@ -795,7 +799,9 @@
       "ears": "Ohrringe",
       "neck": "Halskette",
       "wrists": "Armreif",
-      "ring": "Ring"
+      "ring": "Ring",
+      "mainTool": "Hauptwerkzeug",
+      "offTool": "Nebenwerkzeug"
     },
     "leftLabel": "Waffe und Rüstung",
     "rightLabel": "Schild und Accessoires",
@@ -808,7 +814,7 @@
     "gil": "Gil",
     "gilAmount": "{{amount}} Gil",
     "seen": "gesehen {{ago}}",
-    "ornate": "Kunstvolle Version, gleiche Werte",
+    "ornate": "Kunstvolle Version: 5 Materia-Plätze",
     "fullSet": "Ganzes Set",
     "setNote": "{{priced}} von {{count}} Teilen, HQ, {{market}}",
     "someMissing": "Für manche Teile gibt es keine Angebote.",
@@ -823,8 +829,9 @@
       "worlds": "Die Preise sind jeweils das günstigste einzelne Angebot auf irgendeiner Welt im gewählten Markt. Für ein ganzes Set besuchst du also meist ein paar Welten. Dazu kommen 5 % Marktsteuer.",
       "hq": "Die Preise gelten nur für HQ. HQ und NQ haben dieselbe Gegenstandsstufe, aber HQ bringt rund 10 % mehr Hauptattribut und zusätzliche Nebenwerte, und fast alles, was Handwerker anbieten, ist ohnehin HQ. NQ ist also selten günstiger. Materia einsetzen kannst du selbst; Angebote, die schon Materia haben, zählen auch mit, wenn sie am günstigsten sind.",
       "rings": "Ringe sind nicht einzigartig, deshalb nutzen die beiden Ringplätze die zwei günstigsten Ring-Angebote.",
-      "ornate": "Das Rumpfteil gibt es auch als „kunstvolle“ Version mit identischen Werten. Die Seite prüft beide und zeigt die günstigere.",
-      "shared": "Jobs, die dasselbe Rüstungsset tragen, brauchen nur eine neue Waffe: Verteidiger teilen sich „der Verteidigung“, Heiler „der Heilung“, magische Fernkämpfer „der Magie“ und physische Fernkämpfer „des Zielens“. Nahkämpfer sind dreigeteilt: „des Verstümmelns“ für Dragoon und Schnitter, „des Schlagens“ für Mönch und Samurai, „des Spähens“ für Ninja und Viper. Accessoires werden noch breiter geteilt: „des Schlachtens“ passt für Mönch, Dragoon, Samurai und Schnitter, „des Zielens“ für physische Fernkämpfer sowie Ninja und Viper."
+      "ornate": "Das Rumpfteil für Kampfjobs gibt es auch als „kunstvolle“ Version. Sie hat dieselben Grundwerte, aber fünf sichere Materia-Plätze statt zwei, du kannst sie also voll bestücken, ohne Übermeldungen zu riskieren. Sie wird nicht hergestellt, ist daher selten und meist viel teurer. Die Seite prüft beide und zeigt die günstigere.",
+      "shared": "Jobs, die dasselbe Rüstungsset tragen, brauchen nur eine neue Waffe: Verteidiger teilen sich „der Verteidigung“, Heiler „der Heilung“, magische Fernkämpfer „der Magie“ und physische Fernkämpfer „des Zielens“. Nahkämpfer sind dreigeteilt: „des Verstümmelns“ für Dragoon und Schnitter, „des Schlagens“ für Mönch und Samurai, „des Spähens“ für Ninja und Viper. Accessoires werden noch breiter geteilt: „des Schlachtens“ passt für Mönch, Dragoon, Samurai und Schnitter, „des Zielens“ für physische Fernkämpfer sowie Ninja und Viper.",
+      "crafting": "Handwerker und Sammler haben auf der neuesten Gegenstandsstufe keine handelbare Ausrüstung, daher nutzt ihre Liste die beste hergestellte Ausrüstung, die man kaufen kann: das Pfauen-Set der Gegenstandsstufe 750 und Goldhand-Werkzeuge. Alle Handwerker tragen dieselbe Pfauen-Rüstung und alle Sammler eine andere, ein zweiter Handwerker oder Sammler braucht also nur neue Werkzeuge."
     },
     "sourcesHeading": "Quellen",
     "sourcesItems": "Ausrüstungsliste, Gegenstands- und Jobnamen in allen vier Sprachen sowie Symbole stammen von {xivapi}, gespeichert als crafted-gear.json und aktualisiert, wenn ein neues hergestelltes Set erscheint.",
@@ -833,7 +840,7 @@
   "seo": {
     "craftedGear": {
       "title": "FFXIV hergestellte Ausrüstung: Preise für das Hofliebhaber-Set nach Job | XIVKit",
-      "description": "Wähle einen Job und sieh den günstigsten HQ-Preis am Marktbrett für jedes Teil des hergestellten Hofliebhaber-Sets (Gegenstandsstufe 770), live von Universalis, angeordnet wie das Charakterfenster im Spiel."
+      "description": "Wähle einen Job und sieh den günstigsten HQ-Preis am Marktbrett für jedes Teil seiner hergestellten Ausrüstung, live von Universalis: das Hofliebhaber-Set (Gegenstandsstufe 770) für Kampfjobs, Pfauen-Ausrüstung und Goldhand-Werkzeuge für Handwerker und Sammler, angeordnet wie das Charakterfenster im Spiel."
     },
     "index": {
       "title": "XIVKit: FFXIV-Tools & Links",
