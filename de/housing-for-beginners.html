@@ -59,227 +59,154 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@500;600&display=swap">
-<style>
-:root{
-  --paper:#EDF0F3; --surface:#F8F9FB; --ink:#18233B; --muted:#56617A; --rule:#C8D0DB;
-  --cyan:#1B7C93; --moss:#4E6A2C; --gold:#94640E; --rose:#9A3F55; --slate:#6B7385;
-  --chip:#E1E6EC; --focus:#1B7C93;
-  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#131A29; --surface:#1A2336; --ink:#E4E9F1; --muted:#9BA6B9; --rule:#2E3A52;
-    --cyan:#63C3D8; --moss:#A5C674; --gold:#E3B45E; --rose:#E08AA0; --slate:#A3ABBD;
-    --chip:#243049; --focus:#63C3D8;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#131A29; --surface:#1A2336; --ink:#E4E9F1; --muted:#9BA6B9; --rule:#2E3A52;
-  --cyan:#63C3D8; --moss:#A5C674; --gold:#E3B45E; --rose:#E08AA0; --slate:#A3ABBD;
-  --chip:#243049; --focus:#63C3D8;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
-a{color:var(--cyan);text-underline-offset:2px}
-a:focus-visible,input:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-
-.site-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;padding:18px 0 0;font-size:14px}
-.site-nav a{color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px}
-.site-nav a:hover{color:var(--ink)}
-.site-footer{border-top:1px solid var(--rule);margin-top:32px;padding-top:20px;font-size:14px;color:var(--muted)}
-.site-footer p{margin:6px 0}
-.site-footer .legal{margin-top:10px;font-size:13px;opacity:.75}
-
-.wip-banner{margin:16px 0 0;padding:10px 14px;border:1px solid var(--gold);border-left-width:4px;border-radius:6px;background:var(--surface);font-size:15px}
-.wip-banner b{color:var(--gold)}
-
-header.hero{padding:20px 0 4px}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 10px;max-width:18ch}
-.hero .lede{max-width:68ch;color:var(--muted);margin:0 0 12px}
-
-
-.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-.legend{display:grid;gap:6px;margin:14px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:70ch;font-size:14px;list-style:none}
-.legend li{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
-.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.03em;border:1px solid var(--v);color:var(--v);border-radius:999px;padding:1px 10px;white-space:nowrap}
-.pill.confirmed{--v:var(--moss)} .pill.expected{--v:var(--gold)} .pill.tba{--v:var(--slate)} .pill.advice{--v:var(--cyan)}
-.pill.sm{font-size:11px;padding:0 8px;vertical-align:1px;margin-right:4px}
-
-.toc{margin:18px 0 0;padding:12px 14px;border:1px solid var(--rule);border-radius:8px;max-width:70ch}
-.toc h2{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px;font-family:var(--body)}
-.toc ol{margin:0;padding-left:22px;columns:2;column-gap:28px;font-size:15px}
-.toc li{margin:3px 0;break-inside:avoid}
-
-main section{padding:26px 0 8px;border-top:1px solid var(--rule);margin-top:26px;scroll-margin-top:12px}
-.sec-head{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 6px}
-.sec-head h2{font-family:var(--display);font-weight:800;font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;margin:0;display:flex;align-items:baseline;gap:10px}
-.sec-head .num{font:600 14px var(--font-mono,monospace);color:var(--muted)}
-.pills{display:flex;flex-wrap:wrap;gap:6px}
-h3.mini{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px;font-family:var(--body)}
-.links{margin:0;padding-left:20px;max-width:76ch}
-.links li{margin:5px 0}
-
-
-
-footer{padding:34px 0 60px;color:var(--muted);font-size:15px}
-footer h2{color:var(--ink);font-family:var(--display);font-size:24px;margin:0 0 6px}
-footer ul{padding-left:18px;max-width:78ch}
-footer li{margin:5px 0}
-
-@media (max-width:760px){
-  body{font-size:16px}
-  .toc ol{columns:1}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-
-table.lim{border-collapse:collapse;width:100%;max-width:76ch;font-size:15px;margin:8px 0}
-table.lim th,table.lim td{border:1px solid var(--rule);padding:6px 10px;text-align:left}
-table.lim th{background:var(--surface);font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
-.lim-wrap{overflow-x:auto}
-.note{max-width:76ch;margin:10px 0;padding:10px 14px;border:1px solid var(--rule);border-left:4px solid var(--cyan);border-radius:6px;background:var(--surface);font-size:15px}
-.note.warn{border-left-color:var(--gold)}
-.note p{margin:4px 0}
-section p{max-width:76ch}
-ul.links li small{color:var(--muted)}
-
-.util-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:14px;margin:8px 0 18px}
-.util{display:flex;gap:14px;padding:14px;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}
-.u-img{flex:none;width:80px;height:80px;object-fit:contain;border-radius:8px;background:var(--chip)}
-.u-body{min-width:0}
-.util h3{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;font-family:var(--display);font-size:20px;margin:0 0 4px;line-height:1.2}
-.u-ico{width:32px;height:32px;vertical-align:middle;flex:none}
-.u-purpose{margin:0 0 8px;font-size:15px}
-.util dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:3px 12px;font-size:14px}
-.util dt{color:var(--muted);font-weight:700}
-.util dd{margin:0}
-.u-src{margin:8px 0 0;font-size:13px}
-.util-table td:first-child{white-space:nowrap}
-.price-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:12px 0 4px;padding:10px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--surface);max-width:76ch;font-size:15px}
-.price-bar select,.price-bar button{font:inherit;font-size:14px;background:var(--paper);color:var(--ink);border:1px solid var(--rule);border-radius:6px;padding:4px 8px}
-.price-bar button{cursor:pointer}
-.price-bar button:disabled{opacity:.6;cursor:default}
-#priceStatus{color:var(--muted);font-size:13px}
-.price-hint{margin:0 0 12px;font-size:13px;color:var(--muted)}
-.mb b{font-variant-numeric:tabular-nums}
-.mb small{color:var(--muted);font-size:12px}
-.mb a{white-space:nowrap}
-@media (max-width:560px){.util{flex-direction:column}.util dl{grid-template-columns:1fr}.util dt{margin-top:4px}}
-</style>
-<link rel="stylesheet" href="brand.css">
-<link rel="stylesheet" href="brand-guide-vars.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="housing-guide/phosphor/icons.css">
+<link rel="stylesheet" href="housing-guide/housing-guide.css">
 </head>
 <body>
-<div class="wrap">
-
-<nav class="site-nav">
-  <a class="wordmark" href="de/" aria-label="XIVKit home">XIV<b>KIT</b></a>
-  <a href="de/" data-i18n="shared.nav.tools">Tools</a>
-  <a href="plugins/" data-i18n="shared.nav.directory">Plugin-Verzeichnis</a>
-  <a href="de/#guides" data-i18n="shared.nav.guides">Guides</a>
-  <div id="lang-bar"><button type="button" class="tag-pill lang-pill" data-lang="en">EN</button><button type="button" class="tag-pill lang-pill" data-lang="ja">日本語</button><button type="button" class="tag-pill lang-pill active" data-lang="de">DE</button><button type="button" class="tag-pill lang-pill" data-lang="fr">FR</button></div>
-</nav>
-
-<p class="wip-banner" role="note" data-i18n-rich="hh.s1"><b data-i18n="hh.s2" data-token="t1">Zuletzt geprüft am 15. November 2026.</b> Die Zahlen stammen aus Community-Wikis und Artikeln Dritter, nicht aus offiziellen Patchnotes. Bitte prüfe sie im Spiel.</p>
-
-<header class="hero">
-  <h1 data-i18n="hh.s3">Housing für Einsteiger</h1>
-  <p class="lede" data-i18n="hh.s4">Du hast ein kleines Haus und weißt nicht, wo du anfangen sollst? Diese Seite sammelt die besten Einsteigerguides, die Regeln, über die man stolpert (Genehmigungen, Limits, der Abrisstimer), günstige Einrichtungstipps und die wichtigsten Tools.</p>
-  <ul class="legend" aria-label="Status tags">
-    <li data-i18n-rich="hh.s5"><span class="pill confirmed" data-i18n="hh.s6" data-token="t1">Offiziell</span> Von Square Enix auf der Lodestone veröffentlicht</li>
-    <li data-i18n-rich="hh.s7"><span class="pill expected" data-i18n="hh.s8" data-token="t1">Im Spiel prüfen</span> Aus einem Community-Wiki oder einem Drittartikel. Vor dem Verlassen darauf bitte prüfen</li>
-    <li data-i18n-rich="hh.s9"><span class="pill advice" data-i18n="hh.s10" data-token="t1">Unser Tipp</span> Eine Empfehlung von uns</li>
-  </ul>
-  <nav class="toc" aria-label="Sections">
-    <h2 data-i18n="hh.s11">Auf dieser Seite</h2>
-    <ol><li><a href="de/housing-for-beginners.html#steps" data-i18n="hh.s12">Deine ersten Schritte</a></li><li><a href="de/housing-for-beginners.html#guides" data-i18n="hh.s13">Einsteigerguides</a></li><li><a href="de/housing-for-beginners.html#permits" data-i18n="hh.s14">Genehmigungen und Besitz</a></li><li><a href="de/housing-for-beginners.html#sharing" data-i18n="hh.s15">Das Haus teilen</a></li><li><a href="de/housing-for-beginners.html#limits" data-i18n="hh.s16">Limits nach Größe</a></li><li><a href="de/housing-for-beginners.html#flowerpots" data-i18n="hh.s17">Blumentöpfe</a></li><li><a href="de/housing-for-beginners.html#gardens" data-i18n="hh.s18">Gartenbeete</a></li><li><a href="de/housing-for-beginners.html#utilities" data-i18n="hh.s19">Nützliche Möbel, die man übersieht</a></li><li><a href="de/housing-for-beginners.html#upkeep" data-i18n="hh.s20">Instandhaltung und Abriss</a></li><li><a href="de/housing-for-beginners.html#furnish" data-i18n="hh.s21">Günstig einrichten</a></li><li><a href="de/housing-for-beginners.html#tools" data-i18n="hh.s22">Websites und Plugins</a></li><li><a href="de/housing-for-beginners.html#evercold" data-i18n="hh.s23">Was sich mit Evercold ändern könnte</a></li></ol>
+<div class="hg">
+<header class="hg-hero">
+  <div class="hg-stars" aria-hidden="true"></div>
+  <nav class="hg-nav" aria-label="Site">
+    <a class="hg-brand" href="de/" aria-label="XIVKit home">XIV<span>KIT</span></a>
+    <a href="de/" data-i18n="shared.nav.tools">Tools</a>
+    <a href="plugins/" data-i18n="shared.nav.directory">Plugin-Verzeichnis</a>
+    <a href="de/#guides" class="hg-here" data-i18n="shared.nav.guides">Guides</a>
+    <div id="lang-bar"><button type="button" class="tag-pill lang-pill" data-lang="en">EN</button><button type="button" class="tag-pill lang-pill" data-lang="ja">日本語</button><button type="button" class="tag-pill lang-pill active" data-lang="de">DE</button><button type="button" class="tag-pill lang-pill" data-lang="fr">FR</button></div>
   </nav>
+  <div class="hg-hero-grid">
+    <div class="hg-hero-copy">
+      <div class="hg-eyebrow"><i class="ph ph-house-line"></i><span data-i18n="hh.s362">Guide · Housing · Zuletzt geprüft am 15. November 2026</span></div>
+      <h1 data-i18n-rich="hh.s363">Willkommen zu Hause,<br data-token="t1"><span data-i18n="hh.s364" data-token="t2">frischgebackene Hausbesitzer*innen.</span></h1>
+      <p class="hg-lede" data-i18n="hh.s365">Gerade ein Cottage bekommen (oder davon geträumt)? Hier steht die Reihenfolge, die Regeln, über die man stolpert, günstige Einrichtungstipps und die Tools, die man kennen sollte. Sag uns, was du hast, und die Seite passt sich an.</p>
+      <div class="hg-pick"><span class="hg-pick-q" data-i18n="hh.s366">Was hast du bekommen?</span><div class="hg-chips" role="group" aria-label="Estate size"><button type="button" class="hg-chip" data-size="chambers" aria-pressed="false"><i class="ph ph-door-open"></i><span data-i18n="hh.s367">FG-Privatgemach</span></button><button type="button" class="hg-chip" data-size="apartment" aria-pressed="false"><i class="ph ph-buildings"></i><span data-i18n="hh.s368">Ein Apartment</span></button><button type="button" class="hg-chip" data-size="small" aria-pressed="false"><i class="ph ph-house-simple"></i><span data-i18n="hh.s369">Ein kleines Cottage</span></button><button type="button" class="hg-chip" data-size="medium" aria-pressed="false"><i class="ph ph-house"></i><span data-i18n="hh.s370">Ein mittleres Haus</span></button><button type="button" class="hg-chip" data-size="large" aria-pressed="false"><i class="ph ph-castle-turret"></i><span data-i18n="hh.s371">Eine Villa</span></button></div></div>
+      <ul class="hg-legend">
+        <li data-i18n-rich="hh.s5"><span class="tag tag-accent" data-i="seal-check" data-i18n="hh.s6" data-token="t1">Offiziell</span> Von Square Enix auf der Lodestone veröffentlicht</li>
+        <li data-i18n-rich="hh.s7"><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8" data-token="t1">Im Spiel prüfen</span> Aus einem Community-Wiki oder einem Drittartikel. Vor dem Verlassen darauf bitte prüfen</li>
+        <li data-i18n-rich="hh.s9"><span class="tag tag-neutral" data-i="sparkle" data-i18n="hh.s10" data-token="t1">Unser Tipp</span> Eine Empfehlung von uns</li>
+      </ul>
+      <p class="hg-src" data-i18n="hh.s372">Die Zahlen stammen aus Community-Wikis und Artikeln Dritter, nicht aus offiziellen Patchnotes. Bitte prüfe sie im Spiel.</p>
+    </div>
+    <div class="hg-hero-art" aria-hidden="true">
+      <div class="hg-art-glow"></div>
+      <svg class="hg-art" viewBox="0 0 520 390" role="presentation" focusable="false">
+        <defs>
+          <lineargradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2741" /><stop offset="1" stop-color="#161826" /></lineargradient>
+          <radialgradient id="win" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#f1e3b3" /><stop offset="1" stop-color="#d9a94f" /></radialgradient>
+        </defs>
+        <rect width="520" height="390" rx="14" fill="url(#sky)" />
+        <circle cx="410" cy="82" r="30" fill="#e7e5fe" opacity=".92" />
+        <circle cx="422" cy="76" r="26" fill="#2b2741" />
+        <g fill="#d2cefd"><circle cx="70" cy="60" r="1.6" /><circle cx="150" cy="110" r="1.2" /><circle cx="240" cy="48" r="1.8" /><circle cx="320" cy="120" r="1.2" /><circle cx="470" cy="150" r="1.4" /><circle cx="96" cy="170" r="1" /></g>
+        <path d="M0 310 Q130 280 260 300 T520 290 V390 H0Z" fill="#1d2033" />
+        <path d="M0 340 Q160 315 300 335 T520 325 V390 H0Z" fill="#232532" />
+        <g transform="translate(150 190)">
+          <rect x="0" y="52" width="170" height="90" fill="#423a6a" />
+          <path d="M-14 56 L85 -6 L184 56Z" fill="#2b2741" stroke="#5d5294" stroke-width="2" />
+          <rect x="22" y="78" width="38" height="34" rx="3" fill="url(#win)" />
+          <rect x="110" y="78" width="38" height="34" rx="3" fill="url(#win)" />
+          <rect x="72" y="92" width="26" height="50" rx="3" fill="#161826" />
+          <rect x="128" y="-2" width="16" height="34" fill="#2b2741" stroke="#5d5294" stroke-width="2" />
+        </g>
+        <g fill="#5d5294"><circle cx="90" cy="318" r="9" /><circle cx="440" cy="322" r="11" /></g>
+      </svg>
+      <div class="hg-badge"><i class="ph ph-timer"></i><div><span data-i18n-rich="hh.s373">Besuche es alle <strong data-i18n="hh.s374" data-token="t1">45 Tage</strong></span><small data-i18n="hh.s375">sonst ist das Haus puff weg</small></div></div>
+    </div>
+  </div>
+  <div class="hg-fade"></div>
 </header>
 
-<main>
-  <section id="steps">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s24"><span class="num" data-token="t1">1</span>Deine ersten Schritte</h2><div class="pills"><span class="pill advice" data-i18n="hh.s10">Unser Tipp</span></div></div>
-    <p data-i18n="hh.s25">Die Reihenfolge, der die meisten folgen, vom Anfang bis zum Ende. Jeder Schritt verlinkt auf den Abschnitt mit den Details.</p>
-    <ol class="links">
-      <li data-i18n-rich="hh.s26"><b data-i18n="hh.s27" data-token="t1">Voraussetzungen prüfen.</b> Ein privates Haus erfordert eine Kampfklasse auf Stufe 50 und den Rang Leutnant in einer Staatsgarde. Ein Apartment ist der günstige Einstieg, während du sparst. Siehe <a href="de/housing-for-beginners.html#permits" data-i18n="hh.s14" data-token="t2">Genehmigungen und Besitz</a>.</li>
-      <li data-i18n-rich="hh.s28"><b data-i18n="hh.s29" data-token="t1">Gil sparen.</b> Ein kleines Grundstück kostet 3.000.000 bis 3.750.000 Gil, und der volle Preis wird während des Wartens als Anzahlung einbehalten. Dazu kommen die Baugenehmigung für 450.000 Gil und die Möbel.</li>
-      <li data-i18n-rich="hh.s30"><b data-i18n="hh.s31" data-token="t1">An der Verlosung teilnehmen.</b> Du hast pro 9-Tage-Zyklus einen Eintrag (5 Tage Anmeldung, 4 Tage Auswertung). Gewinnst du nicht, wird die Anzahlung vollständig erstattet (laut Wiki innerhalb von 90 Tagen). Gewinnst du und schließt den Kauf nicht ab, verlierst du 50 % davon.</li>
-      <li data-i18n-rich="hh.s32"><b data-i18n="hh.s33" data-token="t1">Genehmigung kaufen und bauen.</b> Nach dem Gewinn kaufst du die zur Größe passende Baugenehmigung in der Immobilienhalle. Du hast 45 Tage zum Bauen, sonst wird das Grundstück eingezogen. Wähle die vier erforderlichen Außenteile: Dach, Wand, Fenster und Tür.</li>
-      <li data-i18n-rich="hh.s34"><b data-i18n="hh.s35" data-token="t1">Günstig einrichten.</b> Wohnungshändler verkaufen die Grundausstattung für wenige tausend Gil, und du kannst ihre Möbel vor dem Kauf in der Vorschau ansehen. Siehe <a href="de/housing-for-beginners.html#furnish" data-i18n="hh.s21" data-token="t2">Günstig einrichten</a>.</li>
-      <li data-i18n-rich="hh.s36"><b data-i18n="hh.s37" data-token="t1">Limits kennen.</b> Ein kleines Haus fasst 300 Möbelstücke im Innenraum und 40 im Hof. Siehe <a href="de/housing-for-beginners.html#limits" data-i18n="hh.s16" data-token="t2">Limits nach Größe</a>.</li>
-      <li data-i18n-rich="hh.s38"><b data-i18n="hh.s39" data-token="t1">Erinnerung für den Besuch einrichten.</b> Betritt das Haus mindestens alle 45 Tage, sonst wird es abgerissen. Siehe <a href="de/housing-for-beginners.html#upkeep" data-i18n="hh.s20" data-token="t2">Instandhaltung und Abriss</a>.</li>
-    </ol>
-    <p data-i18n-rich="hh.s40">Sobald du drin bist, behandeln <a href="de/housing-for-beginners.html#guides" data-i18n="hh.s41" data-token="t1">die Einsteigerguides</a> das Dekorieren und <a href="de/housing-for-beginners.html#sharing" data-i18n="hh.s42" data-token="t2">das Teilen des Hauses</a> das Mitnutzen durch Freunde.</p>
-  </section>
-
-  <section id="guides">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s43"><span class="num" data-token="t1">2</span>Einsteigerguides</h2></div>
-    <p data-i18n="hh.s44">Es gibt keinen einzelnen Einstiegsguide, der Außen- und Innenbereich eines Hauses abdeckt, und auch keinen offiziellen Einsteigerguide auf der Lodestone. Die beste Kombination ist das Wiki für die Regeln und der HGXIV-Guide fürs Dekorieren.</p>
-    <ul class="links">
-      <li data-i18n-rich="hh.s45"><a href="https://ffxiv.consolegameswiki.com/wiki/Player_Housing" target="_blank" rel="noopener noreferrer" data-i18n="hh.s46" data-token="t1">Console Games Wiki: Player Housing</a>: Bezirke, Grundstücksgrößen, die Verlosung, Außenteile und Möbellimits. Die vollständigste Regelreferenz (zuletzt bearbeitet am 21. Oktober 2026).</li>
-      <li data-i18n-rich="hh.s47"><a href="https://hgxiv.com/basics-guide/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s48" data-token="t1">HGXIV Basics Guide</a>: Von Housing-Designern geschrieben. Das Housing-Menü, Innenumbau, Layout-Modus, Raster, Platzieren auf Tresen und Beleuchtung. Nur Innenräume, keine Außenbereiche.</li>
-      <li data-i18n-rich="hh.s49"><a href="https://hgxiv.com" target="_blank" rel="noopener noreferrer" data-i18n="hh.s50" data-token="t1">HGXIV</a>: Verlinkt außerdem einen Glitch-Guide, einen Beleuchtungsguide und einen Design-Guide mit dem Hinweis „Updated as of Patch 7.5X“. Es gibt einen Discord und einen YouTube-Kanal für Fragen.</li>
-      <li data-i18n-rich="hh.s51"><a href="https://ffxiv-housing-tutorials.carrd.co/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s52" data-token="t1">FFXIV Housing Tutorials</a>: Kleine Platzierungstricks, etwa schwebende Möbel oder das Platzieren aus dem Lager. Anonym und ohne Datum, also als Tippsammlung zu verstehen.</li>
-      <li data-i18n-rich="hh.s53"><a href="https://housingsnap.com/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s54" data-token="t1">Housing Snap</a>: Spieler-Screenshots, die du nach Hausgröße filtern kannst. Gut als Inspiration für kleine Häuser.</li>
-      <li data-i18n-rich="hh.s55"><a href="https://na.finalfantasyxiv.com/blog/003684.html" target="_blank" rel="noopener noreferrer" data-i18n="hh.s56" data-token="t1">Mister Foxclon's Neighborhood (Lodestone)</a>: Rundgänge von Square Enix durch von Spielern gebaute Häuser, als Ideengeber.</li>
-    </ul>
-  </section>
-
-  <section id="permits">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s57"><span class="num" data-token="t1">3</span>Genehmigungen und Besitz</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n-rich="hh.s58"><b data-i18n="hh.s59" data-token="t1">Es gibt nur eine Genehmigung für Häuser.</b> Eine „Personal Estate Permit“ oder „Free Company Estate Permit“ gibt es nicht als eigene Gegenstände. Nach dem Gewinn eines Grundstücks kaufst du in der Immobilienhalle die passende <b data-i18n="hh.s60" data-token="t2">Baugenehmigung</b>: 450.000 Gil für ein Cottage (klein), 1.000.000 für ein Haus (mittel) und 3.000.000 für eine Villa (groß). Danach hast du 45 Tage zum Bauen.</p>
-    <p data-i18n="hh.s61">Unterschiede gibt es bei der Art des Anwesens:</p>
-    <ul class="links">
-      <li data-i18n-rich="hh.s62"><b data-i18n="hh.s63" data-token="t1">Privates Haus.</b> Erfordert eine Kampfklasse auf Stufe 50 und den Rang Leutnant in einer Staatsgarde. Kann mit bis zu 3 Freunden geteilt werden (siehe <a href="de/housing-for-beginners.html#sharing" data-i18n="hh.s15" data-token="t2">Das Haus teilen</a>).</li>
-      <li data-i18n-rich="hh.s64"><b data-i18n="hh.s65" data-token="t1">Haus der Freien Gesellschaft.</b> Erfordert FC-Rang 6, mindestens 4 Mitglieder und 30 Tage Mitgliedschaft des Käufers. Nur FC-Häuser haben Privatgemächer (je 300.000 Gil).</li>
-      <li data-i18n-rich="hh.s66"><b data-i18n="hh.s67" data-token="t1">Apartment.</b> Eines pro Charakter, 500.000 Gil, und es zählt nicht zum Hauslimit. Wird nicht abgerissen. Kein Hof und kein Garten.</li>
-    </ul>
-    <p data-i18n="hh.s68">Ein Charakter kann ein privates Haus und, wenn er eine FG leitet, ein FG-Haus besitzen, dazu ein Apartment. Private und FG-Grundstücke lassen sich nicht ineinander umwandeln. Das Wiki formuliert die Ein-Haus-Regel auf zwei verschiedene Arten, bitte prüfe sie im Spiel.</p>
-    <p data-i18n="hh.s69">Land wird per Verlosung in einem 9-Tage-Zyklus verkauft (5 Tage Anmeldung, 4 Tage Auswertung), mit einem Eintrag pro Zeitraum. Ein kleines Grundstück kostet je nach Grundstücksklasse 3.000.000 bis 3.750.000 Gil. Der Preis hängt nicht vom Bezirk ab. Der volle Preis wird während des Wartens als Anzahlung einbehalten. Nicht gewonnene Einträge werden vollständig erstattet, und wer nach dem Gewinn den Kauf nicht abschließt, verliert 50 % der Anzahlung.</p>
-    <p class="note" data-i18n-rich="hh.s70"><b data-i18n="hh.s71" data-token="t1">Nicht dasselbe:</b> Auch für das Anheuern von Hausangestellten werden „Genehmigungen“ benötigt. Die günstigste ist die Steward-Genehmigung für 3.000 Gil für einen Hausdiener oder eine Haushälterin.</p>
-  </section>
-
-  <section id="sharing">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s72"><span class="num" data-token="t1">4</span>Das Haus mit einem Freund teilen</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n-rich="hh.s73">Der Besitzer eines privaten Hauses kann bis zu <b data-i18n="hh.s74" data-token="t1">3 Freunde</b> zu „Mietern“ machen. Mieter können sich zum Haus teleportieren und, wenn du es erlaubst, dekorieren und gärtnern. Im Spiel heißt das „Anwesen teilen“. Es kostet nichts.</p>
-    <h3 class="mini" data-i18n="hh.s75">So fügst du einen Mieter hinzu</h3>
-    <ol class="links">
+<div class="hg-wrap">
+  <nav class="hg-toc" aria-label="Sections">
+    <div class="hg-toc-head"><i class="ph ph-map-trifold"></i><span data-i18n="hh.s376">Bezirkskarte</span></div>
+    <a href="de/housing-for-beginners.html#steps" data-toc="steps"><span class="hg-toc-n">01</span><span data-i18n="hh.s377">Erste Schritte</span></a><a href="de/housing-for-beginners.html#guides" data-toc="guides"><span class="hg-toc-n">02</span><span data-i18n="hh.s13">Einsteigerguides</span></a><a href="de/housing-for-beginners.html#permits" data-toc="permits"><span class="hg-toc-n">03</span><span data-i18n="hh.s378">Genehmigungen</span></a><a href="de/housing-for-beginners.html#sharing" data-toc="sharing"><span class="hg-toc-n">04</span><span data-i18n="hh.s379">Teilen</span></a><a href="de/housing-for-beginners.html#limits" data-toc="limits"><span class="hg-toc-n">05</span><span data-i18n="hh.s16">Limits nach Größe</span></a><a href="de/housing-for-beginners.html#flowerpots" data-toc="flowerpots"><span class="hg-toc-n">06</span><span data-i18n="hh.s17">Blumentöpfe</span></a><a href="de/housing-for-beginners.html#gardens" data-toc="gardens"><span class="hg-toc-n">07</span><span data-i18n="hh.s18">Gartenbeete</span></a><a href="de/housing-for-beginners.html#utilities" data-toc="utilities"><span class="hg-toc-n">08</span><span data-i18n="hh.s380">Nützliches</span></a><a href="de/housing-for-beginners.html#upkeep" data-toc="upkeep"><span class="hg-toc-n">09</span><span data-i18n="hh.s381">Instandhaltung</span></a><a href="de/housing-for-beginners.html#furnish" data-toc="furnish"><span class="hg-toc-n">10</span><span data-i18n="hh.s382">Einrichten</span></a><a href="de/housing-for-beginners.html#tools" data-toc="tools"><span class="hg-toc-n">11</span><span data-i18n="hh.s22">Websites und Plugins</span></a><a href="de/housing-for-beginners.html#evercold" data-toc="evercold"><span class="hg-toc-n">12</span><span data-i18n="hh.s383">Evercold</span></a>
+  </nav>
+  <main class="hg-main">
+    <section id="steps">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">01</span><h2 data-i18n="hh.s12">Deine ersten Schritte</h2><span class="tag tag-neutral" data-i="sparkle" data-i18n="hh.s10">Unser Tipp</span></div>
+      <p class="hg-intro" data-i18n="hh.s384">Die Reihenfolge, der die meisten folgen, vom Anfang bis zum Ende. Hake sie ab, und diese Seite merkt es sich.</p>
+      <div class="hg-progress"><div class="hg-bar"><div class="hg-bar-fill" data-bar=""></div></div><span data-progress-msg=""></span></div>
+      <ol class="hg-steps"><li class="hg-step"><input type="checkbox" id="step0" data-step="0"><label for="step0" class="hg-step-dot"><span class="hg-n">1</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step0" class="hg-step-title" data-i18n="hh.s386">Voraussetzungen prüfen</label><span class="hg-step-body" data-i18n-rich="hh.s387">Ein privates Haus erfordert eine Kampfklasse auf Stufe 50 und den Rang Leutnant in einer Staatsgarde. Ein Apartment ist der günstige Einstieg, während du sparst. Siehe <a href="de/housing-for-beginners.html#permits" data-i18n="hh.s14" data-token="t1">Genehmigungen und Besitz</a>.</span></div></li><li class="hg-step"><input type="checkbox" id="step1" data-step="1"><label for="step1" class="hg-step-dot"><span class="hg-n">2</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step1" class="hg-step-title" data-i18n="hh.s388">Gil sparen</label><span class="hg-step-body" data-i18n="hh.s389">Ein kleines Grundstück kostet 3.000.000 bis 3.750.000 Gil, und der volle Preis wird während des Wartens als Anzahlung einbehalten. Dazu kommen die Baugenehmigung für 450.000 Gil und die Möbel.</span></div></li><li class="hg-step"><input type="checkbox" id="step2" data-step="2"><label for="step2" class="hg-step-dot"><span class="hg-n">3</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step2" class="hg-step-title" data-i18n="hh.s390">An der Verlosung teilnehmen</label><span class="hg-step-body" data-i18n="hh.s391">Du hast pro 9-Tage-Zyklus einen Eintrag (5 Tage Anmeldung, 4 Tage Auswertung). Gewinnst du nicht, wird die Anzahlung vollständig erstattet (laut Wiki innerhalb von 90 Tagen). Gewinnst du und schließt den Kauf nicht ab, verlierst du 50 % davon.</span></div></li><li class="hg-step"><input type="checkbox" id="step3" data-step="3"><label for="step3" class="hg-step-dot"><span class="hg-n">4</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step3" class="hg-step-title" data-i18n="hh.s392">Genehmigung kaufen und bauen</label><span class="hg-step-body" data-i18n="hh.s393">Nach dem Gewinn kaufst du die zur Größe passende Baugenehmigung in der Immobilienhalle. Du hast 45 Tage zum Bauen, sonst wird das Grundstück eingezogen. Wähle die vier erforderlichen Außenteile: Dach, Wand, Fenster und Tür.</span></div></li><li class="hg-step"><input type="checkbox" id="step4" data-step="4"><label for="step4" class="hg-step-dot"><span class="hg-n">5</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step4" class="hg-step-title" data-i18n="hh.s394">Günstig einrichten</label><span class="hg-step-body" data-i18n-rich="hh.s395">Wohnungshändler verkaufen die Grundausstattung für wenige tausend Gil, und du kannst ihre Möbel vor dem Kauf in der Vorschau ansehen. Siehe <a href="de/housing-for-beginners.html#furnish" data-i18n="hh.s21" data-token="t1">Günstig einrichten</a>.</span></div></li><li class="hg-step"><input type="checkbox" id="step5" data-step="5"><label for="step5" class="hg-step-dot"><span class="hg-n">6</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step5" class="hg-step-title" data-i18n="hh.s396">Limits kennen</label><span class="hg-step-body" data-i18n-rich="hh.s397">Ein kleines Haus fasst 300 Möbelstücke im Innenraum und 40 im Hof. Siehe <a href="de/housing-for-beginners.html#limits" data-i18n="hh.s16" data-token="t1">Limits nach Größe</a>.</span></div></li><li class="hg-step"><input type="checkbox" id="step6" data-step="6"><label for="step6" class="hg-step-dot"><span class="hg-n">7</span><i class="ph ph-check"></i><span class="hg-sr" data-i18n="hh.s385">Erledigt</span></label><div class="hg-step-text"><label for="step6" class="hg-step-title" data-i18n="hh.s398">Erinnerung für den Besuch einrichten</label><span class="hg-step-body" data-i18n-rich="hh.s399">Betritt das Haus mindestens alle 45 Tage, sonst wird es abgerissen. Siehe <a href="de/housing-for-beginners.html#upkeep" data-i18n="hh.s20" data-token="t1">Instandhaltung und Abriss</a>.</span></div></li></ol>
+      <p class="hg-after" data-i18n-rich="hh.s40">Sobald du drin bist, behandeln <a href="de/housing-for-beginners.html#guides" data-i18n="hh.s41" data-token="t1">die Einsteigerguides</a> das Dekorieren und <a href="de/housing-for-beginners.html#sharing" data-i18n="hh.s42" data-token="t2">das Teilen des Hauses</a> das Mitnutzen durch Freunde.</p>
+    </section>
+    <section id="guides">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">02</span><h2 data-i18n="hh.s13">Einsteigerguides</h2></div>
+      <p class="hg-intro" data-i18n="hh.s44">Es gibt keinen einzelnen Einstiegsguide, der Außen- und Innenbereich eines Hauses abdeckt, und auch keinen offiziellen Einsteigerguide auf der Lodestone. Die beste Kombination ist das Wiki für die Regeln und der HGXIV-Guide fürs Dekorieren.</p>
+      <div class="hg-grid hg-grid-250"><a class="hg-card hg-guide" href="https://ffxiv.consolegameswiki.com/wiki/Player_Housing" target="_blank" rel="noopener noreferrer"><div class="hg-guide-top"><span class="hg-kicker" data-i18n="hh.s400">Regelreferenz</span><i class="ph ph-arrow-up-right"></i></div><span class="hg-card-title" data-i18n="hh.s46">Console Games Wiki: Player Housing</span><p data-i18n="hh.s401">Bezirke, Grundstücksgrößen, die Verlosung, Außenteile und Möbellimits. Die vollständigste Regelreferenz (zuletzt bearbeitet am 21. Oktober 2026).</p></a><a class="hg-card hg-guide" href="https://hgxiv.com/basics-guide/" target="_blank" rel="noopener noreferrer"><div class="hg-guide-top"><span class="hg-kicker" data-i18n="hh.s402">Dekorieren</span><i class="ph ph-arrow-up-right"></i></div><span class="hg-card-title" data-i18n="hh.s48">HGXIV Basics Guide</span><p data-i18n="hh.s403">Von Housing-Designern geschrieben. Das Housing-Menü, Innenumbau, Layout-Modus, Raster, Platzieren auf Tresen und Beleuchtung. Nur Innenräume, keine Außenbereiche.</p></a><a class="hg-card hg-guide" href="https://hgxiv.com" target="_blank" rel="noopener noreferrer"><div class="hg-guide-top"><span class="hg-kicker" data-i18n="hh.s404">Mehr Tiefe</span><i class="ph ph-arrow-up-right"></i></div><span class="hg-card-title" data-i18n="hh.s50">HGXIV</span><p data-i18n="hh.s405">Verlinkt außerdem einen Glitch-Guide, einen Beleuchtungsguide und einen Design-Guide mit dem Hinweis „Updated as of Patch 7.5X“. Es gibt einen Discord und einen YouTube-Kanal für Fragen.</p></a><a class="hg-card hg-guide" href="https://ffxiv-housing-tutorials.carrd.co/" target="_blank" rel="noopener noreferrer"><div class="hg-guide-top"><span class="hg-kicker" data-i18n="hh.s406">Tippsammlung</span><i class="ph ph-arrow-up-right"></i></div><span class="hg-card-title" data-i18n="hh.s52">FFXIV Housing Tutorials</span><p data-i18n="hh.s407">Kleine Platzierungstricks, etwa schwebende Möbel oder das Platzieren aus dem Lager. Anonym und ohne Datum, also als Tippsammlung zu verstehen.</p></a><a class="hg-card hg-guide" href="https://housingsnap.com/" target="_blank" rel="noopener noreferrer"><div class="hg-guide-top"><span class="hg-kicker" data-i18n="hh.s408">Inspiration</span><i class="ph ph-arrow-up-right"></i></div><span class="hg-card-title" data-i18n="hh.s54">Housing Snap</span><p data-i18n="hh.s409">Spieler-Screenshots, die du nach Hausgröße filtern kannst. Gut als Inspiration für kleine Häuser.</p></a><a class="hg-card hg-guide" href="https://na.finalfantasyxiv.com/blog/003684.html" target="_blank" rel="noopener noreferrer"><div class="hg-guide-top"><span class="hg-kicker" data-i18n="hh.s408">Inspiration</span><i class="ph ph-arrow-up-right"></i></div><span class="hg-card-title" data-i18n="hh.s56">Mister Foxclon's Neighborhood (Lodestone)</span><p data-i18n="hh.s410">Rundgänge von Square Enix durch von Spielern gebaute Häuser, als Ideengeber.</p></a></div>
+    </section>
+    <section id="permits">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">03</span><h2 data-i18n="hh.s14">Genehmigungen und Besitz</h2><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <div class="hg-myth">
+        <div class="hg-myth-copy">
+          <span class="hg-kicker" data-i18n="hh.s411">Mythos widerlegt</span>
+          <span class="hg-myth-title" data-i18n="hh.s59">Es gibt nur eine Genehmigung für Häuser.</span>
+          <span class="hg-myth-body" data-i18n-rich="hh.s412">Eine „Personal Estate Permit“ oder „Free Company Estate Permit“ gibt es nicht als eigene Gegenstände. Nach dem Gewinn eines Grundstücks kaufst du in der Immobilienhalle die passende <b data-i18n="hh.s60" data-token="t1">Baugenehmigung</b> und baust innerhalb von 45 Tagen.</span>
+        </div>
+        <div class="hg-prices">
+          <div class="hg-price" data-price-size="small"><small data-i18n="hh.s413">Klein</small><b>450,000</b><small data-i18n="hh.s414">Gil</small></div>
+          <div class="hg-price" data-price-size="medium"><small data-i18n="hh.s415">Mittel</small><b>1,000,000</b><small data-i18n="hh.s414">Gil</small></div>
+          <div class="hg-price" data-price-size="large"><small data-i18n="hh.s416">Groß</small><b>3,000,000</b><small data-i18n="hh.s414">Gil</small></div>
+        </div>
+      </div>
+      <div class="hg-grid hg-grid-220">
+        <div class="hg-card"><i class="ph ph-house hg-ico"></i><span class="hg-card-title" data-i18n="hh.s417">Privates Haus</span><p data-i18n-rich="hh.s418">Erfordert eine Kampfklasse auf Stufe 50 und den Rang Leutnant in einer Staatsgarde. Kann mit bis zu 3 Freunden geteilt werden (siehe <a href="de/housing-for-beginners.html#sharing" data-i18n="hh.s15" data-token="t1">Das Haus teilen</a>).</p></div>
+        <div class="hg-card"><i class="ph ph-users-three hg-ico"></i><span class="hg-card-title" data-i18n="hh.s419">Haus der Freien Gesellschaft</span><p data-i18n="hh.s420">Erfordert FC-Rang 6, mindestens 4 Mitglieder und 30 Tage Mitgliedschaft des Käufers. Nur FC-Häuser haben Privatgemächer (je 300.000 Gil).</p></div>
+        <div class="hg-card"><i class="ph ph-buildings hg-ico"></i><span class="hg-card-title" data-i18n="hh.s120">Apartment</span><p data-i18n="hh.s421">Eines pro Charakter, 500.000 Gil, und es zählt nicht zum Hauslimit. Wird nicht abgerissen. Kein Hof und kein Garten.</p></div>
+        <div class="hg-card hg-card-hl"><div class="hg-card-row"><i class="ph ph-door-open hg-ico"></i><span class="tag tag-accent" data-i18n="hh.s422">Günstigste</span></div><span class="hg-card-title" data-i18n="hh.s367">FG-Privatgemach</span><p data-i18n="hh.s423">300.000 Gil für dein eigenes Zimmer im Haus deiner FG. Gleicher Platz und gleiche Limits wie ein Apartment. Erfordert Stufe 50 und den Rang Leutnant. Wird nicht erstattet, wenn das Haus abgerissen wird.</p></div>
+      </div>
+      <div class="hg-prose"><p data-i18n="hh.s68">Ein Charakter kann ein privates Haus und, wenn er eine FG leitet, ein FG-Haus besitzen, dazu ein Apartment. Private und FG-Grundstücke lassen sich nicht ineinander umwandeln. Das Wiki formuliert die Ein-Haus-Regel auf zwei verschiedene Arten, bitte prüfe sie im Spiel.</p><p data-i18n="hh.s69">Land wird per Verlosung in einem 9-Tage-Zyklus verkauft (5 Tage Anmeldung, 4 Tage Auswertung), mit einem Eintrag pro Zeitraum. Ein kleines Grundstück kostet je nach Grundstücksklasse 3.000.000 bis 3.750.000 Gil. Der Preis hängt nicht vom Bezirk ab. Der volle Preis wird während des Wartens als Anzahlung einbehalten. Nicht gewonnene Einträge werden vollständig erstattet, und wer nach dem Gewinn den Kauf nicht abschließt, verliert 50 % der Anzahlung.</p><p class="hg-aside" data-i18n-rich="hh.s70"><b data-i18n="hh.s71" data-token="t1">Nicht dasselbe:</b> Auch für das Anheuern von Hausangestellten werden „Genehmigungen“ benötigt. Die günstigste ist die Steward-Genehmigung für 3.000 Gil für einen Hausdiener oder eine Haushälterin.</p></div>
+    </section>
+    <section id="sharing">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">04</span><h2 data-i18n="hh.s424">Mit Freunden teilen</h2><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <p class="hg-intro" data-i18n-rich="hh.s73">Der Besitzer eines privaten Hauses kann bis zu <b data-i18n="hh.s74" data-token="t1">3 Freunde</b> zu „Mietern“ machen. Mieter können sich zum Haus teleportieren und, wenn du es erlaubst, dekorieren und gärtnern. Im Spiel heißt das „Anwesen teilen“. Es kostet nichts.</p>
+      <div class="hg-two">
+        <div class="hg-col">
+          <h3 class="hg-h4" data-i18n="hh.s75">So fügst du einen Mieter hinzu</h3>
+          <div class="hg-path"><span class="tag tag-neutral" data-i18n="hh.s425">Sozial</span><i class="ph ph-caret-right"></i><span class="tag tag-neutral" data-i18n="hh.s79">Housing</span><i class="ph ph-caret-right"></i><span class="tag tag-neutral" data-i18n="hh.s80">Anwesen-Einstellungen</span><i class="ph ph-caret-right"></i><span class="tag tag-accent" data-i18n="hh.s81">Einstellungen für geteilte Anwesen</span></div>
+          <ol class="hg-list">
       <li data-i18n-rich="hh.s76"><b data-i18n="hh.s77" data-token="t1">Füge sie zuerst deiner Freundesliste hinzu.</b> Sie müssen von deiner Heimatwelt sein.</li>
       <li data-i18n-rich="hh.s78">Öffne das Menü <b data-i18n="hh.s79" data-token="t1">Housing</b> (im Sozialmenü), geh zu <b data-i18n="hh.s80" data-token="t2">Anwesen-Einstellungen</b>, wähle dein Anwesen und dann <b data-i18n="hh.s81" data-token="t3">Einstellungen für geteilte Anwesen</b>. Die Seite kann eine Minute zum Laden brauchen, warte also kurz.</li>
       <li data-i18n="hh.s82">Wähle deinen Freund aus der Liste und füge ihn als Mieter hinzu.</li>
       <li data-i18n-rich="hh.s83">Lege seine <b data-i18n="hh.s84" data-token="t1">Mieterberechtigungen</b> fest (siehe unten).</li>
     </ol>
-    <p class="note" data-i18n-rich="hh.s85"><b data-i18n="hh.s86" data-token="t1">Fehler „Nicht auf deiner Freundesliste“, obwohl er es ist?</b> Entferne ihn aus deiner Freundesliste, füge ihn erneut hinzu und versuche es noch einmal. Du bekommst auch einen Fehler, wenn dein Freund bereits Mieter in zwei anderen Häusern ist.</p>
-    <h3 class="mini" data-i18n="hh.s87">Was du einem Mieter erlauben kannst</h3>
-    <ul class="links">
+          <p class="hg-callout" data-i18n-rich="hh.s85"><b data-i18n="hh.s86" data-token="t1">Fehler „Nicht auf deiner Freundesliste“, obwohl er es ist?</b> Entferne ihn aus deiner Freundesliste, füge ihn erneut hinzu und versuche es noch einmal. Du bekommst auch einen Fehler, wenn dein Freund bereits Mieter in zwei anderen Häusern ist.</p>
+        </div>
+        <div class="hg-col">
+          <h3 class="hg-h4" data-i18n="hh.s87">Was du einem Mieter erlauben kannst</h3>
+          <ul class="hg-list hg-list-plain">
       <li data-i18n-rich="hh.s88"><b data-i18n="hh.s89" data-token="t1">Anwesen anpassen:</b> Möbel hinzufügen, entfernen und färben.</li>
       <li data-i18n-rich="hh.s90"><b data-i18n="hh.s91" data-token="t1">Gärtnern:</b> Pflanzen, Ernten und Entsorgen von Pflanzen, jeweils einzeln einstellbar.</li>
       <li data-i18n-rich="hh.s92"><b data-i18n="hh.s93" data-token="t1">Stallpflege:</b> Chocobos im Stall versorgen.</li>
       <li data-i18n-rich="hh.s94"><b data-i18n="hh.s95" data-token="t1">Orchestrion:</b> Musik abspielen.</li>
       <li data-i18n-rich="hh.s96"><b data-i18n="hh.s97" data-token="t1">Nachrichtenbuch:</b> das Nachrichtenbuch verwalten.</li>
     </ul>
-    <h3 class="mini" data-i18n="hh.s98">Gut zu wissen</h3>
-    <ul class="links">
+          <h3 class="hg-h4" data-i18n="hh.s98">Gut zu wissen</h3>
+          <ul class="hg-list">
       <li data-i18n-rich="hh.s99"><b data-i18n="hh.s100" data-token="t1">Mieter setzen den Abrisstimer nicht zurück.</b> Nur die Besuche des Besitzers zählen, der Besitzer muss das Haus also trotzdem mindestens alle 45 Tage betreten.</li>
       <li data-i18n-rich="hh.s101"><b data-i18n="hh.s102" data-token="t1">Mieter können sich nach Hause teleportieren.</b> Sie können wie der Besitzer den Miniatur-Aetheryten des Anwesens und seine Handwerkseinrichtungen nutzen.</li>
       <li data-i18n-rich="hh.s103"><b data-i18n="hh.s104" data-token="t1">Nur der Besitzer kann Gegenstände zurückholen,</b> falls das Haus abgerissen wird.</li>
       <li data-i18n-rich="hh.s105"><b data-i18n="hh.s106" data-token="t1">Limits.</b> Ein Spieler kann höchstens Mieter in 2 Häusern sein. Apartments lassen sich nicht teilen.</li>
       <li data-i18n-rich="hh.s107"><b data-i18n="hh.s108" data-token="t1">Auszug.</b> Ein Mieter kann sich jederzeit selbst aus der Mieterliste entfernen.</li>
     </ul>
-    <p class="note warn" data-i18n-rich="hh.s109"><b data-i18n="hh.s110" data-token="t1">Noch nicht belegt:</b> die genauen Tastennamen auf der Seite für geteilte Anwesen, ob dein Freund zustimmen muss und wie der Besitzer einen Mieter entfernt. Bitte prüfe das im Spiel.</p>
-    <ul class="links">
+        </div>
+      </div>
+      <p class="hg-dashed" data-i18n-rich="hh.s109"><b data-i18n="hh.s110" data-token="t1">Noch nicht belegt:</b> die genauen Tastennamen auf der Seite für geteilte Anwesen, ob dein Freund zustimmen muss und wie der Besitzer einen Mieter entfernt. Bitte prüfe das im Spiel.</p>
+      <ul class="hg-links">
       <li data-i18n-rich="hh.s111"><a href="https://ffxiv.consolegameswiki.com/wiki/Personal_Housing" target="_blank" rel="noopener noreferrer" data-i18n="hh.s112" data-token="t1">Console Games Wiki: Personal Housing</a>: Der Abschnitt zum Teilen des Anwesens, mit Menüpfad und Berechtigungen (zuletzt bearbeitet am 4. März 2026).</li>
     </ul>
-  </section>
-
-  <section id="limits">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s113"><span class="num" data-token="t1">5</span>Limits nach Größe</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n-rich="hh.s114">Dein kleines Haus fasst <b data-i18n="hh.s115" data-token="t1">300 Möbelstücke innen und 40 im Hof</b>. Einige Dinge haben eigene, getrennte Limits, die unter der ersten Tabelle stehen.</p>
-    <h3 class="mini" data-i18n="hh.s116">Möbel</h3>
+    </section>
+    <section id="limits">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">05</span><h2 data-i18n="hh.s16">Limits nach Größe</h2><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <div class="hg-pick hg-pick-inline"><span data-i18n="hh.s426">Limits anzeigen für</span><div class="hg-chips hg-chips-sm" role="group" aria-label="Estate size"><button type="button" class="hg-chip" data-size="chambers" aria-pressed="false"><span data-i18n="hh.s427">FG-Zimmer</span></button><button type="button" class="hg-chip" data-size="apartment" aria-pressed="false"><span data-i18n="hh.s120">Apartment</span></button><button type="button" class="hg-chip" data-size="small" aria-pressed="false"><span data-i18n="hh.s413">Klein</span></button><button type="button" class="hg-chip" data-size="medium" aria-pressed="false"><span data-i18n="hh.s415">Mittel</span></button><button type="button" class="hg-chip" data-size="large" aria-pressed="false"><span data-i18n="hh.s416">Groß</span></button></div></div>
+      <div class="hg-limits">
+        <figure class="hg-plot"><div class="hg-plot-art" aria-hidden="true"><i class="ph ph-house-simple" data-plot-icon=""></i></div><figcaption data-plot-label=""></figcaption></figure>
+        <div class="hg-meters"><div class="hg-meter"><div class="hg-meter-top"><i class="ph ph-armchair"></i><span data-i18n="hh.s428">Möbel im Innenraum</span><b data-m="indoor"></b></div><div class="hg-meter-bar"><div data-mbar="indoor"></div></div></div><div class="hg-meter"><div class="hg-meter-top"><i class="ph ph-tree"></i><span data-i18n="hh.s429">Möbel im Hof</span><b data-m="yard"></b><b class="hg-noyard" data-noyard="" hidden data-i18n="hh.s121">Kein Hof</b></div><div class="hg-meter-bar"><div data-mbar="yard"></div></div></div><div class="hg-meter"><div class="hg-meter-top"><i class="ph ph-plant"></i><span data-i18n="hh.s17">Blumentöpfe</span><b data-m="pots"></b></div><div class="hg-meter-bar"><div data-mbar="pots"></div></div></div><div class="hg-meter"><div class="hg-meter-top"><i class="ph ph-flower-tulip"></i><span data-i18n="hh.s18">Gartenbeete</span><b data-m="patches"></b></div><div class="hg-meter-bar"><div data-mbar="patches"></div></div></div><div class="hg-meter"><div class="hg-meter-top"><i class="ph ph-user-sound"></i><span data-i18n="hh.s127">Händler (NSCs)</span><b data-m="vendors"></b></div><div class="hg-meter-bar"><div data-mbar="vendors"></div></div></div><div class="hg-meter"><div class="hg-meter-top"><i class="ph ph-hammer"></i><span data-i18n="hh.s128">Handwerkseinrichtungen</span><b data-m="facilities"></b></div><div class="hg-meter-bar"><div data-mbar="facilities"></div></div></div></div>
+      </div>
+      <p class="hg-fine" data-i18n="hh.s430">Die Balken beziehen sich auf eine große Villa. Privatgemächer und Apartments haben dieselben Limits.</p>
+      <div class="hg-prose"><p data-i18n="hh.s131">Jede Anwesengröße hat einen Chocobo-Stall (ein Apartmenthaus teilt sich einen unter den Mietern). Rufglocken, Kristallglocken, das Orchestrion und der Kleiderschrank sind als verfügbar aufgeführt, aber ohne Anzahl. Für Aquarien, Wandobjekte und Tischobjekte nennt das Wiki keine Zahlenlimits.</p><p data-i18n="hh.s132">Es werden nur 400 Möbelstücke gleichzeitig auf dem Bildschirm gezeichnet, und eine Einstellung für Anzeigelimits steuert das. Manche Spieler meldeten, dass bei den höheren Limits Gegenstände im Innenraum verschwinden. Ob das behoben ist, konnten wir nicht bestätigen.</p></div>
+      <p class="hg-dashed" data-i18n-rich="hh.s133"><b data-i18n="hh.s110" data-token="t1">Noch nicht belegt:</b> ob Blumentöpfe, Händler und Handwerkseinrichtungen ebenfalls auf die Möbelgesamtzahl im Innenraum angerechnet werden. Keine Wikiseite sagt etwas dazu, prüfe es also im Spiel, bevor du ein kleines Haus bis ans Limit füllst.</p>
+      <div class="hg-prose"><p data-i18n-rich="hh.s134"><b data-i18n="hh.s135" data-token="t1">Fixtures.</b> Ein Haus hat vier erforderliche Außenteile (Dach, Wand, Fenster, Tür) und vier optionale (Dachdekoration, Wanddekoration, Schild, Zaun), dazu Innenwand, Boden und Deckenlicht. Aufgestellte Möbel lassen sich nicht mehr handeln. Ein Lagerraum nimmt Gegenstände auf, die nicht ins Inventar zurückkehren können.</p></div>
+      <details class="hg-more"><summary data-i18n="hh.s431">Alle Größen vergleichen</summary><h3 class="mini" data-i18n="hh.s116">Möbel</h3>
     <div class="lim-wrap"><table class="lim">
       <thead><tr><th data-i18n="hh.s117">Anwesen</th><th data-i18n="hh.s118">Innen</th><th data-i18n="hh.s119">Hof</th></tr></thead>
       <tbody>
@@ -289,8 +216,7 @@ ul.links li small{color:var(--muted)}
         <tr><td data-i18n="hh.s124">Mittel (Haus)</td><td>450</td><td>60</td></tr>
         <tr><td data-i18n="hh.s125">Groß (Villa)</td><td>600</td><td>80</td></tr>
       </tbody>
-    </table></div>
-    <h3 class="mini" data-i18n="hh.s126">Getrennte Limits</h3>
+    </table></div><h3 class="mini" data-i18n="hh.s126">Getrennte Limits</h3>
     <div class="lim-wrap"><table class="lim">
       <thead><tr><th data-i18n="hh.s117">Anwesen</th><th data-i18n="hh.s17">Blumentöpfe</th><th data-i18n="hh.s18">Gartenbeete</th><th data-i18n="hh.s127">Händler (NSCs)</th><th data-i18n="hh.s128">Handwerkseinrichtungen</th></tr></thead>
       <tbody>
@@ -300,21 +226,26 @@ ul.links li small{color:var(--muted)}
         <tr><td data-i18n="hh.s124">Mittel (Haus)</td><td>3</td><td>2</td><td>8</td><td>6</td></tr>
         <tr><td data-i18n="hh.s125">Groß (Villa)</td><td>4</td><td>3</td><td>10</td><td>8</td></tr>
       </tbody>
-    </table></div>
-    <p data-i18n="hh.s131">Jede Anwesengröße hat einen Chocobo-Stall (ein Apartmenthaus teilt sich einen unter den Mietern). Rufglocken, Kristallglocken, das Orchestrion und der Kleiderschrank sind als verfügbar aufgeführt, aber ohne Anzahl. Für Aquarien, Wandobjekte und Tischobjekte nennt das Wiki keine Zahlenlimits.</p>
-    <p data-i18n="hh.s132">Es werden nur 400 Möbelstücke gleichzeitig auf dem Bildschirm gezeichnet, und eine Einstellung für Anzeigelimits steuert das. Manche Spieler meldeten, dass bei den höheren Limits Gegenstände im Innenraum verschwinden. Ob das behoben ist, konnten wir nicht bestätigen.</p>
-    <p class="note warn" data-i18n-rich="hh.s133"><b data-i18n="hh.s110" data-token="t1">Noch nicht belegt:</b> ob Blumentöpfe, Händler und Handwerkseinrichtungen ebenfalls auf die Möbelgesamtzahl im Innenraum angerechnet werden. Keine Wikiseite sagt etwas dazu, prüfe es also im Spiel, bevor du ein kleines Haus bis ans Limit füllst.</p>
-    <p data-i18n-rich="hh.s134"><b data-i18n="hh.s135" data-token="t1">Fixtures.</b> Ein Haus hat vier erforderliche Außenteile (Dach, Wand, Fenster, Tür) und vier optionale (Dachdekoration, Wanddekoration, Schild, Zaun), dazu Innenwand, Boden und Deckenlicht. Aufgestellte Möbel lassen sich nicht mehr handeln. Ein Lagerraum nimmt Gegenstände auf, die nicht ins Inventar zurückkehren können.</p>
-    <ul class="links">
+    </table></div></details>
+      <ul class="hg-links">
       <li data-i18n-rich="hh.s136"><a href="https://ffxiv.consolegameswiki.com/wiki/Player_Housing" target="_blank" rel="noopener noreferrer" data-i18n="hh.s46" data-token="t1">Console Games Wiki: Player Housing</a>: Möbellimits (zuletzt bearbeitet am 21. Oktober 2026).</li>
       <li data-i18n-rich="hh.s137"><a href="https://ffxiv.consolegameswiki.com/wiki/Apartments" target="_blank" rel="noopener noreferrer" data-i18n="hh.s138" data-token="t1">Console Games Wiki: Apartments</a> und <a href="https://ffxiv.consolegameswiki.com/wiki/Private_Chamber" target="_blank" rel="noopener noreferrer" data-i18n="hh.s130" data-token="t2">Privatgemach</a>: Limits für die kleinsten Anwesen.</li>
     </ul>
-  </section>
-
-  <section id="flowerpots">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s139"><span class="num" data-token="t1">6</span>Blumentöpfe</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n-rich="hh.s140">Ein Blumentopf ist ein <b data-i18n="hh.s141" data-token="t1">Möbelstück, das eine Pflanze im Innenraum zieht</b>. Er ist kein Gartenbeet, und er ist die einzige Möglichkeit, in einem Apartment oder Privatgemach zu gärtnern.</p>
-    <div class="lim-wrap"><table class="lim">
+    </section>
+    <div class="hg-pair">
+    <section id="flowerpots" class="hg-panel">
+      <div class="hg-panel-head"><span class="hg-num hg-num-sm" aria-hidden="true">06</span><h3 data-i18n="hh.s17">Blumentöpfe</h3><i class="ph ph-plant"></i><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <p data-i18n-rich="hh.s140">Ein Blumentopf ist ein <b data-i18n="hh.s141" data-token="t1">Möbelstück, das eine Pflanze im Innenraum zieht</b>. Er ist kein Gartenbeet, und er ist die einzige Möglichkeit, in einem Apartment oder Privatgemach zu gärtnern.</p>
+      <div class="hg-big"><b data-m="pots"></b><span><span data-only="chambers" data-i18n="hh.s432">Blumentöpfe für dein FG-Zimmer</span><span data-only="apartment" data-i18n="hh.s433">Blumentöpfe für dein Apartment</span><span data-only="small" data-i18n="hh.s434">Blumentöpfe für dein Cottage</span><span data-only="medium" data-i18n="hh.s435">Blumentöpfe für dein Haus</span><span data-only="large" data-i18n="hh.s436">Blumentöpfe für deine Villa</span></span></div>
+      <ul class="hg-list">
+      <li data-i18n-rich="hh.s142"><b data-i18n="hh.s143" data-token="t1">Eine Pflanze pro Topf.</b> Ein Gartenbeet hat mehrere Beete, ein Blumentopf nur eines.</li>
+      <li data-i18n-rich="hh.s144"><b data-i18n="hh.s145" data-token="t1">Dieselben Pflanzen wie im Garten.</b> Blumentöpfe ziehen dieselben Pflanzen und Nutzpflanzen wie Beete, mit denselben Schritten (pflanzen, einmal pro Stunde düngen, pflegen, ernten). Manche Samen wachsen nur im Blumentopf.</li>
+      <li data-i18n-rich="hh.s146"><b data-i18n="hh.s147" data-token="t1">Innen.</b> Das Wiki beschreibt Blumentöpfe als Möbel für den Innenraum. Einen Blumentopf für draußen beschreibt es nicht.</li>
+      <li data-i18n-rich="hh.s148"><b data-i18n="hh.s149" data-token="t1">Kein Kreuzen.</b> Laut Wiki ist Kreuzen im Blumentopf nicht möglich.</li>
+      <li data-i18n-rich="hh.s150"><b data-i18n="hh.s151" data-token="t1">Töpfe im Lager wachsen nicht.</b> Nimm sie aus dem Lagerraum, damit die Pflanze weiterwächst.</li>
+    </ul>
+      <p class="hg-fine" data-i18n="hh.s152">Die Blumentopf-Seite hat keine Apartment-Zeile, die Apartment-Seite nennt „bis zu zwei“, die Apartment-Angabe stammt also nur von dieser Seite.</p>
+      <details class="hg-more"><summary data-i18n="hh.s431">Alle Größen vergleichen</summary><div class="lim-wrap"><table class="lim">
       <thead><tr><th data-i18n="hh.s117">Anwesen</th><th data-i18n="hh.s17">Blumentöpfe</th></tr></thead>
       <tbody>
         <tr><td data-i18n="hh.s120">Apartment</td><td data-i18n="hh.s129">Bis zu 2</td></tr>
@@ -323,24 +254,19 @@ ul.links li small{color:var(--muted)}
         <tr><td data-i18n="hh.s124">Mittel (Haus)</td><td>3</td></tr>
         <tr><td data-i18n="hh.s125">Groß (Villa)</td><td>4</td></tr>
       </tbody>
-    </table></div>
-    <ul class="links">
-      <li data-i18n-rich="hh.s142"><b data-i18n="hh.s143" data-token="t1">Eine Pflanze pro Topf.</b> Ein Gartenbeet hat mehrere Beete, ein Blumentopf nur eines.</li>
-      <li data-i18n-rich="hh.s144"><b data-i18n="hh.s145" data-token="t1">Dieselben Pflanzen wie im Garten.</b> Blumentöpfe ziehen dieselben Pflanzen und Nutzpflanzen wie Beete, mit denselben Schritten (pflanzen, einmal pro Stunde düngen, pflegen, ernten). Manche Samen wachsen nur im Blumentopf.</li>
-      <li data-i18n-rich="hh.s146"><b data-i18n="hh.s147" data-token="t1">Innen.</b> Das Wiki beschreibt Blumentöpfe als Möbel für den Innenraum. Einen Blumentopf für draußen beschreibt es nicht.</li>
-      <li data-i18n-rich="hh.s148"><b data-i18n="hh.s149" data-token="t1">Kein Kreuzen.</b> Laut Wiki ist Kreuzen im Blumentopf nicht möglich.</li>
-      <li data-i18n-rich="hh.s150"><b data-i18n="hh.s151" data-token="t1">Töpfe im Lager wachsen nicht.</b> Nimm sie aus dem Lagerraum, damit die Pflanze weiterwächst.</li>
-    </ul>
-    <p data-i18n="hh.s152">Die Blumentopf-Seite hat keine Apartment-Zeile, die Apartment-Seite nennt „bis zu zwei“, die Apartment-Angabe stammt also nur von dieser Seite.</p>
-    <ul class="links">
+    </table></div></details>
+      <ul class="hg-links">
       <li data-i18n-rich="hh.s153"><a href="https://ffxiv.consolegameswiki.com/wiki/Flowerpot" target="_blank" rel="noopener noreferrer" data-i18n="hh.s154" data-token="t1">Console Games Wiki: Flowerpot</a>: Anzahl nach Größe und welche Samen einen Topf brauchen (zuletzt bearbeitet am 8. Juli 2026).</li>
     </ul>
-  </section>
-
-  <section id="gardens">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s155"><span class="num" data-token="t1">7</span>Gartenbeete</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n-rich="hh.s156">Ein Gartenbeet ist ein <b data-i18n="hh.s157" data-token="t1">im Freien aufgestellte Fläche mit mehreren Beeten</b>, es gibt es also nur bei Häusern mit Hof. Apartments und Privatgemächer können keines haben.</p>
-    <div class="lim-wrap"><table class="lim">
+    </section>
+    <section id="gardens" class="hg-panel">
+      <div class="hg-panel-head"><span class="hg-num hg-num-sm" aria-hidden="true">07</span><h3 data-i18n="hh.s18">Gartenbeete</h3><i class="ph ph-flower-tulip"></i><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <p data-i18n-rich="hh.s156">Ein Gartenbeet ist ein <b data-i18n="hh.s157" data-token="t1">im Freien aufgestellte Fläche mit mehreren Beeten</b>, es gibt es also nur bei Häusern mit Hof. Apartments und Privatgemächer können keines haben.</p>
+      <div class="hg-big"><b data-m="patches"></b><span><span data-only="chambers apartment" data-i18n="hh.s437">Gartenbeete, hier gibt es keinen Hof</span><span data-only="small" data-i18n="hh.s438">Gartenbeet, bis zu 8 Beete</span><span data-only="medium" data-i18n="hh.s439">Gartenbeete, bis zu 16 Beete</span><span data-only="large" data-i18n="hh.s440">Gartenbeete, bis zu 24 Beete</span></span></div>
+      <div class="hg-beds"><div><span data-i18n="hh.s441">Rund</span><small data-i18n="hh.s442">4 Beete</small></div><div><span data-i18n="hh.s443">Oblong</span><small data-i18n="hh.s444">6 Beete</small></div><div class="hg-bed-hl"><span data-i18n="hh.s445">Deluxe</span><small data-i18n="hh.s446">8 Beete und eine Vogelscheuche</small></div></div>
+      <p class="hg-fine" data-i18n="hh.s447">Ein kleines Haus bekommt ein Beet, also füllt nur das Deluxe die 8 Beete aus.</p>
+      <ul class="hg-list"><li data-i18n-rich="hh.s166"><b data-i18n="hh.s167" data-token="t1">Nur draußen.</b> Beete stehen auf dem Grundstück.</li><li><b data-i18n="hh.s168">Beete im Lager wachsen nicht.</b></li></ul>
+      <details class="hg-more"><summary data-i18n="hh.s431">Alle Größen vergleichen</summary><div class="lim-wrap"><table class="lim">
       <thead><tr><th data-i18n="hh.s117">Anwesen</th><th data-i18n="hh.s158">Beete</th><th data-i18n="hh.s159">Beete insgesamt</th></tr></thead>
       <tbody>
         <tr><td data-i18n="hh.s160">Apartment / Privatgemach</td><td>0</td><td>0</td></tr>
@@ -348,294 +274,169 @@ ul.links li small{color:var(--muted)}
         <tr><td data-i18n="hh.s124">Mittel (Haus)</td><td>2</td><td data-i18n="hh.s162">Bis zu 16</td></tr>
         <tr><td data-i18n="hh.s125">Groß (Villa)</td><td>3</td><td data-i18n="hh.s163">Bis zu 24</td></tr>
       </tbody>
-    </table></div>
-    <ul class="links">
-      <li data-i18n-rich="hh.s164"><b data-i18n="hh.s165" data-token="t1">Beettypen.</b> Rund hat 4 Beete, Oblong 6 und Deluxe 8. Ein kleines Haus bekommt ein Beet, also füllt nur das Deluxe die 8 Beete aus.</li>
-      <li data-i18n-rich="hh.s166"><b data-i18n="hh.s167" data-token="t1">Nur draußen.</b> Beete stehen auf dem Grundstück.</li>
-      <li><b data-i18n="hh.s168">Beete im Lager wachsen nicht.</b></li>
-    </ul>
-    <ul class="links">
+    </table></div></details>
+      <ul class="hg-links">
       <li data-i18n-rich="hh.s169"><a href="https://ffxiv.consolegameswiki.com/wiki/Gardening" target="_blank" rel="noopener noreferrer" data-i18n="hh.s170" data-token="t1">Console Games Wiki: Gardening</a>: Beettypen, Pflanzschritte und Kreuzung (zuletzt bearbeitet am 13. Oktober 2026).</li>
     </ul>
-  </section>
-
-  <section id="utilities">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s171"><span class="num" data-token="t1">8</span>Nützliche Möbel, die man übersieht</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n="hh.s172">Diese Möbel haben einen praktischen Nutzen, statt nur schön auszusehen. Die meisten neuen Besitzer übersehen ein paar davon. Die Gegenstandssymbole stammen von XIVAPI, Preise und Bezugsquellen vom Console Games Wiki und von Garland Tools, prüfe sie also vor dem Kauf im Spiel. Die meisten sind hergestellt und haben keinen Händlerpreis, daher zeigt jeder das aktuell günstigste Angebot auf dem Marktbrett, live von Universalis.</p>
-    <div class="price-bar">
+    </section>
+    </div>
+    <section id="utilities">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">08</span><h2 data-i18n="hh.s19">Nützliche Möbel, die man übersieht</h2><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <p class="hg-intro" data-i18n="hh.s172">Diese Möbel haben einen praktischen Nutzen, statt nur schön auszusehen. Die meisten neuen Besitzer übersehen ein paar davon. Die Gegenstandssymbole stammen von XIVAPI, Preise und Bezugsquellen vom Console Games Wiki und von Garland Tools, prüfe sie also vor dem Kauf im Spiel. Die meisten sind hergestellt und haben keinen Händlerpreis, daher zeigt jeder das aktuell günstigste Angebot auf dem Marktbrett, live von Universalis.</p>
+      <div class="price-bar">
       <label data-i18n-rich="hh.s173">Marktbrett-Preise für <select id="dcSelect" data-token="t1"></select></label>
       <button type="button" id="refreshPrices" data-i18n="hh.s174">Preise aktualisieren</button>
       <span id="priceStatus" role="status" aria-live="polite"></span>
     </div>
-    <p class="price-hint" data-i18n="hh.s175">Verwendet dieselbe Rechenzentrum-Einstellung wie unsere anderen Preis-Tools, du wählst sie also nur einmal und sie wird auf der ganzen Seite gemerkt.</p>
-    <p class="note" data-i18n-rich="hh.s176"><b data-i18n="hh.s177" data-token="t1">Für ein kleines Haus:</b> Du hast 6 Händlerplätze, 4 Plätze für Handwerkseinrichtungen und 40 Hofgegenstände. Die Möbel unten, die für das ganze Anwesen gelten, belegen je einen Platz, beginne also mit den vier wichtigsten.</p>
-
-    <h3 class="mini" data-i18n="hh.s178">Die vier wichtigsten</h3>
-    <div class="util-grid">
-      <article class="util" id="u-6600">
-        <img class="u-img" data-item="6600" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s179">Miniature Aetheryte <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3>
-          <p class="u-purpose" data-i18n="hh.s181">Gibt deinem Anwesen einen eigenen Teleportpunkt, sodass du nie den Platz im Wohnbezirk brauchst. Der Teleport dorthin kostet 75 % weniger (mindestens 25 Gil).</p>
-          <dl>
+      <p class="price-hint" data-i18n="hh.s175">Verwendet dieselbe Rechenzentrum-Einstellung wie unsere anderen Preis-Tools, du wählst sie also nur einmal und sie wird auf der ganzen Seite gemerkt.</p>
+      <p class="hg-callout" data-i18n-rich="hh.s176"><b data-i18n="hh.s177" data-token="t1">Für ein kleines Haus:</b> Du hast 6 Händlerplätze, 4 Plätze für Handwerkseinrichtungen und 40 Hofgegenstände. Die Möbel unten, die für das ganze Anwesen gelten, belegen je einen Platz, beginne also mit den vier wichtigsten.</p>
+      <div class="hg-filters" role="group" aria-label="Filter utilities"><button type="button" class="hg-filter" data-filter="all" aria-pressed="true" data-i18n="hh.s448">Alles</button><button type="button" class="hg-filter" data-filter="essential" aria-pressed="false" data-i18n="hh.s178">Die vier wichtigsten</button><button type="button" class="hg-filter" data-filter="qol" aria-pressed="false" data-i18n="hh.s213">Komfort</button><button type="button" class="hg-filter" data-filter="garden" aria-pressed="false" data-i18n="hh.s255">Gärtnern</button></div>
+      <div class="hg-grid hg-grid-230"><article class="hg-util" id="u-6600" data-cat="essential"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="6600" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s449">Wichtig</span></div><h3 data-i18n-rich="hh.s179">Miniature Aetheryte <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3><p class="hg-u-purpose" data-i18n="hh.s181">Gibt deinem Anwesen einen eigenen Teleportpunkt, sodass du nie den Platz im Wohnbezirk brauchst. Der Teleport dorthin kostet 75 % weniger (mindestens 25 Gil).</p><div class="hg-u-meta"><span data-i18n-rich="hh.s450"><i class="ph ph-coins" data-token="t1"></i>14.470 Staatsgarde-Siegel</span><span data-i18n-rich="hh.s451"><i class="ph ph-tree" data-token="t1"></i>Hof-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="6600"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s183">Quartiermeister der Staatsgarden (ab Rang Leutnant). Er ist handelbar, das Marktbrett ist also eine Option.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s185">14.470 Staatsgarde-Siegel</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s185">14.470 Staatsgarde-Siegel</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s187">Draußen, nahe dem Eingangstor. Laut Gegenstandsbeschreibung lässt es sich nach dem Aufstellen nicht zurückholen, wähle den Platz also mit Bedacht.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s189">Jeder Besitzer. Mieter und FG-Mitglieder können sich auch dorthin teleportieren.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s191">Eines pro Anwesen. Zählt zum Hoflimit (40 bei einem kleinen Haus).</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Miniature_Aetheryte" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-7064">
-        <img class="u-img" data-item="7064" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s193">Summoning Bell <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3>
-          <p class="u-purpose" data-i18n="hh.s194">Ruft deine Gehilfen zu dir nach Hause, sodass du keine Gasthaus-Besuche oder Gehilfenvermittler brauchst.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Miniature_Aetheryte" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-7064" data-cat="essential"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="7064" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s449">Wichtig</span></div><h3 data-i18n-rich="hh.s193">Summoning Bell <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3><p class="hg-u-purpose" data-i18n="hh.s194">Ruft deine Gehilfen zu dir nach Hause, sodass du keine Gasthaus-Besuche oder Gehilfenvermittler brauchst.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="7064"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s195">Von einem Grobschmied (Stufe 50) hergestellt oder vom Marktbrett.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s197">Drinnen, nahe der Stelle, an der du die meiste Zeit stehst. Stell sie so, dass sie beim Dekorieren nicht im Weg ist.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s198">Jeder mit Gehilfen, also fast alle.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s199">Eines pro Anwesen. Zählt zum Limit im Innenraum.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Summoning_Bell" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-7989">
-        <img class="u-img" data-item="7989" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s200">Chocobo Stable <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3>
-          <p class="u-purpose" data-i18n="hh.s201">Damit kannst du zu Hause Chocobos aufziehen und die Federfarbe deines Chocobo-Begleiters ändern.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Summoning_Bell" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-7989" data-cat="essential"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="7989" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s449">Wichtig</span></div><h3 data-i18n-rich="hh.s200">Chocobo Stable <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3><p class="hg-u-purpose" data-i18n="hh.s201">Damit kannst du zu Hause Chocobos aufziehen und die Federfarbe deines Chocobo-Begleiters ändern.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s455"><i class="ph ph-coins" data-token="t1"></i>125.000 Gil</span><span data-i18n-rich="hh.s451"><i class="ph ph-tree" data-token="t1"></i>Hof-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="7989"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s202">Wohnungshändler in jedem Wohnbezirk oder das Marktbrett. Vor jedem Apartmenthaus steht bereits ein kostenloser Stall.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s203">125.000 Gil</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s203">125.000 Gil</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s204">Draußen im Hof. Es lässt sich passend zu Zaun und Wänden färben.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s205">Alle, die Chocobos aufziehen oder umfärben wollen. Apartmentbesitzer können den kostenlosen Stall vor dem Gebäude nutzen.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s206">Eines pro Anwesen. Zählt zum Hoflimit.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Chocobo_Stable" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-6475">
-        <img class="u-img" data-item="6475" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s207">Moogle Letter Box <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3>
-          <p class="u-purpose" data-i18n="hh.s208">Dein Briefkasten fürs Haus: ein Liefermoogle am Tor für Briefe und gelieferte Belohnungen. Im Spiel heißt er „Letter Box“, nicht „mailbox“.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Chocobo_Stable" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-6475" data-cat="essential"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="6475" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s449">Wichtig</span></div><h3 data-i18n-rich="hh.s207">Moogle Letter Box <span class="pill sm advice" data-i18n="hh.s180" data-token="t1">Für alle</span></h3><p class="hg-u-purpose" data-i18n="hh.s208">Dein Briefkasten fürs Haus: ein Liefermoogle am Tor für Briefe und gelieferte Belohnungen. Im Spiel heißt er „Letter Box“, nicht „mailbox“.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s451"><i class="ph ph-tree" data-token="t1"></i>Hof-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="6475"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s209">Von einem Plattner (Stufe 45) hergestellt oder vom Marktbrett.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s210">Draußen, am Eingang.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s211">Alle, die Briefe verschicken oder Mogry-Station- und Belohnungslieferungen abholen.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s212">Pro Anwesen ein Briefkasten. Der Regal Letter Box ist die edlere Version und belegt denselben Platz. Zählt zum Hoflimit.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Moogle_Letter_Box" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="mini" data-i18n="hh.s213">Komfort</h3>
-    <div class="util-grid">
-      <article class="util" id="u-8789">
-        <img class="u-img" data-item="8789" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s214">Armoire <span class="pill sm advice" data-i18n="hh.s215" data-token="t1">Lager</span></h3>
-          <p class="u-purpose" data-i18n="hh.s216">Kostenloser, unbegrenzter Stauraum für geeignete Ausrüstung wie Event-, Erfolgs- und Artefaktgegenstände. Es werden keine Glamour-Prismen benötigt, aber die Färbung geht verloren.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Moogle_Letter_Box" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-8789" data-cat="qol"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="8789" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s213">Komfort</span></div><h3 data-i18n-rich="hh.s214">Armoire <span class="pill sm advice" data-i18n="hh.s215" data-token="t1">Lager</span></h3><p class="hg-u-purpose" data-i18n="hh.s216">Kostenloser, unbegrenzter Stauraum für geeignete Ausrüstung wie Event-, Erfolgs- und Artefaktgegenstände. Es werden keine Glamour-Prismen benötigt, aber die Färbung geht verloren.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="8789"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s217">Von einem Tischler (Stufe 50) hergestellt oder vom Marktbrett.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s218">Drinnen. Der Ort ist egal, da du ihn über das Menü öffnest.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s219">Alle, deren Arsenal von saisonaler oder Event-Ausrüstung voll ist.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s199">Eines pro Anwesen. Zählt zum Limit im Innenraum.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Armoire" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-14045">
-        <img class="u-img" data-item="14045" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s220">Orchestrion <span class="pill sm advice" data-i18n="hh.s221" data-token="t1">Musik</span></h3>
-          <p class="u-purpose" data-i18n="hh.s222">Spielt jedes Lied aus deinen Orchestrion-Rollen für alle im Raum ab.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Armoire" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-14045" data-cat="qol"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="14045" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s213">Komfort</span></div><h3 data-i18n-rich="hh.s220">Orchestrion <span class="pill sm advice" data-i18n="hh.s221" data-token="t1">Musik</span></h3><p class="hg-u-purpose" data-i18n="hh.s222">Spielt jedes Lied aus deinen Orchestrion-Rollen für alle im Raum ab.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="14045"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s223">Von einem Tischler (Stufe 60) hergestellt oder vom Marktbrett.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s224">Drinnen auf dem Boden. Für wenig Platz gibt es kleinere Tischversionen.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s225">Alle, die Hintergrundmusik wollen.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s226">Ein Orchestrion beliebiger Art pro Anwesen, mit einer Playlist von bis zu 8 Liedern.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Orchestrion" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-13061">
-        <img class="u-img" data-item="13061" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s227">Crystal Bell <span class="pill sm advice" data-i18n="hh.s228" data-token="t1">Aussehen</span></h3>
-          <p class="u-purpose" data-i18n="hh.s229">Ruft den Schönheitschirurgen nach Hause, der Frisur, Gesicht und Tätowierungen für 2.000 Gil pro bestätigter Änderung ändert. Schalte ihn zuerst mit der Quest „Beauty Is Only Scalp Deep“ (Stufe 15) frei.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Orchestrion" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-13061" data-cat="qol"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="13061" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s213">Komfort</span></div><h3 data-i18n-rich="hh.s227">Crystal Bell <span class="pill sm advice" data-i18n="hh.s228" data-token="t1">Aussehen</span></h3><p class="hg-u-purpose" data-i18n="hh.s229">Ruft den Schönheitschirurgen nach Hause, der Frisur, Gesicht und Tätowierungen für 2.000 Gil pro bestätigter Änderung ändert. Schalte ihn zuerst mit der Quest „Beauty Is Only Scalp Deep“ (Stufe 15) frei.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="13061"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s230">Von einem Grobschmied (Stufe 60) hergestellt oder vom Marktbrett.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s231">Drinnen, nahe deiner Rufglocke.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s232">Alle, die ihr Aussehen ändern.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s199">Eines pro Anwesen. Zählt zum Limit im Innenraum.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Crystal_Bell" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-13069">
-        <img class="u-img" data-item="13069" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s233">The Unending Journey <span class="pill sm advice" data-i18n="hh.s234" data-token="t1">Handlung</span></h3>
-          <p class="u-purpose" data-i18n="hh.s235">Damit kannst du Zwischensequenzen abgeschlossener Quests noch einmal ansehen.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Crystal_Bell" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-13069" data-cat="qol"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="13069" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s213">Komfort</span></div><h3 data-i18n-rich="hh.s233">The Unending Journey <span class="pill sm advice" data-i18n="hh.s234" data-token="t1">Handlung</span></h3><p class="hg-u-purpose" data-i18n="hh.s235">Damit kannst du Zwischensequenzen abgeschlossener Quests noch einmal ansehen.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="13069"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s236">Von einem Tischler (Stufe 58) hergestellt oder vom Marktbrett.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s196">Kein Händlerpreis. Hergestellt oder auf dem Marktbrett gekauft.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s237">Drinnen, als Tischstück.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s238">Handlungsfans.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s239">Eines pro Anwesen.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/The_Unending_Journey" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-23846">
-        <img class="u-img" data-item="23846" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s240">Mannequin <span class="pill sm advice" data-i18n="hh.s241" data-token="t1">Glamour</span></h3>
-          <p class="u-purpose" data-i18n="hh.s242">Zeigt ein Ausrüstungsset und lässt einen Gehilfen diese Ausrüstung von deinem Anwesen aus verkaufen. Beim Aufstellen musst du einen Gehilfen als Händler zuweisen.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/The_Unending_Journey" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-23846" data-cat="qol"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="23846" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s213">Komfort</span></div><h3 data-i18n-rich="hh.s240">Mannequin <span class="pill sm advice" data-i18n="hh.s241" data-token="t1">Glamour</span></h3><p class="hg-u-purpose" data-i18n="hh.s242">Zeigt ein Ausrüstungsset und lässt einen Gehilfen diese Ausrüstung von deinem Anwesen aus verkaufen. Beim Aufstellen musst du einen Gehilfen als Händler zuweisen.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s456"><i class="ph ph-coins" data-token="t1"></i>10.000 Gil</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="23846"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s243">Wohnungshändler oder Apartmenthändler.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s244">10.000 Gil</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s244">10.000 Gil</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s245">Drinnen, wo Besucher es sehen.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s246">Glamour-Fans und Verkäufer.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s247">Unklar, ob es zum Händlerlimit zählt. Prüfe es im Spiel.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Mannequin" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-6541">
-        <img class="u-img" data-item="6541" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s248">Message Book Stand <span class="pill sm advice" data-i18n="hh.s249" data-token="t1">Besucher</span></h3>
-          <p class="u-purpose" data-i18n="hh.s250">Das, was einem Gästebuch am nächsten kommt. Besucher hinterlassen eine Nachricht pro Tag und können dein Anwesen „liken“. Du kannst eine Begrüßung festlegen und Benachrichtigungen erhalten. Ein Möbelstück namens „Guest Book“ gibt es nicht.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Mannequin" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-6541" data-cat="qol"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="6541" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s213">Komfort</span></div><h3 data-i18n-rich="hh.s248">Message Book Stand <span class="pill sm advice" data-i18n="hh.s249" data-token="t1">Besucher</span></h3><p class="hg-u-purpose" data-i18n="hh.s250">Das, was einem Gästebuch am nächsten kommt. Besucher hinterlassen eine Nachricht pro Tag und können dein Anwesen „liken“. Du kannst eine Begrüßung festlegen und Benachrichtigungen erhalten. Ein Möbelstück namens „Guest Book“ gibt es nicht.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s453"><i class="ph ph-coins" data-token="t1"></i>Hergestellt oder Marktbrett</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="6541"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s251">Von einem Tischler (Stufe 62) hergestellt. Wir haben keinen Händler gefunden.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s252">Kein Händlerpreis gefunden.</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s252">Kein Händlerpreis gefunden.</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s253">Drinnen auf einem Tisch, am Eingang oder im Raum, den Leute zuerst sehen. Der Dodo Message Book Stand ist die Außenversion.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s254">Alle, die Besuch von Freunden oder der FG bekommen, oder ein Haus auf einer öffentlichen Tour haben.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s239">Eines pro Anwesen.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Message_Book_Stand" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="mini" data-i18n="hh.s255">Gärtnern</h3>
-    <div class="util-grid">
-      <article class="util" id="u-14055">
-        <img class="u-img" data-item="14055" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s256">Flowerpot <span class="pill sm advice" data-i18n="hh.s255" data-token="t1">Gärtnern</span></h3>
-          <p class="u-purpose" data-i18n="hh.s257">Zieht eine Pflanze im Innenraum. Nur so wachsen Blumensamen, und nur so kannst du in einem Apartment gärtnern. Blumensamen kosten 300 Gil bei Materialhändlern und Apartmenthändlern. Die Anzahl steht im Abschnitt „Blumentöpfe“ oben.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Message_Book_Stand" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-14055" data-cat="garden"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="14055" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s255">Gärtnern</span></div><h3 data-i18n-rich="hh.s256">Flowerpot <span class="pill sm advice" data-i18n="hh.s255" data-token="t1">Gärtnern</span></h3><p class="hg-u-purpose" data-i18n="hh.s257">Zieht eine Pflanze im Innenraum. Nur so wachsen Blumensamen, und nur so kannst du in einem Apartment gärtnern. Blumensamen kosten 300 Gil bei Materialhändlern und Apartmenthändlern. Die Anzahl steht im Abschnitt „Blumentöpfe“ oben.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s457"><i class="ph ph-coins" data-token="t1"></i>1.200 Gil</span><span data-i18n-rich="hh.s454"><i class="ph ph-armchair" data-token="t1"></i>Innen-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="14055"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s258">Wohnungshändler in allen fünf Bezirken und der Apartmenthändler in den Apartmenthallen. Es gibt die Stile Riviera, Lichtung und Oase.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s259">1.200 Gil</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s259">1.200 Gil</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s260">Drinnen als Tischstück. Stell ihn auf ein Regal oder einen Tisch, wo du ihn siehst, und schau einmal pro Stunde vorbei, um ihn zu pflegen.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s261">Apartmentbesitzer und alle ohne freien Hofplatz.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s262">Klein 2, Mittel 3, Groß 4. Bis zu 2 in einem Apartment.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Flowerpot" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-      <article class="util" id="u-7128">
-        <img class="u-img" data-item="7128" data-hr="" alt="" width="80" height="80" loading="lazy" onerror="this.style.visibility='hidden'">
-        <div class="u-body">
-          <h3 data-i18n-rich="hh.s263">Garden Patch <span class="pill sm advice" data-i18n="hh.s255" data-token="t1">Gärtnern</span></h3>
-          <p class="u-purpose" data-i18n="hh.s264">Eine Außenfläche mit mehreren Beeten zum Anbau von Pflanzen und Handwerksmaterialien. Fürs Gärtnern gibt es keine Freischaltquest. Die Anzahl steht im Abschnitt „Gartenbeete“ oben.</p>
-          <dl>
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Flowerpot" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article><article class="hg-util" id="u-7128" data-cat="garden"><div class="hg-u-top"><span class="hg-u-icon"><img class="hg-u-img" data-item="7128" data-hr="" alt="" width="44" height="44" loading="lazy" onerror="this.style.visibility='hidden'"></span><span class="tag tag-neutral" data-i18n="hh.s255">Gärtnern</span></div><h3 data-i18n-rich="hh.s263">Garden Patch <span class="pill sm advice" data-i18n="hh.s255" data-token="t1">Gärtnern</span></h3><p class="hg-u-purpose" data-i18n="hh.s264">Eine Außenfläche mit mehreren Beeten zum Anbau von Pflanzen und Handwerksmaterialien. Fürs Gärtnern gibt es keine Freischaltquest. Die Anzahl steht im Abschnitt „Gartenbeete“ oben.</p><div class="hg-u-meta"><span data-i18n-rich="hh.s458"><i class="ph ph-coins" data-token="t1"></i>Rund 3.000 Gil (4 Beete), Oblong 12.000 Gil (6 Beete), Deluxe 48.000 Gil (8 Beete und eine Vogelscheuche)</span><span data-i18n-rich="hh.s451"><i class="ph ph-tree" data-token="t1"></i>Hof-Platz</span></div><div class="hg-u-live"><i class="ph ph-chart-line-up"></i><span data-i18n="hh.s292">Marktbrett</span><b class="mb" data-mb="7128"></b></div><details class="hg-u-more"><summary data-i18n="hh.s452">Details</summary><dl>
             <dt data-i18n="hh.s182">Bezugsquelle</dt><dd data-i18n="hh.s265">Trödelhändler (der Laden für Gärtnern und Farbstoffe) und Wohnungshändler in allen fünf Bezirken. Erhältlich als Rund, Oblong und Deluxe.</dd>
-            <dt data-i18n="hh.s184" data-price="">Preis</dt><dd data-i18n="hh.s266">Rund 3.000 Gil (4 Beete), Oblong 12.000 Gil (6 Beete), Deluxe 48.000 Gil (8 Beete und eine Vogelscheuche)</dd>
+            <dt data-price="" data-i18n="hh.s184">Preis</dt><dd data-i18n="hh.s266">Rund 3.000 Gil (4 Beete), Oblong 12.000 Gil (6 Beete), Deluxe 48.000 Gil (8 Beete und eine Vogelscheuche)</dd>
             <dt data-i18n="hh.s186">Aufstellort</dt><dd data-i18n="hh.s267">Draußen im Hof. Ein kleines Haus hat ein Beet, daher bringt das Deluxe mit 8 Beeten am meisten. Pflanzen, einmal pro Stunde düngen und pflegen.</dd>
             <dt data-i18n="hh.s188">Wer es braucht</dt><dd data-i18n="hh.s268">Alle mit Hof, die Handwerksmaterialien oder Gegenstände wollen, die es nur durchs Gärtnern gibt.</dd>
             <dt data-i18n="hh.s190">Limit</dt><dd data-i18n="hh.s269">Klein 1, Mittel 2, Groß 3. Keine für Apartments.</dd>
-          </dl>
-          <p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Gardening" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p>
-        </div>
-      </article>
-    </div>
-
-    <h3 class="mini" data-i18n="hh.s270">Händler-NSCs</h3>
-    <p data-i18n-rich="hh.s271">Haus-Händler werden mit einer Genehmigung angeheuert, die du bei einem Freien Händler in jedem Wohnbezirk oder beim Apartmenthändler in den Apartmenthallen kaufst. Alle Typen teilen sich ein Limit: 4 im Apartment, <b data-i18n="hh.s272" data-token="t1">6 in einem kleinen Haus</b>, 8 im mittleren und 10 im großen. Such dir die aus, die du wirklich nutzt. Ein Mender und ein Steward sind meist die ersten beiden.</p>
-    <div class="lim-wrap"><table class="lim util-table">
+          </dl><p class="u-src"><a href="https://ffxiv.consolegameswiki.com/wiki/Gardening" target="_blank" rel="noopener noreferrer" data-i18n="hh.s192">Console Games Wiki</a></p></details></article></div>
+      <div class="hg-two hg-two-top">
+        <div class="hg-col"><h3 class="hg-h4" data-i18n="hh.s270">Händler-NSCs</h3><p data-i18n-rich="hh.s271">Haus-Händler werden mit einer Genehmigung angeheuert, die du bei einem Freien Händler in jedem Wohnbezirk oder beim Apartmenthändler in den Apartmenthallen kaufst. Alle Typen teilen sich ein Limit: 4 im Apartment, <b data-i18n="hh.s272" data-token="t1">6 in einem kleinen Haus</b>, 8 im mittleren und 10 im großen. Such dir die aus, die du wirklich nutzt. Ein Mender und ein Steward sind meist die ersten beiden.</p><div class="lim-wrap"><table class="lim util-table">
       <thead><tr><th data-i18n="hh.s273">Genehmigung</th><th data-i18n="hh.s184">Preis</th><th data-i18n="hh.s274">Funktion</th></tr></thead>
       <tbody><tr><td><img class="u-ico" data-item="7156x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s275">Mender Permit</b></td><td data-i18n="hh.s276">3.000 Gil</td><td data-i18n="hh.s277">Repariert deine Ausrüstung gegen Gil (nur bis 100 %).</td></tr><tr><td><img class="u-ico" data-item="13055x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s278">Steward Permit</b></td><td data-i18n="hh.s276">3.000 Gil</td><td data-i18n="hh.s279">Heuert einen Hausdiener oder eine Haushälterin an, die dieselben Möbel verkauft wie ein Wohnungshändler. Praktisch, um zu dekorieren, ohne das Haus zu verlassen.</td></tr><tr><td><img class="u-ico" data-item="7154x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s280">Junkmonger Permit</b></td><td data-i18n="hh.s276">3.000 Gil</td><td data-i18n="hh.s281">Verkauft günstige Farbstoffe, Dunkle Materie, Gartenbeete und Magicked Stable Broom.</td></tr><tr><td><img class="u-ico" data-item="7153x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s282">Material Supplier Permit</b></td><td data-i18n="hh.s276">3.000 Gil</td><td data-i18n="hh.s283">Verkauft Handwerkszutaten niedriger Stufe. Nur beim Leveln nützlich.</td></tr><tr><td><img class="u-ico" data-item="16704x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s284">Materia Melder Permit</b></td><td data-i18n="hh.s285">5.000 Gil</td><td data-i18n="hh.s286">Setzt Materia gegen Gil ein. Überschmelzen ist nicht möglich.</td></tr><tr><td><img class="u-ico" data-item="23230x" data-path="026192" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s287">Journeyman Salvager Permit</b></td><td data-i18n="hh.s285">5.000 Gil</td><td data-i18n="hh.s288">Die Haus-Version des Katastrophenbergers. Kauft verlorene Quest- oder Erfolgsgegenstände zurück.</td></tr></tbody>
-    </table></div>
-
-    <h3 class="mini" data-i18n="hh.s128">Handwerkseinrichtungen</h3>
-    <p data-i18n-rich="hh.s289">Eine Einrichtung gibt einen 30-Minuten-Bonus, der deine maximalen Handwerkspunkte (CP) beim Handwerken mit der passenden Klasse erhöht. Er hilft nur bei Handwerkerstufe 90 oder niedriger. Ein kleines Haus fasst <b data-token="t1">4</b> Einrichtungen, wähle also die Klassen, die du gerade levelst. Sie werden hergestellt oder auf dem Marktbrett gekauft, es gibt keinen Händlerpreis. Besitzer und Mieter können sie in einem privaten Haus nutzen, in einem FG-Haus jedes Mitglied. Das Wiki nennt den CP-Bonus mit +10, was wir nicht getestet haben.</p>
-    <div class="lim-wrap"><table class="lim util-table">
+    </table></div></div>
+        <div class="hg-col"><h3 class="hg-h4" data-i18n="hh.s128">Handwerkseinrichtungen</h3><p data-i18n-rich="hh.s289">Eine Einrichtung gibt einen 30-Minuten-Bonus, der deine maximalen Handwerkspunkte (CP) beim Handwerken mit der passenden Klasse erhöht. Er hilft nur bei Handwerkerstufe 90 oder niedriger. Ein kleines Haus fasst <b data-token="t1">4</b> Einrichtungen, wähle also die Klassen, die du gerade levelst. Sie werden hergestellt oder auf dem Marktbrett gekauft, es gibt keinen Händlerpreis. Besitzer und Mieter können sie in einem privaten Haus nutzen, in einem FG-Haus jedes Mitglied. Das Wiki nennt den CP-Bonus mit +10, was wir nicht getestet haben.</p><div class="lim-wrap"><table class="lim util-table">
       <thead><tr><th data-i18n="hh.s290">Einrichtung</th><th data-i18n="hh.s291">Verstärkte Klasse</th><th data-i18n="hh.s292">Marktbrett</th></tr></thead>
       <tbody><tr><td><img class="u-ico" data-item="7065" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s293">Woodworking Bench</b></td><td data-i18n="hh.s294">Tischler</td><td class="mb" data-mb="7065"></td></tr><tr><td><img class="u-ico" data-item="7066" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s295">Smithing Bench</b></td><td data-i18n="hh.s296">Grobschmied</td><td class="mb" data-mb="7066"></td></tr><tr><td><img class="u-ico" data-item="7067" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s297">Armorcraft Forge</b></td><td data-i18n="hh.s298">Plattner</td><td class="mb" data-mb="7067"></td></tr><tr><td><img class="u-ico" data-item="7068" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s299">Goldsmithing Bench</b></td><td data-i18n="hh.s300">Goldschmied</td><td class="mb" data-mb="7068"></td></tr><tr><td><img class="u-ico" data-item="7069" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s301">Leatherworking Bench</b></td><td data-i18n="hh.s302">Gerber</td><td class="mb" data-mb="7069"></td></tr><tr><td><img class="u-ico" data-item="7070" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s303">Clothcraft Loom</b></td><td data-i18n="hh.s304">Weber</td><td class="mb" data-mb="7070"></td></tr><tr><td><img class="u-ico" data-item="7071" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s305">Alchemy Furnace</b></td><td data-i18n="hh.s306">Alchemist</td><td class="mb" data-mb="7071"></td></tr><tr><td><img class="u-ico" data-item="7072" alt="" width="32" height="32" loading="lazy" onerror="this.style.visibility='hidden'"> <b data-i18n="hh.s307">Cooking Stove</b></td><td data-i18n="hh.s308">Gourmet</td><td class="mb" data-mb="7072"></td></tr></tbody>
-    </table></div>
-    <p class="note warn" data-i18n-rich="hh.s309"><b data-i18n="hh.s310" data-token="t1">Nicht enthalten:</b> Der Glamour-Schrank lässt sich in keinem Anwesen aufstellen. Aquarien und Ausstellungsständer dienen nur der Dekoration. Privatgemächer sind Räume der Freien Gesellschaft, keine Möbel.</p>
-  </section>
-
-  <section id="upkeep">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s311"><span class="num" data-token="t1">9</span>Instandhaltung und Abriss</h2><div class="pills"><span class="pill confirmed" data-i18n="hh.s6">Offiziell</span></div></div>
-    <p data-i18n-rich="hh.s312"><b data-i18n="hh.s313" data-token="t1">Betritt dein Haus mindestens alle 45 Tage,</b> sonst wird es abgerissen. Im Spiel gibt es nach 30 Tagen eine Warnung, per E-Mail nach 35 und 42 Tagen. Bei geteilten Anwesen zählt nur der Besuch des Besitzers, nicht der eines Mieters. Bei einem FG-Haus zählt der Besuch jedes FG-Mitglieds.</p>
-    <p class="note warn" data-i18n-rich="hh.s314"><b data-i18n="hh.s315" data-token="t1">Der Timer läuft.</b> Der Abriss war im Oktober 2026 wegen eines Sicherheitsproblems kurz ausgesetzt. Laut Lodestone-Meldung lief er am 26. Oktober 2026 um 1:00 Uhr PDT wieder an, obwohl das Wiki weiterhin „paused“ angibt. Die Meldung sagt nicht, ob die Timer zurückgesetzt wurden.</p>
-    <p data-i18n="hh.s316">Wird ein Haus abgerissen, kannst du innerhalb von 35 Tagen 80 % des Grundstückspreises beim Verwalter zurückholen. Genehmigungen und Außenteile werden nicht erstattet.</p>
-  </section>
-
-  <section id="furnish">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s317"><span class="num" data-token="t1">10</span>Günstig einrichten</h2><div class="pills"><span class="pill expected" data-i18n="hh.s8">Im Spiel prüfen</span></div></div>
-    <p data-i18n="hh.s318">Wohnungshändler verkaufen die Grundausstattung günstig. Wände, Böden, Teppiche und Bücherregale kosten etwa 5.000 Gil, Stühle und Tische etwa 2.000 und Lampen 3.000 bis 4.000. Ein kleines Haus allein mit Händlerware einzurichten, bleibt wohl deutlich unter 1.000.000 Gil (unsere Schätzung, keine belegte Zahl).</p>
-    <ul class="links">
-      <li data-i18n-rich="hh.s319"><b data-i18n="hh.s320" data-token="t1">Erst die Vorschau nutzen.</b> Händlerware lässt sich vor dem Kauf in der Vorschau ansehen. Gegenstände von Händlern, Gehilfen, Feast, saisonalen Events und der Mog Station nicht.</li>
-      <li data-i18n-rich="hh.s321"><b data-i18n="hh.s322" data-token="t1">Weitere Quellen.</b> Herstellen, das Marktbrett, Gartenpflanzen, Island Sanctuary, saisonale Events, Feast-Belohnungen und Gegenstände der Mog Station.</li>
-      <li data-i18n-rich="hh.s323"><b data-i18n="hh.s324" data-token="t1">Gewohnheiten, die man früh lernen sollte.</b> Gegenstände beim Halten drehen, Raster nutzen, Gegenstände auf Tresen stellen, den Lagermodus nutzen und bei Hängern „Move to Front Door“ verwenden.</li>
-    </ul>
-    <p data-i18n="hh.s325">Welche Möbel sich am günstigsten herstellen lassen und welche es im Gold Saucer oder für Erfolge gibt, behandelt dieser Leitfaden noch nicht.</p>
-    <ul class="links">
+    </table></div></div>
+      </div>
+      <p class="hg-fine" data-i18n-rich="hh.s309"><b data-i18n="hh.s310" data-token="t1">Nicht enthalten:</b> Der Glamour-Schrank lässt sich in keinem Anwesen aufstellen. Aquarien und Ausstellungsständer dienen nur der Dekoration. Privatgemächer sind Räume der Freien Gesellschaft, keine Möbel.</p>
+    </section>
+    <section id="upkeep">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">09</span><h2 data-i18n="hh.s20">Instandhaltung und Abriss</h2><span class="tag tag-accent" data-i="seal-check" data-i18n="hh.s6">Offiziell</span></div>
+      <div class="hg-timeline">
+        <div class="hg-tl-top">
+          <div class="hg-tl-days"><span data-i18n="hh.s459">Tage seit deinem letzten Besuch zu Hause</span><b data-days="">12</b></div>
+          <div class="hg-mood" data-mood="ok"><i class="ph ph-moon-stars"></i><div><b data-i18n="hh.s460">Alles gemütlich</b><span data-i18n-rich="hh.s461">Noch <span data-left="" data-token="t1"></span> Tage, bis jemand nervös wird. Die Laternen brennen.</span></div></div><div class="hg-mood" data-mood="warn" hidden><i class="ph ph-warning"></i><div><b data-i18n="hh.s462">Im Spiel erscheint eine Warnung</b><span data-i18n="hh.s463">Noch 15 Tage. Zeit, mal vorbeizuschauen.</span></div></div><div class="hg-mood" data-mood="mail" hidden><i class="ph ph-envelope-simple"></i><div><b data-i18n="hh.s464">Eine besorgte E-Mail trifft ein</b><span data-i18n="hh.s465">Square Enix schreibt dir nach 35 und noch einmal nach 42 Tagen.</span></div></div><div class="hg-mood" data-mood="final" hidden><i class="ph ph-siren"></i><div><b data-i18n="hh.s466">Letzte E-Mail. Geh nach Hause!</b><span data-i18n="hh.s467">Noch drei Tage, bis das Haus abgerissen wird.</span></div></div><div class="hg-mood" data-mood="gone" hidden><i class="ph ph-smiley-x-eyes"></i><div><b data-i18n="hh.s468">Abgerissen. Oje.</b><span data-i18n="hh.s469">Du kannst innerhalb von 35 Tagen 80 % des Grundstückspreises beim Verwalter zurückholen.</span></div></div>
+        </div>
+        <div class="hg-tl-slider">
+          <input type="range" min="0" max="50" value="12" id="daysRange" aria-label="Tage seit deinem letzten Besuch" title="Tage seit deinem letzten Besuch" data-i18n="hh.x.range" data-i18n-title="">
+          <div class="hg-ticks"><span style="left:0">0</span><span style="left:60%">30<small data-i18n="hh.s470">Warnung</small></span><span class="hg-minor" style="left:70%">35<small data-i18n="hh.s471">E-Mail</small></span><span class="hg-minor" style="left:84%">42<small data-i18n="hh.s471">E-Mail</small></span><span class="hg-end" style="left:90%">45<small data-i18n="hh.s472">abgerissen</small></span></div>
+        </div>
+      </div>
+      <div class="hg-prose">
+        <p data-i18n-rich="hh.s312"><b data-i18n="hh.s313" data-token="t1">Betritt dein Haus mindestens alle 45 Tage,</b> sonst wird es abgerissen. Im Spiel gibt es nach 30 Tagen eine Warnung, per E-Mail nach 35 und 42 Tagen. Bei geteilten Anwesen zählt nur der Besuch des Besitzers, nicht der eines Mieters. Bei einem FG-Haus zählt der Besuch jedes FG-Mitglieds.</p>
+        <p class="hg-callout" data-i18n-rich="hh.s314"><b data-i18n="hh.s315" data-token="t1">Der Timer läuft.</b> Der Abriss war im Oktober 2026 wegen eines Sicherheitsproblems kurz ausgesetzt. Laut Lodestone-Meldung lief er am 26. Oktober 2026 um 1:00 Uhr PDT wieder an, obwohl das Wiki weiterhin „paused“ angibt. Die Meldung sagt nicht, ob die Timer zurückgesetzt wurden.</p>
+        <p data-i18n="hh.s316">Wird ein Haus abgerissen, kannst du innerhalb von 35 Tagen 80 % des Grundstückspreises beim Verwalter zurückholen. Genehmigungen und Außenteile werden nicht erstattet.</p>
+      </div>
+    </section>
+    <section id="furnish">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">10</span><h2 data-i18n="hh.s21">Günstig einrichten</h2><span class="tag tag-outline" data-i="magnifying-glass" data-i18n="hh.s8">Im Spiel prüfen</span></div>
+      <div class="hg-two">
+        <div class="hg-col">
+          <p data-i18n="hh.s318">Wohnungshändler verkaufen die Grundausstattung günstig. Wände, Böden, Teppiche und Bücherregale kosten etwa 5.000 Gil, Stühle und Tische etwa 2.000 und Lampen 3.000 bis 4.000. Ein kleines Haus allein mit Händlerware einzurichten, bleibt wohl deutlich unter 1.000.000 Gil (unsere Schätzung, keine belegte Zahl).</p>
+          <div class="hg-rows">
+            <div><i class="ph ph-squares-four"></i><span data-i18n="hh.s473">Wände, Böden, Teppiche, Bücherregale</span><b>~5,000</b></div>
+            <div><i class="ph ph-chair"></i><span data-i18n="hh.s474">Stühle und Tische</span><b>~2,000</b></div>
+            <div><i class="ph ph-lamp"></i><span data-i18n="hh.s475">Lampen</span><b data-i18n="hh.s476">3.000 bis 4.000</b></div>
+          </div>
+        </div>
+        <div class="hg-col"><div class="hg-icolist"><div><i class="ph ph-eye"></i><span data-i18n-rich="hh.s319"><b data-i18n="hh.s320" data-token="t1">Erst die Vorschau nutzen.</b> Händlerware lässt sich vor dem Kauf in der Vorschau ansehen. Gegenstände von Händlern, Gehilfen, Feast, saisonalen Events und der Mog Station nicht.</span></div><div><i class="ph ph-shopping-bag"></i><span data-i18n-rich="hh.s321"><b data-i18n="hh.s322" data-token="t1">Weitere Quellen.</b> Herstellen, das Marktbrett, Gartenpflanzen, Island Sanctuary, saisonale Events, Feast-Belohnungen und Gegenstände der Mog Station.</span></div><div><i class="ph ph-hand-grabbing"></i><span data-i18n-rich="hh.s323"><b data-i18n="hh.s324" data-token="t1">Gewohnheiten, die man früh lernen sollte.</b> Gegenstände beim Halten drehen, Raster nutzen, Gegenstände auf Tresen stellen, den Lagermodus nutzen und bei Hängern „Move to Front Door“ verwenden.</span></div></div></div>
+      </div>
+      <p class="hg-fine" data-i18n="hh.s325">Welche Möbel sich am günstigsten herstellen lassen und welche es im Gold Saucer oder für Erfolge gibt, behandelt dieser Leitfaden noch nicht.</p>
+      <ul class="hg-links">
       <li data-i18n-rich="hh.s326"><a href="https://ffxiv.consolegameswiki.com/wiki/Housing_Items" target="_blank" rel="noopener noreferrer" data-i18n="hh.s327" data-token="t1">Console Games Wiki: Housing Items</a>: Woher jede Art von Möbeln stammt.</li>
       <li data-i18n-rich="hh.s328"><a href="https://ffxiv.consolegameswiki.com/wiki/Template:Housing_Merchant" target="_blank" rel="noopener noreferrer" data-i18n="hh.s329" data-token="t1">Console Games Wiki: Housing Merchant list</a>: Händlersortiment und Preise.</li>
     </ul>
-  </section>
-
-  <section id="tools">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s330"><span class="num" data-token="t1">11</span>Websites und Plugins</h2></div>
-    <h3 class="mini" data-i18n="hh.s331">Websites</h3>
-    <ul class="links">
-      <li data-i18n-rich="hh.s332"><a href="https://universalis.app/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s333" data-token="t1">Universalis</a>: Von der Community gesammelte Marktbrett-Preise für Möbel.</li>
-      <li data-i18n-rich="hh.s334"><a href="https://www.garlandtools.org/db/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s335" data-token="t1">Garland Tools</a>: Handwerksrezepte und Listen für Möbel, die du selbst herstellst.</li>
-      <li data-i18n-rich="hh.s336"><a href="https://remakeplace.itch.io/remakeplace" target="_blank" rel="noopener noreferrer" data-i18n="hh.s337" data-token="t1">Re:MakePlace</a>: Eine kostenlose eigenständige Windows-App (etwa 2 GB) zum Planen von Layouts. Kein Dalamud-Plugin.</li>
-    </ul>
-    <h3 class="mini" data-i18n="hh.s338">Dalamud-Plugins</h3>
-    <p data-i18n="hh.s339">Diese sind im Standard-Plugin-Verzeichnis von Dalamud enthalten, ein eigenes Repository ist also nicht nötig. Suche im Installer im Spiel nach dem Namen des Plugins. Plugins von Drittanbietern sind Client-Mods und werden von Square Enix nicht unterstützt. Nutzung auf eigene Gefahr.</p>
-    <ul class="links">
-      <li data-i18n-rich="hh.s340"><a href="https://github.com/Abyeon/Housingway" target="_blank" rel="noopener noreferrer" data-i18n="hh.s341" data-token="t1">Housingway</a>: Beleuchtung im Innenraum und Kameraanpassungen.</li>
-      <li data-i18n-rich="hh.s342"><a href="https://github.com/perchbirdd/Housemate" target="_blank" rel="noopener noreferrer" data-i18n="hh.s343" data-token="t1">Housemate</a>: Zeigt Informationen zu Außenteilen und Objekten als Inspiration. Hilft nicht beim Platzieren.</li>
-      <li data-i18n-rich="hh.s344"><a href="https://github.com/InitialDet/TargetFurniture" target="_blank" rel="noopener noreferrer" data-i18n="hh.s345" data-token="t1">Target Furniture</a>: Wählt überlappende Gegenstände aus, die du nicht anklicken kannst.</li>
-      <li data-i18n-rich="hh.s346"><a href="https://github.com/Abyeon/HousingCullFix" target="_blank" rel="noopener noreferrer" data-i18n="hh.s347" data-token="t1">Housing Cull Fix</a>: Hebt das Anzeigelimit von 400 Gegenständen auf.</li>
-      <li data-i18n-rich="hh.s348"><a href="https://github.com/zhudotexe/FFXIV_PaissaHouse" target="_blank" rel="noopener noreferrer" data-i18n="hh.s349" data-token="t1">PaissaHouse</a>: Benachrichtigt dich über neue Grundstücke auf deiner Heimatwelt.</li>
-    </ul>
-    <p data-i18n-rich="hh.s350">Weitere Housing-Helfer im Standard-Repository: Housing Herald, Facade, Doorbell, Allagan Tools, Item Search und Price Insight. BDTH, mit dem man über die normalen Platzierungslimits hinausgehen kann, ist nicht im Standard-Repository und bräuchte ein eigenes Repository, weshalb wir es hier nicht empfehlen. Better Housing ist gelistet, wirkt aber aufgegeben (zuletzt im Dezember 2023 aktualisiert). Mehr dazu in unserem <a href="plugins/" data-i18n="hh.s351" data-token="t1">Plugin-Verzeichnis</a>.</p>
-  </section>
-
-  <section id="evercold">
-    <div class="sec-head"><h2 data-i18n-rich="hh.s352"><span class="num" data-token="t1">12</span>Was sich mit Evercold ändern könnte</h2></div>
-    <p data-i18n-rich="hh.s353">Evercold erscheint am 23. Februar 2027, mit Early Access ab dem 19. Februar. Sekundärquellen berichten, Yoshida habe für dieses Zeitfenster zwei Housing-Überarbeitungen bestätigt: eine UI-Überarbeitung für Gelegenheitsspieler und eine zweite, die er nicht benannte. Alles darüber hinaus, auch neue Grundstücke, ist Spekulation, plane also nicht damit. Siehe unsere <a href="get-ready-for-evercold.html" data-i18n="hh.s354" data-token="t1">Evercold-Vorbereitungs-Checkliste</a>.</p>
-  </section>
-</main>
-
-<footer>
-  <h2 data-i18n="hh.s355">Noch zu verifizieren</h2>
-  <ul>
-    <li data-i18n="hh.s356">Die Möbellimits und die Ein-Haus-Regel, im Spiel oder anhand der Lodestone-Patchnotes.</li>
-    <li data-i18n="hh.s357">Die Schaltflächen für geteilte Anwesen: einen Mieter hinzufügen, ob der Freund zustimmen muss, und wie man einen entfernt.</li>
-    <li data-i18n="hh.s358">Zutrittseinstellungen, Bedienung des Layout-Modus und Island Sanctuary, die dieser Leitfaden noch nicht abdeckt.</li>
-    <li data-i18n="hh.s359">Reddits Dekorations-Community, Eorzea Collection und PaissaDB konnten nicht geprüft werden und sind deshalb nicht verlinkt.</li>
-  </ul>
-  <p data-i18n-rich="hh.s360">Gegenstandsnamen und Preise stammen aus dem Console Games Wiki und Community-Quellen. Die Gegenstandssymbole liefert <a href="https://beta.xivapi.com/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s361" data-token="t1">XIVAPI</a>. Live-Marktbrett-Preise kommen von der API von <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s333" data-token="t2">Universalis</a>, die von der Community gespeist wird, ein Angebot kann also schon weg sein, wenn du nachsiehst. FINAL FANTASY XIV ist eine eingetragene Marke von Square Enix Holdings Co., Ltd. Dies ist eine inoffizielle Fanseite, die nicht mit Square Enix verbunden ist und nicht von Square Enix unterstützt wird.</p>
-</footer>
+    </section>
+    <section id="tools">
+      <div class="hg-sec-head"><span class="hg-num" aria-hidden="true">11</span><h2 data-i18n="hh.s22">Websites und Plugins</h2></div>
+      <div class="hg-two">
+        <div class="hg-col"><h3 class="hg-h4" data-i18n-rich="hh.s477"><i class="ph ph-globe-simple" data-token="t1"></i>Websites</h3><a class="hg-row" href="https://universalis.app/" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s333">Universalis</b><span data-i18n="hh.s478">Von der Community gesammelte Marktbrett-Preise für Möbel.</span></a><a class="hg-row" href="https://www.garlandtools.org/db/" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s335">Garland Tools</b><span data-i18n="hh.s479">Handwerksrezepte und Listen für Möbel, die du selbst herstellst.</span></a><a class="hg-row" href="https://remakeplace.itch.io/remakeplace" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s337">Re:MakePlace</b><span data-i18n="hh.s480">Eine kostenlose eigenständige Windows-App (etwa 2 GB) zum Planen von Layouts. Kein Dalamud-Plugin.</span></a></div>
+        <div class="hg-col"><h3 class="hg-h4" data-i18n-rich="hh.s481"><i class="ph ph-puzzle-piece" data-token="t1"></i>Dalamud-Plugins</h3><a class="hg-row" href="https://github.com/Abyeon/Housingway" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s341">Housingway</b><span data-i18n="hh.s482">Beleuchtung im Innenraum und Kameraanpassungen.</span></a><a class="hg-row" href="https://github.com/perchbirdd/Housemate" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s343">Housemate</b><span data-i18n="hh.s483">Zeigt Informationen zu Außenteilen und Objekten als Inspiration. Hilft nicht beim Platzieren.</span></a><a class="hg-row" href="https://github.com/InitialDet/TargetFurniture" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s345">Target Furniture</b><span data-i18n="hh.s484">Wählt überlappende Gegenstände aus, die du nicht anklicken kannst.</span></a><a class="hg-row" href="https://github.com/Abyeon/HousingCullFix" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s347">Housing Cull Fix</b><span data-i18n="hh.s485">Hebt das Anzeigelimit von 400 Gegenständen auf.</span></a><a class="hg-row" href="https://github.com/zhudotexe/FFXIV_PaissaHouse" target="_blank" rel="noopener noreferrer"><b data-i18n="hh.s349">PaissaHouse</b><span data-i18n="hh.s486">Benachrichtigt dich über neue Grundstücke auf deiner Heimatwelt.</span></a></div>
+      </div>
+      <p class="hg-fine" data-i18n="hh.s339">Diese sind im Standard-Plugin-Verzeichnis von Dalamud enthalten, ein eigenes Repository ist also nicht nötig. Suche im Installer im Spiel nach dem Namen des Plugins. Plugins von Drittanbietern sind Client-Mods und werden von Square Enix nicht unterstützt. Nutzung auf eigene Gefahr.</p>
+      <div class="hg-prose"><p data-i18n-rich="hh.s350">Weitere Housing-Helfer im Standard-Repository: Housing Herald, Facade, Doorbell, Allagan Tools, Item Search und Price Insight. BDTH, mit dem man über die normalen Platzierungslimits hinausgehen kann, ist nicht im Standard-Repository und bräuchte ein eigenes Repository, weshalb wir es hier nicht empfehlen. Better Housing ist gelistet, wirkt aber aufgegeben (zuletzt im Dezember 2023 aktualisiert). Mehr dazu in unserem <a href="plugins/" data-i18n="hh.s351" data-token="t1">Plugin-Verzeichnis</a>.</p></div>
+    </section>
+    <section id="evercold" class="hg-ever">
+      <div class="hg-ever-copy">
+        <div class="hg-ever-kick"><span>12</span><span data-i18n="hh.s487">Demnächst</span></div>
+        <h2 data-i18n="hh.s23">Was sich mit Evercold ändern könnte</h2>
+        <p data-i18n-rich="hh.s353">Evercold erscheint am 23. Februar 2027, mit Early Access ab dem 19. Februar. Sekundärquellen berichten, Yoshida habe für dieses Zeitfenster zwei Housing-Überarbeitungen bestätigt: eine UI-Überarbeitung für Gelegenheitsspieler und eine zweite, die er nicht benannte. Alles darüber hinaus, auch neue Grundstücke, ist Spekulation, plane also nicht damit. Siehe unsere <a href="get-ready-for-evercold.html" data-i18n="hh.s354" data-token="t1">Evercold-Vorbereitungs-Checkliste</a>.</p>
+      </div>
+      <div class="hg-ever-count"><b data-ever-days=""></b><span data-i18n="hh.s488">Tage bis zum 23. Feb. 2027</span><small data-i18n="hh.s489">Early Access am 19. Feb.</small></div>
+    </section>
+    <section id="verify" class="hg-verify">
+      <h2 class="hg-h4" data-i18n-rich="hh.s490"><i class="ph ph-clipboard-text" data-token="t1"></i>Noch zu verifizieren</h2>
+      <ul><li data-i18n="hh.s356">Die Möbellimits und die Ein-Haus-Regel, im Spiel oder anhand der Lodestone-Patchnotes.</li><li data-i18n="hh.s357">Die Schaltflächen für geteilte Anwesen: einen Mieter hinzufügen, ob der Freund zustimmen muss, und wie man einen entfernt.</li><li data-i18n="hh.s358">Zutrittseinstellungen, Bedienung des Layout-Modus und Island Sanctuary, die dieser Leitfaden noch nicht abdeckt.</li><li data-i18n="hh.s359">Reddits Dekorations-Community, Eorzea Collection und PaissaDB konnten nicht geprüft werden und sind deshalb nicht verlinkt.</li></ul>
+    </section>
+  </main>
+</div>
+<footer class="hg-foot"><div class="hg-fade"></div><p data-i18n-rich="hh.s360">Gegenstandsnamen und Preise stammen aus dem Console Games Wiki und Community-Quellen. Die Gegenstandssymbole liefert <a href="https://beta.xivapi.com/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s361" data-token="t1">XIVAPI</a>. Live-Marktbrett-Preise kommen von der API von <a href="https://universalis.app/" target="_blank" rel="noopener noreferrer" data-i18n="hh.s333" data-token="t2">Universalis</a>, die von der Community gespeist wird, ein Angebot kann also schon weg sein, wenn du nachsiehst. FINAL FANTASY XIV ist eine eingetragene Marke von Square Enix Holdings Co., Ltd. Dies ist eine inoffizielle Fanseite, die nicht mit Square Enix verbunden ist und nicht von Square Enix unterstützt wird.</p></footer>
 </div>
 <script>
 (function () {
@@ -660,7 +461,134 @@ ul.links li small{color:var(--muted)}
 <script src="https://cdn.jsdelivr.net/npm/i18next@26.4.0/dist/umd/i18next.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@4.0.1/i18nextHttpBackend.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@8.2.1/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
-<script src="i18n.js?v=0dc21a62"></script>
+<script src="i18n.js?v=a04ff3d6"></script>
+<script>
+(function () {
+  // Everything here is an enhancement: with no script the page shows the small-house numbers
+  // and every section in full.
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var store = {
+    get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  var t = function (key, opts) { return i18next.t(key, opts); };
+
+  // ----- size picker: tailors the limits, the permit price and the numbers on the page -----
+  var SIZES = {
+    chambers:  { icon: 'ph-door-open',      indoor: 150, yard: 0,  pots: 2, patches: 0, vendors: 4,  facilities: 2 },
+    apartment: { icon: 'ph-buildings',      indoor: 150, yard: 0,  pots: 2, patches: 0, vendors: 4,  facilities: 2 },
+    small:     { icon: 'ph-house-simple',   indoor: 300, yard: 40, pots: 2, patches: 1, vendors: 6,  facilities: 4 },
+    medium:    { icon: 'ph-house',          indoor: 450, yard: 60, pots: 3, patches: 2, vendors: 8,  facilities: 6 },
+    large:     { icon: 'ph-castle-turret',  indoor: 600, yard: 80, pots: 4, patches: 3, vendors: 10, facilities: 8 }
+  };
+  var MAX = SIZES.large;
+  var size = store.get('xivkit-housing-size');
+  if (!SIZES[size]) size = 'small';
+  var plotIcon = $('[data-plot-icon]');
+  function setSize(k) {
+    size = k;
+    store.set('xivkit-housing-size', k);
+    var cur = SIZES[k];
+    document.documentElement.setAttribute('data-size', k);
+    $$('[data-size]').forEach(function (b) {
+      var on = b.getAttribute('data-size') === k;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.classList.toggle('on', on);
+    });
+    Object.keys(MAX).forEach(function (m) {
+      if (m === 'icon') return;
+      $$('[data-m="' + m + '"]').forEach(function (v) { v.textContent = cur[m]; });
+      var bar = $('[data-mbar="' + m + '"]'); if (bar) bar.style.width = Math.round(cur[m] / MAX[m] * 100) + '%';
+    });
+    var yardVal = $('.hg-meter [data-m="yard"]'), none = $('[data-noyard]');
+    if (yardVal && none) { yardVal.hidden = cur.yard === 0; none.hidden = cur.yard !== 0; }
+    $$('[data-price-size]').forEach(function (p) { p.classList.toggle('on', p.getAttribute('data-price-size') === k); });
+    if (plotIcon) { plotIcon.className = 'ph ' + cur.icon; }
+    plotLabel();
+  }
+  function plotLabel() {
+    var chip = $('.hg-chips [data-size="' + size + '"] span'), lab = $('[data-plot-label]');
+    if (chip && lab) lab.textContent = chip.textContent;
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('button[data-size]');
+    if (b) setSize(b.getAttribute('data-size'));
+  });
+  setSize(size);
+
+  // ----- first steps: tick them off, progress is remembered in this browser -----
+  var boxes = $$('input[data-step]');
+  var done = {};
+  try { done = JSON.parse(store.get('xivkit-housing-steps') || '{}') || {}; } catch (e) { done = {}; }
+  function stepsUi() {
+    var n = 0;
+    boxes.forEach(function (b) { var on = !!done[b.getAttribute('data-step')]; b.checked = on; if (on) n++; });
+    var bar = $('[data-bar]'); if (bar) bar.style.width = Math.round(n / boxes.length * 100) + '%';
+    var msg = $('[data-progress-msg]');
+    if (msg && window.i18next && i18next.isInitialized) msg.textContent = t('hh.js.stepCount', { done: n, total: boxes.length }) + ' · ' + t('hh.js.stepMsg' + n);
+  }
+  boxes.forEach(function (b) {
+    b.addEventListener('change', function () {
+      done[b.getAttribute('data-step')] = b.checked;
+      store.set('xivkit-housing-steps', JSON.stringify(done));
+      stepsUi();
+    });
+  });
+
+  // ----- demolition timeline -----
+  var range = $('#daysRange');
+  function mood(d) { return d >= 45 ? 'gone' : d >= 42 ? 'final' : d >= 35 ? 'mail' : d >= 30 ? 'warn' : 'ok'; }
+  function timeline() {
+    var d = +range.value;
+    $('[data-days]').textContent = d;
+    var m = mood(d);
+    $$('[data-mood]').forEach(function (el) { el.hidden = el.getAttribute('data-mood') !== m; });
+    var left = $('[data-left]'); if (left) left.textContent = Math.max(0, 30 - d);
+    range.style.setProperty('--pos', (d / 50 * 100) + '%');
+  }
+  if (range) { range.addEventListener('input', timeline); timeline(); }
+
+  // ----- utility filters -----
+  $$('[data-filter]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.getAttribute('data-filter');
+      $$('[data-filter]').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      $$('.hg-util').forEach(function (u) { u.hidden = !(f === 'all' || u.getAttribute('data-cat') === f); });
+    });
+  });
+
+  // ----- Evercold countdown -----
+  var ever = $('[data-ever-days]');
+  if (ever) ever.textContent = Math.max(0, Math.ceil((new Date('2027-02-23T00:00:00') - new Date()) / 86400000));
+
+  // ----- contents list follows the scroll -----
+  var tocLinks = $$('.hg-toc a');
+  var ids = tocLinks.map(function (a) { return a.getAttribute('data-toc'); });
+  var raf = 0;
+  function spy() {
+    raf = 0;
+    var line = Math.min(160, window.innerHeight * 0.3), active = ids[0];
+    ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= line) active = id; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) active = ids[ids.length - 1];
+    tocLinks.forEach(function (a) {
+      var on = a.getAttribute('data-toc') === active;
+      if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+    });
+    var bar = $('.hg-toc'), cur = $('.hg-toc [aria-current]');
+    if (bar && cur && bar.scrollWidth > bar.clientWidth) bar.scrollTo({ left: cur.offsetLeft - bar.clientWidth / 2 + cur.offsetWidth / 2, behavior: 'smooth' });
+  }
+  function onScroll() { if (!raf) raf = requestAnimationFrame(spy); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  spy();
+
+  // strings that come from the translations
+  document.addEventListener('i18nready', function () { stepsUi(); plotLabel(); });
+  if (window.i18next) i18next.on('languageChanged', function () { stepsUi(); plotLabel(); });
+  stepsUi();
+})();
+</script>
 <script>
 (function () {
   // Live Market Board prices from Universalis for the region chosen in the
@@ -672,17 +600,6 @@ ul.links li small{color:var(--muted)}
   var status = document.getElementById('priceStatus');
   var region = MarketRegion.load();
 
-  // Add a "Market Board" row under each utility card's Price row.
-  document.querySelectorAll('article.util[id^="u-"]').forEach(function (card) {
-    var id = card.id.slice(2);
-    var priceDt = Array.prototype.find.call(card.querySelectorAll('dt'), function (dt) { return dt.hasAttribute('data-price'); });
-    if (!priceDt) return;
-    var dt = document.createElement('dt'); dt.textContent = 'Market Board'; dt.setAttribute('data-i18n', 'hh.s292');
-    var dd = document.createElement('dd'); dd.className = 'mb'; dd.setAttribute('data-mb', id);
-    var after = priceDt.nextElementSibling;
-    after.parentNode.insertBefore(dt, after.nextSibling);
-    dt.parentNode.insertBefore(dd, dt.nextSibling);
-  });
   var cells = Array.prototype.slice.call(document.querySelectorAll('[data-mb]'));
   var ids = cells.map(function (c) { return c.getAttribute('data-mb'); }).filter(function (v, i, a) { return a.indexOf(v) === i; });
 

@@ -1,0 +1,40 @@
+/* Phosphor Icons (MIT, https://phosphoricons.com), regular weight, trimmed to the icons this page uses. */
+@font-face { font-family: "Phosphor"; src: url("Phosphor.woff2") format("woff2"); font-weight: normal; font-style: normal; font-display: block; }
+.ph { font-family: "Phosphor" !important; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; speak: never; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.ph-armchair::before { content: "\e012"; }
+.ph-arrow-up-right::before { content: "\e092"; }
+.ph-buildings::before { content: "\e102"; }
+.ph-caret-right::before { content: "\e13a"; }
+.ph-castle-turret::before { content: "\e9d0"; }
+.ph-chair::before { content: "\e950"; }
+.ph-chart-line-up::before { content: "\e156"; }
+.ph-check::before { content: "\e182"; }
+.ph-clipboard-text::before { content: "\e198"; }
+.ph-coins::before { content: "\e78e"; }
+.ph-door-open::before { content: "\e7e6"; }
+.ph-envelope-simple::before { content: "\e218"; }
+.ph-eye::before { content: "\e220"; }
+.ph-flower-tulip::before { content: "\eacc"; }
+.ph-globe-simple::before { content: "\e28e"; }
+.ph-hammer::before { content: "\e80e"; }
+.ph-hand-grabbing::before { content: "\e57c"; }
+.ph-house::before { content: "\e2c2"; }
+.ph-house-line::before { content: "\e2c4"; }
+.ph-house-simple::before { content: "\e2c6"; }
+.ph-lamp::before { content: "\e638"; }
+.ph-magnifying-glass::before { content: "\e30c"; }
+.ph-map-trifold::before { content: "\e31a"; }
+.ph-moon-stars::before { content: "\e58e"; }
+.ph-plant::before { content: "\ebae"; }
+.ph-puzzle-piece::before { content: "\e596"; }
+.ph-seal-check::before { content: "\e606"; }
+.ph-shopping-bag::before { content: "\e416"; }
+.ph-siren::before { content: "\e9b8"; }
+.ph-smiley-x-eyes::before { content: "\e442"; }
+.ph-sparkle::before { content: "\e6a2"; }
+.ph-squares-four::before { content: "\e464"; }
+.ph-timer::before { content: "\e492"; }
+.ph-tree::before { content: "\e6da"; }
+.ph-user-sound::before { content: "\eca8"; }
+.ph-users-three::before { content: "\e68e"; }
+.ph-warning::before { content: "\e4e0"; }

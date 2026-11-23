@@ -29,6 +29,7 @@ Two list pages share the same structure, styling, and search/tag script:
   and its badge. Sections without a badge (Curated Guides, Past Event Guides) are our own pages.
 - `watchlist.html` (and `ja/`, `de/`, `fr/`): a redirect stub to `?show=untried` on the
   home page. The watchlist used to be its own page; keep the stubs so old links work.
+- `housing-for-beginners.html`: the housing guide, in its own dark "Nocturne" look. Styles live in `housing-guide/housing-guide.css`, and the icons are a trimmed copy of Phosphor Icons (MIT) in `housing-guide/phosphor/` (`icons.css` lists only the icons the page uses; add a rule there when you use a new one). The size picker, step checklist, demolition timeline and utility filters are small scripts at the bottom of the page. All the text is plain HTML, so search engines and the translated copies see everything.
 - `plugins.html`: Dalamud plugins I actually use. Kept separate since these are
   third-party client mods, not sanctioned tools like the others, and the page carries
   a note about that. Tag any plugin that isn't in Dalamud's default plugin directory
