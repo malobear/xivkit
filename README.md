@@ -110,7 +110,7 @@ pnpm i18n:check   # fail if any of that is out of date (also runs in CI on push)
   Only do this once the page's body copy is translated, not just its nav and footer. The
   build skips any language where a key the page uses is missing, and prints which ones.
 - Opted-in pages: `index.html`, `plugins.html`, `watchlist.html`,
-  `hunt-for-astronomy.html`, `msq-tracker.html`, `currency-planner.html`, `crafted-gear.html`. Every other page stays English-only
+  `hunt-for-astronomy.html`, `msq-tracker.html`, `currency-planner.html`, `crafted-gear.html`, `housing-for-beginners.html`. Every other page stays English-only
   and translates in the browser as before.
 - Old `?lang=xx` links, and a language the visitor picked earlier, forward to the
   matching copy when one exists.
