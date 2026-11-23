@@ -428,7 +428,7 @@
   ]
  },
  "artisan": {
-  "version": "4.0.5.23",
+  "version": "4.0.5.27",
   "scan": 6,
   "commands": [
    {
@@ -498,12 +498,12 @@
   ]
  },
  "autohook": {
-  "version": "6.0.4.3",
+  "version": "6.1.1.2",
   "scan": 6,
   "commands": []
  },
  "automaton": {
-  "version": "69.234",
+  "version": "69.237",
   "scan": 6,
   "commands": [
    {
@@ -528,7 +528,7 @@
   "commands": []
  },
  "autoretainer": {
-  "version": "4.6.2.22",
+  "version": "4.6.2.24",
   "scan": 6,
   "commands": [
    {
@@ -679,7 +679,7 @@
   "commands": []
  },
  "betterdeaths": {
-  "version": "1.0.0.65",
+  "version": "1.0.0.72",
   "scan": 6,
   "commands": [
    {
@@ -873,7 +873,7 @@
   "commands": []
  },
  "bossmod": {
-  "version": "7.5.8.4",
+  "version": "7.5.8.5",
   "scan": 6,
   "commands": []
  },
@@ -1057,6 +1057,16 @@
    }
   ]
  },
+ "chattershade": {
+  "version": "0.1.0.0",
+  "scan": 6,
+  "commands": [
+   {
+    "cmd": "/cshade",
+    "help": "Open the ChatterShade settings."
+   }
+  ]
+ },
  "chattranslated": {
   "version": "3.6.1.4",
   "scan": 6,
@@ -1120,7 +1130,7 @@
   ]
  },
  "chilledleves": {
-  "version": "1.0.2.3",
+  "version": "1.0.2.4",
   "scan": 6,
   "commands": [
    {
@@ -1527,7 +1537,7 @@
   "commands": []
  },
  "dalamud-richpresence": {
-  "version": "2.2.0.0",
+  "version": "2.2.0.2",
   "scan": 6,
   "commands": [
    {
@@ -2423,7 +2433,7 @@
   ]
  },
  "gatherchill": {
-  "version": "1.0.0.6",
+  "version": "1.0.0.8",
   "scan": 6,
   "commands": [
    {
@@ -2527,7 +2537,7 @@
   ]
  },
  "glamourlog": {
-  "version": "15.79",
+  "version": "15.81",
   "scan": 6,
   "commands": []
  },
@@ -2615,7 +2625,7 @@
   ]
  },
  "gratis": {
-  "version": "0.1.2.1",
+  "version": "0.1.2.2",
   "scan": 6,
   "commands": [
    {
@@ -2664,6 +2674,10 @@
    },
    {
     "cmd": "/enemies",
+    "help": null
+   },
+   {
+    "cmd": "/events",
     "help": null
    },
    {
@@ -2817,7 +2831,7 @@
   "commands": []
  },
  "hitspark": {
-  "version": "0.3.0.0",
+  "version": "0.5.0.0",
   "scan": 6,
   "commands": [
    {
@@ -3063,7 +3077,7 @@
   ]
  },
  "ice": {
-  "version": "1.0.0.6",
+  "version": "1.0.0.7",
   "scan": 6,
   "commands": [
    {
@@ -3359,7 +3373,7 @@
   ]
  },
  "karaoke": {
-  "version": "0.0.7.0",
+  "version": "0.0.8.0",
   "scan": 6,
   "commands": [
    {
@@ -3505,12 +3519,12 @@
   "commands": []
  },
  "lootview": {
-  "version": "1.6.5.0",
+  "version": "1.6.6.0",
   "scan": 6,
   "commands": [
    {
     "cmd": "/lv",
-    "help": "Toggle LootView window\n→ /lv config - Open settings"
+    "help": "Toggle LootView window\n→ /lv config - Open settings\n→ /lv currencies - Show or hide the currencies"
    }
   ]
  },
@@ -3770,7 +3784,7 @@
   ]
  },
  "mogmail": {
-  "version": "1.2.6.0",
+  "version": "1.3.0.0",
   "scan": 6,
   "commands": [
    {
@@ -3863,7 +3877,7 @@
   ]
  },
  "nalapf": {
-  "version": "1.1.0.0",
+  "version": "1.1.0.1",
   "scan": 6,
   "commands": [
    {
@@ -4049,7 +4063,7 @@
   ]
  },
  "notificationmaster": {
-  "version": "2.1.1.16",
+  "version": "2.1.1.17",
   "scan": 6,
   "commands": [
    {
@@ -4214,7 +4228,7 @@
   ]
  },
  "pandorasbox": {
-  "version": "1.6.4.6",
+  "version": "1.6.4.7",
   "scan": 6,
   "commands": [
    {
@@ -4539,7 +4553,7 @@
   ]
  },
  "pvpannouncer": {
-  "version": "1.7.0.2",
+  "version": "1.7.0.4",
   "scan": 6,
   "commands": [
    {
@@ -4619,7 +4633,7 @@
   ]
  },
  "questionable": {
-  "version": "15.756.3.60",
+  "version": "15.756.3.64",
   "scan": 6,
   "commands": [
    {
@@ -4699,12 +4713,12 @@
   ]
  },
  "questtextrecolor": {
-  "version": "1.4.1.0",
+  "version": "1.4.2.0",
   "scan": 6,
   "commands": [
    {
     "cmd": "/questtext",
-    "help": "Open the Quest Text Recolor settings."
+    "help": "Open settings, or use /questtext dump to capture objective popup diagnostics."
    }
   ]
  },
@@ -4741,7 +4755,7 @@
   ]
  },
  "quicktransfer": {
-  "version": "1.1.1.2",
+  "version": "2.0.0.0",
   "scan": 6,
   "commands": [
    {
@@ -5306,7 +5320,7 @@
   ]
  },
  "somethingneeddoing": {
-  "version": "15.13",
+  "version": "15.15",
   "scan": 6,
   "commands": []
  },
@@ -5947,7 +5961,7 @@
   ]
  },
  "trackytrack": {
-  "version": "1.7.5.0",
+  "version": "1.7.5.2",
   "scan": 6,
   "commands": [
    {
@@ -6311,7 +6325,7 @@
   ]
  },
  "vsatisfy": {
-  "version": "0.0.0.47",
+  "version": "0.0.0.50",
   "scan": 6,
   "commands": [
    {
@@ -6351,7 +6365,7 @@
   ]
  },
  "wahtools": {
-  "version": "20.0.0.52",
+  "version": "20.0.0.65",
   "scan": 6,
   "commands": [
    {
@@ -6365,7 +6379,7 @@
   ]
  },
  "wahventory": {
-  "version": "20.0.0.6",
+  "version": "20.0.0.8",
   "scan": 6,
   "commands": [
    {
