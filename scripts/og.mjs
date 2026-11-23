@@ -29,7 +29,7 @@ const CARDS = [
   { name: "fanfest-bingo", title: "Fan Fest keynote bingo maker", description: "Build a card, randomize it, play along live, and export a PNG to share.", tags: ["tool", "events"], theme: "evercold", kicker: "Fan Fest \u00b7 Evercold keynote", heading: "Keynote<br>Bingo", bg: "fanfest-bingo-bg.jpg" },
   { name: "msq-tracker", title: "MSQ tracker with a shareable link", description: "Track your Main Scenario Quest progress, with your current quest in a link you can paste and a PNG progress card to share.", tags: ["tool", "msq", "tracker"] },
   { name: "currency-planner", title: "Currency planner: what to buy before Evercold", description: "Pick a currency and see what it buys: the best items for gil at live prices, what is worth collecting, and whether to spend it before 8.0.", tags: ["tool", "market", "currency"] },
-  { name: "housing-for-beginners", title: "Housing for beginners", description: "First steps, permits, furnishing limits by size, and the 45-day demolition timer, plus cheap ways to furnish.", tags: ["guide", "housing"] },
+  { name: "housing-for-beginners", theme: "nocturne", kicker: "Guide \u00b7 Housing", title: "Welcome home, little house owner.", description: "Pick your estate size to see your limits, tick off the first steps, and learn the permits, the 45-day timer and the cheap ways to furnish.", tags: ["first steps", "limits", "upkeep", "utilities"] },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 
@@ -112,6 +112,51 @@ p{position:absolute;left:84px;width:700px;font-size:32px;line-height:1.35;color:
   p.style.top = (h.offsetTop + h.offsetHeight + 20) + "px";
 </script>`;
 
+// The housing guide card: the page's own dark blurple "Nocturne" look, with its night cottage.
+const woff = (family, file, weight) =>
+  `@font-face{font-family:"${family}";font-weight:${weight};src:url(data:font/woff2;base64,${readFileSync(FONT_DIR + file).toString("base64")}) format("woff2")}`;
+const NOC_FONTS = [woff("Inter", "Inter-Regular.woff2", 400), woff("Inter", "Inter-Medium.woff2", 500)].join("");
+const nocPage = ({ description, tags, kicker, title }) => `<!doctype html><meta charset="utf-8"><style>
+${NOC_FONTS}
+*{box-sizing:border-box;margin:0}
+body{width:1200px;height:630px;font-family:Inter,Arial,sans-serif;color:#e9e9ed;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 70% 90% at 15% 0%,#2b2741,transparent 70%),radial-gradient(ellipse 50% 60% at 90% 25%,rgba(38,42,96,.75),transparent 70%),#161826}
+.wm{position:absolute;left:72px;top:56px;font-weight:500;font-size:30px;letter-spacing:-.01em}
+.wm b{font-weight:500;color:#9184d9}
+.kicker{position:absolute;left:72px;top:150px;font-size:20px;letter-spacing:.12em;text-transform:uppercase;color:#d2cefd}
+h1{position:absolute;left:72px;top:186px;width:640px;font-weight:500;font-size:58px;line-height:1.03;letter-spacing:-.03em}
+h1 span{color:#d2cefd}
+p{position:absolute;left:72px;width:520px;font-size:24px;line-height:1.4;color:#cfd3e5}
+.tags{position:absolute;left:72px;bottom:64px;display:flex;gap:10px}
+.tags span{padding:7px 16px;border-radius:8px;border:1px solid #9184d9;color:#d2cefd;font-size:19px}
+.art{position:absolute;right:64px;top:92px;width:480px;height:360px;border-radius:14px;box-shadow:0 0 0 1px #595d6c,0 6px 18px rgba(0,0,0,.55)}
+.glow{position:absolute;right:34px;top:62px;width:540px;height:420px;background:radial-gradient(closest-side,rgba(145,132,217,.28),transparent)}
+.badge{position:absolute;left:632px;top:432px;display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;background:#232532;box-shadow:0 0 0 1px #595d6c,0 6px 18px rgba(0,0,0,.55);font-size:19px}
+.badge b{font-weight:500;color:#d2cefd}
+.url{position:absolute;right:64px;bottom:64px;font-size:22px;color:#9184d9}
+</style>
+<div class="glow"></div>
+<svg class="art" viewBox="0 0 520 390"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2741"/><stop offset="1" stop-color="#161826"/></linearGradient>
+<radialGradient id="win" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#f1e3b3"/><stop offset="1" stop-color="#d9a94f"/></radialGradient></defs>
+<rect width="520" height="390" rx="14" fill="url(#sky)"/><circle cx="410" cy="82" r="30" fill="#e7e5fe" opacity=".92"/><circle cx="422" cy="76" r="26" fill="#2b2741"/>
+<g fill="#d2cefd"><circle cx="70" cy="60" r="1.6"/><circle cx="150" cy="110" r="1.2"/><circle cx="240" cy="48" r="1.8"/><circle cx="320" cy="120" r="1.2"/><circle cx="470" cy="150" r="1.4"/><circle cx="96" cy="170" r="1"/></g>
+<path d="M0 310 Q130 280 260 300 T520 290 V390 H0Z" fill="#1d2033"/><path d="M0 340 Q160 315 300 335 T520 325 V390 H0Z" fill="#232532"/>
+<g transform="translate(150 190)"><rect x="0" y="52" width="170" height="90" fill="#423a6a"/><path d="M-14 56 L85 -6 L184 56Z" fill="#2b2741" stroke="#5d5294" stroke-width="2"/>
+<rect x="22" y="78" width="38" height="34" rx="3" fill="url(#win)"/><rect x="110" y="78" width="38" height="34" rx="3" fill="url(#win)"/><rect x="72" y="92" width="26" height="50" rx="3" fill="#161826"/>
+<rect x="128" y="-2" width="16" height="34" fill="#2b2741" stroke="#5d5294" stroke-width="2"/></g><g fill="#5d5294"><circle cx="90" cy="318" r="9"/><circle cx="440" cy="322" r="11"/></g></svg>
+<div class="badge"><span>Visit every <b>45 days</b></span></div>
+<div class="wm">XIV<b>KIT</b></div>
+<div class="kicker">${esc(kicker)}</div>
+<h1>Welcome home,<br><span>little house owner.</span></h1><p>${esc(description)}</p>
+<div class="tags">${tags.map((t) => `<span>${esc(t)}</span>`).join("")}</div>
+<div class="url">${DOMAIN}</div>
+<script>
+  document.fonts.ready.then(function () {
+    var h = document.querySelector("h1"), p = document.querySelector("p");
+    p.style.top = (h.offsetTop + h.offsetHeight + 22) + "px";
+  });
+</script>`;
+
 const page = ({ title, description, tags }) => `<!doctype html><meta charset="utf-8"><style>
 ${FONTS}
 *{box-sizing:border-box;margin:0}
@@ -147,7 +192,7 @@ if (unknown.length) {
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const tab = await browser.newPage({ viewport: { width: 1200, height: 630 } });
 for (const card of cards) {
-  await tab.setContent(({ event: kbPage, evercold: evPage }[card.theme] || page)(card));
+  await tab.setContent(({ event: kbPage, evercold: evPage, nocturne: nocPage }[card.theme] || page)(card));
   await tab.screenshot({ path: `${OUT_DIR}og-${card.name}.png` });
   console.log(`og-${card.name}.png`);
 }
