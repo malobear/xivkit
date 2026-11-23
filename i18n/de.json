@@ -1,8 +1,7 @@
 {
   "shared": {
     "nav": {
-      "tools": "Meine Tools",
-      "watchlist": "Watchlist",
+      "tools": "Tools",
       "plugins": "Plugins",
       "directory": "Plugin-Verzeichnis",
       "guides": "Guides"
@@ -233,11 +232,10 @@
   "pages": {
     "index": {
       "h1": "XIVKit: FFXIV Tools & Links",
-      "tagline": "Eine laufende Liste der Dinge, die ich tatsächlich nutze. Wird aktualisiert, sobald ich etwas Sehenswertes finde.",
+      "tagline": "Eine laufende Liste von FFXIV-Tools und Links. Wird aktualisiert, sobald ich etwas Sehenswertes finde.",
       "searchPlaceholder": "Tools nach Name, Beschreibung oder Tag durchsuchen...",
       "emptyStateText": "Keine Tools passen zu dieser Suche.",
-      "footerLine1": "Etwas gefunden, das ich noch nicht ausprobiert habe? Sieh dir die {watchlist} an. Auf der Suche nach Plugins? Sieh dir das {plugins} an.",
-      "watchlistLinkLabel": "Watchlist",
+      "footerLine1": "Auf der Suche nach Plugins? Sieh dir das {plugins} an.",
       "pluginsLinkLabel": "Plugin-Verzeichnis",
       "sections": {
         "market": "Markt & Wirtschaft",
@@ -248,13 +246,23 @@
         "guides": "Guides & Referenz",
         "unicode": "Unicode & Sonderzeichen",
         "featured": "Kuratierte Guides",
-        "pastEvents": "Guides zu beendeten Events"
+        "pastEvents": "Guides zu beendeten Events",
+        "theorycrafting": "Theorycrafting & Rechner",
+        "plugins": "Plugins",
+        "macos": "macOS-Tools"
       },
       "featuredNote": "Vollständige Guides, die ich kuratiert habe und direkt auf dieser Seite hoste, nicht nur ein Link nach außen.",
       "pastEventsNote": "Diese Events sind vorbei. Zur Referenz bleiben die Guides hier.",
       "wipHeading": "In Arbeit",
       "wipNote": "Entwürfe, die noch nicht fertig sind und sich ändern oder verschwinden können.",
-      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)"
+      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)",
+      "statusNote": "„Nutze ich“ heißt, ich nutze es selbst. „Noch nicht probiert“ heißt, ich habe davon gehört oder es bei anderen gesehen, aber es ist noch keine Empfehlung.",
+      "status": {
+        "label": "Anzeigen",
+        "all": "Alle",
+        "use": "Nutze ich",
+        "untried": "Noch nicht probiert"
+      }
     },
     "plugins": {
       "h1": "FFXIV Plugins",
@@ -264,9 +272,8 @@
       "experimentalLabel": "experimentell",
       "searchPlaceholder": "Plugins nach Name, Beschreibung oder Tag durchsuchen...",
       "emptyStateText": "Keine Plugins passen zu dieser Suche.",
-      "footerLine1": "Sieh dir die {main} oder die {watchlist} an.",
+      "footerLine1": "Sieh dir die {main} an.",
       "mainLinkLabel": "Hauptliste",
-      "watchlistLinkLabel": "Watchlist",
       "sections": {
         "getStarted": "Erste Schritte",
         "housing": "Behausung & Dekoration",
@@ -276,22 +283,6 @@
         "social": "Sozial & Freunde",
         "inventory": "Inventar & Wirtschaft",
         "discovery": "Plugin-Entdeckung & Publisher"
-      }
-    },
-    "watchlist": {
-      "h1": "FFXIV Watchlist",
-      "tagline": "Tools, von denen ich gehört habe oder die andere nutzen, die ich aber selbst noch nicht ausprobiert habe. Ein Sammelplatz zum späteren Erkunden.",
-      "note": "Hier ist noch nichts eine Empfehlung von mir, sondern eine Erinnerung, es dir anzusehen. Sobald ich etwas tatsächlich genutzt habe und es sich einen Platz verdient, wandert es in die {main}.",
-      "mainLinkLabel": "Hauptliste",
-      "searchPlaceholder": "Watchlist nach Name, Beschreibung oder Tag durchsuchen...",
-      "emptyStateText": "Nichts auf der Watchlist passt zu dieser Suche.",
-      "footerLine1": "Nutzt du eins davon regelmäßig? Verschieb es in die {main}.",
-      "sections": {
-        "theorycrafting": "Theorycrafting & Rechner",
-        "guides": "Guides & Referenz",
-        "progress": "Fortschritt & Checklisten",
-        "plugins": "Plugins",
-        "macos": "macOS-Tools"
       }
     },
     "msqTracker": {
@@ -848,15 +839,11 @@
     },
     "index": {
       "title": "XIVKit: FFXIV-Tools & Links",
-      "description": "Ausgewählte FFXIV-Tools und Links: Theorycrafting-Rechner, Marktbrett-Daten, Crafting-Tracker und Nachschlageseiten. Wird aktualisiert, sobald etwas Neues dazukommt, das sich lohnt."
+      "description": "Ausgewählte FFXIV-Tools und Links, markiert danach, ob ich sie nutze oder noch nicht ausprobiert habe: Theorycrafting-Rechner, Marktbrett-Daten, Crafting-Tracker und Nachschlageseiten."
     },
     "plugins": {
       "title": "FFXIV-Plugins | XIVKit",
       "description": "Dalamud-Plugins, die ich in FFXIV tatsächlich nutze: clientseitige Tools, teils aus dem Standard-Plugin-Verzeichnis, teils über eigene (experimentelle) Repositories."
-    },
-    "watchlist": {
-      "title": "FFXIV-Watchlist | XIVKit",
-      "description": "FFXIV-Tools, von denen ich gehört habe oder die andere empfehlen, die ich aber selbst noch nicht ausprobiert habe. Ein Sammelplatz zum späteren Erkunden."
     },
     "huntForAstronomy": {
       "title": "FFXIV Hunt for Astronomy: Welche Belohnungen lohnen die Steine? | XIVKit",

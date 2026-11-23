@@ -23,7 +23,7 @@ comma, colon, or parentheses instead, whatever reads most naturally for the sent
 
 The site is localized into English, Japanese, German, and French (see `i18n.js` and
 `i18n/*.json`, and the "Translations" section of README.md for the mechanics). When
-adding a new tool `<li>` to `index.html`, `plugins.html`, or `watchlist.html`, add its
+adding a new tool `<li>` to `index.html` or `plugins.html`, add its
 description to `i18n/en.json`'s `items` object under a unique slug and set
 `data-i18n="items.<slug>"` on the `.desc` span, then add matching entries to
 `ja.json`, `de.json`, and `fr.json` at the same time rather than leaving them for

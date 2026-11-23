@@ -31,7 +31,6 @@ const OG_LOCALE = { en: "en_US", ja: "ja_JP", de: "de_DE", fr: "fr_FR" };
 const PAGES = [
   { file: "index.html", seo: "index", langs: LANGS },
   { file: "plugins.html", seo: "plugins", langs: LANGS },
-  { file: "watchlist.html", seo: "watchlist", langs: LANGS },
   { file: "hunt-for-astronomy.html", seo: "huntForAstronomy", langs: LANGS, namespaces: ["hfa"] },
   { file: "msq-tracker.html", seo: "msqTracker", langs: LANGS, namespaces: ["pages.msqTracker"] },
   { file: "currency-planner.html", seo: "currencyPlanner", langs: LANGS, namespaces: ["cp"] },

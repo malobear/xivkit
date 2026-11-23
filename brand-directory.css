@@ -1,4 +1,4 @@
-/* Directory pages only (home, plugins, watchlist, jump puzzle). */
+/* Directory pages only (home, plugins, jump puzzle). */
 h1 { font-size: 2.4rem; line-height: 1.1; }
 header p { max-width: 60ch; }
 
@@ -43,6 +43,21 @@ h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 li .tags button { font-size: 0.72rem; padding: 3px 9px; }
 .tag-pill:hover, .tag-pill.active, li .tags button:hover { color: var(--accent); border-color: var(--accent); }
 .tag-pill.active { background: var(--accent-solid); border-color: var(--accent-solid); color: var(--on-accent); font-weight: 600; }
+
+/* Status badge on every tool (I use it / not tried yet) and the filter above the tag bar. */
+.badge {
+  display: inline-block;
+  font: 500 0.68rem var(--font-mono);
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 999px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.badge.use { color: var(--accent); border-color: var(--accent); }
+.badge.untried { color: var(--muted); border-color: var(--border-strong); border-style: dashed; }
+#status-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+header .note { margin-top: 12px; }
 
 /* Phones: the sidebar sits above the list, so the long tag filter folds away behind a
    toggle. Desktop keeps it open in the sticky sidebar. */

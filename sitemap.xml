@@ -10,15 +10,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/"/>
   </url>
   <url>
-    <loc>https://xivkit.com/watchlist.html</loc>
-    <lastmod>2026-11-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/watchlist.html"/>
-  </url>
-  <url>
     <loc>https://xivkit.com/plugins.html</loc>
     <lastmod>2026-11-07</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/plugins.html"/>
@@ -150,33 +141,6 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/plugins.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/plugins.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/plugins.html"/>
-  </url>
-  <url>
-    <loc>https://xivkit.com/ja/watchlist.html</loc>
-    <lastmod>2026-11-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/watchlist.html"/>
-  </url>
-  <url>
-    <loc>https://xivkit.com/de/watchlist.html</loc>
-    <lastmod>2026-11-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/watchlist.html"/>
-  </url>
-  <url>
-    <loc>https://xivkit.com/fr/watchlist.html</loc>
-    <lastmod>2026-11-07</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://xivkit.com/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://xivkit.com/ja/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://xivkit.com/de/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://xivkit.com/fr/watchlist.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://xivkit.com/watchlist.html"/>
   </url>
   <url>
     <loc>https://xivkit.com/ja/hunt-for-astronomy.html</loc>

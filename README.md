@@ -6,9 +6,8 @@ A curated, hand-picked list of FFXIV tools I actually use. Kept small on purpose
 
 ## What's on the site
 
-- [Tools](https://xivkit.com/): market board data, crafting trackers, theorycrafting calculators, progress checklists, glamour and mod sources, and other reference sites.
+- [Tools](https://xivkit.com/): market board data, crafting trackers, theorycrafting calculators, progress checklists, glamour and mod sources, and other reference sites. Each one is badged "I use this" or "Not tried yet", and a filter shows either group.
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins I actually use, with a note on which ones need a custom repo.
-- [Watchlist](https://xivkit.com/watchlist.html): tools I haven't tried yet, kept separate from the ones I vouch for.
 - Guides: [Jump Puzzle Macros](https://xivkit.com/jump-puzzle-macros.html), [Hunt for Astronomy](https://xivkit.com/hunt-for-astronomy.html), [Keybound Brawler](https://xivkit.com/keybound-brawler.html), [Fan Fest Bingo Maker](https://xivkit.com/fanfest-bingo.html), [Trade-In Mounts](https://xivkit.com/trade-in-mounts.html), and [Inventory & Retainer Decluttering](https://xivkit.com/inventory-decluttering.html), and [Retainer Ventures](https://xivkit.com/retainer-ventures.html), with live market prices where it helps.
 - Tools: [MSQ Tracker](https://xivkit.com/msq-tracker.html), a Main Scenario Quest tracker whose link carries your current quest, with a PNG progress card to share, and [Crafted Gear Shopping List](https://xivkit.com/crafted-gear.html), the cheapest HQ market board price for each piece of the current crafted gear for any combat, crafting, or gathering job.
 
@@ -20,13 +19,16 @@ FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. Th
 
 ## Pages
 
-Three list pages share the exact same structure, styling, and search/tag script:
+Two list pages share the same structure, styling, and search/tag script:
 
-- `index.html`: tools I actually use. This is the one worth sharing/linking.
-- `watchlist.html`: tools I've heard about or seen recommended but haven't tried
-  myself yet. A holding place, not an endorsement. Once something on the watchlist
-  earns regular use, move its `<li>` block over to `index.html` (and delete it from
-  the watchlist).
+- `index.html`: every tool, in one list. Each `<li>` carries `data-status="use"` (I use
+  it myself) or `data-status="untried"` (heard about it or seen others use it, not a
+  recommendation yet) plus a matching `<span class="badge">` first in its `.tags` row. The
+  sidebar's All / I use this / Not tried yet buttons filter on it (also `?show=use` or
+  `?show=untried`). Once a not-tried tool earns regular use, change its status to `use`
+  and its badge. Sections without a badge (Curated Guides, Past Event Guides) are our own pages.
+- `watchlist.html` (and `ja/`, `de/`, `fr/`): a redirect stub to `?show=untried` on the
+  home page. The watchlist used to be its own page; keep the stubs so old links work.
 - `plugins.html`: Dalamud plugins I actually use. Kept separate since these are
   third-party client mods, not sanctioned tools like the others, and the page carries
   a note about that. Tag any plugin that isn't in Dalamud's default plugin directory
@@ -45,12 +47,12 @@ All pages share the branding: titles read `Page name | XIVKit` (the home page is
 
 Each category is a `<section>` in `<main>`, with an `<h2>` title and a `<ul>` of
 `<li><a>` entries. To add a link, copy an existing `<li>` block in the right file/section
-(or add a new `<section>`) following this shape:
+(or add a new `<section>`) following this shape. On `index.html`, use `data-status="use"` with the `badge use` span for a tool I use, or `data-status="untried"` with `badge untried` (label `pages.index.status.untried`) for one I haven't tried yet:
 
 ```html
-<li data-tags="tag-one, tag-two">
+<li data-status="use" data-tags="tag-one, tag-two">
   <a href="https://example.com/" target="_blank" rel="noopener noreferrer"><img class="favicon" alt="" loading="lazy" decoding="async"><span class="link-body">Name<span class="desc">Short description</span></span></a>
-  <div class="tags"><button type="button">tag-one</button><button type="button">tag-two</button></div>
+  <div class="tags"><span class="badge use" data-i18n="pages.index.status.use">I use this</span><button type="button">tag-one</button><button type="button">tag-two</button></div>
 </li>
 ```
 
@@ -109,7 +111,7 @@ pnpm i18n:check   # fail if any of that is out of date (also runs in CI on push)
   its translated `seo.<key>.title` and `seo.<key>.description` to all four JSON files.
   Only do this once the page's body copy is translated, not just its nav and footer. The
   build skips any language where a key the page uses is missing, and prints which ones.
-- Opted-in pages: `index.html`, `plugins.html`, `watchlist.html`,
+- Opted-in pages: `index.html`, `plugins.html`,
   `hunt-for-astronomy.html`, `msq-tracker.html`, `currency-planner.html`, `crafted-gear.html`, `housing-for-beginners.html`. Every other page stays English-only
   and translates in the browser as before.
 - Old `?lang=xx` links, and a language the visitor picked earlier, forward to the
@@ -212,7 +214,7 @@ branch = `main`, folder = `/ (root)`. Save, then the site will start working. Cu
 
 The brand is a wordmark, `XIV` in ink and `KIT` in red, set in Cinzel, with two themes:
 Noir (dark, the default) and Silk (light, via `prefers-color-scheme`). `brand.css` holds the shared palette, fonts and wordmark and loads after each page's own
-inline styles. The four directory pages (home, plugins, watchlist, jump puzzle
+inline styles. The three directory pages (home, plugins, jump puzzle
 macros) also load `brand-directory.css` (section labels, cards, pills, nav), and the
 inventory decluttering guide loads `brand-guide.css`. To change a colour or font, edit
 `brand.css`. The hunt for astronomy and trade-in mounts guides keep their own variable

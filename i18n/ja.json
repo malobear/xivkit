@@ -1,8 +1,7 @@
 {
   "shared": {
     "nav": {
-      "tools": "使っているツール",
-      "watchlist": "ウォッチリスト",
+      "tools": "ツール",
       "plugins": "プラグイン",
       "directory": "プラグインディレクトリ",
       "guides": "ガイド"
@@ -233,11 +232,10 @@
   "pages": {
     "index": {
       "h1": "XIVKit: FFXIV Tools & Links",
-      "tagline": "実際に使っているものを随時まとめたリストです。残す価値があるものを見つけるたびに更新します。",
+      "tagline": "FF14のツールとリンクをまとめた、随時更新のリストです。残す価値があるものを見つけるたびに更新します。",
       "searchPlaceholder": "名前・説明・タグでツールを検索...",
       "emptyStateText": "該当するツールが見つかりません。",
-      "footerLine1": "まだ試していないものを見つけたら{watchlist}をチェック。プラグインをお探しなら{plugins}をどうぞ。",
-      "watchlistLinkLabel": "ウォッチリスト",
+      "footerLine1": "プラグインをお探しなら{plugins}をどうぞ。",
       "pluginsLinkLabel": "プラグインディレクトリ",
       "sections": {
         "market": "マーケット&経済",
@@ -248,13 +246,23 @@
         "guides": "ガイド&リファレンス",
         "unicode": "Unicode&特殊文字",
         "featured": "厳選ガイド",
-        "pastEvents": "終了したイベントのガイド"
+        "pastEvents": "終了したイベントのガイド",
+        "theorycrafting": "理論値&計算機",
+        "plugins": "プラグイン",
+        "macos": "macOSツール"
       },
       "featuredNote": "リンクを貼るだけでなく、このサイトで直接公開している厳選ガイド。",
       "pastEventsNote": "終了したイベントのガイドです。参考用に残しています。",
       "wipHeading": "制作中",
       "wipNote": "未完成の下書きです。内容は変わったり、なくなったりする可能性があります。",
-      "wipEvercold": "Evercoldの準備チェックリスト(下書き)"
+      "wipEvercold": "Evercoldの準備チェックリスト(下書き)",
+      "statusNote": "「使っている」は自分で使っているものです。「未試用」は話に聞いた、または他の人が使っているのを見たものの、まだおすすめではありません。",
+      "status": {
+        "label": "表示",
+        "all": "すべて",
+        "use": "使っている",
+        "untried": "未試用"
+      }
     },
     "plugins": {
       "h1": "FFXIV プラグイン",
@@ -264,9 +272,8 @@
       "experimentalLabel": "experimental",
       "searchPlaceholder": "名前・説明・タグでプラグインを検索...",
       "emptyStateText": "該当するプラグインが見つかりません。",
-      "footerLine1": "{main}または{watchlist}もご覧ください。",
+      "footerLine1": "{main}もご覧ください。",
       "mainLinkLabel": "メインリスト",
-      "watchlistLinkLabel": "ウォッチリスト",
       "sections": {
         "getStarted": "はじめに",
         "housing": "ハウジング&内装",
@@ -276,22 +283,6 @@
         "social": "ソーシャル&フレンド",
         "inventory": "インベントリと経済",
         "discovery": "プラグイン発見&パブリッシャー"
-      }
-    },
-    "watchlist": {
-      "h1": "FFXIV ウォッチリスト",
-      "tagline": "話には聞いた、あるいは他人が使っているのを見たけれど自分ではまだ試していないツールです。後で確認するための保管場所。",
-      "note": "ここに載っているものはまだ私からのおすすめではなく、確認しておきたいというメモです。実際に使ってみて採用に値すると分かったら{main}に移動します。",
-      "mainLinkLabel": "メインリスト",
-      "searchPlaceholder": "名前・説明・タグでウォッチリストを検索...",
-      "emptyStateText": "該当するウォッチリストの項目が見つかりません。",
-      "footerLine1": "この中のどれかを定期的に使っていますか?それなら{main}に移動してください。",
-      "sections": {
-        "theorycrafting": "理論値&計算機",
-        "guides": "ガイド&リファレンス",
-        "progress": "進行状況&チェックリスト",
-        "plugins": "プラグイン",
-        "macos": "macOSツール"
       }
     },
     "msqTracker": {
@@ -848,15 +839,11 @@
     },
     "index": {
       "title": "XIVKit：FF14 おすすめツール＆リンク集",
-      "description": "実際に使っているFF14のツールとリンクをまとめています。理論計算ツール、マーケットボードのデータ、製作管理ツール、資料サイトなど、良いものが見つかるたびに更新。"
+      "description": "FF14のツールとリンクを、実際に使っているものと未試用のものに分けて掲載。理論計算ツール、マーケットボードのデータ、製作管理ツール、資料サイトなど。"
     },
     "plugins": {
       "title": "FF14 おすすめDalamudプラグイン | XIVKit",
       "description": "実際に使っているFF14のDalamudプラグイン。デフォルトのプラグイン一覧にあるものと、カスタムリポジトリ（experimental）として追加するものがあります。"
-    },
-    "watchlist": {
-      "title": "FF14 ツール ウォッチリスト | XIVKit",
-      "description": "話には聞いた、または他の人が勧めているけれど、まだ自分では試していないFF14ツール。後で確認するための保管場所です。"
     },
     "huntForAstronomy": {
       "title": "FF14 Hunt for Astronomy 報酬一覧：トームストーンで交換する価値は？ | XIVKit",

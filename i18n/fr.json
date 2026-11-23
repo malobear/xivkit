@@ -1,8 +1,7 @@
 {
   "shared": {
     "nav": {
-      "tools": "Mes outils",
-      "watchlist": "Watchlist",
+      "tools": "Outils",
       "plugins": "Plugins",
       "directory": "Annuaire de plugins",
       "guides": "Guides"
@@ -233,11 +232,10 @@
   "pages": {
     "index": {
       "h1": "XIVKit: FFXIV Tools & Links",
-      "tagline": "Une liste évolutive des choses que j'utilise vraiment. Mise à jour à chaque fois que je trouve quelque chose qui vaut la peine d'être gardé.",
+      "tagline": "Une liste évolutive d'outils et de liens FFXIV, mise à jour à chaque fois que je trouve quelque chose qui vaut la peine d'être gardé.",
       "searchPlaceholder": "Rechercher un outil par nom, description ou tag...",
       "emptyStateText": "Aucun outil ne correspond à cette recherche.",
-      "footerLine1": "Vous avez trouvé quelque chose que je n'ai pas essayé ? Consultez la {watchlist}. À la recherche de plugins ? Consultez l'{plugins}.",
-      "watchlistLinkLabel": "watchlist",
+      "footerLine1": "À la recherche de plugins ? Consultez l'{plugins}.",
       "pluginsLinkLabel": "annuaire de plugins",
       "sections": {
         "market": "Marché & Économie",
@@ -248,13 +246,23 @@
         "guides": "Guides & Référence",
         "unicode": "Unicode & Caractères spéciaux",
         "featured": "Guides sélectionnés",
-        "pastEvents": "Guides d'événements terminés"
+        "pastEvents": "Guides d'événements terminés",
+        "theorycrafting": "Theorycrafting & Calculateurs",
+        "plugins": "Plugins",
+        "macos": "Outils macOS"
       },
       "featuredNote": "Des guides complets que j'ai sélectionnés et que j'héberge directement sur ce site, pas juste un lien externe.",
       "pastEventsNote": "Ces événements sont terminés. Conservés ici pour référence.",
       "wipHeading": "En cours",
       "wipNote": "Brouillons non terminés, qui peuvent changer ou disparaître.",
-      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)"
+      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)",
+      "statusNote": "« J'utilise » signifie que je m'en sers moi-même. « Pas encore essayé » signifie que j'en ai entendu parler ou que je l'ai vu chez d'autres, mais ce n'est pas encore une recommandation.",
+      "status": {
+        "label": "Afficher",
+        "all": "Tout",
+        "use": "J'utilise",
+        "untried": "Pas encore essayé"
+      }
     },
     "plugins": {
       "h1": "FFXIV Plugins",
@@ -264,9 +272,8 @@
       "experimentalLabel": "expérimental",
       "searchPlaceholder": "Rechercher un plugin par nom, description ou tag...",
       "emptyStateText": "Aucun plugin ne correspond à cette recherche.",
-      "footerLine1": "Consultez la {main} ou la {watchlist}.",
+      "footerLine1": "Consultez la {main}.",
       "mainLinkLabel": "liste principale",
-      "watchlistLinkLabel": "watchlist",
       "sections": {
         "getStarted": "Pour commencer",
         "housing": "Logement & Décoration",
@@ -276,22 +283,6 @@
         "social": "Social & Amis",
         "inventory": "Inventaire & Économie",
         "discovery": "Découverte de plugins & Éditeurs"
-      }
-    },
-    "watchlist": {
-      "h1": "FFXIV Watchlist",
-      "tagline": "Des outils dont j'ai entendu parler ou que j'ai vu d'autres utiliser, mais que je n'ai pas essayés moi-même. Un espace d'attente à explorer plus tard.",
-      "note": "Rien ici n'est encore une recommandation de ma part, c'est juste un rappel pour y jeter un œil. Une fois que j'aurai vraiment utilisé un outil et qu'il aura mérité sa place, il rejoindra la {main}.",
-      "mainLinkLabel": "liste principale",
-      "searchPlaceholder": "Rechercher dans la watchlist par nom, description ou tag...",
-      "emptyStateText": "Rien dans la watchlist ne correspond à cette recherche.",
-      "footerLine1": "Vous utilisez régulièrement l'un de ces outils ? Déplacez-le vers la {main}.",
-      "sections": {
-        "theorycrafting": "Theorycrafting & Calculateurs",
-        "guides": "Guides & Référence",
-        "progress": "Progression & Listes de vérification",
-        "plugins": "Plugins",
-        "macos": "Outils macOS"
       }
     },
     "msqTracker": {
@@ -848,15 +839,11 @@
     },
     "index": {
       "title": "XIVKit : outils et liens FFXIV",
-      "description": "Une sélection d'outils et de liens FFXIV : calculateurs de theorycraft, données du marché, suivi d'artisanat et sites de référence, mise à jour dès qu'une trouvaille en vaut la peine."
+      "description": "Une sélection d'outils et de liens FFXIV, signalés selon que je les utilise ou que je ne les ai pas encore essayés : calculateurs de theorycraft, données du marché, suivi d'artisanat et sites de référence."
     },
     "plugins": {
       "title": "Plugins FFXIV | XIVKit",
       "description": "Les plugins Dalamud que j'utilise vraiment sur FFXIV : des outils côté client, certains dans le répertoire de plugins par défaut, d'autres ajoutés via des dépôts personnalisés (expérimentaux)."
-    },
-    "watchlist": {
-      "title": "Watchlist FFXIV | XIVKit",
-      "description": "Des outils FFXIV dont j'ai entendu parler ou que d'autres recommandent, mais que je n'ai pas encore essayés. Un espace d'attente à explorer plus tard."
     },
     "huntForAstronomy": {
       "title": "FFXIV Hunt for Astronomy : quelles récompenses valent vos mémoquartz ? | XIVKit",
