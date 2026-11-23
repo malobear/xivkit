@@ -109,6 +109,13 @@ p a, .note a, .credit-banner a { color: var(--accent); }
   border: 1px solid var(--border);
   border-radius: 10px;
 }
+.note {
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
 
 /* Phones: the sidebar stacks above the list, so keep it short and get the guides and
    tools onto the first screen. */
