@@ -301,6 +301,8 @@ table.lim td:first-child { white-space: nowrap; }
 .hg-u-more dd { margin: 0; color: var(--color-neutral-300); }
 .hg-u-more .u-src { margin-top: 8px; font-size: 12px; }
 .hg-col table.lim td:nth-child(2) { font-variant-numeric: tabular-nums; color: var(--color-accent-300); white-space: nowrap; }
+.hg-col table.lim td:first-child { white-space: normal; min-width: 150px; }
+.hg-col table.lim td { vertical-align: middle; }
 .u-ico { display: inline-block; width: 28px; height: 28px; border-radius: 5px; vertical-align: middle; margin-right: 6px; }
 .hg-col table.lim td b { font-weight: 500; }
 
