@@ -372,8 +372,10 @@ From a PageSpeed/Lighthouse run on the homepage (mobile, 2026-11-08): Performanc
 Accessibility 87, Best Practices 100, SEO 100. Full findings and a suggested order are
 in `pagespeed-report-2026-11-08.md`.
 
-- **Fix layout shift (CLS 0.34)**: reserve space for the JS-built tag bar and check
-  the list shifting down after load. The only metric that is actually bad.
+- ~~**Fix layout shift (CLS 0.34)**~~ **Done.** The tag and language bars are now
+  rendered in the HTML, and the phone layout was tightened. Re-run on 2026-11-22
+  (Lighthouse, mobile, live homepage): CLS 0, Performance 97, TBT 10 ms. Nothing left
+  to do here unless a later page change brings the shift back.
 - **Small list icons**: the guide list uses full-size `og-*.png` cards at favicon
   size (about 300 KB wasted). Generate about 64px WebP icons.
 - **Accessibility**: lighten footer legal text (4.47:1), underline footer links, and
