@@ -231,7 +231,7 @@
   },
   "pages": {
     "index": {
-      "h1": "XIVKit: FFXIV Tools & Links",
+      "h1": "Outils, calculateurs et guides FFXIV",
       "tagline": "Une liste évolutive d'outils et de liens FFXIV, mise à jour à chaque fois que je trouve quelque chose qui vaut la peine d'être gardé.",
       "searchPlaceholder": "Rechercher un outil par nom, description ou tag...",
       "emptyStateText": "Aucun outil ne correspond à cette recherche.",
@@ -838,8 +838,8 @@
       "description": "Choisissez un job et voyez le prix HQ le plus bas à l'Hôtel des ventes pour chaque pièce de son équipement artisanal, en direct depuis Universalis : le set de courtisan assidu (niveau d'objet 770) pour les jobs de combat, l'équipement du paon bleu et les outils de la main dorée pour les artisans et les récolteurs, disposé comme la fenêtre Personnage du jeu."
     },
     "index": {
-      "title": "XIVKit : outils et liens FFXIV",
-      "description": "Une sélection d'outils et de liens FFXIV, signalés selon que je les utilise ou que je ne les ai pas encore essayés : calculateurs de theorycraft, données du marché, suivi d'artisanat et sites de référence."
+      "title": "Outils, calculateurs et guides FFXIV | XIVKit",
+      "description": "Calculateurs et guides FFXIV avec prix du marché en direct, un répertoire de plugins Dalamud et une liste d'outils choisie, chacun marqué « J'utilise » ou « Pas encore essayé »."
     },
     "plugins": {
       "title": "Plugins FFXIV | XIVKit",

@@ -231,7 +231,7 @@
   },
   "pages": {
     "index": {
-      "h1": "XIVKit: FFXIV Tools & Links",
+      "h1": "FFXIV-Tools, Rechner und Guides",
       "tagline": "Eine laufende Liste von FFXIV-Tools und Links. Wird aktualisiert, sobald ich etwas Sehenswertes finde.",
       "searchPlaceholder": "Tools nach Name, Beschreibung oder Tag durchsuchen...",
       "emptyStateText": "Keine Tools passen zu dieser Suche.",
@@ -838,8 +838,8 @@
       "description": "Wähle einen Job und sieh den günstigsten HQ-Preis am Marktbrett für jedes Teil seiner hergestellten Ausrüstung, live von Universalis: das Hofliebhaber-Set (Gegenstandsstufe 770) für Kampfjobs, Pfauen-Ausrüstung und Goldhand-Werkzeuge für Handwerker und Sammler, angeordnet wie das Charakterfenster im Spiel."
     },
     "index": {
-      "title": "XIVKit: FFXIV-Tools & Links",
-      "description": "Ausgewählte FFXIV-Tools und Links, markiert danach, ob ich sie nutze oder noch nicht ausprobiert habe: Theorycrafting-Rechner, Marktbrett-Daten, Crafting-Tracker und Nachschlageseiten."
+      "title": "FFXIV-Tools, Rechner & Guides | XIVKit",
+      "description": "FFXIV-Rechner und Guides mit Live-Marktpreisen, ein Dalamud-Plugin-Verzeichnis und eine kuratierte Tool-Liste, jeweils markiert als „Nutze ich“ oder „Noch nicht probiert“."
     },
     "plugins": {
       "title": "FFXIV-Plugins | XIVKit",

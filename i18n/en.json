@@ -231,7 +231,7 @@
   },
   "pages": {
     "index": {
-      "h1": "XIVKit: FFXIV Tools & Links",
+      "h1": "FFXIV tools, calculators & guides",
       "tagline": "A running list of FFXIV tools and links, updated whenever I find something worth keeping.",
       "searchPlaceholder": "Search tools by name, description, or tag...",
       "emptyStateText": "No tools match that search.",
@@ -838,8 +838,8 @@
       "description": "Pick a job and see the cheapest HQ market board price for every piece of its crafted gear, live from Universalis: the item level 770 Courtly Lover set for combat jobs, and Crested gear with Gold Thumb's tools for crafters and gatherers, laid out like the in-game Character window."
     },
     "index": {
-      "title": "XIVKit: FFXIV Tools & Links",
-      "description": "Curated FFXIV tools and links, marked by whether I use them or haven't tried them yet: theorycrafting calculators, market board data, crafting trackers, and reference sites."
+      "title": "FFXIV Tools, Calculators & Guides | XIVKit",
+      "description": "Live-price FFXIV calculators and guides, a Dalamud plugin directory, and a curated list of tools, each marked as one I use or haven't tried yet."
     },
     "plugins": {
       "title": "FFXIV Plugins | XIVKit",

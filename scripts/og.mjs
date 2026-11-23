@@ -17,7 +17,7 @@ const DOMAIN = "xivkit.com";
 
 // name -> og-<name>.png. The "XIVKit" title on the home card is set as the big wordmark; other cards carry a small one top left.
 const CARDS = [
-  { name: "tools", title: "XIVKit", description: "Curated FFXIV tools, calculators, and reference sites. Updated whenever something new is worth keeping.", tags: ["market", "crafting", "checklist", "glamour", "guides"] },
+  { name: "tools", title: "XIVKit", description: "FFXIV calculators and guides with live market prices, a Dalamud plugin directory, and a curated tool list.", tags: ["calculators", "guides", "plugins", "market", "checklist"] },
   { name: "plugins", title: "FFXIV Plugins", description: "Dalamud plugins I actually use, client-side tools for housing, chat, glamour, and more.", tags: ["housing", "chat", "glamour", "ui"] },
   { name: "plugin-directory", title: "Dalamud plugin directory", description: "Every plugin from the official list and well-known third-party repos, with install steps and each plugin's chat commands.", tags: ["plugins", "commands", "install"] },
   { name: "jump-puzzle-macros", title: "Jump Puzzle Macros", description: "Timed macro-and-hotbar technique for jumping exact, repeatable distances, with copyable macros and a calibration spot.", tags: ["guide", "macro"] },
