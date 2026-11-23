@@ -227,6 +227,7 @@
     "xivkitmsq": "Track your Main Scenario Quest progress through the latest patch, with your current quest in a link you can paste and a PNG progress card to share",
     "currencyplanner": "Pick a currency you have piling up (tomestones, scrips, bicolor gemstones, seals, MGP) and see what it buys: the best items for gil at live prices, what's worth collecting, and whether to spend it before Evercold",
     "craftedgear": "Pick a job and see the cheapest market board listing for every piece of the current crafted gear set, laid out like the in-game Character window, with each job's full set total at live prices",
+    "housingforbeginners": "The order to do things in, how permits and ownership work, furnishing limits by size, sharing with friends, the 45-day demolition timer, and cheap ways to furnish",
     "plugindirectory": "Every Dalamud plugin from the official list and well-known third-party repositories, sorted into categories, with install steps and each plugin's chat commands"
   },
   "pages": {
@@ -253,8 +254,7 @@
       "pastEventsNote": "Events that have ended. Kept here for reference.",
       "wipHeading": "Work in progress",
       "wipNote": "Drafts that aren't finished, and may change or disappear.",
-      "wipEvercold": "Evercold prep checklist (draft)",
-      "wipHousing": "Housing starter guide (draft)"
+      "wipEvercold": "Evercold prep checklist (draft)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

@@ -227,6 +227,7 @@
     "xivkitmsq": "Verfolge deinen Fortschritt im Hauptszenario bis zum neuesten Patch, mit der aktuellen Quest in einem Link zum Einfügen und einer PNG-Fortschrittskarte zum Teilen",
     "currencyplanner": "Wähle eine Währung, von der du zu viel hast (Steine, Scheine, Zweifarbige Edelsteine, Abzeichen, MGP), und sieh, was sie kauft: die besten Gegenstände für Gil zu aktuellen Preisen, was sich zum Sammeln lohnt und ob du sie vor Evercold ausgeben solltest",
     "craftedgear": "Wähle einen Job und sieh das günstigste Marktbrett-Angebot für jedes Teil des aktuellen hergestellten Ausrüstungssets, angeordnet wie das Charakterfenster im Spiel, mit dem Gesamtpreis des Sets für jeden Job zu Live-Preisen",
+    "housingforbeginners": "Die richtige Reihenfolge, wie Genehmigungen und Besitz funktionieren, Möbellimits je nach Größe, Teilen mit Freunden, der 45-Tage-Abrisstimer und günstige Einrichtungstipps",
     "plugindirectory": "Alle Dalamud-Plugins aus der offiziellen Liste und bekannten Drittanbieter-Repositorys, nach Kategorien sortiert, mit Installationsschritten und den Chatbefehlen jedes Plugins"
   },
   "pages": {
@@ -253,8 +254,7 @@
       "pastEventsNote": "Diese Events sind vorbei. Zur Referenz bleiben die Guides hier.",
       "wipHeading": "In Arbeit",
       "wipNote": "Entwürfe, die noch nicht fertig sind und sich ändern oder verschwinden können.",
-      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)",
-      "wipHousing": "Housing-Einstiegsguide (Entwurf)"
+      "wipEvercold": "Vorbereitungs-Checkliste für Evercold (Entwurf)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",

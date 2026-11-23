@@ -15,6 +15,7 @@ The site is static and every page is plain HTML. Market board prices on the guid
 - [Fan Fest Keynote Bingo Maker](https://xivkit.com/fanfest-bingo.html): Build, randomize, play and export an FFXIV Fan Fest keynote bingo card as a shareable PNG, with suggested predictions and community jokes.
 - [MSQ Tracker with a Shareable Link](https://xivkit.com/msq-tracker.html): Track Main Scenario Quest progress through the latest patch, with the current quest in the page link for easy sharing and a PNG progress card to export.
 - [Currency Planner: What to Buy Before Evercold](https://xivkit.com/currency-planner.html): Pick a currency (tomestones, scrips, bicolor gemstones, Grand Company seals, MGP, PvP and hunt currencies) and see everything it buys, ranked by gil per currency at live Universalis prices, plus the collectibles it unlocks and whether to spend it before 8.0. Item names in English, Japanese, German and French.
+- [Housing for Beginners](https://xivkit.com/housing-for-beginners.html): First steps for a new FFXIV house owner: the order to do things in, how permits and ownership work, furnishing limits by size, flowerpots and garden patches, sharing with friends, the 45-day demolition timer, cheap furnishing, and useful sites and plugins.
 
 ## Lists
 

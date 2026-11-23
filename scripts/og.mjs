@@ -30,6 +30,7 @@ const CARDS = [
   { name: "fanfest-bingo", title: "Fan Fest keynote bingo maker", description: "Build a card, randomize it, play along live, and export a PNG to share.", tags: ["tool", "events"], theme: "evercold", kicker: "Fan Fest \u00b7 Evercold keynote", heading: "Keynote<br>Bingo", bg: "fanfest-bingo-bg.jpg" },
   { name: "msq-tracker", title: "MSQ tracker with a shareable link", description: "Track your Main Scenario Quest progress, with your current quest in a link you can paste and a PNG progress card to share.", tags: ["tool", "msq", "tracker"] },
   { name: "currency-planner", title: "Currency planner: what to buy before Evercold", description: "Pick a currency and see what it buys: the best items for gil at live prices, what is worth collecting, and whether to spend it before 8.0.", tags: ["tool", "market", "currency"] },
+  { name: "housing-for-beginners", title: "Housing for beginners", description: "First steps, permits, furnishing limits by size, and the 45-day demolition timer, plus cheap ways to furnish.", tags: ["guide", "housing"] },
   { name: "hunt-for-astronomy", title: "Hunt for Astronomy: what's worth the tomes", description: "Every reward in the trove, where else it drops, market board prices, and a straight verdict on the tomestones.", tags: ["guide", "market", "tomestones"] },
 ];
 

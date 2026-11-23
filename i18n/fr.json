@@ -227,6 +227,7 @@
     "xivkitmsq": "Suis ta progression dans le scénario principal jusqu'au dernier patch, avec ta quête actuelle dans un lien à coller et une carte de progression PNG à partager",
     "currencyplanner": "Choisissez une monnaie qui s'accumule (mémoquartz, assignats, gemmes bicolores, insignes, MGP) et voyez ce qu'elle achète : les meilleurs objets à revendre au prix du marché, ce qui vaut la peine d'être collectionné, et s'il faut la dépenser avant Evercold",
     "craftedgear": "Choisissez un job et voyez l'offre la moins chère à l'Hôtel des ventes pour chaque pièce du set d'équipement artisanal actuel, disposée comme la fenêtre Personnage du jeu, avec le prix total du set pour chaque job aux prix du moment",
+    "housingforbeginners": "Dans quel ordre s'y prendre, comment fonctionnent permis et propriété, limites de mobilier par taille, partage avec des amis, minuteur de démolition de 45 jours et astuces pour meubler à moindre coût",
     "plugindirectory": "Tous les plugins Dalamud de la liste officielle et des dépôts tiers connus, classés par catégorie, avec les étapes d'installation et les commandes de chat de chaque plugin"
   },
   "pages": {
@@ -253,8 +254,7 @@
       "pastEventsNote": "Ces événements sont terminés. Conservés ici pour référence.",
       "wipHeading": "En cours",
       "wipNote": "Brouillons non terminés, qui peuvent changer ou disparaître.",
-      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)",
-      "wipHousing": "Guide de démarrage du logement (brouillon)"
+      "wipEvercold": "Checklist de préparation pour Evercold (brouillon)"
     },
     "plugins": {
       "h1": "FFXIV Plugins",
