@@ -1,0 +1,434 @@
+[
+  {
+    "name": "Miniature Aetheryte",
+    "itemId": 6600,
+    "iconPath": "ui/icon/052000/052474.tex",
+    "iconVerified": true,
+    "where": "Grand Company quartermasters (Flame Quartermaster in Ul'dah, Serpent Quartermaster in New Gridania, Storm Quartermaster in Limsa Lominsa Upper Decks). Requires Second Lieutenant (Second Flame/Serpent/Storm Lieutenant) in the matching GC. Also tradeable, so the Market Board is an option.",
+    "price": "14,470 Grand Company Seals",
+    "purpose": "Gives you a private teleport point to your estate's exterior entrance, so you never need the residential district aetheryte plaza.",
+    "placement": "Outdoors (yard), near the front. Cannot be retrieved once placed (description), so choose the spot with care.",
+    "whoNeedsIt": "Every owner; also lets tenants and FC members teleport home cheaply.",
+    "limits": "One per estate. Outdoor Furnishing, counts toward the outdoor furnishing cap (cottage 40, house 60, mansion 80). Teleport to it costs 75% less, minimum 25 gil.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Miniature_Aetheryte",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/6600"
+    ],
+    "uncertain": "The wiki page does not say whether the Seal price is per-GC identical (all three listed 14,470). Teleport discount text is from the wiki, not re-tested in game."
+  },
+  {
+    "name": "Summoning Bell",
+    "itemId": 7064,
+    "iconPath": "ui/icon/052000/052513.tex",
+    "iconVerified": true,
+    "where": "Crafted by Blacksmith (Lv 50; Wolfram Ingot, Ancient Lumber, Wildfowl Feather, 2 Fire Cluster, Earth Cluster) or bought on the Market Board.",
+    "price": "",
+    "purpose": "Lets you call a retainer to your estate (same as the inn bell), no trip to a Retainer Vocate or inn needed.",
+    "placement": "Indoors (Furnishing category). Also used to specify estate sizes when placing furnishings per wiki gallery notes.",
+    "whoNeedsIt": "Anyone with retainers, which is nearly everyone.",
+    "limits": "One per estate. Counts as an indoor furnishing. Not a vendor or facility.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Summoning_Bell",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7064"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank."
+  },
+  {
+    "name": "Crystal Bell",
+    "itemId": 13061,
+    "iconPath": "ui/icon/052000/052586.tex",
+    "iconVerified": true,
+    "where": "Crafted by Blacksmith (Lv 60 Master Blacksmith III recipe book; Titanium Alloy Ingot, Birch Lumber, Wildfowl Feather, 2 Fire Cluster, Earth Cluster) or Market Board.",
+    "price": "",
+    "purpose": "Summons the Aesthetician (Jandelaine) at home to change hairstyle, face, tattoos etc. Costs 2,000 gil or a Jandelaine's Token per accepted change.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone who changes appearance. The Aesthetician must be unlocked first with the level 15 quest Beauty Is Only Scalp Deep.",
+    "limits": "One per estate. Counts as an indoor furnishing.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crystal_Bell",
+      "https://ffxiv.consolegameswiki.com/Aesthetician",
+      "https://beta.xivapi.com/api/1/sheet/Item/13061"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki says Aesthetician is unavailable from Norvrandt inns; housing availability is assumed fine."
+  },
+  {
+    "name": "Moogle Letter Box",
+    "itemId": 6475,
+    "iconPath": "ui/icon/052000/052118.tex",
+    "iconVerified": true,
+    "where": "Crafted by Armorer (Lv 45; Cobalt Plate, Mahogany Lumber, Undyed Woolen Cloth, Moggle Mog XII's Whisker, Ice Shard, Earth Shard), Market Board, or Keybound Coffer drops per wiki.",
+    "price": "",
+    "purpose": "This is the housing 'mailbox': a Delivery Moogle at your front gate to send and receive letters and rewards.",
+    "placement": "Outdoors (Outdoor Furnishing), by the entrance.",
+    "whoNeedsIt": "Players who use friend letters or Mog Station and reward deliveries.",
+    "limits": "One per estate (Moogle OR Regal, they are the same function). Counts toward the outdoor furnishing cap.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Moogle_Letter_Box",
+      "https://ffxiv.consolegameswiki.com/Delivery_Moogle",
+      "https://beta.xivapi.com/api/1/sheet/Item/6475"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Mailbox naming: the in-game item is Letter Box, not Mailbox."
+  },
+  {
+    "name": "Regal Letter Box",
+    "itemId": 7115,
+    "iconPath": "ui/icon/052000/052142.tex",
+    "iconVerified": true,
+    "where": "Crafted by Goldsmith (Lv 50; Kingly Whisker, Gold Ingot, 4 Cobalt Plate, Ancient Lumber, 2 Undyed Woolen Cloth, Wind Cluster x2, Fire Cluster) or Market Board.",
+    "price": "",
+    "purpose": "Fancier-looking alternative to the Moogle Letter Box; same Delivery Moogle service.",
+    "placement": "Outdoors.",
+    "whoNeedsIt": "Anyone preferring a nicer look.",
+    "limits": "Shares the one-per-estate letter box slot with the Moogle Letter Box.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Regal_Letter_Box",
+      "https://ffxiv.consolegameswiki.com/Delivery_Moogle",
+      "https://beta.xivapi.com/api/1/sheet/Item/7115"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank."
+  },
+  {
+    "name": "Chocobo Stable",
+    "itemId": 7989,
+    "iconPath": "ui/icon/052000/052155.tex",
+    "iconVerified": true,
+    "where": "Housing Merchant in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum), or Market Board. A free stable already stands outside every Apartment Building.",
+    "price": "125,000 gil",
+    "purpose": "Raise chocobos (Chocobo Raising) and change your companion's feather color; capacity 512.",
+    "placement": "Outdoors (yard). Dyeable.",
+    "whoNeedsIt": "Anyone wanting to raise or recolor a chocobo at home. Apartment tenants can use the free one outside the building.",
+    "limits": "One per estate. Outdoor furnishing slot. Stable can be used by tenants and FC members (stable and garden care is up to them).",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Chocobo_Stable",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7989"
+    ],
+    "uncertain": "Variant stables (Glade, Oasis, Riviera, Oriental, Highland, Essentials; ids 15954, 15955, 15953, 17137, 35617, 38628) exist and are cosmetic-only per name; function not individually verified. Housing Merchant coordinates not repeated here."
+  },
+  {
+    "name": "Armoire",
+    "itemId": 8789,
+    "iconPath": "ui/icon/052000/052536.tex",
+    "iconVerified": true,
+    "where": "Crafted by Carpenter (Lv 50; Ebony Lumber, Wolfram Ingot, Varnish, Wind Cluster, Ice Cluster) or Market Board. An Armoire also exists in every inn room.",
+    "price": "",
+    "purpose": "Infinite free storage for eligible special gear (event, achievement, artifact, newer dungeon gear), usable in Glamour Plates. Items lose dye.",
+    "placement": "Indoors.",
+    "whoNeedsIt": "Everyone, especially those hoarding event or seasonal gear.",
+    "limits": "One per estate. Counts as indoor furnishing. Unlike the Glamour Dresser, no prisms needed.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Armoire_(Item)",
+      "https://ffxiv.consolegameswiki.com/Armoire",
+      "https://beta.xivapi.com/api/1/sheet/Item/8789"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki notes the Glamour Dresser cannot be placed in any estate; Armoire is the only home storage of this kind."
+  },
+  {
+    "name": "Orchestrion",
+    "itemId": 14045,
+    "iconPath": "ui/icon/052000/052587.tex",
+    "iconVerified": true,
+    "where": "Crafted by Carpenter (Lv 60 Master Carpenter IV; Cassia Block, Birch Lumber, Rosewood Lumber, Gold Ingot, Scale Glue, Wind and Ice Cluster) or Market Board.",
+    "price": "",
+    "purpose": "Plays any Orchestrion Roll song you own for everyone in the room, replacing area music.",
+    "placement": "Indoors, floor-standing. Table Orchestrion (17954), Orchestrion Phonograph (35555) and Melodious Mogchestrion (21870, cash shop) are tabletop alternatives.",
+    "whoNeedsIt": "Anyone wanting background music; the Orchestrion Log is unlocked by first use.",
+    "limits": "One orchestrion of ANY type per estate. Playlist up to 8 songs. FC members and tenants need authorization to play or stop. Cannot be placed in a Company Workshop.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Orchestrion_(Item)",
+      "https://ffxiv.consolegameswiki.com/Orchestrion",
+      "https://beta.xivapi.com/api/1/sheet/Item/14045"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank."
+  },
+  {
+    "name": "The Unending Journey",
+    "itemId": 13069,
+    "iconPath": "ui/icon/052000/052575.tex",
+    "iconVerified": true,
+    "where": "Crafted by Carpenter (Lv 58 Master Carpenter III), Market Board, or Keybound Coffer per wiki.",
+    "price": "",
+    "purpose": "Rewatch cutscenes of quests you have completed.",
+    "placement": "Indoors (Table category).",
+    "whoNeedsIt": "Anyone who wants to rewatch story cutscenes at home.",
+    "limits": "One per estate.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/The_Unending_Journey",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/13069"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank."
+  },
+  {
+    "name": "Mannequin",
+    "itemId": 23846,
+    "iconPath": "ui/icon/052000/052642.tex",
+    "iconVerified": true,
+    "where": "Housing Merchant / Apartment Merchant in residential districts and apartment lobbies, or Estate Manservant/Maidservant (Steward) shops; see wiki vendor list.",
+    "price": "10,000 gil",
+    "purpose": "Displays a gear set; also lets a retainer sell the gear via the Market Board from your estate.",
+    "placement": "Indoors. Requires assigning a retainer as merchant when placing.",
+    "whoNeedsIt": "Sellers and glamour fans. One retainer can serve multiple mannequins.",
+    "limits": "Item text: apartments, cottages, houses, mansions hold 4, 6, 8, 10 'facilities'; wiki lists the same 4/6/8/10 as a mannequin limit.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Mannequin",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/23846"
+    ],
+    "uncertain": "Item description says 'facilities' but numbers match the vendor cap (4/6/8/10), not the crafting facility cap (2/4/6/8). Unclear whether mannequins share the vendor cap. Verify in game before stating."
+  },
+  {
+    "name": "Mender Permit",
+    "itemId": 7156,
+    "iconPath": "ui/icon/026000/026192.tex",
+    "iconVerified": true,
+    "where": "Independent Sutler (General) in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum) or Apartment Merchant in apartment lobbies.",
+    "price": "3,000 gil",
+    "purpose": "Hires a Mender at home: repairs gear (to 100% durability only) for gil.",
+    "placement": "Placed from the Housing menu like furniture, indoors or per vendor type; race/gender customizable on some.",
+    "whoNeedsIt": "Everyone, saves trips to a city.",
+    "limits": "Vendor cap per estate: apartment/private chamber 4, cottage 6, house 8, mansion 10. Shared across ALL vendor types.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Player_Housing_Vendors",
+      "https://ffxiv.consolegameswiki.com/Mender_Permit",
+      "https://beta.xivapi.com/api/1/sheet/Item/7156"
+    ],
+    "uncertain": "Mender repairs only to 100%; self-repair with Dark Matter goes to 199%."
+  },
+  {
+    "name": "Materia Melder Permit",
+    "itemId": 16704,
+    "iconPath": "ui/icon/026000/026192.tex",
+    "iconVerified": true,
+    "where": "Independent Sutler (General) in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum) or Apartment Merchant in apartment lobbies.",
+    "price": "5,000 gil",
+    "purpose": "Hires a Materia Melder at home: melds materia for gil.",
+    "placement": "Placed from the Housing menu like furniture, indoors or per vendor type; race/gender customizable on some.",
+    "whoNeedsIt": "Players melding materia.",
+    "limits": "Vendor cap per estate: apartment/private chamber 4, cottage 6, house 8, mansion 10. Shared across ALL vendor types.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Player_Housing_Vendors",
+      "https://ffxiv.consolegameswiki.com/Materia_Melder_Permit",
+      "https://beta.xivapi.com/api/1/sheet/Item/16704"
+    ],
+    "uncertain": "Cannot perform overmelding per wiki."
+  },
+  {
+    "name": "Steward Permit",
+    "itemId": 13055,
+    "iconPath": "ui/icon/026000/026192.tex",
+    "iconVerified": true,
+    "where": "Independent Sutler (General) in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum) or Apartment Merchant in apartment lobbies.",
+    "price": "3,000 gil",
+    "purpose": "Hires an Estate Manservant or Maidservant who sells the same furnishings as a residential Housing Merchant.",
+    "placement": "Placed from the Housing menu like furniture, indoors or per vendor type; race/gender customizable on some.",
+    "whoNeedsIt": "Decorators.",
+    "limits": "Vendor cap per estate: apartment/private chamber 4, cottage 6, house 8, mansion 10. Shared across ALL vendor types.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Player_Housing_Vendors",
+      "https://ffxiv.consolegameswiki.com/Steward_Permit",
+      "https://beta.xivapi.com/api/1/sheet/Item/13055"
+    ],
+    "uncertain": "Handy for buying furnishing and facility items without leaving home."
+  },
+  {
+    "name": "Junkmonger Permit",
+    "itemId": 7154,
+    "iconPath": "ui/icon/026000/026192.tex",
+    "iconVerified": true,
+    "where": "Independent Sutler (General) in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum) or Apartment Merchant in apartment lobbies.",
+    "price": "3,000 gil",
+    "purpose": "Hires a Junkmonger: cheap dyes, Dark Matter, garden patches, Magicked Stable Broom.",
+    "placement": "Placed from the Housing menu like furniture, indoors or per vendor type; race/gender customizable on some.",
+    "whoNeedsIt": "Gardeners and anyone repairing with Dark Matter.",
+    "limits": "Vendor cap per estate: apartment/private chamber 4, cottage 6, house 8, mansion 10. Shared across ALL vendor types.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Player_Housing_Vendors",
+      "https://ffxiv.consolegameswiki.com/Junkmonger_Permit",
+      "https://beta.xivapi.com/api/1/sheet/Item/7154"
+    ],
+    "uncertain": "Several cosmetic variants exist (A-2, A-3, beast tribe versions) with the same function."
+  },
+  {
+    "name": "Material Supplier Permit",
+    "itemId": 7153,
+    "iconPath": "ui/icon/026000/026192.tex",
+    "iconVerified": true,
+    "where": "Independent Sutler (General) in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum) or Apartment Merchant in apartment lobbies.",
+    "price": "3,000 gil",
+    "purpose": "Hires a Material Supplier selling low-level ARR crafting ingredients.",
+    "placement": "Placed from the Housing menu like furniture, indoors or per vendor type; race/gender customizable on some.",
+    "whoNeedsIt": "Leveling crafters.",
+    "limits": "Vendor cap per estate: apartment/private chamber 4, cottage 6, house 8, mansion 10. Shared across ALL vendor types.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Player_Housing_Vendors",
+      "https://ffxiv.consolegameswiki.com/Material_Supplier_Permit",
+      "https://beta.xivapi.com/api/1/sheet/Item/7153"
+    ],
+    "uncertain": "Low-level only."
+  },
+  {
+    "name": "Journeyman Salvager Permit",
+    "itemId": 23230,
+    "iconPath": "ui/icon/026000/026192.tex",
+    "iconVerified": true,
+    "where": "Independent Sutler (General) in each residential district (Mist, Lavender Beds, Goblet, Shirogane, Empyreum) or Apartment Merchant in apartment lobbies.",
+    "price": "5,000 gil",
+    "purpose": "Hires a Journeyman Salvager (the housing Calamity Salvager equivalent) to rebuy quest or achievement reward items for a small gil fee.",
+    "placement": "Placed from the Housing menu like furniture, indoors or per vendor type; race/gender customizable on some.",
+    "whoNeedsIt": "Anyone who lost quest or achievement items.",
+    "limits": "Vendor cap per estate: apartment/private chamber 4, cottage 6, house 8, mansion 10. Shared across ALL vendor types.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Player_Housing_Vendors",
+      "https://ffxiv.consolegameswiki.com/Journeyman_Salvager_Permit",
+      "https://beta.xivapi.com/api/1/sheet/Item/23230"
+    ],
+    "uncertain": "Wiki equates it with Calamity Salvager. Not a plain 'Calamity Salvager' permit name."
+  },
+  {
+    "name": "Woodworking Bench",
+    "itemId": 7065,
+    "iconPath": "ui/icon/052000/052500.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Carpenter class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Carpenter at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7065"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Smithing Bench",
+    "itemId": 7066,
+    "iconPath": "ui/icon/052000/052498.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Blacksmith class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Blacksmith at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7066"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Armorcraft Forge",
+    "itemId": 7067,
+    "iconPath": "ui/icon/052000/052502.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Armorer class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Armorer at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7067"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Goldsmithing Bench",
+    "itemId": 7068,
+    "iconPath": "ui/icon/052000/052504.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Goldsmith class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Goldsmith at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7068"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Leatherworking Bench",
+    "itemId": 7069,
+    "iconPath": "ui/icon/052000/052499.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Leatherworker class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Leatherworker at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7069"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Clothcraft Loom",
+    "itemId": 7070,
+    "iconPath": "ui/icon/052000/052503.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Weaver class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Weaver at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7070"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Alchemy Furnace",
+    "itemId": 7071,
+    "iconPath": "ui/icon/052000/052501.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Alchemist class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Alchemist at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7071"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  },
+  {
+    "name": "Cooking Stove",
+    "itemId": 7072,
+    "iconPath": "ui/icon/052000/052505.tex",
+    "iconVerified": true,
+    "where": "Crafted (recipe seen for Woodworking Bench: Carpenter Lv 50) or Market Board. Each facility matches the Culinarian class.",
+    "price": "",
+    "purpose": "Interact while on the matching crafter to get a 30-minute buff that temporarily raises max CP at crafter level 90 or below (no effect above). The wiki says +10 CP.",
+    "placement": "Indoors (Furnishing).",
+    "whoNeedsIt": "Anyone leveling Culinarian at home.",
+    "limits": "Crafting facility cap per estate: apartment/private chamber 2, cottage 4, house 6, mansion 8. Usable by owner and tenants in a personal house, any member in an FC house.",
+    "sources": [
+      "https://ffxiv.consolegameswiki.com/Crafting_Facility",
+      "https://ffxiv.consolegameswiki.com/Player_Housing",
+      "https://beta.xivapi.com/api/1/sheet/Item/7072"
+    ],
+    "uncertain": "Crafted items are normally bought on the Market Board; no gil vendor price found, so price left blank. Wiki and item text differ slightly in wording (CP amount only on wiki); crafting recipe details verified for Smithing/Woodworking/Cooking pages only; other recipes not individually checked."
+  }
+]
