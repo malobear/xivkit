@@ -1,6 +1,6 @@
 # XIVKit
 
-> XIVKit is a curated, unofficial list of Final Fantasy XIV (FFXIV) tools and Dalamud plugins that the maintainer actually uses, plus original guides hosted on the site. Every entry is hand-picked and annotated with why it's useful, rather than an exhaustive directory.
+> XIVKit is an unofficial Final Fantasy XIV (FFXIV) site with original calculators and guides that use live market prices, a Dalamud plugin directory, and a curated list of tools. Every tool in the list is hand-picked and marked as one the maintainer uses or one they have not tried yet, rather than an exhaustive directory.
 
 The site is static and every page is plain HTML. Market board prices on the guides are fetched live from Universalis. FINAL FANTASY XIV is a registered trademark of Square Enix Holdings Co., Ltd. XIVKit is fan-made and not affiliated with or endorsed by Square Enix.
 
@@ -19,7 +19,7 @@ The site is static and every page is plain HTML. Market board prices on the guid
 
 ## Lists
 
-- [Tools & Links](https://xivkit.com/): Curated FFXIV tools grouped by use: market and economy, theorycrafting, progress trackers, glamour, housing, reference databases, and community sites. Each is marked as one the maintainer uses or one not tried yet.
+- [Tools, Calculators & Guides](https://xivkit.com/): The home page: live-price FFXIV calculators and guides, plus a curated tool list grouped by use (market and economy, theorycrafting, progress trackers, glamour, housing, reference databases, community sites). Each tool is marked as one the maintainer uses or one not tried yet.
 - [Plugins](https://xivkit.com/plugins.html): Dalamud plugins in active use, tagged by whether they're in the default plugin directory or need a custom (experimental) repo.
 - [Plugin directory](https://xivkit.com/plugins/): Browsable directory of Dalamud plugins, official and from well-known third-party repositories (marked with a badge), by category with install counts, install status and how-to-install steps. Generated from the live plugin lists.
 

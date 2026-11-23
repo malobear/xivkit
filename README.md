@@ -1,4 +1,4 @@
-# XIVKit: FFXIV Tools & Links
+# XIVKit: FFXIV Tools, Calculators & Guides
 
 **Browse the site: https://xivkit.com**
 
@@ -41,7 +41,7 @@ the home page: `jump-puzzle-macros.html`, `hunt-for-astronomy.html`, `keybound-b
 `inventory-decluttering.html`, and `retainer-ventures.html`. `msq-tracker.html` and `crafted-gear.html` are hosted tools listed in the same place. `crafted-gear.html` reads `crafted-gear.json`, written by `pnpm crafted-gear` (`scripts/crafted-gear.mjs`); it covers the combat set (Courtly Lover) and the crafter and gatherer set (Crested armor, Gold Thumb's tools). When a new crafted set comes out, update its entry in `SETS` at the top of that script (English name prefixes, item level, and the set name in each language), re-run it, then run `pnpm i18n`.
 
 All pages share the branding: titles read `Page name | XIVKit` (the home page is
-`XIVKit: FFXIV Tools & Links`), `og:site_name` is `XIVKit`, and URLs use
+`FFXIV Tools, Calculators & Guides | XIVKit`), `og:site_name` is `XIVKit`, and URLs use
 `https://xivkit.com/`.
 
 ## Updating the list
